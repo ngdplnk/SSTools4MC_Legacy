@@ -4,11 +4,11 @@ Minecraft Server Startup Tool (MCSSTool), es una herramienta que te ayudará en 
 # Cómo se usa esta Herramienta?
 Es muy fácil:
 
-1. Debes descargar la herramienta y guardarla en la carpeta principal de tu Servidor de Minecraft (Puedes cambiarle el nombre si así lo deseas).
+1. Debes descargar la herramienta y guardarla en la carpeta principal de tu Servidor de Minecraft (Guardala en esa carpeta solo si ya tienes un Servidor creado previamente; Puedes cambiarle el nombre si así lo deseas).
 
 ![Carpeta Principal Server 10-03-2021 0_21_41](https://user-images.githubusercontent.com/68713397/110572024-63a6eb00-8137-11eb-88a6-cba24b0120f6.png)
 
-2. Debes establecer el nombre de tu archivo .jar principal como "Server_1.16.5", para que de esta manera la herramienta pueda tener acceso a él.
+2. Debes establecer el nombre de tu archivo .jar principal como "Server_1.16.5", para que de esta manera la herramienta pueda tener acceso a él (Cuando ya creaste el Servidor antes)
 
 ![Jar Principal](https://user-images.githubusercontent.com/68713397/110572068-78837e80-8137-11eb-909a-f2eaab26f655.png)
 
