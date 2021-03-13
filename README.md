@@ -3,7 +3,7 @@ Minecraft Server Startup Tools (MCSSTools), es un conjunto de herramientas que t
 
 # Cómo se usan estas Herramientas?
 Es muy fácil:
-- Debes descargar la herramienta que necesites desde ![Este Link](https://github.com/NGDPLNk/mcsstools/releases/latest) (Aún no hay mucho disponible)
+- Debes descargar la herramienta que necesites desde [Este Link](https://github.com/NGDPLNk/mcsstools/releases/latest) (Aún no hay mucho disponible)
 Y Listo!
 
 # Información sobre Copyright y Disclaimer
