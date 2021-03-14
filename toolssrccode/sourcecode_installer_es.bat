@@ -2,7 +2,7 @@
 
 echo Herramienta de Creacion de Servidores de Minecraft
 echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
-echo Disenado para crear Servidores Vanilla
+echo Disenado para Crear Servidores Vanilla
 echo -------------------------------------------------
 echo(
 echo Te damos la Bienvenida
@@ -84,7 +84,7 @@ goto :versionnull
 
 :versionnull
 echo(
-echo Esa Version no se encuentra disponible o no existe
+echo Esa Version no esta disponible o es incorrecta
 set /P c=Vuelve a escribir la Version de Minecraft para la que estara dedicado tu nuevo Servidor= 
 if /I "%c%" EQU "1.2.1" goto :1.2.1
 if /I "%c%" EQU "1.2.2" goto :1.2.2
