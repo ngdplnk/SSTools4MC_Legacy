@@ -6,11 +6,15 @@ echo Disenado para Crear Servidores Vanilla
 echo -------------------------------------------------
 echo(
 echo Te damos la Bienvenida
-echo Con esta herramienta podras configurar desde cero tu propio Servidor de Minecraft
-echo Recuerda que esta es una Alpha, por lo que puede que falten funciones o estas esten incompletas
+echo Con esta herramienta podras Configurar desde cero tu propio Servidor de Minecraft
+echo Al finalizar el proceso, debes cambiar el Nombre de la carpeta principal de tu Servidor,
+echo O bien, cambiar su ubicacion (De esta manera no hara conflicto si deseas crear otro Servidor en algun momento)
 echo(
+echo Estas usando una Alpha, por lo que puede que falten funciones o estas esten incompletas
+echo ---------------------------------------------
 
 :version
+echo(
 echo Vamos a configurar tu Servidor de Minecraft
 set /P c=Para comenzar, escribe la Version de Minecraft para la que estara dedicado tu nuevo Servidor= 
 if /I "%c%" EQU "1.2.1" goto :1.2.1
