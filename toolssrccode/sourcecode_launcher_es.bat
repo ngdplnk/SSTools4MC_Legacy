@@ -2355,3 +2355,1260 @@ echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
 echo -------------------------------------------
 pause
 exit
+
+:1.4.2
+echo ---------------------------------------------
+echo(
+echo Has seleccionado la Version 1.4.2
+:1.4.2yn
+echo(
+set /P c=Es esa la Version de tu Servidor? [S/N]= 
+if /I "%c%" EQU "S" goto :1.4.2y
+if /I "%c%" EQU "N" goto :version
+goto :1.4.2yn
+
+:1.4.2y
+echo ---------------------------------------------
+echo(
+echo Perfecto, es la Version 1.4.2
+:1.4.2ram
+echo(
+set /P c=Escribe los GB's de Ram que asignaras para tu Servidor (Min.=1; Max.=16)= 
+if /I "%c%" EQU "1" goto :1.4.2_1G
+if /I "%c%" EQU "2" goto :1.4.2_2G
+if /I "%c%" EQU "3" goto :1.4.2_3G
+if /I "%c%" EQU "4" goto :1.4.2_4G
+if /I "%c%" EQU "5" goto :1.4.2_5G
+if /I "%c%" EQU "6" goto :1.4.2_6G
+if /I "%c%" EQU "7" goto :1.4.2_7G
+if /I "%c%" EQU "8" goto :1.4.2_8G
+if /I "%c%" EQU "9" goto :1.4.2_9G
+if /I "%c%" EQU "10" goto :1.4.2_10G
+if /I "%c%" EQU "11" goto :1.4.2_11G
+if /I "%c%" EQU "12" goto :1.4.2_12G
+if /I "%c%" EQU "13" goto :1.4.2_13G
+if /I "%c%" EQU "14" goto :1.4.2_14G
+if /I "%c%" EQU "15" goto :1.4.2_15G
+if /I "%c%" EQU "16" goto :1.4.2_16G
+goto :1.4.2ramnull
+
+:1.4.2ramnull
+echo(
+echo No puedes asignar esa cantidad de GB's de Ram a tu Servidor (Lo minimo es 1, lo maximo es 16)
+set /P c=Vuelve a escribir los GB's de Ram que asignaras para tu Servidor= 
+if /I "%c%" EQU "1" goto :1.4.2_1G
+if /I "%c%" EQU "2" goto :1.4.2_2G
+if /I "%c%" EQU "3" goto :1.4.2_3G
+if /I "%c%" EQU "4" goto :1.4.2_4G
+if /I "%c%" EQU "5" goto :1.4.2_5G
+if /I "%c%" EQU "6" goto :1.4.2_6G
+if /I "%c%" EQU "7" goto :1.4.2_7G
+if /I "%c%" EQU "8" goto :1.4.2_8G
+if /I "%c%" EQU "9" goto :1.4.2_9G
+if /I "%c%" EQU "10" goto :1.4.2_10G
+if /I "%c%" EQU "11" goto :1.4.2_11G
+if /I "%c%" EQU "12" goto :1.4.2_12G
+if /I "%c%" EQU "13" goto :1.4.2_13G
+if /I "%c%" EQU "14" goto :1.4.2_14G
+if /I "%c%" EQU "15" goto :1.4.2_15G
+if /I "%c%" EQU "16" goto :1.4.2_16G
+goto :1.4.2ramnull
+
+:1.4.2_1G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 1GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx1024M -Xms1024M -jar Server_1.4.2.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.2_2G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 2GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx2G -Xms2G -jar Server_1.4.2.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.2_3G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 3GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx3G -Xms3G -jar Server_1.4.2.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.2_4G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 4GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx4G -Xms4G -jar Server_1.4.2.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.2_5G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 5GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx5G -Xms5G -jar Server_1.4.2.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.2_6G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 6GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx6G -Xms6G -jar Server_1.4.2.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.2_7G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 7GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx7G -Xms7G -jar Server_1.4.2.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.2_8G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 8GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx8G -Xms8G -jar Server_1.4.2.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.2_9G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 9GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx9G -Xms9G -jar Server_1.4.2.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.2_10G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 10GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx10G -Xms10G -jar Server_1.4.2.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.2_11G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 11GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx11G -Xms11G -jar Server_1.4.2.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.2_12G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 12GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx12G -Xms12G -jar Server_1.4.2.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.2_13G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 13GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx13G -Xms13G -jar Server_1.4.2.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.2_14G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 14GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx14G -Xms14G -jar Server_1.4.2.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.2_15G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 15GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx15G -Xms15G -jar Server_1.4.2.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.2_16G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 16GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx16G -Xms16G -jar Server_1.4.2.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.4
+echo ---------------------------------------------
+echo(
+echo Has seleccionado la Version 1.4.4
+:1.4.4yn
+echo(
+set /P c=Es esa la Version de tu Servidor? [S/N]= 
+if /I "%c%" EQU "S" goto :1.4.4y
+if /I "%c%" EQU "N" goto :version
+goto :1.4.4yn
+
+:1.4.4y
+echo ---------------------------------------------
+echo(
+echo Perfecto, es la Version 1.4.4
+:1.4.4ram
+echo(
+set /P c=Escribe los GB's de Ram que asignaras para tu Servidor (Min.=1; Max.=16)= 
+if /I "%c%" EQU "1" goto :1.4.4_1G
+if /I "%c%" EQU "2" goto :1.4.4_2G
+if /I "%c%" EQU "3" goto :1.4.4_3G
+if /I "%c%" EQU "4" goto :1.4.4_4G
+if /I "%c%" EQU "5" goto :1.4.4_5G
+if /I "%c%" EQU "6" goto :1.4.4_6G
+if /I "%c%" EQU "7" goto :1.4.4_7G
+if /I "%c%" EQU "8" goto :1.4.4_8G
+if /I "%c%" EQU "9" goto :1.4.4_9G
+if /I "%c%" EQU "10" goto :1.4.4_10G
+if /I "%c%" EQU "11" goto :1.4.4_11G
+if /I "%c%" EQU "12" goto :1.4.4_12G
+if /I "%c%" EQU "13" goto :1.4.4_13G
+if /I "%c%" EQU "14" goto :1.4.4_14G
+if /I "%c%" EQU "15" goto :1.4.4_15G
+if /I "%c%" EQU "16" goto :1.4.4_16G
+goto :1.4.4ramnull
+
+:1.4.4ramnull
+echo(
+echo No puedes asignar esa cantidad de GB's de Ram a tu Servidor (Lo minimo es 1, lo maximo es 16)
+set /P c=Vuelve a escribir los GB's de Ram que asignaras para tu Servidor= 
+if /I "%c%" EQU "1" goto :1.4.4_1G
+if /I "%c%" EQU "2" goto :1.4.4_2G
+if /I "%c%" EQU "3" goto :1.4.4_3G
+if /I "%c%" EQU "4" goto :1.4.4_4G
+if /I "%c%" EQU "5" goto :1.4.4_5G
+if /I "%c%" EQU "6" goto :1.4.4_6G
+if /I "%c%" EQU "7" goto :1.4.4_7G
+if /I "%c%" EQU "8" goto :1.4.4_8G
+if /I "%c%" EQU "9" goto :1.4.4_9G
+if /I "%c%" EQU "10" goto :1.4.4_10G
+if /I "%c%" EQU "11" goto :1.4.4_11G
+if /I "%c%" EQU "12" goto :1.4.4_12G
+if /I "%c%" EQU "13" goto :1.4.4_13G
+if /I "%c%" EQU "14" goto :1.4.4_14G
+if /I "%c%" EQU "15" goto :1.4.4_15G
+if /I "%c%" EQU "16" goto :1.4.4_16G
+goto :1.4.4ramnull
+
+:1.4.4_1G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 1GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx1024M -Xms1024M -jar Server_1.4.4.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.4_2G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 2GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx2G -Xms2G -jar Server_1.4.4.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.4_3G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 3GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx3G -Xms3G -jar Server_1.4.4.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.4_4G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 4GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx4G -Xms4G -jar Server_1.4.4.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.4_5G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 5GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx5G -Xms5G -jar Server_1.4.4.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.4_6G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 6GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx6G -Xms6G -jar Server_1.4.4.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.4_7G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 7GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx7G -Xms7G -jar Server_1.4.4.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.4_8G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 8GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx8G -Xms8G -jar Server_1.4.4.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.4_9G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 9GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx9G -Xms9G -jar Server_1.4.4.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.4_10G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 10GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx10G -Xms10G -jar Server_1.4.4.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.4_11G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 11GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx11G -Xms11G -jar Server_1.4.4.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.4_12G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 12GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx12G -Xms12G -jar Server_1.4.4.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.4_13G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 13GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx13G -Xms13G -jar Server_1.4.4.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.4_14G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 14GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx14G -Xms14G -jar Server_1.4.4.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.4_15G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 15GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx15G -Xms15G -jar Server_1.4.4.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.4_16G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 16GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx16G -Xms16G -jar Server_1.4.4.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.5
+echo ---------------------------------------------
+echo(
+echo Has seleccionado la Version 1.4.5
+:1.4.5yn
+echo(
+set /P c=Es esa la Version de tu Servidor? [S/N]= 
+if /I "%c%" EQU "S" goto :1.4.5y
+if /I "%c%" EQU "N" goto :version
+goto :1.4.5yn
+
+:1.4.5y
+echo ---------------------------------------------
+echo(
+echo Perfecto, es la Version 1.4.5
+:1.4.5ram
+echo(
+set /P c=Escribe los GB's de Ram que asignaras para tu Servidor (Min.=1; Max.=16)= 
+if /I "%c%" EQU "1" goto :1.4.5_1G
+if /I "%c%" EQU "2" goto :1.4.5_2G
+if /I "%c%" EQU "3" goto :1.4.5_3G
+if /I "%c%" EQU "4" goto :1.4.5_4G
+if /I "%c%" EQU "5" goto :1.4.5_5G
+if /I "%c%" EQU "6" goto :1.4.5_6G
+if /I "%c%" EQU "7" goto :1.4.5_7G
+if /I "%c%" EQU "8" goto :1.4.5_8G
+if /I "%c%" EQU "9" goto :1.4.5_9G
+if /I "%c%" EQU "10" goto :1.4.5_10G
+if /I "%c%" EQU "11" goto :1.4.5_11G
+if /I "%c%" EQU "12" goto :1.4.5_12G
+if /I "%c%" EQU "13" goto :1.4.5_13G
+if /I "%c%" EQU "14" goto :1.4.5_14G
+if /I "%c%" EQU "15" goto :1.4.5_15G
+if /I "%c%" EQU "16" goto :1.4.5_16G
+goto :1.4.5ramnull
+
+:1.4.5ramnull
+echo(
+echo No puedes asignar esa cantidad de GB's de Ram a tu Servidor (Lo minimo es 1, lo maximo es 16)
+set /P c=Vuelve a escribir los GB's de Ram que asignaras para tu Servidor= 
+if /I "%c%" EQU "1" goto :1.4.5_1G
+if /I "%c%" EQU "2" goto :1.4.5_2G
+if /I "%c%" EQU "3" goto :1.4.5_3G
+if /I "%c%" EQU "4" goto :1.4.5_4G
+if /I "%c%" EQU "5" goto :1.4.5_5G
+if /I "%c%" EQU "6" goto :1.4.5_6G
+if /I "%c%" EQU "7" goto :1.4.5_7G
+if /I "%c%" EQU "8" goto :1.4.5_8G
+if /I "%c%" EQU "9" goto :1.4.5_9G
+if /I "%c%" EQU "10" goto :1.4.5_10G
+if /I "%c%" EQU "11" goto :1.4.5_11G
+if /I "%c%" EQU "12" goto :1.4.5_12G
+if /I "%c%" EQU "13" goto :1.4.5_13G
+if /I "%c%" EQU "14" goto :1.4.5_14G
+if /I "%c%" EQU "15" goto :1.4.5_15G
+if /I "%c%" EQU "16" goto :1.4.5_16G
+goto :1.4.5ramnull
+
+:1.4.5_1G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 1GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx1024M -Xms1024M -jar Server_1.4.5.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.5_2G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 2GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx2G -Xms2G -jar Server_1.4.5.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.5_3G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 3GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx3G -Xms3G -jar Server_1.4.5.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.5_4G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 4GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx4G -Xms4G -jar Server_1.4.5.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.5_5G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 5GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx5G -Xms5G -jar Server_1.4.5.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.5_6G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 6GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx6G -Xms6G -jar Server_1.4.5.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.5_7G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 7GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx7G -Xms7G -jar Server_1.4.5.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.5_8G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 8GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx8G -Xms8G -jar Server_1.4.5.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.5_9G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 9GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx9G -Xms9G -jar Server_1.4.5.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.5_10G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 10GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx10G -Xms10G -jar Server_1.4.5.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.5_11G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 11GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx11G -Xms11G -jar Server_1.4.5.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.5_12G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 12GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx12G -Xms12G -jar Server_1.4.5.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.5_13G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 13GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx13G -Xms13G -jar Server_1.4.5.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.5_14G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 14GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx14G -Xms14G -jar Server_1.4.5.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.5_15G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 15GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx15G -Xms15G -jar Server_1.4.5.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.5_16G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 16GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx16G -Xms16G -jar Server_1.4.5.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.6
+echo ---------------------------------------------
+echo(
+echo Has seleccionado la Version 1.4.6
+:1.4.6yn
+echo(
+set /P c=Es esa la Version de tu Servidor? [S/N]= 
+if /I "%c%" EQU "S" goto :1.4.6y
+if /I "%c%" EQU "N" goto :version
+goto :1.4.6yn
+
+:1.4.6y
+echo ---------------------------------------------
+echo(
+echo Perfecto, es la Version 1.4.6
+:1.4.6ram
+echo(
+set /P c=Escribe los GB's de Ram que asignaras para tu Servidor (Min.=1; Max.=16)= 
+if /I "%c%" EQU "1" goto :1.4.6_1G
+if /I "%c%" EQU "2" goto :1.4.6_2G
+if /I "%c%" EQU "3" goto :1.4.6_3G
+if /I "%c%" EQU "4" goto :1.4.6_4G
+if /I "%c%" EQU "5" goto :1.4.6_5G
+if /I "%c%" EQU "6" goto :1.4.6_6G
+if /I "%c%" EQU "7" goto :1.4.6_7G
+if /I "%c%" EQU "8" goto :1.4.6_8G
+if /I "%c%" EQU "9" goto :1.4.6_9G
+if /I "%c%" EQU "10" goto :1.4.6_10G
+if /I "%c%" EQU "11" goto :1.4.6_11G
+if /I "%c%" EQU "12" goto :1.4.6_12G
+if /I "%c%" EQU "13" goto :1.4.6_13G
+if /I "%c%" EQU "14" goto :1.4.6_14G
+if /I "%c%" EQU "15" goto :1.4.6_15G
+if /I "%c%" EQU "16" goto :1.4.6_16G
+goto :1.4.6ramnull
+
+:1.4.6ramnull
+echo(
+echo No puedes asignar esa cantidad de GB's de Ram a tu Servidor (Lo minimo es 1, lo maximo es 16)
+set /P c=Vuelve a escribir los GB's de Ram que asignaras para tu Servidor= 
+if /I "%c%" EQU "1" goto :1.4.6_1G
+if /I "%c%" EQU "2" goto :1.4.6_2G
+if /I "%c%" EQU "3" goto :1.4.6_3G
+if /I "%c%" EQU "4" goto :1.4.6_4G
+if /I "%c%" EQU "5" goto :1.4.6_5G
+if /I "%c%" EQU "6" goto :1.4.6_6G
+if /I "%c%" EQU "7" goto :1.4.6_7G
+if /I "%c%" EQU "8" goto :1.4.6_8G
+if /I "%c%" EQU "9" goto :1.4.6_9G
+if /I "%c%" EQU "10" goto :1.4.6_10G
+if /I "%c%" EQU "11" goto :1.4.6_11G
+if /I "%c%" EQU "12" goto :1.4.6_12G
+if /I "%c%" EQU "13" goto :1.4.6_13G
+if /I "%c%" EQU "14" goto :1.4.6_14G
+if /I "%c%" EQU "15" goto :1.4.6_15G
+if /I "%c%" EQU "16" goto :1.4.6_16G
+goto :1.4.6ramnull
+
+:1.4.6_1G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 1GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx1024M -Xms1024M -jar Server_1.4.6.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.6_2G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 2GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx2G -Xms2G -jar Server_1.4.6.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.6_3G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 3GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx3G -Xms3G -jar Server_1.4.6.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.6_4G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 4GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx4G -Xms4G -jar Server_1.4.6.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.6_5G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 5GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx5G -Xms5G -jar Server_1.4.6.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.6_6G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 6GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx6G -Xms6G -jar Server_1.4.6.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.6_7G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 7GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx7G -Xms7G -jar Server_1.4.6.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.6_8G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 8GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx8G -Xms8G -jar Server_1.4.6.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.6_9G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 9GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx9G -Xms9G -jar Server_1.4.6.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.6_10G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 10GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx10G -Xms10G -jar Server_1.4.6.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.6_11G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 11GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx11G -Xms11G -jar Server_1.4.6.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.6_12G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 12GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx12G -Xms12G -jar Server_1.4.6.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.6_13G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 13GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx13G -Xms13G -jar Server_1.4.6.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.6_14G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 14GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx14G -Xms14G -jar Server_1.4.6.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.6_15G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 15GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx15G -Xms15G -jar Server_1.4.6.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
+:1.4.6_16G
+echo ---------------------------------------------
+echo(
+echo Perfecto, se esta iniciando tu Servidor con 16GB de Ram
+echo(
+echo Espera un momento...
+echo(
+java -Xmx16G -Xms16G -jar Server_1.4.6.jar nogui
+echo -------------------------------------------
+echo(
+echo Muchas Gracias por usar esta Herramienta
+echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo -------------------------------------------
+pause
+exit
+
