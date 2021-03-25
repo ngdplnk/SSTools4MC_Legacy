@@ -7,7 +7,7 @@ echo -------------------------------------------------
 echo(
 echo Te damos la Bienvenida
 echo Con esta herramienta podras Configurar desde cero tu propio Servidor de Minecraft
-echo Al finalizar el proceso, debes cambiar el Nombre de la carpeta principal de tu Servidor,
+echo Al finalizar el proceso, DEBES CAMBIAR EL NOMBRE DE LA CARPETA DE TU SERVIDOR,
 echo O bien, cambiar su ubicacion (De esta manera no hara conflicto si deseas crear otro Servidor en algun momento)
 echo(
 echo Estas usando una Alpha, por lo que puede que falten funciones o estas esten incompletas
@@ -1610,18 +1610,19 @@ echo -------------------------------------------
 echo(
 echo Ahora es momento de configurar los parametros de tu Servidor. Se abrira un Bloc de Notas.
 echo Cuando lo cierres, tu Servidor estara configurado y listo para ser iniciado.
-echo Te recomendamos visitar la siguiente pagina que explica detalladamente cada uno de los parametros disponibles
+echo Se recomienda visitar la Wiki que explica detalladamente cada uno de los parametros disponibles
 echo(
-echo *Nota del Desarrollador: Pagina web aun no disponible. Sera accesible en una proxima Version de esta Herramienta :)
+echo https://minecraft.fandom.com/wiki/Server.properties
 echo(
 pause
-echo(
 cd %USERPROFILE%\Desktop\Servidor\
 server.properties
 echo -------------------------------------------
 echo(
 echo Listo! Ya tienes tu Servidor para que puedas jugar y disfrutar en el
-echo Puedes cambiar el nombre o la ubicacion de la carpeta de tu Servidor libremente
+echo Recuerda cambiar el nombre o la ubicacion de la carpeta de tu Servidor
+echo No olvides usar la Herramienta Lanzador cuando quieras abrir tu Servidor
+echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
 echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
