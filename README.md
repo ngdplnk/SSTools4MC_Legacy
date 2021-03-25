@@ -1,9 +1,24 @@
 # MCSSTools
-Minecraft Server Startup Tools (MCSSTools), es un conjunto de herramientas que te ayudará con tu Servidor de Minecraft.
+Minecraft Server Startup Tools (MCSSTools) es un conjunto de herramientas que te ayudará con tu Servidor de Minecraft.
 
-# Cómo obtengo estas Herramientas?
-Es muy fácil. Solo debes descargar la herramienta que necesites desde [Este Link](https://github.com/NGDPLNk/mcsstools/releases/latest) (Aún no hay mucho disponible)
-Y Listo!
+# Cómo obtengo y uso este Conjunto?
+- Debes descargar la última versión de este conjunto desde [Este Link](https://github.com/NGDPLNk/mcsstools/releases/latest)
+
+- Extrae el archivo ya descargado en donde lo desees, y sigue las instrucciones del archivo Instrucciones.txt que correspondan a la Herramienta que te gustaría usar.
+
+# Lanzador de Servidores 
+Para usar esta herramienta debes:
+- [Descargar la Versión más Reciente del Conjunto](https://github.com/NGDPLNk/mcsstools/releases/latest)
+- Luego, debes identificar la versión de la herramienta que corresponda a tu sistema operativo (x32 si es de 32 bits; x64 si es de 64 bits).
+- Copia la herramienta que corresponda a tu sistema operativo y luego pégala en la carpeta principal del Servidor que deseas abrir.
+- Abre la herramienta y sigue las instrucciones en pantalla (Especificar versión, Cantidad de Memoria RAM a asignar, etc...).
+
+# Instalador de Servidores
+Para usar esta herramienta debes:
+- [Descargar la Versión más Reciente del Conjunto](https://github.com/NGDPLNk/mcsstools/releases/latest)
+- Luego, debes identificar la versión de la herramienta que corresponda a tu sistema opertivo (x32 si es de 32 bits; x64 si es de 64 bits).
+- Abre la herramienta que corresponda a tu sistema operativo y sigue las instrucciones en pantalla (Elegir Versión, Leer CLUF de Minecraft, Configurar, etc...).
+- Cuando ya hayas creado tu Servidor correctamente, CAMBIA EL NOMBRE DE LA CARPETA DEL SERVIDOR O PONLA EN OTRA UBICACIÓN. Este paso es muy importante, ya que si no lo haces y vuelves a ejecutar la herramienta, esta sobreescribirá los archivos de la carpeta y causará un conflicto con tu Servidor original.
 
 # Información sobre Copyright y Disclaimer
 Copyright NGDPL Nk 2021
@@ -16,4 +31,9 @@ EL SOFTWARE SE PROPORCIONA "TAL CUAL", SIN GARANTÍA DE NINGÚN TIPO, EXPRESA O 
 
 "Minecraft" es una marca registrada de Mojang Synergies AB, y no tiene ninguna relación con este Software.
 
-NGDPL Nk no distribuye ningún producto ni servicio de Mojang Synergies AB.
+NGDPL Nk no es dueño ni tampoco almacena ningún producto de Mojang Synergies AB, por lo que no depende de NGDPL Nk la disponibilidad de estos mismos.
+
+Cada elemento, nombre, correspondiente a Mojang Synergies AB, es usado cumpliendo el [CLUF](https://www.minecraft.net/es-es/eula/) y las [Directrices de Marca y Herramientas](https://account.mojang.com/terms?ref=ft#brand).
+
+# Muchas Gracias Por Usar Este Conjunto De Herramientas :)
+~©2021 - NGDPL Nk.
