@@ -6,7 +6,12 @@ En caso de encontrarse problemas de seguridad, estas son las versiones con un so
 
 |     Versión      |    Tiene Soporte   |
 | ---------------- | ------------------ |
-| v0.0.0.1-Alpha   | :white_check_mark: |
+|  v0.0.0.1-Alpha  |        :x:         |
+| ---------------- | ------------------ |
+|  v0.0.0.2-Alpha  |        :x:         |
+| ---------------- | ------------------ |
+|  v0.0.0.3-Alpha  | :heavy_check_mark: |
+| ---------------- | ------------------ |
 
 ## Reportar una Vulnerabilidad
 
