@@ -1,8 +1,8 @@
 @echo off
 
 echo Lanzador de Servidores de Minecraft
-echo Parte del Conjunto MCSSTools v0.0.0.4-Alpha por NGDPL Nk
-echo ---------------------------------------------------------
+echo MCSSTools v0.0.0.4-Alpha por NGDPL Nk
+echo --------------------------------------
 
 :version
 echo(

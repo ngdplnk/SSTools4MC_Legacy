@@ -1,8 +1,8 @@
 @echo off
 
 echo Instalador de Servidores de Minecraft
-echo Parte del Conjunto MCSSTools v0.0.0.4-Alpha por NGDPL Nk
-echo ---------------------------------------------------------
+echo MCSSTools v0.0.0.4-Alpha por NGDPL Nk
+echo --------------------------------------
 
 :tipo
 echo(
@@ -1669,6 +1669,101 @@ if /I "%c%" EQU "13w42b" goto :13w42b
 if /I "%c%" EQU "13w43a" goto :13w43a
 if /I "%c%" EQU "1.7" goto :1.7
 if /I "%c%" EQU "1.7.1" goto :1.7.1
+if /I "%c%" EQU "13w47a" goto :13w47a
+if /I "%c%" EQU "13w47b" goto :13w47b
+if /I "%c%" EQU "13w47c" goto :13w47c
+if /I "%c%" EQU "13w47d" goto :13w47d
+if /I "%c%" EQU "13w47e" goto :13w47e
+if /I "%c%" EQU "13w48a" goto :13w48a
+if /I "%c%" EQU "13w48b" goto :13w48b
+if /I "%c%" EQU "13w49a" goto :13w49a
+if /I "%c%" EQU "14w02a" goto :14w02a
+if /I "%c%" EQU "14w02b" goto :14w02b
+if /I "%c%" EQU "14w02c" goto :14w02c
+if /I "%c%" EQU "14w03a" goto :14w03a
+if /I "%c%" EQU "14w03b" goto :14w03b
+if /I "%c%" EQU "14w04a" goto :14w04a
+if /I "%c%" EQU "14w04b" goto :14w04b
+if /I "%c%" EQU "14w05a" goto :14w05a
+if /I "%c%" EQU "14w05b" goto :14w05b
+if /I "%c%" EQU "14w06a" goto :14w06a
+if /I "%c%" EQU "14w06b" goto :14w06b
+if /I "%c%" EQU "14w07a" goto :14w07a
+if /I "%c%" EQU "14w08a" goto :14w08a
+if /I "%c%" EQU "14w10a" goto :14w10a
+if /I "%c%" EQU "14w10b" goto :14w10b
+if /I "%c%" EQU "14w10c" goto :14w10c
+if /I "%c%" EQU "1.7.6-pre1" goto :1.7.6-pre1
+if /I "%c%" EQU "1.7.6-pre2 goto :1.7.6-pre2
+if /I "%c%" EQU "14w11a" goto :14w11a
+if /I "%c%" EQU "14w11b" goto :14w11b
+if /I "%c%" EQU "14w17a" goto :14w17a
+if /I "%c%" EQU "14w18a" goto :14w18a
+if /I "%c%" EQU "14w18b" goto :14w18b
+if /I "%c%" EQU "14w19a" goto :14w19a
+if /I "%c%" EQU "1.7.10-pre1" goto :1.7.10-pre1
+if /I "%c%" EQU "1.7.10-pre2" goto :1.7.10-pre2
+if /I "%c%" EQU "1.7.10-pre3" goto :1.7.10-pre3
+if /I "%c%" EQU "1.7.10-pre4" goto :1.7.10-pre4
+if /I "%c%" EQU "14w20a" goto :14w20a
+if /I "%c%" EQU "14w20b" goto :14w20b
+if /I "%c%" EQU "14w21a" goto :14w21a
+if /I "%c%" EQU "14w21b" goto :14w21b
+if /I "%c%" EQU "14w25a" goto :14w25a
+if /I "%c%" EQU "14w25b" goto :14w25b
+if /I "%c%" EQU "14w26a" goto :14w26a
+if /I "%c%" EQU "14w26b" goto :14w26b
+if /I "%c%" EQU "14w26c" goto :14w26c
+if /I "%c%" EQU "14w27a" goto :14w27a
+if /I "%c%" EQU "14w27b" goto :14w27b
+if /I "%c%" EQU "14w28a" goto :14w28a
+if /I "%c%" EQU "14w28b" goto :14w28b
+if /I "%c%" EQU "14w29a" goto :14w29a
+if /I "%c%" EQU "14w29b" goto :14w29b
+if /I "%c%" EQU "14w30a" goto :14w30a
+if /I "%c%" EQU "14w30b" goto :14w30b
+if /I "%c%" EQU "14w30c" goto :14w30c
+if /I "%c%" EQU "14w31a" goto :14w31a
+if /I "%c%" EQU "14w32a" goto :14w32a
+if /I "%c%" EQU "14w32b" goto :14w32b
+if /I "%c%" EQU "14w32c" goto :14w32c
+if /I "%c%" EQU "14w32d" goto :14w32d
+if /I "%c%" EQU "14w33a" goto :14w33a
+if /I "%c%" EQU "14w33b" goto :14w33b
+if /I "%c%" EQU "14w33c" goto :14w33c
+if /I "%c%" EQU "14w34a" goto :14w34a
+if /I "%c%" EQU "14w34b" goto :14w34b
+if /I "%c%" EQU "14w34c" goto :14w34c
+if /I "%c%" EQU "14w34d" goto :14w34d
+if /I "%c%" EQU "1.8-pre1" goto :1.8-pre1
+if /I "%c%" EQU "1.8-pre2" goto :1.8-pre2
+if /I "%c%" EQU "1.8-pre3" goto :1.8-pre3
+if /I "%c%" EQU "1.8.1-pre1" goto :1.8.1-pre1
+if /I "%c%" EQU "1.8.1-pre2" goto :1.8.1-pre2
+if /I "%c%" EQU "1.8.1-pre3" goto :1.8.1-pre3
+if /I "%c%" EQU "1.8.1-pre4" goto :1.8.1-pre4
+if /I "%c%" EQU "1.8.1-pre5" goto :1.8.1-pre5
+if /I "%c%" EQU "1.8.2-pre1" goto :1.8.2-pre1
+if /I "%c%" EQU "1.8.2-pre2" goto :1.8.2-pre2
+if /I "%c%" EQU "1.8.2-pre3" goto :1.8.2-pre3
+if /I "%c%" EQU "1.8.2-pre4" goto :1.8.2-pre4
+if /I "%c%" EQU "1.8.2-pre5" goto :1.8.2-pre5
+if /I "%c%" EQU "1.8.2-pre6" goto :1.8.2-pre6
+if /I "%c%" EQU "1.8.2-pre7" goto :1.8.2-pre7
+if /I "%c%" EQU "15w14a" goto :15w14a
+if /I "%c%" EQU "15w31a" goto :15w31a
+if /I "%c%" EQU "15w31b" goto :15w31b
+if /I "%c%" EQU "15w31c" goto :15w31c
+if /I "%c%" EQU "15w32a" goto :15w32a
+if /I "%c%" EQU "15w32b" goto :15w32b
+if /I "%c%" EQU "15w32c" goto :15w32c
+if /I "%c%" EQU "15w33a" goto :15w33a
+if /I "%c%" EQU "15w33b" goto :15w33b
+if /I "%c%" EQU "15w33c" goto :15w33c
+if /I "%c%" EQU "15w34a" goto :15w34a
+if /I "%c%" EQU "15w34b" goto :15w34b
+if /I "%c%" EQU "15w34c" goto :15w34c
+if /I "%c%" EQU "15w34d" goto :15w34d
 
 REM Desde aquí comienza el proceso post-descarga y copia a directorios específicos de los archivos, independientemente de su versión.
 REM Esta anotación está hecha con el fin de hacer más ordenado este proceso y poder identificar de manera más fácil esta separación de contenido
@@ -1676,13 +1771,13 @@ REM Esta anotación está hecha con el fin de hacer más ordenado este proceso y
 :listo
 echo -------------------------------------------
 echo(
-echo Se han descargado todos los archivos necesarios para tu nuevo Servidor
+echo Se han descargado todos los archivos necesarios.
 :listo.1
-echo Te invitamos a leer el CLUF (Contrato de Licencia del Usuario final de Minecraft, o EULA) en el siguiente link
+echo Te invitamos a leer el CLUF (o EULA) en el siguiente link
 echo(
 echo https://account.mojang.com/documents/minecraft_eula
 echo(
-set /P c=Cuando lo hayas leido, escribe "ACEPTO" para aceptarlo y poder continuar= 
+set /P c=Cuando lo hayas leido, escribe "ACEPTO" para poder continuar= 
 if /I "%c%" EQU "ACEPTO" goto :eula
 goto :listo.1
 
@@ -1694,7 +1789,7 @@ goto :preconfig
 :preconfig
 echo -------------------------------------------
 echo(
-echo Ahora es momento de configurar los parametros de tu Servidor. Se abrira un Bloc de Notas.
+echo Ahora debes configurar los parametros de tu Servidor. Se abrira un Bloc de Notas.
 echo Cuando lo cierres, tu Servidor estara configurado y listo para ser iniciado.
 echo Se recomienda visitar la Wiki que explica detalladamente cada uno de los parametros disponibles
 echo(
@@ -1710,8 +1805,6 @@ echo Recuerda cambiar el nombre o la ubicacion de la carpeta de tu Servidor
 echo --------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.4-Alpha
-echo --------------------------------------------
 echo MIT License - Copyright 2021 NGDPL Nk.
 echo --------------------------------------------
 pause
