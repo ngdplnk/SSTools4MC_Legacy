@@ -35,5 +35,5 @@ NGDPL Nk no es dueño ni tampoco almacena ningún producto de Mojang Synergies A
 
 Cada elemento, nombre, correspondiente a Mojang Synergies AB, es usado cumpliendo el [CLUF](https://www.minecraft.net/es-es/eula/) y las [Directrices de Marca y Herramientas](https://account.mojang.com/terms?ref=ft#brand).
 
-# Muchas Gracias Por Usar Este Conjunto De Herramientas :)
+# Gracias Por Usar Este Conjunto De Herramientas
 ~©2021 - NGDPL Nk.
