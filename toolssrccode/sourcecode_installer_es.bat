@@ -1,22 +1,42 @@
 @echo off
 
-echo Herramienta de Creacion de Servidores de Minecraft
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
-echo Disenado para Crear Servidores Vanilla
-echo -------------------------------------------------
+echo Instalador de Servidores de Minecraft
+echo Parte del Conjunto MCSSTools v0.0.0.4-Alpha por NGDPL Nk
+echo ---------------------------------------------------------
+
+:tipo
 echo(
-echo Te damos la Bienvenida
-echo Con esta herramienta podras Configurar desde cero tu propio Servidor de Minecraft
-echo Al finalizar el proceso, DEBES CAMBIAR EL NOMBRE DE LA CARPETA DE TU SERVIDOR,
-echo O bien, cambiar su ubicacion (De esta manera no hara conflicto si deseas crear otro Servidor en algun momento)
+set /P c=Escribe el tipo de Servidor que deseas instalar (Snapshot/Stable)= 
+if /I "%c%" EQU "SNAPSHOT" goto :snapshot
+if /I "%c%" EQU "STABLE" goto :stable
+goto :tiponull
+
+:tiponull
 echo(
-echo Estas usando una Alpha, por lo que puede que falten funciones o estas esten incompletas
+echo Ese tipo de Server es incorrecto o no se encuentra disponible
+set /P c=Vuelve a escribir el tipo de Servidor que deseas instalar (Snapshot/Stable)= 
+if /I "%c%" EQU "SNAPSHOT" goto :snapshot
+if /I "%c%" EQU "STABLE" goto :stable
+goto :tiponull
+
+:stable
 echo ---------------------------------------------
-
-:version
 echo(
-echo Vamos a configurar tu Servidor de Minecraft
-set /P c=Para comenzar, escribe la Version de Minecraft para la que estara dedicado tu nuevo Servidor= 
+echo Has seleccionado un Servidor de tipo Stable
+:stableyn
+echo(
+set /P c=Es ese el tipo de Servidor que deseas instalar? [S/N]= 
+if /I "%c%" EQU "S" goto :stabley
+if /I "%c%" EQU "N" goto :tipo
+goto :stableyn
+
+:stabley
+echo ---------------------------------------------
+echo(
+echo Perfecto, es un Servidor tipo Stable
+:stableversion
+echo(
+set /P c=Escribe la Version de Minecraft Stable para la que estara dedicado tu nuevo Servidor= 
 if /I "%c%" EQU "1.2.1" goto :1.2.1
 if /I "%c%" EQU "1.2.2" goto :1.2.2
 if /I "%c%" EQU "1.2.3" goto :1.2.3
@@ -84,12 +104,12 @@ if /I "%c%" EQU "1.16.2" goto :1.16.2
 if /I "%c%" EQU "1.16.3" goto :1.16.3
 if /I "%c%" EQU "1.16.4" goto :1.16.4
 if /I "%c%" EQU "1.16.5" goto :1.16.5
-goto :versionnull
+goto :stablenull
 
-:versionnull
+:stablenull
 echo(
-echo Esa Version no esta disponible o es incorrecta
-set /P c=Vuelve a escribir la Version de Minecraft para la que estara dedicado tu nuevo Servidor= 
+echo Esa Version no esta disponible, es incorrecta o no corresponde a una de tipo Stable
+set /P c=Vuelve a escribir la Version de Minecraft Stable para la que estara dedicado tu nuevo Servidor= 
 if /I "%c%" EQU "1.2.1" goto :1.2.1
 if /I "%c%" EQU "1.2.2" goto :1.2.2
 if /I "%c%" EQU "1.2.3" goto :1.2.3
@@ -157,7 +177,7 @@ if /I "%c%" EQU "1.16.2" goto :1.16.2
 if /I "%c%" EQU "1.16.3" goto :1.16.3
 if /I "%c%" EQU "1.16.4" goto :1.16.4
 if /I "%c%" EQU "1.16.5" goto :1.16.5
-goto :versionnull
+goto :stablenull
 
 :1.2.1
 echo ---------------------------------------------
@@ -1587,6 +1607,72 @@ copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
 goto :listo
 
+REM Desde aquí comienza el listado de Versiones correspondientes a Snapshot
+REM Esta anotación está hecha con el fin de hacer más ordenado este proceso y poder identificar de manera más fácil esta separación de contenido
+
+:snapshot
+echo ---------------------------------------------
+echo(
+echo Has seleccionado un Servidor de tipo Snapshot
+:snapshotyn
+echo(
+set /P c=Es ese el tipo de Servidor que deseas instalar? [S/N]= 
+if /I "%c%" EQU "S" goto :snapshoty
+if /I "%c%" EQU "N" goto :tipo
+goto :snapshotyn
+
+:snapshoty
+echo ---------------------------------------------
+echo(
+echo Perfecto, es un Servidor tipo Snapshot
+:stableversion
+echo(
+set /P c=Escribe la Version de Minecraft Snapshot para la que estara dedicado tu nuevo Servidor= 
+if /I "%c%" EQU "1.3" goto :1.3
+if /I "%c%" EQU "1.4" goto :1.4
+if /I "%c%" EQU "1.4.1" goto :1.4.1
+if /I "%c%" EQU "1.4.3" goto :1.4.3
+if /I "%c%" EQU "1.5" goto :1.5
+if /I "%c%" EQU "13w16a" goto :13w16a
+if /I "%c%" EQU "13w16b" goto :13w16b
+if /I "%c%" EQU "13w17a" goto :13w17a
+if /I "%c%" EQU "13w18a" goto :13w18a
+if /I "%c%" EQU "13w18b" goto :13w18b
+if /I "%c%" EQU "13w18c" goto :13w18c
+if /I "%c%" EQU "13w19a" goto :13w19a
+if /I "%c%" EQU "13w21a" goto :13w21a
+if /I "%c%" EQU "13w21b" goto :13w21b
+if /I "%c%" EQU "13w22a" goto :13w22a
+if /I "%c%" EQU "13w23a" goto :13w23a
+if /I "%c%" EQU "13w23b" goto :13w23b
+if /I "%c%" EQU "13w24a" goto :13w24a
+if /I "%c%" EQU "13w24b" goto :13w24b
+if /I "%c%" EQU "13w25a" goto :13w25a
+if /I "%c%" EQU "13w25b" goto :13w25b
+if /I "%c%" EQU "13w25c" goto :13w25c
+if /I "%c%" EQU "13w26a" goto :13w26a
+if /I "%c%" EQU "1.6" goto :1.6
+if /I "%c%" EQU "13w36a" goto :13w36a
+if /I "%c%" EQU "13w36b" goto :13w36b
+if /I "%c%" EQU "13w37a" goto :13w37a
+if /I "%c%" EQU "13w37b" goto :13w37b
+if /I "%c%" EQU "1.6.3" goto :1.6.3
+if /I "%c%" EQU "13w38a" goto :13w38a
+if /I "%c%" EQU "13w38b" goto :13w38b
+if /I "%c%" EQU "13w38c" goto :13w38c
+if /I "%c%" EQU "13w39a" goto :13w39a
+if /I "%c%" EQU "13w39b" goto :13w39b
+if /I "%c%" EQU "13w41a" goto :13w41a
+if /I "%c%" EQU "13w41b" goto :13w41b
+if /I "%c%" EQU "13w42a" goto :13w42a
+if /I "%c%" EQU "13w42b" goto :13w42b
+if /I "%c%" EQU "13w43a" goto :13w43a
+if /I "%c%" EQU "1.7" goto :1.7
+if /I "%c%" EQU "1.7.1" goto :1.7.1
+
+REM Desde aquí comienza el proceso post-descarga y copia a directorios específicos de los archivos, independientemente de su versión.
+REM Esta anotación está hecha con el fin de hacer más ordenado este proceso y poder identificar de manera más fácil esta separación de contenido
+
 :listo
 echo -------------------------------------------
 echo(
@@ -1617,15 +1703,16 @@ echo(
 pause
 cd %USERPROFILE%\Desktop\Servidor\
 server.properties
-echo -------------------------------------------
+echo --------------------------------------------
 echo(
-echo Listo! Ya tienes tu Servidor para que puedas jugar y disfrutar en el
+echo Listo, ya tienes instalado tu nuevo Servidor
 echo Recuerda cambiar el nombre o la ubicacion de la carpeta de tu Servidor
-echo No olvides usar la Herramienta Lanzador cuando quieras abrir tu Servidor
-echo -------------------------------------------
+echo --------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
-echo -------------------------------------------
+echo Parte del Conjunto MCSSTools v0.0.0.4-Alpha
+echo --------------------------------------------
+echo MIT License - Copyright 2021 NGDPL Nk.
+echo --------------------------------------------
 pause
 exit

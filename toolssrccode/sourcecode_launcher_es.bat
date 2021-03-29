@@ -1,19 +1,8 @@
 @echo off
 
-echo Herramienta de Inicio de Servidores de Minecraft
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
-echo Disenado para Iniciar Servidores Vanilla
-echo -------------------------------------------------
-echo(
-echo Te damos la Bienvenida
-echo Con esta herramienta podras Iniciar tu Servidor de Minecraft
-echo Recuerda que debes usar esta Herramienta desde la carpeta principal de tu Servidor,
-echo De lo contrario, la Herramienta no podra acceder a tu Servidor y mucho menos iniciarlo.
-echo(
-echo Si necesitas ayuda para usar esta herramienta, consulta el archivo INSTRUCCIONES.txt que descargaste junto con la herramienta.
-echo(
-echo Estas usando una Alpha, por lo que puede que falten funciones o estas esten incompletas
-echo ---------------------------------------------
+echo Lanzador de Servidores de Minecraft
+echo Parte del Conjunto MCSSTools v0.0.0.4-Alpha por NGDPL Nk
+echo ---------------------------------------------------------
 
 :version
 echo(
