@@ -1625,7 +1625,7 @@ goto :snapshotyn
 echo ---------------------------------------------
 echo(
 echo Perfecto, es un Servidor tipo Snapshot
-:stableversion
+:snapshotversion
 echo(
 set /P c=Escribe la Version de Minecraft Snapshot para la que estara dedicado tu nuevo Servidor= 
 if /I "%c%" EQU "1.3" goto :1.3
@@ -1694,7 +1694,7 @@ if /I "%c%" EQU "14w10a" goto :14w10a
 if /I "%c%" EQU "14w10b" goto :14w10b
 if /I "%c%" EQU "14w10c" goto :14w10c
 if /I "%c%" EQU "1.7.6-pre1" goto :1.7.6-pre1
-if /I "%c%" EQU "1.7.6-pre2 goto :1.7.6-pre2
+if /I "%c%" EQU "1.7.6-pre2" goto :1.7.6-pre2
 if /I "%c%" EQU "14w11a" goto :14w11a
 if /I "%c%" EQU "14w11b" goto :14w11b
 if /I "%c%" EQU "14w17a" goto :14w17a
