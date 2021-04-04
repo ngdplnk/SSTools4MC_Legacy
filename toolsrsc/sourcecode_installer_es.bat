@@ -1,42 +1,51 @@
 @echo off
 
-echo Instalador de Servidores de Minecraft
-echo MCSSTools v0.0.0.4-Alpha por NGDPL Nk
-echo --------------------------------------
-
 :tipo
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
-set /P c=Escribe el tipo de Servidor que deseas instalar (Snapshot/Stable)= 
-if /I "%c%" EQU "SNAPSHOT" goto :snapshot
-if /I "%c%" EQU "STABLE" goto :stable
+set /P c=Escribe el tipo de Servidor que deseas instalar (Estable/Snapshot)= 
+if /I "%c%" EQU "SNAPSHOT" goto :snapshotyn
+if /I "%c%" EQU "ESTABLE" goto :stableyn
 goto :tiponull
 
 :tiponull
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Ese tipo de Server es incorrecto o no se encuentra disponible
-set /P c=Vuelve a escribir el tipo de Servidor que deseas instalar (Snapshot/Stable)= 
-if /I "%c%" EQU "SNAPSHOT" goto :snapshot
-if /I "%c%" EQU "STABLE" goto :stable
+echo(
+set /P c=Vuelve a escribir el tipo de Servidor que deseas instalar (Estable/Snapshot)= 
+if /I "%c%" EQU "SNAPSHOT" goto :snapshotyn
+if /I "%c%" EQU "ESTABLE" goto :stableyn
 goto :tiponull
 
-:stable
-echo ---------------------------------------------
-echo(
-echo Has seleccionado un Servidor de tipo Stable
 :stableyn
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Has seleccionado un Servidor de tipo Estable
 echo(
 set /P c=Es ese el tipo de Servidor que deseas instalar? [S/N]= 
-if /I "%c%" EQU "S" goto :stabley
+if /I "%c%" EQU "S" goto :stableversion
 if /I "%c%" EQU "N" goto :tipo
 goto :stableyn
 
-:stabley
-echo ---------------------------------------------
-echo(
-echo Perfecto, es un Servidor tipo Stable
 :stableversion
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
-set /P c=Escribe la Version de Minecraft Stable para la que estara dedicado tu nuevo Servidor= 
+echo Perfecto, es un Servidor tipo Estable
+echo(
+set /P c=Escribe la Version de Minecraft Estable para tu nuevo Servidor= 
 if /I "%c%" EQU "1.2.1" goto :1.2.1
 if /I "%c%" EQU "1.2.2" goto :1.2.2
 if /I "%c%" EQU "1.2.3" goto :1.2.3
@@ -107,9 +116,14 @@ if /I "%c%" EQU "1.16.5" goto :1.16.5
 goto :stablenull
 
 :stablenull
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
-echo Esa Version no esta disponible, es incorrecta o no corresponde a una de tipo Stable
-set /P c=Vuelve a escribir la Version de Minecraft Stable para la que estara dedicado tu nuevo Servidor= 
+echo Esa Version no esta disponible, es incorrecta o no corresponde a una de tipo Estable
+echo(
+set /P c=Vuelve a escribir la Version de Minecraft Estable para tu nuevo Servidor= 
 if /I "%c%" EQU "1.2.1" goto :1.2.1
 if /I "%c%" EQU "1.2.2" goto :1.2.2
 if /I "%c%" EQU "1.2.3" goto :1.2.3
@@ -180,11 +194,20 @@ if /I "%c%" EQU "1.16.5" goto :1.16.5
 goto :stablenull
 
 :1.2.1
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.2.1
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -201,11 +224,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.2.2
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.2.2
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -222,11 +254,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.2.3
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.2.3
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -243,11 +284,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.2.4
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.2.4
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -264,11 +314,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.2.5
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.2.5
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -285,11 +344,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.3.1
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.3.1
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -306,11 +374,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.3.2
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.3.2
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -327,11 +404,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.4.2
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.4.2
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -348,11 +434,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.4.3
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.4.3
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -369,11 +464,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.4.4
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.4.4
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -390,11 +494,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.4.5
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.4.5
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -411,11 +524,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.4.6
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.4.6
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -432,11 +554,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.4.7
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.4.7
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -453,11 +584,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.5.1
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.5.1
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -474,11 +614,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.5.2
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.5.2
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -495,11 +644,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.6.1
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.6.1
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -516,11 +674,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.6.2
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.6.2
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -537,11 +704,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.6.4
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.6.4
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -558,11 +734,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.7.2
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.7.2
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -579,11 +764,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.7.3
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.7.3
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -600,11 +794,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.7.4
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.7.4
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -621,11 +824,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.7.5
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.7.5
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -642,11 +854,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.7.6
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.7.6
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -663,11 +884,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.7.7
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.7.7
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -684,11 +914,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.7.8
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.7.8
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -705,11 +944,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.7.9
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.7.9
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -726,11 +974,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.7.10
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.7.10
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -747,11 +1004,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.8
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.8
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -768,11 +1034,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.8.1
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.8.1
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -789,11 +1064,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.8.2
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.8.2
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -810,11 +1094,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.8.3
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.8.3
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -831,11 +1124,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.8.4
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.8.4
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -852,11 +1154,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.8.5
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.8.5
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -873,11 +1184,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.8.6
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.8.6
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -894,11 +1214,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.8.7
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.8.7
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -915,11 +1244,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.8.8
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.8.8
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -936,11 +1274,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.8.9
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.8.9
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -957,11 +1304,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.9
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.9
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -978,11 +1334,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.9.1
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.9.1
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -999,11 +1364,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.9.2
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.9.2
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -1020,11 +1394,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.9.3
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.9.3
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -1041,11 +1424,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.9.4
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.9.4
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -1062,11 +1454,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.10
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.10
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -1083,11 +1484,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.10.1
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.10.1
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -1104,11 +1514,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.10.2
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.10.2
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -1125,11 +1544,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.11
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.11
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -1146,11 +1574,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.11.1
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.11.1
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -1167,11 +1604,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.11.2
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.11.2
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -1188,11 +1634,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.12
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.12
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -1209,11 +1664,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.12.1
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.12.1
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -1230,11 +1694,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.12.2
-echo ---------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.12.2
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -1251,11 +1724,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.13
-echo --------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.13
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -1272,11 +1754,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.13.1
-echo --------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.13.1
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -1293,11 +1784,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.13.2
-echo --------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.13.2
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -1314,11 +1814,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.14
-echo --------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.14
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -1335,11 +1844,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.14.1
-echo --------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.14.1
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -1356,11 +1874,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.14.2
-echo --------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.14.2
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -1377,11 +1904,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.14.3
-echo --------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.14.3
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -1398,11 +1934,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.14.4
-echo --------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.14.4
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -1419,11 +1964,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.15
-echo --------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.15
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -1440,11 +1994,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.15.1
-echo --------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.15.1
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -1461,11 +2024,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.15.2
-echo --------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.15.2
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -1482,11 +2054,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.16
-echo --------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.16
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -1503,11 +2084,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.16.1
-echo --------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.16.1
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -1524,11 +2114,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.16.2
-echo --------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.16.2
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -1545,11 +2144,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.16.3
-echo --------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.16.3
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -1566,11 +2174,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.16.4
-echo --------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.16.4
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -1587,11 +2204,20 @@ rd /s /q C:\MCSSTools
 goto :listo
 
 :1.16.5
-echo --------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Version 1.16.5
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
 pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
@@ -1610,24 +2236,28 @@ goto :listo
 REM Desde aquí comienza el listado de Versiones correspondientes a Snapshot
 REM Esta anotación está hecha con el fin de hacer más ordenado este proceso y poder identificar de manera más fácil esta separación de contenido
 
-:snapshot
-echo ---------------------------------------------
+:snapshotyn
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Has seleccionado un Servidor de tipo Snapshot
-:snapshotyn
 echo(
 set /P c=Es ese el tipo de Servidor que deseas instalar? [S/N]= 
-if /I "%c%" EQU "S" goto :snapshoty
+if /I "%c%" EQU "S" goto :snapshotversion
 if /I "%c%" EQU "N" goto :tipo
 goto :snapshotyn
 
-:snapshoty
-echo ---------------------------------------------
+:snapshotversion
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Perfecto, es un Servidor tipo Snapshot
-:snapshotversion
 echo(
-set /P c=Escribe la Version de Minecraft Snapshot para la que estara dedicado tu nuevo Servidor= 
+set /P c=Escribe la Version de Minecraft Snapshot para tu nuevo Servidor= 
 if /I "%c%" EQU "1.3" goto :1.3
 if /I "%c%" EQU "1.4" goto :1.4
 if /I "%c%" EQU "1.4.1" goto :1.4.1
@@ -1954,22 +2584,936 @@ if /I "%c%" EQU "19w12b" goto :19w12b
 if /I "%c%" EQU "19w13a" goto :19w13a
 if /I "%c%" EQU "19w13b" goto :19w13b
 if /I "%c%" EQU "3D Shareware v1.34" goto :3D Shareware v1.34
+if /I "%c%" EQU "19w14a" goto :19w14a
+if /I "%c%" EQU "19w14b" goto :19w14b
+if /I "%c%" EQU "1.14 Pre-Release 1" goto :1.14 Pre-Release 1
+if /I "%c%" EQU "1.14 Pre-Release 2" goto :1.14 Pre-Release 2
+if /I "%c%" EQU "1.14 Pre-Release 3" goto :1.14 Pre-Release 3
+if /I "%c%" EQU "1.14 Pre-Release 4" goto :1.14 Pre-Release 4
+if /I "%c%" EQU "1.14 Pre-Release 5" goto :1.14 Pre-Release 5
+if /I "%c%" EQU "1.14.1 Pre-Release 1" goto :1.14.1 Pre-Release 1
+if /I "%c%" EQU "1.14.1 Pre-Release 2" goto :1.14.1 Pre-Release 2
+if /I "%c%" EQU "1.14.2 Pre-Release 1" goto :1.14.2 Pre-Release 1
+if /I "%c%" EQU "1.14.2 Pre-Release 2" goto :1.14.2 Pre-Release 2
+if /I "%c%" EQU "1.14.2 Pre-Release 3" goto :1.14.2 Pre-Release 3
+if /I "%c%" EQU "1.14.2 Pre-Release 4" goto :1.14.2 Pre-Release 4
+if /I "%c%" EQU "1.14.3-pre1" goto :1.14.3-pre1
+if /I "%c%" EQU "1.14.3-pre2" goto :1.14.3-pre2
+if /I "%c%" EQU "1.14.3-pre3" goto :1.14.3-pre3
+if /I "%c%" EQU "1.14.3-pre4" goto :1.14.3-pre4
+if /I "%c%" EQU "1.14.4-pre1" goto :1.14.4-pre1
+if /I "%c%" EQU "1.14.4-pre2" goto :1.14.4-pre2
+if /I "%c%" EQU "1.14.4-pre3" goto :1.14.4-pre3
+if /I "%c%" EQU "1.14.4-pre4" goto :1.14.4-pre4
+if /I "%c%" EQU "1.14.4-pre5" goto :1.14.4-pre5
+if /I "%c%" EQU "1.14.4-pre6" goto :1.14.4-pre6
+if /I "%c%" EQU "1.14.4-pre7" goto :1.14.4-pre7
+if /I "%c%" EQU "19w34a" goto :19w34a
+if /I "%c%" EQU "19w35a" goto :19w35a
+if /I "%c%" EQU "19w36a" goto :19w36a
+if /I "%c%" EQU "19w37a" goto :19w37a
+if /I "%c%" EQU "19w38a" goto :19w38a
+if /I "%c%" EQU "19w38b" goto :19w38b
+if /I "%c%" EQU "19w39a" goto :19w39a
+if /I "%c%" EQU "19w40a" goto :19w40a
+if /I "%c%" EQU "19w41a" goto :19w41a
+if /I "%c%" EQU "19w42a" goto :19w42a
+if /I "%c%" EQU "19w44a" goto :19w44a
+if /I "%c%" EQU "19w45a" goto :19w45a
+if /I "%c%" EQU "19w45b" goto :19w45b
+if /I "%c%" EQU "19w46a" goto :19w46a
+if /I "%c%" EQU "19w46b" goto :19w46b
+if /I "%c%" EQU "1.15-pre1" goto :1.15-pre1
+if /I "%c%" EQU "1.15-pre2" goto :1.15-pre2
+if /I "%c%" EQU "1.15-pre3" goto :1.15-pre3
+if /I "%c%" EQU "1.15-pre4" goto :1.15-pre4
+if /I "%c%" EQU "1.15-pre5" goto :1.15-pre5
+if /I "%c%" EQU "1.15-pre6" goto :1.15-pre6
+if /I "%c%" EQU "1.15-pre7" goto :1.15-pre7
+if /I "%c%" EQU "1.15.1-pre1" goto :1.15.1-pre1
+if /I "%c%" EQU "1.15.2-pre1" goto :1.15.2-pre1
+if /I "%c%" EQU "1.15.2-pre2" goto :1.15.2-pre2
+if /I "%c%" EQU "20w06a" goto :20w06a
+if /I "%c%" EQU "20w07a" goto :20w07a
+if /I "%c%" EQU "20w08a" goto :20w08a
+if /I "%c%" EQU "20w09a" goto :20w09a
+if /I "%c%" EQU "20w10a" goto :20w10a
+if /I "%c%" EQU "20w11a" goto :20w11a
+if /I "%c%" EQU "20w12a" goto :20w12a
+if /I "%c%" EQU "20w13a" goto :20w13a
+if /I "%c%" EQU "20w13b" goto :20w13b
+if /I "%c%" EQU "20w14infinite" goto :20w14infinite
+if /I "%c%" EQU "20w14a" goto :20w14a
+if /I "%c%" EQU "20w15a" goto :20w15a
+if /I "%c%" EQU "20w16a" goto :20w16a
+if /I "%c%" EQU "20w17a" goto :20w17a
+if /I "%c%" EQU "20w18a" goto :20w18a
+if /I "%c%" EQU "20w19a" goto :20w19a
+if /I "%c%" EQU "20w20a" goto :20w20a
+if /I "%c%" EQU "20w20b" goto :20w20b
+if /I "%c%" EQU "20w21a" goto :20w21a
+if /I "%c%" EQU "20w22a" goto :20w22a
+if /I "%c%" EQU "1.16-pre1" goto :1.16-pre1
+if /I "%c%" EQU "1.16-pre2" goto :1.16-pre2
+if /I "%c%" EQU "1.16-pre3" goto :1.16-pre3
+if /I "%c%" EQU "1.16-pre4" goto :1.16-pre4
+if /I "%c%" EQU "1.16-pre5" goto :1.16-pre5
+if /I "%c%" EQU "1.16-pre6" goto :1.16-pre6
+if /I "%c%" EQU "1.16-pre7" goto :1.16-pre7
+if /I "%c%" EQU "1.16-pre8" goto :1.16-pre8
+if /I "%c%" EQU "1.16-rc1" goto :1.16-rc1
+if /I "%c%" EQU "20w27a" goto :20w27a
+if /I "%c%" EQU "20w28a" goto :20w28a
+if /I "%c%" EQU "20w29a" goto :20w29a
+if /I "%c%" EQU "20w30a" goto :20w30a
+if /I "%c%" EQU "1.16.2-pre1" goto :1.16.2-pre1
+if /I "%c%" EQU "1.16.2-pre2" goto :1.16.2-pre2
+if /I "%c%" EQU "1.16.2-pre3" goto :1.16.2-pre3
+if /I "%c%" EQU "1.16.2-rc1" goto :1.16.2-rc1
+if /I "%c%" EQU "1.16.2-rc2" goto :1.16.2-rc2
+if /I "%c%" EQU "1.16.3-rc1" goto :1.16.3-rc1
+if /I "%c%" EQU "1.16.4-pre1" goto :1.16.4-pre1
+if /I "%c%" EQU "1.16.4-pre2" goto :1.16.4-pre2
+if /I "%c%" EQU "1.16.4-rc1" goto :1.16.4-rc1
+if /I "%c%" EQU "20w45a" goto :20w45a
+if /I "%c%" EQU "20w46a" goto :20w46a
+if /I "%c%" EQU "20w48a" goto :20w48a
+if /I "%c%" EQU "20w49a" goto :20w49a
+if /I "%c%" EQU "20w51a" goto :20w51a
+if /I "%c%" EQU "1.16.5-rc1" goto :1.16.5-rc1
+if /I "%c%" EQU "21w03a" goto :21w03a
+if /I "%c%" EQU "21w05a" goto :21w05a
+if /I "%c%" EQU "21w05b" goto :21w05b
+if /I "%c%" EQU "21w06a" goto :21w06a
+if /I "%c%" EQU "21w07a" goto :21w07a
+if /I "%c%" EQU "21w08a" goto :21w08a
+if /I "%c%" EQU "21w08b" goto :21w08b
+if /I "%c%" EQU "21w10a" goto :21w10a
+if /I "%c%" EQU "21w11a" goto :21w11a
+if /I "%c%" EQU "21w13a" goto :21w13a
+goto :snapshotnull
+
+:snapshotnull
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Esa Version no esta disponible, es incorrecta o no corresponde a una de tipo Estable
+echo(
+set /P c=Vuelve a escribir la Version de Minecraft Snapshot para tu nuevo Servidor= 
+if /I "%c%" EQU "1.3" goto :1.3
+if /I "%c%" EQU "1.4" goto :1.4
+if /I "%c%" EQU "1.4.1" goto :1.4.1
+if /I "%c%" EQU "1.4.3" goto :1.4.3
+if /I "%c%" EQU "1.5" goto :1.5
+if /I "%c%" EQU "13w16a" goto :13w16a
+if /I "%c%" EQU "13w16b" goto :13w16b
+if /I "%c%" EQU "13w17a" goto :13w17a
+if /I "%c%" EQU "13w18a" goto :13w18a
+if /I "%c%" EQU "13w18b" goto :13w18b
+if /I "%c%" EQU "13w18c" goto :13w18c
+if /I "%c%" EQU "13w19a" goto :13w19a
+if /I "%c%" EQU "13w21a" goto :13w21a
+if /I "%c%" EQU "13w21b" goto :13w21b
+if /I "%c%" EQU "13w22a" goto :13w22a
+if /I "%c%" EQU "13w23a" goto :13w23a
+if /I "%c%" EQU "13w23b" goto :13w23b
+if /I "%c%" EQU "13w24a" goto :13w24a
+if /I "%c%" EQU "13w24b" goto :13w24b
+if /I "%c%" EQU "13w25a" goto :13w25a
+if /I "%c%" EQU "13w25b" goto :13w25b
+if /I "%c%" EQU "13w25c" goto :13w25c
+if /I "%c%" EQU "13w26a" goto :13w26a
+if /I "%c%" EQU "1.6" goto :1.6
+if /I "%c%" EQU "13w36a" goto :13w36a
+if /I "%c%" EQU "13w36b" goto :13w36b
+if /I "%c%" EQU "13w37a" goto :13w37a
+if /I "%c%" EQU "13w37b" goto :13w37b
+if /I "%c%" EQU "1.6.3" goto :1.6.3
+if /I "%c%" EQU "13w38a" goto :13w38a
+if /I "%c%" EQU "13w38b" goto :13w38b
+if /I "%c%" EQU "13w38c" goto :13w38c
+if /I "%c%" EQU "13w39a" goto :13w39a
+if /I "%c%" EQU "13w39b" goto :13w39b
+if /I "%c%" EQU "13w41a" goto :13w41a
+if /I "%c%" EQU "13w41b" goto :13w41b
+if /I "%c%" EQU "13w42a" goto :13w42a
+if /I "%c%" EQU "13w42b" goto :13w42b
+if /I "%c%" EQU "13w43a" goto :13w43a
+if /I "%c%" EQU "1.7" goto :1.7
+if /I "%c%" EQU "1.7.1" goto :1.7.1
+if /I "%c%" EQU "13w47a" goto :13w47a
+if /I "%c%" EQU "13w47b" goto :13w47b
+if /I "%c%" EQU "13w47c" goto :13w47c
+if /I "%c%" EQU "13w47d" goto :13w47d
+if /I "%c%" EQU "13w47e" goto :13w47e
+if /I "%c%" EQU "13w48a" goto :13w48a
+if /I "%c%" EQU "13w48b" goto :13w48b
+if /I "%c%" EQU "13w49a" goto :13w49a
+if /I "%c%" EQU "14w02a" goto :14w02a
+if /I "%c%" EQU "14w02b" goto :14w02b
+if /I "%c%" EQU "14w02c" goto :14w02c
+if /I "%c%" EQU "14w03a" goto :14w03a
+if /I "%c%" EQU "14w03b" goto :14w03b
+if /I "%c%" EQU "14w04a" goto :14w04a
+if /I "%c%" EQU "14w04b" goto :14w04b
+if /I "%c%" EQU "14w05a" goto :14w05a
+if /I "%c%" EQU "14w05b" goto :14w05b
+if /I "%c%" EQU "14w06a" goto :14w06a
+if /I "%c%" EQU "14w06b" goto :14w06b
+if /I "%c%" EQU "14w07a" goto :14w07a
+if /I "%c%" EQU "14w08a" goto :14w08a
+if /I "%c%" EQU "14w10a" goto :14w10a
+if /I "%c%" EQU "14w10b" goto :14w10b
+if /I "%c%" EQU "14w10c" goto :14w10c
+if /I "%c%" EQU "1.7.6-pre1" goto :1.7.6-pre1
+if /I "%c%" EQU "1.7.6-pre2" goto :1.7.6-pre2
+if /I "%c%" EQU "14w11a" goto :14w11a
+if /I "%c%" EQU "14w11b" goto :14w11b
+if /I "%c%" EQU "14w17a" goto :14w17a
+if /I "%c%" EQU "14w18a" goto :14w18a
+if /I "%c%" EQU "14w18b" goto :14w18b
+if /I "%c%" EQU "14w19a" goto :14w19a
+if /I "%c%" EQU "1.7.10-pre1" goto :1.7.10-pre1
+if /I "%c%" EQU "1.7.10-pre2" goto :1.7.10-pre2
+if /I "%c%" EQU "1.7.10-pre3" goto :1.7.10-pre3
+if /I "%c%" EQU "1.7.10-pre4" goto :1.7.10-pre4
+if /I "%c%" EQU "14w20a" goto :14w20a
+if /I "%c%" EQU "14w20b" goto :14w20b
+if /I "%c%" EQU "14w21a" goto :14w21a
+if /I "%c%" EQU "14w21b" goto :14w21b
+if /I "%c%" EQU "14w25a" goto :14w25a
+if /I "%c%" EQU "14w25b" goto :14w25b
+if /I "%c%" EQU "14w26a" goto :14w26a
+if /I "%c%" EQU "14w26b" goto :14w26b
+if /I "%c%" EQU "14w26c" goto :14w26c
+if /I "%c%" EQU "14w27a" goto :14w27a
+if /I "%c%" EQU "14w27b" goto :14w27b
+if /I "%c%" EQU "14w28a" goto :14w28a
+if /I "%c%" EQU "14w28b" goto :14w28b
+if /I "%c%" EQU "14w29a" goto :14w29a
+if /I "%c%" EQU "14w29b" goto :14w29b
+if /I "%c%" EQU "14w30a" goto :14w30a
+if /I "%c%" EQU "14w30b" goto :14w30b
+if /I "%c%" EQU "14w30c" goto :14w30c
+if /I "%c%" EQU "14w31a" goto :14w31a
+if /I "%c%" EQU "14w32a" goto :14w32a
+if /I "%c%" EQU "14w32b" goto :14w32b
+if /I "%c%" EQU "14w32c" goto :14w32c
+if /I "%c%" EQU "14w32d" goto :14w32d
+if /I "%c%" EQU "14w33a" goto :14w33a
+if /I "%c%" EQU "14w33b" goto :14w33b
+if /I "%c%" EQU "14w33c" goto :14w33c
+if /I "%c%" EQU "14w34a" goto :14w34a
+if /I "%c%" EQU "14w34b" goto :14w34b
+if /I "%c%" EQU "14w34c" goto :14w34c
+if /I "%c%" EQU "14w34d" goto :14w34d
+if /I "%c%" EQU "1.8-pre1" goto :1.8-pre1
+if /I "%c%" EQU "1.8-pre2" goto :1.8-pre2
+if /I "%c%" EQU "1.8-pre3" goto :1.8-pre3
+if /I "%c%" EQU "1.8.1-pre1" goto :1.8.1-pre1
+if /I "%c%" EQU "1.8.1-pre2" goto :1.8.1-pre2
+if /I "%c%" EQU "1.8.1-pre3" goto :1.8.1-pre3
+if /I "%c%" EQU "1.8.1-pre4" goto :1.8.1-pre4
+if /I "%c%" EQU "1.8.1-pre5" goto :1.8.1-pre5
+if /I "%c%" EQU "1.8.2-pre1" goto :1.8.2-pre1
+if /I "%c%" EQU "1.8.2-pre2" goto :1.8.2-pre2
+if /I "%c%" EQU "1.8.2-pre3" goto :1.8.2-pre3
+if /I "%c%" EQU "1.8.2-pre4" goto :1.8.2-pre4
+if /I "%c%" EQU "1.8.2-pre5" goto :1.8.2-pre5
+if /I "%c%" EQU "1.8.2-pre6" goto :1.8.2-pre6
+if /I "%c%" EQU "1.8.2-pre7" goto :1.8.2-pre7
+if /I "%c%" EQU "15w14a" goto :15w14a
+if /I "%c%" EQU "15w31a" goto :15w31a
+if /I "%c%" EQU "15w31b" goto :15w31b
+if /I "%c%" EQU "15w31c" goto :15w31c
+if /I "%c%" EQU "15w32a" goto :15w32a
+if /I "%c%" EQU "15w32b" goto :15w32b
+if /I "%c%" EQU "15w32c" goto :15w32c
+if /I "%c%" EQU "15w33a" goto :15w33a
+if /I "%c%" EQU "15w33b" goto :15w33b
+if /I "%c%" EQU "15w33c" goto :15w33c
+if /I "%c%" EQU "15w34a" goto :15w34a
+if /I "%c%" EQU "15w34b" goto :15w34b
+if /I "%c%" EQU "15w34c" goto :15w34c
+if /I "%c%" EQU "15w34d" goto :15w34d
+if /I "%c%" EQU "15w35a" goto :15w35a
+if /I "%c%" EQU "15w35b" goto :15w35b
+if /I "%c%" EQU "15w35c" goto :15w35c
+if /I "%c%" EQU "15w35d" goto :15w35d
+if /I "%c%" EQU "15w35e" goto :15w35e
+if /I "%c%" EQU "15w36a" goto :15w36a
+if /I "%c%" EQU "15w36b" goto :15w36b
+if /I "%c%" EQU "15w36c" goto :15w36c
+if /I "%c%" EQU "15w36d" goto :15w36d
+if /I "%c%" EQU "15w37a" goto :15w37a
+if /I "%c%" EQU "15w38a" goto :15w38a
+if /I "%c%" EQU "15w38b" goto :15w38b
+if /I "%c%" EQU "15w39a" goto :15w39a
+if /I "%c%" EQU "15w39b" goto :15w39b
+if /I "%c%" EQU "15w39c" goto :15w39c
+if /I "%c%" EQU "15w40a" goto :15w40a
+if /I "%c%" EQU "15w40b" goto :15w40b
+if /I "%c%" EQU "15w41a" goto :14w41a
+if /I "%c%" EQU "15w41b" goto :15w41b
+if /I "%c%" EQU "15w42a" goto :15w42a
+if /I "%c%" EQU "15w43a" goto :15w43a
+if /I "%c%" EQU "15w43b" goto :15w43b
+if /I "%c%" EQU "15w43c" goto :15w43c
+if /I "%c%" EQU "15w44a" goto :15w44a
+if /I "%c%" EQU "15w44b" goto :15w44b
+if /I "%c%" EQU "15w45a" goto :15w45a
+if /I "%c%" EQU "15w46a" goto :15w46a
+if /I "%c%" EQU "15w47a" goto :15w47a
+if /I "%c%" EQU "15w47b" goto :15w47b
+if /I "%c%" EQU "15w49a" goto :15w49b
+if /I "%c%" EQU "15w50a" goto :15w50a
+if /I "%c%" EQU "15w51a" goto :15w51a
+if /I "%c%" EQU "15w51b" goto :15w51b
+if /I "%c%" EQU "16w02a" goto :16w02a
+if /I "%c%" EQU "16w03a" goto :16w03a
+if /I "%c%" EQU "16w04a" goto :16w04a
+if /I "%c%" EQU "16w05a" goto :16w05a
+if /I "%c%" EQU "16w05b" goto :16w05b
+if /I "%c%" EQU "16w06a" goto :16w06a
+if /I "%c%" EQU "16w07a" goto :16w07a
+if /I "%c%" EQU "16w07b" goto :16w07b
+if /I "%c%" EQU "1.9-pre1" goto :1.9-pre1
+if /I "%c%" EQU "1.9-pre2" goto :1.9-pre2
+if /I "%c%" EQU "1.9-pre3" goto :1.9-pre3
+if /I "%c%" EQU "1.9-pre4" goto :1.9-pre4
+if /I "%c%" EQU "1.9.1-pre1" goto :1.9.1-pre1
+if /I "%c%" EQU "1.9.1-pre2" goto :1.9.1-pre2
+if /I "%c%" EQU "1.9.1-pre3" goto :1.9.1-pre3
+if /I "%c%" EQU "1.RV-Pre1" goto :1.RV-Pre1
+if /I "%c%" EQU "16w14a" goto :16w14a
+if /I "%c%" EQU "16w15a" goto :16w15a
+if /I "%c%" EQU "16w15b" goto :16w15b
+if /I "%c%" EQU "1.9.3-pre1" goto :1.9.3-pre1
+if /I "%c%" EQU "1.9.3-pre2" goto :1.9.3-pre2
+if /I "%c%" EQU "1.9.3-pre3" goto :1.9.3-pre3
+if /I "%c%" EQU "16w20a" goto :16w20a
+if /I "%c%" EQU "16w21a" goto :16w21a
+if /I "%c%" EQU "16w21b" goto :16w21b
+if /I "%c%" EQU "1.10-pre1" goto :1.10-pre1
+if /I "%c%" EQU "1.10-pre2" goto :1.10-pre2
+if /I "%c%" EQU "16w32a" goto :16w32a
+if /I "%c%" EQU "16w32b" goto :16w32b
+if /I "%c%" EQU "16w33a" goto :16w33a
+if /I "%c%" EQU "16w35a" goto :16w35a
+if /I "%c%" EQU "16w36a" goto :16w36a
+if /I "%c%" EQU "16w38a" goto :16w38a
+if /I "%c%" EQU "16w39a" goto :16w39a
+if /I "%c%" EQU "16w39b" goto :16w39b
+if /I "%c%" EQU "16w39c" goto :16w39c
+if /I "%c%" EQU "16w40a" goto :16w40a
+if /I "%c%" EQU "16w41a" goto :16w41a
+if /I "%c%" EQU "16w42a" goto :16w42a
+if /I "%c%" EQU "16w43a" goto :16w43a
+if /I "%c%" EQU "16w44a" goto :16w44a
+if /I "%c%" EQU "1.11-pre1" goto :1.11-pre1
+if /I "%c%" EQU "16w50a" goto :16w50a
+if /I "%c%" EQU "17w06a" goto :17w06a
+if /I "%c%" EQU "17w13a" goto :17w13a
+if /I "%c%" EQU "17w13b" goto :17w13b
+if /I "%c%" EQU "17w14a" goto :17w14a
+if /I "%c%" EQU "17w15a" goto :17w15a
+if /I "%c%" EQU "17w16a" goto :17w16a
+if /I "%c%" EQU "17w16b" goto :17w16b
+if /I "%c%" EQU "17w17a" goto :17w17a
+if /I "%c%" EQU "17w17b" goto :17w17b
+if /I "%c%" EQU "17w18a" goto :17w18a
+if /I "%c%" EQU "17w18b" goto :17w18b
+if /I "%c%" EQU "1.12-pre1" goto :1.12-pre1
+if /I "%c%" EQU "1.12-pre2" goto :1.12-pre2
+if /I "%c%" EQU "1.12-pre3" goto :1.12-pre3
+if /I "%c%" EQU "1.12-pre4" goto :1.12-pre4
+if /I "%c%" EQU "1.12-pre5" goto :1.12-pre5
+if /I "%c%" EQU "1.12-pre6" goto :1.12-pre6
+if /I "%c%" EQU "1.12-pre7" goto :1.12-pre7
+if /I "%c%" EQU "17w31a" goto :17w31a
+if /I "%c%" EQU "1.12.1-pre1" goto :1.12.1-pre1
+if /I "%c%" EQU "1.12.2-pre1" goto :1.12.2-pre1
+if /I "%c%" EQU "1.12.2-pre2" goto :1.12.2-pre2
+if /I "%c%" EQU "17w43a" goto :17w43a
+if /I "%c%" EQU "17w43b" goto :17w43b
+if /I "%c%" EQU "17w45a" goto :17w45a
+if /I "%c%" EQU "17w45b" goto :17w45b
+if /I "%c%" EQU "17w46a" goto :17w46a
+if /I "%c%" EQU "17w47a" goto :17w47a
+if /I "%c%" EQU "17w47b" goto :17w47b
+if /I "%c%" EQU "17w48a" goto :17w48a
+if /I "%c%" EQU "17w49a" goto :17w49a
+if /I "%c%" EQU "17w49b" goto :17w49b
+if /I "%c%" EQU "17w50a" goto :17w50a
+if /I "%c%" EQU "18w01a" goto :18w01a
+if /I "%c%" EQU "18w02a" goto :18w02a
+if /I "%c%" EQU "18w03a" goto :18w03a
+if /I "%c%" EQU "18w03b" goto :18w03b
+if /I "%c%" EQU "18w05a" goto :18w05a
+if /I "%c%" EQU "18w06a" goto :18w06a
+if /I "%c%" EQU "18w07a" goto :18w07a
+if /I "%c%" EQU "18w07b" goto :18w07b
+if /I "%c%" EQU "18w07c" goto :18w07c
+if /I "%c%" EQU "18w08a" goto :18w08a
+if /I "%c%" EQU "18w08b" goto :18w08b
+if /I "%c%" EQU "18w09a" goto :18w09a
+if /I "%c%" EQU "18w10a" goto :18w10a
+if /I "%c%" EQU "18w10b" goto :18w10b
+if /I "%c%" EQU "18w10c" goto :18w10c
+if /I "%c%" EQU "18w10d" goto :18w10d
+if /I "%c%" EQU "18w11a" goto :18w11a
+if /I "%c%" EQU "18w14a" goto :18w14a
+if /I "%c%" EQU "18w14b" goto :18w14b
+if /I "%c%" EQU "18w15a" goto :18w15a
+if /I "%c%" EQU "18w16a" goto :18w16a
+if /I "%c%" EQU "18w19a" goto :18w19a
+if /I "%c%" EQU "18w19b" goto :18w19b
+if /I "%c%" EQU "18w20a" goto :18w20a
+if /I "%c%" EQU "18w20b" goto :18w20b
+if /I "%c%" EQU "18w20c" goto :18w20c
+if /I "%c%" EQU "18w21a" goto :18w21a
+if /I "%c%" EQU "18w21b" goto :18w21b
+if /I "%c%" EQU "18w22a" goto :18w22a
+if /I "%c%" EQU "18w22b" goto :18w22b
+if /I "%c%" EQU "18w22c" goto :18w22c
+if /I "%c%" EQU "1.13-pre1" goto :1.13-pre1
+if /I "%c%" EQU "1.13-pre2" goto :1.13-pre2
+if /I "%c%" EQU "1.13-pre3" goto :1.13-pre3
+if /I "%c%" EQU "1.13-pre4" goto :1.13-pre4
+if /I "%c%" EQU "1.13-pre5" goto :1.13-pre5
+if /I "%c%" EQU "1.13-pre6" goto :1.13-pre6
+if /I "%c%" EQU "1.13-pre7" goto :1.13-pre7
+if /I "%c%" EQU "1.13-pre8" goto :1.13-pre8
+if /I "%c%" EQU "1.13-pre9" goto :1.13-pre9
+if /I "%c%" EQU "1.13-pre10" goto :1.13-pre10
+if /I "%c%" EQU "18w30a" goto :18w30a
+if /I "%c%" EQU "18w30b" goto :18w30b
+if /I "%c%" EQU "18w31a" goto :18w31a
+if /I "%c%" EQU "18w32a" goto :18w32a
+if /I "%c%" EQU "18w33a" goto :18w33a
+if /I "%c%" EQU "1.13.1-pre1" goto :1.13.1-pre1
+if /I "%c%" EQU "1.13.1-pre2" goto :1.13.1-pre2
+if /I "%c%" EQU "1.13.2-pre1" goto :1.13.2-pre1
+if /I "%c%" EQU "1.13.2-pre2" goto :1.13.2-pre2
+if /I "%c%" EQU "18w43a" goto :18w43a
+if /I "%c%" EQU "18w43b" goto :18w43b
+if /I "%c%" EQU "18w43c" goto :18w43c
+if /I "%c%" EQU "18w44a" goto :18w44a
+if /I "%c%" EQU "18w45a" goto :18w45a
+if /I "%c%" EQU "18w46a" goto :18w46a
+if /I "%c%" EQU "18w47a" goto :18w47a
+if /I "%c%" EQU "18w47b" goto :18w47b
+if /I "%c%" EQU "18w48a" goto :18w48a
+if /I "%c%" EQU "18w48b" goto :18w48b
+if /I "%c%" EQU "18w49a" goto :18w49a
+if /I "%c%" EQU "18w50a" goto :18w50a
+if /I "%c%" EQU "19w02a" goto :19w03a
+if /I "%c%" EQU "19w03a" goto :19w03a
+if /I "%c%" EQU "19w03b" goto :19w03b
+if /I "%c%" EQU "19w03c" goto :19w03c
+if /I "%c%" EQU "19w04a" goto :19w04a
+if /I "%c%" EQU "19w04b" goto :19w04b
+if /I "%c%" EQU "19w05a" goto :19w05a
+if /I "%c%" EQU "19w06a" goto :19w06a
+if /I "%c%" EQU "19w07a" goto :19w07a
+if /I "%c%" EQU "19w08a" goto :19w08a
+if /I "%c%" EQU "19w08b" goto :19w08b
+if /I "%c%" EQU "19w09a" goto :19w09a
+if /I "%c%" EQU "19w11a" goto :19w11a
+if /I "%c%" EQU "19w11b" goto :19w11b
+if /I "%c%" EQU "19w12a" goto :19w12a
+if /I "%c%" EQU "19w12b" goto :19w12b
+if /I "%c%" EQU "19w13a" goto :19w13a
+if /I "%c%" EQU "19w13b" goto :19w13b
+if /I "%c%" EQU "3D Shareware v1.34" goto :3D Shareware v1.34
+if /I "%c%" EQU "19w14a" goto :19w14a
+if /I "%c%" EQU "19w14b" goto :19w14b
+if /I "%c%" EQU "1.14 Pre-Release 1" goto :1.14 Pre-Release 1
+if /I "%c%" EQU "1.14 Pre-Release 2" goto :1.14 Pre-Release 2
+if /I "%c%" EQU "1.14 Pre-Release 3" goto :1.14 Pre-Release 3
+if /I "%c%" EQU "1.14 Pre-Release 4" goto :1.14 Pre-Release 4
+if /I "%c%" EQU "1.14 Pre-Release 5" goto :1.14 Pre-Release 5
+if /I "%c%" EQU "1.14.1 Pre-Release 1" goto :1.14.1 Pre-Release 1
+if /I "%c%" EQU "1.14.1 Pre-Release 2" goto :1.14.1 Pre-Release 2
+if /I "%c%" EQU "1.14.2 Pre-Release 1" goto :1.14.2 Pre-Release 1
+if /I "%c%" EQU "1.14.2 Pre-Release 2" goto :1.14.2 Pre-Release 2
+if /I "%c%" EQU "1.14.2 Pre-Release 3" goto :1.14.2 Pre-Release 3
+if /I "%c%" EQU "1.14.2 Pre-Release 4" goto :1.14.2 Pre-Release 4
+if /I "%c%" EQU "1.14.3-pre1" goto :1.14.3-pre1
+if /I "%c%" EQU "1.14.3-pre2" goto :1.14.3-pre2
+if /I "%c%" EQU "1.14.3-pre3" goto :1.14.3-pre3
+if /I "%c%" EQU "1.14.3-pre4" goto :1.14.3-pre4
+if /I "%c%" EQU "1.14.4-pre1" goto :1.14.4-pre1
+if /I "%c%" EQU "1.14.4-pre2" goto :1.14.4-pre2
+if /I "%c%" EQU "1.14.4-pre3" goto :1.14.4-pre3
+if /I "%c%" EQU "1.14.4-pre4" goto :1.14.4-pre4
+if /I "%c%" EQU "1.14.4-pre5" goto :1.14.4-pre5
+if /I "%c%" EQU "1.14.4-pre6" goto :1.14.4-pre6
+if /I "%c%" EQU "1.14.4-pre7" goto :1.14.4-pre7
+if /I "%c%" EQU "19w34a" goto :19w34a
+if /I "%c%" EQU "19w35a" goto :19w35a
+if /I "%c%" EQU "19w36a" goto :19w36a
+if /I "%c%" EQU "19w37a" goto :19w37a
+if /I "%c%" EQU "19w38a" goto :19w38a
+if /I "%c%" EQU "19w38b" goto :19w38b
+if /I "%c%" EQU "19w39a" goto :19w39a
+if /I "%c%" EQU "19w40a" goto :19w40a
+if /I "%c%" EQU "19w41a" goto :19w41a
+if /I "%c%" EQU "19w42a" goto :19w42a
+if /I "%c%" EQU "19w44a" goto :19w44a
+if /I "%c%" EQU "19w45a" goto :19w45a
+if /I "%c%" EQU "19w45b" goto :19w45b
+if /I "%c%" EQU "19w46a" goto :19w46a
+if /I "%c%" EQU "19w46b" goto :19w46b
+if /I "%c%" EQU "1.15-pre1" goto :1.15-pre1
+if /I "%c%" EQU "1.15-pre2" goto :1.15-pre2
+if /I "%c%" EQU "1.15-pre3" goto :1.15-pre3
+if /I "%c%" EQU "1.15-pre4" goto :1.15-pre4
+if /I "%c%" EQU "1.15-pre5" goto :1.15-pre5
+if /I "%c%" EQU "1.15-pre6" goto :1.15-pre6
+if /I "%c%" EQU "1.15-pre7" goto :1.15-pre7
+if /I "%c%" EQU "1.15.1-pre1" goto :1.15.1-pre1
+if /I "%c%" EQU "1.15.2-pre1" goto :1.15.2-pre1
+if /I "%c%" EQU "1.15.2-pre2" goto :1.15.2-pre2
+if /I "%c%" EQU "20w06a" goto :20w06a
+if /I "%c%" EQU "20w07a" goto :20w07a
+if /I "%c%" EQU "20w08a" goto :20w08a
+if /I "%c%" EQU "20w09a" goto :20w09a
+if /I "%c%" EQU "20w10a" goto :20w10a
+if /I "%c%" EQU "20w11a" goto :20w11a
+if /I "%c%" EQU "20w12a" goto :20w12a
+if /I "%c%" EQU "20w13a" goto :20w13a
+if /I "%c%" EQU "20w13b" goto :20w13b
+if /I "%c%" EQU "20w14infinite" goto :20w14infinite
+if /I "%c%" EQU "20w14a" goto :20w14a
+if /I "%c%" EQU "20w15a" goto :20w15a
+if /I "%c%" EQU "20w16a" goto :20w16a
+if /I "%c%" EQU "20w17a" goto :20w17a
+if /I "%c%" EQU "20w18a" goto :20w18a
+if /I "%c%" EQU "20w19a" goto :20w19a
+if /I "%c%" EQU "20w20a" goto :20w20a
+if /I "%c%" EQU "20w20b" goto :20w20b
+if /I "%c%" EQU "20w21a" goto :20w21a
+if /I "%c%" EQU "20w22a" goto :20w22a
+if /I "%c%" EQU "1.16-pre1" goto :1.16-pre1
+if /I "%c%" EQU "1.16-pre2" goto :1.16-pre2
+if /I "%c%" EQU "1.16-pre3" goto :1.16-pre3
+if /I "%c%" EQU "1.16-pre4" goto :1.16-pre4
+if /I "%c%" EQU "1.16-pre5" goto :1.16-pre5
+if /I "%c%" EQU "1.16-pre6" goto :1.16-pre6
+if /I "%c%" EQU "1.16-pre7" goto :1.16-pre7
+if /I "%c%" EQU "1.16-pre8" goto :1.16-pre8
+if /I "%c%" EQU "1.16-rc1" goto :1.16-rc1
+if /I "%c%" EQU "20w27a" goto :20w27a
+if /I "%c%" EQU "20w28a" goto :20w28a
+if /I "%c%" EQU "20w29a" goto :20w29a
+if /I "%c%" EQU "20w30a" goto :20w30a
+if /I "%c%" EQU "1.16.2-pre1" goto :1.16.2-pre1
+if /I "%c%" EQU "1.16.2-pre2" goto :1.16.2-pre2
+if /I "%c%" EQU "1.16.2-pre3" goto :1.16.2-pre3
+if /I "%c%" EQU "1.16.2-rc1" goto :1.16.2-rc1
+if /I "%c%" EQU "1.16.2-rc2" goto :1.16.2-rc2
+if /I "%c%" EQU "1.16.3-rc1" goto :1.16.3-rc1
+if /I "%c%" EQU "1.16.4-pre1" goto :1.16.4-pre1
+if /I "%c%" EQU "1.16.4-pre2" goto :1.16.4-pre2
+if /I "%c%" EQU "1.16.4-rc1" goto :1.16.4-rc1
+if /I "%c%" EQU "20w45a" goto :20w45a
+if /I "%c%" EQU "20w46a" goto :20w46a
+if /I "%c%" EQU "20w48a" goto :20w48a
+if /I "%c%" EQU "20w49a" goto :20w49a
+if /I "%c%" EQU "20w51a" goto :20w51a
+if /I "%c%" EQU "1.16.5-rc1" goto :1.16.5-rc1
+if /I "%c%" EQU "21w03a" goto :21w03a
+if /I "%c%" EQU "21w05a" goto :21w05a
+if /I "%c%" EQU "21w05b" goto :21w05b
+if /I "%c%" EQU "21w06a" goto :21w06a
+if /I "%c%" EQU "21w07a" goto :21w07a
+if /I "%c%" EQU "21w08a" goto :21w08a
+if /I "%c%" EQU "21w08b" goto :21w08b
+if /I "%c%" EQU "21w10a" goto :21w10a
+if /I "%c%" EQU "21w11a" goto :21w11a
+if /I "%c%" EQU "21w13a" goto :21w13a
+goto :snapshotnull
+
+:1.3
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 1.3
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/cb21a9aaaf599c94dd7fa1b777b2f0cc37a776c7/server.jar >C:\MCSSTools\NeededFiles\Server_1.3.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_1.3.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
+:1.4
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 1.4
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/9470a2bb0fcb8a426328441a01dba164fbbe52c9/server.jar >C:\MCSSTools\NeededFiles\Server_1.4.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_1.4.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
+:1.4.1
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 1.4.1
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/baa4e4a7adc3dc9fbfc5ea36f0777b68c9eb7f4a/server.jar >C:\MCSSTools\NeededFiles\Server_1.4.1.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_1.4.1.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
+:1.4.3
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 1.4.3
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/9be68adf6e80721975df12f2445fa24617328d18/server.jar >C:\MCSSTools\NeededFiles\Server_1.4.3.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_1.4.3.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
+:1.5
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 1.5
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/aedad5159ef56d69c5bcf77ed141f53430af43c3/server.jar >C:\MCSSTools\NeededFiles\Server_1.5.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_1.5.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
+:13w16a
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 13w16a
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/dd76b63bad493e42b303dd8952c240f330251760/server.jar >C:\MCSSTools\NeededFiles\Server_13w16a.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_13w16a.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
+:13w16b
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 13w16b
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/c125111764b5774403ff2183debbb9da4805a64f/server.jar >C:\MCSSTools\NeededFiles\Server_13w16b.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_13w16b.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
+:13w17a
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 13w17a
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/48ece561c3512b2f9c0915dad7c3cb65560ceb39/server.jar >C:\MCSSTools\NeededFiles\Server_13w17a.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_13w17a.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
+:13w18a
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 13w18a
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/6084eae41c6e28d58fe8a1ee4ab4389a392f0139/server.jar >C:\MCSSTools\NeededFiles\Server_13w18a.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_13w18a.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
+:13w18b
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 13w18b
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/af7fd5e8cdc610f1e533ba7963bc39de422df1b6/server.jar >C:\MCSSTools\NeededFiles\Server_13w18b.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_13w18b.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
+:13w18c
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 13w18c
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/af7fd5e8cdc610f1e533ba7963bc39de422df1b6/server.jar >C:\MCSSTools\NeededFiles\Server_13w18c.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_13w18c.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
+:13w19a
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 13w19a
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/17997ee2d9a3ad1070a74707f58ebb3e3a46ae10/server.jar >C:\MCSSTools\NeededFiles\Server_13w19a.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_13w19a.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
 
 REM Desde aquí comienza el proceso post-descarga y copia a directorios específicos de los archivos, independientemente de su versión.
 REM Esta anotación está hecha con el fin de hacer más ordenado este proceso y poder identificar de manera más fácil esta separación de contenido
 
 :listo
-echo -------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
-echo Se han descargado todos los archivos necesarios.
-:listo.1
-echo Te invitamos a leer el CLUF (o EULA) en el siguiente link
+echo Se descargaron todos los archivos necesarios.
+echo Debes leer el CLUF de Minecraft, disponible en el siguiente link
 echo(
 echo https://account.mojang.com/documents/minecraft_eula
 echo(
-set /P c=Cuando lo hayas leido, escribe "ACEPTO" para poder continuar= 
+set /P c=Despues de leerlo, escribe "ACEPTO" para poder continuar= 
 if /I "%c%" EQU "ACEPTO" goto :eula
-goto :listo.1
+goto :listo
 
 :eula
 cd %USERPROFILE%\Desktop\Servidor\
@@ -1977,10 +3521,16 @@ echo eula=true>eula.txt
 goto :preconfig
 
 :preconfig
-echo -------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Perfecto
 echo(
 echo Ahora debes configurar los parametros de tu Servidor. Se abrira un Bloc de Notas.
 echo Cuando lo cierres, tu Servidor estara configurado y listo para ser iniciado.
+echo(
 echo Se recomienda visitar la Wiki que explica detalladamente cada uno de los parametros disponibles
 echo(
 echo https://minecraft.fandom.com/wiki/Server.properties
@@ -1988,14 +3538,17 @@ echo(
 pause
 cd %USERPROFILE%\Desktop\Servidor\
 server.properties
-echo --------------------------------------------
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Listo, ya tienes instalado tu nuevo Servidor
 echo Recuerda cambiar el nombre o la ubicacion de la carpeta de tu Servidor
-echo --------------------------------------------
 echo(
+echo --------------------------------------------
 echo Muchas Gracias por usar esta Herramienta
-echo MIT License - Copyright 2021 NGDPL Nk.
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo --------------------------------------------
 pause
 exit
