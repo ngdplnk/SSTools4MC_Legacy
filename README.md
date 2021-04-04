@@ -1,12 +1,14 @@
 # MCSSTools
-Minecraft Server Startup Tools (MCSSTools) es un conjunto de herramientas que te ayudará con tu Servidor de Minecraft.
+Minecraft Server Startup Tools es un conjunto de herramientas que te ayudará con tu Servidor de Minecraft.
 
 # Cómo obtengo y uso este Conjunto?
 - Debes descargar la última versión de este conjunto desde [Este Link](https://github.com/NGDPLNk/mcsstools/releases/latest)
 
-- Extrae el archivo ya descargado en donde lo desees, y sigue las instrucciones del archivo Instrucciones.txt que correspondan a la Herramienta que te gustaría usar.
+- Extrae el archivo ya descargado en donde lo desees, y sigue las instrucciones del archivo Instrucciones.txt que correspondan a la Herramienta que piensas usar.
 
-# Lanzador de Servidores 
+# Lanzador de Servidores
+Compatible con Windows 7, 8, 8.1 y 10
+
 Para usar esta herramienta debes:
 - [Descargar la Versión más Reciente del Conjunto](https://github.com/NGDPLNk/mcsstools/releases/latest)
 - Luego, debes identificar la versión de la herramienta que corresponda a tu sistema operativo (x32 si es de 32 bits; x64 si es de 64 bits).
@@ -14,6 +16,8 @@ Para usar esta herramienta debes:
 - Abre la herramienta y sigue las instrucciones en pantalla (Especificar versión, Cantidad de Memoria RAM a asignar, etc...).
 
 # Instalador de Servidores
+Compatible sólo con Windows 10
+
 Para usar esta herramienta debes:
 - [Descargar la Versión más Reciente del Conjunto](https://github.com/NGDPLNk/mcsstools/releases/latest)
 - Luego, debes identificar la versión de la herramienta que corresponda a tu sistema opertivo (x32 si es de 32 bits; x64 si es de 64 bits).
@@ -36,4 +40,4 @@ NGDPL Nk no es dueño ni tampoco almacena ningún producto de Mojang Synergies A
 Cada elemento, nombre, correspondiente a Mojang Synergies AB, es usado cumpliendo el [CLUF](https://www.minecraft.net/es-es/eula/) y las [Directrices de Marca y Herramientas](https://account.mojang.com/terms?ref=ft#brand).
 
 # Gracias Por Usar Este Conjunto De Herramientas
-~©2021 - NGDPL Nk.
+©2021 - NGDPL Nk
