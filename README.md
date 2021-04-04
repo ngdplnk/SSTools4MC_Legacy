@@ -7,7 +7,7 @@ Minecraft Server Startup Tools es un conjunto de herramientas que te ayudará co
 - Extrae el archivo ya descargado en donde lo desees, y sigue las instrucciones del archivo Instrucciones.txt que correspondan a la Herramienta que piensas usar.
 
 # Lanzador de Servidores
-Compatible con Windows 7, 8, 8.1 y 10
+**Compatible con Windows 7, 8, 8.1 y 10**
 
 Para usar esta herramienta debes:
 - [Descargar la Versión más Reciente del Conjunto](https://github.com/NGDPLNk/mcsstools/releases/latest)
@@ -16,7 +16,7 @@ Para usar esta herramienta debes:
 - Abre la herramienta y sigue las instrucciones en pantalla (Especificar versión, Cantidad de Memoria RAM a asignar, etc...).
 
 # Instalador de Servidores
-Compatible sólo con Windows 10
+**Compatible sólo con Windows 10**
 
 Para usar esta herramienta debes:
 - [Descargar la Versión más Reciente del Conjunto](https://github.com/NGDPLNk/mcsstools/releases/latest)
