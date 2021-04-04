@@ -1,34 +1,34 @@
-# Prerequisites
+# Prerrequisitos
 *.d
 
-# Object files
+# Archivos Objeto
 *.o
 *.ko
 *.obj
 *.elf
 
-# Linker output
+# Conexión de Salidas
 *.ilk
 *.map
 *.exp
 
-# Precompiled Headers
+# Cabezales Precompilados
 *.gch
 *.pch
 
-# Libraries
+# Librerías
 *.lib
 *.a
 *.la
 *.lo
 
-# Shared objects (inc. Windows DLLs)
+# Objetos Compartidos (inc. Windows DLLs)
 *.dll
 *.so
 *.so.*
 *.dylib
 
-# Executables
+# Ejecutables
 *.exe
 *.out
 *.app
@@ -36,13 +36,13 @@
 *.x86_64
 *.hex
 
-# Debug files
+# Archivos de Depuración
 *.dSYM/
 *.su
 *.idb
 *.pdb
 
-# Kernel Module Compile Results
+# Resultados de la Compilación del Módulo del Kernel
 *.mod*
 *.cmd
 .tmp_versions/
@@ -50,3 +50,7 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Íconos
+*.ai
+*.ico
