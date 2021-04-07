@@ -1,10 +1,10 @@
 @echo off
 
-echo Lanzador de Servidores de Minecraft
-echo MCSSTools v0.0.0.4-Alpha por NGDPL Nk
-echo --------------------------------------
-
 :version
+cls
+echo Lanzador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 set /P c=Escribe la Version del Servidor que deseas iniciar= 
 if /I "%c%" EQU "1.2.1" goto :1.2.1
@@ -77,6 +77,10 @@ if /I "%c%" EQU "1.16.5" goto :1.16.5
 goto :versionnull
 
 :versionnull
+cls
+echo Lanzador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Esa Version no esta disponible o es incorrecta
 set /P c=Vuelve a escribir la Version del Servidor que deseas iniciar= 
@@ -150,21 +154,25 @@ if /I "%c%" EQU "1.16.5" goto :1.16.5
 goto :versionnull
 
 :1.2.1
-echo ---------------------------------------------
+cls
+echo Lanzador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Has seleccionado la Version 1.2.1
-:1.2.1yn
 echo(
 set /P c=Es esa la Version de tu Servidor? [S/N]= 
 if /I "%c%" EQU "S" goto :1.2.1y
 if /I "%c%" EQU "N" goto :version
-goto :1.2.1yn
+goto :1.2.1
 
 :1.2.1y
-echo ---------------------------------------------
+cls
+echo Lanzador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Perfecto, es la Version 1.2.1
-:1.2.1ram
 echo(
 set /P c=Escribe los GB's de Ram que asignaras para tu Servidor (Min.=1; Max.=16)= 
 if /I "%c%" EQU "1" goto :1.2.1_1G
@@ -186,6 +194,10 @@ if /I "%c%" EQU "16" goto :1.2.1_16G
 goto :1.2.1ramnull
 
 :1.2.1ramnull
+cls
+echo Lanzador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo No puedes asignar esa cantidad de GB's de Ram a tu Servidor (Lo minimo es 1, lo maximo es 16)
 set /P c=Vuelve a escribir los GB's de Ram que asignaras para tu Servidor= 
@@ -208,151 +220,244 @@ if /I "%c%" EQU "16" goto :1.2.1_16G
 goto :1.2.1ramnull
 
 :1.2.1_1G
-echo ---------------------------------------------
+cls
+echo Lanzador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Perfecto, se esta iniciando tu Servidor con 1GB de Ram
 echo(
 echo Espera un momento...
 echo(
 java -Xmx1024M -Xms1024M -jar Server_1.2.1.jar nogui
-echo -------------------------------------------
+cls
+echo Lanzador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
+echo Tu Servidor se ha Cerrado
+echo Puedes Revisar el Registro de la Consola en la Carpeta "logs"
+echo(
+echo --------------------------------------------
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
-echo -------------------------------------------
+echo MIT License - Copyright (c) 2021 NGDPL Nk
+echo --------------------------------------------
 pause
 exit
 
 :1.2.1_2G
-echo ---------------------------------------------
+cls
+echo Lanzador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Perfecto, se esta iniciando tu Servidor con 2GB de Ram
 echo(
 echo Espera un momento...
 echo(
 java -Xmx2G -Xms2G -jar Server_1.2.1.jar nogui
-echo -------------------------------------------
+cls
+echo Lanzador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
+echo Tu Servidor se ha Cerrado
+echo Puedes Revisar el Registro de la Consola en la Carpeta "logs"
+echo(
+echo --------------------------------------------
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
-echo -------------------------------------------
+echo MIT License - Copyright (c) 2021 NGDPL Nk
+echo --------------------------------------------
 pause
 exit
 
 :1.2.1_3G
-echo ---------------------------------------------
+cls
+echo Lanzador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Perfecto, se esta iniciando tu Servidor con 3GB de Ram
 echo(
 echo Espera un momento...
 echo(
 java -Xmx3G -Xms3G -jar Server_1.2.1.jar nogui
-echo -------------------------------------------
+cls
+echo Lanzador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
+echo Tu Servidor se ha Cerrado
+echo Puedes Revisar el Registro de la Consola en la Carpeta "logs"
+echo(
+echo --------------------------------------------
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
-echo -------------------------------------------
+echo MIT License - Copyright (c) 2021 NGDPL Nk
+echo --------------------------------------------
 pause
 exit
 
 :1.2.1_4G
-echo ---------------------------------------------
+cls
+echo Lanzador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Perfecto, se esta iniciando tu Servidor con 4GB de Ram
 echo(
 echo Espera un momento...
 echo(
 java -Xmx4G -Xms4G -jar Server_1.2.1.jar nogui
-echo -------------------------------------------
+cls
+echo Lanzador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
+echo Tu Servidor se ha Cerrado
+echo Puedes Revisar el Registro de la Consola en la Carpeta "logs"
+echo(
+echo --------------------------------------------
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
-echo -------------------------------------------
+echo MIT License - Copyright (c) 2021 NGDPL Nk
+echo --------------------------------------------
 pause
 exit
 
 :1.2.1_5G
-echo ---------------------------------------------
+cls
+echo Lanzador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Perfecto, se esta iniciando tu Servidor con 5GB de Ram
 echo(
 echo Espera un momento...
 echo(
 java -Xmx5G -Xms5G -jar Server_1.2.1.jar nogui
-echo -------------------------------------------
+cls
+echo Lanzador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
+echo Tu Servidor se ha Cerrado
+echo Puedes Revisar el Registro de la Consola en la Carpeta "logs"
+echo(
+echo --------------------------------------------
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
-echo -------------------------------------------
+echo MIT License - Copyright (c) 2021 NGDPL Nk
+echo --------------------------------------------
 pause
 exit
 
 :1.2.1_6G
-echo ---------------------------------------------
+cls
+echo Lanzador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Perfecto, se esta iniciando tu Servidor con 6GB de Ram
 echo(
 echo Espera un momento...
 echo(
 java -Xmx6G -Xms6G -jar Server_1.2.1.jar nogui
-echo -------------------------------------------
+cls
+echo Lanzador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
+echo Tu Servidor se ha Cerrado
+echo Puedes Revisar el Registro de la Consola en la Carpeta "logs"
+echo(
+echo --------------------------------------------
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
-echo -------------------------------------------
+echo MIT License - Copyright (c) 2021 NGDPL Nk
+echo --------------------------------------------
 pause
 exit
 
 :1.2.1_7G
-echo ---------------------------------------------
+cls
+echo Lanzador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Perfecto, se esta iniciando tu Servidor con 7GB de Ram
 echo(
 echo Espera un momento...
 echo(
 java -Xmx7G -Xms7G -jar Server_1.2.1.jar nogui
-echo -------------------------------------------
+cls
+echo Lanzador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
+echo Tu Servidor se ha Cerrado
+echo Puedes Revisar el Registro de la Consola en la Carpeta "logs"
+echo(
+echo --------------------------------------------
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
-echo -------------------------------------------
+echo MIT License - Copyright (c) 2021 NGDPL Nk
+echo --------------------------------------------
 pause
 exit
 
 :1.2.1_8G
-echo ---------------------------------------------
+cls
+echo Lanzador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Perfecto, se esta iniciando tu Servidor con 8GB de Ram
 echo(
 echo Espera un momento...
 echo(
 java -Xmx8G -Xms8G -jar Server_1.2.1.jar nogui
-echo -------------------------------------------
+cls
+echo Lanzador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
+echo Tu Servidor se ha Cerrado
+echo Puedes Revisar el Registro de la Consola en la Carpeta "logs"
+echo(
+echo --------------------------------------------
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
-echo -------------------------------------------
+echo MIT License - Copyright (c) 2021 NGDPL Nk
+echo --------------------------------------------
 pause
 exit
 
 :1.2.1_9G
-echo ---------------------------------------------
+cls
+echo Lanzador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Perfecto, se esta iniciando tu Servidor con 9GB de Ram
 echo(
 echo Espera un momento...
 echo(
 java -Xmx9G -Xms9G -jar Server_1.2.1.jar nogui
-echo -------------------------------------------
+cls
+echo Lanzador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
+echo Tu Servidor se ha Cerrado
+echo Puedes Revisar el Registro de la Consola en la Carpeta "logs"
+echo(
+echo --------------------------------------------
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
-echo -------------------------------------------
+echo MIT License - Copyright (c) 2021 NGDPL Nk
+echo --------------------------------------------
 pause
 exit
 
 :1.2.1_10G
-echo ---------------------------------------------
+cls
+echo Lanzador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Perfecto, se esta iniciando tu Servidor con 10GB de Ram
 echo(
@@ -360,108 +465,179 @@ echo Espera un momento...
 echo(
 java -Xmx10G -Xms10G -jar Server_1.2.1.jar nogui
 echo -------------------------------------------
+cls
+echo Lanzador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
+echo Tu Servidor se ha Cerrado
+echo Puedes Revisar el Registro de la Consola en la Carpeta "logs"
+echo(
+echo --------------------------------------------
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
-echo -------------------------------------------
+echo MIT License - Copyright (c) 2021 NGDPL Nk
+echo --------------------------------------------
 pause
 exit
 
 :1.2.1_11G
-echo ---------------------------------------------
+cls
+echo Lanzador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Perfecto, se esta iniciando tu Servidor con 11GB de Ram
 echo(
 echo Espera un momento...
 echo(
 java -Xmx11G -Xms11G -jar Server_1.2.1.jar nogui
-echo -------------------------------------------
+cls
+echo Lanzador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
+echo Tu Servidor se ha Cerrado
+echo Puedes Revisar el Registro de la Consola en la Carpeta "logs"
+echo(
+echo --------------------------------------------
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
-echo -------------------------------------------
+echo MIT License - Copyright (c) 2021 NGDPL Nk
+echo --------------------------------------------
 pause
 exit
 
 :1.2.1_12G
-echo ---------------------------------------------
+cls
+echo Lanzador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Perfecto, se esta iniciando tu Servidor con 12GB de Ram
 echo(
 echo Espera un momento...
 echo(
 java -Xmx12G -Xms12G -jar Server_1.2.1.jar nogui
-echo -------------------------------------------
+cls
+echo Lanzador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
+echo Tu Servidor se ha Cerrado
+echo Puedes Revisar el Registro de la Consola en la Carpeta "logs"
+echo(
+echo --------------------------------------------
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
-echo -------------------------------------------
+echo MIT License - Copyright (c) 2021 NGDPL Nk
+echo --------------------------------------------
 pause
 exit
 
 :1.2.1_13G
-echo ---------------------------------------------
+cls
+echo Lanzador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Perfecto, se esta iniciando tu Servidor con 13GB de Ram
 echo(
 echo Espera un momento...
 echo(
 java -Xmx13G -Xms13G -jar Server_1.2.1.jar nogui
-echo -------------------------------------------
+cls
+echo Lanzador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
+echo Tu Servidor se ha Cerrado
+echo Puedes Revisar el Registro de la Consola en la Carpeta "logs"
+echo(
+echo --------------------------------------------
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
-echo -------------------------------------------
+echo MIT License - Copyright (c) 2021 NGDPL Nk
+echo --------------------------------------------
 pause
 exit
 
 :1.2.1_14G
-echo ---------------------------------------------
+cls
+echo Lanzador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Perfecto, se esta iniciando tu Servidor con 14GB de Ram
 echo(
 echo Espera un momento...
 echo(
 java -Xmx14G -Xms14G -jar Server_1.2.1.jar nogui
-echo -------------------------------------------
+cls
+echo Lanzador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
+echo Tu Servidor se ha Cerrado
+echo Puedes Revisar el Registro de la Consola en la Carpeta "logs"
+echo(
+echo --------------------------------------------
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
-echo -------------------------------------------
+echo MIT License - Copyright (c) 2021 NGDPL Nk
+echo --------------------------------------------
 pause
 exit
 
 :1.2.1_15G
-echo ---------------------------------------------
+cls
+echo Lanzador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Perfecto, se esta iniciando tu Servidor con 15GB de Ram
 echo(
 echo Espera un momento...
 echo(
 java -Xmx15G -Xms15G -jar Server_1.2.1.jar nogui
-echo -------------------------------------------
+cls
+echo Lanzador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
+echo Tu Servidor se ha Cerrado
+echo Puedes Revisar el Registro de la Consola en la Carpeta "logs"
+echo(
+echo --------------------------------------------
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
-echo -------------------------------------------
+echo MIT License - Copyright (c) 2021 NGDPL Nk
+echo --------------------------------------------
 pause
 exit
 
 :1.2.1_16G
-echo ---------------------------------------------
+cls
+echo Lanzador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
 echo Perfecto, se esta iniciando tu Servidor con 16GB de Ram
 echo(
 echo Espera un momento...
 echo(
 java -Xmx16G -Xms16G -jar Server_1.2.1.jar nogui
-echo -------------------------------------------
+cls
+echo Lanzador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
+echo Tu Servidor se ha Cerrado
+echo Puedes Revisar el Registro de la Consola en la Carpeta "logs"
+echo(
+echo --------------------------------------------
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
-echo -------------------------------------------
+echo MIT License - Copyright (c) 2021 NGDPL Nk
+echo --------------------------------------------
 pause
 exit
+
+REM Está anotación indica que desde aquí en adelante falta actualizar el código para que corresponda con el formato de la nueva release v0.0.1.0-Beta, que se encuentra en construcción
+REM Cuando se vaya a trabajar nuevamente en este código, se deben eliminar estas anotaciones y luego recolocarlas donde corresponda
 
 :1.2.2
 echo ---------------------------------------------
