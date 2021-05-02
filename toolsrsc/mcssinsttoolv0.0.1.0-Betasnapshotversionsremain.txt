@@ -1,32 +1,4 @@
-14w26c
-14w27a
-14w27b
-14w28a
-14w28b
-14w29a
-14w29b
-14w30a
-if /I "%c%" EQU "14w30b" goto :14w30b
-if /I "%c%" EQU "14w30c" goto :14w30c
-if /I "%c%" EQU "14w31a" goto :14w31a
-if /I "%c%" EQU "14w32a" goto :14w32a
-if /I "%c%" EQU "14w32b" goto :14w32b
-if /I "%c%" EQU "14w32c" goto :14w32c
-if /I "%c%" EQU "14w32d" goto :14w32d
-if /I "%c%" EQU "14w33a" goto :14w33a
-if /I "%c%" EQU "14w33b" goto :14w33b
-if /I "%c%" EQU "14w33c" goto :14w33c
-if /I "%c%" EQU "14w34a" goto :14w34a
-if /I "%c%" EQU "14w34b" goto :14w34b
-if /I "%c%" EQU "14w34c" goto :14w34c
-if /I "%c%" EQU "14w34d" goto :14w34d
-if /I "%c%" EQU "1.8-pre1" goto :1.8-pre1
-if /I "%c%" EQU "1.8-pre2" goto :1.8-pre2
-if /I "%c%" EQU "1.8-pre3" goto :1.8-pre3
-if /I "%c%" EQU "1.8.1-pre1" goto :1.8.1-pre1
-if /I "%c%" EQU "1.8.1-pre2" goto :1.8.1-pre2
-if /I "%c%" EQU "1.8.1-pre3" goto :1.8.1-pre3
-if /I "%c%" EQU "1.8.1-pre4" goto :1.8.1-pre4
+
 if /I "%c%" EQU "1.8.1-pre5" goto :1.8.1-pre5
 if /I "%c%" EQU "1.8.2-pre1" goto :1.8.2-pre1
 if /I "%c%" EQU "1.8.2-pre2" goto :1.8.2-pre2
@@ -346,3 +318,7 @@ if /I "%c%" EQU "21w08b" goto :21w08b
 if /I "%c%" EQU "21w10a" goto :21w10a
 if /I "%c%" EQU "21w11a" goto :21w11a
 if /I "%c%" EQU "21w13a" goto :21w13a
+21w14a
+21w15a
+21w16a
+21w17a
