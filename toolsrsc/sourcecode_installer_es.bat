@@ -1,5 +1,19 @@
 @echo off
 
+:init
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo (1) Instalar un Servidor
+echo (2) Ver lista de versiones disponibles
+echo(
+set /P c=Que te gustaria hacer? = 
+if /I "%c%" EQU "1" goto :version
+if /I "%c%" EQU "2" goto :vslist
+goto :init
+
 :version
 cls
 echo Instalador de Servidores de Minecraft
@@ -5621,6 +5635,906 @@ copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
 goto :listo
 
+:14w26c
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 14w26c
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/247352905e446c66db85ecb26361a9b5a8eec4ea/server.jar >C:\MCSSTools\NeededFiles\Server_14w26c.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_14w26c.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
+:14w27a
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 14w27a
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/b5350953ff062646d4a61b7c8fb4c0570829843a/server.jar >C:\MCSSTools\NeededFiles\Server_14w27a.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_14w27a.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
+:14w27b
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 14w27b
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/c5be337237224f752b2ea09d3a2a00a00b26e14b/server.jar >C:\MCSSTools\NeededFiles\Server_14w27b.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_14w27b.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
+:14w28a
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 14w28a
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/6987a36f248e88fd8b2366e87fd88834b4a06f7a/server.jar >C:\MCSSTools\NeededFiles\Server_14w28a.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_14w28a.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
+:14w28b
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 14w28b
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/aacec09f5ed0475eb474052a4a55b3ca6edaeecc/server.jar >C:\MCSSTools\NeededFiles\Server_14w28b.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_14w28b.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
+:14w29a
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 14w29a
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/c16a61be653b5921391c55b337640ddfd7a5b472/server.jar >C:\MCSSTools\NeededFiles\Server_14w29a.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_14w29a.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
+:14w29b
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 14w29b
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/b81bb5f919d5489859e9a38c7f6b49e6931a8cc8/server.jar >C:\MCSSTools\NeededFiles\Server_14w29b.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_14w29b.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
+:14w30a
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 14w30a
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/cb7bd4bebcb40c128a571c8f15fe1990b1f50a32/server.jar >C:\MCSSTools\NeededFiles\Server_14w30a.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_14w30a.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
+:14w30b
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 14w30b
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/ee24a6e63b007b9ec97a591afe1a29a6bbbfe143/server.jar >C:\MCSSTools\NeededFiles\Server_14w30b.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_14w30b.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
+:14w30c
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 14w30c
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/2c936d1f410d636a348f100ab926d94d92b743b7/server.jar >C:\MCSSTools\NeededFiles\Server_14w30c.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_14w30c.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
+:14w31a
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 14w31a
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/05fde0b4039104a27df8c7b95d327ecafc06cde7/server.jar >C:\MCSSTools\NeededFiles\Server_14w31a.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_14w31a.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
+:14w32a
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 14w32a
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/d3b96be87d921fa4f95ea43e5283a253b778f24e/server.jar >C:\MCSSTools\NeededFiles\Server_14w32a.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_14w32a.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
+:14w32b
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 14w32b
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/8aa6b045d31cc4a9224ecce602e9f5f748d8f460/server.jar >C:\MCSSTools\NeededFiles\Server_14w32b.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_14w32b.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
+:14w32c
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 14w32c
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/5fee0612322feaf374867336375810580da6fab9/server.jar >C:\MCSSTools\NeededFiles\Server_14w32c.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_14w32c.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
+:14w32d
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 14w32d
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/83d7acb6f94dc606591ebe4d7a06ad29127cd3de/server.jar >C:\MCSSTools\NeededFiles\Server_14w32d.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_14w32d.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
+:14w33a
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 14w33a
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/6c0d06c1b3d8c3365be6e1b9b269725eb4e05ee7/server.jar >C:\MCSSTools\NeededFiles\Server_14w33a.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_14w33a.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
+:14w33b
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 14w33b
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/7e0e5511b0049ba92e5c991b6bd0264932559af2/server.jar >C:\MCSSTools\NeededFiles\Server_14w33b.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_14w33b.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
+:14w33c
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 14w33c
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/5479bbd5f4717d7c8bc8ca895b3e0894e490814e/server.jar >C:\MCSSTools\NeededFiles\Server_14w33c.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_14w33c.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
+:14w34a
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 14w34a
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/e59eecd2f79579f7b87a89b14aa07671eb94c9b1/server.jar >C:\MCSSTools\NeededFiles\Server_14w34a.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_14w34a.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
+:14w34b
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 14w34b
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/7991f32cd598ac7e5a8cf11d91965e597ae148b6/server.jar >C:\MCSSTools\NeededFiles\Server_14w34b.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_14w34b.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
+:14w34c
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 14w34c
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/5ab3e11d059a6f321a1d284d6849b95264d77e66/server.jar >C:\MCSSTools\NeededFiles\Server_14w34c.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_14w34c.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
+:14w34d
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 14w34d
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/0e05b086df677d9802ff5335719149ea90b6f302/server.jar >C:\MCSSTools\NeededFiles\Server_14w34d.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_14w34d.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
+:1.8-pre1
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 1.8-pre1
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/88b759849519ca8a7592a2e90d6891c98f50cc17/server.jar >C:\MCSSTools\NeededFiles\Server_1.8-pre1.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_1.8-pre1.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
+:1.8-pre2
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 1.8-pre2
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/5673d722ac14f571e6a46f368d34b144e90ef8ad/server.jar >C:\MCSSTools\NeededFiles\Server_1.8-pre2.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_1.8-pre2.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
+:1.8-pre3
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 1.8-pre3
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/27fb956fd88ab39205c7c45a39ca4e8820f96cc4/server.jar >C:\MCSSTools\NeededFiles\Server_1.8-pre3.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_1.8-pre3.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
+:1.8.1-pre1
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 1.8.1-pre1
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/dae8203bc40eb43e15e6e9ed454404f330c591f2/server.jar >C:\MCSSTools\NeededFiles\Server_1.8.1-pre1.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_1.8.1-pre1.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
+:1.8.1-pre2
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 1.8.1-pre2
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/d0b163d9a442e8b49187e4925ef75970ad451f41/server.jar >C:\MCSSTools\NeededFiles\Server_1.8.1-pre2.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_1.8.1-pre2.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
+:1.8.1-pre3
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 1.8.1-pre3
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/22440c0335d95efb7d52d9c844108aa2c69da179/server.jar >C:\MCSSTools\NeededFiles\Server_1.8.1-pre3.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_1.8.1-pre3.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
+:1.8.1-pre4
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 1.8.1-pre4
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/5420c131b360f58ecbeb970127a49b525b28f921/server.jar >C:\MCSSTools\NeededFiles\Server_1.8.1-pre4.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_1.8.1-pre4.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
+:1.8.1-pre5
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Seleccionaste la Snapshot 1.8.1-pre5
+echo(
+echo Se descargaran los archivos necesarios desde Internet
+echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+pause
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Espera un momento...
+cd C:\
+mkdir MCSSTools
+cd C:\MCSSTools
+mkdir NeededFiles
+curl https://launcher.mojang.com/v1/objects/a25350da18085ab12f01ba56ab03c562cc722a40/server.jar >C:\MCSSTools\NeededFiles\Server_1.8.1-pre5.jar
+cd %USERPROFILE%\Desktop
+mkdir Servidor
+copy C:\MCSSTools\NeededFiles\Server_1.8.1-pre5.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
+copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\MCSSTools
+goto :listo
+
 REM Desde esta anotación comienza el proceso post-descarga y copia a directorios específicos de los archivos, independientemente de su versión.
 REM Esta anotación está hecha con el fin de hacer más ordenado este proceso y poder identificar de manera más fácil esta separación de contenido para futuras actualizaciones
 
@@ -5676,3 +6590,203 @@ echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo --------------------------------------------
 pause
 exit
+
+REM Desde esta anotación se encuentra disponible la lista de versiones compatibles con esta herramienta
+REM Se crean estas anotaciones por un tema de órden al momento de actualizar o trabajar con este código fuente
+
+:vslist
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo VERSIONES MINECRAFT STABLE
+echo 1.2.1
+echo 1.2.2
+echo 1.2.3
+echo 1.2.4
+echo 1.2.5
+echo 1.3.1
+echo 1.3.2
+echo 1.4.2
+echo 1.4.4
+echo 1.4.5
+echo 1.4.6
+echo 1.4.7
+echo 1.5.1
+echo 1.5.2
+echo 1.6.1
+echo 1.6.2
+echo 1.6.4
+echo 1.7.2
+echo 1.7.3
+echo 1.7.4
+echo 1.7.5
+echo 1.7.6
+echo 1.7.7
+echo 1.7.8
+echo 1.7.9
+echo 1.7.10
+echo 1.8
+echo 1.8.1
+echo 1.8.2
+echo 1.8.3
+echo 1.8.4
+echo 1.8.5
+echo 1.8.6
+echo 1.8.7
+echo 1.8.8
+echo 1.8.9
+echo 1.9
+echo 1.9.1
+echo 1.9.2
+echo 1.9.3
+echo 1.9.4
+echo 1.10
+echo 1.10.1
+echo 1.10.2
+echo 1.11
+echo 1.11.1
+echo 1.11.2
+echo 1.12
+echo 1.12.1
+echo 1.12.2
+echo 1.13
+echo 1.13.1
+echo 1.13.2
+echo 1.14
+echo 1.14.1
+echo 1.14.2
+echo 1.14.3
+echo 1.14.4
+echo 1.15
+echo 1.15.1
+echo 1.15.2
+echo 1.16
+echo 1.16.1
+echo 1.16.2
+echo 1.16.3
+echo 1.16.4
+echo 1.16.5
+echo(
+echo VERSIONES MINECRAFT SNAPSHOT
+echo 1.3
+echo 1.4
+echo 1.4.1
+echo 1.4.3
+echo 1.5
+echo 13w16a
+echo 13w16b
+echo 13w17a
+echo 13w18a
+echo 13w18b
+echo 13w18c
+echo 13w19a
+echo 13w21a
+echo 13w21b
+echo 13w22a
+echo 13w23a
+echo 13w23b
+echo 13w24a
+echo 13w24b
+echo 13w25a
+echo 13w25b
+echo 13w25c
+echo 13w26a
+echo 1.6
+echo 13w36a
+echo 13w36b
+echo 13w37a
+echo 13w37b
+echo 1.6.3
+echo 13w38a
+echo 13w38b
+echo 13w38c
+echo 13w39a
+echo 13w39b
+echo 13w41a
+echo 13w41b
+echo 13w42a
+echo 13w42b
+echo 13w43a
+echo 1.7
+echo 1.7.1
+echo 13w47a
+echo 13w47b
+echo 13w47c
+echo 13w47d
+echo 13w47e
+echo 13w48a
+echo 13w48b
+echo 13w49a
+echo 14w02a
+echo 14w02b
+echo 14w02c
+echo 14w03a
+echo 14w03b
+echo 14w04a
+echo 14w04b
+echo 14w05a
+echo 14w05b
+echo 14w06a
+echo 14w06b
+echo 14w07a
+echo 14w08a
+echo 14w10a
+echo 14w10b
+echo 14w10c
+echo 1.7.6-pre1
+echo 1.7.6-pre2
+echo 14w11a
+echo 14w11b
+echo 14w17a
+echo 14w18a
+echo 14w18b
+echo 14w19a
+echo 1.7.10-pre1
+echo 1.7.10-pre2
+echo 1.7.10-pre3
+echo 1.7.10-pre4
+echo 14w20a
+echo 14w20b
+echo 14w21a
+echo 14w21b
+echo 14w25a
+echo 14w25b
+echo 14w26a
+echo 14w26b
+echo 14w26c
+echo 14w27a
+echo 14w27b
+echo 14w28a
+echo 14w28b
+echo 14w29a
+echo 14w29b
+echo 14w30a
+echo 14w30b
+echo 14w30c
+echo 14w31a
+echo 14w32a
+echo 14w32b
+echo 14w32c
+echo 14w32d
+echo 14w33a
+echo 14w33b
+echo 14w33c
+echo 14w34a
+echo 14w34b
+echo 14w34c
+echo 14w34d
+echo 1.8-pre1
+echo 1.8-pre2
+echo 1.8-pre3
+echo 1.8.1-pre1
+echo 1.8.1-pre2
+echo 1.8.1-pre3
+echo 1.8.1-pre4
+echo 1.8.1-pre5
+echo(
+echo(
+echo(
+pause
+goto :version
