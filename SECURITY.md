@@ -17,4 +17,4 @@ Para reportar alguna vulnerabilidad, puedes hacerlo directamente en este reposit
 
 E-Mail: nikkotilion@gmail.com
 
-Debes explicar qué es lo que crees que está vulnerando la seguridad y yo intentaré resolverlo lo antes posible.
+Debes explicar qué es lo que crees que está vulnerando la seguridad y será resuelto lo antes posible.
