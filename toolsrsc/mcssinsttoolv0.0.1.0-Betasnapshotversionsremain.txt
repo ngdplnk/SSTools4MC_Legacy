@@ -1,5 +1,4 @@
 
-if /I "%c%" EQU "1.8.1-pre5" goto :1.8.1-pre5
 if /I "%c%" EQU "1.8.2-pre1" goto :1.8.2-pre1
 if /I "%c%" EQU "1.8.2-pre2" goto :1.8.2-pre2
 if /I "%c%" EQU "1.8.2-pre3" goto :1.8.2-pre3
