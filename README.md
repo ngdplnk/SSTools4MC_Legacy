@@ -37,7 +37,7 @@ También requiere permisos de administrador para acceder a las carpetas y archiv
 
 - Procesador: Arquitectura de x64 para la versión x64 de esta herramienta.
 
-- RAM: 200MiB
+- RAM: 150MiB
 
 - Espacio en disco: 150MiB para instalar 1 servidor.
 
