@@ -9,9 +9,9 @@ echo(
 echo Estas en el Menu Principal
 echo(
 echo (1) Instalar un Servidor
-echo (2) Listas de Versiones disponibles
+echo (2) Listas de Versiones
 echo (3) Modo Debug (Para desarrolladores)
-echo (4) Acerca de (Por ahora vacio)
+echo (4) Acerca de
 echo (5) Salir
 echo(
 set /P c=Elige una de las opciones = 
@@ -1062,6 +1062,7 @@ echo Seleccionaste la Version 1.2.1
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -1092,6 +1093,7 @@ echo Seleccionaste la Version 1.2.2
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -1122,6 +1124,7 @@ echo Seleccionaste la Version 1.2.3
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -1152,6 +1155,7 @@ echo Seleccionaste la Version 1.2.4
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -1182,6 +1186,7 @@ echo Seleccionaste la Version 1.2.5
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -1212,6 +1217,7 @@ echo Seleccionaste la Version 1.3.1
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -1242,6 +1248,7 @@ echo Seleccionaste la Version 1.3.2
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -1272,6 +1279,7 @@ echo Seleccionaste la Version 1.4.2
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -1302,6 +1310,7 @@ echo Seleccionaste la Version 1.4.3
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -1332,6 +1341,7 @@ echo Seleccionaste la Version 1.4.4
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -1362,6 +1372,7 @@ echo Seleccionaste la Version 1.4.5
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -1392,6 +1403,7 @@ echo Seleccionaste la Version 1.4.6
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -1422,6 +1434,7 @@ echo Seleccionaste la Version 1.4.7
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -1452,6 +1465,7 @@ echo Seleccionaste la Version 1.5.1
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -1482,6 +1496,7 @@ echo Seleccionaste la Version 1.5.2
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -1512,6 +1527,7 @@ echo Seleccionaste la Version 1.6.1
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -1542,6 +1558,7 @@ echo Seleccionaste la Version 1.6.2
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -1572,6 +1589,7 @@ echo Seleccionaste la Version 1.6.4
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -1602,6 +1620,7 @@ echo Seleccionaste la Version 1.7.2
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -1632,6 +1651,7 @@ echo Seleccionaste la Version 1.7.3
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -1662,6 +1682,7 @@ echo Seleccionaste la Version 1.7.4
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -1692,6 +1713,7 @@ echo Seleccionaste la Version 1.7.5
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -1722,6 +1744,7 @@ echo Seleccionaste la Version 1.7.6
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -1752,6 +1775,7 @@ echo Seleccionaste la Version 1.7.7
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -1782,6 +1806,7 @@ echo Seleccionaste la Version 1.7.8
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -1812,6 +1837,7 @@ echo Seleccionaste la Version 1.7.9
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -1842,6 +1868,7 @@ echo Seleccionaste la Version 1.7.10
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -1872,6 +1899,7 @@ echo Seleccionaste la Version 1.8
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -1902,6 +1930,7 @@ echo Seleccionaste la Version 1.8.1
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -1932,6 +1961,7 @@ echo Seleccionaste la Version 1.8.2
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -1962,6 +1992,7 @@ echo Seleccionaste la Version 1.8.3
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -1992,6 +2023,7 @@ echo Seleccionaste la Version 1.8.4
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -2022,6 +2054,7 @@ echo Seleccionaste la Version 1.8.5
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -2052,6 +2085,7 @@ echo Seleccionaste la Version 1.8.6
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -2082,6 +2116,7 @@ echo Seleccionaste la Version 1.8.7
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -2112,6 +2147,7 @@ echo Seleccionaste la Version 1.8.8
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -2142,6 +2178,7 @@ echo Seleccionaste la Version 1.8.9
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -2172,6 +2209,7 @@ echo Seleccionaste la Version 1.9
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -2202,6 +2240,7 @@ echo Seleccionaste la Version 1.9.1
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -2232,6 +2271,7 @@ echo Seleccionaste la Version 1.9.2
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -2262,6 +2302,7 @@ echo Seleccionaste la Version 1.9.3
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -2292,6 +2333,7 @@ echo Seleccionaste la Version 1.9.4
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -2322,6 +2364,7 @@ echo Seleccionaste la Version 1.10
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -2352,6 +2395,7 @@ echo Seleccionaste la Version 1.10.1
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -2382,6 +2426,7 @@ echo Seleccionaste la Version 1.10.2
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -2412,6 +2457,7 @@ echo Seleccionaste la Version 1.11
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -2442,6 +2488,7 @@ echo Seleccionaste la Version 1.11.1
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -2472,6 +2519,7 @@ echo Seleccionaste la Version 1.11.2
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -2502,6 +2550,7 @@ echo Seleccionaste la Version 1.12
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -2532,6 +2581,7 @@ echo Seleccionaste la Version 1.12.1
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -2562,6 +2612,7 @@ echo Seleccionaste la Version 1.12.2
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -2592,6 +2643,7 @@ echo Seleccionaste la Version 1.13
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -2622,6 +2674,7 @@ echo Seleccionaste la Version 1.13.1
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -2652,6 +2705,7 @@ echo Seleccionaste la Version 1.13.2
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -2682,6 +2736,7 @@ echo Seleccionaste la Version 1.14
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -2712,6 +2767,7 @@ echo Seleccionaste la Version 1.14.1
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -2742,6 +2798,7 @@ echo Seleccionaste la Version 1.14.2
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -2772,6 +2829,7 @@ echo Seleccionaste la Version 1.14.3
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -2802,6 +2860,7 @@ echo Seleccionaste la Version 1.14.4
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -2832,6 +2891,7 @@ echo Seleccionaste la Version 1.15
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -2862,6 +2922,7 @@ echo Seleccionaste la Version 1.15.1
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -2892,6 +2953,7 @@ echo Seleccionaste la Version 1.15.2
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -2922,6 +2984,7 @@ echo Seleccionaste la Version 1.16
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -2952,6 +3015,7 @@ echo Seleccionaste la Version 1.16.1
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -2982,6 +3046,7 @@ echo Seleccionaste la Version 1.16.2
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -3012,6 +3077,7 @@ echo Seleccionaste la Version 1.16.3
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -3042,6 +3108,7 @@ echo Seleccionaste la Version 1.16.4
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -3072,6 +3139,7 @@ echo Seleccionaste la Version 1.16.5
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -3105,6 +3173,7 @@ echo Seleccionaste la Snapshot 1.3
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -3135,6 +3204,7 @@ echo Seleccionaste la Snapshot 1.4
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -3165,6 +3235,7 @@ echo Seleccionaste la Snapshot 1.4.1
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -3195,6 +3266,7 @@ echo Seleccionaste la Snapshot 1.4.3
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -3225,6 +3297,7 @@ echo Seleccionaste la Snapshot 1.5
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -3255,6 +3328,7 @@ echo Seleccionaste la Snapshot 13w16a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -3285,6 +3359,7 @@ echo Seleccionaste la Snapshot 13w16b
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -3315,6 +3390,7 @@ echo Seleccionaste la Snapshot 13w17a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -3345,6 +3421,7 @@ echo Seleccionaste la Snapshot 13w18a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -3375,6 +3452,7 @@ echo Seleccionaste la Snapshot 13w18b
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -3405,6 +3483,7 @@ echo Seleccionaste la Snapshot 13w18c
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -3435,6 +3514,7 @@ echo Seleccionaste la Snapshot 13w19a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -3465,6 +3545,7 @@ echo Seleccionaste la Snapshot 13w21a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -3495,6 +3576,7 @@ echo Seleccionaste la Snapshot 13w21b
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -3525,6 +3607,7 @@ echo Seleccionaste la Snapshot 13w22a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -3555,6 +3638,7 @@ echo Seleccionaste la Snapshot 13w23a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -3585,6 +3669,7 @@ echo Seleccionaste la Snapshot 13w23b
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -3615,6 +3700,7 @@ echo Seleccionaste la Snapshot 13w24a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -3645,6 +3731,7 @@ echo Seleccionaste la Snapshot 13w24b
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -3675,6 +3762,7 @@ echo Seleccionaste la Snapshot 13w25a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -3705,6 +3793,7 @@ echo Seleccionaste la Snapshot 13w25b
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -3735,6 +3824,7 @@ echo Seleccionaste la Snapshot 13w25c
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -3765,6 +3855,7 @@ echo Seleccionaste la Snapshot 13w26a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -3795,6 +3886,7 @@ echo Seleccionaste la Snapshot 1.6
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -3825,6 +3917,7 @@ echo Seleccionaste la Snapshot 13w36a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -3855,6 +3948,7 @@ echo Seleccionaste la Snapshot 13w36b
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -3885,6 +3979,7 @@ echo Seleccionaste la Snapshot 13w37a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -3915,6 +4010,7 @@ echo Seleccionaste la Snapshot 13w37b
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -3945,6 +4041,7 @@ echo Seleccionaste la Snapshot 1.6.3
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -3975,6 +4072,7 @@ echo Seleccionaste la Snapshot 13w38a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -4005,6 +4103,7 @@ echo Seleccionaste la Snapshot 13w38b
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -4035,6 +4134,7 @@ echo Seleccionaste la Snapshot 13w38c
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -4065,6 +4165,7 @@ echo Seleccionaste la Snapshot 13w39a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -4095,6 +4196,7 @@ echo Seleccionaste la Snapshot 13w39b
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -4125,6 +4227,7 @@ echo Seleccionaste la Snapshot 13w41a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -4155,6 +4258,7 @@ echo Seleccionaste la Snapshot 13w41b
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -4185,6 +4289,7 @@ echo Seleccionaste la Snapshot 13w42a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -4215,6 +4320,7 @@ echo Seleccionaste la Snapshot 13w42b
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -4245,6 +4351,7 @@ echo Seleccionaste la Snapshot 13w43a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -4275,6 +4382,7 @@ echo Seleccionaste la Snapshot 1.7
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -4305,6 +4413,7 @@ echo Seleccionaste la Snapshot 1.7.1
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -4335,6 +4444,7 @@ echo Seleccionaste la Snapshot 13w47a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -4365,6 +4475,7 @@ echo Seleccionaste la Snapshot 13w47b
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -4395,6 +4506,7 @@ echo Seleccionaste la Snapshot 13w47c
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -4425,6 +4537,7 @@ echo Seleccionaste la Snapshot 13w47d
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -4455,6 +4568,7 @@ echo Seleccionaste la Snapshot 13w47e
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -4485,6 +4599,7 @@ echo Seleccionaste la Snapshot 13w48a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -4515,6 +4630,7 @@ echo Seleccionaste la Snapshot 13w48b
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -4545,6 +4661,7 @@ echo Seleccionaste la Snapshot 13w49a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -4575,6 +4692,7 @@ echo Seleccionaste la Snapshot 14w02a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -4605,6 +4723,7 @@ echo Seleccionaste la Snapshot 14w02b
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -4635,6 +4754,7 @@ echo Seleccionaste la Snapshot 14w02c
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -4665,6 +4785,7 @@ echo Seleccionaste la Snapshot 14w03a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -4695,6 +4816,7 @@ echo Seleccionaste la Snapshot 14w03b
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -4725,6 +4847,7 @@ echo Seleccionaste la Snapshot 14w04a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -4755,6 +4878,7 @@ echo Seleccionaste la Snapshot 14w04b
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -4785,6 +4909,7 @@ echo Seleccionaste la Snapshot 14w05a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -4815,6 +4940,7 @@ echo Seleccionaste la Snapshot 14w05b
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -4845,6 +4971,7 @@ echo Seleccionaste la Snapshot 14w06a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -4875,6 +5002,7 @@ echo Seleccionaste la Snapshot 14w06b
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -4905,6 +5033,7 @@ echo Seleccionaste la Snapshot 14w07a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -4935,6 +5064,7 @@ echo Seleccionaste la Snapshot 14w08a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -4965,6 +5095,7 @@ echo Seleccionaste la Snapshot 14w10a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -4995,6 +5126,7 @@ echo Seleccionaste la Snapshot 14w10b
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -5025,6 +5157,7 @@ echo Seleccionaste la Snapshot 14w10c
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -5055,6 +5188,7 @@ echo Seleccionaste la Snapshot 1.7.6-pre1
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -5085,6 +5219,7 @@ echo Seleccionaste la Snapshot 1.7.6-pre2
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -5115,6 +5250,7 @@ echo Seleccionaste la Snapshot 14w11a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -5145,6 +5281,7 @@ echo Seleccionaste la Snapshot 14w11b
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -5175,6 +5312,7 @@ echo Seleccionaste la Snapshot 14w17a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -5205,6 +5343,7 @@ echo Seleccionaste la Snapshot 14w18a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -5235,6 +5374,7 @@ echo Seleccionaste la Snapshot 14w18b
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -5265,6 +5405,7 @@ echo Seleccionaste la Snapshot 14w19a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -5295,6 +5436,7 @@ echo Seleccionaste la Snapshot 1.7.10-pre1
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -5325,6 +5467,7 @@ echo Seleccionaste la Snapshot 1.7.10-pre2
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -5355,6 +5498,7 @@ echo Seleccionaste la Snapshot 1.7.10-pre3
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -5385,6 +5529,7 @@ echo Seleccionaste la Snapshot 1.7.10-pre4
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -5415,6 +5560,7 @@ echo Seleccionaste la Snapshot 14w20a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -5445,6 +5591,7 @@ echo Seleccionaste la Snapshot 14w20b
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -5475,6 +5622,7 @@ echo Seleccionaste la Snapshot 14w21a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -5505,6 +5653,7 @@ echo Seleccionaste la Snapshot 14w21b
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -5535,6 +5684,7 @@ echo Seleccionaste la Snapshot 14w25a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -5565,6 +5715,7 @@ echo Seleccionaste la Snapshot 14w25b
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -5595,6 +5746,7 @@ echo Seleccionaste la Snapshot 14w26a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -5625,6 +5777,7 @@ echo Seleccionaste la Snapshot 14w26b
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -5655,6 +5808,7 @@ echo Seleccionaste la Snapshot 14w26c
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -5685,6 +5839,7 @@ echo Seleccionaste la Snapshot 14w27a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -5715,6 +5870,7 @@ echo Seleccionaste la Snapshot 14w27b
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -5745,6 +5901,7 @@ echo Seleccionaste la Snapshot 14w28a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -5775,6 +5932,7 @@ echo Seleccionaste la Snapshot 14w28b
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -5805,6 +5963,7 @@ echo Seleccionaste la Snapshot 14w29a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -5835,6 +5994,7 @@ echo Seleccionaste la Snapshot 14w29b
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -5865,6 +6025,7 @@ echo Seleccionaste la Snapshot 14w30a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -5895,6 +6056,7 @@ echo Seleccionaste la Snapshot 14w30b
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -5925,6 +6087,7 @@ echo Seleccionaste la Snapshot 14w30c
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -5955,6 +6118,7 @@ echo Seleccionaste la Snapshot 14w31a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -5985,6 +6149,7 @@ echo Seleccionaste la Snapshot 14w32a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -6015,6 +6180,7 @@ echo Seleccionaste la Snapshot 14w32b
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -6045,6 +6211,7 @@ echo Seleccionaste la Snapshot 14w32c
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -6075,6 +6242,7 @@ echo Seleccionaste la Snapshot 14w32d
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -6105,6 +6273,7 @@ echo Seleccionaste la Snapshot 14w33a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -6135,6 +6304,7 @@ echo Seleccionaste la Snapshot 14w33b
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -6165,6 +6335,7 @@ echo Seleccionaste la Snapshot 14w33c
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -6195,6 +6366,7 @@ echo Seleccionaste la Snapshot 14w34a
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -6225,6 +6397,7 @@ echo Seleccionaste la Snapshot 14w34b
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -6255,6 +6428,7 @@ echo Seleccionaste la Snapshot 14w34c
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -6285,6 +6459,7 @@ echo Seleccionaste la Snapshot 14w34d
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -6315,6 +6490,7 @@ echo Seleccionaste la Snapshot 1.8-pre1
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -6345,6 +6521,7 @@ echo Seleccionaste la Snapshot 1.8-pre2
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -6375,6 +6552,7 @@ echo Seleccionaste la Snapshot 1.8-pre3
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -6405,6 +6583,7 @@ echo Seleccionaste la Snapshot 1.8.1-pre1
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -6435,6 +6614,7 @@ echo Seleccionaste la Snapshot 1.8.1-pre2
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -6465,6 +6645,7 @@ echo Seleccionaste la Snapshot 1.8.1-pre3
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -6495,6 +6676,7 @@ echo Seleccionaste la Snapshot 1.8.1-pre4
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -6525,6 +6707,7 @@ echo Seleccionaste la Snapshot 1.8.1-pre5
 echo(
 echo Se descargaran los archivos necesarios desde Internet
 echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
@@ -6586,7 +6769,7 @@ echo(
 pause
 cd %USERPROFILE%\Desktop\Servidor\
 server.properties
-goto :exit
+goto :init
 
 REM Desde esta anotación se encuentran las listas de versiones compatibles con esta herramienta
 REM Se crean estas anotaciones por un tema de órden y rapidez al momento de actualizar o trabajar con este código fuente
@@ -6596,6 +6779,9 @@ cls
 echo Instalador de Servidores de Minecraft
 echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
 echo --------------------------------------
+echo(
+echo Estas listas muestran las versiones que son soportadas por la herramienta en esta version.
+echo Las versiones que soporta la herramienta y estas listas pueden cambiar en futuras actualizaciones.
 echo(
 echo (1) Ver Lista de Versiones Stable
 echo (2) Ver Lista de Versiones Snapshot, April Fools, Pre-Releases y Release Candidates
@@ -6845,6 +7031,7 @@ cls
 cls
 echo(
 echo El Modo Debug esta Activado
+echo(
 pause
 cls
 @echo on
@@ -6856,9 +7043,9 @@ echo(
 echo Estas en el Menu Principal
 echo(
 echo (1) Instalar un Servidor
-echo (2) Listas de Versiones disponibles
+echo (2) Listas de Versiones
 echo (3) Modo Debug (Para desarrolladores)
-echo (4) Acerca de (Por ahora vacio)
+echo (4) Acerca de
 echo (5) Salir
 echo(
 set /P c=Elige una de las opciones = 
@@ -6875,16 +7062,283 @@ cls
 cls
 echo(
 echo El Modo Debug esta Desactivado
+echo(
 pause
 goto :init
 
-REM Desde esta anotación se encuentrael bloque de código que contiene la información "acerca de" esta herramienta
+REM Desde esta anotación se encuentran los bloques de código que contienen la información "acerca de" esta herramienta
 REM Se crean estas anotaciones por un tema de órden y rapidez al momento de actualizar o trabajar con este código fuente
 
 :about
 cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
-echo Aun no hay nada por aqui...
+echo Informacion acerca de la Herramienta y del Conjunto
+echo(
+echo (1) Readme
+echo (2) Politica de Seguridad
+echo (3) Copyright y Disclaimer
+echo (4) Volver al Menu Principal
+echo(
+set /P c=Elige una de las opciones = 
+if /I "%c%" EQU "1" goto :readme
+if /I "%c%" EQU "2" goto :security
+if /I "%c%" EQU "3" goto :canddis
+if /I "%c%" EQU "4" goto :init
+goto :about
+
+:readme
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo (1) Ver Readme Online (Recomendado)
+echo (2) Ver Readme Aqui
+echo (3) Volver al Menu Anterior
+echo (4) Volver al Menu Principal
+echo(
+set /P c=Elige una de las opciones = 
+if /I "%c%" EQU "1" goto :readmeol
+if /I "%c%" EQU "2" goto :readmeof
+if /I "%c%" EQU "3" goto :about
+if /I "%c%" EQU "4" goto :init
+goto :readme
+
+:readmeol
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Si continuas, se abrira el Readme mas reciente en el navegador.
+echo(
+pause
+start https://github.com/NGDPLNk/mcsstools/blob/main/README.md
+goto :init
+
+:readmeof
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo README MCSSTools
+echo(
+echo(
+echo(
+echo MCSSTools
+echo Minecraft Server Startup Tools es un conjunto de herramientas que te ayudará con distintos procesos para tu servidor dedicado de Minecraft.
+echo(
+echo(
+echo ¿Cómo obtengo las herramientas de este conjunto?
+echo Debes descargar la última versión de este conjunto o de la herramienta que desees desde Este Link
+echo(
+echo Extrae el archivo ya descargado en donde lo desees, allí encontrarás cada ejecutable disponible correspondiente.
+echo(
+echo(
+echo Lanzador de servidores
+echo(
+echo Requisitos mínimos de esta herramienta:
+echo SO: Windows 7 SP1 o superior.
+echo(
+echo Procesador: Arquitectura de x64 para la versión x64 de esta herramienta.
+echo(
+echo RAM: Varía entre 1GiB y 16GiB dependiendo de la cantidad memoria RAM seleccionada para el servidor dedicado.
+echo(
+echo Espacio en disco: Varía dependiendo de cada servidor.
+echo(
+echo Este software puede requerir de una conexión a internet si quieres que tu servidor esté accesible para cualquier jugador.
+echo(
+echo Necesitas tener a lo menos Java 8 para poder iniciar un servidor.
+echo(
+echo También requiere permisos de administrador para acceder a las carpetas y archivos de tu servidor.
+echo(
+echo(
+echo Para usar esta herramienta debes:
+echo Descargar la versión más reciente del conjunto
+echo Luego, debes identificar la versión de la herramienta que corresponda a tu sistema operativo (x32 para 32 bits; x64 para 64 bits).
+echo Copia la herramienta que corresponda a tu sistema operativo y luego pégala en la carpeta principal del servidor que deseas abrir.
+echo Abre la herramienta y sigue las instrucciones en pantalla (Especificar versión, cantidad de memoria RAM a asignar, etc...).
+echo(
+echo(
+echo Instalador de servidores
+echo(
+echo Requisitos mínimos de esta herramienta:
+echo SO: Windows 10 v.1803 (build 17134) o superior.
+echo(
+echo Procesador: Arquitectura de x64 para la versión x64 de esta herramienta.
+echo(
+echo RAM: 200MiB
+echo(
+echo Espacio en disco: 150MiB para instalar 1 servidor.
+echo(
+echo Este software requiere de una conexión a internet disponible en el momento de la instalación de servidores.
+echo(
+echo También requiere permisos de administrador para poder acceder y crear los archivos y carpetas que correspondan al servidor en tu equipo.
+echo(
+echo(
+echo Para usar esta herramienta debes:
+echo Descargar la versión más reciente del conjunto
+echo Luego, debes identificar la versión de la herramienta que corresponda a tu sistema operativo (x32 para 32 bits; x64 para 64 bits).
+echo Abre la herramienta antes seleccionada y sigue las instrucciones en pantalla (Elegir versión para el servidor, leer y aceptar el CLUF de Minecraft, configurar parámetros iniciales, etc...).
+echo Cuando ya hayas creado tu servidor correctamente, CAMBIA EL NOMBRE DE LA CARPETA DEL SERVIDOR O PONLA EN OTRA UBICACIÓN. Este paso es muy importante, ya que si no lo haces y vuelves a ejecutar la herramienta, esta sobreescribirá los archivos de la carpeta y causará un conflicto con tu servidor original.
+echo(
+echo(
+echo Información sobre Copyright y Disclaimer
+echo(
+echo MCSSTOOLS Y CADA UNA DE SUS HERRAMIENTAS NO SON UN PRODUCTO OFICIAL DE MINECRAFT. NO ESTÁN APROBADAS POR MOJANG NI ASOCIADAS CON ÉL
+echo(
+echo Se otorga permiso, sin cargo, a cualquier persona que obtenga una copia de este software y los archivos de documentación asociados (MCSSTools), para utilizar el Software sin restricciones, incluidos, entre otros, los derechos de uso, copia, modificación, fusión , publicar, distribuir, sublicenciar y/o vender copias del Software, y permitir que las personas a las que se les proporcione el Software lo hagan, sujeto a las siguientes condiciones:
+echo(
+echo -El aviso de copyright anterior y este aviso de permiso se incluirán en todas las copias o partes sustanciales del Software.
+echo(
+echo EL SOFTWARE SE PROPORCIONA "TAL CUAL", SIN GARANTÍA DE NINGÚN TIPO, EXPRESA O IMPLÍCITA, INCLUYENDO PERO NO LIMITADO A LAS GARANTÍAS DE COMERCIABILIDAD, ADECUACIÓN PARA UN PROPÓSITO PARTICULAR Y NO INFRACCIÓN. EN NINGÚN CASO LOS AUTORES O TITULARES DE LOS DERECHOS DE AUTOR SERÁN RESPONSABLES DE CUALQUIER RECLAMO, DAÑOS U OTRA RESPONSABILIDAD, YA SEA EN UNA ACCIÓN DE CONTRATO, AGRAVIO O DE OTRO MODO, QUE SURJA DE, FUERA DE O EN RELACIÓN CON EL SOFTWARE O EL USO U OTRAS NEGOCIACIONES EN EL SOFTWARE.
+echo(
+echo "Minecraft" es una marca registrada de Mojang Synergies AB, y no tiene ninguna relación con este Software.
+echo(
+echo NGDPL Nk no es dueño ni tampoco almacena ningún producto de Mojang Synergies AB. Tampoco depende de NGDPL Nk la disponibilidad de estos mismos.
+echo(
+echo Cada elemento, nombre, correspondiente a Mojang Synergies AB, es usado cumpliendo el CLUF y las Directrices de Marca y Herramientas
+echo(
+echo(
+echo Gracias Por Usar Este Conjunto De Herramientas
+echo(
+echo ©2021 - NGDPL Nk
+echo(
+echo(
+echo(
+pause
+goto :init
+
+:security
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo (1) Ver Politica de Seguridad Online (Recomendado)
+echo (2) Ver Politica de Seguridad Aqui
+echo (3) Volver al Menu Anterior
+echo (4) Volver al Menu Principal
+echo(
+set /P c=Elige una de las opciones = 
+if /I "%c%" EQU "1" goto :securityol
+if /I "%c%" EQU "2" goto :securityof
+if /I "%c%" EQU "3" goto :about
+if /I "%c%" EQU "4" goto :init
+goto :security
+
+:securityol
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Si continuas, se abrira la Politica de Seguridad mas reciente en el navegador.
+echo(
+pause
+start https://github.com/NGDPLNk/mcsstools/blob/main/SECURITY.md
+goto :init
+
+:securityof
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo POLITICA DE SEGURIDAD MCSSTools
+echo(
+echo(
+echo(
+echo Política de Seguridad
+echo(
+echo(
+echo Versiones con Soporte
+echo(
+echo En caso de encontrarse problemas de seguridad, estas son las versiones con un soporte activo:
+echo(
+echo    Versión	      Tiene Soporte
+echo v0.0.0.1-Alpha	       No
+echo v0.0.0.2-Alpha	       No
+echo v0.0.0.3-Alpha        Si
+echo v0.0.0.4-Beta         Si
+echo v0.0.0.5-Beta         Si
+echo(
+echo(
+echo Reportar una Vulnerabilidad
+echo(
+echo Para reportar alguna vulnerabilidad, puedes hacerlo directamente en este repositorio, o puedes comunicarte directamente conmigo:
+echo(
+echo E-Mail: nikkotilion@gmail.com
+echo(
+echo Debes explicar qué es lo que crees que está vulnerando la seguridad y será resuelto lo antes posible.
+echo(
+echo(
+echo(
+pause
+goto :init
+
+:canddis
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo (1) Ver Copyright y Disclaimer Online (Recomendado)
+echo (2) Ver Copyright y Disclaimer Aqui
+echo (3) Volver al Menu Anterior
+echo (4) Volver al Menu Principal
+echo(
+set /P c=Elige una de las opciones = 
+if /I "%c%" EQU "1" goto :canddisol
+if /I "%c%" EQU "2" goto :canddisof
+if /I "%c%" EQU "3" goto :about
+if /I "%c%" EQU "4" goto :init
+goto :canddis
+
+:canddisol
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Si continuas, se abrira el Copyright y Disclaimer mas reciente en el navegador.
+echo(
+pause
+start https://github.com/NGDPLNk/mcsstools#informaci%C3%B3n-sobre-copyright-y-disclaimer
+goto :init
+
+:canddisof
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo COPYRIGHT Y DISCLAIMER MCSSTools
+echo(
+echo(
+echo(
+echo Información sobre Copyright y Disclaimer
+echo(
+echo MCSSTOOLS Y CADA UNA DE SUS HERRAMIENTAS NO SON UN PRODUCTO OFICIAL DE MINECRAFT. NO ESTÁN APROBADAS POR MOJANG NI ASOCIADAS CON ÉL
+echo(
+echo Se otorga permiso, sin cargo, a cualquier persona que obtenga una copia de este software y los archivos de documentación asociados (MCSSTools), para utilizar el Software sin restricciones, incluidos, entre otros, los derechos de uso, copia, modificación, fusión , publicar, distribuir, sublicenciar y/o vender copias del Software, y permitir que las personas a las que se les proporcione el Software lo hagan, sujeto a las siguientes condiciones:
+echo(
+echo -El aviso de copyright anterior y este aviso de permiso se incluirán en todas las copias o partes sustanciales del Software.
+echo(
+echo EL SOFTWARE SE PROPORCIONA "TAL CUAL", SIN GARANTÍA DE NINGÚN TIPO, EXPRESA O IMPLÍCITA, INCLUYENDO PERO NO LIMITADO A LAS GARANTÍAS DE COMERCIABILIDAD, ADECUACIÓN PARA UN PROPÓSITO PARTICULAR Y NO INFRACCIÓN. EN NINGÚN CASO LOS AUTORES O TITULARES DE LOS DERECHOS DE AUTOR SERÁN RESPONSABLES DE CUALQUIER RECLAMO, DAÑOS U OTRA RESPONSABILIDAD, YA SEA EN UNA ACCIÓN DE CONTRATO, AGRAVIO O DE OTRO MODO, QUE SURJA DE, FUERA DE O EN RELACIÓN CON EL SOFTWARE O EL USO U OTRAS NEGOCIACIONES EN EL SOFTWARE.
+echo(
+echo "Minecraft" es una marca registrada de Mojang Synergies AB, y no tiene ninguna relación con este Software.
+echo(
+echo NGDPL Nk no es dueño ni tampoco almacena ningún producto de Mojang Synergies AB. Tampoco depende de NGDPL Nk la disponibilidad de estos mismos.
+echo(
+echo Cada elemento, nombre, correspondiente a Mojang Synergies AB, es usado cumpliendo el CLUF y las Directrices de Marca y Herramientas
+echo(
+echo(
+echo(
 pause
 goto :init
 
@@ -6913,5 +7367,6 @@ echo --------------------------------------------
 echo Muchas Gracias por usar esta Herramienta
 echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo --------------------------------------------
+echo(
 pause
 exit
