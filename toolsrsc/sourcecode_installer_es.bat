@@ -6,12 +6,20 @@ echo Instalador de Servidores de Minecraft
 echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
-echo (1) Instalar un Servidor
-echo (2) Ver lista de versiones disponibles
+echo Estas en el Menu Principal
 echo(
-set /P c=Que te gustaria hacer? = 
+echo (1) Instalar un Servidor
+echo (2) Listas de Versiones disponibles
+echo (3) Modo Debug (Para desarrolladores)
+echo (4) Acerca de (Por ahora vacio)
+echo (5) Salir
+echo(
+set /P c=Elige una de las opciones = 
 if /I "%c%" EQU "1" goto :version
 if /I "%c%" EQU "2" goto :vslist
+if /I "%c%" EQU "3" goto :dbmode
+if /I "%c%" EQU "4" goto :about
+if /I "%c%" EQU "5" goto :exit
 goto :init
 
 :version
@@ -525,6 +533,7 @@ if /I "%c%" EQU "21w14a" goto :21w14a
 if /I "%c%" EQU "21w15a" goto :21w15a
 if /I "%c%" EQU "21w16a" goto :21w16a
 if /I "%c%" EQU "21w17a" goto :21w17a
+if /I "%c%" EQU "21w18a" goto :21w18a
 goto :versionnull
 
 :versionnull
@@ -1040,6 +1049,7 @@ if /I "%c%" EQU "21w14a" goto :21w14a
 if /I "%c%" EQU "21w15a" goto :21w15a
 if /I "%c%" EQU "21w16a" goto :21w16a
 if /I "%c%" EQU "21w17a" goto :21w17a
+if /I "%c%" EQU "21w18a" goto :21w18a
 goto :versionnull
 
 :1.2.1
@@ -6576,23 +6586,10 @@ echo(
 pause
 cd %USERPROFILE%\Desktop\Servidor\
 server.properties
-cls
-echo Instalador de Servidores de Minecraft
-echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
-echo --------------------------------------
-echo(
-echo Listo, ya tienes instalado tu nuevo Servidor
-echo Recuerda cambiar el nombre o la ubicacion de la carpeta de tu Servidor
-echo(
-echo --------------------------------------------
-echo Muchas Gracias por usar esta Herramienta
-echo MIT License - Copyright (c) 2021 NGDPL Nk
-echo --------------------------------------------
-pause
-exit
+goto :exit
 
-REM Desde esta anotación se encuentra disponible la lista de versiones compatibles con esta herramienta
-REM Se crean estas anotaciones por un tema de órden al momento de actualizar o trabajar con este código fuente
+REM Desde esta anotación se encuentran las listas de versiones compatibles con esta herramienta
+REM Se crean estas anotaciones por un tema de órden y rapidez al momento de actualizar o trabajar con este código fuente
 
 :vslist
 cls
@@ -6600,193 +6597,321 @@ echo Instalador de Servidores de Minecraft
 echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
-echo VERSIONES MINECRAFT STABLE
-echo 1.2.1
-echo 1.2.2
-echo 1.2.3
-echo 1.2.4
-echo 1.2.5
-echo 1.3.1
-echo 1.3.2
-echo 1.4.2
-echo 1.4.4
-echo 1.4.5
-echo 1.4.6
-echo 1.4.7
-echo 1.5.1
-echo 1.5.2
-echo 1.6.1
-echo 1.6.2
-echo 1.6.4
-echo 1.7.2
-echo 1.7.3
-echo 1.7.4
-echo 1.7.5
-echo 1.7.6
-echo 1.7.7
-echo 1.7.8
-echo 1.7.9
-echo 1.7.10
-echo 1.8
-echo 1.8.1
-echo 1.8.2
-echo 1.8.3
-echo 1.8.4
-echo 1.8.5
-echo 1.8.6
-echo 1.8.7
-echo 1.8.8
-echo 1.8.9
-echo 1.9
-echo 1.9.1
-echo 1.9.2
-echo 1.9.3
-echo 1.9.4
-echo 1.10
-echo 1.10.1
-echo 1.10.2
-echo 1.11
-echo 1.11.1
-echo 1.11.2
-echo 1.12
-echo 1.12.1
-echo 1.12.2
-echo 1.13
-echo 1.13.1
-echo 1.13.2
-echo 1.14
-echo 1.14.1
-echo 1.14.2
-echo 1.14.3
-echo 1.14.4
-echo 1.15
-echo 1.15.1
-echo 1.15.2
-echo 1.16
-echo 1.16.1
-echo 1.16.2
-echo 1.16.3
-echo 1.16.4
-echo 1.16.5
+echo (1) Ver Lista de Versiones Stable
+echo (2) Ver Lista de Versiones Snapshot, April Fools, Pre-Releases y Release Candidates
+echo (3) Volver al Menu Principal
 echo(
-echo VERSIONES MINECRAFT SNAPSHOT
-echo 1.3
-echo 1.4
-echo 1.4.1
-echo 1.4.3
-echo 1.5
-echo 13w16a
-echo 13w16b
-echo 13w17a
-echo 13w18a
-echo 13w18b
-echo 13w18c
-echo 13w19a
-echo 13w21a
-echo 13w21b
-echo 13w22a
-echo 13w23a
-echo 13w23b
-echo 13w24a
-echo 13w24b
-echo 13w25a
-echo 13w25b
-echo 13w25c
-echo 13w26a
-echo 1.6
-echo 13w36a
-echo 13w36b
-echo 13w37a
-echo 13w37b
-echo 1.6.3
-echo 13w38a
-echo 13w38b
-echo 13w38c
-echo 13w39a
-echo 13w39b
-echo 13w41a
-echo 13w41b
-echo 13w42a
-echo 13w42b
-echo 13w43a
-echo 1.7
-echo 1.7.1
-echo 13w47a
-echo 13w47b
-echo 13w47c
-echo 13w47d
-echo 13w47e
-echo 13w48a
-echo 13w48b
-echo 13w49a
-echo 14w02a
-echo 14w02b
-echo 14w02c
-echo 14w03a
-echo 14w03b
-echo 14w04a
-echo 14w04b
-echo 14w05a
-echo 14w05b
-echo 14w06a
-echo 14w06b
-echo 14w07a
-echo 14w08a
-echo 14w10a
-echo 14w10b
-echo 14w10c
-echo 1.7.6-pre1
-echo 1.7.6-pre2
-echo 14w11a
-echo 14w11b
-echo 14w17a
-echo 14w18a
-echo 14w18b
-echo 14w19a
-echo 1.7.10-pre1
-echo 1.7.10-pre2
-echo 1.7.10-pre3
-echo 1.7.10-pre4
-echo 14w20a
-echo 14w20b
-echo 14w21a
-echo 14w21b
-echo 14w25a
-echo 14w25b
-echo 14w26a
-echo 14w26b
-echo 14w26c
-echo 14w27a
-echo 14w27b
-echo 14w28a
-echo 14w28b
-echo 14w29a
-echo 14w29b
-echo 14w30a
-echo 14w30b
-echo 14w30c
-echo 14w31a
-echo 14w32a
-echo 14w32b
-echo 14w32c
-echo 14w32d
-echo 14w33a
-echo 14w33b
-echo 14w33c
-echo 14w34a
-echo 14w34b
-echo 14w34c
-echo 14w34d
-echo 1.8-pre1
-echo 1.8-pre2
-echo 1.8-pre3
-echo 1.8.1-pre1
-echo 1.8.1-pre2
-echo 1.8.1-pre3
-echo 1.8.1-pre4
-echo 1.8.1-pre5
+set /P c=Elige una de las opciones = 
+if /I "%c%" EQU "1" goto :stblist
+if /I "%c%" EQU "2" goto :snaplist
+if /I "%c%" EQU "3" goto :init
+goto :vslist
+
+:stblist
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
 echo(
+echo Lista de Versiones de Minecraft Stable Soportadas por esta Herramienta (Hasta ahora)
 echo(
+echo - 1.2.1
+echo - 1.2.2
+echo - 1.2.3
+echo - 1.2.4
+echo - 1.2.5
+echo - 1.3.1
+echo - 1.3.2
+echo - 1.4.2
+echo - 1.4.4
+echo - 1.4.5
+echo - 1.4.6
+echo - 1.4.7
+echo - 1.5.1
+echo - 1.5.2
+echo - 1.6.1
+echo - 1.6.2
+echo - 1.6.4
+echo - 1.7.2
+echo - 1.7.3
+echo - 1.7.4
+echo - 1.7.5
+echo - 1.7.6
+echo - 1.7.7
+echo - 1.7.8
+echo - 1.7.9
+echo - 1.7.10
+echo - 1.8
+echo - 1.8.1
+echo - 1.8.2
+echo - 1.8.3
+echo - 1.8.4
+echo - 1.8.5
+echo - 1.8.6
+echo - 1.8.7
+echo - 1.8.8
+echo - 1.8.9
+echo - 1.9
+echo - 1.9.1
+echo - 1.9.2
+echo - 1.9.3
+echo - 1.9.4
+echo - 1.10
+echo - 1.10.1
+echo - 1.10.2
+echo - 1.11
+echo - 1.11.1
+echo - 1.11.2
+echo - 1.12
+echo - 1.12.1
+echo - 1.12.2
+echo - 1.13
+echo - 1.13.1
+echo - 1.13.2
+echo - 1.14
+echo - 1.14.1
+echo - 1.14.2
+echo - 1.14.3
+echo - 1.14.4
+echo - 1.15
+echo - 1.15.1
+echo - 1.15.2
+echo - 1.16
+echo - 1.16.1
+echo - 1.16.2
+echo - 1.16.3
+echo - 1.16.4
+echo - 1.16.5
 echo(
 pause
-goto :version
+goto :init
+
+:snaplist
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Lista de Versiones de Minecraft Snapshot, April Fools, Pre-Releases y Release Candidates,
+echo Soportadas por esta Herramienta (Hasta ahora)
+echo(
+echo - 1.3
+echo - 1.4
+echo - 1.4.1
+echo - 1.4.3
+echo - 1.5
+echo - 13w16a
+echo - 13w16b
+echo - 13w17a
+echo - 13w18a
+echo - 13w18b
+echo - 13w18c
+echo - 13w19a
+echo - 13w21a
+echo - 13w21b
+echo - 13w22a
+echo - 13w23a
+echo - 13w23b
+echo - 13w24a
+echo - 13w24b
+echo - 13w25a
+echo - 13w25b
+echo - 13w25c
+echo - 13w26a
+echo - 1.6
+echo - 13w36a
+echo - 13w36b
+echo - 13w37a
+echo - 13w37b
+echo - 1.6.3
+echo - 13w38a
+echo - 13w38b
+echo - 13w38c
+echo - 13w39a
+echo - 13w39b
+echo - 13w41a
+echo - 13w41b
+echo - 13w42a
+echo - 13w42b
+echo - 13w43a
+echo - 1.7
+echo - 1.7.1
+echo - 13w47a
+echo - 13w47b
+echo - 13w47c
+echo - 13w47d
+echo - 13w47e
+echo - 13w48a
+echo - 13w48b
+echo - 13w49a
+echo - 14w02a
+echo - 14w02b
+echo - 14w02c
+echo - 14w03a
+echo - 14w03b
+echo - 14w04a
+echo - 14w04b
+echo - 14w05a
+echo - 14w05b
+echo - 14w06a
+echo - 14w06b
+echo - 14w07a
+echo - 14w08a
+echo - 14w10a
+echo - 14w10b
+echo - 14w10c
+echo - 1.7.6-pre1
+echo - 1.7.6-pre2
+echo - 14w11a
+echo - 14w11b
+echo - 14w17a
+echo - 14w18a
+echo - 14w18b
+echo - 14w19a
+echo - 1.7.10-pre1
+echo - 1.7.10-pre2
+echo - 1.7.10-pre3
+echo - 1.7.10-pre4
+echo - 14w20a
+echo - 14w20b
+echo - 14w21a
+echo - 14w21b
+echo - 14w25a
+echo - 14w25b
+echo - 14w26a
+echo - 14w26b
+echo - 14w26c
+echo - 14w27a
+echo - 14w27b
+echo - 14w28a
+echo - 14w28b
+echo - 14w29a
+echo - 14w29b
+echo - 14w30a
+echo - 14w30b
+echo - 14w30c
+echo - 14w31a
+echo - 14w32a
+echo - 14w32b
+echo - 14w32c
+echo - 14w32d
+echo - 14w33a
+echo - 14w33b
+echo - 14w33c
+echo - 14w34a
+echo - 14w34b
+echo - 14w34c
+echo - 14w34d
+echo - 1.8-pre1
+echo - 1.8-pre2
+echo - 1.8-pre3
+echo - 1.8.1-pre1
+echo - 1.8.1-pre2
+echo - 1.8.1-pre3
+echo - 1.8.1-pre4
+echo - 1.8.1-pre5
+echo(
+pause
+goto :init
+
+REM Desde esta anotación se encuentra el bloque de código que activa y desactiva el modo debug
+REM Se crean estas anotaciones por un tema de órden y rapidez al momento de actualizar o trabajar con este código fuente
+
+:dbmode
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo El Modo Debug muestra todos los comandos que son ejecutados por la consola durante cada proceso.
+echo Este modo le es util a los desarrolladores para detectar problemas con el codigo de manera mas facil.
+echo No se recomienda activar este modo si realmente no sabes como sobrellevarlo.
+echo(
+echo (1) Activar Modo Debug
+echo (2) Desactivar Modo Debug
+echo (3) Visualizar todo el codigo fuente
+echo (4) Volver al Menu Principal
+echo(
+set /P c=Elige una de las opciones = 
+if /I "%c%" EQU "1" goto :dbinit
+if /I "%c%" EQU "2" goto :undbinit
+if /I "%c%" EQU "3" goto :viewsrc
+if /I "%c%" EQU "4" goto :init
+goto :dbmode
+
+:dbinit
+cls
+@echo off
+cls
+echo(
+echo El Modo Debug esta Activado
+pause
+cls
+@echo on
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Estas en el Menu Principal
+echo(
+echo (1) Instalar un Servidor
+echo (2) Listas de Versiones disponibles
+echo (3) Modo Debug (Para desarrolladores)
+echo (4) Acerca de (Por ahora vacio)
+echo (5) Salir
+echo(
+set /P c=Elige una de las opciones = 
+if /I "%c%" EQU "1" goto :version
+if /I "%c%" EQU "2" goto :vslist
+if /I "%c%" EQU "3" goto :dbmode
+if /I "%c%" EQU "4" goto :about
+if /I "%c%" EQU "5" goto :exit
+goto :init
+
+:undbinit
+cls
+@echo off
+cls
+echo(
+echo El Modo Debug esta Desactivado
+pause
+goto :init
+
+REM Desde esta anotación se encuentrael bloque de código que contiene la información "acerca de" esta herramienta
+REM Se crean estas anotaciones por un tema de órden y rapidez al momento de actualizar o trabajar con este código fuente
+
+:about
+cls
+echo(
+echo Aun no hay nada por aqui...
+pause
+goto :init
+
+REM Desde esta anotación se encuentra el bloque de código que redirecciona al código fuente completo de esta herramienta
+REM Se crean estas anotaciones por un tema de órden y rapidez al momento de actualizar o trabajar con este código fuente
+
+:viewsrc
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Si continuas, se abrira el codigo fuente mas reciente de esta herramienta en el navegador.
+echo(
+pause
+start https://raw.githubusercontent.com/NGDPLNk/mcsstools/main/toolsrsc/sourcecode_installer_es.bat
+goto :init
+
+REM Desde esta anotación se encuentra el bloque que da pie a la salida de esta herramienta
+REM Se crean estas anotaciones por un tema de órden y rapidez al momento de actualizar o trabajar con este código fuente
+
+:exit
+cls
+echo(
+echo --------------------------------------------
+echo Muchas Gracias por usar esta Herramienta
+echo MIT License - Copyright (c) 2021 NGDPL Nk
+echo --------------------------------------------
+pause
+exit
