@@ -534,6 +534,7 @@ if /I "%c%" EQU "21w15a" goto :21w15a
 if /I "%c%" EQU "21w16a" goto :21w16a
 if /I "%c%" EQU "21w17a" goto :21w17a
 if /I "%c%" EQU "21w18a" goto :21w18a
+if /I "%c%" EQU "21w19a" goto :21w19a
 goto :versionnull
 
 :versionnull
@@ -1050,6 +1051,7 @@ if /I "%c%" EQU "21w15a" goto :21w15a
 if /I "%c%" EQU "21w16a" goto :21w16a
 if /I "%c%" EQU "21w17a" goto :21w17a
 if /I "%c%" EQU "21w18a" goto :21w18a
+if /I "%c%" EQU "21w19a" goto :21w19a
 goto :versionnull
 
 :1.2.1
