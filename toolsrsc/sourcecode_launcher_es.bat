@@ -3,7 +3,7 @@
 :version
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo MCSSTools v0.0.4.0-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
 set /P c=Escribe la Version del Servidor que deseas iniciar= 
@@ -79,7 +79,7 @@ goto :versionnull
 :versionnull
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo MCSSTools v0.0.4.0-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Esa Version no esta disponible o es incorrecta
@@ -156,7 +156,7 @@ goto :versionnull
 :1.2.1
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo MCSSTools v0.0.0.4-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Has seleccionado la Version 1.2.1
@@ -169,7 +169,7 @@ goto :1.2.1
 :1.2.1y
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo MCSSTools v0.0.0.4-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Perfecto, es la Version 1.2.1
@@ -196,7 +196,7 @@ goto :1.2.1ramnull
 :1.2.1ramnull
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo MCSSTools v0.0.0.4-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
 echo No puedes asignar esa cantidad de GB's de Ram a tu Servidor (Lo minimo es 1, lo maximo es 16)
@@ -222,7 +222,7 @@ goto :1.2.1ramnull
 :1.2.1_1G
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo MCSSTools v0.0.0.4-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Perfecto, se esta iniciando tu Servidor con 1GB de Ram
@@ -232,7 +232,7 @@ echo(
 java -Xmx1024M -Xms1024M -jar Server_1.2.1.jar nogui
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo MCSSTools v0.0.0.4-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Tu Servidor se ha Cerrado
@@ -248,7 +248,7 @@ exit
 :1.2.1_2G
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo MCSSTools v0.0.0.4-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Perfecto, se esta iniciando tu Servidor con 2GB de Ram
@@ -258,7 +258,7 @@ echo(
 java -Xmx2G -Xms2G -jar Server_1.2.1.jar nogui
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo MCSSTools v0.0.0.4-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Tu Servidor se ha Cerrado
@@ -274,7 +274,7 @@ exit
 :1.2.1_3G
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo MCSSTools v0.0.0.4-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Perfecto, se esta iniciando tu Servidor con 3GB de Ram
@@ -284,7 +284,7 @@ echo(
 java -Xmx3G -Xms3G -jar Server_1.2.1.jar nogui
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo MCSSTools v0.0.0.4-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Tu Servidor se ha Cerrado
@@ -300,7 +300,7 @@ exit
 :1.2.1_4G
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo MCSSTools v0.0.0.4-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Perfecto, se esta iniciando tu Servidor con 4GB de Ram
@@ -310,7 +310,7 @@ echo(
 java -Xmx4G -Xms4G -jar Server_1.2.1.jar nogui
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo MCSSTools v0.0.0.4-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Tu Servidor se ha Cerrado
@@ -326,7 +326,7 @@ exit
 :1.2.1_5G
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo MCSSTools v0.0.0.4-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Perfecto, se esta iniciando tu Servidor con 5GB de Ram
@@ -336,7 +336,7 @@ echo(
 java -Xmx5G -Xms5G -jar Server_1.2.1.jar nogui
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo MCSSTools v0.0.0.4-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Tu Servidor se ha Cerrado
@@ -352,7 +352,7 @@ exit
 :1.2.1_6G
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo MCSSTools v0.0.0.4-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Perfecto, se esta iniciando tu Servidor con 6GB de Ram
@@ -362,7 +362,7 @@ echo(
 java -Xmx6G -Xms6G -jar Server_1.2.1.jar nogui
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo MCSSTools v0.0.0.4-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Tu Servidor se ha Cerrado
@@ -378,7 +378,7 @@ exit
 :1.2.1_7G
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo MCSSTools v0.0.0.4-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Perfecto, se esta iniciando tu Servidor con 7GB de Ram
@@ -388,7 +388,7 @@ echo(
 java -Xmx7G -Xms7G -jar Server_1.2.1.jar nogui
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo MCSSTools v0.0.0.4-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Tu Servidor se ha Cerrado
@@ -404,7 +404,7 @@ exit
 :1.2.1_8G
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo MCSSTools v0.0.0.4-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Perfecto, se esta iniciando tu Servidor con 8GB de Ram
@@ -414,7 +414,7 @@ echo(
 java -Xmx8G -Xms8G -jar Server_1.2.1.jar nogui
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo MCSSTools v0.0.0.4-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Tu Servidor se ha Cerrado
@@ -430,7 +430,7 @@ exit
 :1.2.1_9G
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo MCSSTools v0.0.0.4-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Perfecto, se esta iniciando tu Servidor con 9GB de Ram
@@ -440,7 +440,7 @@ echo(
 java -Xmx9G -Xms9G -jar Server_1.2.1.jar nogui
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo MCSSTools v0.0.0.4-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Tu Servidor se ha Cerrado
@@ -456,7 +456,7 @@ exit
 :1.2.1_10G
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo MCSSTools v0.0.0.4-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Perfecto, se esta iniciando tu Servidor con 10GB de Ram
@@ -467,7 +467,7 @@ java -Xmx10G -Xms10G -jar Server_1.2.1.jar nogui
 echo -------------------------------------------
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo MCSSTools v0.0.0.4-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Tu Servidor se ha Cerrado
@@ -483,7 +483,7 @@ exit
 :1.2.1_11G
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo MCSSTools v0.0.0.4-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Perfecto, se esta iniciando tu Servidor con 11GB de Ram
@@ -493,7 +493,7 @@ echo(
 java -Xmx11G -Xms11G -jar Server_1.2.1.jar nogui
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo MCSSTools v0.0.0.4-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Tu Servidor se ha Cerrado
@@ -509,7 +509,7 @@ exit
 :1.2.1_12G
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo MCSSTools v0.0.0.4-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Perfecto, se esta iniciando tu Servidor con 12GB de Ram
@@ -519,7 +519,7 @@ echo(
 java -Xmx12G -Xms12G -jar Server_1.2.1.jar nogui
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo MCSSTools v0.0.0.4-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Tu Servidor se ha Cerrado
@@ -535,7 +535,7 @@ exit
 :1.2.1_13G
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo MCSSTools v0.0.0.4-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Perfecto, se esta iniciando tu Servidor con 13GB de Ram
@@ -545,7 +545,7 @@ echo(
 java -Xmx13G -Xms13G -jar Server_1.2.1.jar nogui
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo MCSSTools v0.0.0.4-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Tu Servidor se ha Cerrado
@@ -561,7 +561,7 @@ exit
 :1.2.1_14G
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo MCSSTools v0.0.0.4-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Perfecto, se esta iniciando tu Servidor con 14GB de Ram
@@ -571,7 +571,7 @@ echo(
 java -Xmx14G -Xms14G -jar Server_1.2.1.jar nogui
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo MCSSTools v0.0.0.4-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Tu Servidor se ha Cerrado
@@ -587,7 +587,7 @@ exit
 :1.2.1_15G
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo MCSSTools v0.0.0.4-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Perfecto, se esta iniciando tu Servidor con 15GB de Ram
@@ -597,7 +597,7 @@ echo(
 java -Xmx15G -Xms15G -jar Server_1.2.1.jar nogui
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo MCSSTools v0.0.0.4-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Tu Servidor se ha Cerrado
@@ -613,7 +613,7 @@ exit
 :1.2.1_16G
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo MCSSTools v0.0.0.4-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Perfecto, se esta iniciando tu Servidor con 16GB de Ram
@@ -623,7 +623,7 @@ echo(
 java -Xmx16G -Xms16G -jar Server_1.2.1.jar nogui
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
+echo MCSSTools v0.0.0.4-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Tu Servidor se ha Cerrado
@@ -636,7 +636,7 @@ echo --------------------------------------------
 pause
 exit
 
-REM Está anotación indica que desde aquí en adelante falta actualizar el código para que corresponda con el formato de la nueva release v0.0.1.0-Beta, que se encuentra en construcción
+REM Está anotación indica que desde aquí en adelante falta actualizar el código para que corresponda con el formato de la nueva release v0.0.0.4-Beta, que se encuentra en construcción
 REM Cuando se vaya a trabajar nuevamente en este código, se deben eliminar estas anotaciones y luego recolocarlas donde corresponda
 
 :1.2.2
@@ -708,7 +708,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.2.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -724,7 +724,7 @@ java -Xmx2G -Xms2G -jar Server_1.2.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -740,7 +740,7 @@ java -Xmx3G -Xms3G -jar Server_1.2.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -756,7 +756,7 @@ java -Xmx4G -Xms4G -jar Server_1.2.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -772,7 +772,7 @@ java -Xmx5G -Xms5G -jar Server_1.2.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -788,7 +788,7 @@ java -Xmx6G -Xms6G -jar Server_1.2.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -804,7 +804,7 @@ java -Xmx7G -Xms7G -jar Server_1.2.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -820,7 +820,7 @@ java -Xmx8G -Xms8G -jar Server_1.2.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -836,7 +836,7 @@ java -Xmx9G -Xms9G -jar Server_1.2.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -852,7 +852,7 @@ java -Xmx10G -Xms10G -jar Server_1.2.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -868,7 +868,7 @@ java -Xmx11G -Xms11G -jar Server_1.2.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -884,7 +884,7 @@ java -Xmx12G -Xms12G -jar Server_1.2.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -900,7 +900,7 @@ java -Xmx13G -Xms13G -jar Server_1.2.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -916,7 +916,7 @@ java -Xmx14G -Xms14G -jar Server_1.2.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -932,7 +932,7 @@ java -Xmx15G -Xms15G -jar Server_1.2.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -948,7 +948,7 @@ java -Xmx16G -Xms16G -jar Server_1.2.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1022,7 +1022,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.2.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1038,7 +1038,7 @@ java -Xmx2G -Xms2G -jar Server_1.2.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1054,7 +1054,7 @@ java -Xmx3G -Xms3G -jar Server_1.2.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1070,7 +1070,7 @@ java -Xmx4G -Xms4G -jar Server_1.2.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1086,7 +1086,7 @@ java -Xmx5G -Xms5G -jar Server_1.2.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1102,7 +1102,7 @@ java -Xmx6G -Xms6G -jar Server_1.2.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1118,7 +1118,7 @@ java -Xmx7G -Xms7G -jar Server_1.2.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1134,7 +1134,7 @@ java -Xmx8G -Xms8G -jar Server_1.2.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1150,7 +1150,7 @@ java -Xmx9G -Xms9G -jar Server_1.2.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1166,7 +1166,7 @@ java -Xmx10G -Xms10G -jar Server_1.2.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1182,7 +1182,7 @@ java -Xmx11G -Xms11G -jar Server_1.2.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1198,7 +1198,7 @@ java -Xmx12G -Xms12G -jar Server_1.2.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1214,7 +1214,7 @@ java -Xmx13G -Xms13G -jar Server_1.2.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1230,7 +1230,7 @@ java -Xmx14G -Xms14G -jar Server_1.2.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1246,7 +1246,7 @@ java -Xmx15G -Xms15G -jar Server_1.2.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1262,7 +1262,7 @@ java -Xmx16G -Xms16G -jar Server_1.2.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1336,7 +1336,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.2.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1352,7 +1352,7 @@ java -Xmx2G -Xms2G -jar Server_1.2.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1368,7 +1368,7 @@ java -Xmx3G -Xms3G -jar Server_1.2.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1384,7 +1384,7 @@ java -Xmx4G -Xms4G -jar Server_1.2.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1400,7 +1400,7 @@ java -Xmx5G -Xms5G -jar Server_1.2.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1416,7 +1416,7 @@ java -Xmx6G -Xms6G -jar Server_1.2.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1432,7 +1432,7 @@ java -Xmx7G -Xms7G -jar Server_1.2.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1448,7 +1448,7 @@ java -Xmx8G -Xms8G -jar Server_1.2.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1464,7 +1464,7 @@ java -Xmx9G -Xms9G -jar Server_1.2.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1480,7 +1480,7 @@ java -Xmx10G -Xms10G -jar Server_1.2.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1496,7 +1496,7 @@ java -Xmx11G -Xms11G -jar Server_1.2.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1512,7 +1512,7 @@ java -Xmx12G -Xms12G -jar Server_1.2.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1528,7 +1528,7 @@ java -Xmx13G -Xms13G -jar Server_1.2.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1544,7 +1544,7 @@ java -Xmx14G -Xms14G -jar Server_1.2.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1560,7 +1560,7 @@ java -Xmx15G -Xms15G -jar Server_1.2.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1576,7 +1576,7 @@ java -Xmx16G -Xms16G -jar Server_1.2.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1650,7 +1650,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.2.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1666,7 +1666,7 @@ java -Xmx2G -Xms2G -jar Server_1.2.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1682,7 +1682,7 @@ java -Xmx3G -Xms3G -jar Server_1.2.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1698,7 +1698,7 @@ java -Xmx4G -Xms4G -jar Server_1.2.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1714,7 +1714,7 @@ java -Xmx5G -Xms5G -jar Server_1.2.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1730,7 +1730,7 @@ java -Xmx6G -Xms6G -jar Server_1.2.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1746,7 +1746,7 @@ java -Xmx7G -Xms7G -jar Server_1.2.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1762,7 +1762,7 @@ java -Xmx8G -Xms8G -jar Server_1.2.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1778,7 +1778,7 @@ java -Xmx9G -Xms9G -jar Server_1.2.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1794,7 +1794,7 @@ java -Xmx10G -Xms10G -jar Server_1.2.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1810,7 +1810,7 @@ java -Xmx11G -Xms11G -jar Server_1.2.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1826,7 +1826,7 @@ java -Xmx12G -Xms12G -jar Server_1.2.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1842,7 +1842,7 @@ java -Xmx13G -Xms13G -jar Server_1.2.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1858,7 +1858,7 @@ java -Xmx14G -Xms14G -jar Server_1.2.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1874,7 +1874,7 @@ java -Xmx15G -Xms15G -jar Server_1.2.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1890,7 +1890,7 @@ java -Xmx16G -Xms16G -jar Server_1.2.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1964,7 +1964,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.3.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1980,7 +1980,7 @@ java -Xmx2G -Xms2G -jar Server_1.3.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -1996,7 +1996,7 @@ java -Xmx3G -Xms3G -jar Server_1.3.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2012,7 +2012,7 @@ java -Xmx4G -Xms4G -jar Server_1.3.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2028,7 +2028,7 @@ java -Xmx5G -Xms5G -jar Server_1.3.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2044,7 +2044,7 @@ java -Xmx6G -Xms6G -jar Server_1.3.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2060,7 +2060,7 @@ java -Xmx7G -Xms7G -jar Server_1.3.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2076,7 +2076,7 @@ java -Xmx8G -Xms8G -jar Server_1.3.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2092,7 +2092,7 @@ java -Xmx9G -Xms9G -jar Server_1.3.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2108,7 +2108,7 @@ java -Xmx10G -Xms10G -jar Server_1.3.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2124,7 +2124,7 @@ java -Xmx11G -Xms11G -jar Server_1.3.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2140,7 +2140,7 @@ java -Xmx12G -Xms12G -jar Server_1.3.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2156,7 +2156,7 @@ java -Xmx13G -Xms13G -jar Server_1.3.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2172,7 +2172,7 @@ java -Xmx14G -Xms14G -jar Server_1.3.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2188,7 +2188,7 @@ java -Xmx15G -Xms15G -jar Server_1.3.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2204,7 +2204,7 @@ java -Xmx16G -Xms16G -jar Server_1.3.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2278,7 +2278,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.3.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2294,7 +2294,7 @@ java -Xmx2G -Xms2G -jar Server_1.3.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2310,7 +2310,7 @@ java -Xmx3G -Xms3G -jar Server_1.3.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2326,7 +2326,7 @@ java -Xmx4G -Xms4G -jar Server_1.3.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2342,7 +2342,7 @@ java -Xmx5G -Xms5G -jar Server_1.3.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2358,7 +2358,7 @@ java -Xmx6G -Xms6G -jar Server_1.3.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2374,7 +2374,7 @@ java -Xmx7G -Xms7G -jar Server_1.3.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2390,7 +2390,7 @@ java -Xmx8G -Xms8G -jar Server_1.3.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2406,7 +2406,7 @@ java -Xmx9G -Xms9G -jar Server_1.3.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2422,7 +2422,7 @@ java -Xmx10G -Xms10G -jar Server_1.3.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2438,7 +2438,7 @@ java -Xmx11G -Xms11G -jar Server_1.3.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2454,7 +2454,7 @@ java -Xmx12G -Xms12G -jar Server_1.3.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2470,7 +2470,7 @@ java -Xmx13G -Xms13G -jar Server_1.3.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2486,7 +2486,7 @@ java -Xmx14G -Xms14G -jar Server_1.3.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2502,7 +2502,7 @@ java -Xmx15G -Xms15G -jar Server_1.3.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2518,7 +2518,7 @@ java -Xmx16G -Xms16G -jar Server_1.3.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2592,7 +2592,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.4.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2608,7 +2608,7 @@ java -Xmx2G -Xms2G -jar Server_1.4.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2624,7 +2624,7 @@ java -Xmx3G -Xms3G -jar Server_1.4.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2640,7 +2640,7 @@ java -Xmx4G -Xms4G -jar Server_1.4.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2656,7 +2656,7 @@ java -Xmx5G -Xms5G -jar Server_1.4.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2672,7 +2672,7 @@ java -Xmx6G -Xms6G -jar Server_1.4.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2688,7 +2688,7 @@ java -Xmx7G -Xms7G -jar Server_1.4.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2704,7 +2704,7 @@ java -Xmx8G -Xms8G -jar Server_1.4.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2720,7 +2720,7 @@ java -Xmx9G -Xms9G -jar Server_1.4.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2736,7 +2736,7 @@ java -Xmx10G -Xms10G -jar Server_1.4.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2752,7 +2752,7 @@ java -Xmx11G -Xms11G -jar Server_1.4.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2768,7 +2768,7 @@ java -Xmx12G -Xms12G -jar Server_1.4.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2784,7 +2784,7 @@ java -Xmx13G -Xms13G -jar Server_1.4.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2800,7 +2800,7 @@ java -Xmx14G -Xms14G -jar Server_1.4.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2816,7 +2816,7 @@ java -Xmx15G -Xms15G -jar Server_1.4.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2832,7 +2832,7 @@ java -Xmx16G -Xms16G -jar Server_1.4.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2906,7 +2906,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.4.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2922,7 +2922,7 @@ java -Xmx2G -Xms2G -jar Server_1.4.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2938,7 +2938,7 @@ java -Xmx3G -Xms3G -jar Server_1.4.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2954,7 +2954,7 @@ java -Xmx4G -Xms4G -jar Server_1.4.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2970,7 +2970,7 @@ java -Xmx5G -Xms5G -jar Server_1.4.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -2986,7 +2986,7 @@ java -Xmx6G -Xms6G -jar Server_1.4.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3002,7 +3002,7 @@ java -Xmx7G -Xms7G -jar Server_1.4.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3018,7 +3018,7 @@ java -Xmx8G -Xms8G -jar Server_1.4.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3034,7 +3034,7 @@ java -Xmx9G -Xms9G -jar Server_1.4.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3050,7 +3050,7 @@ java -Xmx10G -Xms10G -jar Server_1.4.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3066,7 +3066,7 @@ java -Xmx11G -Xms11G -jar Server_1.4.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3082,7 +3082,7 @@ java -Xmx12G -Xms12G -jar Server_1.4.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3098,7 +3098,7 @@ java -Xmx13G -Xms13G -jar Server_1.4.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3114,7 +3114,7 @@ java -Xmx14G -Xms14G -jar Server_1.4.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3130,7 +3130,7 @@ java -Xmx15G -Xms15G -jar Server_1.4.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3146,7 +3146,7 @@ java -Xmx16G -Xms16G -jar Server_1.4.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3220,7 +3220,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.4.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3236,7 +3236,7 @@ java -Xmx2G -Xms2G -jar Server_1.4.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3252,7 +3252,7 @@ java -Xmx3G -Xms3G -jar Server_1.4.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3268,7 +3268,7 @@ java -Xmx4G -Xms4G -jar Server_1.4.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3284,7 +3284,7 @@ java -Xmx5G -Xms5G -jar Server_1.4.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3300,7 +3300,7 @@ java -Xmx6G -Xms6G -jar Server_1.4.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3316,7 +3316,7 @@ java -Xmx7G -Xms7G -jar Server_1.4.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3332,7 +3332,7 @@ java -Xmx8G -Xms8G -jar Server_1.4.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3348,7 +3348,7 @@ java -Xmx9G -Xms9G -jar Server_1.4.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3364,7 +3364,7 @@ java -Xmx10G -Xms10G -jar Server_1.4.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3380,7 +3380,7 @@ java -Xmx11G -Xms11G -jar Server_1.4.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3396,7 +3396,7 @@ java -Xmx12G -Xms12G -jar Server_1.4.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3412,7 +3412,7 @@ java -Xmx13G -Xms13G -jar Server_1.4.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3428,7 +3428,7 @@ java -Xmx14G -Xms14G -jar Server_1.4.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3444,7 +3444,7 @@ java -Xmx15G -Xms15G -jar Server_1.4.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3460,7 +3460,7 @@ java -Xmx16G -Xms16G -jar Server_1.4.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3534,7 +3534,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.4.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3550,7 +3550,7 @@ java -Xmx2G -Xms2G -jar Server_1.4.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3566,7 +3566,7 @@ java -Xmx3G -Xms3G -jar Server_1.4.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3582,7 +3582,7 @@ java -Xmx4G -Xms4G -jar Server_1.4.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3598,7 +3598,7 @@ java -Xmx5G -Xms5G -jar Server_1.4.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3614,7 +3614,7 @@ java -Xmx6G -Xms6G -jar Server_1.4.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3630,7 +3630,7 @@ java -Xmx7G -Xms7G -jar Server_1.4.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3646,7 +3646,7 @@ java -Xmx8G -Xms8G -jar Server_1.4.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3662,7 +3662,7 @@ java -Xmx9G -Xms9G -jar Server_1.4.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3678,7 +3678,7 @@ java -Xmx10G -Xms10G -jar Server_1.4.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3694,7 +3694,7 @@ java -Xmx11G -Xms11G -jar Server_1.4.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3710,7 +3710,7 @@ java -Xmx12G -Xms12G -jar Server_1.4.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3726,7 +3726,7 @@ java -Xmx13G -Xms13G -jar Server_1.4.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3742,7 +3742,7 @@ java -Xmx14G -Xms14G -jar Server_1.4.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3758,7 +3758,7 @@ java -Xmx15G -Xms15G -jar Server_1.4.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3774,7 +3774,7 @@ java -Xmx16G -Xms16G -jar Server_1.4.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3848,7 +3848,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.4.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3864,7 +3864,7 @@ java -Xmx2G -Xms2G -jar Server_1.4.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3880,7 +3880,7 @@ java -Xmx3G -Xms3G -jar Server_1.4.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3896,7 +3896,7 @@ java -Xmx4G -Xms4G -jar Server_1.4.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3912,7 +3912,7 @@ java -Xmx5G -Xms5G -jar Server_1.4.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3928,7 +3928,7 @@ java -Xmx6G -Xms6G -jar Server_1.4.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3944,7 +3944,7 @@ java -Xmx7G -Xms7G -jar Server_1.4.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3960,7 +3960,7 @@ java -Xmx8G -Xms8G -jar Server_1.4.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3976,7 +3976,7 @@ java -Xmx9G -Xms9G -jar Server_1.4.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -3992,7 +3992,7 @@ java -Xmx10G -Xms10G -jar Server_1.4.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4008,7 +4008,7 @@ java -Xmx11G -Xms11G -jar Server_1.4.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4024,7 +4024,7 @@ java -Xmx12G -Xms12G -jar Server_1.4.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4040,7 +4040,7 @@ java -Xmx13G -Xms13G -jar Server_1.4.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4056,7 +4056,7 @@ java -Xmx14G -Xms14G -jar Server_1.4.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4072,7 +4072,7 @@ java -Xmx15G -Xms15G -jar Server_1.4.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4088,7 +4088,7 @@ java -Xmx16G -Xms16G -jar Server_1.4.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4162,7 +4162,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.5.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4178,7 +4178,7 @@ java -Xmx2G -Xms2G -jar Server_1.5.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4194,7 +4194,7 @@ java -Xmx3G -Xms3G -jar Server_1.5.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4210,7 +4210,7 @@ java -Xmx4G -Xms4G -jar Server_1.5.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4226,7 +4226,7 @@ java -Xmx5G -Xms5G -jar Server_1.5.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4242,7 +4242,7 @@ java -Xmx6G -Xms6G -jar Server_1.5.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4258,7 +4258,7 @@ java -Xmx7G -Xms7G -jar Server_1.5.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4274,7 +4274,7 @@ java -Xmx8G -Xms8G -jar Server_1.5.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4290,7 +4290,7 @@ java -Xmx9G -Xms9G -jar Server_1.5.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4306,7 +4306,7 @@ java -Xmx10G -Xms10G -jar Server_1.5.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4322,7 +4322,7 @@ java -Xmx11G -Xms11G -jar Server_1.5.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4338,7 +4338,7 @@ java -Xmx12G -Xms12G -jar Server_1.5.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4354,7 +4354,7 @@ java -Xmx13G -Xms13G -jar Server_1.5.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4370,7 +4370,7 @@ java -Xmx14G -Xms14G -jar Server_1.5.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4386,7 +4386,7 @@ java -Xmx15G -Xms15G -jar Server_1.5.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4402,7 +4402,7 @@ java -Xmx16G -Xms16G -jar Server_1.5.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4476,7 +4476,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.5.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4492,7 +4492,7 @@ java -Xmx2G -Xms2G -jar Server_1.5.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4508,7 +4508,7 @@ java -Xmx3G -Xms3G -jar Server_1.5.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4524,7 +4524,7 @@ java -Xmx4G -Xms4G -jar Server_1.5.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4540,7 +4540,7 @@ java -Xmx5G -Xms5G -jar Server_1.5.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4556,7 +4556,7 @@ java -Xmx6G -Xms6G -jar Server_1.5.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4572,7 +4572,7 @@ java -Xmx7G -Xms7G -jar Server_1.5.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4588,7 +4588,7 @@ java -Xmx8G -Xms8G -jar Server_1.5.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4604,7 +4604,7 @@ java -Xmx9G -Xms9G -jar Server_1.5.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4620,7 +4620,7 @@ java -Xmx10G -Xms10G -jar Server_1.5.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4636,7 +4636,7 @@ java -Xmx11G -Xms11G -jar Server_1.5.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4652,7 +4652,7 @@ java -Xmx12G -Xms12G -jar Server_1.5.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4668,7 +4668,7 @@ java -Xmx13G -Xms13G -jar Server_1.5.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4684,7 +4684,7 @@ java -Xmx14G -Xms14G -jar Server_1.5.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4700,7 +4700,7 @@ java -Xmx15G -Xms15G -jar Server_1.5.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4716,7 +4716,7 @@ java -Xmx16G -Xms16G -jar Server_1.5.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4790,7 +4790,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.6.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4806,7 +4806,7 @@ java -Xmx2G -Xms2G -jar Server_1.6.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4822,7 +4822,7 @@ java -Xmx3G -Xms3G -jar Server_1.6.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4838,7 +4838,7 @@ java -Xmx4G -Xms4G -jar Server_1.6.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4854,7 +4854,7 @@ java -Xmx5G -Xms5G -jar Server_1.6.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4870,7 +4870,7 @@ java -Xmx6G -Xms6G -jar Server_1.6.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4886,7 +4886,7 @@ java -Xmx7G -Xms7G -jar Server_1.6.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4902,7 +4902,7 @@ java -Xmx8G -Xms8G -jar Server_1.6.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4918,7 +4918,7 @@ java -Xmx9G -Xms9G -jar Server_1.6.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4934,7 +4934,7 @@ java -Xmx10G -Xms10G -jar Server_1.6.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4950,7 +4950,7 @@ java -Xmx11G -Xms11G -jar Server_1.6.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4966,7 +4966,7 @@ java -Xmx12G -Xms12G -jar Server_1.6.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4982,7 +4982,7 @@ java -Xmx13G -Xms13G -jar Server_1.6.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -4998,7 +4998,7 @@ java -Xmx14G -Xms14G -jar Server_1.6.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5014,7 +5014,7 @@ java -Xmx15G -Xms15G -jar Server_1.6.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5030,7 +5030,7 @@ java -Xmx16G -Xms16G -jar Server_1.6.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5104,7 +5104,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.6.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5120,7 +5120,7 @@ java -Xmx2G -Xms2G -jar Server_1.6.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5136,7 +5136,7 @@ java -Xmx3G -Xms3G -jar Server_1.6.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5152,7 +5152,7 @@ java -Xmx4G -Xms4G -jar Server_1.6.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5168,7 +5168,7 @@ java -Xmx5G -Xms5G -jar Server_1.6.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5184,7 +5184,7 @@ java -Xmx6G -Xms6G -jar Server_1.6.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5200,7 +5200,7 @@ java -Xmx7G -Xms7G -jar Server_1.6.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5216,7 +5216,7 @@ java -Xmx8G -Xms8G -jar Server_1.6.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5232,7 +5232,7 @@ java -Xmx9G -Xms9G -jar Server_1.6.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5248,7 +5248,7 @@ java -Xmx10G -Xms10G -jar Server_1.6.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5264,7 +5264,7 @@ java -Xmx11G -Xms11G -jar Server_1.6.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5280,7 +5280,7 @@ java -Xmx12G -Xms12G -jar Server_1.6.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5296,7 +5296,7 @@ java -Xmx13G -Xms13G -jar Server_1.6.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5312,7 +5312,7 @@ java -Xmx14G -Xms14G -jar Server_1.6.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5328,7 +5328,7 @@ java -Xmx15G -Xms15G -jar Server_1.6.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5344,7 +5344,7 @@ java -Xmx16G -Xms16G -jar Server_1.6.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5418,7 +5418,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.6.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5434,7 +5434,7 @@ java -Xmx2G -Xms2G -jar Server_1.6.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5450,7 +5450,7 @@ java -Xmx3G -Xms3G -jar Server_1.6.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5466,7 +5466,7 @@ java -Xmx4G -Xms4G -jar Server_1.6.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5482,7 +5482,7 @@ java -Xmx5G -Xms5G -jar Server_1.6.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5498,7 +5498,7 @@ java -Xmx6G -Xms6G -jar Server_1.6.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5514,7 +5514,7 @@ java -Xmx7G -Xms7G -jar Server_1.6.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5530,7 +5530,7 @@ java -Xmx8G -Xms8G -jar Server_1.6.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5546,7 +5546,7 @@ java -Xmx9G -Xms9G -jar Server_1.6.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5562,7 +5562,7 @@ java -Xmx10G -Xms10G -jar Server_1.6.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5578,7 +5578,7 @@ java -Xmx11G -Xms11G -jar Server_1.6.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5594,7 +5594,7 @@ java -Xmx12G -Xms12G -jar Server_1.6.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5610,7 +5610,7 @@ java -Xmx13G -Xms13G -jar Server_1.6.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5626,7 +5626,7 @@ java -Xmx14G -Xms14G -jar Server_1.6.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5642,7 +5642,7 @@ java -Xmx15G -Xms15G -jar Server_1.6.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5658,7 +5658,7 @@ java -Xmx16G -Xms16G -jar Server_1.6.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5732,7 +5732,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.7.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5748,7 +5748,7 @@ java -Xmx2G -Xms2G -jar Server_1.7.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5764,7 +5764,7 @@ java -Xmx3G -Xms3G -jar Server_1.7.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5780,7 +5780,7 @@ java -Xmx4G -Xms4G -jar Server_1.7.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5796,7 +5796,7 @@ java -Xmx5G -Xms5G -jar Server_1.7.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5812,7 +5812,7 @@ java -Xmx6G -Xms6G -jar Server_1.7.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5828,7 +5828,7 @@ java -Xmx7G -Xms7G -jar Server_1.7.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5844,7 +5844,7 @@ java -Xmx8G -Xms8G -jar Server_1.7.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5860,7 +5860,7 @@ java -Xmx9G -Xms9G -jar Server_1.7.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5876,7 +5876,7 @@ java -Xmx10G -Xms10G -jar Server_1.7.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5892,7 +5892,7 @@ java -Xmx11G -Xms11G -jar Server_1.7.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5908,7 +5908,7 @@ java -Xmx12G -Xms12G -jar Server_1.7.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5924,7 +5924,7 @@ java -Xmx13G -Xms13G -jar Server_1.7.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5940,7 +5940,7 @@ java -Xmx14G -Xms14G -jar Server_1.7.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5956,7 +5956,7 @@ java -Xmx15G -Xms15G -jar Server_1.7.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -5972,7 +5972,7 @@ java -Xmx16G -Xms16G -jar Server_1.7.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6046,7 +6046,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.7.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6062,7 +6062,7 @@ java -Xmx2G -Xms2G -jar Server_1.7.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6078,7 +6078,7 @@ java -Xmx3G -Xms3G -jar Server_1.7.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6094,7 +6094,7 @@ java -Xmx4G -Xms4G -jar Server_1.7.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6110,7 +6110,7 @@ java -Xmx5G -Xms5G -jar Server_1.7.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6126,7 +6126,7 @@ java -Xmx6G -Xms6G -jar Server_1.7.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6142,7 +6142,7 @@ java -Xmx7G -Xms7G -jar Server_1.7.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6158,7 +6158,7 @@ java -Xmx8G -Xms8G -jar Server_1.7.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6174,7 +6174,7 @@ java -Xmx9G -Xms9G -jar Server_1.7.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6190,7 +6190,7 @@ java -Xmx10G -Xms10G -jar Server_1.7.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6206,7 +6206,7 @@ java -Xmx11G -Xms11G -jar Server_1.7.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6222,7 +6222,7 @@ java -Xmx12G -Xms12G -jar Server_1.7.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6238,7 +6238,7 @@ java -Xmx13G -Xms13G -jar Server_1.7.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6254,7 +6254,7 @@ java -Xmx14G -Xms14G -jar Server_1.7.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6270,7 +6270,7 @@ java -Xmx15G -Xms15G -jar Server_1.7.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6286,7 +6286,7 @@ java -Xmx16G -Xms16G -jar Server_1.7.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6360,7 +6360,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.7.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6376,7 +6376,7 @@ java -Xmx2G -Xms2G -jar Server_1.7.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6392,7 +6392,7 @@ java -Xmx3G -Xms3G -jar Server_1.7.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6408,7 +6408,7 @@ java -Xmx4G -Xms4G -jar Server_1.7.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6424,7 +6424,7 @@ java -Xmx5G -Xms5G -jar Server_1.7.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6440,7 +6440,7 @@ java -Xmx6G -Xms6G -jar Server_1.7.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6456,7 +6456,7 @@ java -Xmx7G -Xms7G -jar Server_1.7.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6472,7 +6472,7 @@ java -Xmx8G -Xms8G -jar Server_1.7.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6488,7 +6488,7 @@ java -Xmx9G -Xms9G -jar Server_1.7.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6504,7 +6504,7 @@ java -Xmx10G -Xms10G -jar Server_1.7.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6520,7 +6520,7 @@ java -Xmx11G -Xms11G -jar Server_1.7.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6536,7 +6536,7 @@ java -Xmx12G -Xms12G -jar Server_1.7.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6552,7 +6552,7 @@ java -Xmx13G -Xms13G -jar Server_1.7.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6568,7 +6568,7 @@ java -Xmx14G -Xms14G -jar Server_1.7.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6584,7 +6584,7 @@ java -Xmx15G -Xms15G -jar Server_1.7.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6600,7 +6600,7 @@ java -Xmx16G -Xms16G -jar Server_1.7.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6674,7 +6674,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.7.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6690,7 +6690,7 @@ java -Xmx2G -Xms2G -jar Server_1.7.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6706,7 +6706,7 @@ java -Xmx3G -Xms3G -jar Server_1.7.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6722,7 +6722,7 @@ java -Xmx4G -Xms4G -jar Server_1.7.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6738,7 +6738,7 @@ java -Xmx5G -Xms5G -jar Server_1.7.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6754,7 +6754,7 @@ java -Xmx6G -Xms6G -jar Server_1.7.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6770,7 +6770,7 @@ java -Xmx7G -Xms7G -jar Server_1.7.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6786,7 +6786,7 @@ java -Xmx8G -Xms8G -jar Server_1.7.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6802,7 +6802,7 @@ java -Xmx9G -Xms9G -jar Server_1.7.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6818,7 +6818,7 @@ java -Xmx10G -Xms10G -jar Server_1.7.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6834,7 +6834,7 @@ java -Xmx11G -Xms11G -jar Server_1.7.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6850,7 +6850,7 @@ java -Xmx12G -Xms12G -jar Server_1.7.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6866,7 +6866,7 @@ java -Xmx13G -Xms13G -jar Server_1.7.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6882,7 +6882,7 @@ java -Xmx14G -Xms14G -jar Server_1.7.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6898,7 +6898,7 @@ java -Xmx15G -Xms15G -jar Server_1.7.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6914,7 +6914,7 @@ java -Xmx16G -Xms16G -jar Server_1.7.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -6988,7 +6988,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.7.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7004,7 +7004,7 @@ java -Xmx2G -Xms2G -jar Server_1.7.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7020,7 +7020,7 @@ java -Xmx3G -Xms3G -jar Server_1.7.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7036,7 +7036,7 @@ java -Xmx4G -Xms4G -jar Server_1.7.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7052,7 +7052,7 @@ java -Xmx5G -Xms5G -jar Server_1.7.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7068,7 +7068,7 @@ java -Xmx6G -Xms6G -jar Server_1.7.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7084,7 +7084,7 @@ java -Xmx7G -Xms7G -jar Server_1.7.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7100,7 +7100,7 @@ java -Xmx8G -Xms8G -jar Server_1.7.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7116,7 +7116,7 @@ java -Xmx9G -Xms9G -jar Server_1.7.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7132,7 +7132,7 @@ java -Xmx10G -Xms10G -jar Server_1.7.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7148,7 +7148,7 @@ java -Xmx11G -Xms11G -jar Server_1.7.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7164,7 +7164,7 @@ java -Xmx12G -Xms12G -jar Server_1.7.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7180,7 +7180,7 @@ java -Xmx13G -Xms13G -jar Server_1.7.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7196,7 +7196,7 @@ java -Xmx14G -Xms14G -jar Server_1.7.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7212,7 +7212,7 @@ java -Xmx15G -Xms15G -jar Server_1.7.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7228,7 +7228,7 @@ java -Xmx16G -Xms16G -jar Server_1.7.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7302,7 +7302,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.7.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7318,7 +7318,7 @@ java -Xmx2G -Xms2G -jar Server_1.7.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7334,7 +7334,7 @@ java -Xmx3G -Xms3G -jar Server_1.7.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7350,7 +7350,7 @@ java -Xmx4G -Xms4G -jar Server_1.7.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7366,7 +7366,7 @@ java -Xmx5G -Xms5G -jar Server_1.7.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7382,7 +7382,7 @@ java -Xmx6G -Xms6G -jar Server_1.7.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7398,7 +7398,7 @@ java -Xmx7G -Xms7G -jar Server_1.7.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7414,7 +7414,7 @@ java -Xmx8G -Xms8G -jar Server_1.7.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7430,7 +7430,7 @@ java -Xmx9G -Xms9G -jar Server_1.7.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7446,7 +7446,7 @@ java -Xmx10G -Xms10G -jar Server_1.7.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7462,7 +7462,7 @@ java -Xmx11G -Xms11G -jar Server_1.7.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7478,7 +7478,7 @@ java -Xmx12G -Xms12G -jar Server_1.7.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7494,7 +7494,7 @@ java -Xmx13G -Xms13G -jar Server_1.7.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7510,7 +7510,7 @@ java -Xmx14G -Xms14G -jar Server_1.7.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7526,7 +7526,7 @@ java -Xmx15G -Xms15G -jar Server_1.7.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7542,7 +7542,7 @@ java -Xmx16G -Xms16G -jar Server_1.7.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7616,7 +7616,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.7.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7632,7 +7632,7 @@ java -Xmx2G -Xms2G -jar Server_1.7.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7648,7 +7648,7 @@ java -Xmx3G -Xms3G -jar Server_1.7.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7664,7 +7664,7 @@ java -Xmx4G -Xms4G -jar Server_1.7.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7680,7 +7680,7 @@ java -Xmx5G -Xms5G -jar Server_1.7.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7696,7 +7696,7 @@ java -Xmx6G -Xms6G -jar Server_1.7.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7712,7 +7712,7 @@ java -Xmx7G -Xms7G -jar Server_1.7.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7728,7 +7728,7 @@ java -Xmx8G -Xms8G -jar Server_1.7.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7744,7 +7744,7 @@ java -Xmx9G -Xms9G -jar Server_1.7.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7760,7 +7760,7 @@ java -Xmx10G -Xms10G -jar Server_1.7.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7776,7 +7776,7 @@ java -Xmx11G -Xms11G -jar Server_1.7.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7792,7 +7792,7 @@ java -Xmx12G -Xms12G -jar Server_1.7.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7808,7 +7808,7 @@ java -Xmx13G -Xms13G -jar Server_1.7.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7824,7 +7824,7 @@ java -Xmx14G -Xms14G -jar Server_1.7.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7840,7 +7840,7 @@ java -Xmx15G -Xms15G -jar Server_1.7.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7856,7 +7856,7 @@ java -Xmx16G -Xms16G -jar Server_1.7.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7930,7 +7930,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.7.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7946,7 +7946,7 @@ java -Xmx2G -Xms2G -jar Server_1.7.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7962,7 +7962,7 @@ java -Xmx3G -Xms3G -jar Server_1.7.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7978,7 +7978,7 @@ java -Xmx4G -Xms4G -jar Server_1.7.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -7994,7 +7994,7 @@ java -Xmx5G -Xms5G -jar Server_1.7.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8010,7 +8010,7 @@ java -Xmx6G -Xms6G -jar Server_1.7.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8026,7 +8026,7 @@ java -Xmx7G -Xms7G -jar Server_1.7.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8042,7 +8042,7 @@ java -Xmx8G -Xms8G -jar Server_1.7.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8058,7 +8058,7 @@ java -Xmx9G -Xms9G -jar Server_1.7.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8074,7 +8074,7 @@ java -Xmx10G -Xms10G -jar Server_1.7.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8090,7 +8090,7 @@ java -Xmx11G -Xms11G -jar Server_1.7.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8106,7 +8106,7 @@ java -Xmx12G -Xms12G -jar Server_1.7.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8122,7 +8122,7 @@ java -Xmx13G -Xms13G -jar Server_1.7.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8138,7 +8138,7 @@ java -Xmx14G -Xms14G -jar Server_1.7.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8154,7 +8154,7 @@ java -Xmx15G -Xms15G -jar Server_1.7.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8170,7 +8170,7 @@ java -Xmx16G -Xms16G -jar Server_1.7.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8244,7 +8244,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.7.10.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8260,7 +8260,7 @@ java -Xmx2G -Xms2G -jar Server_1.7.10.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8276,7 +8276,7 @@ java -Xmx3G -Xms3G -jar Server_1.7.10.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8292,7 +8292,7 @@ java -Xmx4G -Xms4G -jar Server_1.7.10.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8308,7 +8308,7 @@ java -Xmx5G -Xms5G -jar Server_1.7.10.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8324,7 +8324,7 @@ java -Xmx6G -Xms6G -jar Server_1.7.10.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8340,7 +8340,7 @@ java -Xmx7G -Xms7G -jar Server_1.7.10.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8356,7 +8356,7 @@ java -Xmx8G -Xms8G -jar Server_1.7.10.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8372,7 +8372,7 @@ java -Xmx9G -Xms9G -jar Server_1.7.10.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8388,7 +8388,7 @@ java -Xmx10G -Xms10G -jar Server_1.7.10.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8404,7 +8404,7 @@ java -Xmx11G -Xms11G -jar Server_1.7.10.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8420,7 +8420,7 @@ java -Xmx12G -Xms12G -jar Server_1.7.10.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8436,7 +8436,7 @@ java -Xmx13G -Xms13G -jar Server_1.7.10.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8452,7 +8452,7 @@ java -Xmx14G -Xms14G -jar Server_1.7.10.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8468,7 +8468,7 @@ java -Xmx15G -Xms15G -jar Server_1.7.10.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8484,7 +8484,7 @@ java -Xmx16G -Xms16G -jar Server_1.7.10.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8558,7 +8558,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8574,7 +8574,7 @@ java -Xmx2G -Xms2G -jar Server_1.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8590,7 +8590,7 @@ java -Xmx3G -Xms3G -jar Server_1.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8606,7 +8606,7 @@ java -Xmx4G -Xms4G -jar Server_1.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8622,7 +8622,7 @@ java -Xmx5G -Xms5G -jar Server_1.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8638,7 +8638,7 @@ java -Xmx6G -Xms6G -jar Server_1.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8654,7 +8654,7 @@ java -Xmx7G -Xms7G -jar Server_1.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8670,7 +8670,7 @@ java -Xmx8G -Xms8G -jar Server_1.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8686,7 +8686,7 @@ java -Xmx9G -Xms9G -jar Server_1.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8702,7 +8702,7 @@ java -Xmx10G -Xms10G -jar Server_1.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8718,7 +8718,7 @@ java -Xmx11G -Xms11G -jar Server_1.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8734,7 +8734,7 @@ java -Xmx12G -Xms12G -jar Server_1.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8750,7 +8750,7 @@ java -Xmx13G -Xms13G -jar Server_1.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8766,7 +8766,7 @@ java -Xmx14G -Xms14G -jar Server_1.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8782,7 +8782,7 @@ java -Xmx15G -Xms15G -jar Server_1.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8798,7 +8798,7 @@ java -Xmx16G -Xms16G -jar Server_1.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8872,7 +8872,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.8.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8888,7 +8888,7 @@ java -Xmx2G -Xms2G -jar Server_1.8.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8904,7 +8904,7 @@ java -Xmx3G -Xms3G -jar Server_1.8.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8920,7 +8920,7 @@ java -Xmx4G -Xms4G -jar Server_1.8.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8936,7 +8936,7 @@ java -Xmx5G -Xms5G -jar Server_1.8.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8952,7 +8952,7 @@ java -Xmx6G -Xms6G -jar Server_1.8.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8968,7 +8968,7 @@ java -Xmx7G -Xms7G -jar Server_1.8.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -8984,7 +8984,7 @@ java -Xmx8G -Xms8G -jar Server_1.8.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9000,7 +9000,7 @@ java -Xmx9G -Xms9G -jar Server_1.8.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9016,7 +9016,7 @@ java -Xmx10G -Xms10G -jar Server_1.8.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9032,7 +9032,7 @@ java -Xmx11G -Xms11G -jar Server_1.8.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9048,7 +9048,7 @@ java -Xmx12G -Xms12G -jar Server_1.8.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9064,7 +9064,7 @@ java -Xmx13G -Xms13G -jar Server_1.8.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9080,7 +9080,7 @@ java -Xmx14G -Xms14G -jar Server_1.8.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9096,7 +9096,7 @@ java -Xmx15G -Xms15G -jar Server_1.8.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9112,7 +9112,7 @@ java -Xmx16G -Xms16G -jar Server_1.8.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9186,7 +9186,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.8.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9202,7 +9202,7 @@ java -Xmx2G -Xms2G -jar Server_1.8.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9218,7 +9218,7 @@ java -Xmx3G -Xms3G -jar Server_1.8.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9234,7 +9234,7 @@ java -Xmx4G -Xms4G -jar Server_1.8.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9250,7 +9250,7 @@ java -Xmx5G -Xms5G -jar Server_1.8.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9266,7 +9266,7 @@ java -Xmx6G -Xms6G -jar Server_1.8.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9282,7 +9282,7 @@ java -Xmx7G -Xms7G -jar Server_1.8.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9298,7 +9298,7 @@ java -Xmx8G -Xms8G -jar Server_1.8.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9314,7 +9314,7 @@ java -Xmx9G -Xms9G -jar Server_1.8.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9330,7 +9330,7 @@ java -Xmx10G -Xms10G -jar Server_1.8.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9346,7 +9346,7 @@ java -Xmx11G -Xms11G -jar Server_1.8.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9362,7 +9362,7 @@ java -Xmx12G -Xms12G -jar Server_1.8.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9378,7 +9378,7 @@ java -Xmx13G -Xms13G -jar Server_1.8.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9394,7 +9394,7 @@ java -Xmx14G -Xms14G -jar Server_1.8.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9410,7 +9410,7 @@ java -Xmx15G -Xms15G -jar Server_1.8.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9426,7 +9426,7 @@ java -Xmx16G -Xms16G -jar Server_1.8.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9500,7 +9500,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.8.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9516,7 +9516,7 @@ java -Xmx2G -Xms2G -jar Server_1.8.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9532,7 +9532,7 @@ java -Xmx3G -Xms3G -jar Server_1.8.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9548,7 +9548,7 @@ java -Xmx4G -Xms4G -jar Server_1.8.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9564,7 +9564,7 @@ java -Xmx5G -Xms5G -jar Server_1.8.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9580,7 +9580,7 @@ java -Xmx6G -Xms6G -jar Server_1.8.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9596,7 +9596,7 @@ java -Xmx7G -Xms7G -jar Server_1.8.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9612,7 +9612,7 @@ java -Xmx8G -Xms8G -jar Server_1.8.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9628,7 +9628,7 @@ java -Xmx9G -Xms9G -jar Server_1.8.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9644,7 +9644,7 @@ java -Xmx10G -Xms10G -jar Server_1.8.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9660,7 +9660,7 @@ java -Xmx11G -Xms11G -jar Server_1.8.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9676,7 +9676,7 @@ java -Xmx12G -Xms12G -jar Server_1.8.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9692,7 +9692,7 @@ java -Xmx13G -Xms13G -jar Server_1.8.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9708,7 +9708,7 @@ java -Xmx14G -Xms14G -jar Server_1.8.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9724,7 +9724,7 @@ java -Xmx15G -Xms15G -jar Server_1.8.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9740,7 +9740,7 @@ java -Xmx16G -Xms16G -jar Server_1.8.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9814,7 +9814,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.8.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9830,7 +9830,7 @@ java -Xmx2G -Xms2G -jar Server_1.8.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9846,7 +9846,7 @@ java -Xmx3G -Xms3G -jar Server_1.8.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9862,7 +9862,7 @@ java -Xmx4G -Xms4G -jar Server_1.8.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9878,7 +9878,7 @@ java -Xmx5G -Xms5G -jar Server_1.8.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9894,7 +9894,7 @@ java -Xmx6G -Xms6G -jar Server_1.8.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9910,7 +9910,7 @@ java -Xmx7G -Xms7G -jar Server_1.8.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9926,7 +9926,7 @@ java -Xmx8G -Xms8G -jar Server_1.8.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9942,7 +9942,7 @@ java -Xmx9G -Xms9G -jar Server_1.8.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9958,7 +9958,7 @@ java -Xmx10G -Xms10G -jar Server_1.8.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9974,7 +9974,7 @@ java -Xmx11G -Xms11G -jar Server_1.8.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -9990,7 +9990,7 @@ java -Xmx12G -Xms12G -jar Server_1.8.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10006,7 +10006,7 @@ java -Xmx13G -Xms13G -jar Server_1.8.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10022,7 +10022,7 @@ java -Xmx14G -Xms14G -jar Server_1.8.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10038,7 +10038,7 @@ java -Xmx15G -Xms15G -jar Server_1.8.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10054,7 +10054,7 @@ java -Xmx16G -Xms16G -jar Server_1.8.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10128,7 +10128,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.8.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10144,7 +10144,7 @@ java -Xmx2G -Xms2G -jar Server_1.8.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10160,7 +10160,7 @@ java -Xmx3G -Xms3G -jar Server_1.8.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10176,7 +10176,7 @@ java -Xmx4G -Xms4G -jar Server_1.8.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10192,7 +10192,7 @@ java -Xmx5G -Xms5G -jar Server_1.8.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10208,7 +10208,7 @@ java -Xmx6G -Xms6G -jar Server_1.8.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10224,7 +10224,7 @@ java -Xmx7G -Xms7G -jar Server_1.8.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10240,7 +10240,7 @@ java -Xmx8G -Xms8G -jar Server_1.8.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10256,7 +10256,7 @@ java -Xmx9G -Xms9G -jar Server_1.8.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10272,7 +10272,7 @@ java -Xmx10G -Xms10G -jar Server_1.8.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10288,7 +10288,7 @@ java -Xmx11G -Xms11G -jar Server_1.8.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10304,7 +10304,7 @@ java -Xmx12G -Xms12G -jar Server_1.8.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10320,7 +10320,7 @@ java -Xmx13G -Xms13G -jar Server_1.8.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10336,7 +10336,7 @@ java -Xmx14G -Xms14G -jar Server_1.8.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10352,7 +10352,7 @@ java -Xmx15G -Xms15G -jar Server_1.8.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10368,7 +10368,7 @@ java -Xmx16G -Xms16G -jar Server_1.8.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10442,7 +10442,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.8.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10458,7 +10458,7 @@ java -Xmx2G -Xms2G -jar Server_1.8.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10474,7 +10474,7 @@ java -Xmx3G -Xms3G -jar Server_1.8.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10490,7 +10490,7 @@ java -Xmx4G -Xms4G -jar Server_1.8.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10506,7 +10506,7 @@ java -Xmx5G -Xms5G -jar Server_1.8.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10522,7 +10522,7 @@ java -Xmx6G -Xms6G -jar Server_1.8.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10538,7 +10538,7 @@ java -Xmx7G -Xms7G -jar Server_1.8.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10554,7 +10554,7 @@ java -Xmx8G -Xms8G -jar Server_1.8.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10570,7 +10570,7 @@ java -Xmx9G -Xms9G -jar Server_1.8.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10586,7 +10586,7 @@ java -Xmx10G -Xms10G -jar Server_1.8.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10602,7 +10602,7 @@ java -Xmx11G -Xms11G -jar Server_1.8.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10618,7 +10618,7 @@ java -Xmx12G -Xms12G -jar Server_1.8.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10634,7 +10634,7 @@ java -Xmx13G -Xms13G -jar Server_1.8.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10650,7 +10650,7 @@ java -Xmx14G -Xms14G -jar Server_1.8.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10666,7 +10666,7 @@ java -Xmx15G -Xms15G -jar Server_1.8.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10682,7 +10682,7 @@ java -Xmx16G -Xms16G -jar Server_1.8.6.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10756,7 +10756,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.8.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10772,7 +10772,7 @@ java -Xmx2G -Xms2G -jar Server_1.8.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10788,7 +10788,7 @@ java -Xmx3G -Xms3G -jar Server_1.8.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10804,7 +10804,7 @@ java -Xmx4G -Xms4G -jar Server_1.8.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10820,7 +10820,7 @@ java -Xmx5G -Xms5G -jar Server_1.8.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10836,7 +10836,7 @@ java -Xmx6G -Xms6G -jar Server_1.8.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10852,7 +10852,7 @@ java -Xmx7G -Xms7G -jar Server_1.8.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10868,7 +10868,7 @@ java -Xmx8G -Xms8G -jar Server_1.8.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10884,7 +10884,7 @@ java -Xmx9G -Xms9G -jar Server_1.8.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10900,7 +10900,7 @@ java -Xmx10G -Xms10G -jar Server_1.8.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10916,7 +10916,7 @@ java -Xmx11G -Xms11G -jar Server_1.8.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10932,7 +10932,7 @@ java -Xmx12G -Xms12G -jar Server_1.8.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10948,7 +10948,7 @@ java -Xmx13G -Xms13G -jar Server_1.8.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10964,7 +10964,7 @@ java -Xmx14G -Xms14G -jar Server_1.8.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10980,7 +10980,7 @@ java -Xmx15G -Xms15G -jar Server_1.8.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -10996,7 +10996,7 @@ java -Xmx16G -Xms16G -jar Server_1.8.7.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11070,7 +11070,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.8.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11086,7 +11086,7 @@ java -Xmx2G -Xms2G -jar Server_1.8.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11102,7 +11102,7 @@ java -Xmx3G -Xms3G -jar Server_1.8.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11118,7 +11118,7 @@ java -Xmx4G -Xms4G -jar Server_1.8.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11134,7 +11134,7 @@ java -Xmx5G -Xms5G -jar Server_1.8.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11150,7 +11150,7 @@ java -Xmx6G -Xms6G -jar Server_1.8.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11166,7 +11166,7 @@ java -Xmx7G -Xms7G -jar Server_1.8.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11182,7 +11182,7 @@ java -Xmx8G -Xms8G -jar Server_1.8.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11198,7 +11198,7 @@ java -Xmx9G -Xms9G -jar Server_1.8.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11214,7 +11214,7 @@ java -Xmx10G -Xms10G -jar Server_1.8.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11230,7 +11230,7 @@ java -Xmx11G -Xms11G -jar Server_1.8.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11246,7 +11246,7 @@ java -Xmx12G -Xms12G -jar Server_1.8.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11262,7 +11262,7 @@ java -Xmx13G -Xms13G -jar Server_1.8.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11278,7 +11278,7 @@ java -Xmx14G -Xms14G -jar Server_1.8.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11294,7 +11294,7 @@ java -Xmx15G -Xms15G -jar Server_1.8.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11310,7 +11310,7 @@ java -Xmx16G -Xms16G -jar Server_1.8.8.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11384,7 +11384,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.8.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11400,7 +11400,7 @@ java -Xmx2G -Xms2G -jar Server_1.8.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11416,7 +11416,7 @@ java -Xmx3G -Xms3G -jar Server_1.8.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11432,7 +11432,7 @@ java -Xmx4G -Xms4G -jar Server_1.8.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11448,7 +11448,7 @@ java -Xmx5G -Xms5G -jar Server_1.8.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11464,7 +11464,7 @@ java -Xmx6G -Xms6G -jar Server_1.8.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11480,7 +11480,7 @@ java -Xmx7G -Xms7G -jar Server_1.8.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11496,7 +11496,7 @@ java -Xmx8G -Xms8G -jar Server_1.8.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11512,7 +11512,7 @@ java -Xmx9G -Xms9G -jar Server_1.8.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11528,7 +11528,7 @@ java -Xmx10G -Xms10G -jar Server_1.8.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11544,7 +11544,7 @@ java -Xmx11G -Xms11G -jar Server_1.8.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11560,7 +11560,7 @@ java -Xmx12G -Xms12G -jar Server_1.8.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11576,7 +11576,7 @@ java -Xmx13G -Xms13G -jar Server_1.8.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11592,7 +11592,7 @@ java -Xmx14G -Xms14G -jar Server_1.8.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11608,7 +11608,7 @@ java -Xmx15G -Xms15G -jar Server_1.8.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11624,7 +11624,7 @@ java -Xmx16G -Xms16G -jar Server_1.8.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11698,7 +11698,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11714,7 +11714,7 @@ java -Xmx2G -Xms2G -jar Server_1.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11730,7 +11730,7 @@ java -Xmx3G -Xms3G -jar Server_1.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11746,7 +11746,7 @@ java -Xmx4G -Xms4G -jar Server_1.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11762,7 +11762,7 @@ java -Xmx5G -Xms5G -jar Server_1.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11778,7 +11778,7 @@ java -Xmx6G -Xms6G -jar Server_1.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11794,7 +11794,7 @@ java -Xmx7G -Xms7G -jar Server_1.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11810,7 +11810,7 @@ java -Xmx8G -Xms8G -jar Server_1.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11826,7 +11826,7 @@ java -Xmx9G -Xms9G -jar Server_1.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11842,7 +11842,7 @@ java -Xmx10G -Xms10G -jar Server_1.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11858,7 +11858,7 @@ java -Xmx11G -Xms11G -jar Server_1.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11874,7 +11874,7 @@ java -Xmx12G -Xms12G -jar Server_1.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11890,7 +11890,7 @@ java -Xmx13G -Xms13G -jar Server_1.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11906,7 +11906,7 @@ java -Xmx14G -Xms14G -jar Server_1.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11922,7 +11922,7 @@ java -Xmx15G -Xms15G -jar Server_1.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -11938,7 +11938,7 @@ java -Xmx16G -Xms16G -jar Server_1.9.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12012,7 +12012,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.9.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12028,7 +12028,7 @@ java -Xmx2G -Xms2G -jar Server_1.9.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12044,7 +12044,7 @@ java -Xmx3G -Xms3G -jar Server_1.9.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12060,7 +12060,7 @@ java -Xmx4G -Xms4G -jar Server_1.9.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12076,7 +12076,7 @@ java -Xmx5G -Xms5G -jar Server_1.9.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12092,7 +12092,7 @@ java -Xmx6G -Xms6G -jar Server_1.9.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12108,7 +12108,7 @@ java -Xmx7G -Xms7G -jar Server_1.9.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12124,7 +12124,7 @@ java -Xmx8G -Xms8G -jar Server_1.9.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12140,7 +12140,7 @@ java -Xmx9G -Xms9G -jar Server_1.9.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12156,7 +12156,7 @@ java -Xmx10G -Xms10G -jar Server_1.9.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12172,7 +12172,7 @@ java -Xmx11G -Xms11G -jar Server_1.9.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12188,7 +12188,7 @@ java -Xmx12G -Xms12G -jar Server_1.9.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12204,7 +12204,7 @@ java -Xmx13G -Xms13G -jar Server_1.9.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12220,7 +12220,7 @@ java -Xmx14G -Xms14G -jar Server_1.9.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12236,7 +12236,7 @@ java -Xmx15G -Xms15G -jar Server_1.9.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12252,7 +12252,7 @@ java -Xmx16G -Xms16G -jar Server_1.9.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12326,7 +12326,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.9.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12342,7 +12342,7 @@ java -Xmx2G -Xms2G -jar Server_1.9.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12358,7 +12358,7 @@ java -Xmx3G -Xms3G -jar Server_1.9.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12374,7 +12374,7 @@ java -Xmx4G -Xms4G -jar Server_1.9.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12390,7 +12390,7 @@ java -Xmx5G -Xms5G -jar Server_1.9.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12406,7 +12406,7 @@ java -Xmx6G -Xms6G -jar Server_1.9.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12422,7 +12422,7 @@ java -Xmx7G -Xms7G -jar Server_1.9.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12438,7 +12438,7 @@ java -Xmx8G -Xms8G -jar Server_1.9.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12454,7 +12454,7 @@ java -Xmx9G -Xms9G -jar Server_1.9.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12470,7 +12470,7 @@ java -Xmx10G -Xms10G -jar Server_1.9.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12486,7 +12486,7 @@ java -Xmx11G -Xms11G -jar Server_1.9.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12502,7 +12502,7 @@ java -Xmx12G -Xms12G -jar Server_1.9.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12518,7 +12518,7 @@ java -Xmx13G -Xms13G -jar Server_1.9.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12534,7 +12534,7 @@ java -Xmx14G -Xms14G -jar Server_1.9.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12550,7 +12550,7 @@ java -Xmx15G -Xms15G -jar Server_1.9.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12566,7 +12566,7 @@ java -Xmx16G -Xms16G -jar Server_1.9.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12640,7 +12640,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.9.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12656,7 +12656,7 @@ java -Xmx2G -Xms2G -jar Server_1.9.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12672,7 +12672,7 @@ java -Xmx3G -Xms3G -jar Server_1.9.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12688,7 +12688,7 @@ java -Xmx4G -Xms4G -jar Server_1.9.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12704,7 +12704,7 @@ java -Xmx5G -Xms5G -jar Server_1.9.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12720,7 +12720,7 @@ java -Xmx6G -Xms6G -jar Server_1.9.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12736,7 +12736,7 @@ java -Xmx7G -Xms7G -jar Server_1.9.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12752,7 +12752,7 @@ java -Xmx8G -Xms8G -jar Server_1.9.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12768,7 +12768,7 @@ java -Xmx9G -Xms9G -jar Server_1.9.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12784,7 +12784,7 @@ java -Xmx10G -Xms10G -jar Server_1.9.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12800,7 +12800,7 @@ java -Xmx11G -Xms11G -jar Server_1.9.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12816,7 +12816,7 @@ java -Xmx12G -Xms12G -jar Server_1.9.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12832,7 +12832,7 @@ java -Xmx13G -Xms13G -jar Server_1.9.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12848,7 +12848,7 @@ java -Xmx14G -Xms14G -jar Server_1.9.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12864,7 +12864,7 @@ java -Xmx15G -Xms15G -jar Server_1.9.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12880,7 +12880,7 @@ java -Xmx16G -Xms16G -jar Server_1.9.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12954,7 +12954,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.9.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12970,7 +12970,7 @@ java -Xmx2G -Xms2G -jar Server_1.9.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -12986,7 +12986,7 @@ java -Xmx3G -Xms3G -jar Server_1.9.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13002,7 +13002,7 @@ java -Xmx4G -Xms4G -jar Server_1.9.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13018,7 +13018,7 @@ java -Xmx5G -Xms5G -jar Server_1.9.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13034,7 +13034,7 @@ java -Xmx6G -Xms6G -jar Server_1.9.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13050,7 +13050,7 @@ java -Xmx7G -Xms7G -jar Server_1.9.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13066,7 +13066,7 @@ java -Xmx8G -Xms8G -jar Server_1.9.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13082,7 +13082,7 @@ java -Xmx9G -Xms9G -jar Server_1.9.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13098,7 +13098,7 @@ java -Xmx10G -Xms10G -jar Server_1.9.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13114,7 +13114,7 @@ java -Xmx11G -Xms11G -jar Server_1.9.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13130,7 +13130,7 @@ java -Xmx12G -Xms12G -jar Server_1.9.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13146,7 +13146,7 @@ java -Xmx13G -Xms13G -jar Server_1.9.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13162,7 +13162,7 @@ java -Xmx14G -Xms14G -jar Server_1.9.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13178,7 +13178,7 @@ java -Xmx15G -Xms15G -jar Server_1.9.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13194,7 +13194,7 @@ java -Xmx16G -Xms16G -jar Server_1.9.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13268,7 +13268,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.10.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13284,7 +13284,7 @@ java -Xmx2G -Xms2G -jar Server_1.10.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13300,7 +13300,7 @@ java -Xmx3G -Xms3G -jar Server_1.10.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13316,7 +13316,7 @@ java -Xmx4G -Xms4G -jar Server_1.10.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13332,7 +13332,7 @@ java -Xmx5G -Xms5G -jar Server_1.10.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13348,7 +13348,7 @@ java -Xmx6G -Xms6G -jar Server_1.10.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13364,7 +13364,7 @@ java -Xmx7G -Xms7G -jar Server_1.10.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13380,7 +13380,7 @@ java -Xmx8G -Xms8G -jar Server_1.10.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13396,7 +13396,7 @@ java -Xmx9G -Xms9G -jar Server_1.10.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13412,7 +13412,7 @@ java -Xmx10G -Xms10G -jar Server_1.10.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13428,7 +13428,7 @@ java -Xmx11G -Xms11G -jar Server_1.10.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13444,7 +13444,7 @@ java -Xmx12G -Xms12G -jar Server_1.10.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13460,7 +13460,7 @@ java -Xmx13G -Xms13G -jar Server_1.10.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13476,7 +13476,7 @@ java -Xmx14G -Xms14G -jar Server_1.10.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13492,7 +13492,7 @@ java -Xmx15G -Xms15G -jar Server_1.10.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13508,7 +13508,7 @@ java -Xmx16G -Xms16G -jar Server_1.10.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13582,7 +13582,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.10.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13598,7 +13598,7 @@ java -Xmx2G -Xms2G -jar Server_1.10.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13614,7 +13614,7 @@ java -Xmx3G -Xms3G -jar Server_1.10.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13630,7 +13630,7 @@ java -Xmx4G -Xms4G -jar Server_1.10.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13646,7 +13646,7 @@ java -Xmx5G -Xms5G -jar Server_1.10.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13662,7 +13662,7 @@ java -Xmx6G -Xms6G -jar Server_1.10.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13678,7 +13678,7 @@ java -Xmx7G -Xms7G -jar Server_1.10.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13694,7 +13694,7 @@ java -Xmx8G -Xms8G -jar Server_1.10.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13710,7 +13710,7 @@ java -Xmx9G -Xms9G -jar Server_1.10.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13726,7 +13726,7 @@ java -Xmx10G -Xms10G -jar Server_1.10.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13742,7 +13742,7 @@ java -Xmx11G -Xms11G -jar Server_1.10.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13758,7 +13758,7 @@ java -Xmx12G -Xms12G -jar Server_1.10.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13774,7 +13774,7 @@ java -Xmx13G -Xms13G -jar Server_1.10.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13790,7 +13790,7 @@ java -Xmx14G -Xms14G -jar Server_1.10.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13806,7 +13806,7 @@ java -Xmx15G -Xms15G -jar Server_1.10.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13822,7 +13822,7 @@ java -Xmx16G -Xms16G -jar Server_1.10.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13896,7 +13896,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.10.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13912,7 +13912,7 @@ java -Xmx2G -Xms2G -jar Server_1.10.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13928,7 +13928,7 @@ java -Xmx3G -Xms3G -jar Server_1.10.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13944,7 +13944,7 @@ java -Xmx4G -Xms4G -jar Server_1.10.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13960,7 +13960,7 @@ java -Xmx5G -Xms5G -jar Server_1.10.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13976,7 +13976,7 @@ java -Xmx6G -Xms6G -jar Server_1.10.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -13992,7 +13992,7 @@ java -Xmx7G -Xms7G -jar Server_1.10.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14008,7 +14008,7 @@ java -Xmx8G -Xms8G -jar Server_1.10.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14024,7 +14024,7 @@ java -Xmx9G -Xms9G -jar Server_1.10.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14040,7 +14040,7 @@ java -Xmx10G -Xms10G -jar Server_1.10.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14056,7 +14056,7 @@ java -Xmx11G -Xms11G -jar Server_1.10.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14072,7 +14072,7 @@ java -Xmx12G -Xms12G -jar Server_1.10.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14088,7 +14088,7 @@ java -Xmx13G -Xms13G -jar Server_1.10.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14104,7 +14104,7 @@ java -Xmx14G -Xms14G -jar Server_1.10.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14120,7 +14120,7 @@ java -Xmx15G -Xms15G -jar Server_1.10.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14136,7 +14136,7 @@ java -Xmx16G -Xms16G -jar Server_1.10.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14210,7 +14210,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.11.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14226,7 +14226,7 @@ java -Xmx2G -Xms2G -jar Server_1.11.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14242,7 +14242,7 @@ java -Xmx3G -Xms3G -jar Server_1.11.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14258,7 +14258,7 @@ java -Xmx4G -Xms4G -jar Server_1.11.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14274,7 +14274,7 @@ java -Xmx5G -Xms5G -jar Server_1.11.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14290,7 +14290,7 @@ java -Xmx6G -Xms6G -jar Server_1.11.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14306,7 +14306,7 @@ java -Xmx7G -Xms7G -jar Server_1.11.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14322,7 +14322,7 @@ java -Xmx8G -Xms8G -jar Server_1.11.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14338,7 +14338,7 @@ java -Xmx9G -Xms9G -jar Server_1.11.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14354,7 +14354,7 @@ java -Xmx10G -Xms10G -jar Server_1.11.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14370,7 +14370,7 @@ java -Xmx11G -Xms11G -jar Server_1.11.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14386,7 +14386,7 @@ java -Xmx12G -Xms12G -jar Server_1.11.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14402,7 +14402,7 @@ java -Xmx13G -Xms13G -jar Server_1.11.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14418,7 +14418,7 @@ java -Xmx14G -Xms14G -jar Server_1.11.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14434,7 +14434,7 @@ java -Xmx15G -Xms15G -jar Server_1.11.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14450,7 +14450,7 @@ java -Xmx16G -Xms16G -jar Server_1.11.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14524,7 +14524,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.11.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14540,7 +14540,7 @@ java -Xmx2G -Xms2G -jar Server_1.11.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14556,7 +14556,7 @@ java -Xmx3G -Xms3G -jar Server_1.11.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14572,7 +14572,7 @@ java -Xmx4G -Xms4G -jar Server_1.11.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14588,7 +14588,7 @@ java -Xmx5G -Xms5G -jar Server_1.11.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14604,7 +14604,7 @@ java -Xmx6G -Xms6G -jar Server_1.11.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14620,7 +14620,7 @@ java -Xmx7G -Xms7G -jar Server_1.11.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14636,7 +14636,7 @@ java -Xmx8G -Xms8G -jar Server_1.11.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14652,7 +14652,7 @@ java -Xmx9G -Xms9G -jar Server_1.11.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14668,7 +14668,7 @@ java -Xmx10G -Xms10G -jar Server_1.11.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14684,7 +14684,7 @@ java -Xmx11G -Xms11G -jar Server_1.11.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14700,7 +14700,7 @@ java -Xmx12G -Xms12G -jar Server_1.11.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14716,7 +14716,7 @@ java -Xmx13G -Xms13G -jar Server_1.11.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14732,7 +14732,7 @@ java -Xmx14G -Xms14G -jar Server_1.11.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14748,7 +14748,7 @@ java -Xmx15G -Xms15G -jar Server_1.11.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14764,7 +14764,7 @@ java -Xmx16G -Xms16G -jar Server_1.11.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14838,7 +14838,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.11.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14854,7 +14854,7 @@ java -Xmx2G -Xms2G -jar Server_1.11.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14870,7 +14870,7 @@ java -Xmx3G -Xms3G -jar Server_1.11.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14886,7 +14886,7 @@ java -Xmx4G -Xms4G -jar Server_1.11.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14902,7 +14902,7 @@ java -Xmx5G -Xms5G -jar Server_1.11.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14918,7 +14918,7 @@ java -Xmx6G -Xms6G -jar Server_1.11.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14934,7 +14934,7 @@ java -Xmx7G -Xms7G -jar Server_1.11.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14950,7 +14950,7 @@ java -Xmx8G -Xms8G -jar Server_1.11.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14966,7 +14966,7 @@ java -Xmx9G -Xms9G -jar Server_1.11.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14982,7 +14982,7 @@ java -Xmx10G -Xms10G -jar Server_1.11.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -14998,7 +14998,7 @@ java -Xmx11G -Xms11G -jar Server_1.11.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15014,7 +15014,7 @@ java -Xmx12G -Xms12G -jar Server_1.11.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15030,7 +15030,7 @@ java -Xmx13G -Xms13G -jar Server_1.11.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15046,7 +15046,7 @@ java -Xmx14G -Xms14G -jar Server_1.11.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15062,7 +15062,7 @@ java -Xmx15G -Xms15G -jar Server_1.11.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15078,7 +15078,7 @@ java -Xmx16G -Xms16G -jar Server_1.11.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15152,7 +15152,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.12.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15168,7 +15168,7 @@ java -Xmx2G -Xms2G -jar Server_1.12.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15184,7 +15184,7 @@ java -Xmx3G -Xms3G -jar Server_1.12.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15200,7 +15200,7 @@ java -Xmx4G -Xms4G -jar Server_1.12.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15216,7 +15216,7 @@ java -Xmx5G -Xms5G -jar Server_1.12.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15232,7 +15232,7 @@ java -Xmx6G -Xms6G -jar Server_1.12.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15248,7 +15248,7 @@ java -Xmx7G -Xms7G -jar Server_1.12.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15264,7 +15264,7 @@ java -Xmx8G -Xms8G -jar Server_1.12.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15280,7 +15280,7 @@ java -Xmx9G -Xms9G -jar Server_1.12.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15296,7 +15296,7 @@ java -Xmx10G -Xms10G -jar Server_1.12.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15312,7 +15312,7 @@ java -Xmx11G -Xms11G -jar Server_1.12.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15328,7 +15328,7 @@ java -Xmx12G -Xms12G -jar Server_1.12.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15344,7 +15344,7 @@ java -Xmx13G -Xms13G -jar Server_1.12.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15360,7 +15360,7 @@ java -Xmx14G -Xms14G -jar Server_1.12.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15376,7 +15376,7 @@ java -Xmx15G -Xms15G -jar Server_1.12.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15392,7 +15392,7 @@ java -Xmx16G -Xms16G -jar Server_1.12.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15466,7 +15466,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.12.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15482,7 +15482,7 @@ java -Xmx2G -Xms2G -jar Server_1.12.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15498,7 +15498,7 @@ java -Xmx3G -Xms3G -jar Server_1.12.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15514,7 +15514,7 @@ java -Xmx4G -Xms4G -jar Server_1.12.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15530,7 +15530,7 @@ java -Xmx5G -Xms5G -jar Server_1.12.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15546,7 +15546,7 @@ java -Xmx6G -Xms6G -jar Server_1.12.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15562,7 +15562,7 @@ java -Xmx7G -Xms7G -jar Server_1.12.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15578,7 +15578,7 @@ java -Xmx8G -Xms8G -jar Server_1.12.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15594,7 +15594,7 @@ java -Xmx9G -Xms9G -jar Server_1.12.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15610,7 +15610,7 @@ java -Xmx10G -Xms10G -jar Server_1.12.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15626,7 +15626,7 @@ java -Xmx11G -Xms11G -jar Server_1.12.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15642,7 +15642,7 @@ java -Xmx12G -Xms12G -jar Server_1.12.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15658,7 +15658,7 @@ java -Xmx13G -Xms13G -jar Server_1.12.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15674,7 +15674,7 @@ java -Xmx14G -Xms14G -jar Server_1.12.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15690,7 +15690,7 @@ java -Xmx15G -Xms15G -jar Server_1.12.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15706,7 +15706,7 @@ java -Xmx16G -Xms16G -jar Server_1.12.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15780,7 +15780,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.12.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15796,7 +15796,7 @@ java -Xmx2G -Xms2G -jar Server_1.12.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15812,7 +15812,7 @@ java -Xmx3G -Xms3G -jar Server_1.12.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15828,7 +15828,7 @@ java -Xmx4G -Xms4G -jar Server_1.12.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15844,7 +15844,7 @@ java -Xmx5G -Xms5G -jar Server_1.12.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15860,7 +15860,7 @@ java -Xmx6G -Xms6G -jar Server_1.12.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15876,7 +15876,7 @@ java -Xmx7G -Xms7G -jar Server_1.12.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15892,7 +15892,7 @@ java -Xmx8G -Xms8G -jar Server_1.12.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15908,7 +15908,7 @@ java -Xmx9G -Xms9G -jar Server_1.12.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15924,7 +15924,7 @@ java -Xmx10G -Xms10G -jar Server_1.12.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15940,7 +15940,7 @@ java -Xmx11G -Xms11G -jar Server_1.12.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15956,7 +15956,7 @@ java -Xmx12G -Xms12G -jar Server_1.12.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15972,7 +15972,7 @@ java -Xmx13G -Xms13G -jar Server_1.12.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -15988,7 +15988,7 @@ java -Xmx14G -Xms14G -jar Server_1.12.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16004,7 +16004,7 @@ java -Xmx15G -Xms15G -jar Server_1.12.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16020,7 +16020,7 @@ java -Xmx16G -Xms16G -jar Server_1.12.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16094,7 +16094,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.13.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16110,7 +16110,7 @@ java -Xmx2G -Xms2G -jar Server_1.13.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16126,7 +16126,7 @@ java -Xmx3G -Xms3G -jar Server_1.13.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16142,7 +16142,7 @@ java -Xmx4G -Xms4G -jar Server_1.13.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16158,7 +16158,7 @@ java -Xmx5G -Xms5G -jar Server_1.13.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16174,7 +16174,7 @@ java -Xmx6G -Xms6G -jar Server_1.13.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16190,7 +16190,7 @@ java -Xmx7G -Xms7G -jar Server_1.13.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16206,7 +16206,7 @@ java -Xmx8G -Xms8G -jar Server_1.13.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16222,7 +16222,7 @@ java -Xmx9G -Xms9G -jar Server_1.13.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16238,7 +16238,7 @@ java -Xmx10G -Xms10G -jar Server_1.13.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16254,7 +16254,7 @@ java -Xmx11G -Xms11G -jar Server_1.13.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16270,7 +16270,7 @@ java -Xmx12G -Xms12G -jar Server_1.13.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16286,7 +16286,7 @@ java -Xmx13G -Xms13G -jar Server_1.13.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16302,7 +16302,7 @@ java -Xmx14G -Xms14G -jar Server_1.13.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16318,7 +16318,7 @@ java -Xmx15G -Xms15G -jar Server_1.13.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16334,7 +16334,7 @@ java -Xmx16G -Xms16G -jar Server_1.13.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16408,7 +16408,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.13.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16424,7 +16424,7 @@ java -Xmx2G -Xms2G -jar Server_1.13.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16440,7 +16440,7 @@ java -Xmx3G -Xms3G -jar Server_1.13.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16456,7 +16456,7 @@ java -Xmx4G -Xms4G -jar Server_1.13.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16472,7 +16472,7 @@ java -Xmx5G -Xms5G -jar Server_1.13.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16488,7 +16488,7 @@ java -Xmx6G -Xms6G -jar Server_1.13.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16504,7 +16504,7 @@ java -Xmx7G -Xms7G -jar Server_1.13.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16520,7 +16520,7 @@ java -Xmx8G -Xms8G -jar Server_1.13.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16536,7 +16536,7 @@ java -Xmx9G -Xms9G -jar Server_1.13.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16552,7 +16552,7 @@ java -Xmx10G -Xms10G -jar Server_1.13.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16568,7 +16568,7 @@ java -Xmx11G -Xms11G -jar Server_1.13.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16584,7 +16584,7 @@ java -Xmx12G -Xms12G -jar Server_1.13.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16600,7 +16600,7 @@ java -Xmx13G -Xms13G -jar Server_1.13.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16616,7 +16616,7 @@ java -Xmx14G -Xms14G -jar Server_1.13.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16632,7 +16632,7 @@ java -Xmx15G -Xms15G -jar Server_1.13.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16648,7 +16648,7 @@ java -Xmx16G -Xms16G -jar Server_1.13.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16722,7 +16722,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.13.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16738,7 +16738,7 @@ java -Xmx2G -Xms2G -jar Server_1.13.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16754,7 +16754,7 @@ java -Xmx3G -Xms3G -jar Server_1.13.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16770,7 +16770,7 @@ java -Xmx4G -Xms4G -jar Server_1.13.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16786,7 +16786,7 @@ java -Xmx5G -Xms5G -jar Server_1.13.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16802,7 +16802,7 @@ java -Xmx6G -Xms6G -jar Server_1.13.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16818,7 +16818,7 @@ java -Xmx7G -Xms7G -jar Server_1.13.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16834,7 +16834,7 @@ java -Xmx8G -Xms8G -jar Server_1.13.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16850,7 +16850,7 @@ java -Xmx9G -Xms9G -jar Server_1.13.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16866,7 +16866,7 @@ java -Xmx10G -Xms10G -jar Server_1.13.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16882,7 +16882,7 @@ java -Xmx11G -Xms11G -jar Server_1.13.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16898,7 +16898,7 @@ java -Xmx12G -Xms12G -jar Server_1.13.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16914,7 +16914,7 @@ java -Xmx13G -Xms13G -jar Server_1.13.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16930,7 +16930,7 @@ java -Xmx14G -Xms14G -jar Server_1.13.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16946,7 +16946,7 @@ java -Xmx15G -Xms15G -jar Server_1.13.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -16962,7 +16962,7 @@ java -Xmx16G -Xms16G -jar Server_1.13.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17036,7 +17036,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.14.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17052,7 +17052,7 @@ java -Xmx2G -Xms2G -jar Server_1.14.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17068,7 +17068,7 @@ java -Xmx3G -Xms3G -jar Server_1.14.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17084,7 +17084,7 @@ java -Xmx4G -Xms4G -jar Server_1.14.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17100,7 +17100,7 @@ java -Xmx5G -Xms5G -jar Server_1.14.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17116,7 +17116,7 @@ java -Xmx6G -Xms6G -jar Server_1.14.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17132,7 +17132,7 @@ java -Xmx7G -Xms7G -jar Server_1.14.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17148,7 +17148,7 @@ java -Xmx8G -Xms8G -jar Server_1.14.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17164,7 +17164,7 @@ java -Xmx9G -Xms9G -jar Server_1.14.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17180,7 +17180,7 @@ java -Xmx10G -Xms10G -jar Server_1.14.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17196,7 +17196,7 @@ java -Xmx11G -Xms11G -jar Server_1.14.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17212,7 +17212,7 @@ java -Xmx12G -Xms12G -jar Server_1.14.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17228,7 +17228,7 @@ java -Xmx13G -Xms13G -jar Server_1.14.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17244,7 +17244,7 @@ java -Xmx14G -Xms14G -jar Server_1.14.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17260,7 +17260,7 @@ java -Xmx15G -Xms15G -jar Server_1.14.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17276,7 +17276,7 @@ java -Xmx16G -Xms16G -jar Server_1.14.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17350,7 +17350,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.14.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17366,7 +17366,7 @@ java -Xmx2G -Xms2G -jar Server_1.14.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17382,7 +17382,7 @@ java -Xmx3G -Xms3G -jar Server_1.14.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17398,7 +17398,7 @@ java -Xmx4G -Xms4G -jar Server_1.14.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17414,7 +17414,7 @@ java -Xmx5G -Xms5G -jar Server_1.14.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17430,7 +17430,7 @@ java -Xmx6G -Xms6G -jar Server_1.14.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17446,7 +17446,7 @@ java -Xmx7G -Xms7G -jar Server_1.14.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17462,7 +17462,7 @@ java -Xmx8G -Xms8G -jar Server_1.14.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17478,7 +17478,7 @@ java -Xmx9G -Xms9G -jar Server_1.14.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17494,7 +17494,7 @@ java -Xmx10G -Xms10G -jar Server_1.14.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17510,7 +17510,7 @@ java -Xmx11G -Xms11G -jar Server_1.14.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17526,7 +17526,7 @@ java -Xmx12G -Xms12G -jar Server_1.14.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17542,7 +17542,7 @@ java -Xmx13G -Xms13G -jar Server_1.14.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17558,7 +17558,7 @@ java -Xmx14G -Xms14G -jar Server_1.14.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17574,7 +17574,7 @@ java -Xmx15G -Xms15G -jar Server_1.14.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17590,7 +17590,7 @@ java -Xmx16G -Xms16G -jar Server_1.14.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17664,7 +17664,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.14.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17680,7 +17680,7 @@ java -Xmx2G -Xms2G -jar Server_1.14.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17696,7 +17696,7 @@ java -Xmx3G -Xms3G -jar Server_1.14.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17712,7 +17712,7 @@ java -Xmx4G -Xms4G -jar Server_1.14.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17728,7 +17728,7 @@ java -Xmx5G -Xms5G -jar Server_1.14.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17744,7 +17744,7 @@ java -Xmx6G -Xms6G -jar Server_1.14.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17760,7 +17760,7 @@ java -Xmx7G -Xms7G -jar Server_1.14.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17776,7 +17776,7 @@ java -Xmx8G -Xms8G -jar Server_1.14.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17792,7 +17792,7 @@ java -Xmx9G -Xms9G -jar Server_1.14.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17808,7 +17808,7 @@ java -Xmx10G -Xms10G -jar Server_1.14.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17824,7 +17824,7 @@ java -Xmx11G -Xms11G -jar Server_1.14.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17840,7 +17840,7 @@ java -Xmx12G -Xms12G -jar Server_1.14.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17856,7 +17856,7 @@ java -Xmx13G -Xms13G -jar Server_1.14.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17872,7 +17872,7 @@ java -Xmx14G -Xms14G -jar Server_1.14.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17888,7 +17888,7 @@ java -Xmx15G -Xms15G -jar Server_1.14.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17904,7 +17904,7 @@ java -Xmx16G -Xms16G -jar Server_1.14.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17978,7 +17978,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.14.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -17994,7 +17994,7 @@ java -Xmx2G -Xms2G -jar Server_1.14.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18010,7 +18010,7 @@ java -Xmx3G -Xms3G -jar Server_1.14.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18026,7 +18026,7 @@ java -Xmx4G -Xms4G -jar Server_1.14.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18042,7 +18042,7 @@ java -Xmx5G -Xms5G -jar Server_1.14.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18058,7 +18058,7 @@ java -Xmx6G -Xms6G -jar Server_1.14.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18074,7 +18074,7 @@ java -Xmx7G -Xms7G -jar Server_1.14.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18090,7 +18090,7 @@ java -Xmx8G -Xms8G -jar Server_1.14.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18106,7 +18106,7 @@ java -Xmx9G -Xms9G -jar Server_1.14.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18122,7 +18122,7 @@ java -Xmx10G -Xms10G -jar Server_1.14.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18138,7 +18138,7 @@ java -Xmx11G -Xms11G -jar Server_1.14.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18154,7 +18154,7 @@ java -Xmx12G -Xms12G -jar Server_1.14.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18170,7 +18170,7 @@ java -Xmx13G -Xms13G -jar Server_1.14.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18186,7 +18186,7 @@ java -Xmx14G -Xms14G -jar Server_1.14.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18202,7 +18202,7 @@ java -Xmx15G -Xms15G -jar Server_1.14.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18218,7 +18218,7 @@ java -Xmx16G -Xms16G -jar Server_1.14.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18292,7 +18292,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.14.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18308,7 +18308,7 @@ java -Xmx2G -Xms2G -jar Server_1.14.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18324,7 +18324,7 @@ java -Xmx3G -Xms3G -jar Server_1.14.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18340,7 +18340,7 @@ java -Xmx4G -Xms4G -jar Server_1.14.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18356,7 +18356,7 @@ java -Xmx5G -Xms5G -jar Server_1.14.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18372,7 +18372,7 @@ java -Xmx6G -Xms6G -jar Server_1.14.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18388,7 +18388,7 @@ java -Xmx7G -Xms7G -jar Server_1.14.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18404,7 +18404,7 @@ java -Xmx8G -Xms8G -jar Server_1.14.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18420,7 +18420,7 @@ java -Xmx9G -Xms9G -jar Server_1.14.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18436,7 +18436,7 @@ java -Xmx10G -Xms10G -jar Server_1.14.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18452,7 +18452,7 @@ java -Xmx11G -Xms11G -jar Server_1.14.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18468,7 +18468,7 @@ java -Xmx12G -Xms12G -jar Server_1.14.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18484,7 +18484,7 @@ java -Xmx13G -Xms13G -jar Server_1.14.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18500,7 +18500,7 @@ java -Xmx14G -Xms14G -jar Server_1.14.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18516,7 +18516,7 @@ java -Xmx15G -Xms15G -jar Server_1.14.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18532,7 +18532,7 @@ java -Xmx16G -Xms16G -jar Server_1.14.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18606,7 +18606,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.15.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18622,7 +18622,7 @@ java -Xmx2G -Xms2G -jar Server_1.15.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18638,7 +18638,7 @@ java -Xmx3G -Xms3G -jar Server_1.15.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18654,7 +18654,7 @@ java -Xmx4G -Xms4G -jar Server_1.15.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18670,7 +18670,7 @@ java -Xmx5G -Xms5G -jar Server_1.15.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18686,7 +18686,7 @@ java -Xmx6G -Xms6G -jar Server_1.15.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18702,7 +18702,7 @@ java -Xmx7G -Xms7G -jar Server_1.15.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18718,7 +18718,7 @@ java -Xmx8G -Xms8G -jar Server_1.15.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18734,7 +18734,7 @@ java -Xmx9G -Xms9G -jar Server_1.15.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18750,7 +18750,7 @@ java -Xmx10G -Xms10G -jar Server_1.15.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18766,7 +18766,7 @@ java -Xmx11G -Xms11G -jar Server_1.15.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18782,7 +18782,7 @@ java -Xmx12G -Xms12G -jar Server_1.15.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18798,7 +18798,7 @@ java -Xmx13G -Xms13G -jar Server_1.15.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18814,7 +18814,7 @@ java -Xmx14G -Xms14G -jar Server_1.15.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18830,7 +18830,7 @@ java -Xmx15G -Xms15G -jar Server_1.15.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18846,7 +18846,7 @@ java -Xmx16G -Xms16G -jar Server_1.15.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18920,7 +18920,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.15.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18936,7 +18936,7 @@ java -Xmx2G -Xms2G -jar Server_1.15.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18952,7 +18952,7 @@ java -Xmx3G -Xms3G -jar Server_1.15.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18968,7 +18968,7 @@ java -Xmx4G -Xms4G -jar Server_1.15.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -18984,7 +18984,7 @@ java -Xmx5G -Xms5G -jar Server_1.15.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19000,7 +19000,7 @@ java -Xmx6G -Xms6G -jar Server_1.15.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19016,7 +19016,7 @@ java -Xmx7G -Xms7G -jar Server_1.15.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19032,7 +19032,7 @@ java -Xmx8G -Xms8G -jar Server_1.15.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19048,7 +19048,7 @@ java -Xmx9G -Xms9G -jar Server_1.15.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19064,7 +19064,7 @@ java -Xmx10G -Xms10G -jar Server_1.15.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19080,7 +19080,7 @@ java -Xmx11G -Xms11G -jar Server_1.15.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19096,7 +19096,7 @@ java -Xmx12G -Xms12G -jar Server_1.15.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19112,7 +19112,7 @@ java -Xmx13G -Xms13G -jar Server_1.15.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19128,7 +19128,7 @@ java -Xmx14G -Xms14G -jar Server_1.15.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19144,7 +19144,7 @@ java -Xmx15G -Xms15G -jar Server_1.15.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19160,7 +19160,7 @@ java -Xmx16G -Xms16G -jar Server_1.15.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19234,7 +19234,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.15.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19250,7 +19250,7 @@ java -Xmx2G -Xms2G -jar Server_1.15.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19266,7 +19266,7 @@ java -Xmx3G -Xms3G -jar Server_1.15.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19282,7 +19282,7 @@ java -Xmx4G -Xms4G -jar Server_1.15.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19298,7 +19298,7 @@ java -Xmx5G -Xms5G -jar Server_1.15.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19314,7 +19314,7 @@ java -Xmx6G -Xms6G -jar Server_1.15.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19330,7 +19330,7 @@ java -Xmx7G -Xms7G -jar Server_1.15.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19346,7 +19346,7 @@ java -Xmx8G -Xms8G -jar Server_1.15.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19362,7 +19362,7 @@ java -Xmx9G -Xms9G -jar Server_1.15.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19378,7 +19378,7 @@ java -Xmx10G -Xms10G -jar Server_1.15.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19394,7 +19394,7 @@ java -Xmx11G -Xms11G -jar Server_1.15.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19410,7 +19410,7 @@ java -Xmx12G -Xms12G -jar Server_1.15.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19426,7 +19426,7 @@ java -Xmx13G -Xms13G -jar Server_1.15.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19442,7 +19442,7 @@ java -Xmx14G -Xms14G -jar Server_1.15.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19458,7 +19458,7 @@ java -Xmx15G -Xms15G -jar Server_1.15.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19474,7 +19474,7 @@ java -Xmx16G -Xms16G -jar Server_1.15.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19548,7 +19548,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.16.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19564,7 +19564,7 @@ java -Xmx2G -Xms2G -jar Server_1.16.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19580,7 +19580,7 @@ java -Xmx3G -Xms3G -jar Server_1.16.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19596,7 +19596,7 @@ java -Xmx4G -Xms4G -jar Server_1.16.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19612,7 +19612,7 @@ java -Xmx5G -Xms5G -jar Server_1.16.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19628,7 +19628,7 @@ java -Xmx6G -Xms6G -jar Server_1.16.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19644,7 +19644,7 @@ java -Xmx7G -Xms7G -jar Server_1.16.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19660,7 +19660,7 @@ java -Xmx8G -Xms8G -jar Server_1.16.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19676,7 +19676,7 @@ java -Xmx9G -Xms9G -jar Server_1.16.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19692,7 +19692,7 @@ java -Xmx10G -Xms10G -jar Server_1.16.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19708,7 +19708,7 @@ java -Xmx11G -Xms11G -jar Server_1.16.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19724,7 +19724,7 @@ java -Xmx12G -Xms12G -jar Server_1.16.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19740,7 +19740,7 @@ java -Xmx13G -Xms13G -jar Server_1.16.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19756,7 +19756,7 @@ java -Xmx14G -Xms14G -jar Server_1.16.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19772,7 +19772,7 @@ java -Xmx15G -Xms15G -jar Server_1.16.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19788,7 +19788,7 @@ java -Xmx16G -Xms16G -jar Server_1.16.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19862,7 +19862,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.16.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19878,7 +19878,7 @@ java -Xmx2G -Xms2G -jar Server_1.16.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19894,7 +19894,7 @@ java -Xmx3G -Xms3G -jar Server_1.16.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19910,7 +19910,7 @@ java -Xmx4G -Xms4G -jar Server_1.16.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19926,7 +19926,7 @@ java -Xmx5G -Xms5G -jar Server_1.16.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19942,7 +19942,7 @@ java -Xmx6G -Xms6G -jar Server_1.16.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19958,7 +19958,7 @@ java -Xmx7G -Xms7G -jar Server_1.16.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19974,7 +19974,7 @@ java -Xmx8G -Xms8G -jar Server_1.16.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -19990,7 +19990,7 @@ java -Xmx9G -Xms9G -jar Server_1.16.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20006,7 +20006,7 @@ java -Xmx10G -Xms10G -jar Server_1.16.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20022,7 +20022,7 @@ java -Xmx11G -Xms11G -jar Server_1.16.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20038,7 +20038,7 @@ java -Xmx12G -Xms12G -jar Server_1.16.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20054,7 +20054,7 @@ java -Xmx13G -Xms13G -jar Server_1.16.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20070,7 +20070,7 @@ java -Xmx14G -Xms14G -jar Server_1.16.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20086,7 +20086,7 @@ java -Xmx15G -Xms15G -jar Server_1.16.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20102,7 +20102,7 @@ java -Xmx16G -Xms16G -jar Server_1.16.1.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20176,7 +20176,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.16.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20192,7 +20192,7 @@ java -Xmx2G -Xms2G -jar Server_1.16.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20208,7 +20208,7 @@ java -Xmx3G -Xms3G -jar Server_1.16.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20224,7 +20224,7 @@ java -Xmx4G -Xms4G -jar Server_1.16.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20240,7 +20240,7 @@ java -Xmx5G -Xms5G -jar Server_1.16.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20256,7 +20256,7 @@ java -Xmx6G -Xms6G -jar Server_1.16.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20272,7 +20272,7 @@ java -Xmx7G -Xms7G -jar Server_1.16.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20288,7 +20288,7 @@ java -Xmx8G -Xms8G -jar Server_1.16.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20304,7 +20304,7 @@ java -Xmx9G -Xms9G -jar Server_1.16.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20320,7 +20320,7 @@ java -Xmx10G -Xms10G -jar Server_1.16.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20336,7 +20336,7 @@ java -Xmx11G -Xms11G -jar Server_1.16.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20352,7 +20352,7 @@ java -Xmx12G -Xms12G -jar Server_1.16.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20368,7 +20368,7 @@ java -Xmx13G -Xms13G -jar Server_1.16.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20384,7 +20384,7 @@ java -Xmx14G -Xms14G -jar Server_1.16.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20400,7 +20400,7 @@ java -Xmx15G -Xms15G -jar Server_1.16.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20416,7 +20416,7 @@ java -Xmx16G -Xms16G -jar Server_1.16.2.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20490,7 +20490,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.16.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20506,7 +20506,7 @@ java -Xmx2G -Xms2G -jar Server_1.16.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20522,7 +20522,7 @@ java -Xmx3G -Xms3G -jar Server_1.16.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20538,7 +20538,7 @@ java -Xmx4G -Xms4G -jar Server_1.16.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20554,7 +20554,7 @@ java -Xmx5G -Xms5G -jar Server_1.16.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20570,7 +20570,7 @@ java -Xmx6G -Xms6G -jar Server_1.16.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20586,7 +20586,7 @@ java -Xmx7G -Xms7G -jar Server_1.16.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20602,7 +20602,7 @@ java -Xmx8G -Xms8G -jar Server_1.16.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20618,7 +20618,7 @@ java -Xmx9G -Xms9G -jar Server_1.16.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20634,7 +20634,7 @@ java -Xmx10G -Xms10G -jar Server_1.16.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20650,7 +20650,7 @@ java -Xmx11G -Xms11G -jar Server_1.16.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20666,7 +20666,7 @@ java -Xmx12G -Xms12G -jar Server_1.16.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20682,7 +20682,7 @@ java -Xmx13G -Xms13G -jar Server_1.16.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20698,7 +20698,7 @@ java -Xmx14G -Xms14G -jar Server_1.16.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20714,7 +20714,7 @@ java -Xmx15G -Xms15G -jar Server_1.16.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20730,7 +20730,7 @@ java -Xmx16G -Xms16G -jar Server_1.16.3.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20804,7 +20804,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.16.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20820,7 +20820,7 @@ java -Xmx2G -Xms2G -jar Server_1.16.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20836,7 +20836,7 @@ java -Xmx3G -Xms3G -jar Server_1.16.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20852,7 +20852,7 @@ java -Xmx4G -Xms4G -jar Server_1.16.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20868,7 +20868,7 @@ java -Xmx5G -Xms5G -jar Server_1.16.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20884,7 +20884,7 @@ java -Xmx6G -Xms6G -jar Server_1.16.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20900,7 +20900,7 @@ java -Xmx7G -Xms7G -jar Server_1.16.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20916,7 +20916,7 @@ java -Xmx8G -Xms8G -jar Server_1.16.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20932,7 +20932,7 @@ java -Xmx9G -Xms9G -jar Server_1.16.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20948,7 +20948,7 @@ java -Xmx10G -Xms10G -jar Server_1.16.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20964,7 +20964,7 @@ java -Xmx11G -Xms11G -jar Server_1.16.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20980,7 +20980,7 @@ java -Xmx12G -Xms12G -jar Server_1.16.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -20996,7 +20996,7 @@ java -Xmx13G -Xms13G -jar Server_1.16.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -21012,7 +21012,7 @@ java -Xmx14G -Xms14G -jar Server_1.16.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -21028,7 +21028,7 @@ java -Xmx15G -Xms15G -jar Server_1.16.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -21044,7 +21044,7 @@ java -Xmx16G -Xms16G -jar Server_1.16.4.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -21118,7 +21118,7 @@ java -Xmx1024M -Xms1024M -jar Server_1.16.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -21134,7 +21134,7 @@ java -Xmx2G -Xms2G -jar Server_1.16.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -21150,7 +21150,7 @@ java -Xmx3G -Xms3G -jar Server_1.16.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -21166,7 +21166,7 @@ java -Xmx4G -Xms4G -jar Server_1.16.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -21182,7 +21182,7 @@ java -Xmx5G -Xms5G -jar Server_1.16.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -21198,7 +21198,7 @@ java -Xmx6G -Xms6G -jar Server_1.16.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -21214,7 +21214,7 @@ java -Xmx7G -Xms7G -jar Server_1.16.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -21230,7 +21230,7 @@ java -Xmx8G -Xms8G -jar Server_1.16.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -21246,7 +21246,7 @@ java -Xmx9G -Xms9G -jar Server_1.16.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -21262,7 +21262,7 @@ java -Xmx10G -Xms10G -jar Server_1.16.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -21278,7 +21278,7 @@ java -Xmx11G -Xms11G -jar Server_1.16.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -21294,7 +21294,7 @@ java -Xmx12G -Xms12G -jar Server_1.16.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -21310,7 +21310,7 @@ java -Xmx13G -Xms13G -jar Server_1.16.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -21326,7 +21326,7 @@ java -Xmx14G -Xms14G -jar Server_1.16.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -21342,7 +21342,7 @@ java -Xmx15G -Xms15G -jar Server_1.16.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
@@ -21358,7 +21358,7 @@ java -Xmx16G -Xms16G -jar Server_1.16.5.jar nogui
 echo -------------------------------------------
 echo(
 echo Muchas Gracias por usar esta Herramienta
-echo Parte del Conjunto MCSSTools v0.0.0.3 alpha by NGDPL Nk
+echo MIT License - Copyright (c) 2021 NGDPL Nk
 echo -------------------------------------------
 pause
 exit
