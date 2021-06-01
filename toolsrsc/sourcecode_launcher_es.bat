@@ -1,9 +1,31 @@
 @echo off
 
+:init
+cls
+echo Instalador de Servidores de Minecraft
+echo MCSSTools v0.0.0.4-Beta por NGDPL Nk
+echo --------------------------------------
+echo(
+echo Estas en el Menu Principal
+echo(
+echo (1) Instalar un Servidor
+echo (2) Listas de Versiones
+echo (3) Modo Debug (Para desarrolladores)
+echo (4) Acerca de
+echo (5) Salir
+echo(
+set /P c=Elige una de las opciones = 
+if /I "%c%" EQU "1" goto :version
+if /I "%c%" EQU "2" goto :vslist
+if /I "%c%" EQU "3" goto :dbmode
+if /I "%c%" EQU "4" goto :about
+if /I "%c%" EQU "5" goto :exit
+goto :init
+
 :version
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools v0.0.4.0-Beta por NGDPL Nk
+echo MCSSTools v0.0.0.4-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
 set /P c=Escribe la Version del Servidor que deseas iniciar= 
@@ -79,7 +101,7 @@ goto :versionnull
 :versionnull
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools v0.0.4.0-Beta por NGDPL Nk
+echo MCSSTools v0.0.0.4-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Esa Version no esta disponible o es incorrecta
