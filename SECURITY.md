@@ -11,11 +11,10 @@ En caso de encontrarse problemas de seguridad, estas son las versiones con un so
 |  v0.0.0.3-Alpha  | :heavy_check_mark: |
 |  v0.0.0.4-Beta   | :heavy_check_mark: |
 |  v0.0.0.5-Beta   | :heavy_check_mark: |
+|  v0.0.0.6-Beta   | :heavy_check_mark: |
 
 ## Reportar una Vulnerabilidad
 
 Para reportar alguna vulnerabilidad, puedes hacerlo directamente en este repositorio, o puedes comunicarte directamente conmigo:
 
-E-Mail: nikkotilion@gmail.com
-
-Debes explicar qué es lo que crees que está vulnerando la seguridad y será resuelto lo antes posible.
+E-Mail: nikkotilionbackup@gmail.com
