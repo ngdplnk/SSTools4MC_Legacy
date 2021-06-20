@@ -8145,67 +8145,61 @@ echo README MCSSTools
 echo(
 echo(
 echo(
-echo MCSSTools
+echo # **MCSSTools**
 echo Minecraft Server Startup Tools es un conjunto de herramientas que te ayudará con distintos procesos para tu servidor dedicado de Minecraft.
 echo(
+echo # **¿Cómo obtengo las herramientas de este conjunto?**
+echo - Debes descargar la última versión de este conjunto desde [Este Link](https://github.com/NGDPLNk/mcsstools/releases/latest)
 echo(
-echo ¿Cómo obtengo las herramientas de este conjunto?
-echo Debes descargar la última versión de este conjunto o de la herramienta que desees desde Este Link
+echo - Extrae el archivo ya descargado en donde lo desees, allí encontrarás cada ejecutable disponible correspondiente.
 echo(
-echo Extrae el archivo ya descargado en donde lo desees, allí encontrarás cada ejecutable disponible correspondiente.
+echo # **Instalador de servidores**
+echo ## **Requisitos mínimos de esta herramienta:**
 echo(
+echo - SO: Windows 10 v.1803 (build 17134) o superior.
 echo(
-echo Lanzador de servidores
+echo - Procesador: Arquitectura de x64 para la versión x64 de esta herramienta.
 echo(
-echo Requisitos mínimos de esta herramienta:
-echo SO: Windows 7 SP1 o superior.
+echo - RAM: 150MiB
 echo(
-echo Procesador: Arquitectura de x64 para la versión x64 de esta herramienta.
-echo(
-echo RAM: Varía entre 1GiB y 16GiB dependiendo de la cantidad memoria RAM seleccionada para el servidor dedicado.
-echo(
-echo Espacio en disco: Varía dependiendo de cada servidor.
-echo(
-echo Este software puede requerir de una conexión a internet si quieres que tu servidor esté accesible para cualquier jugador.
-echo(
-echo Necesitas tener a lo menos Java 8 para poder iniciar un servidor.
-echo(
-echo También requiere permisos de administrador para acceder a las carpetas y archivos de tu servidor.
-echo(
-echo(
-echo Para usar esta herramienta debes:
-echo Descargar la versión más reciente del conjunto
-echo Luego, debes identificar la versión de la herramienta que corresponda a tu sistema operativo (x32 para 32 bits; x64 para 64 bits).
-echo Copia la herramienta que corresponda a tu sistema operativo y luego pégala en la carpeta principal del servidor que deseas abrir.
-echo Abre la herramienta y sigue las instrucciones en pantalla (Especificar versión, cantidad de memoria RAM a asignar, etc...).
-echo(
-echo(
-echo Instalador de servidores
-echo(
-echo Requisitos mínimos de esta herramienta:
-echo SO: Windows 10 v.1803 (build 17134) o superior.
-echo(
-echo Procesador: Arquitectura de x64 para la versión x64 de esta herramienta.
-echo(
-echo RAM: 200MiB
-echo(
-echo Espacio en disco: 150MiB para instalar 1 servidor.
+echo - Espacio en disco: 150MiB para instalar 1 servidor.
 echo(
 echo Este software requiere de una conexión a internet disponible en el momento de la instalación de servidores.
 echo(
 echo También requiere permisos de administrador para poder acceder y crear los archivos y carpetas que correspondan al servidor en tu equipo.
 echo(
+echo ## **Para usar esta herramienta debes:**
+echo - [Descargar la versión más reciente del conjunto](https://github.com/NGDPLNk/mcsstools/releases/latest)
+echo - Luego, debes identificar la versión de la herramienta que corresponda a tu sistema operativo (x32 para 32 bits; x64 para 64 bits).
+echo - Abre la herramienta antes seleccionada y sigue las instrucciones en pantalla (Elegir versión para el servidor, leer y aceptar el CLUF de Minecraft, configurar parámetros iniciales, etc...).
+echo - Cuando ya hayas creado tu servidor correctamente, **CAMBIA EL NOMBRE DE LA CARPETA DEL SERVIDOR O PONLA EN OTRA UBICACIÓN**. Este paso es muy importante, ya que si no lo haces y vuelves a ejecutar la herramienta, esta sobreescribirá los archivos de la carpeta y causará un conflicto con tu servidor original.
 echo(
-echo Para usar esta herramienta debes:
-echo Descargar la versión más reciente del conjunto
-echo Luego, debes identificar la versión de la herramienta que corresponda a tu sistema operativo (x32 para 32 bits; x64 para 64 bits).
-echo Abre la herramienta antes seleccionada y sigue las instrucciones en pantalla (Elegir versión para el servidor, leer y aceptar el CLUF de Minecraft, configurar parámetros iniciales, etc...).
-echo Cuando ya hayas creado tu servidor correctamente, CAMBIA EL NOMBRE DE LA CARPETA DEL SERVIDOR O PONLA EN OTRA UBICACIÓN. Este paso es muy importante, ya que si no lo haces y vuelves a ejecutar la herramienta, esta sobreescribirá los archivos de la carpeta y causará un conflicto con tu servidor original.
+echo # **Lanzador de servidores (Solo disponible con la Herramienta Instalador)**
+echo ## **Requisitos mínimos de esta herramienta:**
 echo(
+echo - SO: Windows 7 SP1 o superior.
 echo(
-echo Información sobre Copyright y Disclaimer
+echo - Procesador: Arquitectura de x64 para la versión x64 de esta herramienta.
 echo(
-echo MCSSTOOLS Y CADA UNA DE SUS HERRAMIENTAS NO SON UN PRODUCTO OFICIAL DE MINECRAFT. NO ESTÁN APROBADAS POR MOJANG NI ASOCIADAS CON ÉL
+echo - RAM: Varía entre 1GiB y 16GiB dependiendo de la cantidad memoria RAM seleccionada para el servidor dedicado.
+echo(
+echo - Espacio en disco: Varía dependiendo de cada servidor.
+echo(
+echo Este software puede requerir de una conexión a internet si quieres que tu servidor esté accesible para cualquier jugador.
+echo(
+echo Necesitas tener a lo menos [Java 8](https://www.java.com/es/download/ie_manual.jsp) para poder iniciar un servidor hasta la Versión 1.16.5. A partir de la Versión 1.17, es necesrio contar con [JDK 16](https://www.oracle.com/java/technologies/javase-jdk16-downloads.html).
+echo(
+echo También requiere permisos de administrador para acceder a las carpetas y archivos de tu servidor.
+echo(
+echo ## **Para usar esta herramienta debes:**
+echo - [Descargar la versión más reciente del conjunto](https://github.com/NGDPLNk/mcsstools/releases/latest)
+echo - Luego, debes identificar la versión de la herramienta que corresponda a tu sistema operativo (x32 para 32 bits; x64 para 64 bits).
+echo - Abre la herramienta antes seleccionada y sigue las instrucciones en pantalla (Elegir versión para el servidor, leer y aceptar el CLUF de Minecraft, configurar parámetros iniciales, etc...; o directamente instalar la Herramienta Instalador).
+echo - Si creaste un nuevo Servidor, puedes encontrar esta herramienta en la carpeta principal. Si solo instalaste la Herramienta, debes guardarla en la carpeta principal del Servidor que desees inciar.
+echo(
+echo # **Información sobre Copyright y Disclaimer**
+echo(
+echo **MCSSTOOLS Y CADA UNA DE SUS HERRAMIENTAS NO SON UN PRODUCTO OFICIAL DE MINECRAFT. NO ESTÁN APROBADAS POR MOJANG NI ASOCIADAS CON ÉL**
 echo(
 echo Se otorga permiso, sin cargo, a cualquier persona que obtenga una copia de este software y los archivos de documentación asociados (MCSSTools), para utilizar el Software sin restricciones, incluidos, entre otros, los derechos de uso, copia, modificación, fusión , publicar, distribuir, sublicenciar y/o vender copias del Software, y permitir que las personas a las que se les proporcione el Software lo hagan, sujeto a las siguientes condiciones:
 echo(
@@ -8215,13 +8209,17 @@ echo EL SOFTWARE SE PROPORCIONA "TAL CUAL", SIN GARANTÍA DE NINGÚN TIPO, EXPRE
 echo(
 echo "Minecraft" es una marca registrada de Mojang Synergies AB, y no tiene ninguna relación con este Software.
 echo(
+echo Oracle, Java, y MySQL son marcas registradas de Oracle y/o sus afiliados. Otros nombres pueden ser marcas registradas de sus dueños respectivos.
+echo(
 echo NGDPL Nk no es dueño ni tampoco almacena ningún producto de Mojang Synergies AB. Tampoco depende de NGDPL Nk la disponibilidad de estos mismos.
 echo(
-echo Cada elemento, nombre, correspondiente a Mojang Synergies AB, es usado cumpliendo el CLUF y las Directrices de Marca y Herramientas
+echo NGDPL Nk no es dueño ni tampoco almacena ningún producto de Oracle. Tampoco depende de NGDPL Nk la disponibilidad de estos mismos.
 echo(
+echo **Cada elemento, nombre, correspondiente a Mojang Synergies AB, es usado cumpliendo el [CLUF](https://www.minecraft.net/es-es/eula/) y las [Directrices de Marca y Herramientas](https://account.mojang.com/terms?ref=ft#brand)**
 echo(
-echo Gracias Por Usar Este Conjunto De Herramientas
+echo **Cada elemento, nombre, correspondiente a Oracle, es usado cumpliendo los [Términos de uso](https://www.oracle.com/legal/terms.html) y las [Trademarks](https://www.oracle.com/legal/trademarks.html)**
 echo(
+echo # **Gracias Por Usar Este Conjunto De Herramientas**
 echo ©2021 - NGDPL Nk
 echo(
 echo(
@@ -8269,29 +8267,29 @@ echo POLITICA DE SEGURIDAD MCSSTools
 echo(
 echo(
 echo(
-echo Política de Seguridad
+echo # Política de Seguridad
 echo(
-echo(
-echo Versiones con Soporte
+echo ## Versiones con Soporte
 echo(
 echo En caso de encontrarse problemas de seguridad, estas son las versiones con un soporte activo:
 echo(
-echo    Versión	      Tiene Soporte
-echo v0.0.0.1-Alpha	       No
-echo v0.0.0.2-Alpha	       No
-echo v0.0.0.3-Alpha        Si
-echo v0.0.0.4-Beta         Si
-echo v0.0.0.5-Beta         Si
-echo v0.0.0.6-Beta         Si
+echo |     Versión      |    Tiene Soporte   |
+echo | ---------------- | ------------------ |
+echo |  v0.0.0.1-Alpha  |        :x:         |
+echo |  v0.0.0.2-Alpha  |        :x:         |
+echo |  v0.0.0.3-Alpha  |        :x:         |
+echo |  v0.0.0.4-Beta   |        :x:         |
+echo |  v0.0.0.5-Beta   |        :x:         |
+echo |  v0.0.0.6-Beta   | :heavy_check_mark: |
+echo | v0.0.1.0-Stable  | :heavy_check_mark: |
 echo(
-echo(
-echo Reportar una Vulnerabilidad
+echo ## Reportar una Vulnerabilidad
 echo(
 echo Para reportar alguna vulnerabilidad, puedes hacerlo directamente en este repositorio, o puedes comunicarte directamente conmigo:
 echo(
 echo E-Mail: nikkotilionbackup@gmail.com
 echo(
-echo Debes explicar qué es lo que crees que está vulnerando la seguridad y será resuelto lo antes posible.
+echo ©2021 - NGDPL Nk
 echo(
 echo(
 echo(
@@ -8338,9 +8336,9 @@ echo COPYRIGHT Y DISCLAIMER MCSSTools
 echo(
 echo(
 echo(
-echo Información sobre Copyright y Disclaimer
+echo # **Información sobre Copyright y Disclaimer**
 echo(
-echo MCSSTOOLS Y CADA UNA DE SUS HERRAMIENTAS NO SON UN PRODUCTO OFICIAL DE MINECRAFT. NO ESTÁN APROBADAS POR MOJANG NI ASOCIADAS CON ÉL
+echo **MCSSTOOLS Y CADA UNA DE SUS HERRAMIENTAS NO SON UN PRODUCTO OFICIAL DE MINECRAFT. NO ESTÁN APROBADAS POR MOJANG NI ASOCIADAS CON ÉL**
 echo(
 echo Se otorga permiso, sin cargo, a cualquier persona que obtenga una copia de este software y los archivos de documentación asociados (MCSSTools), para utilizar el Software sin restricciones, incluidos, entre otros, los derechos de uso, copia, modificación, fusión , publicar, distribuir, sublicenciar y/o vender copias del Software, y permitir que las personas a las que se les proporcione el Software lo hagan, sujeto a las siguientes condiciones:
 echo(
@@ -8350,9 +8348,18 @@ echo EL SOFTWARE SE PROPORCIONA "TAL CUAL", SIN GARANTÍA DE NINGÚN TIPO, EXPRE
 echo(
 echo "Minecraft" es una marca registrada de Mojang Synergies AB, y no tiene ninguna relación con este Software.
 echo(
+echo Oracle, Java, y MySQL son marcas registradas de Oracle y/o sus afiliados. Otros nombres pueden ser marcas registradas de sus dueños respectivos.
+echo(
 echo NGDPL Nk no es dueño ni tampoco almacena ningún producto de Mojang Synergies AB. Tampoco depende de NGDPL Nk la disponibilidad de estos mismos.
 echo(
-echo Cada elemento, nombre, correspondiente a Mojang Synergies AB, es usado cumpliendo el CLUF y las Directrices de Marca y Herramientas
+echo NGDPL Nk no es dueño ni tampoco almacena ningún producto de Oracle. Tampoco depende de NGDPL Nk la disponibilidad de estos mismos.
+echo(
+echo **Cada elemento, nombre, correspondiente a Mojang Synergies AB, es usado cumpliendo el [CLUF](https://www.minecraft.net/es-es/eula/) y las [Directrices de Marca y Herramientas](https://account.mojang.com/terms?ref=ft#brand)**
+echo(
+echo **Cada elemento, nombre, correspondiente a Oracle, es usado cumpliendo los [Términos de uso](https://www.oracle.com/legal/terms.html) y las [Trademarks](https://www.oracle.com/legal/trademarks.html)**
+echo(
+echo # **Gracias Por Usar Este Conjunto De Herramientas**
+echo ©2021 - NGDPL Nk
 echo(
 echo(
 echo(
@@ -8368,7 +8375,7 @@ echo Instalador de Servidores de Minecraft
 echo MCSSTools v0.0.1.0-Beta por NGDPL Nk
 echo --------------------------------------
 echo(
-echo Si continuas, se abrira el codigo fuente mas reciente de esta herramienta en el navegador.
+echo Si continuas, se abrira el codigo fuente mas reciente de este conjunto en el navegador.
 echo(
 pause
 start https://raw.githubusercontent.com/NGDPLNk/mcsstools/main/toolsrsc/sourcecode_installer_es.bat
