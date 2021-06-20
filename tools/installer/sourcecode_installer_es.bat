@@ -8378,7 +8378,7 @@ echo(
 echo Si continuas, se abrira el codigo fuente mas reciente de este conjunto en el navegador.
 echo(
 pause
-start https://raw.githubusercontent.com/NGDPLNk/mcsstools/main/toolsrsc/sourcecode_installer_es.bat
+start https://github.com/NGDPLNk/mcsstools
 goto :init
 
 REM Desde esta anotación se encuentra el bloque que da pie a la salida de esta herramienta
