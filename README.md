@@ -2,33 +2,9 @@
 Minecraft Server Startup Tools es un conjunto de herramientas que te ayudará con distintos procesos para tu servidor dedicado de Minecraft.
 
 # **¿Cómo obtengo las herramientas de este conjunto?**
-- Debes descargar la última versión de este conjunto o de la herramienta que desees desde [Este Link](https://github.com/NGDPLNk/mcsstools/releases/latest)
+- Debes descargar la última versión de este conjunto desde [Este Link](https://github.com/NGDPLNk/mcsstools/releases/latest)
 
 - Extrae el archivo ya descargado en donde lo desees, allí encontrarás cada ejecutable disponible correspondiente.
-
-# **Lanzador de servidores**
-## **Requisitos mínimos de esta herramienta:**
-
-- SO: Windows 7 SP1 o superior.
-
-- Procesador: Arquitectura de x64 para la versión x64 de esta herramienta.
-
-- RAM: Varía entre 1GiB y 16GiB dependiendo de la cantidad memoria RAM seleccionada para el servidor dedicado.
-
-- Espacio en disco: Varía dependiendo de cada servidor.
-
-Este software puede requerir de una conexión a internet si quieres que tu servidor esté accesible para cualquier jugador.
-
-Necesitas tener a lo menos Java 8 para poder iniciar un servidor.
-
-También requiere permisos de administrador para acceder a las carpetas y archivos de tu servidor.
-
-## **Para usar esta herramienta debes:**
-- [Descargar la versión más reciente del conjunto](https://github.com/NGDPLNk/mcsstools/releases/latest)
-- Luego, debes identificar la versión de la herramienta que corresponda a tu sistema operativo (x32 para 32 bits; x64 para 64 bits).
-- Copia la herramienta que corresponda a tu sistema operativo y luego pégala en la carpeta principal del servidor que deseas abrir.
-- Abre la herramienta y sigue las instrucciones en pantalla (Especificar versión, cantidad de memoria RAM a asignar, etc...).
-
 
 # **Instalador de servidores**
 ## **Requisitos mínimos de esta herramienta:**
@@ -51,6 +27,29 @@ También requiere permisos de administrador para poder acceder y crear los archi
 - Abre la herramienta antes seleccionada y sigue las instrucciones en pantalla (Elegir versión para el servidor, leer y aceptar el CLUF de Minecraft, configurar parámetros iniciales, etc...).
 - Cuando ya hayas creado tu servidor correctamente, **CAMBIA EL NOMBRE DE LA CARPETA DEL SERVIDOR O PONLA EN OTRA UBICACIÓN**. Este paso es muy importante, ya que si no lo haces y vuelves a ejecutar la herramienta, esta sobreescribirá los archivos de la carpeta y causará un conflicto con tu servidor original.
 
+# **Lanzador de servidores (Solo disponible con la Herramienta Instalador)**
+## **Requisitos mínimos de esta herramienta:**
+
+- SO: Windows 7 SP1 o superior.
+
+- Procesador: Arquitectura de x64 para la versión x64 de esta herramienta.
+
+- RAM: Varía entre 1GiB y 16GiB dependiendo de la cantidad memoria RAM seleccionada para el servidor dedicado.
+
+- Espacio en disco: Varía dependiendo de cada servidor.
+
+Este software puede requerir de una conexión a internet si quieres que tu servidor esté accesible para cualquier jugador.
+
+Necesitas tener a lo menos [Java 8](https://www.java.com/es/download/ie_manual.jsp) para poder iniciar un servidor hasta la Versión 1.16.5. A partir de la Versión 1.17, es necesrio contar con [JDK 16](https://www.oracle.com/java/technologies/javase-jdk16-downloads.html).
+
+También requiere permisos de administrador para acceder a las carpetas y archivos de tu servidor.
+
+## **Para usar esta herramienta debes:**
+- [Descargar la versión más reciente del conjunto](https://github.com/NGDPLNk/mcsstools/releases/latest)
+- Luego, debes identificar la versión de la herramienta que corresponda a tu sistema operativo (x32 para 32 bits; x64 para 64 bits).
+- Abre la herramienta antes seleccionada y sigue las instrucciones en pantalla (Elegir versión para el servidor, leer y aceptar el CLUF de Minecraft, configurar parámetros iniciales, etc...; o directamente instalar la Herramienta Lanzador).
+- Si creaste un nuevo Servidor, puedes encontrar esta herramienta en la carpeta principal. Si solo instalaste la Herramienta, debes guardarla en la carpeta principal del Servidor que desees inciar.
+
 # **Información sobre Copyright y Disclaimer**
 
 **MCSSTOOLS Y CADA UNA DE SUS HERRAMIENTAS NO SON UN PRODUCTO OFICIAL DE MINECRAFT. NO ESTÁN APROBADAS POR MOJANG NI ASOCIADAS CON ÉL**
@@ -63,9 +62,15 @@ EL SOFTWARE SE PROPORCIONA "TAL CUAL", SIN GARANTÍA DE NINGÚN TIPO, EXPRESA O 
 
 "Minecraft" es una marca registrada de Mojang Synergies AB, y no tiene ninguna relación con este Software.
 
+Oracle, Java, y MySQL son marcas registradas de Oracle y/o sus afiliados. Otros nombres pueden ser marcas registradas de sus dueños respectivos.
+
 NGDPL Nk no es dueño ni tampoco almacena ningún producto de Mojang Synergies AB. Tampoco depende de NGDPL Nk la disponibilidad de estos mismos.
 
+NGDPL Nk no es dueño ni tampoco almacena ningún producto de Oracle. Tampoco depende de NGDPL Nk la disponibilidad de estos mismos.
+
 **Cada elemento, nombre, correspondiente a Mojang Synergies AB, es usado cumpliendo el [CLUF](https://www.minecraft.net/es-es/eula/) y las [Directrices de Marca y Herramientas](https://account.mojang.com/terms?ref=ft#brand)**
+
+**Cada elemento, nombre, correspondiente a Oracle, es usado cumpliendo los [Términos de uso](https://www.oracle.com/legal/terms.html) y las [Trademarks](https://www.oracle.com/legal/trademarks.html)**
 
 # **Gracias Por Usar Este Conjunto De Herramientas**
 ©2021 - NGDPL Nk
