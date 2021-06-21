@@ -27,7 +27,7 @@ También requiere permisos de administrador para poder acceder y crear los archi
 - Abre la herramienta antes seleccionada y sigue las instrucciones en pantalla (Elegir versión para el servidor, leer y aceptar el CLUF de Minecraft, configurar parámetros iniciales, etc...).
 - Cuando ya hayas creado tu servidor correctamente, **CAMBIA EL NOMBRE DE LA CARPETA DEL SERVIDOR O PONLA EN OTRA UBICACIÓN**. Este paso es muy importante, ya que si no lo haces y vuelves a ejecutar la herramienta, esta sobreescribirá los archivos de la carpeta y causará un conflicto con tu servidor original.
 
-# **Lanzador de servidores (Solo disponible con la Herramienta Instalador)**
+# **Lanzador de servidores**
 ## **Requisitos mínimos de esta herramienta:**
 
 - SO: Windows 7 SP1 o superior.
@@ -47,8 +47,7 @@ También requiere permisos de administrador para acceder a las carpetas y archiv
 ## **Para usar esta herramienta debes:**
 - [Descargar la versión más reciente del conjunto](https://github.com/NGDPLNk/mcsstools/releases/latest)
 - Luego, debes identificar la versión de la herramienta que corresponda a tu sistema operativo (x32 para 32 bits; x64 para 64 bits).
-- Abre la herramienta antes seleccionada y sigue las instrucciones en pantalla (Elegir versión para el servidor, leer y aceptar el CLUF de Minecraft, configurar parámetros iniciales, etc...; o directamente instalar la Herramienta Lanzador).
-- Si creaste un nuevo Servidor, puedes encontrar esta herramienta en la carpeta principal. Si solo instalaste la Herramienta, debes guardarla en la carpeta principal del Servidor que desees inciar.
+- Abre la herramienta antes seleccionada y sigue las instrucciones en pantalla (Elegir cantidad de Memoria RAM para el Servidor, etc...).
 
 # **Información sobre Copyright y Disclaimer**
 
