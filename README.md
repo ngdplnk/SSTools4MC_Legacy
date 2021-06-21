@@ -47,6 +47,7 @@ También requiere permisos de administrador para acceder a las carpetas y archiv
 ## **Para usar esta herramienta debes:**
 - [Descargar la versión más reciente del conjunto](https://github.com/NGDPLNk/mcsstools/releases/latest)
 - Luego, debes identificar la versión de la herramienta que corresponda a tu sistema operativo (x32 para 32 bits; x64 para 64 bits).
+- Copia y pega la Versión de la Herramienta que corresponda a la carpeta principal de tu Servidor (haz esto sólo si no usaste la Herramienta Instalador para Instalar el Servidor).
 - Abre la herramienta antes seleccionada y sigue las instrucciones en pantalla (Elegir cantidad de Memoria RAM para el Servidor, etc...).
 
 # **Información sobre Copyright y Disclaimer**
