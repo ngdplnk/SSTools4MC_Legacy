@@ -1,9 +1,11 @@
 @echo off
 
+title MCSSInstallerTool v0.0.1.1 por NGDPL Nk
+
 :init
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Estas en el Menu Principal
@@ -25,7 +27,7 @@ goto :init
 :version
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Puedes volver al Menu Principal con "N", o
@@ -105,7 +107,7 @@ goto :versionnull
 :versionnull
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Esa Version no esta disponible o es incorrecta
@@ -187,7 +189,7 @@ goto :versionnull
 :1.2.1
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.2.1
@@ -198,7 +200,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -218,7 +220,7 @@ goto :listo
 :1.2.2
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.2.2
@@ -229,7 +231,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -249,7 +251,7 @@ goto :listo
 :1.2.3
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.2.3
@@ -260,7 +262,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -280,7 +282,7 @@ goto :listo
 :1.2.4
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.2.4
@@ -291,7 +293,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -311,7 +313,7 @@ goto :listo
 :1.2.5
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.2.5
@@ -322,7 +324,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -342,7 +344,7 @@ goto :listo
 :1.3.1
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.3.1
@@ -353,7 +355,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -373,7 +375,7 @@ goto :listo
 :1.3.2
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.3.2
@@ -384,7 +386,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -404,7 +406,7 @@ goto :listo
 :1.4.2
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.4.2
@@ -415,7 +417,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -435,7 +437,7 @@ goto :listo
 :1.4.3
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.4.3
@@ -446,7 +448,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -466,7 +468,7 @@ goto :listo
 :1.4.4
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.4.4
@@ -477,7 +479,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -497,7 +499,7 @@ goto :listo
 :1.4.5
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.4.5
@@ -508,7 +510,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -528,7 +530,7 @@ goto :listo
 :1.4.6
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.4.6
@@ -539,7 +541,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -559,7 +561,7 @@ goto :listo
 :1.4.7
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.4.7
@@ -570,7 +572,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -590,7 +592,7 @@ goto :listo
 :1.5.1
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.5.1
@@ -601,7 +603,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -621,7 +623,7 @@ goto :listo
 :1.5.2
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.5.2
@@ -632,7 +634,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -652,7 +654,7 @@ goto :listo
 :1.6.1
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.6.1
@@ -663,7 +665,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -683,7 +685,7 @@ goto :listo
 :1.6.2
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.6.2
@@ -694,7 +696,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -714,7 +716,7 @@ goto :listo
 :1.6.4
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.6.4
@@ -725,7 +727,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -745,7 +747,7 @@ goto :listo
 :1.7.2
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.7.2
@@ -756,7 +758,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -776,7 +778,7 @@ goto :listo
 :1.7.3
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.7.3
@@ -787,7 +789,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -807,7 +809,7 @@ goto :listo
 :1.7.4
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.7.4
@@ -818,7 +820,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -838,7 +840,7 @@ goto :listo
 :1.7.5
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.7.5
@@ -849,7 +851,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -869,7 +871,7 @@ goto :listo
 :1.7.6
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.7.6
@@ -880,7 +882,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -900,7 +902,7 @@ goto :listo
 :1.7.7
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.7.7
@@ -911,7 +913,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -931,7 +933,7 @@ goto :listo
 :1.7.8
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.7.8
@@ -942,7 +944,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -962,7 +964,7 @@ goto :listo
 :1.7.9
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.7.9
@@ -973,7 +975,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -993,7 +995,7 @@ goto :listo
 :1.7.10
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.7.10
@@ -1004,7 +1006,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -1024,7 +1026,7 @@ goto :listo
 :1.8
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.8
@@ -1035,7 +1037,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -1055,7 +1057,7 @@ goto :listo
 :1.8.1
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.8.1
@@ -1066,7 +1068,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -1086,7 +1088,7 @@ goto :listo
 :1.8.2
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.8.2
@@ -1097,7 +1099,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -1117,7 +1119,7 @@ goto :listo
 :1.8.3
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.8.3
@@ -1128,7 +1130,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -1148,7 +1150,7 @@ goto :listo
 :1.8.4
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.8.4
@@ -1159,7 +1161,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -1179,7 +1181,7 @@ goto :listo
 :1.8.5
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.8.5
@@ -1190,7 +1192,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -1210,7 +1212,7 @@ goto :listo
 :1.8.6
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.8.6
@@ -1221,7 +1223,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -1241,7 +1243,7 @@ goto :listo
 :1.8.7
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.8.7
@@ -1252,7 +1254,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -1272,7 +1274,7 @@ goto :listo
 :1.8.8
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.8.8
@@ -1283,7 +1285,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -1303,7 +1305,7 @@ goto :listo
 :1.8.9
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.8.9
@@ -1314,7 +1316,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -1334,7 +1336,7 @@ goto :listo
 :1.9
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.9
@@ -1345,7 +1347,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -1365,7 +1367,7 @@ goto :listo
 :1.9.1
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.9.1
@@ -1376,7 +1378,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -1396,7 +1398,7 @@ goto :listo
 :1.9.2
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.9.2
@@ -1407,7 +1409,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -1427,7 +1429,7 @@ goto :listo
 :1.9.3
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.9.3
@@ -1438,7 +1440,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -1458,7 +1460,7 @@ goto :listo
 :1.9.4
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.9.4
@@ -1469,7 +1471,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -1489,7 +1491,7 @@ goto :listo
 :1.10
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.10
@@ -1500,7 +1502,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -1520,7 +1522,7 @@ goto :listo
 :1.10.1
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.10.1
@@ -1531,7 +1533,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -1551,7 +1553,7 @@ goto :listo
 :1.10.2
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.10.2
@@ -1562,7 +1564,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -1582,7 +1584,7 @@ goto :listo
 :1.11
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.11
@@ -1593,7 +1595,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -1613,7 +1615,7 @@ goto :listo
 :1.11.1
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.11.1
@@ -1624,7 +1626,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -1644,7 +1646,7 @@ goto :listo
 :1.11.2
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.11.2
@@ -1655,7 +1657,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -1675,7 +1677,7 @@ goto :listo
 :1.12
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.12
@@ -1686,7 +1688,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -1706,7 +1708,7 @@ goto :listo
 :1.12.1
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.12.1
@@ -1717,7 +1719,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -1737,7 +1739,7 @@ goto :listo
 :1.12.2
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.12.2
@@ -1748,7 +1750,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -1768,7 +1770,7 @@ goto :listo
 :1.13
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.13
@@ -1779,7 +1781,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -1799,7 +1801,7 @@ goto :listo
 :1.13.1
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.13.1
@@ -1810,7 +1812,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -1830,7 +1832,7 @@ goto :listo
 :1.13.2
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.13.2
@@ -1841,7 +1843,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -1861,7 +1863,7 @@ goto :listo
 :1.14
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.14
@@ -1872,7 +1874,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -1892,7 +1894,7 @@ goto :listo
 :1.14.1
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.14.1
@@ -1903,7 +1905,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -1923,7 +1925,7 @@ goto :listo
 :1.14.2
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.14.2
@@ -1934,7 +1936,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -1954,7 +1956,7 @@ goto :listo
 :1.14.3
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.14.3
@@ -1965,7 +1967,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -1985,7 +1987,7 @@ goto :listo
 :1.14.4
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.14.4
@@ -1996,7 +1998,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -2016,7 +2018,7 @@ goto :listo
 :1.15
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.15
@@ -2027,7 +2029,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -2047,7 +2049,7 @@ goto :listo
 :1.15.1
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.15.1
@@ -2058,7 +2060,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -2078,7 +2080,7 @@ goto :listo
 :1.15.2
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.15.2
@@ -2089,7 +2091,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -2109,7 +2111,7 @@ goto :listo
 :1.16
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.16
@@ -2120,7 +2122,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -2140,7 +2142,7 @@ goto :listo
 :1.16.1
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.16.1
@@ -2151,7 +2153,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -2171,7 +2173,7 @@ goto :listo
 :1.16.2
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.16.2
@@ -2182,7 +2184,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -2202,7 +2204,7 @@ goto :listo
 :1.16.3
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.16.3
@@ -2213,7 +2215,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -2233,7 +2235,7 @@ goto :listo
 :1.16.4
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.16.4
@@ -2244,7 +2246,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -2264,7 +2266,7 @@ goto :listo
 :1.16.5
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.16.5
@@ -2275,7 +2277,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -2295,7 +2297,7 @@ goto :listo
 :1.17
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.17
@@ -2306,7 +2308,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -2326,7 +2328,7 @@ goto :listo
 :1.17.1
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version 1.17.1
@@ -2337,7 +2339,7 @@ echo(
 pause
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Espera un momento...
@@ -2360,7 +2362,7 @@ REM Se crean estas anotaciones por un tema de órden y rapidez al momento de act
 :vslist
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Aqui encontraras la lista que muestra las versiones de Minecraft disponibles.
@@ -2377,7 +2379,7 @@ goto :vslist
 :stblist
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Lista de Versiones de Minecraft Disponibles para Instalar
@@ -2461,7 +2463,7 @@ REM Se crean estas anotaciones por un tema de órden y rapidez al momento de act
 :dbmode
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo El Modo Debug muestra todos los comandos que son ejecutados por la consola durante cada proceso.
@@ -2492,7 +2494,7 @@ cls
 @echo on
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Estas en el Menu Principal
@@ -2527,7 +2529,7 @@ REM Se crean estas anotaciones por un tema de órden y rapidez al momento de act
 :about
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Informacion acerca de la Herramienta y del Conjunto
@@ -2547,7 +2549,7 @@ goto :about
 :readme
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo (O) Ver Readme Online (Recomendado)
@@ -2565,7 +2567,7 @@ goto :readme
 :readmeol
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Si continuas, se abrira el Readme mas reciente en el navegador.
@@ -2577,7 +2579,7 @@ goto :init
 :readmeof
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo README MCSSTools
@@ -2669,7 +2671,7 @@ goto :init
 :security
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo (O) Ver Politica de Seguridad Online (Recomendado)
@@ -2687,7 +2689,7 @@ goto :security
 :securityol
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Si continuas, se abrira la Politica de Seguridad mas reciente en el navegador.
@@ -2699,7 +2701,7 @@ goto :init
 :securityof
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo POLITICA DE SEGURIDAD MCSSTools
@@ -2714,8 +2716,10 @@ echo En caso de encontrarse problemas de seguridad, estas son las versiones con 
 echo(
 echo |     Versión      |    Tiene Soporte   |
 echo | ---------------- | ------------------ |
-echo | v0.0.1.0-Stable  |        :x:         |
-echo | v0.0.1.2-Stable  | :heavy_check_mark: |
+echo |  Alpha Releases  |         :x:        |
+echo |  Beta Releases   |         :x:        |
+echo | v0.0.1.0-Stable  | :heavy_check_mark: |
+echo | v0.0.1.1-Stable  | :heavy_check_mark: |
 echo ## Reportar una Vulnerabilidad
 echo(
 echo Para reportar alguna vulnerabilidad, puedes hacerlo directamente en este repositorio, o puedes comunicarte directamente conmigo:
@@ -2732,7 +2736,7 @@ goto :init
 :canddis
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo (O) Ver Copyright y Disclaimer Online (Recomendado)
@@ -2750,7 +2754,7 @@ goto :canddis
 :canddisol
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Si continuas, se abrira el Copyright y Disclaimer mas reciente en el navegador.
@@ -2762,7 +2766,7 @@ goto :init
 :canddisof
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo COPYRIGHT Y DISCLAIMER MCSSTools
@@ -2805,7 +2809,7 @@ REM Se crean estas anotaciones por un tema de órden y rapidez al momento de act
 :viewsrc
 cls
 echo Instalador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
+echo MCSSTools Release v0.0.1.1 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Si continuas, se abrira el codigo fuente mas reciente de este conjunto en el navegador.

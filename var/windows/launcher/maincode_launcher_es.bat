@@ -526,8 +526,10 @@ echo En caso de encontrarse problemas de seguridad, estas son las versiones con 
 echo(
 echo |     Versión      |    Tiene Soporte   |
 echo | ---------------- | ------------------ |
-echo | v0.0.1.0-Stable  |        :x:         |
-echo | v0.0.1.2-Stable  | :heavy_check_mark: |
+echo |  Alpha Releases  |         :x:        |
+echo |  Beta Releases   |         :x:        |
+echo | v0.0.1.0-Stable  | :heavy_check_mark: |
+echo | v0.0.1.1-Stable  | :heavy_check_mark: |
 echo ## Reportar una Vulnerabilidad
 echo(
 echo Para reportar alguna vulnerabilidad, puedes hacerlo directamente en este repositorio, o puedes comunicarte directamente conmigo:
