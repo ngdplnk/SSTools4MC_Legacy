@@ -3,7 +3,7 @@
 :init
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.0 por NGDPL Nk
+echo MCSSTools Release v0.0.1.2 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Estas en el Menu Principal
@@ -23,7 +23,7 @@ goto :init
 :1.17ram
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.0 por NGDPL Nk
+echo MCSSTools Release v0.0.1.2 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Puedes volver al Menu Principal con "N", o
@@ -51,12 +51,12 @@ goto :1.17ram
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.0 por NGDPL Nk
+echo MCSSTools Release v0.0.1.2 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Inciando el Server con 1GB de Ram...
 echo(
-java -Xmx1024M -Xms1024M -jar Server_1.17.jar nogui
+java -Xmx1G -Xms1G -jar Server_1.17.jar nogui
 pause
 goto :afterclose
 
@@ -64,7 +64,7 @@ goto :afterclose
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.0 por NGDPL Nk
+echo MCSSTools Release v0.0.1.2 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Inciando el Server con 2GB de Ram...
@@ -77,7 +77,7 @@ goto :afterclose
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.0 por NGDPL Nk
+echo MCSSTools Release v0.0.1.2 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Inciando el Server con 3GB de Ram...
@@ -90,7 +90,7 @@ goto :afterclose
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.0 por NGDPL Nk
+echo MCSSTools Release v0.0.1.2 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Inciando el Server con 4GB de Ram...
@@ -103,7 +103,7 @@ goto :afterclose
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.0 por NGDPL Nk
+echo MCSSTools Release v0.0.1.2 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Inciando el Server con 5GB de Ram...
@@ -116,7 +116,7 @@ goto :afterclose
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.0 por NGDPL Nk
+echo MCSSTools Release v0.0.1.2 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Inciando el Server con 6GB de Ram...
@@ -129,7 +129,7 @@ goto :afterclose
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.0 por NGDPL Nk
+echo MCSSTools Release v0.0.1.2 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Inciando el Server con 7GB de Ram...
@@ -142,7 +142,7 @@ goto :afterclose
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.0 por NGDPL Nk
+echo MCSSTools Release v0.0.1.2 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Inciando el Server con 8GB de Ram...
@@ -155,7 +155,7 @@ goto :afterclose
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.0 por NGDPL Nk
+echo MCSSTools Release v0.0.1.2 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Inciando el Server con 9GB de Ram...
@@ -168,7 +168,7 @@ goto :afterclose
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.0 por NGDPL Nk
+echo MCSSTools Release v0.0.1.2 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Inciando el Server con 10GB de Ram...
@@ -181,7 +181,7 @@ goto :afterclose
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.0 por NGDPL Nk
+echo MCSSTools Release v0.0.1.2 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Inciando el Server con 11GB de Ram...
@@ -194,7 +194,7 @@ goto :afterclose
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.0 por NGDPL Nk
+echo MCSSTools Release v0.0.1.2 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Inciando el Server con 12GB de Ram...
@@ -207,7 +207,7 @@ goto :afterclose
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.0 por NGDPL Nk
+echo MCSSTools Release v0.0.1.2 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Inciando el Server con 13GB de Ram...
@@ -220,7 +220,7 @@ goto :afterclose
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.0 por NGDPL Nk
+echo MCSSTools Release v0.0.1.2 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Inciando el Server con 14GB de Ram...
@@ -233,7 +233,7 @@ goto :afterclose
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.0 por NGDPL Nk
+echo MCSSTools Release v0.0.1.2 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Inciando el Server con 15GB de Ram...
@@ -246,7 +246,7 @@ goto :afterclose
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.0 por NGDPL Nk
+echo MCSSTools Release v0.0.1.2 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Inciando el Server con 16GB de Ram...
@@ -259,20 +259,15 @@ goto :afterclose
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.0 por NGDPL Nk
+echo MCSSTools Release v0.0.1.2 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Se ha cerrado el Servidor
 echo(
 echo Puedes revisar el registro de la consola en la carpeta "Logs"
 echo(
-echo --------------------------------------------
-echo Muchas Gracias por usar esta Herramienta
-echo MIT License - Copyright (c) 2021 NGDPL Nk
-echo --------------------------------------------
-echo(
 pause
-exit
+goto :exit
 
 REM Desde esta anotación se encuentra el bloque de código que activa y desactiva el modo debug
 REM Se crean estas anotaciones por un tema de órden y rapidez al momento de actualizar o trabajar con este código fuente
@@ -280,7 +275,7 @@ REM Se crean estas anotaciones por un tema de órden y rapidez al momento de act
 :dbmode
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.0 por NGDPL Nk
+echo MCSSTools Release v0.0.1.2 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo El Modo Debug muestra todos los comandos que son ejecutados por la consola durante cada proceso.
@@ -311,7 +306,7 @@ cls
 @echo on
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.0 por NGDPL Nk
+echo MCSSTools Release v0.0.1.2 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Estas en el Menu Principal
@@ -344,7 +339,7 @@ REM Se crean estas anotaciones por un tema de órden y rapidez al momento de act
 :about
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.0 por NGDPL Nk
+echo MCSSTools Release v0.0.1.2 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Informacion acerca de la Herramienta y del Conjunto
@@ -364,7 +359,7 @@ goto :about
 :readme
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.0 por NGDPL Nk
+echo MCSSTools Release v0.0.1.2 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo (O) Ver Readme Online (Recomendado)
@@ -382,7 +377,7 @@ goto :readme
 :readmeol
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.0 por NGDPL Nk
+echo MCSSTools Release v0.0.1.2 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Si continuas, se abrira el Readme mas reciente en el navegador.
@@ -394,7 +389,7 @@ goto :init
 :readmeof
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.0 por NGDPL Nk
+echo MCSSTools Release v0.0.1.2 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo README MCSSTools
@@ -430,7 +425,7 @@ echo - Luego, debes identificar la versión de la herramienta que corresponda a 
 echo - Abre la herramienta antes seleccionada y sigue las instrucciones en pantalla (Elegir versión para el servidor, leer y aceptar el CLUF de Minecraft, configurar parámetros iniciales, etc...).
 echo - Cuando ya hayas creado tu servidor correctamente, **CAMBIA EL NOMBRE DE LA CARPETA DEL SERVIDOR O PONLA EN OTRA UBICACIÓN**. Este paso es muy importante, ya que si no lo haces y vuelves a ejecutar la herramienta, esta sobreescribirá los archivos de la carpeta y causará un conflicto con tu servidor original.
 echo(
-echo # **Lanzador de servidores (Solo disponible con la Herramienta Instalador)**
+echo # **Lanzador de servidores**
 echo ## **Requisitos mínimos de esta herramienta:**
 echo(
 echo - SO: Windows 7 SP1 o superior.
@@ -450,8 +445,8 @@ echo(
 echo ## **Para usar esta herramienta debes:**
 echo - [Descargar la versión más reciente del conjunto](https://github.com/NGDPLNk/mcsstools/releases/latest)
 echo - Luego, debes identificar la versión de la herramienta que corresponda a tu sistema operativo (x32 para 32 bits; x64 para 64 bits).
-echo - Abre la herramienta antes seleccionada y sigue las instrucciones en pantalla (Elegir versión para el servidor, leer y aceptar el CLUF de Minecraft, configurar parámetros iniciales, etc...; o directamente instalar la Herramienta Lanzador).
-echo - Si creaste un nuevo Servidor, puedes encontrar esta herramienta en la carpeta principal. Si solo instalaste la Herramienta, debes guardarla en la carpeta principal del Servidor que desees inciar.
+echo - Copia y pega la Versión de la Herramienta que corresponda a la carpeta principal de tu Servidor (haz esto sólo si no usaste la Herramienta Instalador para Instalar el Servidor).
+echo - Abre la herramienta antes seleccionada y sigue las instrucciones en pantalla (Elegir cantidad de Memoria RAM para el Servidor, etc...).
 echo(
 echo # **Información sobre Copyright y Disclaimer**
 echo(
@@ -486,7 +481,7 @@ goto :init
 :security
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.0 por NGDPL Nk
+echo MCSSTools Release v0.0.1.2 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo (O) Ver Politica de Seguridad Online (Recomendado)
@@ -504,7 +499,7 @@ goto :security
 :securityol
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.0 por NGDPL Nk
+echo MCSSTools Release v0.0.1.2 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Si continuas, se abrira la Politica de Seguridad mas reciente en el navegador.
@@ -516,7 +511,7 @@ goto :init
 :securityof
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.0 por NGDPL Nk
+echo MCSSTools Release v0.0.1.2 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo POLITICA DE SEGURIDAD MCSSTools
@@ -531,14 +526,8 @@ echo En caso de encontrarse problemas de seguridad, estas son las versiones con 
 echo(
 echo |     Versión      |    Tiene Soporte   |
 echo | ---------------- | ------------------ |
-echo |  v0.0.0.1-Alpha  |        :x:         |
-echo |  v0.0.0.2-Alpha  |        :x:         |
-echo |  v0.0.0.3-Alpha  |        :x:         |
-echo |  v0.0.0.4-Beta   |        :x:         |
-echo |  v0.0.0.5-Beta   |        :x:         |
-echo |  v0.0.0.6-Beta   | :heavy_check_mark: |
-echo | v0.0.1.0-Stable  | :heavy_check_mark: |
-echo(
+echo | v0.0.1.0-Stable  |        :x:         |
+echo | v0.0.1.2-Stable  | :heavy_check_mark: |
 echo ## Reportar una Vulnerabilidad
 echo(
 echo Para reportar alguna vulnerabilidad, puedes hacerlo directamente en este repositorio, o puedes comunicarte directamente conmigo:
@@ -555,7 +544,7 @@ goto :init
 :canddis
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.0 por NGDPL Nk
+echo MCSSTools Release v0.0.1.2 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo (O) Ver Copyright y Disclaimer Online (Recomendado)
@@ -573,7 +562,7 @@ goto :canddis
 :canddisol
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.0 por NGDPL Nk
+echo MCSSTools Release v0.0.1.2 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Si continuas, se abrira el Copyright y Disclaimer mas reciente en el navegador.
@@ -585,7 +574,7 @@ goto :init
 :canddisof
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.0 por NGDPL Nk
+echo MCSSTools Release v0.0.1.2 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo COPYRIGHT Y DISCLAIMER MCSSTools
@@ -628,7 +617,7 @@ REM Se crean estas anotaciones por un tema de órden y rapidez al momento de act
 :viewsrc
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.0 por NGDPL Nk
+echo MCSSTools Release v0.0.1.2 por NGDPL Nk
 echo --------------------------------------
 echo(
 echo Si continuas, se abrira el codigo fuente mas reciente de este conjunto en el navegador.
