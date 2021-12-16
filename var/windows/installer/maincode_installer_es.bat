@@ -2571,13 +2571,11 @@ echo No se recomienda activar este modo si realmente no sabes como sobrellevarlo
 echo(
 echo (N) Activar Modo Debug
 echo (M) Desactivar Modo Debug
-echo (F) Visualizar todo el codigo fuente
 echo (V) Volver al Menu Principal
 echo(
 set /P c=Elige una de las opciones = 
 if /I "%c%" EQU "N" goto :dbinit
 if /I "%c%" EQU "M" goto :undbinit
-if /I "%c%" EQU "F" goto :viewsrc
 if /I "%c%" EQU "V" goto :init
 goto :dbmode
 
