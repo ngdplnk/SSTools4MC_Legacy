@@ -67,7 +67,6 @@ echo(
 echo Optimizando el Server con 1GB de Ram...
 echo(
 java -Xmx1G -Xms1G -jar server.jar --eraseCache --forceUpgrade --initSettings --nogui
-pause
 goto :afterclose
 
 :2G
@@ -80,7 +79,6 @@ echo(
 echo Optimizando el Server con 2GB de Ram...
 echo(
 java -Xmx2G -Xms2G -jar server.jar --eraseCache --forceUpgrade --initSettings --nogui
-pause
 goto :afterclose
 
 :3G
@@ -93,7 +91,6 @@ echo(
 echo Optimizando el Server con 3GB de Ram...
 echo(
 java -Xmx3G -Xms3G -jar server.jar --eraseCache --forceUpgrade --initSettings --nogui
-pause
 goto :afterclose
 
 :4G
@@ -106,7 +103,6 @@ echo(
 echo Optimizando el Server con 4GB de Ram...
 echo(
 java -Xmx4G -Xms4G -jar server.jar --eraseCache --forceUpgrade --initSettings --nogui
-pause
 goto :afterclose
 
 :5G
@@ -119,7 +115,6 @@ echo(
 echo Optimizando el Server con 5GB de Ram...
 echo(
 java -Xmx5G -Xms5G -jar server.jar --eraseCache --forceUpgrade --initSettings --nogui
-pause
 goto :afterclose
 
 :6G
@@ -132,7 +127,6 @@ echo(
 echo Optimizando el Server con 6GB de Ram...
 echo(
 java -Xmx6G -Xms6G -jar server.jar --eraseCache --forceUpgrade --initSettings --nogui
-pause
 goto :afterclose
 
 :7G
@@ -145,7 +139,6 @@ echo(
 echo Optimizando el Server con 7GB de Ram...
 echo(
 java -Xmx7G -Xms7G -jar server.jar --eraseCache --forceUpgrade --initSettings --nogui
-pause
 goto :afterclose
 
 :8G
@@ -158,7 +151,6 @@ echo(
 echo Optimizando el Server con 8GB de Ram...
 echo(
 java -Xmx8G -Xms8G -jar server.jar --eraseCache --forceUpgrade --initSettings --nogui
-pause
 goto :afterclose
 
 :9G
@@ -171,7 +163,6 @@ echo(
 echo Optimizando el Server con 9GB de Ram...
 echo(
 java -Xmx9G -Xms9G -jar server.jar --eraseCache --forceUpgrade --initSettings --nogui
-pause
 goto :afterclose
 
 :10G
@@ -184,7 +175,6 @@ echo(
 echo Optimizando el Server con 10GB de Ram...
 echo(
 java -Xmx10G -Xms10G -jar server.jar --eraseCache --forceUpgrade --initSettings --nogui
-pause
 goto :afterclose
 
 :11G
@@ -197,7 +187,6 @@ echo(
 echo Optimizando el Server con 11GB de Ram...
 echo(
 java -Xmx11G -Xms11G -jar server.jar --eraseCache --forceUpgrade --initSettings --nogui
-pause
 goto :afterclose
 
 :12G
@@ -210,7 +199,6 @@ echo(
 echo Optimizando el Server con 12GB de Ram...
 echo(
 java -Xmx12G -Xms12G -jar server.jar --eraseCache --forceUpgrade --initSettings --nogui
-pause
 goto :afterclose
 
 :13G
@@ -223,7 +211,6 @@ echo(
 echo Optimizando el Server con 13GB de Ram...
 echo(
 java -Xmx13G -Xms13G -jar server.jar --eraseCache --forceUpgrade --initSettings --nogui
-pause
 goto :afterclose
 
 :14G
@@ -236,7 +223,6 @@ echo(
 echo Optimizando el Server con 14GB de Ram...
 echo(
 java -Xmx14G -Xms14G -jar server.jar --eraseCache --forceUpgrade --initSettings --nogui
-pause
 goto :afterclose
 
 :15G
@@ -249,7 +235,6 @@ echo(
 echo Optimizando el Server con 15GB de Ram...
 echo(
 java -Xmx15G -Xms15G -jar server.jar --eraseCache --forceUpgrade --initSettings --nogui
-pause
 goto :afterclose
 
 :16G
@@ -262,7 +247,6 @@ echo(
 echo Optimizando el Server con 16GB de Ram...
 echo(
 java -Xmx16G -Xms16G -jar server.jar --eraseCache --forceUpgrade --initSettings --nogui
-pause
 goto :afterclose
 
 :17G
@@ -275,7 +259,6 @@ echo(
 echo Optimizando el Server con 17GB de Ram...
 echo(
 java -Xmx17G -Xms17G -jar server.jar --eraseCache --forceUpgrade --initSettings --nogui
-pause
 goto :afterclose
 
 :18G
@@ -288,7 +271,6 @@ echo(
 echo Optimizando el Server con 18GB de Ram...
 echo(
 java -Xmx18G -Xms18G -jar server.jar --eraseCache --forceUpgrade --initSettings --nogui
-pause
 goto :afterclose
 
 :19G
@@ -301,7 +283,6 @@ echo(
 echo Optimizando el Server con 19GB de Ram...
 echo(
 java -Xmx19G -Xms19G -jar server.jar --eraseCache --forceUpgrade --initSettings --nogui
-pause
 goto :afterclose
 
 :20G
@@ -314,7 +295,6 @@ echo(
 echo Optimizando el Server con 20GB de Ram...
 echo(
 java -Xmx20G -Xms20G -jar server.jar --eraseCache --forceUpgrade --initSettings --nogui
-pause
 goto :afterclose
 
 :21G
@@ -327,7 +307,6 @@ echo(
 echo Optimizando el Server con 21GB de Ram...
 echo(
 java -Xmx21G -Xms21G -jar server.jar --eraseCache --forceUpgrade --initSettings --nogui
-pause
 goto :afterclose
 
 :22G
@@ -340,7 +319,6 @@ echo(
 echo Optimizando el Server con 22GB de Ram...
 echo(
 java -Xmx22G -Xms22G -jar server.jar --eraseCache --forceUpgrade --initSettings --nogui
-pause
 goto :afterclose
 
 :23G
@@ -353,7 +331,6 @@ echo(
 echo Optimizando el Server con 23GB de Ram...
 echo(
 java -Xmx23G -Xms23G -jar server.jar --eraseCache --forceUpgrade --initSettings --nogui
-pause
 goto :afterclose
 
 :24G
@@ -366,7 +343,6 @@ echo(
 echo Optimizando el Server con 24GB de Ram...
 echo(
 java -Xmx24G -Xms24G -jar server.jar --eraseCache --forceUpgrade --initSettings --nogui
-pause
 goto :afterclose
 
 :afterclose
