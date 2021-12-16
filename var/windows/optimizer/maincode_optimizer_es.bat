@@ -376,9 +376,7 @@ echo Optimizador de Servidores de Minecraft
 echo MCSSTools Release v0.0.1.2 por NGDPL Nk
 echo --------------------------------------
 echo(
-echo Se ha cerrado el Servidor
-echo(
-echo Puedes revisar el registro de la consola en la carpeta "Logs"
+echo Se ha Optimizado el Servidor
 echo(
 pause
 goto :init
