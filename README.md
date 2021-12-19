@@ -9,46 +9,52 @@ Minecraft Server Startup Tools es un conjunto de herramientas que te ayudará co
 # **Instalador de servidores**
 ## **Requisitos mínimos de esta herramienta:**
 
-- SO: Windows 10 v.1803 (build 17134) o superior.
+- SO: Windows 10 v.1803 (build 17134)
 
-- Procesador: Arquitectura de x64 para la versión x64 de esta herramienta.
+- Procesador: Arquitectura de x64.
 
-- RAM: 150MiB
+- RAM: 100MiB
 
-- Espacio en disco: 150MiB para instalar 1 servidor.
+- Espacio en disco: 100MiB para instalar 1 Servidor
+
 
 Este software requiere de una conexión a internet disponible en el momento de la instalación de servidores.
 
 También requiere permisos de administrador para poder acceder y crear los archivos y carpetas que correspondan al servidor en tu equipo.
-
-## **Para usar esta herramienta debes:**
-- [Descargar la versión más reciente del conjunto](https://github.com/NGDPLNk/mcsstools/releases/latest)
-- Luego, debes identificar la versión de la herramienta que corresponda a tu sistema operativo (x32 para 32 bits; x64 para 64 bits).
-- Abre la herramienta antes seleccionada y sigue las instrucciones en pantalla (Elegir versión para el servidor, leer y aceptar el CLUF de Minecraft, configurar parámetros iniciales, etc...).
-- Cuando ya hayas creado tu servidor correctamente, **CAMBIA EL NOMBRE DE LA CARPETA DEL SERVIDOR O PONLA EN OTRA UBICACIÓN**. Este paso es muy importante, ya que si no lo haces y vuelves a ejecutar la herramienta, esta sobreescribirá los archivos de la carpeta y causará un conflicto con tu servidor original.
 
 # **Lanzador de servidores**
 ## **Requisitos mínimos de esta herramienta:**
 
 - SO: Windows 7 SP1 o superior.
 
-- Procesador: Arquitectura de x64 para la versión x64 de esta herramienta.
+- Procesador: 1 Núcleo de 1.00GHz; Arquitectura de x64.
 
-- RAM: Varía entre 1GiB y 16GiB dependiendo de la cantidad memoria RAM seleccionada para el servidor dedicado.
+- RAM: Varía entre 1GiB y 24GiB, dependiendo de la cantidad memoria RAM seleccionada para el servidor dedicado.
 
 - Espacio en disco: Varía dependiendo de cada servidor.
 
+
 Este software puede requerir de una conexión a internet si quieres que tu servidor esté accesible para cualquier jugador.
 
-Necesitas tener a lo menos [Java 8](https://www.java.com/es/download/ie_manual.jsp) para poder iniciar un servidor hasta la Versión 1.16.5. A partir de la Versión 1.17, es necesrio contar con [JDK 16](https://www.oracle.com/java/technologies/javase-jdk16-downloads.html).
+Necesitas tener a lo menos Java 8 para poder iniciar un servidor hasta la Versión 1.16.5. A partir de la Versión 1.17, es necesrio contar con JDK 16. A partir de la Versión 1.18, es necesario contar con JDK 17.
 
 También requiere permisos de administrador para acceder a las carpetas y archivos de tu servidor.
 
-## **Para usar esta herramienta debes:**
-- [Descargar la versión más reciente del conjunto](https://github.com/NGDPLNk/mcsstools/releases/latest)
-- Luego, debes identificar la versión de la herramienta que corresponda a tu sistema operativo (x32 para 32 bits; x64 para 64 bits).
-- Copia y pega la Versión de la Herramienta que corresponda a la carpeta principal de tu Servidor (haz esto sólo si no usaste la Herramienta Instalador para Instalar el Servidor).
-- Abre la herramienta antes seleccionada y sigue las instrucciones en pantalla (Elegir cantidad de Memoria RAM para el Servidor, etc...).
+# **Optimizador de servidores**
+## **Requisitos mínimos de esta herramienta:**
+
+- SO: Windows 7 SP1 o superior.
+
+- Procesador: 1 Núcleo de 1.00GHz; Arquitectura de x64.
+
+- RAM: Varía entre 1GiB y 24GiB, dependiendo de la cantidad memoria RAM seleccionada para optimizar el servidor dedicado.
+
+- Espacio en disco: Varía dependiendo de cada servidor.
+
+
+Necesitas tener a lo menos Java 8 para poder optimizar un servidor hasta la Versión 1.16.5. A partir de la Versión 1.17, es necesrio contar con JDK 16. A partir de la Versión 1.18, es necesario contar con JDK 17.
+
+También requiere permisos de administrador para acceder a las carpetas y archivos de tu servidor.
 
 # **Información sobre Copyright y Disclaimer**
 
