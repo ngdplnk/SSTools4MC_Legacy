@@ -1,10 +1,11 @@
 ::[Bat To Exe Converter]
 ::
+::fBE1pAF6MU+EWHreyHcjLQlHcAqLN2C1OpEZ++Pv4Pq7jkwIWuE3fZ2V36yLQA==
 ::YAwzoRdxOk+EWAjk
 ::fBw5plQjdCyDJGyX8VAjFBVdRw+NAE+1BaAR7ebv/Nagq1k1QeADdYzIyaCBL+wA1lPlZ6o633Rel9wfMBJWbQaqYgMxu1JLtWuLec6fvG8=
 ::YAwzuBVtJxjWCl3EqQJgSA==
 ::ZR4luwNxJguZRRnk
-::Yhs/ulQjdF+5
+::Yhs/ulQjdF25
 ::cxAkpRVqdFKZSjk=
 ::cBs/ulQjdF+5
 ::ZR41oxFsdFKZSDk=
@@ -26,7 +27,7 @@
 ::ZQ0/vhVqMQ3MEVWAtB9wBjxwfCjCEmDa
 ::Zg8zqx1/OA3MEVWAtB9wBjxwfCjCEmDa
 ::dhA7pRFwIByZRRnk
-::Zh4grVQjdCyDJGyX8VAjFBVdRw+NAE+/Fb4I5/jHwsm0kXkSW+4sOL3e1rGPM+VT/BWqJdh8mChmsM4eHhpVdxeleg50gGBRomWJNsOToTPIRFud50cxH2pmx2fVzBg+csVhnswR1jP++Ei/sqwe1HvtX68aW2b5xMw=
+::Zh4grVQjdCyDJGyX8VAjFBVdRw+NAE+/Fb4I5/jHxuSUtkwRVeYwas/f3/S9JfIF40HrZ5M+ln5f2OYFAh5bbBOtekExsWsi
 ::YB416Ek+ZW8=
 ::
 ::
@@ -252,6 +253,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.2.2
@@ -283,6 +286,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.2.3
@@ -314,6 +319,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.2.4
@@ -345,6 +352,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.2.5
@@ -376,6 +385,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.3.1
@@ -407,6 +418,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.3.2
@@ -438,6 +451,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.4.2
@@ -469,6 +484,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.4.3
@@ -500,6 +517,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.4.4
@@ -531,6 +550,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.4.5
@@ -562,6 +583,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.4.6
@@ -593,6 +616,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.4.7
@@ -624,6 +649,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.5.1
@@ -655,6 +682,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.5.2
@@ -686,6 +715,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.6.1
@@ -717,6 +748,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.6.2
@@ -748,6 +781,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.6.4
@@ -779,6 +814,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.7.2
@@ -810,6 +847,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.7.3
@@ -841,6 +880,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.7.4
@@ -872,6 +913,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.7.5
@@ -903,6 +946,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.7.6
@@ -934,6 +979,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.7.7
@@ -965,6 +1012,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.7.8
@@ -996,6 +1045,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.7.9
@@ -1027,6 +1078,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.7.10
@@ -1058,6 +1111,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.8
@@ -1089,6 +1144,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.8.1
@@ -1120,6 +1177,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.8.2
@@ -1151,6 +1210,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.8.3
@@ -1182,6 +1243,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.8.4
@@ -1213,6 +1276,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.8.5
@@ -1244,6 +1309,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.8.6
@@ -1275,6 +1342,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.8.7
@@ -1306,6 +1375,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.8.8
@@ -1337,6 +1408,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.8.9
@@ -1368,6 +1441,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.9
@@ -1399,6 +1474,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.9.1
@@ -1430,6 +1507,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.9.2
@@ -1461,6 +1540,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.9.3
@@ -1492,6 +1573,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.9.4
@@ -1523,6 +1606,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.10
@@ -1554,6 +1639,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.10.1
@@ -1585,6 +1672,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.10.2
@@ -1616,6 +1705,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.11
@@ -1647,6 +1738,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.11.1
@@ -1678,6 +1771,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.11.2
@@ -1709,6 +1804,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.12
@@ -1740,6 +1837,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.12.1
@@ -1771,6 +1870,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.12.2
@@ -1802,6 +1903,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.13
@@ -1833,6 +1936,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.13.1
@@ -1864,6 +1969,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.13.2
@@ -1895,6 +2002,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.14
@@ -1926,6 +2035,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.14.1
@@ -1957,6 +2068,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.14.2
@@ -1988,6 +2101,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.14.3
@@ -2019,6 +2134,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.14.4
@@ -2050,6 +2167,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.15
@@ -2081,6 +2200,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.15.1
@@ -2112,6 +2233,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.15.2
@@ -2143,6 +2266,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.16
@@ -2174,6 +2299,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.16.1
@@ -2205,6 +2332,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.16.2
@@ -2236,6 +2365,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.16.3
@@ -2267,6 +2398,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.16.4
@@ -2298,6 +2431,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.16.5
@@ -2329,6 +2464,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.17
@@ -2360,6 +2497,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.17.1
@@ -2391,6 +2530,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.18
@@ -2422,6 +2563,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :1.18.1
@@ -2453,6 +2596,8 @@ copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
 curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
 copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\MCSSTools
+cd %USERPROFILE%\AppData\Roaming
+copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :listo
