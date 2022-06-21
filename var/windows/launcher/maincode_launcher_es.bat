@@ -11,7 +11,7 @@ echo Estas en el Menu Principal
 echo(
 echo (I) Iniciar el Servidor
 echo (D) Modo Debug
-echo (A) Acerca de
+echo (C) Copyright
 echo (S) Salir
 echo(
 set /P c=Elige una de las opciones = 
@@ -29,317 +29,40 @@ echo(
 echo Puedes volver al Menu Principal con "N", o
 set /P c=Escribe los GB de Ram para Asignar al Servidor = 
 if /I "%c%" EQU "N" goto :init
-if /I "%c%" EQU "1" goto :1G
-if /I "%c%" EQU "2" goto :2G
-if /I "%c%" EQU "3" goto :3G
-if /I "%c%" EQU "4" goto :4G
-if /I "%c%" EQU "5" goto :5G
-if /I "%c%" EQU "6" goto :6G
-if /I "%c%" EQU "7" goto :7G
-if /I "%c%" EQU "8" goto :8G
-if /I "%c%" EQU "9" goto :9G
-if /I "%c%" EQU "10" goto :10G
-if /I "%c%" EQU "11" goto :11G
-if /I "%c%" EQU "12" goto :12G
-if /I "%c%" EQU "13" goto :13G
-if /I "%c%" EQU "14" goto :14G
-if /I "%c%" EQU "15" goto :15G
-if /I "%c%" EQU "16" goto :16G
-if /I "%c%" EQU "17" goto :17G
-if /I "%c%" EQU "18" goto :18G
-if /I "%c%" EQU "19" goto :19G
-if /I "%c%" EQU "20" goto :20G
-if /I "%c%" EQU "21" goto :21G
-if /I "%c%" EQU "22" goto :22G
-if /I "%c%" EQU "23" goto :23G
-if /I "%c%" EQU "24" goto :24G
+if /I "%c%" EQU "1" set ram=1G& goto :server
+if /I "%c%" EQU "2" set ram=2G& goto :server
+if /I "%c%" EQU "3" set ram=3G& goto :server
+if /I "%c%" EQU "4" set ram=4G& goto :server
+if /I "%c%" EQU "5" set ram=5G& goto :server
+if /I "%c%" EQU "6" set ram=6G& goto :server
+if /I "%c%" EQU "7" set ram=7G& goto :server
+if /I "%c%" EQU "8" set ram=8G& goto :server
+if /I "%c%" EQU "9" set ram=9G& goto :server
+if /I "%c%" EQU "10" set ram=10G& goto :server
+if /I "%c%" EQU "11" set ram=11G& goto :server
+if /I "%c%" EQU "12" set ram=12G& goto :server
+if /I "%c%" EQU "13" set ram=13G& goto :server
+if /I "%c%" EQU "15" set ram=15G& goto :server
+if /I "%c%" EQU "16" set ram=16G& goto :server
+if /I "%c%" EQU "17" set ram=17G& goto :server
+if /I "%c%" EQU "18" set ram=18G& goto :server
+if /I "%c%" EQU "19" set ram=19G& goto :server
+if /I "%c%" EQU "20" set ram=20G& goto :server
+if /I "%c%" EQU "21" set ram=21G& goto :server
+if /I "%c%" EQU "22" set ram=22G& goto :server
+if /I "%c%" EQU "23" set ram=23G& goto :server
+if /I "%c%" EQU "24" set ram=24G& goto :server
 goto :ram
 
-:1G
+:server
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
 echo ------------------------------------
 echo(
-echo Iniciando el Server con 1GB de Ram Asignada...
+echo Iniciando el Server con %ram% de Ram Asignada...
 echo(
-java -Xmx1G -Xms1G -jar server.jar nogui
-pause
-goto :afterclose
-
-:2G
-cls
-echo(
-echo Lanzador de Servidores de Minecraft
-echo ------------------------------------
-echo(
-echo Iniciando el Server con 2GB de Ram Asignada...
-echo(
-java -Xmx2G -Xms2G -jar server.jar nogui
-pause
-goto :afterclose
-
-:3G
-cls
-echo(
-echo Lanzador de Servidores de Minecraft
-echo ------------------------------------
-echo(
-echo Iniciando el Server con 3GB de Ram Asignada...
-echo(
-java -Xmx3G -Xms3G -jar server.jar nogui
-pause
-goto :afterclose
-
-:4G
-cls
-echo(
-echo Lanzador de Servidores de Minecraft
-echo ------------------------------------
-echo(
-echo Iniciando el Server con 4GB de Ram Asignada...
-echo(
-java -Xmx4G -Xms4G -jar server.jar nogui
-pause
-goto :afterclose
-
-:5G
-cls
-echo(
-echo Lanzador de Servidores de Minecraft
-echo ------------------------------------
-echo(
-echo Iniciando el Server con 5GB de Ram Asignada...
-echo(
-java -Xmx5G -Xms5G -jar server.jar nogui
-pause
-goto :afterclose
-
-:6G
-cls
-echo(
-echo Lanzador de Servidores de Minecraft
-echo ------------------------------------
-echo(
-echo Iniciando el Server con 6GB de Ram Asignada...
-echo(
-java -Xmx6G -Xms6G -jar server.jar nogui
-pause
-goto :afterclose
-
-:7G
-cls
-echo(
-echo Lanzador de Servidores de Minecraft
-echo ------------------------------------
-echo(
-echo Iniciando el Server con 7GB de Ram Asignada...
-echo(
-java -Xmx7G -Xms7G -jar server.jar nogui
-pause
-goto :afterclose
-
-:8G
-cls
-echo(
-echo Lanzador de Servidores de Minecraft
-echo ------------------------------------
-echo(
-echo Iniciando el Server con 8GB de Ram Asignada...
-echo(
-java -Xmx8G -Xms8G -jar server.jar nogui
-pause
-goto :afterclose
-
-:9G
-cls
-echo(
-echo Lanzador de Servidores de Minecraft
-echo ------------------------------------
-echo(
-echo Iniciando el Server con 9GB de Ram Asignada...
-echo(
-java -Xmx9G -Xms9G -jar server.jar nogui
-pause
-goto :afterclose
-
-:10G
-cls
-echo(
-echo Lanzador de Servidores de Minecraft
-echo ------------------------------------
-echo(
-echo Iniciando el Server con 10GB de Ram Asignada...
-echo(
-java -Xmx10G -Xms10G -jar server.jar nogui
-pause
-goto :afterclose
-
-:11G
-cls
-echo(
-echo Lanzador de Servidores de Minecraft
-echo ------------------------------------
-echo(
-echo Iniciando el Server con 11GB de Ram Asignada...
-echo(
-java -Xmx11G -Xms11G -jar server.jar nogui
-pause
-goto :afterclose
-
-:12G
-cls
-echo(
-echo Lanzador de Servidores de Minecraft
-echo ------------------------------------
-echo(
-echo Iniciando el Server con 12GB de Ram Asignada...
-echo(
-java -Xmx12G -Xms12G -jar server.jar nogui
-pause
-goto :afterclose
-
-:13G
-cls
-echo(
-echo Lanzador de Servidores de Minecraft
-echo ------------------------------------
-echo(
-echo Iniciando el Server con 13GB de Ram Asignada...
-echo(
-java -Xmx13G -Xms13G -jar server.jar nogui
-pause
-goto :afterclose
-
-:14G
-cls
-echo(
-echo Lanzador de Servidores de Minecraft
-echo ------------------------------------
-echo(
-echo Iniciando el Server con 14GB de Ram Asignada...
-echo(
-java -Xmx14G -Xms14G -jar server.jar nogui
-pause
-goto :afterclose
-
-:15G
-cls
-echo(
-echo Lanzador de Servidores de Minecraft
-echo ------------------------------------
-echo(
-echo Iniciando el Server con 15GB de Ram Asignada...
-echo(
-java -Xmx15G -Xms15G -jar server.jar nogui
-pause
-goto :afterclose
-
-:16G
-cls
-echo(
-echo Lanzador de Servidores de Minecraft
-echo ------------------------------------
-echo(
-echo Iniciando el Server con 16GB de Ram Asignada...
-echo(
-java -Xmx16G -Xms16G -jar server.jar nogui
-pause
-goto :afterclose
-
-:17G
-cls
-echo(
-echo Lanzador de Servidores de Minecraft
-echo ------------------------------------
-echo(
-echo Iniciando el Server con 17GB de Ram Asignada...
-echo(
-java -Xmx17G -Xms17G -jar server.jar nogui
-pause
-goto :afterclose
-
-:18G
-cls
-echo(
-echo Lanzador de Servidores de Minecraft
-echo ------------------------------------
-echo(
-echo Iniciando el Server con 18GB de Ram Asignada...
-echo(
-java -Xmx18G -Xms18G -jar server.jar nogui
-pause
-goto :afterclose
-
-:19G
-cls
-echo(
-echo Lanzador de Servidores de Minecraft
-echo ------------------------------------
-echo(
-echo Iniciando el Server con 19GB de Ram Asignada...
-echo(
-java -Xmx19G -Xms19G -jar server.jar nogui
-pause
-goto :afterclose
-
-:20G
-cls
-echo(
-echo Lanzador de Servidores de Minecraft
-echo ------------------------------------
-echo(
-echo Iniciando el Server con 20GB de Ram Asignada...
-echo(
-java -Xmx20G -Xms20G -jar server.jar nogui
-pause
-goto :afterclose
-
-:21G
-cls
-echo(
-echo Lanzador de Servidores de Minecraft
-echo ------------------------------------
-echo(
-echo Iniciando el Server con 21GB de Ram Asignada...
-echo(
-java -Xmx21G -Xms21G -jar server.jar nogui
-pause
-goto :afterclose
-
-:22G
-cls
-echo(
-echo Lanzador de Servidores de Minecraft
-echo ------------------------------------
-echo(
-echo Iniciando el Server con 22GB de Ram Asignada...
-echo(
-java -Xmx22G -Xms22G -jar server.jar nogui
-pause
-goto :afterclose
-
-:23G
-cls
-echo(
-echo Lanzador de Servidores de Minecraft
-echo ------------------------------------
-echo(
-echo Iniciando el Server con 23GB de Ram Asignada...
-echo(
-java -Xmx23G -Xms23G -jar server.jar nogui
-pause
-goto :afterclose
-
-:24G
-cls
-echo(
-echo Lanzador de Servidores de Minecraft
-echo ------------------------------------
-echo(
-echo Iniciando el Server con 24GB de Ram Asignada...
-echo(
-java -Xmx24G -Xms24G -jar server.jar nogui
+java -Xmx%ram% -Xms%ram% -jar server.jar nogui
 pause
 goto :afterclose
 
@@ -424,22 +147,7 @@ cls
 echo Lanzador de Servidores de Minecraft
 echo ------------------------------------
 echo(
-echo Informacion acerca de la Herramienta y del Conjunto
-echo(
-echo (C) Copyright y Disclaimer
-echo (M) Volver al Menu Principal
-echo(
-set /P c=Elige una de las opciones = 
-if /I "%c%" EQU "C" goto :canddis
-if /I "%c%" EQU "M" goto :init
-goto :about
-
-:canddis
-cls
-echo Lanzador de Servidores de Minecraft
-echo ------------------------------------
-echo(
-echo Si continuas, se abrira el Copyright y Disclaimer mas reciente en el navegador.
+echo Se abrira la informacion sobre Copyright mas reciente en el navegador.
 echo(
 pause
 start https://github.com/NGDPLNk/mcsstools#informaci%C3%B3n-sobre-copyright-y-disclaimer
