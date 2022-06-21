@@ -1,37 +1,3 @@
-::[Bat To Exe Converter]
-::
-::fBE1pAF6MU+EWHreyHcjLQlHcAqLN2C1OpEZ++Pv4Pq7jkwIWuE3fZ2V36yLQA==
-::YAwzoRdxOk+EWAjk
-::fBw5plQjdCyDJGyX8VAjFBVdRw+NAE+1BaAR7ebv/Nagq1k1QeADdYzIyaCBL+wA1lPlZ6o633Rel9wfMBJWbQaqYgMxu1JLtWuLec6fvG8=
-::YAwzuBVtJxjWCl3EqQJgSA==
-::ZR4luwNxJguZRRnk
-::Yhs/ulQjdF25
-::cxAkpRVqdFKZSjk=
-::cBs/ulQjdF+5
-::ZR41oxFsdFKZSDk=
-::eBoioBt6dFKZSDk=
-::cRo6pxp7LAbNWATEpCI=
-::egkzugNsPRvcWATEpCI=
-::dAsiuh18IRvcCxnZtBJQ
-::cRYluBh/LU+EWAnk
-::YxY4rhs+aU+IeA==
-::cxY6rQJ7JhzQF1fEqQJgZksaHUrQXA==
-::ZQ05rAF9IBncCkqN+0xwdVsEAlTMbSXoZg==
-::ZQ05rAF9IAHYFVzEqQIZJghATQiDOGSoRrEZqNv+/fyOpkIPUfF/fIqb972AJeMB60PwFQ==
-::eg0/rx1wNQPfEVWB+kM9LVsJDC2ML3+7CrQY5/q76+/HkUgPQus7d53eyfSKJaA+40vhdoQs0G46
-::fBEirQZwNQPfEVWB+kM9LVsJDC2ML3+7CrQY5/q76+/HkUgPQus7d53eyfSKJaA+40vhdoQs0G46
-::cRolqwZ3JBvQF1fEqQIZJghATQiDOGSoRrEZqNv+/fyOpkIPUfF/fIqb972AJeMB60PwFQ==
-::dhA7uBVwLU+EWHej0HIcaDVfLA==
-::YQ03rBFzNR3SWATE2mUUGDcUYg/i
-::dhAmsQZ3MwfNWATEVotieEkFDCqlGFuWRpsXiA==
-::ZQ0/vhVqMQ3MEVWAtB9wBjxwfCjCEmDa
-::Zg8zqx1/OA3MEVWAtB9wBjxwfCjCEmDa
-::dhA7pRFwIByZRRnk
-::Zh4grVQjdCyDJGyX8VAjFBVdRw+NAE+/Fb4I5/jHxuSUtkwRVeYwas/f3/S9JfIF40HrZ5M+ln5f2OYFAh5bbBOtekExsWsi
-::YB416Ek+ZW8=
-::
-::
-::978f952a14a936cc963da21a135fa983
 @echo off
 
 title Instalador de Servidores por NGDPL Nk
