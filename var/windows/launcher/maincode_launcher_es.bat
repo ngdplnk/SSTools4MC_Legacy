@@ -14,11 +14,11 @@ echo (D) Modo Debug
 echo (C) Copyright
 echo (S) Salir
 echo(
-set /P c=Elige una de las opciones = 
-if /I "%c%" EQU "I" goto :ram
-if /I "%c%" EQU "D" goto :dbmode
-if /I "%c%" EQU "A" goto :about
-if /I "%c%" EQU "S" goto :exit
+set /P menu=Elige una de las opciones = 
+if /I "%menu%" EQU "I" goto :ram
+if /I "%menu%" EQU "D" goto :dbmode
+if /I "%menu%" EQU "A" goto :about
+if /I "%menu%" EQU "S" goto :exit
 goto :init
 
 :ram
@@ -95,10 +95,10 @@ echo (N) Activar Modo Debug
 echo (M) Desactivar Modo Debug
 echo (V) Volver al Menu Principal
 echo(
-set /P c=Elige una de las opciones = 
-if /I "%c%" EQU "N" goto :dbinit
-if /I "%c%" EQU "M" goto :undbinit
-if /I "%c%" EQU "V" goto :init
+set /P debug=Elige una de las opciones = 
+if /I "%debug%" EQU "N" goto :dbinit
+if /I "%debug%" EQU "M" goto :undbinit
+if /I "%debug%" EQU "V" goto :init
 goto :dbmode
 
 :dbinit
@@ -122,11 +122,11 @@ echo (D) Modo Debug
 echo (A) Acerca de
 echo (S) Salir
 echo(
-set /P c=Elige una de las opciones = 
-if /I "%c%" EQU "I" goto :ram
-if /I "%c%" EQU "D" goto :dbmode
-if /I "%c%" EQU "A" goto :about
-if /I "%c%" EQU "S" goto :exit
+set /P menu=Elige una de las opciones = 
+if /I "%menu%" EQU "I" goto :ram
+if /I "%menu%" EQU "D" goto :dbmode
+if /I "%menu%" EQU "A" goto :about
+if /I "%menu%" EQU "S" goto :exit
 goto :init
 
 :undbinit
