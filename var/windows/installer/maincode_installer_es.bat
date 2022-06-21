@@ -2750,7 +2750,7 @@ cls
 echo(
 echo --------------------------------------------
 echo Muchas Gracias por usar esta Herramienta
-echo MIT License - Copyright (c) 2021 NGDPL Nk
+echo MIT License - Copyright (c) 2022 NGDPL Nk
 echo --------------------------------------------
 echo(
 pause
