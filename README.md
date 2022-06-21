@@ -13,7 +13,7 @@ Minecraft Server Startup Tools es un conjunto de herramientas que te ayudará co
 
 - Procesador: Arquitectura de x64.
 
-- RAM: 100MiB
+- RAM: <100MiB
 
 - Espacio en disco: 100MiB para instalar 1 Servidor
 
@@ -40,22 +40,6 @@ Necesitas tener a lo menos Java 8 para poder iniciar un servidor hasta la Versi�
 
 También requiere permisos de administrador para acceder a las carpetas y archivos de tu servidor.
 
-# **Optimizador de servidores**
-## **Requisitos mínimos de esta herramienta:**
-
-- SO: Windows 7 SP1 o superior.
-
-- Procesador: 1 Núcleo de 1.00GHz; Arquitectura de x64.
-
-- RAM: Varía entre 1GiB y 24GiB, dependiendo de la cantidad memoria RAM seleccionada para optimizar el servidor dedicado.
-
-- Espacio en disco: Varía dependiendo de cada servidor.
-
-
-Necesitas tener a lo menos Java 8 para poder optimizar un servidor hasta la Versión 1.16.5. A partir de la Versión 1.17, es necesrio contar con JDK 16. A partir de la Versión 1.18, es necesario contar con JDK 17.
-
-También requiere permisos de administrador para acceder a las carpetas y archivos de tu servidor.
-
 # **Información sobre Copyright y Disclaimer**
 
 **MCSSTOOLS Y CADA UNA DE SUS HERRAMIENTAS NO SON UN PRODUCTO OFICIAL DE MINECRAFT. NO ESTÁN APROBADAS POR MOJANG NI ASOCIADAS CON ÉL**
@@ -79,4 +63,4 @@ NGDPL Nk no es dueño ni tampoco almacena ningún producto de Oracle. Tampoco de
 **Cada elemento, nombre, correspondiente a Oracle, es usado cumpliendo los [Términos de uso](https://www.oracle.com/legal/terms.html) y las [Trademarks](https://www.oracle.com/legal/trademarks.html)**
 
 # **Gracias Por Usar Este Conjunto De Herramientas**
-©2021 - NGDPL Nk
+©2022 - NGDPL Nk
