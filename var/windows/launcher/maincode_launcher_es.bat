@@ -1,17 +1,16 @@
 @echo off
 
-title Lanzador de Servidores por NGDPLNk
+title Lanzador de Servidores de Minecraft
 
 :init
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
-echo --------------------------------------
+echo ------------------------------------
 echo(
 echo Estas en el Menu Principal
 echo(
 echo (I) Iniciar el Servidor
-echo (D) Modo Debug (Para desarrolladores)
+echo (D) Modo Debug
 echo (A) Acerca de
 echo (S) Salir
 echo(
@@ -25,11 +24,10 @@ goto :init
 :ram
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
-echo --------------------------------------
+echo ------------------------------------
 echo(
 echo Puedes volver al Menu Principal con "N", o
-set /P c=Escribe los GB de Ram para Iniciar el Servidor = 
+set /P c=Escribe los GB de Ram para Asignar al Servidor = 
 if /I "%c%" EQU "N" goto :init
 if /I "%c%" EQU "1" goto :1G
 if /I "%c%" EQU "2" goto :2G
@@ -61,10 +59,9 @@ goto :ram
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
-echo --------------------------------------
+echo ------------------------------------
 echo(
-echo Iniciando el Server con 1GB de Ram...
+echo Iniciando el Server con 1GB de Ram Asignada...
 echo(
 java -Xmx1G -Xms1G -jar server.jar nogui
 pause
@@ -74,10 +71,9 @@ goto :afterclose
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
-echo --------------------------------------
+echo ------------------------------------
 echo(
-echo Iniciando el Server con 2GB de Ram...
+echo Iniciando el Server con 2GB de Ram Asignada...
 echo(
 java -Xmx2G -Xms2G -jar server.jar nogui
 pause
@@ -87,10 +83,9 @@ goto :afterclose
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
-echo --------------------------------------
+echo ------------------------------------
 echo(
-echo Iniciando el Server con 3GB de Ram...
+echo Iniciando el Server con 3GB de Ram Asignada...
 echo(
 java -Xmx3G -Xms3G -jar server.jar nogui
 pause
@@ -100,10 +95,9 @@ goto :afterclose
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
-echo --------------------------------------
+echo ------------------------------------
 echo(
-echo Iniciando el Server con 4GB de Ram...
+echo Iniciando el Server con 4GB de Ram Asignada...
 echo(
 java -Xmx4G -Xms4G -jar server.jar nogui
 pause
@@ -113,10 +107,9 @@ goto :afterclose
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
-echo --------------------------------------
+echo ------------------------------------
 echo(
-echo Iniciando el Server con 5GB de Ram...
+echo Iniciando el Server con 5GB de Ram Asignada...
 echo(
 java -Xmx5G -Xms5G -jar server.jar nogui
 pause
@@ -126,10 +119,9 @@ goto :afterclose
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
-echo --------------------------------------
+echo ------------------------------------
 echo(
-echo Iniciando el Server con 6GB de Ram...
+echo Iniciando el Server con 6GB de Ram Asignada...
 echo(
 java -Xmx6G -Xms6G -jar server.jar nogui
 pause
@@ -139,10 +131,9 @@ goto :afterclose
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
-echo --------------------------------------
+echo ------------------------------------
 echo(
-echo Iniciando el Server con 7GB de Ram...
+echo Iniciando el Server con 7GB de Ram Asignada...
 echo(
 java -Xmx7G -Xms7G -jar server.jar nogui
 pause
@@ -152,10 +143,9 @@ goto :afterclose
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
-echo --------------------------------------
+echo ------------------------------------
 echo(
-echo Iniciando el Server con 8GB de Ram...
+echo Iniciando el Server con 8GB de Ram Asignada...
 echo(
 java -Xmx8G -Xms8G -jar server.jar nogui
 pause
@@ -165,10 +155,9 @@ goto :afterclose
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
-echo --------------------------------------
+echo ------------------------------------
 echo(
-echo Iniciando el Server con 9GB de Ram...
+echo Iniciando el Server con 9GB de Ram Asignada...
 echo(
 java -Xmx9G -Xms9G -jar server.jar nogui
 pause
@@ -178,10 +167,9 @@ goto :afterclose
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
-echo --------------------------------------
+echo ------------------------------------
 echo(
-echo Iniciando el Server con 10GB de Ram...
+echo Iniciando el Server con 10GB de Ram Asignada...
 echo(
 java -Xmx10G -Xms10G -jar server.jar nogui
 pause
@@ -191,10 +179,9 @@ goto :afterclose
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
-echo --------------------------------------
+echo ------------------------------------
 echo(
-echo Iniciando el Server con 11GB de Ram...
+echo Iniciando el Server con 11GB de Ram Asignada...
 echo(
 java -Xmx11G -Xms11G -jar server.jar nogui
 pause
@@ -204,10 +191,9 @@ goto :afterclose
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
-echo --------------------------------------
+echo ------------------------------------
 echo(
-echo Iniciando el Server con 12GB de Ram...
+echo Iniciando el Server con 12GB de Ram Asignada...
 echo(
 java -Xmx12G -Xms12G -jar server.jar nogui
 pause
@@ -217,10 +203,9 @@ goto :afterclose
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
-echo --------------------------------------
+echo ------------------------------------
 echo(
-echo Iniciando el Server con 13GB de Ram...
+echo Iniciando el Server con 13GB de Ram Asignada...
 echo(
 java -Xmx13G -Xms13G -jar server.jar nogui
 pause
@@ -230,10 +215,9 @@ goto :afterclose
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
-echo --------------------------------------
+echo ------------------------------------
 echo(
-echo Iniciando el Server con 14GB de Ram...
+echo Iniciando el Server con 14GB de Ram Asignada...
 echo(
 java -Xmx14G -Xms14G -jar server.jar nogui
 pause
@@ -243,10 +227,9 @@ goto :afterclose
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
-echo --------------------------------------
+echo ------------------------------------
 echo(
-echo Iniciando el Server con 15GB de Ram...
+echo Iniciando el Server con 15GB de Ram Asignada...
 echo(
 java -Xmx15G -Xms15G -jar server.jar nogui
 pause
@@ -256,10 +239,9 @@ goto :afterclose
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
-echo --------------------------------------
+echo ------------------------------------
 echo(
-echo Iniciando el Server con 16GB de Ram...
+echo Iniciando el Server con 16GB de Ram Asignada...
 echo(
 java -Xmx16G -Xms16G -jar server.jar nogui
 pause
@@ -269,10 +251,9 @@ goto :afterclose
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
-echo --------------------------------------
+echo ------------------------------------
 echo(
-echo Iniciando el Server con 17GB de Ram...
+echo Iniciando el Server con 17GB de Ram Asignada...
 echo(
 java -Xmx17G -Xms17G -jar server.jar nogui
 pause
@@ -282,10 +263,9 @@ goto :afterclose
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
-echo --------------------------------------
+echo ------------------------------------
 echo(
-echo Iniciando el Server con 18GB de Ram...
+echo Iniciando el Server con 18GB de Ram Asignada...
 echo(
 java -Xmx18G -Xms18G -jar server.jar nogui
 pause
@@ -295,10 +275,9 @@ goto :afterclose
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
-echo --------------------------------------
+echo ------------------------------------
 echo(
-echo Iniciando el Server con 19GB de Ram...
+echo Iniciando el Server con 19GB de Ram Asignada...
 echo(
 java -Xmx19G -Xms19G -jar server.jar nogui
 pause
@@ -308,10 +287,9 @@ goto :afterclose
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
-echo --------------------------------------
+echo ------------------------------------
 echo(
-echo Iniciando el Server con 20GB de Ram...
+echo Iniciando el Server con 20GB de Ram Asignada...
 echo(
 java -Xmx20G -Xms20G -jar server.jar nogui
 pause
@@ -321,10 +299,9 @@ goto :afterclose
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
-echo --------------------------------------
+echo ------------------------------------
 echo(
-echo Iniciando el Server con 21GB de Ram...
+echo Iniciando el Server con 21GB de Ram Asignada...
 echo(
 java -Xmx21G -Xms21G -jar server.jar nogui
 pause
@@ -334,10 +311,9 @@ goto :afterclose
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
-echo --------------------------------------
+echo ------------------------------------
 echo(
-echo Iniciando el Server con 22GB de Ram...
+echo Iniciando el Server con 22GB de Ram Asignada...
 echo(
 java -Xmx22G -Xms22G -jar server.jar nogui
 pause
@@ -347,10 +323,9 @@ goto :afterclose
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
-echo --------------------------------------
+echo ------------------------------------
 echo(
-echo Iniciando el Server con 23GB de Ram...
+echo Iniciando el Server con 23GB de Ram Asignada...
 echo(
 java -Xmx23G -Xms23G -jar server.jar nogui
 pause
@@ -360,10 +335,9 @@ goto :afterclose
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
-echo --------------------------------------
+echo ------------------------------------
 echo(
-echo Iniciando el Server con 24GB de Ram...
+echo Iniciando el Server con 24GB de Ram Asignada...
 echo(
 java -Xmx24G -Xms24G -jar server.jar nogui
 pause
@@ -373,8 +347,7 @@ goto :afterclose
 cls
 echo(
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
-echo --------------------------------------
+echo ------------------------------------
 echo(
 echo Se ha cerrado el Servidor
 echo(
@@ -389,8 +362,7 @@ REM Se crean estas anotaciones por un tema de órden y rapidez al momento de act
 :dbmode
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
-echo --------------------------------------
+echo ------------------------------------
 echo(
 echo El Modo Debug muestra todos los comandos que son ejecutados por la consola durante cada proceso.
 echo Este modo le es util a los desarrolladores para detectar problemas con el codigo de manera mas facil.
@@ -418,13 +390,12 @@ cls
 @echo on
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
-echo --------------------------------------
+echo ------------------------------------
 echo(
 echo Estas en el Menu Principal
 echo(
 echo (I) Iniciar el Servidor
-echo (D) Modo Debug (Para desarrolladores)
+echo (D) Modo Debug
 echo (A) Acerca de
 echo (S) Salir
 echo(
@@ -451,8 +422,7 @@ REM Se crean estas anotaciones por un tema de órden y rapidez al momento de act
 :about
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
-echo --------------------------------------
+echo ------------------------------------
 echo(
 echo Informacion acerca de la Herramienta y del Conjunto
 echo(
@@ -467,71 +437,12 @@ goto :about
 :canddis
 cls
 echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
-echo --------------------------------------
-echo(
-echo (O) Ver Copyright y Disclaimer Online (Recomendado)
-echo (L) Ver Copyright y Disclaimer Aqui
-echo (B) Volver al Menu Anterior
-echo (G) Volver al Menu Principal
-echo(
-set /P c=Elige una de las opciones = 
-if /I "%c%" EQU "O" goto :canddisol
-if /I "%c%" EQU "L" goto :canddisof
-if /I "%c%" EQU "B" goto :about
-if /I "%c%" EQU "G" goto :init
-goto :canddis
-
-:canddisol
-cls
-echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
-echo --------------------------------------
+echo ------------------------------------
 echo(
 echo Si continuas, se abrira el Copyright y Disclaimer mas reciente en el navegador.
 echo(
 pause
 start https://github.com/NGDPLNk/mcsstools#informaci%C3%B3n-sobre-copyright-y-disclaimer
-goto :init
-
-:canddisof
-cls
-echo Lanzador de Servidores de Minecraft
-echo MCSSTools Release v0.0.1.2 por NGDPL Nk
-echo --------------------------------------
-echo(
-echo COPYRIGHT Y DISCLAIMER MCSSTools
-echo(
-echo(
-echo(
-echo # **Información sobre Copyright y Disclaimer**
-echo(
-echo **MCSSTOOLS Y CADA UNA DE SUS HERRAMIENTAS NO SON UN PRODUCTO OFICIAL DE MINECRAFT. NO ESTÁN APROBADAS POR MOJANG NI ASOCIADAS CON ÉL**
-echo(
-echo Se otorga permiso, sin cargo, a cualquier persona que obtenga una copia de este software y los archivos de documentación asociados (MCSSTools), para utilizar el Software sin restricciones, incluidos, entre otros, los derechos de uso, copia, modificación, fusión , publicar, distribuir, sublicenciar y/o vender copias del Software, y permitir que las personas a las que se les proporcione el Software lo hagan, sujeto a las siguientes condiciones:
-echo(
-echo -El aviso de copyright anterior y este aviso de permiso se incluirán en todas las copias o partes sustanciales del Software.
-echo(
-echo EL SOFTWARE SE PROPORCIONA "TAL CUAL", SIN GARANTÍA DE NINGÚN TIPO, EXPRESA O IMPLÍCITA, INCLUYENDO PERO NO LIMITADO A LAS GARANTÍAS DE COMERCIABILIDAD, ADECUACIÓN PARA UN PROPÓSITO PARTICULAR Y NO INFRACCIÓN. EN NINGÚN CASO LOS AUTORES O TITULARES DE LOS DERECHOS DE AUTOR SERÁN RESPONSABLES DE CUALQUIER RECLAMO, DAÑOS U OTRA RESPONSABILIDAD, YA SEA EN UNA ACCIÓN DE CONTRATO, AGRAVIO O DE OTRO MODO, QUE SURJA DE, FUERA DE O EN RELACIÓN CON EL SOFTWARE O EL USO U OTRAS NEGOCIACIONES EN EL SOFTWARE.
-echo(
-echo "Minecraft" es una marca registrada de Mojang Synergies AB, y no tiene ninguna relación con este Software.
-echo(
-echo Oracle, Java, y MySQL son marcas registradas de Oracle y/o sus afiliados. Otros nombres pueden ser marcas registradas de sus dueños respectivos.
-echo(
-echo NGDPL Nk no es dueño ni tampoco almacena ningún producto de Mojang Synergies AB. Tampoco depende de NGDPL Nk la disponibilidad de estos mismos.
-echo(
-echo NGDPL Nk no es dueño ni tampoco almacena ningún producto de Oracle. Tampoco depende de NGDPL Nk la disponibilidad de estos mismos.
-echo(
-echo **Cada elemento, nombre, correspondiente a Mojang Synergies AB, es usado cumpliendo el [CLUF](https://www.minecraft.net/es-es/eula/) y las [Directrices de Marca y Herramientas](https://account.mojang.com/terms?ref=ft#brand)**
-echo(
-echo **Cada elemento, nombre, correspondiente a Oracle, es usado cumpliendo los [Términos de uso](https://www.oracle.com/legal/terms.html) y las [Trademarks](https://www.oracle.com/legal/trademarks.html)**
-echo(
-echo # **Gracias Por Usar Este Conjunto De Herramientas**
-echo ©2021 - NGDPL Nk
-echo(
-echo(
-echo(
-pause
 goto :init
 
 REM Desde esta anotación se encuentra el bloque que da pie a la salida de esta herramienta
@@ -542,7 +453,7 @@ cls
 echo(
 echo --------------------------------------------
 echo Muchas Gracias por usar esta Herramienta
-echo MIT License - Copyright (c) 2021 NGDPL Nk
+echo MIT License - Copyright (c) 2022 NGDPL Nk
 echo --------------------------------------------
 echo(
 pause
