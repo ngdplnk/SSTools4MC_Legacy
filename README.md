@@ -1,8 +1,8 @@
-# **MCSSTools**
-Minecraft Server Startup Tools es un conjunto de herramientas que te ayudará con distintos procesos para tu servidor dedicado de Minecraft.
+# **SSTools4MC**
+Server Startup Tools for Minecraft es un conjunto de herramientas que te ayudará con distintos procesos para tu servidor dedicado de Minecraft.
 
 # **¿Cómo obtengo las herramientas de este conjunto?**
-- Debes descargar la última versión de este conjunto desde [Este Link](https://github.com/NGDPLNk/mcsstools/releases/latest)
+- Debes descargar la última versión de este conjunto desde [Este Link](https://github.com/NGDPLNk/SSTools4MC/releases/latest)
 
 - Extrae el archivo ya descargado en donde lo desees, allí encontrarás cada ejecutable disponible correspondiente.
 
@@ -42,9 +42,9 @@ También requiere permisos de administrador para acceder a las carpetas y archiv
 
 # **Información sobre Copyright y Disclaimer**
 
-**MCSSTOOLS Y CADA UNA DE SUS HERRAMIENTAS NO SON UN PRODUCTO OFICIAL DE MINECRAFT. NO ESTÁN APROBADAS POR MOJANG NI ASOCIADAS CON ÉL**
+**SSTools4MC Y CADA UNA DE SUS HERRAMIENTAS NO SON UN PRODUCTO OFICIAL DE MINECRAFT. NO ESTÁN APROBADAS POR MOJANG NI ASOCIADAS CON ÉL**
 
-Se otorga permiso, sin cargo, a cualquier persona que obtenga una copia de este software y los archivos de documentación asociados (MCSSTools), para utilizar el Software sin restricciones, incluidos, entre otros, los derechos de uso, copia, modificación, fusión , publicar, distribuir, sublicenciar y/o vender copias del Software, y permitir que las personas a las que se les proporcione el Software lo hagan, sujeto a las siguientes condiciones:
+Se otorga permiso, sin cargo, a cualquier persona que obtenga una copia de este software y los archivos de documentación asociados (SSTools4MC), para utilizar el Software sin restricciones, incluidos, entre otros, los derechos de uso, copia, modificación, fusión , publicar, distribuir, sublicenciar y/o vender copias del Software, y permitir que las personas a las que se les proporcione el Software lo hagan, sujeto a las siguientes condiciones:
 
 -El aviso de copyright anterior y este aviso de permiso se incluirán en todas las copias o partes sustanciales del Software.
 
