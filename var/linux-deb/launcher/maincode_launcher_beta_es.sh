@@ -1,5 +1,4 @@
-echo Lanzador de Servidores de Minecraft
-echo MCSSTools for Linux Beta por NGDPL Nk
+echo Lanzador de Servidores para Minecraft
 echo --------------------------------------
 echo 
 echo Inciando el Server con 3GB de Ram...
