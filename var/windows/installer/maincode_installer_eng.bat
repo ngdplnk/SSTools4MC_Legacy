@@ -1,35 +1,35 @@
 @echo off
 
-title Instalador de Servidores para Minecraft
+title Server Installer for Minecraft
 
 :init
 cls
-echo Instalador de Servidores para Minecraft
+echo Server Installer for Minecraft
 echo --------------------------------------
 echo(
-echo Estas en el Menu Principal
+echo You are in the Main Menu
 echo(
-echo (I) Instalar un Servidor
-echo (L) Lista de Versiones
-echo (D) Modo Debug
-echo (A) Acerca de
-echo (S) Salir
+echo (I) Install a Server
+echo (L) Version List
+echo (D) Debug Mode
+echo (C) Copyright
+echo (S) Exit
 echo(
 set /P menu=Elige una de las opciones = 
 if /I "%menu%" EQU "I" goto :version
 if /I "%menu%" EQU "L" goto :vslist
 if /I "%menu%" EQU "D" goto :dbmode
-if /I "%menu%" EQU "A" goto :about
+if /I "%menu%" EQU "C" goto :about
 if /I "%menu%" EQU "S" goto :exit
 goto :init
 
 :version
 cls
-echo Instalador de Servidores para Minecraft
+echo Server Installer for Minecraft
 echo --------------------------------------
 echo(
-echo Puedes volver al Menu Principal con "N", o
-set /P version=Escribe la Version de Minecraft para tu nuevo Servidor= 
+echo You can return to the Main Menu with "N", or
+set /P version=Type the Minecraft Version for your new Server=  
 if /I "%version%" EQU "N" goto :init
 if /I "%version%" EQU "1.2.1" set version=1.2.1& set link=https://assets.minecraft.net/1_2/minecraft_server.jar& goto :install
 if /I "%version%" EQU "1.2.2" set version=1.2.2& set link=https://assets.minecraft.net/1_2/minecraft_server.jar& goto :install
@@ -108,13 +108,13 @@ goto :versionnull
 
 :versionnull
 cls
-echo Instalador de Servidores para Minecraft
+echo Server Installer for Minecraft
 echo --------------------------------------
 echo(
-echo Esa Version no esta disponible o es incorrecta
+echo That Version is not available or is incorrect
 echo(
-echo Puedes volver al Menu Principal con "N", o
-set /P version=Vuelve a escribir la Version de Minecraft para tu nuevo Servidor= 
+echo You can return to the Main Menu with "N", or
+set /P version=Retype the Minecraft Version for your new Server= 
 if /I "%version%" EQU "N" goto :init
 if /I "%version%" EQU "1.2.1" set version=1.2.1& set link=https://assets.minecraft.net/1_2/minecraft_server.jar& goto :install
 if /I "%version%" EQU "1.2.2" set version=1.2.2& set link=https://assets.minecraft.net/1_2/minecraft_server.jar& goto :install
@@ -193,60 +193,60 @@ goto :versionnull
 
 :install
 cls
-echo Instalador de Servidores para Minecraft
+echo Server Installer for Minecraft
 echo --------------------------------------
 echo(
-echo Seleccionaste la Version %version%
+echo You selected Version %version%
 echo(
-echo Se descargaran los archivos necesarios desde Internet
-echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo Necessary files will be downloaded from the Internet
+echo Then a folder will be created on the Desktop with the files of your Server
 echo(
 pause
 cls
-echo Instalador de Servidores para Minecraft
+echo Server Installer for Minecraft
 echo --------------------------------------
 echo(
-echo Espera un momento...
+echo Wait a minute...
 cd C:\
 mkdir SSTools4MC
 cd C:\SSTools4MC
 mkdir NeededFiles
 curl %link% >C:\SSTools4MC\NeededFiles\server.jar
 cd %USERPROFILE%\Desktop
-mkdir Servidor
-copy C:\SSTools4MC\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
+mkdir Server
+copy C:\SSTools4MC\NeededFiles\server.jar %USERPROFILE%\Desktop\Server\
 curl https://server.properties >C:\SSTools4MC\NeededFiles\server.properties
-copy C:\SSTools4MC\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+copy C:\SSTools4MC\NeededFiles\server.properties %USERPROFILE%\Desktop\Server\
 rd /s /q C:\SSTools4MC
 cd %USERPROFILE%\AppData\Roaming
-copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
+copy %USERPROFILE%\AppData\Roaming\launcher_eng.exe "%USERPROFILE%\Desktop\Server\Start Server.exe"
 goto :listo
 
 :listo
 cls
-echo Instalador de Servidores para Minecraft
+echo Server Installer for Minecraft
 echo --------------------------------------
 echo(
-echo Se descargaron todos los archivos necesarios.
-echo Debes leer el CLUF de Minecraft, disponible en el siguiente link
+echo All necessary files have been downloaded.
+echo You must read the Minecraft EULA, available at the following link
 echo(
 echo https://account.mojang.com/documents/minecraft_eula
 echo(
-set /P eula=Despues de leerlo, escribe "ACEPTO" para poder continuar= 
-if /I "%eula%" EQU "ACEPTO" goto :eula
+set /P eula=After reading it, write "AGREE" to be able to continue= 
+if /I "%eula%" EQU "AGREE" goto :eula
 goto :listo
 
 :eula
-cd %USERPROFILE%\Desktop\Servidor\
+cd %USERPROFILE%\Desktop\Server\
 echo eula=true>eula.txt
 goto :listo2
 
 :listo2
 cls
-echo Instalador de Servidores para Minecraft
+echo Server Installer for Minecraft
 echo --------------------------------------
 echo(
-echo Se ha instalado el Servidor
+echo Server has been installed
 echo(
 pause
 goto :init
@@ -256,26 +256,26 @@ REM Se crean estas anotaciones por un tema de órden y rapidez al momento de act
 
 :vslist
 cls
-echo Instalador de Servidores para Minecraft
+echo Server Installer for Minecraft
 echo --------------------------------------
 echo(
-echo Aqui encontraras la lista que muestra las versiones de Minecraft disponibles.
-echo Esta lista podria cambiar en futuras actualizaciones.
+echo Here you will find the list showing the available versions for your Minecraft Server.
+echo This list could change in future updates.
 echo(
-echo (1) Ver Lista de Versiones Disponibles
-echo (2) Volver al Menu Principal
+echo (1) See Available Versions List
+echo (2) Back to Main Menu
 echo(
-set /P vslista=Elige una de las opciones = 
+set /P vslista=Choose one of the options = 
 if /I "%vslista%" EQU "1" goto :stblist
 if /I "%vslista%" EQU "2" goto :init
 goto :vslist
 
 :stblist
 cls
-echo Instalador de Servidores para Minecraft
+echo Server Installer for Minecraft
 echo --------------------------------------
 echo(
-echo Lista de Versiones de Minecraft Disponibles para Instalar
+echo List of Available Minecraft Versions for your Server
 echo(
 echo - 1.2.1
 echo - 1.2.2
@@ -354,23 +354,23 @@ echo(
 pause
 goto :init
 
-REM Desde esta anotación se encuentra el bloque de código que activa y desactiva el modo debug
+REM Desde esta anotación se encuentra el bloque de código que activa y desactiva el Debug Mode
 REM Se crean estas anotaciones por un tema de órden y rapidez al momento de actualizar o trabajar con este código fuente
 
 :dbmode
 cls
-echo Instalador de Servidores para Minecraft
+echo Server Installer for Minecraft
 echo --------------------------------------
 echo(
-echo El Modo Debug muestra todos los comandos que son ejecutados por la consola durante cada proceso.
-echo Este modo le es util a los desarrolladores para detectar problemas con el codigo de manera mas facil.
-echo No se recomienda activar este modo si realmente no sabes como sobrellevarlo.
+echo Debug Mode shows all the commands that are executed by the console during each process.
+echo This mode is useful for developers to detect problems with the code more easily.
+echo It is not recommended to activate this mode if you really do not know how to cope with it.
 echo(
-echo (N) Activar Modo Debug
-echo (M) Desactivar Modo Debug
-echo (V) Volver al Menu Principal
+echo (N) Enable Debug Mode
+echo (M) Disable Debug Mode
+echo (V) Back to Main Menu
 echo(
-set /P debug=Elige una de las opciones = 
+set /P debug=Choose one of the options = 
 if /I "%debug%" EQU "N" goto :dbinit
 if /I "%debug%" EQU "M" goto :undbinit
 if /I "%debug%" EQU "V" goto :init
@@ -381,28 +381,28 @@ cls
 @echo off
 cls
 echo(
-echo El Modo Debug esta Activado
+echo Debug Mode Enabled
 echo(
 pause
 cls
 @echo on
 cls
-echo Instalador de Servidores para Minecraft
+echo Server Installer for Minecraft
 echo --------------------------------------
 echo(
-echo Estas en el Menu Principal
+echo You are in the Main Menu
 echo(
-echo (I) Instalar un Servidor
-echo (L) Lista de Versiones
-echo (D) Modo Debug
-echo (A) Acerca de
-echo (S) Salir
+echo (I) Install a Server
+echo (L) Version List
+echo (D) Debug Mode
+echo (C) Copyright
+echo (S) Exit
 echo(
-set /P menu=Elige una de las opciones = 
+set /P menu=Choose one of the options =  
 if /I "%menu%" EQU "I" goto :version
 if /I "%menu%" EQU "L" goto :vslist
 if /I "%menu%" EQU "D" goto :dbmode
-if /I "%menu%" EQU "A" goto :about
+if /I "%menu%" EQU "C" goto :about
 if /I "%menu%" EQU "S" goto :exit
 goto :init
 
@@ -411,20 +411,20 @@ cls
 @echo off
 cls
 echo(
-echo El Modo Debug esta Desactivado
+echo Debug Mode Disabled
 echo(
 pause
 goto :init
 
-REM Desde esta anotación se encuentran los bloques de código que contienen la información "acerca de" esta herramienta
+REM Desde esta anotación se encuentran los bloques de código que contienen la información "About" esta herramienta
 REM Se crean estas anotaciones por un tema de órden y rapidez al momento de actualizar o trabajar con este código fuente
 
 :about
 cls
-echo Lanzador de Servidores de Minecraft
+echo Server Installer for Minecraft
 echo ------------------------------------
 echo(
-echo Se abrira la informacion sobre Copyright mas reciente en el navegador.
+echo The latest copyright information will open in the browser.
 echo(
 pause
 start https://github.com/NGDPLNk/SSTools4MC#informaci%C3%B3n-sobre-copyright-y-disclaimer
@@ -437,7 +437,7 @@ REM Se crean estas anotaciones por un tema de órden y rapidez al momento de act
 cls
 echo(
 echo --------------------------------------------
-echo Muchas Gracias por usar esta Herramienta
+echo Thank you for using this Tool
 echo MIT License - Copyright (c) 2022 NGDPL Nk
 echo --------------------------------------------
 echo(
