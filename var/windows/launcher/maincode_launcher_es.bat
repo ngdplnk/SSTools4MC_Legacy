@@ -1,10 +1,10 @@
 @echo off
 
-title Lanzador de Servidores de Minecraft
+title Lanzador de Servidores para Minecraft
 
 :init
 cls
-echo Lanzador de Servidores de Minecraft
+echo Lanzador de Servidores para Minecraft
 echo ------------------------------------
 echo(
 echo Estas en el Menu Principal
@@ -23,7 +23,7 @@ goto :init
 
 :ram
 cls
-echo Lanzador de Servidores de Minecraft
+echo Lanzador de Servidores para Minecraft
 echo ------------------------------------
 echo(
 echo Puedes volver al Menu Principal con "N", o
@@ -57,7 +57,7 @@ goto :ram
 :server
 cls
 echo(
-echo Lanzador de Servidores de Minecraft
+echo Lanzador de Servidores para Minecraft
 echo ------------------------------------
 echo(
 echo Iniciando el Server con %ram% de Ram Asignada...
@@ -69,7 +69,7 @@ goto :afterclose
 :afterclose
 cls
 echo(
-echo Lanzador de Servidores de Minecraft
+echo Lanzador de Servidores para Minecraft
 echo ------------------------------------
 echo(
 echo Se ha cerrado el Servidor
@@ -84,7 +84,7 @@ REM Se crean estas anotaciones por un tema de órden y rapidez al momento de act
 
 :dbmode
 cls
-echo Lanzador de Servidores de Minecraft
+echo Lanzador de Servidores para Minecraft
 echo ------------------------------------
 echo(
 echo El Modo Debug muestra todos los comandos que son ejecutados por la consola durante cada proceso.
@@ -112,7 +112,7 @@ pause
 cls
 @echo on
 cls
-echo Lanzador de Servidores de Minecraft
+echo Lanzador de Servidores para Minecraft
 echo ------------------------------------
 echo(
 echo Estas en el Menu Principal
@@ -144,13 +144,13 @@ REM Se crean estas anotaciones por un tema de órden y rapidez al momento de act
 
 :about
 cls
-echo Lanzador de Servidores de Minecraft
+echo Lanzador de Servidores para Minecraft
 echo ------------------------------------
 echo(
 echo Se abrira la informacion sobre Copyright mas reciente en el navegador.
 echo(
 pause
-start https://github.com/NGDPLNk/mcsstools#informaci%C3%B3n-sobre-copyright-y-disclaimer
+start https://github.com/NGDPLNk/SSTools4MC#informaci%C3%B3n-sobre-copyright-y-disclaimer
 goto :init
 
 REM Desde esta anotación se encuentra el bloque que da pie a la salida de esta herramienta
