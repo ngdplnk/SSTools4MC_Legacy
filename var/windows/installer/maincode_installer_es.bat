@@ -1,10 +1,10 @@
 @echo off
 
-title Instalador de Servidores de Minecraft
+title Instalador de Servidores para Minecraft
 
 :init
 cls
-echo Instalador de Servidores de Minecraft
+echo Instalador de Servidores para Minecraft
 echo --------------------------------------
 echo(
 echo Estas en el Menu Principal
@@ -25,7 +25,7 @@ goto :init
 
 :version
 cls
-echo Instalador de Servidores de Minecraft
+echo Instalador de Servidores para Minecraft
 echo --------------------------------------
 echo(
 echo Puedes volver al Menu Principal con "N", o
@@ -104,12 +104,11 @@ if /I "%version%" EQU "1.18" set version=1.18& set link=https://launcher.mojang.
 if /I "%version%" EQU "1.18.1" set version=1.18.1& set link=https://launcher.mojang.com/v1/objects/125e5adf40c659fd3bce3e66e67a16bb49ecc1b9/server.jar& goto :install
 if /I "%version%" EQU "1.18.2" set version=1.18.2& set link=https://launcher.mojang.com/v1/objects/c8f83c5655308435b3dcf03c06d9fe8740a77469/server.jar& goto :install
 if /I "%version%" EQU "1.19" set version=1.19& set link=https://launcher.mojang.com/v1/objects/e00c4052dac1d59a1188b2aa9d5a87113aaf1122/server.jar& goto :install
-if /I "%version%" EQU "1.19.1" set version=1.19.1& set link=
 goto :versionnull
 
 :versionnull
 cls
-echo Instalador de Servidores de Minecraft
+echo Instalador de Servidores para Minecraft
 echo --------------------------------------
 echo(
 echo Esa Version no esta disponible o es incorrecta
@@ -190,12 +189,11 @@ if /I "%version%" EQU "1.18" set version=1.18& set link=https://launcher.mojang.
 if /I "%version%" EQU "1.18.1" set version=1.18.1& set link=https://launcher.mojang.com/v1/objects/125e5adf40c659fd3bce3e66e67a16bb49ecc1b9/server.jar& goto :install
 if /I "%version%" EQU "1.18.2" set version=1.18.2& set link=https://launcher.mojang.com/v1/objects/c8f83c5655308435b3dcf03c06d9fe8740a77469/server.jar& goto :install
 if /I "%version%" EQU "1.19" set version=1.19& set link=https://launcher.mojang.com/v1/objects/e00c4052dac1d59a1188b2aa9d5a87113aaf1122/server.jar& goto :install
-if /I "%version%" EQU "1.19.1" set version=1.19.1& set link=
 goto :versionnull
 
 :install
 cls
-echo Instalador de Servidores de Minecraft
+echo Instalador de Servidores para Minecraft
 echo --------------------------------------
 echo(
 echo Seleccionaste la Version %version%
@@ -205,28 +203,28 @@ echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servido
 echo(
 pause
 cls
-echo Instalador de Servidores de Minecraft
+echo Instalador de Servidores para Minecraft
 echo --------------------------------------
 echo(
 echo Espera un momento...
 cd C:\
-mkdir MCSSTools
-cd C:\MCSSTools
+mkdir SSTools4MC
+cd C:\SSTools4MC
 mkdir NeededFiles
-curl %link% >C:\MCSSTools\NeededFiles\server.jar
+curl %link% >C:\SSTools4MC\NeededFiles\server.jar
 cd %USERPROFILE%\Desktop
 mkdir Servidor
-copy C:\MCSSTools\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
-curl https://server.properties >C:\MCSSTools\NeededFiles\server.properties
-copy C:\MCSSTools\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
-rd /s /q C:\MCSSTools
+copy C:\SSTools4MC\NeededFiles\server.jar %USERPROFILE%\Desktop\Servidor\
+curl https://server.properties >C:\SSTools4MC\NeededFiles\server.properties
+copy C:\SSTools4MC\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
+rd /s /q C:\SSTools4MC
 cd %USERPROFILE%\AppData\Roaming
 copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :listo
 cls
-echo Instalador de Servidores de Minecraft
+echo Instalador de Servidores para Minecraft
 echo --------------------------------------
 echo(
 echo Se descargaron todos los archivos necesarios.
@@ -245,7 +243,7 @@ goto :listo2
 
 :listo2
 cls
-echo Instalador de Servidores de Minecraft
+echo Instalador de Servidores para Minecraft
 echo --------------------------------------
 echo(
 echo Se ha instalado el Servidor
@@ -258,7 +256,7 @@ REM Se crean estas anotaciones por un tema de órden y rapidez al momento de act
 
 :vslist
 cls
-echo Instalador de Servidores de Minecraft
+echo Instalador de Servidores para Minecraft
 echo --------------------------------------
 echo(
 echo Aqui encontraras la lista que muestra las versiones de Minecraft disponibles.
@@ -274,7 +272,7 @@ goto :vslist
 
 :stblist
 cls
-echo Instalador de Servidores de Minecraft
+echo Instalador de Servidores para Minecraft
 echo --------------------------------------
 echo(
 echo Lista de Versiones de Minecraft Disponibles para Instalar
@@ -352,7 +350,6 @@ echo - 1.18
 echo - 1.18.1
 echo - 1.18.2
 echo - 1.19
-echo - 1.19.1
 echo(
 pause
 goto :init
@@ -362,7 +359,7 @@ REM Se crean estas anotaciones por un tema de órden y rapidez al momento de act
 
 :dbmode
 cls
-echo Instalador de Servidores de Minecraft
+echo Instalador de Servidores para Minecraft
 echo --------------------------------------
 echo(
 echo El Modo Debug muestra todos los comandos que son ejecutados por la consola durante cada proceso.
@@ -390,7 +387,7 @@ pause
 cls
 @echo on
 cls
-echo Instalador de Servidores de Minecraft
+echo Instalador de Servidores para Minecraft
 echo --------------------------------------
 echo(
 echo Estas en el Menu Principal
@@ -430,7 +427,7 @@ echo(
 echo Se abrira la informacion sobre Copyright mas reciente en el navegador.
 echo(
 pause
-start https://github.com/NGDPLNk/mcsstools#informaci%C3%B3n-sobre-copyright-y-disclaimer
+start https://github.com/NGDPLNk/SSTools4MC#informaci%C3%B3n-sobre-copyright-y-disclaimer
 goto :init
 
 REM Desde esta anotación se encuentra el bloque que da pie a la salida de esta herramienta
