@@ -1,33 +1,33 @@
 @echo off
 
-title Lanzador de Servidores para Minecraft
+title Server Launcher for Minecraft
 
 :init
 cls
-echo Lanzador de Servidores para Minecraft
+echo Server Launcher for Minecraft
 echo ------------------------------------
 echo(
-echo Estas en el Menu Principal
+echo You are in the Main Menu
 echo(
-echo (I) Iniciar el Servidor
-echo (D) Modo Debug
+echo (I) Start Server
+echo (D) Debug Mode
 echo (C) Copyright
-echo (S) Salir
+echo (S) Exit
 echo(
-set /P menu=Elige una de las opciones = 
+set /P menu=Choose one of the options = 
 if /I "%menu%" EQU "I" goto :ram
 if /I "%menu%" EQU "D" goto :dbmode
-if /I "%menu%" EQU "A" goto :about
+if /I "%menu%" EQU "C" goto :about
 if /I "%menu%" EQU "S" goto :exit
 goto :init
 
 :ram
 cls
-echo Lanzador de Servidores para Minecraft
+echo Server Launcher for Minecraft
 echo ------------------------------------
 echo(
-echo Puedes volver al Menu Principal con "N", o
-set /P c=Escribe los GB de Ram para Asignar al Servidor = 
+echo You can return to the Main Menu with "N", or
+set /P c=Type the GB of Ram to Assign to the Server = 
 if /I "%c%" EQU "N" goto :init
 if /I "%c%" EQU "1" set ram=1G& goto :server
 if /I "%c%" EQU "2" set ram=2G& goto :server
@@ -57,10 +57,10 @@ goto :ram
 :server
 cls
 echo(
-echo Lanzador de Servidores para Minecraft
+echo Server Launcher for Minecraft
 echo ------------------------------------
 echo(
-echo Iniciando el Server con %ram% de Ram Asignada...
+echo Starting the Server with %ram% Ram Assigned...
 echo(
 java -Xmx%ram% -Xms%ram% -jar server.jar nogui
 pause
@@ -69,33 +69,33 @@ goto :afterclose
 :afterclose
 cls
 echo(
-echo Lanzador de Servidores para Minecraft
+echo Server Launcher for Minecraft
 echo ------------------------------------
 echo(
-echo Se ha cerrado el Servidor
+echo Server has been closed
 echo(
-echo Puedes revisar el registro de la consola en la carpeta "Logs"
+echo You can check the console log in "Logs" folder
 echo(
 pause
 goto :init
 
-REM Desde esta anotación se encuentra el bloque de código que activa y desactiva el modo debug
+REM Desde esta anotación se encuentra el bloque de código que activa y desactiva el Debug Mode
 REM Se crean estas anotaciones por un tema de órden y rapidez al momento de actualizar o trabajar con este código fuente
 
 :dbmode
 cls
-echo Lanzador de Servidores para Minecraft
+echo Server Launcher for Minecraft
 echo ------------------------------------
 echo(
-echo El Modo Debug muestra todos los comandos que son ejecutados por la consola durante cada proceso.
-echo Este modo le es util a los desarrolladores para detectar problemas con el codigo de manera mas facil.
-echo No se recomienda activar este modo si realmente no sabes como sobrellevarlo.
+echo Debug Mode shows all the commands that are executed by the console during each process.
+echo This mode is useful for developers to detect problems with the code more easily.
+echo It is not recommended to activate this mode if you really do not know how to cope with it.
 echo(
-echo (N) Activar Modo Debug
-echo (M) Desactivar Modo Debug
-echo (V) Volver al Menu Principal
+echo (N) Enable Debug Mode
+echo (M) Disable Debug Mode
+echo (V) Back to Main Menu
 echo(
-set /P debug=Elige una de las opciones = 
+set /P debug=Choose one of the options = 
 if /I "%debug%" EQU "N" goto :dbinit
 if /I "%debug%" EQU "M" goto :undbinit
 if /I "%debug%" EQU "V" goto :init
@@ -106,26 +106,26 @@ cls
 @echo off
 cls
 echo(
-echo El Modo Debug esta Activado
+echo Debug Mode Enabled
 echo(
 pause
 cls
 @echo on
 cls
-echo Lanzador de Servidores para Minecraft
+echo Server Launcher for Minecraft
 echo ------------------------------------
 echo(
-echo Estas en el Menu Principal
+echo You are in the Main Menu
 echo(
-echo (I) Iniciar el Servidor
-echo (D) Modo Debug
-echo (A) Acerca de
-echo (S) Salir
+echo (I) Start Server
+echo (D) Debug Mode
+echo (C) Copyright
+echo (S) Exit
 echo(
-set /P menu=Elige una de las opciones = 
+set /P menu=Choose one of the options = 
 if /I "%menu%" EQU "I" goto :ram
 if /I "%menu%" EQU "D" goto :dbmode
-if /I "%menu%" EQU "A" goto :about
+if /I "%menu%" EQU "C" goto :about
 if /I "%menu%" EQU "S" goto :exit
 goto :init
 
@@ -134,7 +134,7 @@ cls
 @echo off
 cls
 echo(
-echo El Modo Debug esta Desactivado
+echo Debug Mode Disabled
 echo(
 pause
 goto :init
@@ -144,10 +144,10 @@ REM Se crean estas anotaciones por un tema de órden y rapidez al momento de act
 
 :about
 cls
-echo Lanzador de Servidores para Minecraft
+echo Server Installer for Minecraft
 echo ------------------------------------
 echo(
-echo Se abrira la informacion sobre Copyright mas reciente en el navegador.
+echo The latest copyright information will open in the browser.
 echo(
 pause
 start https://github.com/NGDPLNk/SSTools4MC#informaci%C3%B3n-sobre-copyright-y-disclaimer
@@ -160,7 +160,7 @@ REM Se crean estas anotaciones por un tema de órden y rapidez al momento de act
 cls
 echo(
 echo --------------------------------------------
-echo Muchas Gracias por usar esta Herramienta
+echo Thank you for using this Tool
 echo MIT License - Copyright (c) 2022 NGDPL Nk
 echo --------------------------------------------
 echo(
