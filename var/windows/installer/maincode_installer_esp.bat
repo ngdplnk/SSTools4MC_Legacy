@@ -12,14 +12,14 @@ echo(
 echo (I) Instalar un Servidor
 echo (L) Lista de Versiones
 echo (D) Modo Debug
-echo (A) Acerca de
+echo (C) Copyright
 echo (S) Salir
 echo(
 set /P menu=Elige una de las opciones = 
 if /I "%menu%" EQU "I" goto :version
 if /I "%menu%" EQU "L" goto :vslist
 if /I "%menu%" EQU "D" goto :dbmode
-if /I "%menu%" EQU "A" goto :about
+if /I "%menu%" EQU "C" goto :about
 if /I "%menu%" EQU "S" goto :exit
 goto :init
 
@@ -219,7 +219,7 @@ curl https://server.properties >C:\SSTools4MC\NeededFiles\server.properties
 copy C:\SSTools4MC\NeededFiles\server.properties %USERPROFILE%\Desktop\Servidor\
 rd /s /q C:\SSTools4MC
 cd %USERPROFILE%\AppData\Roaming
-copy %USERPROFILE%\AppData\Roaming\Launcher.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
+copy %USERPROFILE%\AppData\Roaming\launcher_esp.exe "%USERPROFILE%\Desktop\Servidor\Abrir Server.exe"
 goto :listo
 
 :listo
@@ -395,14 +395,14 @@ echo(
 echo (I) Instalar un Servidor
 echo (L) Lista de Versiones
 echo (D) Modo Debug
-echo (A) Acerca de
+echo (C) Copyright
 echo (S) Salir
 echo(
 set /P menu=Elige una de las opciones = 
 if /I "%menu%" EQU "I" goto :version
 if /I "%menu%" EQU "L" goto :vslist
 if /I "%menu%" EQU "D" goto :dbmode
-if /I "%menu%" EQU "A" goto :about
+if /I "%menu%" EQU "C" goto :about
 if /I "%menu%" EQU "S" goto :exit
 goto :init
 
@@ -421,7 +421,7 @@ REM Se crean estas anotaciones por un tema de órden y rapidez al momento de act
 
 :about
 cls
-echo Lanzador de Servidores de Minecraft
+echo Instalador de Servidores para Minecraft
 echo ------------------------------------
 echo(
 echo Se abrira la informacion sobre Copyright mas reciente en el navegador.
@@ -437,7 +437,7 @@ REM Se crean estas anotaciones por un tema de órden y rapidez al momento de act
 cls
 echo(
 echo --------------------------------------------
-echo Muchas Gracias por usar esta Herramienta
+echo Gracias por usar esta Herramienta
 echo MIT License - Copyright (c) 2022 NGDPL Nk
 echo --------------------------------------------
 echo(
