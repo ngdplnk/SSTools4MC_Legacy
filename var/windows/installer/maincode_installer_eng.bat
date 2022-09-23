@@ -12,10 +12,10 @@ echo(
 echo (I) Install a Server
 echo (L) Version List
 echo (D) Debug Mode
-echo (C) Copyright
+echo (C) License
 echo (S) Exit
 echo(
-set /P menu=Elige una de las opciones = 
+set /P menu=Select one of the options = 
 if /I "%menu%" EQU "I" goto :version
 if /I "%menu%" EQU "L" goto :vslist
 if /I "%menu%" EQU "D" goto :dbmode
@@ -104,6 +104,8 @@ if /I "%version%" EQU "1.18" set version=1.18& set link=https://launcher.mojang.
 if /I "%version%" EQU "1.18.1" set version=1.18.1& set link=https://launcher.mojang.com/v1/objects/125e5adf40c659fd3bce3e66e67a16bb49ecc1b9/server.jar& goto :install
 if /I "%version%" EQU "1.18.2" set version=1.18.2& set link=https://launcher.mojang.com/v1/objects/c8f83c5655308435b3dcf03c06d9fe8740a77469/server.jar& goto :install
 if /I "%version%" EQU "1.19" set version=1.19& set link=https://launcher.mojang.com/v1/objects/e00c4052dac1d59a1188b2aa9d5a87113aaf1122/server.jar& goto :install
+if /I "%version%" EQU "1.19.1" set version=1.19.1& set link=https://piston-data.mojang.com/v1/objects/8399e1211e95faa421c1507b322dbeae86d604df/server.jar
+if /I "%version%" EQU "1.19.2" set version=1.19.2& set link=https://piston-data.mojang.com/v1/objects/f69c284232d7c7580bd89a5a4931c3581eae1378/server.jar
 goto :versionnull
 
 :versionnull
@@ -189,6 +191,8 @@ if /I "%version%" EQU "1.18" set version=1.18& set link=https://launcher.mojang.
 if /I "%version%" EQU "1.18.1" set version=1.18.1& set link=https://launcher.mojang.com/v1/objects/125e5adf40c659fd3bce3e66e67a16bb49ecc1b9/server.jar& goto :install
 if /I "%version%" EQU "1.18.2" set version=1.18.2& set link=https://launcher.mojang.com/v1/objects/c8f83c5655308435b3dcf03c06d9fe8740a77469/server.jar& goto :install
 if /I "%version%" EQU "1.19" set version=1.19& set link=https://launcher.mojang.com/v1/objects/e00c4052dac1d59a1188b2aa9d5a87113aaf1122/server.jar& goto :install
+if /I "%version%" EQU "1.19.1" set version=1.19.1& set link=https://piston-data.mojang.com/v1/objects/8399e1211e95faa421c1507b322dbeae86d604df/server.jar
+if /I "%version%" EQU "1.19.2" set version=1.19.2& set link=https://piston-data.mojang.com/v1/objects/f69c284232d7c7580bd89a5a4931c3581eae1378/server.jar
 goto :versionnull
 
 :install
@@ -265,7 +269,7 @@ echo(
 echo (1) See Available Versions List
 echo (2) Back to Main Menu
 echo(
-set /P vslista=Choose one of the options = 
+set /P vslista=Select one of the options = 
 if /I "%vslista%" EQU "1" goto :stblist
 if /I "%vslista%" EQU "2" goto :init
 goto :vslist
@@ -350,6 +354,8 @@ echo - 1.18
 echo - 1.18.1
 echo - 1.18.2
 echo - 1.19
+echo - 1.19.1
+echo - 1.19.2
 echo(
 pause
 goto :init
@@ -370,7 +376,7 @@ echo (N) Enable Debug Mode
 echo (M) Disable Debug Mode
 echo (V) Back to Main Menu
 echo(
-set /P debug=Choose one of the options = 
+set /P debug=Select one of the options = 
 if /I "%debug%" EQU "N" goto :dbinit
 if /I "%debug%" EQU "M" goto :undbinit
 if /I "%debug%" EQU "V" goto :init
@@ -395,10 +401,10 @@ echo(
 echo (I) Install a Server
 echo (L) Version List
 echo (D) Debug Mode
-echo (C) Copyright
+echo (C) License
 echo (S) Exit
 echo(
-set /P menu=Choose one of the options =  
+set /P menu=Select one of the options =  
 if /I "%menu%" EQU "I" goto :version
 if /I "%menu%" EQU "L" goto :vslist
 if /I "%menu%" EQU "D" goto :dbmode
@@ -424,10 +430,10 @@ cls
 echo Server Installer for Minecraft
 echo ------------------------------------
 echo(
-echo The latest copyright information will open in the browser.
+echo The latest License information will open in the browser.
 echo(
 pause
-start https://github.com/NGDPLNk/SSTools4MC#informaci%C3%B3n-sobre-copyright-y-disclaimer
+start https://github.com/NGDPLNk/SSTools4MC/blob/main/LICENSE
 goto :init
 
 REM Desde esta anotación se encuentra el bloque que da pie a la salida de esta herramienta

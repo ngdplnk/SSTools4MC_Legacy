@@ -11,7 +11,7 @@ echo Estas en el Menu Principal
 echo(
 echo (I) Iniciar el Servidor
 echo (D) Modo Debug
-echo (C) Copyright
+echo (C) Licencia
 echo (S) Salir
 echo(
 set /P menu=Elige una de las opciones = 
@@ -74,7 +74,7 @@ echo ------------------------------------
 echo(
 echo Se ha cerrado el Servidor
 echo(
-echo Puedes revisar el registro de la consola en la carpeta "Logs"
+echo Puedes revisar el registro en la carpeta "Logs"
 echo(
 pause
 goto :init
@@ -119,7 +119,7 @@ echo Estas en el Menu Principal
 echo(
 echo (I) Iniciar el Servidor
 echo (D) Modo Debug
-echo (C) Copyright
+echo (C) Licencia
 echo (S) Salir
 echo(
 set /P menu=Elige una de las opciones = 
@@ -147,10 +147,10 @@ cls
 echo Lanzador de Servidores para Minecraft
 echo ------------------------------------
 echo(
-echo Se abrira la informacion sobre Copyright mas reciente en el navegador.
+echo Se abrira la informacion sobre Licencia mas reciente en el navegador.
 echo(
 pause
-start https://github.com/NGDPLNk/SSTools4MC#informaci%C3%B3n-sobre-copyright-y-disclaimer
+start https://github.com/NGDPLNk/SSTools4MC/blob/main/LICENSE
 goto :init
 
 REM Desde esta anotación se encuentra el bloque que da pie a la salida de esta herramienta

@@ -12,7 +12,7 @@ echo(
 echo (I) Instalar un Servidor
 echo (L) Lista de Versiones
 echo (D) Modo Debug
-echo (C) Copyright
+echo (C) Licencia
 echo (S) Salir
 echo(
 set /P menu=Elige una de las opciones = 
@@ -104,6 +104,8 @@ if /I "%version%" EQU "1.18" set version=1.18& set link=https://launcher.mojang.
 if /I "%version%" EQU "1.18.1" set version=1.18.1& set link=https://launcher.mojang.com/v1/objects/125e5adf40c659fd3bce3e66e67a16bb49ecc1b9/server.jar& goto :install
 if /I "%version%" EQU "1.18.2" set version=1.18.2& set link=https://launcher.mojang.com/v1/objects/c8f83c5655308435b3dcf03c06d9fe8740a77469/server.jar& goto :install
 if /I "%version%" EQU "1.19" set version=1.19& set link=https://launcher.mojang.com/v1/objects/e00c4052dac1d59a1188b2aa9d5a87113aaf1122/server.jar& goto :install
+if /I "%version%" EQU "1.19.1" set version=1.19.1& set link=https://piston-data.mojang.com/v1/objects/8399e1211e95faa421c1507b322dbeae86d604df/server.jar
+if /I "%version%" EQU "1.19.2" set version=1.19.2& set link=https://piston-data.mojang.com/v1/objects/f69c284232d7c7580bd89a5a4931c3581eae1378/server.jar
 goto :versionnull
 
 :versionnull
@@ -189,6 +191,8 @@ if /I "%version%" EQU "1.18" set version=1.18& set link=https://launcher.mojang.
 if /I "%version%" EQU "1.18.1" set version=1.18.1& set link=https://launcher.mojang.com/v1/objects/125e5adf40c659fd3bce3e66e67a16bb49ecc1b9/server.jar& goto :install
 if /I "%version%" EQU "1.18.2" set version=1.18.2& set link=https://launcher.mojang.com/v1/objects/c8f83c5655308435b3dcf03c06d9fe8740a77469/server.jar& goto :install
 if /I "%version%" EQU "1.19" set version=1.19& set link=https://launcher.mojang.com/v1/objects/e00c4052dac1d59a1188b2aa9d5a87113aaf1122/server.jar& goto :install
+if /I "%version%" EQU "1.19.1" set version=1.19.1& set link=https://piston-data.mojang.com/v1/objects/8399e1211e95faa421c1507b322dbeae86d604df/server.jar
+if /I "%version%" EQU "1.19.2" set version=1.19.2& set link=https://piston-data.mojang.com/v1/objects/f69c284232d7c7580bd89a5a4931c3581eae1378/server.jar
 goto :versionnull
 
 :install
@@ -350,6 +354,8 @@ echo - 1.18
 echo - 1.18.1
 echo - 1.18.2
 echo - 1.19
+echo - 1.19.1
+echo - 1.19.2
 echo(
 pause
 goto :init
@@ -395,7 +401,7 @@ echo(
 echo (I) Instalar un Servidor
 echo (L) Lista de Versiones
 echo (D) Modo Debug
-echo (C) Copyright
+echo (C) Licencia
 echo (S) Salir
 echo(
 set /P menu=Elige una de las opciones = 
@@ -424,10 +430,10 @@ cls
 echo Instalador de Servidores para Minecraft
 echo ------------------------------------
 echo(
-echo Se abrira la informacion sobre Copyright mas reciente en el navegador.
+echo Se abrira la informacion sobre Licencia mas reciente en el navegador.
 echo(
 pause
-start https://github.com/NGDPLNk/SSTools4MC#informaci%C3%B3n-sobre-copyright-y-disclaimer
+start https://github.com/NGDPLNk/SSTools4MC/blob/main/LICENSE
 goto :init
 
 REM Desde esta anotación se encuentra el bloque que da pie a la salida de esta herramienta

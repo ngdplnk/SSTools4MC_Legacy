@@ -11,10 +11,10 @@ echo You are in the Main Menu
 echo(
 echo (I) Start Server
 echo (D) Debug Mode
-echo (C) Copyright
+echo (C) License
 echo (S) Exit
 echo(
-set /P menu=Choose one of the options = 
+set /P menu=Select one of the options = 
 if /I "%menu%" EQU "I" goto :ram
 if /I "%menu%" EQU "D" goto :dbmode
 if /I "%menu%" EQU "C" goto :about
@@ -95,7 +95,7 @@ echo (N) Enable Debug Mode
 echo (M) Disable Debug Mode
 echo (V) Back to Main Menu
 echo(
-set /P debug=Choose one of the options = 
+set /P debug=Select one of the options = 
 if /I "%debug%" EQU "N" goto :dbinit
 if /I "%debug%" EQU "M" goto :undbinit
 if /I "%debug%" EQU "V" goto :init
@@ -119,10 +119,10 @@ echo You are in the Main Menu
 echo(
 echo (I) Start Server
 echo (D) Debug Mode
-echo (C) Copyright
+echo (C) License
 echo (S) Exit
 echo(
-set /P menu=Choose one of the options = 
+set /P menu=Select one of the options = 
 if /I "%menu%" EQU "I" goto :ram
 if /I "%menu%" EQU "D" goto :dbmode
 if /I "%menu%" EQU "C" goto :about
@@ -147,10 +147,10 @@ cls
 echo Server Installer for Minecraft
 echo ------------------------------------
 echo(
-echo The latest copyright information will open in the browser.
+echo The latest License information will open in the browser.
 echo(
 pause
-start https://github.com/NGDPLNk/SSTools4MC#informaci%C3%B3n-sobre-copyright-y-disclaimer
+start https://github.com/NGDPLNk/SSTools4MC/blob/main/LICENSE
 goto :init
 
 REM Desde esta anotación se encuentra el bloque que da pie a la salida de esta herramienta
