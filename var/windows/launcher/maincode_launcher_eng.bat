@@ -10,7 +10,6 @@ echo(
 echo You are in the Main Menu
 echo(
 echo (I) Start Server
-echo (D) Debug Mode
 echo (C) License
 echo (S) Exit
 echo(
@@ -118,7 +117,6 @@ echo(
 echo You are in the Main Menu
 echo(
 echo (I) Start Server
-echo (D) Debug Mode
 echo (C) License
 echo (S) Exit
 echo(
@@ -161,7 +159,7 @@ cls
 echo(
 echo --------------------------------------------
 echo Thank you for using this Tool
-echo MIT License - Copyright (c) 2022 NGDPL Nk
+echo MIT License - Copyright (c) 2023 NGDPL Nk
 echo --------------------------------------------
 echo(
 pause

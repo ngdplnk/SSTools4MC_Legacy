@@ -10,7 +10,6 @@ echo(
 echo Estas en el Menu Principal
 echo(
 echo (I) Iniciar el Servidor
-echo (D) Modo Debug
 echo (C) Licencia
 echo (S) Salir
 echo(
@@ -118,7 +117,6 @@ echo(
 echo Estas en el Menu Principal
 echo(
 echo (I) Iniciar el Servidor
-echo (D) Modo Debug
 echo (C) Licencia
 echo (S) Salir
 echo(
@@ -161,7 +159,7 @@ cls
 echo(
 echo --------------------------------------------
 echo Gracias por usar esta Herramienta
-echo MIT License - Copyright (c) 2022 NGDPL Nk
+echo MIT License - Copyright (c) 2023 NGDPL Nk
 echo --------------------------------------------
 echo(
 pause
