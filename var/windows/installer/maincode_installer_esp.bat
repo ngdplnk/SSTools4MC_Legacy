@@ -11,7 +11,6 @@ echo Estas en el Menu Principal
 echo(
 echo (I) Instalar un Servidor
 echo (L) Lista de Versiones
-echo (D) Modo Debug
 echo (C) Licencia
 echo (S) Salir
 echo(
@@ -406,7 +405,6 @@ echo Estas en el Menu Principal
 echo(
 echo (I) Instalar un Servidor
 echo (L) Lista de Versiones
-echo (D) Modo Debug
 echo (C) Licencia
 echo (S) Salir
 echo(

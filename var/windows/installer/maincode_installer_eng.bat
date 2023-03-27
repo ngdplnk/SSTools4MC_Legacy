@@ -11,7 +11,6 @@ echo You are in the Main Menu
 echo(
 echo (I) Install a Server
 echo (L) Version List
-echo (D) Debug Mode
 echo (C) License
 echo (S) Exit
 echo(
@@ -404,7 +403,6 @@ echo You are in the Main Menu
 echo(
 echo (I) Install a Server
 echo (L) Version List
-echo (D) Debug Mode
 echo (C) License
 echo (S) Exit
 echo(
