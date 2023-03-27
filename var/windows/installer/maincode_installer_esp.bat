@@ -104,8 +104,10 @@ if /I "%version%" EQU "1.18" set version=1.18& set link=https://launcher.mojang.
 if /I "%version%" EQU "1.18.1" set version=1.18.1& set link=https://launcher.mojang.com/v1/objects/125e5adf40c659fd3bce3e66e67a16bb49ecc1b9/server.jar& goto :install
 if /I "%version%" EQU "1.18.2" set version=1.18.2& set link=https://launcher.mojang.com/v1/objects/c8f83c5655308435b3dcf03c06d9fe8740a77469/server.jar& goto :install
 if /I "%version%" EQU "1.19" set version=1.19& set link=https://launcher.mojang.com/v1/objects/e00c4052dac1d59a1188b2aa9d5a87113aaf1122/server.jar& goto :install
-if /I "%version%" EQU "1.19.1" set version=1.19.1& set link=https://piston-data.mojang.com/v1/objects/8399e1211e95faa421c1507b322dbeae86d604df/server.jar
-if /I "%version%" EQU "1.19.2" set version=1.19.2& set link=https://piston-data.mojang.com/v1/objects/f69c284232d7c7580bd89a5a4931c3581eae1378/server.jar
+if /I "%version%" EQU "1.19.1" set version=1.19.1& set link=https://piston-data.mojang.com/v1/objects/8399e1211e95faa421c1507b322dbeae86d604df/server.jar& goto :install
+if /I "%version%" EQU "1.19.2" set version=1.19.2& set link=https://piston-data.mojang.com/v1/objects/f69c284232d7c7580bd89a5a4931c3581eae1378/server.jar& goto :install
+if /I "%version%" EQU "1.19.3" set version=1.19.3& set link=https://piston-data.mojang.com/v1/objects/c9df48efed58511cdd0213c56b9013a7b5c9ac1f/server.jar& goto :install
+if /I "%version%" EQU "1.19.4" set version=1.19.4& set link=https://piston-data.mojang.com/v1/objects/958928a560c9167687bea0cefeb7375da1e552a8/client.jar& goto :install
 goto :versionnull
 
 :versionnull
@@ -191,8 +193,10 @@ if /I "%version%" EQU "1.18" set version=1.18& set link=https://launcher.mojang.
 if /I "%version%" EQU "1.18.1" set version=1.18.1& set link=https://launcher.mojang.com/v1/objects/125e5adf40c659fd3bce3e66e67a16bb49ecc1b9/server.jar& goto :install
 if /I "%version%" EQU "1.18.2" set version=1.18.2& set link=https://launcher.mojang.com/v1/objects/c8f83c5655308435b3dcf03c06d9fe8740a77469/server.jar& goto :install
 if /I "%version%" EQU "1.19" set version=1.19& set link=https://launcher.mojang.com/v1/objects/e00c4052dac1d59a1188b2aa9d5a87113aaf1122/server.jar& goto :install
-if /I "%version%" EQU "1.19.1" set version=1.19.1& set link=https://piston-data.mojang.com/v1/objects/8399e1211e95faa421c1507b322dbeae86d604df/server.jar
-if /I "%version%" EQU "1.19.2" set version=1.19.2& set link=https://piston-data.mojang.com/v1/objects/f69c284232d7c7580bd89a5a4931c3581eae1378/server.jar
+if /I "%version%" EQU "1.19.1" set version=1.19.1& set link=https://piston-data.mojang.com/v1/objects/8399e1211e95faa421c1507b322dbeae86d604df/server.jar& goto :install
+if /I "%version%" EQU "1.19.2" set version=1.19.2& set link=https://piston-data.mojang.com/v1/objects/f69c284232d7c7580bd89a5a4931c3581eae1378/server.jar& goto :install
+if /I "%version%" EQU "1.19.3" set version=1.19.3& set link=https://piston-data.mojang.com/v1/objects/c9df48efed58511cdd0213c56b9013a7b5c9ac1f/server.jar& goto :install
+if /I "%version%" EQU "1.19.4" set version=1.19.4& set link=https://piston-data.mojang.com/v1/objects/958928a560c9167687bea0cefeb7375da1e552a8/client.jar& goto :install
 goto :versionnull
 
 :install
@@ -356,6 +360,8 @@ echo - 1.18.2
 echo - 1.19
 echo - 1.19.1
 echo - 1.19.2
+echo - 1.19.3
+echo - 1.19.4
 echo(
 pause
 goto :init
@@ -444,7 +450,7 @@ cls
 echo(
 echo --------------------------------------------
 echo Gracias por usar esta Herramienta
-echo MIT License - Copyright (c) 2022 NGDPL Nk
+echo MIT License - Copyright (c) 2023 NGDPL Nk
 echo --------------------------------------------
 echo(
 pause
