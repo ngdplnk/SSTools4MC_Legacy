@@ -63,4 +63,4 @@ NGDPL Nk no es dueño ni tampoco almacena ningún producto de Oracle. Tampoco de
 **Cada elemento, nombre, correspondiente a Oracle, es usado cumpliendo los [Términos de uso](https://www.oracle.com/legal/terms.html) y las [Trademarks](https://www.oracle.com/legal/trademarks.html)**
 
 # **Gracias Por Usar Este Conjunto De Herramientas**
-©2022 - NGDPL Nk
+©2023 - NGDPL Nk

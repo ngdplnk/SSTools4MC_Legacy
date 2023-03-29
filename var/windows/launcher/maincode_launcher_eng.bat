@@ -51,6 +51,14 @@ if /I "%c%" EQU "21" set ram=21G& goto :server
 if /I "%c%" EQU "22" set ram=22G& goto :server
 if /I "%c%" EQU "23" set ram=23G& goto :server
 if /I "%c%" EQU "24" set ram=24G& goto :server
+if /I "%c%" EQU "25" set ram=25G& goto :server
+if /I "%c%" EQU "26" set ram=26G& goto :server
+if /I "%c%" EQU "27" set ram=27G& goto :server
+if /I "%c%" EQU "28" set ram=28G& goto :server
+if /I "%c%" EQU "29" set ram=29G& goto :server
+if /I "%c%" EQU "30" set ram=30G& goto :server
+if /I "%c%" EQU "31" set ram=31G& goto :server
+if /I "%c%" EQU "32" set ram=32G& goto :server
 goto :ram
 
 :server
