@@ -9,7 +9,7 @@ Server Startup Tools for Minecraft es un conjunto de herramientas que te ayudar�
 # **Instalador de servidores**
 ## **Requisitos mínimos de esta herramienta:**
 
-- SO: Windows 10 v.1803 (build 17134)
+- SO: Windows 10 v.1803 (build 17134) de 64 bits.
 
 - Procesador: Arquitectura de x64.
 
@@ -25,11 +25,11 @@ También requiere permisos de administrador para poder acceder y crear los archi
 # **Lanzador de servidores**
 ## **Requisitos mínimos de esta herramienta:**
 
-- SO: Windows 7 SP1 o superior.
+- SO: Windows 7 SP1 o superior de 64 bits.
 
 - Procesador: 1 Núcleo de 1.00GHz; Arquitectura de x64.
 
-- RAM: Varía entre 1GiB y 24GiB, dependiendo de la cantidad memoria RAM seleccionada para el servidor dedicado.
+- RAM: Varía entre 1GiB y 32GiB, dependiendo de la cantidad memoria RAM seleccionada para el servidor dedicado.
 
 - Espacio en disco: Varía dependiendo de cada servidor.
 
