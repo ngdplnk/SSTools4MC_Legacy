@@ -111,6 +111,8 @@ if /I "%version%" EQU "1.19.1" set version=1.19.1& set link=https://piston-data.
 if /I "%version%" EQU "1.19.2" set version=1.19.2& set link=https://piston-data.mojang.com/v1/objects/f69c284232d7c7580bd89a5a4931c3581eae1378/server.jar& goto :install
 if /I "%version%" EQU "1.19.3" set version=1.19.3& set link=https://piston-data.mojang.com/v1/objects/c9df48efed58511cdd0213c56b9013a7b5c9ac1f/server.jar& goto :install
 if /I "%version%" EQU "1.19.4" set version=1.19.4& set link=https://piston-data.mojang.com/v1/objects/958928a560c9167687bea0cefeb7375da1e552a8/client.jar& goto :install
+if /I "%version%" EQU "1.20" set version=1.20& set link=https://piston-data.mojang.com/v1/objects/15c777e2cfe0556eef19aab534b186c0c6f277e1/server.jar& goto :install
+if /I "%version%" EQU "1.20.1" set version=1.20.1& set link=https://piston-data.mojang.com/v1/objects/84194a2f286ef7c14ed7ce0090dba59902951553/server.jar& goto :install
 goto :version
 
 :install
@@ -275,6 +277,8 @@ echo - 1.19.1
 echo - 1.19.2
 echo - 1.19.3
 echo - 1.19.4
+echo - 1.20
+echo - 1.20.1
 echo(
 pause
 goto :init
