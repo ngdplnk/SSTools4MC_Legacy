@@ -29,7 +29,7 @@ También requiere permisos de administrador para poder acceder y crear los archi
 
 - Procesador: 1 Núcleo de 1.00GHz; Arquitectura de x64.
 
-- RAM: Varía entre 1GiB y 32GiB, dependiendo de la cantidad memoria RAM seleccionada para el servidor dedicado.
+- RAM: Varía dependiendo de la cantidad memoria RAM asignada para el Servidor.
 
 - Espacio en disco: Varía dependiendo de cada servidor.
 
