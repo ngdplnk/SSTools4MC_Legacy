@@ -8,16 +8,29 @@ def limpiar_consola():
 
 #CAMBIO DE NOMBRE DE VENTANA
 import sys
-if sys.platform.startswith('win32'): #WINDOWS
+if sys.platform.startswith('win32'):  #WINDOWS
     import ctypes
     ctypes.windll.kernel32.SetConsoleTitleW("Lanzador de Servidores para Minecraft")
-elif sys.platform.startswith('linux') or sys.platform.startswith('darwin'): #LINUX O MACOS
+elif sys.platform.startswith('linux') or sys.platform.startswith('darwin'):  #LINUX O MACOS
     sys.stdout.write(f"\x1b]2;Lanzador de Servidores para Minecraft\x07")
 
-#BLOQUES DE CÓDIGO
+#BLOQUE DE SELECCIÓN DE RAM
 def ram():
     limpiar_consola()
-    #CÓDIGO AQUÍ
+    print("Lanzador de Servidores para Minecraft")
+    print("-------------------------------------")
+    print("")
+    print("Puedes volver al Menú Principal con 'N', o")
+    while True:
+        try:
+            gbs = int(input("Ingresa los GB de RAM para asignar al Servidor= "))
+            break
+        except ValueError:
+            ram()
+
+    print(f"El valor de gbs es: {gbs}")
+    print("Presiona Enter para continuar...")
+    
 
 def about():
     limpiar_consola()
