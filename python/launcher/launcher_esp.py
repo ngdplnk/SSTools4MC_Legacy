@@ -1,34 +1,34 @@
 #LIMPIEZA DE PANTALLA
 import os
 def limpiar_consola():
-    if os.name == 'nt':  #EN WINDOWS
+    if os.name == 'nt':  #WINDOWS
         os.system('cls')
     else:  #LINUX O MACOS
         os.system('clear')
 
 #CAMBIO DE NOMBRE DE VENTANA
 import sys
-if sys.platform.startswith('win32'):
+if sys.platform.startswith('win32'): #WINDOWS
     import ctypes
     ctypes.windll.kernel32.SetConsoleTitleW("Lanzador de Servidores para Minecraft")
-elif sys.platform.startswith('linux') or sys.platform.startswith('darwin'):
+elif sys.platform.startswith('linux') or sys.platform.startswith('darwin'): #LINUX O MACOS
     sys.stdout.write(f"\x1b]2;Lanzador de Servidores para Minecraft\x07")
 
 #BLOQUES DE CÓDIGO
 def ram():
-    print("Seleccionaste ")
+    limpiar_consola()
     #CÓDIGO AQUÍ
 
 def about():
-    print("Opción 2 seleccionada")
+    limpiar_consola()
     #CÓDIGO AQUÍ
 
 def exiit():
-    print("Opción 3 seleccionada")
+    limpiar_consola()
     #CÓDIGO AQUÍ
 
 def dbmode():
-    print("asdasd")
+    limpiar_consola()
     #CÓDIGO AQUÍ
 
 while True:
@@ -41,6 +41,7 @@ while True:
     print("(1) Iniciar Servidor")
     print("(2) Licencia")
     print("(3) Salir")
+    print("")
     
     seleccion = input("Selecciona una opción= ")
     
