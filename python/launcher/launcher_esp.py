@@ -1,5 +1,10 @@
-#LIMPIEZA DE PANTALLA
+#IMPORTACIÓN DE MÓDULOS
 import os
+import sys
+import ctypes
+import subprocess
+
+#LIMPIEZA DE PANTALLA
 def limpiar_consola():
     if os.name == 'nt':  #WINDOWS
         os.system('cls')
@@ -7,12 +12,21 @@ def limpiar_consola():
         os.system('clear')
 
 #CAMBIO DE NOMBRE DE VENTANA
-import sys
 if sys.platform.startswith('win32'):  #WINDOWS
-    import ctypes
     ctypes.windll.kernel32.SetConsoleTitleW("Lanzador de Servidores para Minecraft")
 elif sys.platform.startswith('linux') or sys.platform.startswith('darwin'):  #LINUX O MACOS
     sys.stdout.write(f"\x1b]2;Lanzador de Servidores para Minecraft\x07")
+
+def starting():
+    limpiar_consola()
+    print("Lanzador de Servidores para Minecraft")
+    print("-------------------------------------")
+    print("")
+    print("Iniciando el Server con " + gbs + "GB de RAM")
+    comando_java = "java -Xmx" + gbs + " -Xms" + gbs + " -jar server.jar nogui"
+    resultado = subprocess.run(comando_java, shell=True, capture_output=True, text=True)
+    print(resultado.stdout)
+    input()
 
 #BLOQUE DE SELECCIÓN DE RAM
 def ram():
@@ -24,13 +38,9 @@ def ram():
     while True:
         try:
             gbs = int(input("Ingresa los GB de RAM para asignar al Servidor= "))
-            break
+            starting()
         except ValueError:
             ram()
-
-    print(f"El valor de gbs es: {gbs}")
-    print("Presiona Enter para continuar...")
-    
 
 def about():
     limpiar_consola()
