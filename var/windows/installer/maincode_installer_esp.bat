@@ -7,19 +7,19 @@ cls
 echo Instalador de Servidores para Minecraft
 echo --------------------------------------
 echo(
-echo Estas en el Menu Principal
+echo Menu Principal
 echo(
-echo (I) Instalar un Servidor
-echo (L) Lista de Versiones
-echo (C) Licencia
-echo (S) Salir
+echo (1) Instalar un Servidor
+echo (2) Lista de Versiones
+echo (3) Licencia
+echo (4) Salir
 echo(
 set /P menu=Elige una de las opciones = 
-if /I "%menu%" EQU "I" goto :version
-if /I "%menu%" EQU "L" goto :vslist
-if /I "%menu%" EQU "D" goto :dbmode
-if /I "%menu%" EQU "C" goto :about
-if /I "%menu%" EQU "S" goto :exit
+if /I "%menu%" EQU "1" goto :version
+if /I "%menu%" EQU "2" goto :vslist
+if /I "%menu%" EQU "3" goto :about
+if /I "%menu%" EQU "4" goto :exit
+if /I "%menu%" EQU "5" goto :dbmode
 goto :init
 
 :version
@@ -27,13 +27,13 @@ cls
 echo Instalador de Servidores para Minecraft
 echo --------------------------------------
 echo(
-echo Puedes volver al Menu Principal con "N"
-echo( 
-echo Tambien, puedes ver la Lista de Versiones con "L", o
-echo( 
+echo (1) Volver al Menu Principal
+echo (2) Lista de Versiones
+echo(
+echo Puedes elegir una de estas opciones o
 set /P version=Escribe la Version de Minecraft para tu nuevo Servidor= 
-if /I "%version%" EQU "N" goto :init
-if /I "%version%" EQU "L" goto :vslist
+if /I "%version%" EQU "1" goto :init
+if /I "%version%" EQU "2" goto :vslist
 if /I "%version%" EQU "1.2.1" set version=1.2.1& set link=https://assets.minecraft.net/1_2/minecraft_server.jar& goto :install
 if /I "%version%" EQU "1.2.2" set version=1.2.2& set link=https://assets.minecraft.net/1_2/minecraft_server.jar& goto :install
 if /I "%version%" EQU "1.2.3" set version=1.2.3& set link=https://assets.minecraft.net/1_2/minecraft_server.jar& goto :install
@@ -123,7 +123,7 @@ echo(
 echo Seleccionaste la Version %version%
 echo(
 echo Se descargaran los archivos necesarios desde Internet
-echo Luego se creara una carpeta en el Escritorio con los archivos de tu Servidor
+echo Encontraras una carpeta en el Escritorio con los archivos de tu Servidor
 echo(
 pause
 cls
@@ -163,17 +163,22 @@ goto :listo
 :eula
 cd %USERPROFILE%\Desktop\Servidor\
 echo eula=true>eula.txt
-goto :listo2
+goto :ok
 
-:listo2
+:ok
 cls
 echo Instalador de Servidores para Minecraft
 echo --------------------------------------
 echo(
 echo Se ha instalado el Servidor
 echo(
-pause
-goto :init
+echo (1) Volver al Menu principal
+echo (2) Salir
+echo(
+set /P okay=Elige una de las opciones= 
+if /I "%okay%" EQU "1" goto :init
+if /I "%okay%" EQU "2" goto :exit
+goto :ok
 
 :vslist
 cls
@@ -183,9 +188,9 @@ echo(
 echo Aqui encontraras la lista que muestra las versiones de Minecraft disponibles.
 echo Esta lista podria cambiar en futuras actualizaciones.
 echo(
-echo (1) Ver Lista de Versiones Disponibles
+echo (1) Ver Versiones Disponibles
 echo (2) Volver al Menu Principal
-echo (3) Ir a Instalar un Servidor
+echo (3) Instalar un Servidor
 echo(
 set /P vslista=Elige una de las opciones = 
 if /I "%vslista%" EQU "1" goto :stblist
@@ -289,21 +294,20 @@ echo Instalador de Servidores para Minecraft
 echo --------------------------------------
 echo(
 echo El Modo Debug muestra todos los comandos que son ejecutados por la consola durante cada proceso.
-echo Este modo le es util a los desarrolladores para detectar problemas con el codigo de manera mas facil.
+echo Este modo le es util al desarrollador para detectar problemas con el codigo facilmente.
 echo No se recomienda activar este modo si realmente no sabes como sobrellevarlo.
 echo(
-echo (N) Activar Modo Debug
-echo (M) Desactivar Modo Debug
-echo (V) Volver al Menu Principal
+echo (1) Activar Modo Debug
+echo (2) Desactivar Modo Debug
+echo (3) Volver al Menu Principal
 echo(
 set /P debug=Elige una de las opciones = 
-if /I "%debug%" EQU "N" goto :dbinit
-if /I "%debug%" EQU "M" goto :undbinit
-if /I "%debug%" EQU "V" goto :init
+if /I "%debug%" EQU "1" goto :dbinit
+if /I "%debug%" EQU "2" goto :undbinit
+if /I "%debug%" EQU "3" goto :init
 goto :dbmode
 
 :dbinit
-cls
 @echo off
 cls
 echo(
@@ -312,23 +316,22 @@ echo(
 pause
 cls
 @echo on
-cls
 echo Instalador de Servidores para Minecraft
 echo --------------------------------------
 echo(
-echo Estas en el Menu Principal
+echo Menu Principal
 echo(
-echo (I) Instalar un Servidor
-echo (L) Lista de Versiones
-echo (C) Licencia
-echo (S) Salir
+echo (1) Instalar un Servidor
+echo (2) Lista de Versiones
+echo (3) Licencia
+echo (4) Salir
 echo(
 set /P menu=Elige una de las opciones = 
-if /I "%menu%" EQU "I" goto :version
-if /I "%menu%" EQU "L" goto :vslist
-if /I "%menu%" EQU "D" goto :dbmode
-if /I "%menu%" EQU "C" goto :about
-if /I "%menu%" EQU "S" goto :exit
+if /I "%menu%" EQU "1" goto :version
+if /I "%menu%" EQU "2" goto :vslist
+if /I "%menu%" EQU "3" goto :about
+if /I "%menu%" EQU "4" goto :exit
+if /I "%menu%" EQU "5" goto :dbmode
 goto :init
 
 :undbinit

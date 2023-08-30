@@ -7,19 +7,19 @@ cls
 echo Server Installer for Minecraft
 echo --------------------------------------
 echo(
-echo You are in the Main Menu
+echo Main Menu
 echo(
-echo (I) Install a Server
-echo (L) Versions List
-echo (C) License
-echo (S) Exit
+echo (1) Install a Server
+echo (2) Version List
+echo (3) License
+echo (4) Exit
 echo(
 set /P menu=Select one of the options = 
-if /I "%menu%" EQU "I" goto :version
-if /I "%menu%" EQU "L" goto :vslist
-if /I "%menu%" EQU "D" goto :dbmode
-if /I "%menu%" EQU "C" goto :about
-if /I "%menu%" EQU "S" goto :exit
+if /I "%menu%" EQU "1" goto :version
+if /I "%menu%" EQU "2" goto :vslist
+if /I "%menu%" EQU "3" goto :about
+if /I "%menu%" EQU "4" goto :exit
+if /I "%menu%" EQU "5" goto :dbmode
 goto :init
 
 :version
@@ -27,13 +27,13 @@ cls
 echo Server Installer for Minecraft
 echo --------------------------------------
 echo(
-echo You can return to the Main Menu with "N"
+echo (1) Back to Main Menu
+echo (2) Version List
 echo(
-echo Also, you can see through the Versions List with "L", or
-echo(
-set /P version=Type the Minecraft Version for your new Server=  
-if /I "%version%" EQU "N" goto :init
-if /I "%version%" EQU "L" goto :vslist
+echo You can select one of the options above or
+set /P version=Type the Minecraft Version for your new Server= 
+if /I "%version%" EQU "1" goto :init
+if /I "%version%" EQU "2" goto :vslist
 if /I "%version%" EQU "1.2.1" set version=1.2.1& set link=https://assets.minecraft.net/1_2/minecraft_server.jar& goto :install
 if /I "%version%" EQU "1.2.2" set version=1.2.2& set link=https://assets.minecraft.net/1_2/minecraft_server.jar& goto :install
 if /I "%version%" EQU "1.2.3" set version=1.2.3& set link=https://assets.minecraft.net/1_2/minecraft_server.jar& goto :install
@@ -123,7 +123,7 @@ echo(
 echo You selected Version %version%
 echo(
 echo Necessary files will be downloaded from the Internet
-echo Then a folder will be created on the Desktop with the files of your Server
+echo A folder will be created on the Desktop with the files of your Server
 echo(
 pause
 cls
@@ -163,17 +163,22 @@ goto :listo
 :eula
 cd %USERPROFILE%\Desktop\Server\
 echo eula=true>eula.txt
-goto :listo2
+goto :ok
 
-:listo2
+:ok
 cls
 echo Server Installer for Minecraft
 echo --------------------------------------
 echo(
 echo Server has been installed
 echo(
-pause
-goto :init
+echo (1) Back to Main Menu
+echo (2) Exit
+echo(
+set /P okay=Select one of the options= 
+if /I "%okay%" EQU "1" goto :init
+if /I "%okay%" EQU "2" goto :exit
+goto :ok
 
 :vslist
 cls
@@ -183,9 +188,9 @@ echo(
 echo Here you will find the list showing the available versions for your Minecraft Server.
 echo This list could change in future updates.
 echo(
-echo (1) See Available Versions List
+echo (1) See Available Versions
 echo (2) Back to Main Menu
-echo (3) Go to Install Server
+echo (3) Install a Server
 echo(
 set /P vslista=Select one of the options = 
 if /I "%vslista%" EQU "1" goto :stblist
@@ -289,21 +294,20 @@ echo Server Installer for Minecraft
 echo --------------------------------------
 echo(
 echo Debug Mode shows all the commands that are executed by the console during each process.
-echo This mode is useful for developers to detect problems with the code more easily.
+echo This mode is useful for developer to detect problems with the code more easily.
 echo It is not recommended to activate this mode if you really do not know how to cope with it.
 echo(
-echo (N) Enable Debug Mode
-echo (M) Disable Debug Mode
-echo (V) Back to Main Menu
+echo (1) Enable Debug Mode
+echo (2) Disable Debug Mode
+echo (3) Back to Main Menu
 echo(
 set /P debug=Select one of the options = 
-if /I "%debug%" EQU "N" goto :dbinit
-if /I "%debug%" EQU "M" goto :undbinit
-if /I "%debug%" EQU "V" goto :init
+if /I "%debug%" EQU "1" goto :dbinit
+if /I "%debug%" EQU "2" goto :undbinit
+if /I "%debug%" EQU "3" goto :init
 goto :dbmode
 
 :dbinit
-cls
 @echo off
 cls
 echo(
@@ -312,23 +316,22 @@ echo(
 pause
 cls
 @echo on
-cls
 echo Server Installer for Minecraft
 echo --------------------------------------
 echo(
-echo You are in the Main Menu
+echo Main Menu
 echo(
-echo (I) Install a Server
-echo (L) Version List
-echo (C) License
-echo (S) Exit
+echo (1) Install a Server
+echo (2) Version List
+echo (3) License
+echo (4) Exit
 echo(
 set /P menu=Select one of the options =  
-if /I "%menu%" EQU "I" goto :version
-if /I "%menu%" EQU "L" goto :vslist
-if /I "%menu%" EQU "D" goto :dbmode
-if /I "%menu%" EQU "C" goto :about
-if /I "%menu%" EQU "S" goto :exit
+if /I "%menu%" EQU "1" goto :version
+if /I "%menu%" EQU "2" goto :vslist
+if /I "%menu%" EQU "3" goto :about
+if /I "%menu%" EQU "4" goto :exit
+if /I "%menu%" EQU "5" goto :dbmode
 goto :init
 
 :undbinit
