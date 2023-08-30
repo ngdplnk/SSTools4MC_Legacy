@@ -10,6 +10,7 @@ En caso de encontrarse problemas de seguridad, estas son las versiones con un so
 |   Beta Releases  |         :x:        |
 | Pre v0.0.1.5-Stables  |         :x:        |
 | v0.0.1.5-Stable  | :heavy_check_mark: |
+| v0.0.1.6-Stable  | :heavy_check_mark: |
 
 ## Reportar una Vulnerabilidad
 
