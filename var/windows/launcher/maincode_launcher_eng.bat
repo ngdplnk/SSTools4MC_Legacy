@@ -1,5 +1,4 @@
 @echo off
-
 title Server Launcher for Minecraft
 
 :init
@@ -7,17 +6,17 @@ cls
 echo Server Launcher for Minecraft
 echo ------------------------------------
 echo(
-echo You are in the Main Menu
+echo Main Menu
 echo(
-echo (I) Start Server
-echo (C) License
-echo (S) Exit
+echo (1) Start Server
+echo (2) License
+echo (3) Exit
 echo(
 set /P menu=Select one of the options = 
-if /I "%menu%" EQU "I" goto :ram
-if /I "%menu%" EQU "D" goto :dbmode
-if /I "%menu%" EQU "C" goto :about
-if /I "%menu%" EQU "S" goto :exit
+if /I "%menu%" EQU "1" goto :ram
+if /I "%menu%" EQU "2" goto :about
+if /I "%menu%" EQU "3" goto :exit
+if /I "%menu%" EQU "4" goto :dbmode
 goto :init
 
 :ram
@@ -25,41 +24,11 @@ cls
 echo Server Launcher for Minecraft
 echo ------------------------------------
 echo(
-echo You can return to the Main Menu with "N", or
-set /P c=Type the GB of Ram to Assign to the Server = 
-if /I "%c%" EQU "N" goto :init
-if /I "%c%" EQU "1" set ram=1G& goto :server
-if /I "%c%" EQU "2" set ram=2G& goto :server
-if /I "%c%" EQU "3" set ram=3G& goto :server
-if /I "%c%" EQU "4" set ram=4G& goto :server
-if /I "%c%" EQU "5" set ram=5G& goto :server
-if /I "%c%" EQU "6" set ram=6G& goto :server
-if /I "%c%" EQU "7" set ram=7G& goto :server
-if /I "%c%" EQU "8" set ram=8G& goto :server
-if /I "%c%" EQU "9" set ram=9G& goto :server
-if /I "%c%" EQU "10" set ram=10G& goto :server
-if /I "%c%" EQU "11" set ram=11G& goto :server
-if /I "%c%" EQU "12" set ram=12G& goto :server
-if /I "%c%" EQU "13" set ram=13G& goto :server
-if /I "%c%" EQU "15" set ram=15G& goto :server
-if /I "%c%" EQU "16" set ram=16G& goto :server
-if /I "%c%" EQU "17" set ram=17G& goto :server
-if /I "%c%" EQU "18" set ram=18G& goto :server
-if /I "%c%" EQU "19" set ram=19G& goto :server
-if /I "%c%" EQU "20" set ram=20G& goto :server
-if /I "%c%" EQU "21" set ram=21G& goto :server
-if /I "%c%" EQU "22" set ram=22G& goto :server
-if /I "%c%" EQU "23" set ram=23G& goto :server
-if /I "%c%" EQU "24" set ram=24G& goto :server
-if /I "%c%" EQU "25" set ram=25G& goto :server
-if /I "%c%" EQU "26" set ram=26G& goto :server
-if /I "%c%" EQU "27" set ram=27G& goto :server
-if /I "%c%" EQU "28" set ram=28G& goto :server
-if /I "%c%" EQU "29" set ram=29G& goto :server
-if /I "%c%" EQU "30" set ram=30G& goto :server
-if /I "%c%" EQU "31" set ram=31G& goto :server
-if /I "%c%" EQU "32" set ram=32G& goto :server
-goto :ram
+echo You can return to Main Menu with "N", or
+set /P gbs=Type the GB of Ram to Assign to the Server = 
+if /I "%gbs%" EQU "N" goto :init
+set "var="&for /f "delims=0123456789" %%i in ("%gbs%") do set var=%%i
+if defined var (goto :ram) else (set ram=%gbs%& goto :server)
 
 :server
 cls
@@ -67,9 +36,9 @@ echo(
 echo Server Launcher for Minecraft
 echo ------------------------------------
 echo(
-echo Starting the Server with %ram% Ram Assigned...
+echo Starting the Server with %ram%GB of Ram Assigned...
 echo(
-java -Xmx%ram% -Xms%ram% -jar server.jar nogui
+java -Xmx%ram%G -Xms%ram%G -jar server.jar nogui
 pause
 goto :afterclose
 
@@ -79,15 +48,12 @@ echo(
 echo Server Launcher for Minecraft
 echo ------------------------------------
 echo(
-echo Server has been closed
+echo Server closed
 echo(
 echo You can check the console log in "Logs" folder
 echo(
 pause
 goto :init
-
-REM Desde esta anotación se encuentra el bloque de código que activa y desactiva el Debug Mode
-REM Se crean estas anotaciones por un tema de órden y rapidez al momento de actualizar o trabajar con este código fuente
 
 :dbmode
 cls
@@ -95,17 +61,17 @@ echo Server Launcher for Minecraft
 echo ------------------------------------
 echo(
 echo Debug Mode shows all the commands that are executed by the console during each process.
-echo This mode is useful for developers to detect problems with the code more easily.
+echo This mode is useful for developer to detect problems with the code more easily.
 echo It is not recommended to activate this mode if you really do not know how to cope with it.
 echo(
-echo (N) Enable Debug Mode
-echo (M) Disable Debug Mode
-echo (V) Back to Main Menu
+echo (1) Enable Debug Mode
+echo (2) Disable Debug Mode
+echo (3) Back to Main Menu
 echo(
 set /P debug=Select one of the options = 
-if /I "%debug%" EQU "N" goto :dbinit
-if /I "%debug%" EQU "M" goto :undbinit
-if /I "%debug%" EQU "V" goto :init
+if /I "%debug%" EQU "1" goto :dbinit
+if /I "%debug%" EQU "2" goto :undbinit
+if /I "%debug%" EQU "3" goto :init
 goto :dbmode
 
 :dbinit
@@ -122,17 +88,17 @@ cls
 echo Server Launcher for Minecraft
 echo ------------------------------------
 echo(
-echo You are in the Main Menu
+echo Main Menu
 echo(
-echo (I) Start Server
-echo (C) License
-echo (S) Exit
+echo (1) Start Server
+echo (2) License
+echo (3) Exit
 echo(
 set /P menu=Select one of the options = 
-if /I "%menu%" EQU "I" goto :ram
-if /I "%menu%" EQU "D" goto :dbmode
-if /I "%menu%" EQU "C" goto :about
-if /I "%menu%" EQU "S" goto :exit
+if /I "%menu%" EQU "1" goto :ram
+if /I "%menu%" EQU "2" goto :about
+if /I "%menu%" EQU "3" goto :exit
+if /I "%menu%" EQU "4" goto :dbmode
 goto :init
 
 :undbinit
@@ -145,9 +111,6 @@ echo(
 pause
 goto :init
 
-REM Desde esta anotación se encuentran los bloques de código que contienen la información "acerca de" esta herramienta
-REM Se crean estas anotaciones por un tema de órden y rapidez al momento de actualizar o trabajar con este código fuente
-
 :about
 cls
 echo Server Installer for Minecraft
@@ -158,9 +121,6 @@ echo(
 pause
 start https://github.com/NGDPLNk/SSTools4MC/blob/main/LICENSE
 goto :init
-
-REM Desde esta anotación se encuentra el bloque que da pie a la salida de esta herramienta
-REM Se crean estas anotaciones por un tema de órden y rapidez al momento de actualizar o trabajar con este código fuente
 
 :exit
 cls
