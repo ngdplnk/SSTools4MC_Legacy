@@ -17,18 +17,7 @@ if sys.platform.startswith('win32'):  #WINDOWS
 elif sys.platform.startswith('linux') or sys.platform.startswith('darwin'):  #LINUX O MACOS
     sys.stdout.write(f"\x1b]2;Lanzador de Servidores para Minecraft\x07")
 
-def starting():
-    limpiar_consola()
-    print("Lanzador de Servidores para Minecraft")
-    print("-------------------------------------")
-    print("")
-    print("Iniciando el Server con " + gbs + "GB de RAM")
-    comando_java = "java -Xmx" + gbs + " -Xms" + gbs + " -jar server.jar nogui"
-    resultado = subprocess.run(comando_java, shell=True, capture_output=True, text=True)
-    print(resultado.stdout)
-    input()
-
-#BLOQUE DE SELECCIÓN DE RAM
+#BLOQUE DE SELECCIÓN DE RAM E INICIO
 def ram():
     limpiar_consola()
     print("Lanzador de Servidores para Minecraft")
@@ -38,7 +27,16 @@ def ram():
     while True:
         try:
             gbs = int(input("Ingresa los GB de RAM para asignar al Servidor= "))
-            starting()
+            limpiar_consola()
+            print("Lanzador de Servidores para Minecraft")
+            print("-------------------------------------")
+            print("")
+            print("Iniciando el Server con ",str(gbs),"GB de RAM")
+            comando_java = "java -Xmx",str(gbs)," -Xms",str(gbs)," -jar server.jar nogui"
+            comando_final = str(comando_java)
+            subprocess.run(comando_final, shell=True)
+            input()
+            break
         except ValueError:
             ram()
 
