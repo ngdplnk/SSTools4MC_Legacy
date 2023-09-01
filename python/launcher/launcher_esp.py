@@ -1,8 +1,10 @@
 #IMPORTACIÓN DE MÓDULOS
 import os
+import time
 import sys
 import ctypes
 import subprocess
+import webbrowser
 
 #LIMPIEZA DE PANTALLA
 def limpiar_consola():
@@ -32,9 +34,17 @@ def ram():
             print("-------------------------------------")
             print("")
             print("Iniciando el Server con ",str(gbs),"GB de RAM")
-            comando_java = "java -Xmx",str(gbs)," -Xms",str(gbs)," -jar server.jar nogui"
+            comando_java = f"java -Xmx{gbs}G -Xms{gbs}G -jar server.jar nogui"
             comando_final = str(comando_java)
             subprocess.run(comando_final, shell=True)
+            limpiar_consola()
+            print("Lanzador de Servidores para Minecraft")
+            print("-------------------------------------")
+            print("")
+            print("Servidor Cerrado")
+            print("")
+            print("Puedes revisar el registro en la carpeta 'logs'")
+            print("")
             input()
             break
         except ValueError:
@@ -42,12 +52,20 @@ def ram():
 
 def about():
     limpiar_consola()
-    #CÓDIGO AQUÍ
+    url = "https://github.com/NGDPLNk/SSTools4MC/blob/main/LICENSE"
+    print("Lanzador de Servidores para Minecraft")
+    print("-------------------------------------")
+    print("")
+    print("Se abrira la informacion sobre Licencia mas reciente en el navegador.")
+    print("")
+    print(url)
+    input()
+    webbrowser.open(url)
 
 def exiit():
     limpiar_consola()
-    #CÓDIGO AQUÍ
-
+    print("--------------------------------------------\nGracias por usar esta Herramienta\nMIT License - Copyright (c) 2023 NGDPL Nk\n--------------------------------------------\n")
+    break
 def dbmode():
     limpiar_consola()
     #CÓDIGO AQUÍ
