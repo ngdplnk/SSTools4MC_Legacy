@@ -22,29 +22,19 @@ elif sys.platform.startswith('linux') or sys.platform.startswith('darwin'):  #LI
 #BLOQUE DE SELECCIÓN DE RAM E INICIO
 def ram():
     limpiar_consola()
-    print("Lanzador de Servidores para Minecraft")
-    print("-------------------------------------")
-    print("")
-    print("Puedes volver al Menú Principal con 'N', o")
+    print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nPuedes volver al Menú Principal con 'N', o")
     while True:
         try:
             gbs = int(input("Ingresa los GB de RAM para asignar al Servidor= "))
             limpiar_consola()
-            print("Lanzador de Servidores para Minecraft")
-            print("-------------------------------------")
-            print("")
-            print("Iniciando el Server con ",str(gbs),"GB de RAM")
+            print("Lanzador de Servidores para Minecraft\n-------------------------------------\n")
+            print("Iniciando el Server con",gbs,"GB de RAM")
             comando_java = f"java -Xmx{gbs}G -Xms{gbs}G -jar server.jar nogui"
             comando_final = str(comando_java)
             subprocess.run(comando_final, shell=True)
+            input("\nPresiona una tecla para continuar")
             limpiar_consola()
-            print("Lanzador de Servidores para Minecraft")
-            print("-------------------------------------")
-            print("")
-            print("Servidor Cerrado")
-            print("")
-            print("Puedes revisar el registro en la carpeta 'logs'")
-            print("")
+            print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nServidor Cerrado\n\nPuedes revisar el registro en la carpeta 'logs'\n")
             input()
             break
         except ValueError:
@@ -53,37 +43,24 @@ def ram():
 def about():
     limpiar_consola()
     url = "https://github.com/NGDPLNk/SSTools4MC/blob/main/LICENSE"
-    print("Lanzador de Servidores para Minecraft")
-    print("-------------------------------------")
-    print("")
-    print("Se abrira la informacion sobre Licencia mas reciente en el navegador.")
-    print("")
+    print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nSe abrira la informacion sobre Licencia mas reciente en el navegador\n")
     print(url)
-    input()
+    print("")
+    input("Presiona cualquier tecla para continuar")
     webbrowser.open(url)
 
 def exiit():
     limpiar_consola()
     print("--------------------------------------------\nGracias por usar esta Herramienta\nMIT License - Copyright (c) 2023 NGDPL Nk\n--------------------------------------------\n")
-    break
+
 def dbmode():
     limpiar_consola()
     #CÓDIGO AQUÍ
 
 while True:
     limpiar_consola()
-    print("Lanzador de Servidores para Minecraft")
-    print("-------------------------------------")
-    print("")
-    print("Menú Principal")
-    print("")
-    print("(1) Iniciar Servidor")
-    print("(2) Licencia")
-    print("(3) Salir")
-    print("")
-    
-    seleccion = input("Selecciona una opción= ")
-    
+    print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nMenú Principal\n\n(1) Iniciar Servidor\n(2) Licencia\n(3) Salir\n")
+    seleccion = input("Selecciona una opción= ")    
     if seleccion == "1":
         ram()
     elif seleccion == "2":
@@ -92,5 +69,3 @@ while True:
         exiit()
     elif seleccion == "4":
         dbmode()
-
-input()
