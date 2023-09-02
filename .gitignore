@@ -2,7 +2,7 @@
 *.d
 
 #Archivos de VSCode
-#.vscode/
+.vscode/
 
 # Archivos Objeto
 *.o
