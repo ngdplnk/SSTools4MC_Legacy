@@ -21,9 +21,50 @@ elif sys.platform.startswith('linux') or sys.platform.startswith('darwin'):#LINU
 
 #CONFIGURACIÓN
 def config():
-    print("")
+    limpiar_consola()
+    props = "server.properties"
+    if os.path.exists(props):
+        online = None
+        onlinetxt = None
+        modo = None
+        dificultad = None
+        jugadores = None
+        with open(props, "r") as lectura:
+            lineas = lectura.readlines()
+        if len(lineas) >= 34:
+            linea_34 = lineas[33]
+            if "online-mode=true" in linea_34:
+                online = False
+            elif "online-mode=false" in linea_34:
+                online = True
+        if online == True:
+            onlinetxt = "ONLINE"
+        elif online == False:
+            onlinetxt = "OFFLINE"
+        if len(lineas) >= 18:
+            linea_18 = lineas[33]
+        limpiar_consola()
+        print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nConfiguración del Servidor\n")
+        print("(1) Cambiar a Modo",onlinetxt)
+        print("(2) Cambiar Modo de Juego\n(3) Cambiar Dificultad\n(4) Cambiar Máximo de Jugadores\n(5) Volver al Menú Principal")
+        confsel = input("Selecciona una opción= ")
+        if confsel == "1":
+            limpiar_consola()
+            if online == True:
+                lineas[33] = "online-mode=true"
+            elif online == False:
+                lineas[33] = "online-mode=false"
+            print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nModo de Juego Cambiado a",onlinetxt)
+            time.sleep(1)
+            config()
+        elif confsel == "2":
 
-#RAM INICIO
+    else:
+        limpiar_consola()
+        print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl archivo de configuración aún no existe.\nDebes iniciar correctamente el Servidor al menos 1 vez antes de configurar.\n")
+        input("Presiona ENTER para continuar.")
+
+#INICIO
 def ram():
     limpiar_consola()
     print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nPuedes volver al Menú Principal con 'N', o")
