@@ -19,19 +19,15 @@ if sys.platform.startswith('win32'):#WINDOWS
 elif sys.platform.startswith('linux') or sys.platform.startswith('darwin'):#LINUX O MACOS
     sys.stdout.write(f"\x1b]2;Lanzador de Servidores para Minecraft\x07")
 
-#BLOQUE REGRESO
-def menu():
-    return
-
-#BLOQUE SELECCIÓN RAM INICIO
+#BLOQUE RAM INICIO
 def ram():
     limpiar_consola()
     print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nPuedes volver al Menú Principal con 'N', o")
-    while True:
-        entrada = input("Ingresa los GB de RAM para asignar al Servidor= ")
+    entrada = input("Ingresa los GB de RAM para asignar al Servidor= ")
+    try:    
         if entrada.lower() == 'n':
-            break
-        try:
+            return
+        else:
             gbs = int(entrada)
             limpiar_consola()
             print("Lanzador de Servidores para Minecraft\n-------------------------------------\n")
@@ -39,13 +35,12 @@ def ram():
             comando_java = f"java -Xmx{gbs}G -Xms{gbs}G -jar server.jar nogui"
             comando_final = str(comando_java)
             subprocess.run(comando_final, shell=True)
-            input("\nPresiona una tecla para continuar")
+            input("\nPresiona ENTER para continuar.")
             limpiar_consola()
             print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nServidor Cerrado\n\nPuedes revisar el registro en la carpeta 'logs'\n")
-            input("Presiona una tecla para continuar")
-            break
-        except ValueError:
-            ram()
+            input("Presiona ENTER para continuar.")
+    except ValueError:
+        ram()
 
 #BLOQUE LICENCIAS
 def about():
@@ -54,7 +49,7 @@ def about():
     print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nSe abrira la informacion sobre Licencia mas reciente en el navegador\n")
     print(url)
     print("")
-    input("Presiona una tecla para continuar")
+    input("Presiona ENTER para continuar.")
     webbrowser.open(url)
 
 #BLOQUE SALIDA
