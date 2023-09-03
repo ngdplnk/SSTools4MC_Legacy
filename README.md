@@ -9,7 +9,7 @@ Server Startup Tools for Minecraft es un conjunto de herramientas que te ayudar�
 # **Instalador de servidores**
 ## **Requisitos mínimos de esta herramienta:**
 
-- SO: Windows 10 v.1803 (build 17134) de 64 bits.
+- SO: Windows 10 v1803 (build 17134) de 64 bits.
 
 - Procesador: Arquitectura de x64.
 
@@ -25,18 +25,18 @@ También requiere permisos de administrador para poder acceder y crear los archi
 # **Lanzador de servidores**
 ## **Requisitos mínimos de esta herramienta:**
 
-- SO: Windows 7 SP1 o superior de 64 bits.
+- SO: Windows 8 v6.2.9200.16384 o superior de 64 bits.
 
 - Procesador: 1 Núcleo de 1.00GHz; Arquitectura de x64.
 
 - RAM: Varía dependiendo de la cantidad memoria RAM asignada para el Servidor.
 
-- Espacio en disco: Varía dependiendo de cada servidor.
+- Espacio en disco: Varía dependiendo de cada Servidor.
 
 
-Este software puede requerir de una conexión a internet si quieres que tu servidor esté accesible para cualquier jugador.
+Este software puede requerir de una conexión a internet si quieres que tu Servidor esté accesible para cualquier jugador.
 
-Necesitas tener a lo menos Java 8 para poder iniciar un servidor hasta la Versión 1.16.5. A partir de la Versión 1.17, es necesrio contar con JDK 16. A partir de la Versión 1.18, es necesario contar con JDK 17.
+Necesitas tener a lo menos Java 8 para poder iniciar un Servidor hasta la versión 1.16.5. A partir de la versión 1.17, es necesrio contar con JDK 16. A partir de la Versión 1.18, es necesario contar con JDK 17.
 
 También requiere permisos de administrador para acceder a las carpetas y archivos de tu servidor.
 
@@ -62,5 +62,5 @@ NGDPL Nk no es dueño ni tampoco almacena ningún producto de Oracle. Tampoco de
 
 **Cada elemento, nombre, correspondiente a Oracle, es usado cumpliendo los [Términos de uso](https://www.oracle.com/legal/terms.html) y las [Trademarks](https://www.oracle.com/legal/trademarks.html)**
 
-# **Gracias Por Usar Este Conjunto De Herramientas**
+# **Gracias por usar este conjunto de herramientas**
 ©2023 - NGDPL Nk
