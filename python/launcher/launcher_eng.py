@@ -15,9 +15,9 @@ def limpiar_consola():
 
 #CONSOLE TITLE CHANGE
 if sys.platform.startswith('win32'):#WINDOWS
-    ctypes.windll.kernel32.SetConsoleTitleW("Server Launcher for Minecraft")
+    ctypes.windll.kernel32.SetConsoleTitleW("BETA Server Launcher for Minecraft")
 elif sys.platform.startswith('linux') or sys.platform.startswith('darwin'):#LINUX OR MACOS
-    sys.stdout.write(f"\x1b]2;Server Launcher for Minecraft\x07")
+    sys.stdout.write(f"\x1b]2;BETA Server Launcher for Minecraft\x07")
 
 #RAM START
 def ram():
@@ -29,16 +29,19 @@ def ram():
             return
         else:
             gbs = int(entrada)
-            limpiar_consola()
-            print("Server Launcher for Minecraft\n-------------------------------------\n")
-            print("Starting the Server with",gbs,"GB of RAM")
-            comando_java = f"java -Xmx{gbs}G -Xms{gbs}G -jar server.jar nogui"
-            comando_final = str(comando_java)
-            subprocess.run(comando_final, shell=True)
-            input("\nPress ENTER to continue.")
-            limpiar_consola()
-            print("Server Launcher for Minecraft\n-------------------------------------\n\nServer Closed\n\nYou can check the console log in 'logs' folder\n")
-            input("Press ENTER to continue.")
+            if gbs <= 0 or gbs > 1024:
+                ram()
+            else:
+                limpiar_consola()
+                print("Server Launcher for Minecraft\n-------------------------------------\n")
+                print("Starting the Server with",gbs,"GB of RAM")
+                comando_java = f"java -Xmx{gbs}G -Xms{gbs}G -jar server.jar nogui"
+                comando_final = str(comando_java)
+                subprocess.run(comando_final, shell=True)
+                input("\nPress ENTER to continue.")
+                limpiar_consola()
+                print("Server Launcher for Minecraft\n-------------------------------------\n\nServer Closed\n\nYou can check the console log in 'logs' folder\n")
+                input("Press ENTER to continue.")
     except ValueError:
         ram()
 
@@ -56,7 +59,7 @@ def about():
 def exiit():
     limpiar_consola()
     print("--------------------------------------------\nThank you for using this tool\nMIT License - Copyright (c) 2023 NGDPL Nk\n--------------------------------------------\n")
-    time.sleep(3)
+    time.sleep(1)
     sys.exit()
 
 #MAIN MENU

@@ -15,9 +15,9 @@ def limpiar_consola():
 
 #CAMBIO NOMBRE VENTANA
 if sys.platform.startswith('win32'):#WINDOWS
-    ctypes.windll.kernel32.SetConsoleTitleW("Lanzador de Servidores para Minecraft")
+    ctypes.windll.kernel32.SetConsoleTitleW("BETA Lanzador de Servidores para Minecraft")
 elif sys.platform.startswith('linux') or sys.platform.startswith('darwin'):#LINUX O MACOS
-    sys.stdout.write(f"\x1b]2;Lanzador de Servidores para Minecraft\x07")
+    sys.stdout.write(f"\x1b]2;BETA Lanzador de Servidores para Minecraft\x07")
 
 #BLOQUE RAM INICIO
 def ram():
@@ -29,16 +29,19 @@ def ram():
             return
         else:
             gbs = int(entrada)
-            limpiar_consola()
-            print("Lanzador de Servidores para Minecraft\n-------------------------------------\n")
-            print("Iniciando el Server con",gbs,"GB de RAM")
-            comando_java = f"java -Xmx{gbs}G -Xms{gbs}G -jar server.jar nogui"
-            comando_final = str(comando_java)
-            subprocess.run(comando_final, shell=True)
-            input("\nPresiona ENTER para continuar.")
-            limpiar_consola()
-            print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nServidor Cerrado\n\nPuedes revisar el registro en la carpeta 'logs'\n")
-            input("Presiona ENTER para continuar.")
+            if gbs <= 0 or gbs > 1024:
+                ram()
+            else:
+                limpiar_consola()
+                print("Lanzador de Servidores para Minecraft\n-------------------------------------\n")
+                print("Iniciando el Server con",gbs,"GB de RAM")
+                comando_java = f"java -Xmx{gbs}G -Xms{gbs}G -jar server.jar nogui"
+                comando_final = str(comando_java)
+                subprocess.run(comando_final, shell=True)
+                input("\nPresiona ENTER para continuar.")
+                limpiar_consola()
+                print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nServidor Cerrado\n\nPuedes revisar el registro en la carpeta 'logs'\n")
+                input("Presiona ENTER para continuar.")
     except ValueError:
         ram()
 
@@ -56,7 +59,7 @@ def about():
 def exiit():
     limpiar_consola()
     print("--------------------------------------------\nGracias por usar esta Herramienta\nMIT License - Copyright (c) 2023 NGDPL Nk\n--------------------------------------------\n")
-    time.sleep(3)
+    time.sleep(1)
     sys.exit()
 
 #BLOQUE MENÚ PRINCIPAL
