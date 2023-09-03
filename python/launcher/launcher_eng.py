@@ -15,9 +15,9 @@ def limpiar_consola():
 
 #CONSOLE TITLE CHANGE
 if sys.platform.startswith('win32'):#WINDOWS
-    ctypes.windll.kernel32.SetConsoleTitleW("BETA Server Launcher for Minecraft")
+    ctypes.windll.kernel32.SetConsoleTitleW("Server Launcher for Minecraft")
 elif sys.platform.startswith('linux') or sys.platform.startswith('darwin'):#LINUX OR MACOS
-    sys.stdout.write(f"\x1b]2;BETA Server Launcher for Minecraft\x07")
+    sys.stdout.write(f"\x1b]2;Server Launcher for Minecraft\x07")
 
 #RAM START
 def ram():

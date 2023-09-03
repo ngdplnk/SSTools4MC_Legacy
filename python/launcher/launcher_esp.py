@@ -15,9 +15,9 @@ def limpiar_consola():
 
 #CAMBIO NOMBRE VENTANA
 if sys.platform.startswith('win32'):#WINDOWS
-    ctypes.windll.kernel32.SetConsoleTitleW("BETA Lanzador de Servidores para Minecraft")
+    ctypes.windll.kernel32.SetConsoleTitleW("Lanzador de Servidores para Minecraft")
 elif sys.platform.startswith('linux') or sys.platform.startswith('darwin'):#LINUX O MACOS
-    sys.stdout.write(f"\x1b]2;BETA Lanzador de Servidores para Minecraft\x07")
+    sys.stdout.write(f"\x1b]2;Lanzador de Servidores para Minecraft\x07")
 
 #BLOQUE RAM INICIO
 def ram():
