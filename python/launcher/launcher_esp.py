@@ -1,4 +1,4 @@
-#IMPORTACIÓN MÓDULOS
+#MÓDULOS
 import os
 import time
 import sys
@@ -6,20 +6,24 @@ import ctypes
 import subprocess
 import webbrowser
 
-#LIMPIEZA PANTALLA
+#LIMPIAR CONSOLA
 def limpiar_consola():
     if os.name == 'nt':#WINDOWS
         os.system('cls')
     else:#LINUX O MACOS
         os.system('clear')
 
-#CAMBIO NOMBRE VENTANA
+#NOMBRE VENTANA
 if sys.platform.startswith('win32'):#WINDOWS
     ctypes.windll.kernel32.SetConsoleTitleW("Lanzador de Servidores para Minecraft")
 elif sys.platform.startswith('linux') or sys.platform.startswith('darwin'):#LINUX O MACOS
     sys.stdout.write(f"\x1b]2;Lanzador de Servidores para Minecraft\x07")
 
-#BLOQUE RAM INICIO
+#CONFIGURACIÓN
+def config():
+    print("")
+
+#RAM INICIO
 def ram():
     limpiar_consola()
     print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nPuedes volver al Menú Principal con 'N', o")
@@ -32,6 +36,10 @@ def ram():
             if gbs <= 0 or gbs > 1024:
                 ram()
             else:
+                eula_archivo = "eula.txt"
+                eula = "eula=true"
+                with open(eula_archivo, "w") as reemplazo:
+                    reemplazo.write(eula)
                 limpiar_consola()
                 print("Lanzador de Servidores para Minecraft\n-------------------------------------\n")
                 print("Iniciando el Server con",gbs,"GB de RAM")
@@ -45,7 +53,7 @@ def ram():
     except ValueError:
         ram()
 
-#BLOQUE LICENCIAS
+#LICENCIA
 def about():
     limpiar_consola()
     url = "https://github.com/NGDPLNk/SSTools4MC/blob/main/LICENSE"
@@ -55,21 +63,23 @@ def about():
     input("Presiona ENTER para continuar.")
     webbrowser.open(url)
 
-#BLOQUE SALIDA
+#SALIDA
 def exiit():
     limpiar_consola()
     print("--------------------------------------------\nGracias por usar esta Herramienta\nMIT License - Copyright (c) 2023 NGDPL Nk\n--------------------------------------------\n")
     time.sleep(1)
     sys.exit()
 
-#BLOQUE MENÚ PRINCIPAL
+#MENÚ PRINCIPAL
 while True:
     limpiar_consola()
-    print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nMenú Principal\n\n(1) Iniciar Servidor\n(2) Licencia\n(3) Salir\n")
+    print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nMenú Principal\n\n(1) Iniciar Servidor\n(2) Configurar Servidor\n(3) Licencia\n(4) Salir\n")
     seleccion = input("Selecciona una opción= ")    
     if seleccion == "1":
         ram()
     elif seleccion == "2":
-        about()
+        config()
     elif seleccion == "3":
+        about()
+    elif seleccion == "4":
         exiit()
