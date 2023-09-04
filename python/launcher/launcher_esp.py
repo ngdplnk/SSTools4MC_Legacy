@@ -45,26 +45,34 @@ def config():
                 lineas[6] = ""
             with open(props, "w") as propsupd:
                 propsupd.writelines(lineas)
-        if len(lineas) >= 22:
-            linea_22 = lineas[21]
-            if "hellworld=false" in linea_22:
-                lineas[21] = ""
-            elif "hellworld=true" in linea_22:
-                lineas[21] = ""
+        if len(lineas) >= 21:
+            linea_21_1 = lineas[20]
+            if "hellworld=false" in linea_21_1:
+                lineas[20] = ""
+            elif "hellworld=true" in linea_21_1:
+                lineas[20] = ""
             with open(props, "w") as propsupd:
                 propsupd.writelines(lineas)
-        if len(lineas) >= 40:
-            linea_40 = lineas[39]
-            if "previews-chat=false" in linea_40:
-                lineas[39] = ""
-            elif "previews-chat=true" in linea_40:
-                lineas[39] = ""
+        if len(lineas) >= 38:
+            linea_38 = lineas[37]
+            if "previews-chat=false" in linea_38:
+                lineas[37] = ""
+            elif "previews-chat=true" in linea_38:
+                lineas[37] = ""
             with open(props, "w") as propsupd:
                 propsupd.writelines(lineas)
-        if len(lineas) >= 60:
-            linea_60 = lineas[59]
-            if "texture-pack=" in linea_60:
-                lineas[59] = ""
+        if len(lineas) >= 51:
+            linea_51 = lineas[50]
+            if "snooper-enabled=false" in linea_51:
+                lineas[50] = ""
+            elif "snooper-enabled=true" in linea_51:
+                lineas[50] = ""
+            with open(props, "w") as propsupd:
+                propsupd.writelines(lineas)
+        if len(lineas) >= 56:
+            linea_56 = lineas[55]
+            if "texture-pack=" in linea_56:
+                lineas[55] = ""
             with open(props, "w") as propsupd:
                 propsupd.writelines(lineas)
         if len(lineas) >= 34:
