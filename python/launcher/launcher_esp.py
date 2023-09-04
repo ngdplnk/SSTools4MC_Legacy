@@ -37,6 +37,36 @@ def config():
         linea_29 = "."
         with open(props, "r") as lectura:
             lineas = lectura.readlines()
+        if len(lineas) >= 7:
+            linea_7_1 = lineas[6]
+            if "debug=false" in linea_7_1:
+                lineas[6] = ""
+            elif "debug=true" in linea_7_1:
+                lineas[6] = ""
+            with open(props, "w") as propsupd:
+                propsupd.writelines(lineas)
+        if len(lineas) >= 22:
+            linea_22 = lineas[21]
+            if "hellworld=false" in linea_22:
+                lineas[21] = ""
+            elif "hellworld=true" in linea_22:
+                lineas[21] = ""
+            with open(props, "w") as propsupd:
+                propsupd.writelines(lineas)
+        if len(lineas) >= 40:
+            linea_40 = lineas[39]
+            if "previews-chat=false" in linea_40:
+                lineas[39] = ""
+            elif "previews-chat=true" in linea_40:
+                lineas[39] = ""
+            with open(props, "w") as propsupd:
+                propsupd.writelines(lineas)
+        if len(lineas) >= 60:
+            linea_60 = lineas[59]
+            if "texture-pack=" in linea_60:
+                lineas[59] = ""
+            with open(props, "w") as propsupd:
+                propsupd.writelines(lineas)
         if len(lineas) >= 34:
             linea_34 = lineas[33]
             if "online-mode=true" in linea_34:
