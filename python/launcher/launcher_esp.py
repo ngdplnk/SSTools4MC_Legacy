@@ -71,21 +71,6 @@ def version():
         else:
             versioon = versinput
             verslinks()
-            else:
-                eula_archivo = "eula.txt"
-                eula = "eula=true"
-                with open(eula_archivo, "w") as reemplazo:
-                    reemplazo.write(eula)
-                limpiar_consola()
-                print("Lanzador de Servidores para Minecraft\n-------------------------------------\n")
-                print("Iniciando el Server con",gbs,"GB de RAM")
-                comando_java = f"java -Xmx{gbs}G -Xms{gbs}G -jar server.jar nogui"
-                comando_final = str(comando_java)
-                subprocess.run(comando_final, shell=True)
-                input("\nPresiona ENTER para continuar.")
-                limpiar_consola()
-                print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nServidor Cerrado\n\nPuedes revisar el registro en la carpeta 'logs'\n")
-                input("Presiona ENTER para continuar.")
     except ValueError:
         ram()
 
