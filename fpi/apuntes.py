@@ -29,3 +29,18 @@
 
 #tener en consideración que la tabla de valores manejada por python inicia desde 0, por lo que las posiciones se cuentan desde ese número
 #no se pueden indexar números int() ni float()
+#los strings se pueden indexar en valores negativos, partiendo como [-1] la última letra de este, hacia atrás
+
+#MÉTODOS DE LOS STRINGS
+"<string>.<método>(<parámetros>)"
+#un ejemplo de esto puede ser
+"t = 'hola'"
+"print(t.upper())"
+"'HOLI'"
+
+#.lower devuelve el string en minúsculas
+#.upper devuelve el string en mayúsculas
+#.islower devuelve True si todas las letras son minúsculas
+#.isupper devuelve True si todas las letras son mayúsculas
+#.isdigit devuelve True si el string está compuesto sólo por números ENTEROS POSITIVOS
+
