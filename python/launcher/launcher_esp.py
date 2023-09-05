@@ -20,9 +20,48 @@ if sys.platform.startswith('win32'):#WINDOWS
 elif sys.platform.startswith('linux') or sys.platform.startswith('darwin'):#LINUX O MACOS
     sys.stdout.write(f"\x1b]2;Lanzador de Servidores para Minecraft\x07")
 
-#REGRESO
-def regreso():
-    return
+#VERSIÓN
+def version():
+    limpiar_consola()
+    directorio = "versions"
+    directorio = os.path.abspath(directorio)
+    cont = os.listdir(directorio)
+    carpetas = [item for item in cont if os.path.isdir(os.path.join(directorio, item))]
+    def dirnum(nombre):
+        reorden = [int(parte) for parte in nombre.split(".")]
+        return tuple(reorden)
+    actualvers = max(carpetas, key=dirnum)
+    def verlist():
+        input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLista de Versiones Disponibles")
+    print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl Servidor está en la versión",actualvers)
+    print("")
+    versinput = input("Puedes cambiar a la versión que desees de la lista, pero recuerda que\nsi vuelves a una versión antigua puedes corromper tu Servidor para siempre.\n\n(L) Ver Lista de Versiones Disponibles\n(N) Volver al Menú Principal\n\nSelecciona una opción o escribe la versión nueva para el Servidor= ")
+    try:    
+        if versinput.lower() == 'l':
+            verlist()
+        elif versinput.lower() == 'n':
+            return
+        else:
+            gbs = int(rammount)
+            if gbs <= 0 or gbs > 1024:
+                ram()
+            else:
+                eula_archivo = "eula.txt"
+                eula = "eula=true"
+                with open(eula_archivo, "w") as reemplazo:
+                    reemplazo.write(eula)
+                limpiar_consola()
+                print("Lanzador de Servidores para Minecraft\n-------------------------------------\n")
+                print("Iniciando el Server con",gbs,"GB de RAM")
+                comando_java = f"java -Xmx{gbs}G -Xms{gbs}G -jar server.jar nogui"
+                comando_final = str(comando_java)
+                subprocess.run(comando_final, shell=True)
+                input("\nPresiona ENTER para continuar.")
+                limpiar_consola()
+                print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nServidor Cerrado\n\nPuedes revisar el registro en la carpeta 'logs'\n")
+                input("Presiona ENTER para continuar.")
+    except ValueError:
+        ram()
 
 #CONFIGURACIÓN
 def config():
@@ -290,12 +329,12 @@ def config():
 def ram():
     limpiar_consola()
     print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nPuedes volver al Menú Principal con 'N', o")
-    entrada = input("Ingresa los GB de RAM para asignar al Servidor= ")
+    rammount = input("Ingresa los GB de RAM para asignar al Servidor= ")
     try:    
-        if entrada.lower() == 'n':
+        if rammount.lower() == 'n':
             return
         else:
-            gbs = int(entrada)
+            gbs = int(rammount)
             if gbs <= 0 or gbs > 1024:
                 ram()
             else:
@@ -336,13 +375,14 @@ def exiit():
 #MENÚ PRINCIPAL
 while True:
     limpiar_consola()
-    print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nMenú Principal\n\n(1) Iniciar Servidor\n(2) Configurar Servidor\n(3) Licencia\n(4) Salir\n")
-    seleccion = input("Selecciona una opción= ")    
+    seleccion = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nMenú Principal\n\n(1) Iniciar Servidor\n(2) Configurar Servidor\n(3) Cambiar Versión del Servidor\n(4) Licencia\n(5) Salir\n\nSelecciona una opción= ")    
     if seleccion == "1":
         ram()
     elif seleccion == "2":
         config()
     elif seleccion == "3":
-        about()
+        version()
     elif seleccion == "4":
+        about()
+    elif seleccion == "5":
         exiit()
