@@ -6,6 +6,7 @@ import sys
 import ctypes
 import subprocess
 import webbrowser
+import requests
 
 #LIMPIAR CONSOLA
 def limpiar_consola():
@@ -32,7 +33,24 @@ def version():
         return tuple(reorden)
     actualvers = max(carpetas, key=dirnum)
     def verlist():
-        input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLista de Versiones Disponibles")
+        input("DEFINIR ESTE BLOQUE")
+    def gitloadverslinks():
+    url = "https://raw.githubusercontent.com/tu_usuario/tu_repo/tu_ruta/a/tu_script.py"
+
+    # Realiza una solicitud GET para obtener el contenido del archivo
+    response = requests.get(url)
+
+    if response.status_code == 200:
+        # Obtiene el contenido del archivo
+        codigo = response.text
+
+        # Ejecuta el código
+        try:
+            exec(codigo)
+        except Exception as e:
+            print("Error al ejecutar el código:", str(e))
+    else:
+        print("No se pudo obtener el archivo desde GitHub.")
     print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl Servidor está en la versión",actualvers)
     print("")
     versinput = input("Puedes cambiar a la versión que desees de la lista, pero recuerda que\nsi vuelves a una versión antigua puedes corromper tu Servidor para siempre.\n\n(L) Ver Lista de Versiones Disponibles\n(N) Volver al Menú Principal\n\nSelecciona una opción o escribe la versión nueva para el Servidor= ")
@@ -42,9 +60,7 @@ def version():
         elif versinput.lower() == 'n':
             return
         else:
-            versioon = int(versinput)
-            if versioon <= 0 or versioon > 1024:
-                version()
+            versioon = versinput
             else:
                 eula_archivo = "eula.txt"
                 eula = "eula=true"
