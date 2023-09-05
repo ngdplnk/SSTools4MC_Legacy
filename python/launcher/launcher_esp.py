@@ -42,9 +42,9 @@ def version():
         elif versinput.lower() == 'n':
             return
         else:
-            gbs = int(rammount)
-            if gbs <= 0 or gbs > 1024:
-                ram()
+            versioon = int(versinput)
+            if versioon <= 0 or versioon > 1024:
+                version()
             else:
                 eula_archivo = "eula.txt"
                 eula = "eula=true"
