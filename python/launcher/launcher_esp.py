@@ -75,7 +75,7 @@ def version():
             elif versinput.lower() == 'n':
                 return
             else:
-                versioon = versinput
+                versioon = str(versinput)
                 verslinks()
         except ValueError:
             ram()
