@@ -1,3 +1,4 @@
+global versioon
 if versioon = "1.2.1":
     linkver = "https://assets.minecraft.net/1_2/minecraft_server.jar"
     input("holi")
