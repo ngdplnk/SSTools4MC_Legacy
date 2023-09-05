@@ -32,35 +32,45 @@ def version():
         reorden = [int(parte) for parte in nombre.split(".")]
         return tuple(reorden)
     actualvers = max(carpetas, key=dirnum)
-    def verlist():
-        input("DEFINIR ESTE BLOQUE")
-    def gitloadverslinks():
-    url = "https://raw.githubusercontent.com/tu_usuario/tu_repo/tu_ruta/a/tu_script.py"
-
-    # Realiza una solicitud GET para obtener el contenido del archivo
-    response = requests.get(url)
-
-    if response.status_code == 200:
-        # Obtiene el contenido del archivo
-        codigo = response.text
-
-        # Ejecuta el código
-        try:
-            exec(codigo)
-        except Exception as e:
-            print("Error al ejecutar el código:", str(e))
-    else:
-        print("No se pudo obtener el archivo desde GitHub.")
+    def verslist():
+        url = "https://github.com/NGDPLNk/SSTools4MC/blob/main/python/launcher/verslist.py"
+        response = requests.get(url)
+        if response.status_code == 200:
+            codigo = response.text
+            try:
+                exec(codigo)
+            except Exception as e:
+                print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nError al ejecutar el código:", str(e))
+                input("\nPresiona ENTER para continuar.")
+                version()
+        else:
+            input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nNo se pudo obtener el archivo desde GitHub.\n\nPresiona ENTER para continuar.")
+            version()
+    def verslinks():
+        url = "https://github.com/NGDPLNk/SSTools4MC/blob/main/python/launcher/verslinks.py"
+        response = requests.get(url)
+        if response.status_code == 200:
+            codigo = response.text
+            try:
+                exec(codigo)
+            except Exception as e:
+                print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nError al ejecutar el código:", str(e))
+                input("\nPresiona ENTER para continuar.")
+                version()
+        else:
+            input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nNo se pudo obtener el archivo desde GitHub.\n\nPresiona ENTER para continuar.")
+            version()
     print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl Servidor está en la versión",actualvers)
     print("")
     versinput = input("Puedes cambiar a la versión que desees de la lista, pero recuerda que\nsi vuelves a una versión antigua puedes corromper tu Servidor para siempre.\n\n(L) Ver Lista de Versiones Disponibles\n(N) Volver al Menú Principal\n\nSelecciona una opción o escribe la versión nueva para el Servidor= ")
     try:    
         if versinput.lower() == 'l':
-            verlist()
+            verslist()
         elif versinput.lower() == 'n':
             return
         else:
             versioon = versinput
+            verslinks()
             else:
                 eula_archivo = "eula.txt"
                 eula = "eula=true"
