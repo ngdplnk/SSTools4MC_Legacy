@@ -17,9 +17,9 @@ def limpiar_consola():
 
 #NOMBRE VENTANA
 if sys.platform.startswith('win32'):#WINDOWS
-    ctypes.windll.kernel32.SetConsoleTitleW("Lanzador de Servidores para Minecraft")
+    ctypes.windll.kernel32.SetConsoleTitleW("BETA Lanzador de Servidores para Minecraft")
 elif sys.platform.startswith('linux') or sys.platform.startswith('darwin'):#LINUX O MACOS
-    sys.stdout.write(f"\x1b]2;Lanzador de Servidores para Minecraft\x07")
+    sys.stdout.write(f"\x1b]2;BETA Lanzador de Servidores para Minecraft\x07")
 
 #VERSIÓN
 def version():
@@ -395,7 +395,7 @@ def exiit():
 #REAGREGAR OPCIONES CUANDO SEAN AÑADIDAS COMPLETAMENTE Y ERRORES SOLUCIONADOS
 while True:
     limpiar_consola()
-    seleccion = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nMenú Principal\n\n(1) Iniciar Servidor\n(2) Licencia\n(3) Salir\n\nSelecciona una opción= ")    
+    seleccion = input("BETA - 23w36a\nLanzador de Servidores para Minecraft\n-------------------------------------\n\nMenú Principal\n\n(1) Iniciar Servidor\n(2) Licencia\n(3) Salir\n\nSelecciona una opción= ")    
     if seleccion == "1":
         ram()
     elif seleccion == "4":
