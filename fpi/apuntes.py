@@ -78,31 +78,3 @@
 #SENTECIA IF
 #condiciona la ejecución de un bloque de sentencias a que una expresiín booleana retorne True
 #puede ser utilizado como "if", "if-else", "if-elif-else"
-
-#ACTIVIDAD
-
-#PROCESAMIENTO
-def procesamiento():
-    c = float(float(180)-float(a-b))
-    if a == b and b == c:
-        print("El triángulo es equilátero.")
-        return
-    elif a == b or a = c or c = b:
-        print("El triángulo es isóceles.")
-        return
-    else:
-        print("El triángulo no es isóceles ni equilátero")
-#ENTRADA
-while True:
-    a = input("Escriba el valor del primer ángulo interior= ")
-    try:
-        a = float(a)
-    except ValueError:
-        print("Ingresa un valor válido.\n")
-        return
-    b = input("Escriba el valor del segundo ángulo interior= ")
-    try:
-        b = float(b)
-    except ValueError:
-        print("Ingresa un valor válido.\n")
-        return
