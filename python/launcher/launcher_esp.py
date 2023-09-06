@@ -25,6 +25,20 @@ elif sys.platform.startswith('linux') or sys.platform.startswith('darwin'):#LINU
 def version():
     global versioon
     limpiar_consola()
+    def verslist():
+        url = "https://github.com/NGDPLNk/SSTools4MC/blob/main/python/launcher/verslist.py"
+        response = requests.get(url)
+        if response.status_code == 200:
+            codigo = response.text
+            try:
+                exec(codigo)
+            except Exception as e:
+                print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nError al ejecutar el código:", str(e))
+                input("\nPresiona ENTER para continuar.")
+                version()
+        else:
+            input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nNo se pudo obtener el archivo desde GitHub.\n\nPresiona ENTER para continuar.")
+            version()
     verss = "versions"
     if os.path.exists(verss):
         directorio = "versions"
@@ -38,45 +52,29 @@ def version():
             print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nNo podemos saber cuál es la versión de tu Servidor.\nDebes iniciar correctamente el Servidor al menos 1 vez antes de poder acceder a este menú.\n")
             input("Presiona ENTER para continuar.")
             return
-        def verslist():
-            url = "https://github.com/NGDPLNk/SSTools4MC/blob/main/python/launcher/verslist.py"
-            response = requests.get(url)
-            if response.status_code == 200:
-                codigo = response.text
-                try:
-                    exec(codigo)
-                except Exception as e:
-                    print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nError al ejecutar el código:", str(e))
-                    input("\nPresiona ENTER para continuar.")
-                    version()
-            else:
-                input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nNo se pudo obtener el archivo desde GitHub.\n\nPresiona ENTER para continuar.")
-                version()
-        def verslinks():
-            url = "https://github.com/NGDPLNk/SSTools4MC/blob/main/python/launcher/verslinks.py"
-            response = requests.get(url)
-            if response.status_code == 200:
-                codigo = response.text
-                try:
-                    exec(codigo)
-                except Exception as e:
-                    print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nError al ejecutar el código:", str(e))
-                    input("\nPresiona ENTER para continuar.")
-                    version()
-            else:
-                input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nNo se pudo obtener el archivo desde GitHub.\n\nPresiona ENTER para continuar.")
-                version()
         print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl Servidor está en la versión",actualvers)
         print("")
         versinput = input("Puedes cambiar a la versión que desees de la lista, pero recuerda que\nsi vuelves a una versión antigua puedes corromper tu Servidor para siempre.\n\n(L) Ver Lista de Versiones Disponibles\n(N) Volver al Menú Principal\n\nSelecciona una opción o escribe la versión nueva para el Servidor= ")
+        versioon = versinput
         try:    
             if versinput.lower() == 'l':
                 verslist()
             elif versinput.lower() == 'n':
                 return
             else:
-                versioon = str(versinput)
-                verslinks()
+                url = "https://github.com/NGDPLNk/SSTools4MC/blob/main/python/launcher/verslinks.py"
+                response = requests.get(url)
+                if response.status_code == 200:
+                    codigo = response.text
+                    try:
+                        exec(codigo)
+                    except Exception as e:
+                        print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nError al ejecutar el código:", str(e))
+                        input("\nPresiona ENTER para continuar.")
+                        version()
+                else:
+                    input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nNo se pudo obtener el archivo desde GitHub.\n\nPresiona ENTER para continuar.")
+                    version()
         except ValueError:
             version()
     else:
@@ -394,16 +392,17 @@ def exiit():
     sys.exit()
 
 #MENÚ PRINCIPAL
+#REAGREGAR OPCIONES CUANDO SEAN AÑADIDAS COMPLETAMENTE Y ERRORES SOLUCIONADOS
 while True:
     limpiar_consola()
-    seleccion = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nMenú Principal\n\n(1) Iniciar Servidor\n(2) Configurar Servidor\n(3) Cambiar Versión del Servidor\n(4) Licencia\n(5) Salir\n\nSelecciona una opción= ")    
+    seleccion = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nMenú Principal\n\n(1) Iniciar Servidor\n(2) Licencia\n(3) Salir\n\nSelecciona una opción= ")    
     if seleccion == "1":
         ram()
-    elif seleccion == "2":
-        config()
-    elif seleccion == "3":
-        version()
     elif seleccion == "4":
-        about()
+        config()
     elif seleccion == "5":
+        version()
+    elif seleccion == "2":
+        about()
+    elif seleccion == "3":
         exiit()
