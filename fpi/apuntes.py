@@ -36,7 +36,7 @@
 #un ejemplo de esto puede ser
 "t = 'hola'"
 "print(t.upper())"
-"'HOLI'"
+"'HOLA'"
 
 #.lower devuelve el string en minúsculas
 #.upper devuelve el string en mayúsculas
@@ -44,3 +44,65 @@
 #.isupper devuelve True si todas las letras son mayúsculas
 #.isdigit devuelve True si el string está compuesto sólo por números ENTEROS POSITIVOS
 
+#6 de Septiembre de 2023
+
+#PREGUNTA 3 TEST DE ENTRADA
+#a = 8
+#if a % 3 == 0:
+    #print("a es múltiplo de 3")
+#if a % 2 == 0:
+    #print("a es par")
+#else:
+    #print("a no es múltiplo de 3 ni divisible por 2")
+
+#OPERADORES DE COMPARACIÓN
+#MAYOR >
+#MAYOR O IGUAL >=
+#MENOR <
+#MENOR O IGUAL <=
+#IGUAL ==
+#DISTINTO !=
+
+#OPERADORES LÓGICOS
+#La negación "not" invierte el valor de verdad
+"not 50 > 4 -> not True -> False"
+#La conjunción "and" resulta verdadero si y solo si todas las sub-expresiones son verdaderas
+"x > y and y <= z"
+#La disyunción "or" resulta verdadero si al menos una de las sub-expresiones es verdadera
+"x != y or x <= z or y < z"
+
+#se recomienda utilizar "and" en vez de usar comparaciones triples:
+"a < b < c queda mejor como a < b and b < c"
+#de esta forma no hay ambigüedades al momento de realizar las comparaciones
+
+#SENTECIA IF
+#condiciona la ejecución de un bloque de sentencias a que una expresiín booleana retorne True
+#puede ser utilizado como "if", "if-else", "if-elif-else"
+
+#ACTIVIDAD
+
+#PROCESAMIENTO
+def procesamiento():
+    c = float(float(180)-float(a-b))
+    if a == b and b == c:
+        print("El triángulo es equilátero.")
+        return
+    elif a == b or a = c or c = b:
+        print("El triángulo es isóceles.")
+        return
+    else:
+        print("El triángulo no es isóceles ni equilátero")
+#ENTRADA
+while True:
+    a = input("Escriba el valor del primer ángulo interior= ")
+    try:
+        a = float(a)
+    except ValueError:
+        print("Ingresa un valor válido.\n")
+        return
+    b = input("Escriba el valor del segundo ángulo interior= ")
+    try:
+        b = float(b)
+    except ValueError:
+        print("Ingresa un valor válido.\n")
+        return

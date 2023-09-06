@@ -78,7 +78,7 @@ def version():
                 versioon = str(versinput)
                 verslinks()
         except ValueError:
-            ram()
+            version()
     else:
         limpiar_consola()
         print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLa carpeta de versiones aún no existe.\nDebes iniciar correctamente el Servidor al menos 1 vez antes de poder acceder a este menú.\n")
