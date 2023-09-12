@@ -17,7 +17,7 @@ def limpiar_consola():
 
 #NOMBRE VENTANA
 if sys.platform.startswith('win32'):#WINDOWS
-    ctypes.windll.kernel32.SetConsoleTitleW("BETA Lanzador de Servidores para Minecraft")
+    ctypes.windll.kernel32.SetConsoleTitleW("BETA Lanzador de Servidores para Minecraft") # type: ignore
 elif sys.platform.startswith('linux') or sys.platform.startswith('darwin'):#LINUX O MACOS
     sys.stdout.write(f"\x1b]2;BETA Lanzador de Servidores para Minecraft\x07")
 
