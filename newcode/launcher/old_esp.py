@@ -1,4 +1,5 @@
-#MÓDULOS
+#!/usr/bin/env python3
+# MÓDULOS
 import os
 import time
 import sys
@@ -6,20 +7,20 @@ import ctypes
 import subprocess
 import webbrowser
 
-#LIMPIAR CONSOLA
+# LIMPIAR CONSOLA
 def limpiar_consola():
-    if os.name == 'nt':#WINDOWS
+    if os.name == 'nt':# WINDOWS
         os.system('cls')
-    else:#LINUX O MACOS
+    else:# LINUX O MACOS
         os.system('clear')
 
-#NOMBRE VENTANA
-if sys.platform.startswith('win32'):#WINDOWS
+# NOMBRE VENTANA
+if sys.platform.startswith('win32'):# WINDOWS
     ctypes.windll.kernel32.SetConsoleTitleW("Lanzador de Servidores para Minecraft") # type: ignore
-elif sys.platform.startswith('linux') or sys.platform.startswith('darwin'):#LINUX O MACOS
+elif sys.platform.startswith('linux') or sys.platform.startswith('darwin'):# LINUX O MACOS
     sys.stdout.write(f"\x1b]2;Lanzador de Servidores para Minecraft\x07")
 
-#INICIO
+# INICIO
 def ram():
     limpiar_consola()
     print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nPuedes volver al Menú Principal con 'N', o")
@@ -49,7 +50,7 @@ def ram():
     except ValueError:
         ram()
 
-#LICENCIA
+# LICENCIA
 def about():
     limpiar_consola()
     url = "https://github.com/NGDPLNk/SSTools4MC/blob/main/LICENSE"
@@ -59,14 +60,14 @@ def about():
     input("Presiona ENTER para continuar.")
     webbrowser.open(url)
 
-#SALIDA
+# SALIDA
 def exiit():
     limpiar_consola()
     print("--------------------------------------------\nGracias por usar esta Herramienta\nMIT License - Copyright (c) 2023 NGDPL Nk\n--------------------------------------------\n")
     time.sleep(1)
     sys.exit()
 
-#MENÚ PRINCIPAL
+# MENÚ PRINCIPAL
 while True:
     limpiar_consola()
     seleccion = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nMenú Principal\n\n(1) Iniciar Servidor\n(2) Licencia\n(3) Salir\n\nSelecciona una opción= ")    

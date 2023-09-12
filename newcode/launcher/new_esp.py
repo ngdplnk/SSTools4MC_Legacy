@@ -1,4 +1,5 @@
-#MÓDULOS
+#!/usr/bin/env python3
+# MÓDULOS
 import os
 import re
 import time
@@ -8,20 +9,20 @@ import subprocess
 import webbrowser
 import requests
 
-#LIMPIAR CONSOLA
+# LIMPIAR CONSOLA
 def limpiar_consola():
     if os.name == 'nt':#WINDOWS
         os.system('cls')
     else:#LINUX O MACOS
         os.system('clear')
 
-#NOMBRE VENTANA
+# NOMBRE VENTANA
 if sys.platform.startswith('win32'):#WINDOWS
     ctypes.windll.kernel32.SetConsoleTitleW("BETA Lanzador de Servidores para Minecraft") # type: ignore
 elif sys.platform.startswith('linux') or sys.platform.startswith('darwin'):#LINUX O MACOS
     sys.stdout.write(f"\x1b]2;BETA Lanzador de Servidores para Minecraft\x07")
 
-#VERSIÓN
+# VERSIÓN
 def version():
     global versioon
     limpiar_consola()
@@ -82,7 +83,7 @@ def version():
         print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLa carpeta de versiones aún no existe.\nDebes iniciar correctamente el Servidor al menos 1 vez antes de poder acceder a este menú.\n")
         input("Presiona ENTER para continuar.")
 
-#CONFIGURACIÓN
+# CONFIGURACIÓN
 def config():
     limpiar_consola()
     props = "server.properties"
@@ -344,7 +345,7 @@ def config():
         print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl archivo de configuración aún no existe.\nDebes iniciar correctamente el Servidor al menos 1 vez antes de configurar.\n")
         input("Presiona ENTER para continuar.")
 
-#INICIO
+# INICIO
 def ram():
     limpiar_consola()
     print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nPuedes volver al Menú Principal con 'N', o")
@@ -374,7 +375,7 @@ def ram():
     except ValueError:
         ram()
 
-#LICENCIA
+# LICENCIA
 def about():
     limpiar_consola()
     url = "https://github.com/NGDPLNk/SSTools4MC/blob/main/LICENSE"
@@ -384,15 +385,15 @@ def about():
     input("Presiona ENTER para continuar.")
     webbrowser.open(url)
 
-#SALIDA
+# SALIDA
 def exiit():
     limpiar_consola()
     print("--------------------------------------------\nGracias por usar esta Herramienta\nMIT License - Copyright (c) 2023 NGDPL Nk\n--------------------------------------------\n")
     time.sleep(1)
     sys.exit()
 
-#MENÚ PRINCIPAL
-#REAGREGAR OPCIONES CUANDO SEAN AÑADIDAS COMPLETAMENTE Y ERRORES SOLUCIONADOS
+# MENÚ PRINCIPAL
+# REAGREGAR OPCIONES CUANDO SEAN AÑADIDAS COMPLETAMENTE Y ERRORES SOLUCIONADOS
 while True:
     limpiar_consola()
     seleccion = input("BETA - 23w36a\nLanzador de Servidores para Minecraft\n-------------------------------------\n\nMenú Principal\n\n(1) Iniciar Servidor\n(2) Licencia\n(3) Salir\n\nSelecciona una opción= ")    
