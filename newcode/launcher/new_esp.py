@@ -62,7 +62,7 @@ def version():
             elif versinput.lower() == 'n':
                 return
             else:
-                url = "https://github.com/NGDPLNk/SSTools4MC/blob/main/python/launcher/verslinks.py"
+                url = "https://github.com/NGDPLNk/SSTools4MC/blob/main/python/launcher/links.py"
                 response = requests.get(url)
                 if response.status_code == 200:
                     codigo = response.text
