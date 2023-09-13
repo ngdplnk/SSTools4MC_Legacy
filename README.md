@@ -18,7 +18,7 @@ To get started with SSTools4MC, follow these steps:
 
 1. Download the latest version of SSTools4MC or you desired tool from the [GitHub Releases](https://github.com/NGDPLNk/SSTools4MC/releases/latest) page.
 2. Extract the downloaded archive if it is compressed to a location of your choice or else just use it.
-3. If you are in Linux, you will need too set the AppImage file to run as executable if you want to run it with double click in properties, or run the following commands in a terminal located in the same folder of the AppImage file (replace "filename" with the name of the file you want to run:
+3. If you are in Linux, you will need to set the AppImage file to run as executable in properties, or run the following commands in a terminal located in the same folder of the AppImage file (replace "filename" with the name of the file you want to run:
 
 ```
 chmod +x filename.AppImage
