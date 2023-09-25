@@ -78,3 +78,23 @@
 #SENTECIA IF
 #condiciona la ejecución de un bloque de sentencias a que una expresiín booleana retorne True
 #puede ser utilizado como "if", "if-else", "if-elif-else"
+
+
+#LAB PROGRAMACIÓN 25-09
+#13.1 Fortalecer la resiliencia y la capacidad de adaptación a los riesgos relacionados con el clima y los desastres naturales en todos los países
+#13.2 Incorporar medidas relativas al cambio climático en las políticas, estrategias y planes nacionales
+#13.3 Mejorar la educación, la sensibilización y la capacidad humana e institucional respecto de la mitigación del cambio climático, la adaptación a él, la reducción de sus efectos y la alerta temprana
+#13.a Cumplir el compromiso de los países desarrollados que son partes en la Convención Marco de las Naciones Unidas sobre el Cambio Climático de lograr para el año 2020 el objetivo de movilizar conjuntamente 100.000 millones de dólares anuales procedentes de todas las fuentes a fin de atender las necesidades de los países en desarrollo respecto de la adopción de medidas concretas de mitigación y la transparencia de su aplicación, y poner en pleno funcionamiento el Fondo Verde para el Clima capitalizándolo lo antes posible
+#13.b Promover mecanismos para aumentar la capacidad para la planificación y gestión eficaces en relación con el cambio climático en los países menos adelantados y los pequeños Estados insulares en desarrollo, haciendo particular hincapié en las mujeres, los jóvenes y las comunidades locales y marginadas
+#* Reconociendo que la Convención Marco de las Naciones Unidas sobre el Cambio Climático es el principal foro intergubernamental internacional para negociar la respuesta mundial al cambio climático.
+
+"Tarea: diferencia entre meta y objetivo"
+
+#Determinar a cuál de las metas apuntar la solución
+"objetivo 13.3"
+
+#Especificar población objetivo
+"estudiantes de educación básica y media, de 10 a 18 años"
+
+#Elaborar un plan de acción (de 5 a 15 acciones) a implementar para entender el problema
+"conocer el entorno educativo y su aporte contra el cambio climático; conocer el perfil tecnológico de los estudiantes; realizar un test de conocimiento sobre el cambio climático a los estudiantes; investigar situación comunal con respecto al cambio climático; analizar los datos para poder adaptar nuestro programa y realizar un piloto"
