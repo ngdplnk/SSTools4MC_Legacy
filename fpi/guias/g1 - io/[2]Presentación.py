@@ -1,6 +1,8 @@
-# Escriba su código acá
-na = input("Nombre: ")
-n = na.split(" ")
-a = int(input("Año de nacimiento: "))
-e = 2023 - a
-print(f"Hola, {n[0]}. Tienes {e} años.")
+#input
+namelastname = input("Nombre: ")
+birth = int(input("Año de nacimiento: "))
+#process
+name = namelastname.split(" ")
+age = 2023 - birth
+#output
+print(f"Hola, {name[0]}. Tienes {age} años.")

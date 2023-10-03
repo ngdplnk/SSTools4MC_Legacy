@@ -1,12 +1,14 @@
-
-n1 = input()
-p1 = round((float(input())),2)
-c1 = round((float(input())),0)
-n2 = input()
-p2 = round((float(input())),2)
-c2 = round((float(input())),0)
-pf1 = round((p1*c1),2)
-pf2 = round((p2*c2),2)
-pt = pf1+pf2
-ivat = pt-(pt/1.19)
-print(f"El total para {n1} es {pf1}.\nEl total para {n2} es {pf2}.\nEl valor total de la compra es {round(pt,2)}, con {round(ivat,2)} en impuestos.")
+#input
+name1 = input()
+price1 = round((float(input())),2)
+qty1 = round((float(input())),0)
+name2 = input()
+price2 = round((float(input())),2)
+qty2 = round((float(input())),0)
+#process
+finalprice1 = round((price1*qty1),2)
+finalprice2 = round((price2*qty2),2)
+totalprice = finalprice1+finalprice2
+totaliva = totalprice-(totalprice/1.19)
+#output
+print(f"El total para {name1} es {finalprice1}.\nEl total para {name2} es {finalprice2}.\nEl valor total de la compra es {round(totalprice,2)}, con {round(totaliva,2)} en impuestos.")

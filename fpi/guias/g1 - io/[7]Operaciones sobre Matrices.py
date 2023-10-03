@@ -1,21 +1,29 @@
+#INPUT
+#matrix1
 print("Matriz 1:")
-a_11 = float(input())
-a_12 = float(input())
-a_21 = float(input())
-a_22 = float(input())
+matrix1_a = float(input())
+matrix1_b = float(input())
+matrix1_c = float(input())
+matrix1_d = float(input())
+#matrix2
 print("Matriz 2:")
-b_11 = float(input())
-b_12 = float(input())
-b_21 = float(input())
-b_22 = float(input())
-c_11 = round((a_11+b_11),2)
-c_12 = round((a_12+b_12),2)
-c_21 = round((a_21+b_21),2)
-c_22 = round((a_22+b_22),2)
-d_11 = round(((a_11*b_11)+(a_12*b_21)),2)
-d_12 = round(((a_11*b_12)+(a_12*b_22)),2)
-d_21 = round(((a_21*b_11)+(a_22*b_21)),2)
-d_22 = round(((a_21*b_12)+(a_22*b_22)),2)
-det1 = round(((a_11*a_22)-(a_21*a_12)),2)
-det2 = round(((b_11*b_22)-(b_21*b_12)),2)
-print(f"La suma de las matrices es\n{c_11} {c_12}\n{c_21} {c_22}\nLa multiplicación de las matrices es\n{d_11} {d_12}\n{d_21} {d_22}\nLos determinantes de las matrices son {det1} y {det2}")
+matrix2_a = float(input())
+matrix2_b = float(input())
+matrix2_c = float(input())
+matrix2_d = float(input())
+#PROCESS
+#sum
+sum_a = round((matrix1_a+matrix2_a),2)
+sum_b = round((matrix1_b+matrix2_b),2)
+sum_c = round((matrix1_c+matrix2_c),2)
+sum_d = round((matrix1_d+matrix2_d),2)
+#mult
+mult_a = round(((matrix1_a*matrix2_a)+(matrix1_b*matrix2_c)),2)
+mult_b = round(((matrix1_a*matrix2_b)+(matrix1_b*matrix2_d)),2)
+mult_c = round(((matrix1_c*matrix2_a)+(matrix1_d*matrix2_c)),2)
+mult_d = round(((matrix1_c*matrix2_b)+(matrix1_d*matrix2_d)),2)
+#det
+det1 = round(((matrix1_a*matrix1_d)-(matrix1_c*matrix1_b)),2)
+det2 = round(((matrix2_a*matrix2_d)-(matrix2_c*matrix2_b)),2)
+#OUTPUT
+print(f"La suma de las matrices es\n{sum_a} {sum_b}\n{sum_c} {sum_d}\nLa multiplicación de las matrices es\n{mult_a} {mult_b}\n{mult_c} {mult_d}\nLos determinantes de las matrices son {det1} y {det2}")

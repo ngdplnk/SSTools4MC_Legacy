@@ -1,4 +1,6 @@
-# Escriba su código acá
-l = int(input())
-a = (l ** 2) * ((3 * (3 ** (1 / 2)) / 2))
-print(f"El área es {round(a, 2)}")
+#input
+side = int(input())
+#process
+area = (side ** 2) * ((3 * (3 ** (1 / 2)) / 2))
+#output
+print(f"El área es {round(area, 2)}")

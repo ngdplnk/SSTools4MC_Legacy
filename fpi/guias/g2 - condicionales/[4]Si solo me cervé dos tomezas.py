@@ -21,4 +21,3 @@ elif 4.0 <= algr:
   print("¿HAY UN MÉDICO EN LA SALA?")
 else:
   print("MEDICIÓN ERRONEA")
-  
