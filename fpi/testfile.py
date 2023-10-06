@@ -1,11 +1,12 @@
-#input
-number = input()
-#process n output
-if number.isdigit():
-  number = float(number)
-  if number%2 == 0:
-    print("par")
-  else:
-    print("impar")
-else:
-  print("El número no es entero.")
+ok = False
+while ok == False:
+  try:
+    ingreso = input()
+    if ingreso[0].isspace():
+      ok = False
+    else:
+      ingreso = float(ingreso)
+      print(f"Se ha obtenido el número: {ingreso}")
+      ok = True
+  except ValueError:
+    print("¡Error de ingreso!")
