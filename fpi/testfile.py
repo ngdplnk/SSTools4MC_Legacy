@@ -1,12 +1,11 @@
-ok = False
-while ok == False:
-  try:
-    ingreso = input()
-    if ingreso[0].isspace():
-      ok = False
-    else:
-      ingreso = float(ingreso)
-      print(f"Se ha obtenido el número: {ingreso}")
-      ok = True
-  except ValueError:
-    print("¡Error de ingreso!")
+def nega(inp):
+  if inp == 1:
+    return 1
+  elif inp == 0:
+    return 0
+  elif inp < 0:
+    return nega(inp + 2) - nega(inp + 1)
+
+inp = int(input())
+final = nega(inp)
+print(final)
