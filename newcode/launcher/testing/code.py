@@ -8,7 +8,6 @@ import ctypes
 import subprocess
 import webbrowser
 import requests
-import random
 
 # LIMPIAR CONSOLA
 def limpiar_consola():
