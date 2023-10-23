@@ -76,7 +76,7 @@ def config():
         elif properties["pvp"] == "true":
             pvp = "Desactivar"
         limpiar_consola()
-        confsel = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nConfiguración del Servidor\n\n(1) Cambiar a modo {online}\n(2) {hard} modo extremo\n(3) {pvp} PvP\n(4) Cambiar modo de juego\n(5) Cambiar dificultad\n(6) Cambiar máximo de jugadores\n(7) Cambiar MOTD\n(8) Volver al menú principal")
+        confsel = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nConfiguración del Servidor\n\n(1) Cambiar a modo {online}\n(2) {hard} modo extremo\n(3) {pvp} PvP\n(4) Cambiar modo de juego\n(5) Cambiar dificultad\n(6) Cambiar máximo de jugadores\n(7) Cambiar MOTD\n(8) Volver al menú principal\n\nSelecciona una opción= ")
         if confsel == "1":
             if online == "Online":
                 properties["online-mode"] = "true"
