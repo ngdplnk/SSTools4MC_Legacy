@@ -24,7 +24,7 @@ elif sys.platform.startswith('linux') or sys.platform.startswith('darwin'): # En
 # INICIO DEL SERVIDOR
 def ram():
     limpiar_consola()
-    rammount = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nPuedes volver al Menú Principal con 'N', o\nIngresa los GB de RAM para asignar al Servidor= ")
+    rammount = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nPuedes volver al menú principal con 'N', o\nIngresa los GB de RAM para asignar al servidor= ")
     try:    
         if rammount.lower() == 'n':
             return
@@ -33,17 +33,16 @@ def ram():
             if gbs <= 0 or gbs > 1024:
                 ram()
             else:
-                eula_archivo = "eula.txt"
                 eula = "eula=true"
-                with open(eula_archivo, "w") as reemplazo:
+                with open("eula.txt", "w") as reemplazo:
                     reemplazo.write(eula)
                 limpiar_consola()
-                print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nIniciando el Server con {gbs}GB de RAM")
+                print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nIniciando el servidor con {gbs}GB de RAM.\n")
                 comando_java = f"java -Xmx{gbs}G -Xms{gbs}G -jar server.jar nogui"
                 subprocess.run(comando_java, shell=True)
                 input("\nPresiona ENTER para continuar.")
                 limpiar_consola()
-                input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nServidor Cerrado\n\nPuedes revisar el registro en la carpeta 'logs'\n\nPresiona ENTER para continuar.")
+                input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl servidor se ha cerrado\n\nPuedes revisar el registro en la carpeta 'logs'\n\nPresiona ENTER para continuar.")
     except ValueError:
         ram()
 
@@ -64,26 +63,26 @@ def config():
                     key, value = line.split('=')
                     properties[key.strip()] = value.strip()
         if properties["online-mode"] == "false":
-            online = "Online"
+            online = "ONLINE"
         elif properties["online-mode"] == "true":
-            online = "Offline"
+            online = "OFFLINE"
         if properties["hardcore"] == "false":
-            hard = "Activar"
+            hard = "ACTIVAR"
         elif properties["hardcore"] == "true":
-            hard = "Desactivar"
+            hard = "DESACTIVAR"
         if properties["pvp"] == "false":
-            pvp = "Activar"
+            pvp = "ACTIVAR"
         elif properties["pvp"] == "true":
-            pvp = "Desactivar"
+            pvp = "DESACTIVAR"
         limpiar_consola()
-        confsel = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nConfiguración del Servidor\n\n(1) Cambiar a modo {online}\n(2) {hard} modo extremo\n(3) {pvp} PvP\n(4) Cambiar modo de juego\n(5) Cambiar dificultad\n(6) Cambiar máximo de jugadores\n(7) Cambiar MOTD\n(8) Volver al menú principal\n\nSelecciona una opción= ")
+        confsel = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nConfiguración del servidor\n\n(1) Cambiar a modo {online}\n(2) {hard} modo hardcore\n(3) {pvp} PvP\n(4) Cambiar modo de juego\n(5) Cambiar dificultad\n(6) Cambiar límite de jugadores\n(7) Cambiar MOTD\n(8) Volver al menú principal\n\nSelecciona una de las opciones= ")
         if confsel == "1":
-            if online == "Online":
+            if online == "ONLINE":
                 properties["online-mode"] = "true"
                 with open('server.properties', 'w') as file:
                     for key, value in properties.items():
                         file.write(f'{key}={value}\n')
-            elif online == "Offline":
+            elif online == "OFFLINE":
                 properties["online-mode"] = "false"
                 with open('server.properties', 'w') as file:
                     for key, value in properties.items():
@@ -93,35 +92,35 @@ def config():
             time.sleep(1.5)
             config()
         elif confsel == "2":
-            if hard == "Activar":
+            if hard == "ACTIVAR":
                 properties["hardcore"] = "true"
                 with open('server.properties', 'w') as file:
                     for key, value in properties.items():
                         file.write(f'{key}={value}\n')
-                hard = "activado"
-            elif hard == "Desactivar":
+                hard = "ACTIVADO"
+            elif hard == "DESACTIVAR":
                 properties["hardcore"] = "false"
                 with open('server.properties', 'w') as file:
                     for key, value in properties.items():
                         file.write(f'{key}={value}\n')
-                hard = "desactivado"
+                hard = "DESACTIVADO"
             limpiar_consola()
-            print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nModo extremo {hard}.")
+            print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nModo hardcore {hard}.")
             time.sleep(1.5)
             config()
         elif confsel == "3":
-            if pvp == "Activar":
+            if pvp == "ACTIVAR":
                 properties["pvp"] = "true"
                 with open('server.properties', 'w') as file:
                     for key, value in properties.items():
                         file.write(f'{key}={value}\n')
-                pvp = "activado"
-            elif pvp == "Desactivar":
+                pvp = "ACTIVADO"
+            elif pvp == "DESACTIVAR":
                 properties["pvp"] = "false"
                 with open('server.properties', 'w') as file:
                     for key, value in properties.items():
                         file.write(f'{key}={value}\n')
-                pvp = "desactivado"
+                pvp = "DESACTIVADO"
             limpiar_consola()
             print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nPvP {pvp}.")
             time.sleep(1.5)
@@ -131,18 +130,19 @@ def config():
                 global properties
                 modo = properties["gamemode"]
                 if modo == "survival" or modo == "0":
-                    modo = "Supervivencia"
+                    modo = "SUPERVIVENCIA"
                 elif modo == "creative" or modo == "1":
-                    modo = "Creativo"
+                    modo = "CREATIVO"
                 elif modo == "adventure" or modo == "2":
-                    modo = "Aventura"
+                    modo = "AVENTURA"
                 elif modo == "spectator" or modo == "3":
-                    modo = "Espectador"
+                    modo = "ESPECTADOR"
                 limpiar_consola()
-                modosel = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl modo de juego actual es {modo}.\n\n(1) Cambiar a Supervivencia\n(2) Cambiar a Creativo\n(3) Cambiar a Aventura\n(4) Cambiar a Espectador\n(5) Volver atrás\n(6) Volver al menú principal\n\nSelecciona una de las opciones= ")
+                #AGREGAR FORZAR MODO DE JUEGO AQUÍ ABAJO
+                modosel = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl modo de juego actual es {modo}.\n\n(1) Cambiar a SUPERVIVENCIA\n(2) Cambiar a CREATIVO\n(3) Cambiar a AVENTURA\n(4) Cambiar a ESPECTADOR\n(5) Volver atrás\n(6) Volver al menú principal\n\nSelecciona una de las opciones= ")
                 if modosel == "1":
                     properties["gamemode"] = "0"
-                    modo = "Supervivencia"
+                    modo = "SUPERVIVENCIA"
                     with open('server.properties', 'w') as file:
                         for key, value in properties.items():
                             file.write(f'{key}={value}\n')
@@ -152,7 +152,7 @@ def config():
                     juego()
                 elif modosel == "2":
                     properties["gamemode"] = "1"
-                    modo = "Creativo"
+                    modo = "CREATIVO"
                     with open('server.properties', 'w') as file:
                         for key, value in properties.items():
                             file.write(f'{key}={value}\n')
@@ -162,7 +162,7 @@ def config():
                     juego()
                 elif modosel == "3":
                     properties["gamemode"] = "2"
-                    modo = "Aventura"
+                    modo = "AVENTURA"
                     with open('server.properties', 'w') as file:
                         for key, value in properties.items():
                             file.write(f'{key}={value}\n')
@@ -172,7 +172,7 @@ def config():
                     juego()
                 elif modosel == "4":
                     properties["gamemode"] = "3"
-                    modo = "Espectador"
+                    modo = "ESPECTADOR"
                     with open('server.properties', 'w') as file:
                         for key, value in properties.items():
                             file.write(f'{key}={value}\n')
@@ -192,18 +192,18 @@ def config():
                 global properties
                 dificultad = properties["difficulty"]
                 if dificultad == "peaceful" or dificultad == "0":
-                    dificultad = "Pacífico"
+                    dificultad = "PACÍFICO"
                 elif dificultad == "easy" or dificultad == "1":
-                    dificultad = "Fácil"
+                    dificultad = "FÁCIL"
                 elif dificultad == "normal" or dificultad == "2":
-                    dificultad = "Normal"
+                    dificultad = "NORMAL"
                 elif dificultad == "hard" or dificultad == "3":
-                    dificultad = "Difícil"
+                    dificultad = "DIFÍCIL"
                 limpiar_consola()
-                difsel = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLa dificultad actual es {dificultad}.\n\n(1) Cambiar a Pacífico\n(2) Cambiar a Fácil\n(3) Cambiar a Normal\n(4) Cambiar a Difícil\n(5) Volver atrás\n(6) Volver al menú principal\n\nSelecciona una de las opciones= ")
+                difsel = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLa dificultad actual es {dificultad}.\n\n(1) Cambiar a PACÍFICO\n(2) Cambiar a FÁCIL\n(3) Cambiar a NORMAL\n(4) Cambiar a DIFÍCIL\n(5) Volver atrás\n(6) Volver al menú principal\n\nSelecciona una de las opciones= ")
                 if difsel == "1":
                     properties["difficulty"] = "0"
-                    dificultad = "Pacífico"
+                    dificultad = "PACÍFICO"
                     with open('server.properties', 'w') as file:
                         for key, value in properties.items():
                             file.write(f'{key}={value}\n')
@@ -213,7 +213,7 @@ def config():
                     difconf()
                 elif difsel == "2":
                     properties["difficulty"] = "1"
-                    dificultad = "Fácil"
+                    dificultad = "FÁCIL"
                     with open('server.properties', 'w') as file:
                         for key, value in properties.items():
                             file.write(f'{key}={value}\n')
@@ -223,7 +223,7 @@ def config():
                     difconf()
                 elif difsel == "3":
                     properties["difficulty"] = "2"
-                    dificultad = "Normal"
+                    dificultad = "NORMAL"
                     with open('server.properties', 'w') as file:
                         for key, value in properties.items():
                             file.write(f'{key}={value}\n')
@@ -233,7 +233,7 @@ def config():
                     difconf()
                 elif difsel == "4":
                     properties["difficulty"] = "3"
-                    dificultad = "Difícil"
+                    dificultad = "DIFÍCIL"
                     with open('server.properties', 'w') as file:
                         for key, value in properties.items():
                             file.write(f'{key}={value}\n')
@@ -253,15 +253,15 @@ def config():
                 global properties
                 players = properties["max-players"]
                 limpiar_consola()
-                newpl = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl límite actual de Jugadores es {players}\n\n(N) Volver atrás\n(M) Volver al menú principal\n\nSelecciona una de las opciones o\nEscribe el límite de jugadores= ")
+                newpl = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl límite de jugadores es {players}\n\n(N) Volver atrás\n(M) Volver al menú principal\n\nSelecciona una de las opciones o escribe el nuevo límite de jugadores= ")
                 if newpl.lower() == "n":
                     config()
                 elif newpl.lower() == "m":
                     return
-                else:
+                elif newpl.isnumeric():
                     try:
                         entero = int(newpl)
-                        if entero <= 0 or entero > 1024:
+                        if entero <= 0 or entero > 100000:
                             playct()
                         else:
                             properties["max-players"] = newpl
@@ -269,11 +269,13 @@ def config():
                                 for key, value in properties.items():
                                     file.write(f'{key}={value}\n')
                             limpiar_consola()
-                            print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLímite de jugadores cambiado a {entero}")
+                            print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl límite de jugadores se ha cambiado a {entero}.")
                             time.sleep(1.5)
-                            config()
+                            playct()
                     except ValueError:
                         playct()
+                else:
+                    playct()
             playct()
         elif confsel == "7":
             def motdnuevo():
@@ -281,19 +283,19 @@ def config():
                 global motd
                 motd = properties["motd"]
                 limpiar_consola()
-                motdcm = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl MOTD actual es:\n'{motd}'\n\nEl MOTD se muestra como texto plano, por lo que puede\nque se vean cosas extrañas.\n\nDeseas cambiar el MOTD?\n(1) Sí, quiero cambiarlo\n(2) No, quiero volver atrás\n(3) Volver al menú principal\n\nSelecciona una de las opciones= ")
+                motdcm = input(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl MOTD actual del servidor es:\n\n"{motd}"\n\n(1) Cambiar el MOTD\n(2) Volver atrás\n(3) Volver al menú principal\n\nSelecciona una de las opciones= ')
                 if motdcm == "1":
                     def newmotd():
                         global properties
                         global motd
                         motd = properties["motd"]
                         limpiar_consola()
-                        motd = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl MOTD actual es:\n'{motd}'\n\nEscribe aquí el nuevo MOTD= ")
+                        motd = input(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl MOTD actual del servidor es:\n\n"{motd}"\n\nSe recomienda que el nuevo MOTD tenga un máximo de 20 caracteres\n\nEscribe aquí el nuevo MOTD= ')
                         def motdconfir():
                             global properties
                             global motd
                             limpiar_consola()
-                            confir = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl nuevo MOTD es:\n'{motd}'\n\n(1) Guardar MOTD\n(2) Editar MOTD\n\nElige una de las opciones= ")
+                            confir = input(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl nuevo MOTD para el servidor es:\n\n"{motd}"\n\n(1) Guardar el nuevo MOTD\n(2) Editar el nuevo MOTD\n(3) Cancelar\n\nSelecciona una de las opciones= ')
                             if confir == "1":
                                 properties["motd"] = motd
                                 with open('server.properties', 'w') as file:
@@ -305,6 +307,8 @@ def config():
                                 motdnuevo()
                             elif confir == "2":
                                 newmotd()
+                            elif confir == "3":
+                                motdnuevo()
                             else:
                                 motdconfir()
                         motdconfir()
@@ -313,6 +317,8 @@ def config():
                     config()
                 elif motdcm == "3":
                     return
+                else:
+                    motdnuevo()
             motdnuevo()
         elif confsel == "8":
             return
@@ -320,26 +326,33 @@ def config():
             config()
     else:
         limpiar_consola()
-        input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl archivo de configuración aún no existe.\nDebes iniciar correctamente el Servidor al menos 1 vez antes de configurar.\n\nPresiona ENTER para continuar.")
+        input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl archivo de configuración del servidor aún no existe.\nDebes iniciar correctamente el servidor al menos 1 vez antes de poder configurar.\n\nPresiona ENTER para continuar.")
 
 # LICENCIA
 def about():
     limpiar_consola()
     url = "https://github.com/NGDPLNk/SSTools4MC/blob/main/LICENSE"
-    input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nSe abrira la informacion sobre Licencia mas reciente en el navegador\n\n{url}\n\nPresiona ENTER para continuar.")
-    webbrowser.open(url)
+    copyr = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nMIT License - Copyright (c) 2023 NGDPL Nk\n\n(1) Abrir licencia en el navegador\n(2) Volver al menú principal\n\nSelecciona una de las opciones= ")
+    if copyr == "1":
+        limpiar_consola()
+        input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nSe abrirá la licencia de la herramienta en tu navegador.\n\n{url}\n\nPresiona ENTER para continuar.")
+        webbrowser.open(url)
+    elif copyr == "2":
+        return
+    else:
+        about()
 
 # SALIDA
 def exiit():
     limpiar_consola()
-    print("--------------------------------------------\nGracias por usar esta Herramienta\nMIT License - Copyright (c) 2023 NGDPL Nk\n--------------------------------------------\n")
+    print("--------------------------------------------\nMuchas gracias por usar esta herramienta\nMIT License - Copyright (c) 2023 NGDPL Nk\n--------------------------------------------\n")
     time.sleep(1)
     sys.exit()
 
 # MENÚ PRINCIPAL
 while True:
     limpiar_consola()
-    seleccion = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nMenú Principal\n\n(1) Iniciar Servidor\n(2) Configurar Servidor\n(3) Licencia\n(4) Salir\n\nSelecciona una opción= ")    
+    seleccion = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\n¡Hola! Estás en el menú principal\n\n(1) Iniciar servidor\n(2) Configurar servidor\n(3) Licencia\n(4) Salir\n\nSelecciona una de las opciones= ")
     if seleccion == "1":
         ram()
     elif seleccion == "2":
