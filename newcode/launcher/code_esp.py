@@ -9,7 +9,10 @@ import subprocess
 import webbrowser
 import datetime
 
-# FUNCIÓN CLS
+# VARIABLES
+valor = None
+
+# CLS
 def limpiar_consola():
     if os.name == 'nt': # En Windows
         os.system('cls')
@@ -30,58 +33,48 @@ def ram():
     vjava = None
     if valor == None:
         valor = "GB"
-        valor1 = "Gigabytes"
+        valor1 = "GIGABYTES"
         vjava = "G"
         gbormb = "MEGABYTES"
     if valor == "GB":
-        valor1 = "Gigabytes"
+        valor1 = "GIGABYTES"
         vjava = "G"
         gbormb = "MEGABYTES"
     elif valor == "MB":
-        valor1 = "Megabytes"
+        valor1 = "MEGABYTES"
         vjava = "M"
         gbormb = "GIGABYTES"
+    gbs = 0
     limpiar_consola()
-    rammount = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\n(C) Usar {gbormb}\n(N) Volver al menú principal\n\nSelecciona una de las opciones o ingresa los {valor1} de RAM para asignar al servidor= ")
+    rammount = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\n(C) Usar RAM en {gbormb}\n(N) Volver al menú principal\n\nSelecciona una de las opciones o ingresa los {valor1} de RAM para asignar al servidor= ").replace(" ", "")
     try:    
         if rammount.lower() == "c":
             if valor == "GB":
                 limpiar_consola()
-                print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nRAM para iniciar cambiada a {gbormb}.")
+                print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nAhora la RAM está en {gbormb}.")
                 time.sleep(1.5)
                 valor = "MB"
                 ram()
             elif valor == "MB":
                 limpiar_consola()
-                print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nRAM para iniciar cambiada a {gbormb}.")
+                print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nAhora la RAM está en {gbormb}.")
                 time.sleep(1.5)
                 valor = "GB"
                 ram()
-        elif rammount.lower() == 'n':
+        elif rammount.lower() == "n":
             return
         else:
-            
-            # EXISTE UN BUG MUY ESPECÍFICO, QUE NO SÉ SI SE CUMPLE EN MÁS CASOS
-            # SI SE INGRESA PRIMERO "2*+--++//**7", SE RETORNA, SE INGRESA AHORA "-3", SALTA EL ERROR CORRESPONDIENTE Y SE RETORNA, Y AHORA SE INGRESA "N" PARA SALIR, SE SEGUIRÁ MOSTRANDO EL ERROR DE LA PARTE ANTERIOR, COSA QUE NO DEBERÍA SUCEDER.
-            # PUEDE QUE SEA UN PROBLEMA CON EL TRY O LA RECURSIÓN DE "RAM()" AUNQUE NO ESTOY SEGURO
-            # FUERA DE ESE DETALLE, AHORA ES MÁS DIVERTIDO INGRESAR LA CANTIDAD DE RAM PARA EL SERVIDOR :D
-            
-            gbs = 0
-            if "+" in rammount or "-" in rammount or "/" in rammount or "//" in rammount or "*" in rammount or "**" in rammount:
-                operacion = rammount.replace(" ", "")
-                try:
-                    gbs = eval(operacion)
-                    gbs = int(gbs)
-                except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
-                    ram()
+            if any(char in "0123456789+-*/" for char in rammount):
+                gbs = eval(rammount)
             else:
-                gbs = int(rammount.replace(" ", ""))
-            if valor == "GB" and gbs <= 0 or gbs > 1024:
+                gbs = rammount
+            gbs = int(gbs)
+            if valor == "GB" and (gbs <= 0 or gbs > 1024):
                 limpiar_consola()
                 print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nElige una cantidad válida entre 1 y 1024 Gigabytes.")
                 time.sleep(1.5)
                 ram()
-            elif valor == "MB" and gbs <= 0 or gbs > 1048576:
+            elif valor == "MB" and (gbs <= 0 or gbs > 1048576):
                 limpiar_consola()
                 print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nElige una cantidad válida entre 1 y 1048576 Megabytes.")
                 time.sleep(1.5)
@@ -100,7 +93,7 @@ def ram():
                 hora_cerrado = str(fyh_sistema.strftime("%H:%M:%S"))
                 limpiar_consola()
                 input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl servidor se ha cerrado el {fecha_cerrado} a las {hora_cerrado}.\n\nPuedes revisar el registro de la consola en la carpeta 'logs'\n\nPresiona ENTER para continuar.")
-    except ValueError:
+    except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
         ram()
 
 # CONFIG
@@ -374,7 +367,7 @@ def config():
                         global motdn
                         motd = properties["motd"]
                         limpiar_consola()
-                        motdn = input(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl MOTD actual del servidor es:\n\n"{motd}"\n\nSe recomienda que el nuevo MOTD tenga un máximo de 20 caracteres (sin contar códigos de formato).\n\nPuedes copiar y pegar algunos de estos códigos a la izquierda del texto que escribas si quieres cambiar su formato. Si quieres ver más opciones de formato para los MOTD, visita el enlace que está en la sección "(3) Ver licencia y extras" en el menú principal de la herramienta.\n\n§k = Texto en movimiento  |   §l = Negrita\n§o = Cursiva              |   §m = Tachado\n§4 = Color rojo           |   §2 = Color verde\n§e = Color amarillo       |   §1 = Color azul\n§5 = Color morado         |   §f = Color blanco\n\nEscribe aquí el nuevo MOTD= ')
+                        motdn = input(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl MOTD actual del servidor es:\n\n"{motd}"\n\nSe recomienda que el nuevo MOTD tenga un máximo de 20 caracteres (sin contar códigos de formato).\n\nPuedes copiar y pegar algunos de estos códigos a la izquierda del texto que escribas si quieres cambiar su formato. Si quieres ver más opciones de formato para los MOTD, visita el enlace que está en la sección "(3) Ver licencia y extras" en el menú principal de la herramienta.\nEn esa misma sección, también podrás encontrar un generador de MOTD, los que luego puedes pegar aquí para tu servidor.\n\n§k = Texto en movimiento  |   §l = Negrita\n§o = Cursiva              |   §m = Tachado\n§4 = Color rojo           |   §2 = Color verde\n§e = Color amarillo       |   §1 = Color azul\n§5 = Color morado         |   §f = Color blanco\n\nEscribe aquí el nuevo MOTD= ')
                         def motdconfir():
                             global properties
                             global motd
@@ -419,18 +412,25 @@ def config():
 # LICENCIA Y EXTRAS
 def about():
     limpiar_consola()
-    copyr = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nMIT License - Copyright (c) 2023 NGDPL Nk\n\nHelpers:\n@naicoooossj\n@LegalizeNuclearBombs\n\n-------------------------------------\n\n(1) Abrir licencia en el navegador\n(2) Abrir página de formato de texto en el navegador\n(3) Volver al menú principal\n\nSelecciona una de las opciones= ")
+    copyr = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nMIT License - Copyright (c) 2023 NGDPL Nk\n\nHelpers:\n@naicoooossj\n@LegalizeNuclearBombs\n\n-------------------------------------\n\n(1) Ver el repositorio en el navegador\n(2) Ver la licencia en el navegador\n(3) Ver formato de texto de MOTD's en el navegador\n(4) Volver al menú principal\n\nSelecciona una de las opciones= ")
     if copyr == "1":
+        url = "https://github.com/NGDPLNk/SSTools4MC"
+        limpiar_consola()
+        input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nSe abrirá el repositorio en tu navegador.\n\n{url}\n\nPresiona ENTER para continuar.")
+        webbrowser.open(url)
+    elif copyr == "2":
         url = "https://github.com/NGDPLNk/SSTools4MC/blob/main/LICENSE"
         limpiar_consola()
         input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nSe abrirá la licencia de la herramienta en tu navegador.\n\n{url}\n\nPresiona ENTER para continuar.")
         webbrowser.open(url)
-    elif copyr == "2":
-        url = "https://www.digminecraft.com/lists/color_list_pc.php"
-        limpiar_consola()
-        input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nSe abrirá la página para ver el formato de texto en los MOTD en tu navegador.\n\n{url}\n\nPresiona ENTER para continuar.")
-        webbrowser.open(url)
     elif copyr == "3":
+        url = "https://www.digminecraft.com/lists/color_list_pc.php"
+        url2 = "https://minecraft.tools/es/motd.php"
+        limpiar_consola()
+        input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nSe abrirán 2 páginas para ver el formato de texto en los MOTD, en tu navegador.\n\n{url}\n\n{url2}\n\nPresiona ENTER para continuar.")
+        webbrowser.open(url)
+        webbrowser.open(url2)
+    elif copyr == "4":
         return
     else:
         about()
@@ -445,9 +445,8 @@ def exiit():
 # MENÚ PRINCIPAL
 while True:
     limpiar_consola()
-    seleccion = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\n¡Hola! Estás en el menú principal.\n\n(1) Iniciar el servidor\n(2) Configurar el servidor\n(3) Ver licencia y extras\n(4) Salir\n\nSelecciona una de las opciones= ")
+    seleccion = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\n¡Hola! Estás en el menú principal.\n\n(1) Iniciar el servidor\n(2) Administrar el servidor\n(3) Ver extras y licencia\n(4) Salir\n\nSelecciona una de las opciones= ")
     if seleccion == "1":
-        valor = None
         ram()
     elif seleccion == "2":
         config()
