@@ -44,7 +44,6 @@ def ram():
         valor1 = "MEGABYTES"
         vjava = "M"
         gbormb = "GIGABYTES"
-    gbs = 0
     limpiar_consola()
     rammount = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\n(C) Usar RAM en {gbormb}\n(N) Volver al menú principal\n\nSelecciona una de las opciones o ingresa los {valor1} de RAM para asignar al servidor= ").replace(" ", "")
     try:    
