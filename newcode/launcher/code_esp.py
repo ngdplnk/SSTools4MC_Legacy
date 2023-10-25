@@ -24,65 +24,67 @@ elif sys.platform.startswith('linux') or sys.platform.startswith('darwin'): # En
 
 # INICIO DEL SERVIDOR
 def ram():
-    #ARREGLAR ESTA PARTE DEL CÓDIGO PARA QUE TAMBIÉN FUNCIONE CON MEGABYTES
-    #HASTA AHORA, SOLO DEVUELVE AL MENÚ PRINCIPAL :c
     global valor
+    valor1 = None
     gbormb = None
     vjava = None
     if valor == None:
         valor = "GB"
+        valor1 = "Gigabytes"
         vjava = "G"
         gbormb = "MEGABYTES"
     if valor == "GB":
+        valor1 = "Gigabytes"
         vjava = "G"
         gbormb = "MEGABYTES"
     elif valor == "MB":
+        valor1 = "Megabytes"
         vjava = "M"
         gbormb = "GIGABYTES"
     limpiar_consola()
-    rammount = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\n(C) Cambiar a {gbormb}\n(N) Volver al menú principal\n\nSelecciona una de las opciones o ingresa los {valor} de RAM para asignar al servidor= ")
+    rammount = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\n(C) Usar {gbormb}\n(N) Volver al menú principal\n\nSelecciona una de las opciones o ingresa los {valor1} de RAM para asignar al servidor= ")
     try:    
         if rammount.lower() == "c":
             if valor == "GB":
                 limpiar_consola()
-                print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEntrada cambiada a {gbormb}.")
+                print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nRAM para iniciar cambiada a {gbormb}.")
                 time.sleep(1.5)
                 valor = "MB"
                 ram()
             elif valor == "MB":
                 limpiar_consola()
-                print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEntrada cambiada a {gbormb}.")
+                print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nRAM para iniciar cambiada a {gbormb}.")
                 time.sleep(1.5)
                 valor = "GB"
                 ram()
-        if rammount.lower() == 'n':
+        elif rammount.lower() == 'n':
             return
         else:
             gbs = int(rammount)
-            if valor == "GB":
-                if gbs <= 0 or gbs > 1024:
-                    limpiar_consola()
-                    print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nElige una cantidad válida entre 1 y 1024 Gigabytes.")
-                    time.sleep(1.5)
-                    ram()
-            elif valor == "MB":
-                if gbs <= 0 or gbs > 1048576:
-                    limpiar_consola()
-                    print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nElige una cantidad válida entre 1 y 1048576 Megabytes.")
-                    time.sleep(1.5)
-                    ram()
+            if valor == "GB" and gbs <= 0 or gbs > 1024:
+                limpiar_consola()
+                print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nElige una cantidad válida entre 1 y 1024 Gigabytes.")
+                time.sleep(1.5)
+                ram()
+            elif valor == "MB" and gbs <= 0 or gbs > 1048576:
+                limpiar_consola()
+                print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nElige una cantidad válida entre 1 y 1048576 Megabytes.")
+                time.sleep(1.5)
+                ram()
             else:
-                with open("eula.txt", "w") as reemplazo:
+                eula = "eula.txt"
+                with open(eula, "w") as reemplazo:
                     reemplazo.write("eula=true")
                 limpiar_consola()
                 print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nIniciando el servidor con {gbs}{valor} de RAM.\n")
                 comando_java = f"java -Xmx{gbs}{vjava} -Xms{gbs}{vjava} -jar server.jar nogui"
                 subprocess.run(comando_java, shell=True)
                 input("\nPresiona ENTER para continuar.")
-                fecha_cerrado = str(datetime.datetime.now())
-                fecha_cerrado = fecha_cerrado.split(" ")
+                fyh_sistema = datetime.datetime.now()
+                fecha_cerrado = str(fyh_sistema.strftime("%d/%m/%Y"))
+                hora_cerrado = str(fyh_sistema.strftime("%H:%M:%S"))
                 limpiar_consola()
-                input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl servidor se ha cerrado el {fecha_cerrado[0]} a las {fecha_cerrado[1]}.\n\nPuedes revisar el registro de la consola en la carpeta 'logs'\n\nPresiona ENTER para continuar.")
+                input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl servidor se ha cerrado el {fecha_cerrado} a las {hora_cerrado}.\n\nPuedes revisar el registro de la consola en la carpeta 'logs'\n\nPresiona ENTER para continuar.")
     except ValueError:
         ram()
 
@@ -422,7 +424,7 @@ def about():
 def exiit():
     limpiar_consola()
     print("--------------------------------------------\nMuchas gracias por usar esta herramienta\nMIT License - Copyright (c) 2023 NGDPL Nk\n--------------------------------------------\n")
-    time.sleep(1.5)
+    time.sleep(1.3)
     sys.exit()
 
 # MENÚ PRINCIPAL
