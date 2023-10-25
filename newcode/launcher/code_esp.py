@@ -60,7 +60,22 @@ def ram():
         elif rammount.lower() == 'n':
             return
         else:
-            gbs = int(rammount)
+            
+            # EXISTE UN BUB MUY ESPECÍFICO, QUE NO SÉ SI SE CUMPLE EN MÁS CASOS
+            # SI SE INGRESA PRIMERO "2*+--++//**7", SE RETORNA, SE INGRESA AHORA "-3", SALTA EL ERROR CORRESPONDIENTE Y SE RETORNA, Y AHORA SE INGRESA "N" PARA SALIR, SE SEGUIRÁ MOSTRANDO EL ERROR DE LA PARTE ANTERIOR, COSA QUE NO DEBERÍA SUCEDER.
+            # PUEDE QUE SEA UN PROBLEMA CON EL TRY O LA RECURSIÓN DE "RAM()" AUNQUE NO ESTOY SEGURO
+            # FUERA DE ESE DETALLE, AHORA ES MÁS DIVERTIDO INGRESAR LA CANTIDAD DE RAM PARA EL SERVIDOR :D
+            
+            gbs = 0
+            if "+" in rammount or "-" in rammount or "/" in rammount or "//" in rammount or "*" in rammount or "**" in rammount:
+                operacion = rammount.replace(" ", "")
+                try:
+                    gbs = eval(operacion)
+                    gbs = int(gbs)
+                except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                    ram()
+            else:
+                gbs = int(rammount.replace(" ", ""))
             if valor == "GB" and gbs <= 0 or gbs > 1024:
                 limpiar_consola()
                 print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nElige una cantidad válida entre 1 y 1024 Gigabytes.")
