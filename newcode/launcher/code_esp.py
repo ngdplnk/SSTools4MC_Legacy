@@ -326,14 +326,18 @@ def config():
                 global properties
                 players = properties["max-players"]
                 limpiar_consola()
-                newpl = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl límite actual de jugadores es de máximo {players}\n\n(N) Volver atrás\n(M) Volver al menú principal\n\nSelecciona una de las opciones o escribe el nuevo límite de jugadores= ")
-                if newpl.lower() == "n":
-                    config()
-                elif newpl.lower() == "m":
-                    return
-                elif newpl.isnumeric():
-                    try:
-                        entero = int(newpl)
+                newpl = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl límite actual de jugadores es de máximo {players}\n\n(N) Volver atrás\n(M) Volver al menú principal\n\nSelecciona una de las opciones o escribe el nuevo límite de jugadores= ").replace(" ", "")
+                try:
+                    if newpl.lower() == "n":
+                        config()
+                    elif newpl.lower() == "m":
+                        return
+                    else:
+                        if any(char in "0123456789+-*/" for char in newpl):
+                            entero = eval(newpl)
+                        else:
+                            entero = newpl
+                        entero = int(entero)
                         if entero <= 0 or entero > 100000:
                             limpiar_consola()
                             print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nElige un número válido entre 1 y 100000.")
@@ -348,9 +352,7 @@ def config():
                             print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl límite máximo de jugadores ahora es {entero}.")
                             time.sleep(1.5)
                             playct()
-                    except ValueError:
-                        playct()
-                else:
+                except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
                     playct()
             playct()
         elif confsel == "7":
