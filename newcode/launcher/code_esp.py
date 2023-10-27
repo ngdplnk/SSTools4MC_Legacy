@@ -458,13 +458,13 @@ def about():
             url = "https://github.com/NGDPLNk/SSTools4MC/blob/main/LICENSE"
             webbrowser.open(url)
         elif selec == 3:
-            url = colored("https://www.digminecraft.com/lists/color_list_pc.php","cyan")
-            url2 = colored("https://minecraft.tools/es/motd.php","cyan")
+            url = colored("https://minecraft.tools/es/motd.php","cyan")
+            url2 = colored("https://www.digminecraft.com/lists/color_list_pc.php","cyan")
             limpiar_consola()
             input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nSe abrirán 2 páginas para ver el formato de texto en los MOTD, en tu navegador.\n\n{url}\n\n{url2}\n\nPress ENTER to continue.")
-            url = "https://www.digminecraft.com/lists/color_list_pc.php"
+            url = "https://minecraft.tools/es/motd.php"
             webbrowser.open(url)
-            url2 = "https://minecraft.tools/es/motd.php"
+            url2 = "https://www.digminecraft.com/lists/color_list_pc.php"
             webbrowser.open(url2)
         elif selec == 4:
             return
@@ -477,18 +477,32 @@ def about():
 def exiit():
     limpiar_consola()
     print("--------------------------------------------\nMuchas gracias por usar esta herramienta\nMIT License - Copyright (c) 2023 NGDPL Nk\n--------------------------------------------\n")
-    time.sleep(1.3)
+    time.sleep(1.2)
     sys.exit()
 
 # MENÚ PRINCIPAL
-while True:
+def menu():
     limpiar_consola()
     seleccion = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\n¡Hola! Estás en el menú principal.\n\n(1) Iniciar el servidor\n(2) Administrar el servidor\n(3) Ver licencia y extras\n(4) Salir\n\nSelecciona una de las opciones= ")
-    if seleccion == "1":
-        ram()
-    elif seleccion == "2":
-        config()
-    elif seleccion == "3":
-        about()
-    elif seleccion == "4":
-        exiit()
+    try:
+        if any(char in "0123456789+-*/" for char in seleccion):
+            if not seleccion[0].isalpha():
+                sel = eval(seleccion)
+            else:
+                sel = seleccion
+        else:
+            sel = seleccion
+        sel = int(sel)
+        if sel == 1:
+            ram()
+        elif sel == 2:
+            config()
+        elif sel == 3:
+            about()
+        elif sel == 4:
+            exiit()
+        menu()
+    except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+        menu()
+
+menu()
