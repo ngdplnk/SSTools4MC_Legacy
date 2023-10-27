@@ -73,14 +73,14 @@ def ram():
             else:
                 gbs = rammount
             gbs = int(gbs)
-            if valor == "GB" and (gbs <= 0 or gbs > 1024):
+            if valor == "GB" and (gbs <= 0 or gbs > 75):
                 limpiar_consola()
-                print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nElige una cantidad válida entre 1 y 1024 Gigabytes.")
+                print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nElige una cantidad válida entre 1 y 75 Gigabytes.")
                 time.sleep(1.5)
                 ram()
-            elif valor == "MB" and (gbs <= 0 or gbs > 1048576):
+            elif valor == "MB" and (gbs <= 511 or gbs > 76800):
                 limpiar_consola()
-                print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nElige una cantidad válida entre 1 y 1048576 Megabytes.")
+                print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nElige una cantidad válida entre 512 y 76800 Megabytes.")
                 time.sleep(1.5)
                 ram()
             else:
@@ -350,7 +350,10 @@ def config():
                         return
                     else:
                         if any(char in "0123456789+-*/" for char in newpl):
-                            entero = eval(newpl)
+                            if not newpl[0].isalpha():
+                                entero = eval(newpl)
+                            else:
+                                entero = newpl
                         else:
                             entero = newpl
                         entero = int(entero)
