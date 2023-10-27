@@ -75,12 +75,12 @@ def ram():
             gbs = int(gbs)
             if valor == "GB" and (gbs <= 0 or gbs > 75):
                 limpiar_consola()
-                print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nElige una cantidad válida entre 1 y 75 Gigabytes.")
+                print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nIngresa una cantidad válida entre 1 y 75 Gigabytes.")
                 time.sleep(1.5)
                 ram()
             elif valor == "MB" and (gbs <= 511 or gbs > 76800):
                 limpiar_consola()
-                print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nElige una cantidad válida entre 512 y 76800 Megabytes.")
+                print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nIngresa una cantidad válida entre 512 y 76,800 Megabytes.")
                 time.sleep(1.5)
                 ram()
             else:
@@ -129,7 +129,7 @@ def config():
         elif properties["pvp"] == "true":
             pvp = colored("DESACTIVAR","red")
         limpiar_consola()
-        confsel = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nConfiguración del servidor\n\n(1) {online} el modo online\n(2) {hard} el modo hardcore\n(3) {pvp} el PvP\n(4) Cambiar el modo de juego\n(5) Cambiar la dificultad\n(6) Cambiar el límite de jugadores\n(7) Cambiar el MOTD (Beta)\n(8) Volver al menú principal\n\nSelecciona una de las opciones= ")
+        confsel = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nConfiguración del servidor\n\n(1) {online} el modo online\n(2) {hard} el modo hardcore\n(3) {pvp} el PvP\n(4) Cambiar el modo de juego\n(5) Cambiar la dificultad\n(6) Cambiar el límite de jugadores\n(7) Editar el MOTD\n(8) Volver al menú principal\n\nSelecciona una de las opciones= ")
         if properties["online-mode"] == "false":
             online = "ACTIVAR"
         elif properties["online-mode"] == "true":
@@ -342,7 +342,7 @@ def config():
                 global properties
                 players = colored(properties["max-players"],"cyan")
                 limpiar_consola()
-                newpl = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl límite actual de jugadores es de máximo {players}\n\n(N) Volver atrás\n(M) Volver al menú principal\n\nSelecciona una de las opciones o escribe el nuevo límite de jugadores= ").replace(" ", "")
+                newpl = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl límite actual de jugadores es de máximo {players}.\n\n(N) Volver atrás\n(M) Volver al menú principal\n\nSelecciona una de las opciones o escribe el nuevo límite de jugadores= ").replace(" ", "")
                 try:
                     if newpl.lower() == "n":
                         config()
@@ -359,7 +359,7 @@ def config():
                         entero = int(entero)
                         if entero <= 0 or entero > 100000:
                             limpiar_consola()
-                            print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nElige un número válido entre 1 y 100000.")
+                            print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nIngresa un número válido entre 1 y 100,000.")
                             time.sleep(1.5)
                             playct()
                         else:
@@ -381,7 +381,7 @@ def config():
                 global motd
                 motd = colored(properties["motd"],"cyan")
                 limpiar_consola()
-                motdcm = input(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl MOTD actual del servidor es:\n\n"{motd}"\n\nRecuerda que esta función aún está en BETA y podría no funcionar como esperas.\n\n(1) Cambiar el MOTD\n(2) Volver atrás\n(3) Volver al menú principal\n\nSelecciona una de las opciones= ')
+                motdcm = input(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl MOTD actual del servidor es:\n\n"{motd}"\n\n(1) Editar el MOTD\n(2) Volver atrás\n(3) Volver al menú principal\n\nSelecciona una de las opciones= ')
                 if motdcm == "1":
                     def newmotd():
                         global properties
@@ -403,7 +403,7 @@ def config():
                                     for key, value in properties.items():
                                         file.write(f'{key}={value}\n')
                                 limpiar_consola()
-                                print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nSe ha guardado el nuevo MOTD.")
+                                print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl MOTD se ha actualizado.")
                                 time.sleep(1.5)
                                 motdnuevo()
                             elif confir == "2":
@@ -430,36 +430,47 @@ def config():
             config()
     else:
         limpiar_consola()
-        input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl archivo de configuración del servidor aún no existe.\nDebes iniciar correctamente el servidor al menos 1 vez antes de poder configurar.\n\nPresiona ENTER para continuar.")
+        input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLos archivos de configuración del servidor aún no existen o no están disponibles.\nDebes iniciar correctamente el servidor al menos 1 vez antes de poder configurar.\n\nPresiona ENTER para continuar.")
 
 # LICENCIA Y EXTRAS
 def about():
     limpiar_consola()
-    copyr = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nMIT License - Copyright (c) 2023 NGDPL Nk\n\nHelpers:\n@naicoooossj\n@LegalizeNuclearBombs\n\n-------------------------------------\n\n(1) Ver el repositorio en el navegador\n(2) Ver la licencia en el navegador\n(3) Ver formato de texto de MOTD's en el navegador\n(4) Volver al menú principal\n\nSelecciona una de las opciones= ")
-    if copyr == "1":
-        url = colored("https://github.com/NGDPLNk/SSTools4MC","cyan")
-        limpiar_consola()
-        input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nSe abrirá el repositorio en tu navegador.\n\n{url}\n\nPresiona ENTER para continuar.")
-        url = "https://github.com/NGDPLNk/SSTools4MC"
-        webbrowser.open(url)
-    elif copyr == "2":
-        url = colored("https://github.com/NGDPLNk/SSTools4MC/blob/main/LICENSE","cyan")
-        limpiar_consola()
-        input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nSe abrirá la licencia de la herramienta en tu navegador.\n\n{url}\n\nPresiona ENTER para continuar.")
-        url = "https://github.com/NGDPLNk/SSTools4MC/blob/main/LICENSE"
-        webbrowser.open(url)
-    elif copyr == "3":
-        url = colored("https://www.digminecraft.com/lists/color_list_pc.php","cyan")
-        url2 = colored("https://minecraft.tools/es/motd.php","cyan")
-        limpiar_consola()
-        input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nSe abrirán 2 páginas para ver el formato de texto en los MOTD, en tu navegador.\n\n{url}\n\n{url2}\n\nPresiona ENTER para continuar.")
-        url = "https://www.digminecraft.com/lists/color_list_pc.php"
-        webbrowser.open(url)
-        url2 = "https://minecraft.tools/es/motd.php"
-        webbrowser.open(url2)
-    elif copyr == "4":
-        return
-    else:
+    copyr = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nMIT License - Copyright (c) 2023 NGDPL Nk\n\nHelpers:\n@naicoooossj\n@LegalizeNuclearBombs\n\n-------------------------------------\n\n(1) Ver el repositorio en el navegador\n(2) Ver la licencia en el navegador\n(3) Ver formato de texto para los MOTD en el navegador\n(4) Volver al menú principal\n\nSelecciona una de las opciones= ")
+    try:
+        if any(char in "0123456789+-*/" for char in copyr):
+            if not copyr[0].isalpha():
+                selec = eval(copyr)
+            else:
+                selec = copyr
+        else:
+            selec = copyr
+        selec = int(selec)
+        if selec == 1:
+            url = colored("https://github.com/NGDPLNk/SSTools4MC","cyan")
+            limpiar_consola()
+            input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nSe abrirá el repositorio en tu navegador.\n\n{url}\n\nPress ENTER to continue.")
+            url = "https://github.com/NGDPLNk/SSTools4MC"
+            webbrowser.open(url)
+        elif selec == 2:
+            url = colored("https://github.com/NGDPLNk/SSTools4MC/blob/main/LICENSE","cyan")
+            limpiar_consola()
+            input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nSe abrirá la licencia de la herramienta en tu navegador.\n\n{url}\n\nPress ENTER to continue.")
+            url = "https://github.com/NGDPLNk/SSTools4MC/blob/main/LICENSE"
+            webbrowser.open(url)
+        elif selec == 3:
+            url = colored("https://www.digminecraft.com/lists/color_list_pc.php","cyan")
+            url2 = colored("https://minecraft.tools/es/motd.php","cyan")
+            limpiar_consola()
+            input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nSe abrirán 2 páginas para ver el formato de texto en los MOTD, en tu navegador.\n\n{url}\n\n{url2}\n\nPress ENTER to continue.")
+            url = "https://www.digminecraft.com/lists/color_list_pc.php"
+            webbrowser.open(url)
+            url2 = "https://minecraft.tools/es/motd.php"
+            webbrowser.open(url2)
+        elif selec == 4:
+            return
+        else:
+            about()
+    except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
         about()
 
 # SALIDA
@@ -472,7 +483,7 @@ def exiit():
 # MENÚ PRINCIPAL
 while True:
     limpiar_consola()
-    seleccion = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\n¡Hola! Estás en el menú principal.\n\n(1) Iniciar el servidor\n(2) Administrar el servidor\n(3) Ver extras y licencia\n(4) Salir\n\nSelecciona una de las opciones= ")
+    seleccion = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\n¡Hola! Estás en el menú principal.\n\n(1) Iniciar el servidor\n(2) Administrar el servidor\n(3) Ver licencia y extras\n(4) Salir\n\nSelecciona una de las opciones= ")
     if seleccion == "1":
         ram()
     elif seleccion == "2":
