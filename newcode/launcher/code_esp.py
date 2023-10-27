@@ -46,6 +46,7 @@ def ram():
         vjava = "M"
         gbormb = colored("GIGABYTES","yellow")
     limpiar_consola()
+    gbs = 0
     rammount = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\n(C) Usar RAM en {gbormb}\n(N) Volver al menú principal\n\nSelecciona una de las opciones o ingresa los {valor1} de RAM para asignar al servidor= ").replace(" ", "")
     try:    
         if rammount.lower() == "c":
@@ -65,7 +66,10 @@ def ram():
             return
         else:
             if any(char in "0123456789+-*/" for char in rammount):
-                gbs = eval(rammount)
+                if not rammount[0].isalpha():
+                    gbs = eval(rammount)
+                else:
+                    gbs = rammount
             else:
                 gbs = rammount
             gbs = int(gbs)
