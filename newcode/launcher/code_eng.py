@@ -464,7 +464,7 @@ def about():
             input(f"Server Launcher for Minecraft\n-------------------------------------\n\nTwo pages will open in your browser to view text formatting for MOTD.\n\n{url}\n\n{url2}\n\nPress ENTER to continue.")
             url = "https://www.digminecraft.com/lists/color_list_pc.php"
             webbrowser.open(url)
-            url2 = "https://minecraft.tools/es/motd.php"
+            url2 = "https://minecraft.tools/en/motd.php"
             webbrowser.open(url2)
         elif selec == 4:
             return
