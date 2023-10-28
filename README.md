@@ -90,7 +90,7 @@ All Oracle-related elements and names are used in compliance with the [Oracle Te
 
 ## Important and Acknowledgments
 - Administrator privileges are required in old releases of SSTools4MC in order to access server files and folders.
-- Old releases of SSTools4MC are detected as viruses. You can avoid this by allowing them in your antivirus. Dont worry, there are no viruses here. You can take a look to the source if you still don't believe it.
+- Releases of SSTools4MC are detected as viruses. You can avoid this by allowing them in your antivirus. Dont worry, there are no viruses here. You can take a look to the source if you still don't believe it.
 
 So many thanks [@naicoooossj](https://github.com/naicoooossj) and [@LegalizeNuclearBombs](https://steamcommunity.com/id/LegalizeNucelarBombs/) :shipit: for helping port the most recent versions of this project to Python and giving new ideas.
 
