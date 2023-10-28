@@ -225,64 +225,75 @@ def config():
                     espect = colored("SPECTATOR","yellow")
                     limpiar_consola()
                     modosel = input(f"Server Launcher for Minecraft\n-------------------------------------\n\nThe current game mode is {modo}.\n\n(1) Change to {superv} gamemode\n(2) Change to {creat} gamemode\n(3) Change to {avent} gamemode\n(4) Change to {espect} gamemode\n(5) {forzar} force gamemode\n(6) Go back\n(7) Return to main menu\n\nSelect one of the options= ")
-                    if modosel == "1":
-                        properties["gamemode"] = "0"
-                        with open('server.properties', 'w') as file:
-                            for key, value in properties.items():
-                                file.write(f'{key}={value}\n')
-                        limpiar_consola()
-                        print(f"Server Launcher for Minecraft\n-------------------------------------\n\nGamemode has been set to {superv}.")
-                        time.sleep(1.5)
-                        juego()
-                    elif modosel == "2":
-                        properties["gamemode"] = "1"
-                        with open('server.properties', 'w') as file:
-                            for key, value in properties.items():
-                                file.write(f'{key}={value}\n')
-                        limpiar_consola()
-                        print(f"Server Launcher for Minecraft\n-------------------------------------\n\nGamemode has been set to {creat}.")
-                        time.sleep(1.5)
-                        juego()
-                    elif modosel == "3":
-                        properties["gamemode"] = "2"
-                        with open('server.properties', 'w') as file:
-                            for key, value in properties.items():
-                                file.write(f'{key}={value}\n')
-                        limpiar_consola()
-                        print(f"Server Launcher for Minecraft\n-------------------------------------\n\nGamemode has been set to {avent}.")
-                        time.sleep(1.5)
-                        juego()
-                    elif modosel == "4":
-                        properties["gamemode"] = "3"
-                        with open('server.properties', 'w') as file:
-                            for key, value in properties.items():
-                                file.write(f'{key}={value}\n')
-                        limpiar_consola()
-                        print(f"Server Launcher for Minecraft\n-------------------------------------\n\nGamemode has been set to {espect}.")
-                        time.sleep(1.5)
-                        juego()
-                    elif modosel == "5":
-                        if forzar == "ENABLE":
-                            properties["force-gamemode"] = "true"
+                    try:
+                        if any(char in "0123456789+-*/" for char in modosel):
+                            if not modosel[0].isalpha():
+                                coonf = eval(modosel)
+                            else:
+                                coonf = modosel
+                        else:
+                            coonf = modosel
+                        coonf = int(coonf)
+                        if coonf == 1:
+                            properties["gamemode"] = "0"
                             with open('server.properties', 'w') as file:
                                 for key, value in properties.items():
                                     file.write(f'{key}={value}\n')
-                            forzar = "ENABLED"
-                        elif forzar == "DISABLE":
-                            properties["force-gamemode"] = "false"
+                            limpiar_consola()
+                            print(f"Server Launcher for Minecraft\n-------------------------------------\n\nGamemode has been set to {superv}.")
+                            time.sleep(1.5)
+                            juego()
+                        elif coonf == 2:
+                            properties["gamemode"] = "1"
                             with open('server.properties', 'w') as file:
                                 for key, value in properties.items():
                                     file.write(f'{key}={value}\n')
-                            forzar = "DISABLED"
-                        limpiar_consola()
-                        print(f"Server Launcher for Minecraft\n-------------------------------------\n\nForce gamemode has been {forzar}.")
-                        time.sleep(1.5)
-                        juego()
-                    elif modosel == "6":
-                        config()
-                    elif modosel == "7":
-                        return
-                    else:
+                            limpiar_consola()
+                            print(f"Server Launcher for Minecraft\n-------------------------------------\n\nGamemode has been set to {creat}.")
+                            time.sleep(1.5)
+                            juego()
+                        elif coonf == 3:
+                            properties["gamemode"] = "2"
+                            with open('server.properties', 'w') as file:
+                                for key, value in properties.items():
+                                    file.write(f'{key}={value}\n')
+                            limpiar_consola()
+                            print(f"Server Launcher for Minecraft\n-------------------------------------\n\nGamemode has been set to {avent}.")
+                            time.sleep(1.5)
+                            juego()
+                        elif coonf == 4:
+                            properties["gamemode"] = "3"
+                            with open('server.properties', 'w') as file:
+                                for key, value in properties.items():
+                                    file.write(f'{key}={value}\n')
+                            limpiar_consola()
+                            print(f"Server Launcher for Minecraft\n-------------------------------------\n\nGamemode has been set to {espect}.")
+                            time.sleep(1.5)
+                            juego()
+                        elif coonf == 5:
+                            if forzar == "ENABLE":
+                                properties["force-gamemode"] = "true"
+                                with open('server.properties', 'w') as file:
+                                    for key, value in properties.items():
+                                        file.write(f'{key}={value}\n')
+                                forzar = "ENABLED"
+                            elif forzar == "DISABLE":
+                                properties["force-gamemode"] = "false"
+                                with open('server.properties', 'w') as file:
+                                    for key, value in properties.items():
+                                        file.write(f'{key}={value}\n')
+                                forzar = "DISABLED"
+                            limpiar_consola()
+                            print(f"Server Launcher for Minecraft\n-------------------------------------\n\nForce gamemode has been {forzar}.")
+                            time.sleep(1.5)
+                            juego()
+                        elif coonf == 6:
+                            config()
+                        elif coonf == 7:
+                            return
+                        else:
+                            juego()
+                    except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
                         juego()
                 juego()
             elif confug == 5:
@@ -303,47 +314,58 @@ def config():
                     dificil = colored("HARD","yellow")
                     limpiar_consola()
                     difsel = input(f"Server Launcher for Minecraft\n-------------------------------------\n\nThe current difficulty is {dificultad}.\n\n(1) Change difficulty to {pacif}\n(2) Change difficulty to {facil}\n(3) Change difficulty to {normal}\n(4) Change difficulty to {dificil}\n(5) Go back\n(6) Return to main menu\n\nSelect one of the options= ")
-                    if difsel == "1":
-                        properties["difficulty"] = "0"
-                        with open('server.properties', 'w') as file:
-                            for key, value in properties.items():
-                                file.write(f'{key}={value}\n')
-                        limpiar_consola()
-                        print(f"Server Launcher for Minecraft\n-------------------------------------\n\nDifficulty has been set to {pacif}.")
-                        time.sleep(1.5)
-                        difconf()
-                    elif difsel == "2":
-                        properties["difficulty"] = "1"
-                        with open('server.properties', 'w') as file:
-                            for key, value in properties.items():
-                                file.write(f'{key}={value}\n')
-                        limpiar_consola()
-                        print(f"Server Launcher for Minecraft\n-------------------------------------\n\nDifficulty has been set to {facil}.")
-                        time.sleep(1.5)
-                        difconf()
-                    elif difsel == "3":
-                        properties["difficulty"] = "2"
-                        with open('server.properties', 'w') as file:
-                            for key, value in properties.items():
-                                file.write(f'{key}={value}\n')
-                        limpiar_consola()
-                        print(f"Server Launcher for Minecraft\n-------------------------------------\n\nDifficulty has been set to {normal}.")
-                        time.sleep(1.5)
-                        difconf()
-                    elif difsel == "4":
-                        properties["difficulty"] = "3"
-                        with open('server.properties', 'w') as file:
-                            for key, value in properties.items():
-                                file.write(f'{key}={value}\n')
-                        limpiar_consola()
-                        print(f"Server Launcher for Minecraft\n-------------------------------------\n\nDifficulty has been set to {dificil}.")
-                        time.sleep(1.5)
-                        difconf()
-                    elif difsel == "5":
-                        config()
-                    elif difsel == "6":
-                        return
-                    else:
+                    try:
+                        if any(char in "0123456789+-*/" for char in difsel):
+                            if not difsel[0].isalpha():
+                                difcc = eval(difsel)
+                            else:
+                                difcc = difsel
+                        else:
+                            difcc = difsel
+                        difcc = int(difcc)
+                        if difcc == 1:
+                            properties["difficulty"] = "0"
+                            with open('server.properties', 'w') as file:
+                                for key, value in properties.items():
+                                    file.write(f'{key}={value}\n')
+                            limpiar_consola()
+                            print(f"Server Launcher for Minecraft\n-------------------------------------\n\nDifficulty has been set to {pacif}.")
+                            time.sleep(1.5)
+                            difconf()
+                        elif difcc == 2:
+                            properties["difficulty"] = "1"
+                            with open('server.properties', 'w') as file:
+                                for key, value in properties.items():
+                                    file.write(f'{key}={value}\n')
+                            limpiar_consola()
+                            print(f"Server Launcher for Minecraft\n-------------------------------------\n\nDifficulty has been set to {facil}.")
+                            time.sleep(1.5)
+                            difconf()
+                        elif difcc == 3:
+                            properties["difficulty"] = "2"
+                            with open('server.properties', 'w') as file:
+                                for key, value in properties.items():
+                                    file.write(f'{key}={value}\n')
+                            limpiar_consola()
+                            print(f"Server Launcher for Minecraft\n-------------------------------------\n\nDifficulty has been set to {normal}.")
+                            time.sleep(1.5)
+                            difconf()
+                        elif difcc == 4:
+                            properties["difficulty"] = "3"
+                            with open('server.properties', 'w') as file:
+                                for key, value in properties.items():
+                                    file.write(f'{key}={value}\n')
+                            limpiar_consola()
+                            print(f"Server Launcher for Minecraft\n-------------------------------------\n\nDifficulty has been set to {dificil}.")
+                            time.sleep(1.5)
+                            difconf()
+                        elif difcc == 5:
+                            config()
+                        elif difcc == 6:
+                            return
+                        else:
+                            difconf()
+                    except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
                         difconf()
                 difconf()
             elif confug == 6:
