@@ -57,3 +57,4 @@ dkms.conf
 # Misceláneos
 *.ai
 *.bak
+server.properties
