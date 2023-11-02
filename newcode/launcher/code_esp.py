@@ -503,20 +503,20 @@ def about():
         if selec == 1:
             url = colored("https://github.com/NGDPLNk/SSTools4MC","cyan")
             limpiar_consola()
-            input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nSe abrirá el repositorio en tu navegador.\n\n{url}\n\nPress ENTER to continue.")
+            input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nSe abrirá el repositorio en tu navegador.\n\n{url}\n\nPresiona ENTER para continuar.")
             url = "https://github.com/NGDPLNk/SSTools4MC"
             webbrowser.open(url)
         elif selec == 2:
             url = colored("https://github.com/NGDPLNk/SSTools4MC/blob/main/LICENSE","cyan")
             limpiar_consola()
-            input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nSe abrirá la licencia de la herramienta en tu navegador.\n\n{url}\n\nPress ENTER to continue.")
+            input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nSe abrirá la licencia de la herramienta en tu navegador.\n\n{url}\n\nPresiona ENTER para continuar.")
             url = "https://github.com/NGDPLNk/SSTools4MC/blob/main/LICENSE"
             webbrowser.open(url)
         elif selec == 3:
             url = colored("https://minecraft.tools/es/motd.php","cyan")
             url2 = colored("https://www.digminecraft.com/lists/color_list_pc.php","cyan")
             limpiar_consola()
-            input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nSe abrirán 2 páginas para ver el formato de texto en los MOTD, en tu navegador.\n\n{url}\n\n{url2}\n\nPress ENTER to continue.")
+            input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nSe abrirán 2 páginas para ver el formato de texto en los MOTD, en tu navegador.\n\n{url}\n\n{url2}\n\nPresiona ENTER para continuar.")
             url = "https://minecraft.tools/es/motd.php"
             webbrowser.open(url)
             url2 = "https://www.digminecraft.com/lists/color_list_pc.php"
