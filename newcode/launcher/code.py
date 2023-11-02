@@ -14,6 +14,12 @@ from termcolor import colored
 valor = None
 runn = True
 
+# TÍTULO DE VENTANA - WINDOW TITLE
+if sys.platform.startswith('win32'): # On Windows
+    ctypes.windll.kernel32.SetConsoleTitleW("Select your language/Selecciona tu idioma") # type: ignore
+elif sys.platform.startswith('linux') or sys.platform.startswith('darwin'): # On Linux or MacOS
+    sys.stdout.write(f"\x1b]2;Select your language/Selecciona tu idioma\x07")
+
 # CLS
 def limpiar_consola():
     if os.name == 'nt': # En Windows - On Windows
