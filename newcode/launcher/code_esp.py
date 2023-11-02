@@ -91,10 +91,10 @@ def ram():
                 print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nIniciando el servidor con {gbs}{valor} de RAM.\n")
                 comando_java = f"java -Xmx{gbs}{vjava} -Xms{gbs}{vjava} -jar server.jar nogui"
                 subprocess.run(comando_java, shell=True)
-                input("\nPresiona ENTER para continuar.")
                 fyh_sistema = datetime.datetime.now()
                 fecha_cerrado = str(fyh_sistema.strftime("%d/%m/%Y"))
                 hora_cerrado = str(fyh_sistema.strftime("%H:%M:%S"))
+                input("\nPresiona ENTER para continuar.")
                 limpiar_consola()
                 input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl servidor se ha cerrado el {fecha_cerrado} a las {hora_cerrado}.\n\nPuedes revisar el registro de la consola en la carpeta 'logs'\n\nPresiona ENTER para continuar.")
     except (ValueError, SyntaxError, IndexError, ZeroDivisionError):

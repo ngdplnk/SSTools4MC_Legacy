@@ -94,10 +94,10 @@ def eng():
                     print(f"Server Launcher for Minecraft\n-------------------------------------\n\nStarting the server with {gbs}{valor} of RAM.\n")
                     comando_java = f"java -Xmx{gbs}{vjava} -Xms{gbs}{vjava} -jar server.jar nogui"
                     subprocess.run(comando_java, shell=True)
-                    input("\nPress ENTER to continue.")
                     fyh_sistema = datetime.datetime.now()
                     fecha_cerrado = str(fyh_sistema.strftime("%d/%m/%Y"))
                     hora_cerrado = str(fyh_sistema.strftime("%H:%M:%S"))
+                    input("\nPress ENTER to continue.")
                     limpiar_consola()
                     input(f"Server Launcher for Minecraft\n-------------------------------------\n\nThe server has closed on {fecha_cerrado} at {hora_cerrado}.\n\nYou can check the console log in the 'logs' folder.\n\nPress ENTER to continue.")
         except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
@@ -640,10 +640,10 @@ def esp():
                     print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nIniciando el servidor con {gbs}{valor} de RAM.\n")
                     comando_java = f"java -Xmx{gbs}{vjava} -Xms{gbs}{vjava} -jar server.jar nogui"
                     subprocess.run(comando_java, shell=True)
-                    input("\nPresiona ENTER para continuar.")
                     fyh_sistema = datetime.datetime.now()
                     fecha_cerrado = str(fyh_sistema.strftime("%d/%m/%Y"))
                     hora_cerrado = str(fyh_sistema.strftime("%H:%M:%S"))
+                    input("\nPresiona ENTER para continuar.")
                     limpiar_consola()
                     input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl servidor se ha cerrado el {fecha_cerrado} a las {hora_cerrado}.\n\nPuedes revisar el registro de la consola en la carpeta 'logs'\n\nPresiona ENTER para continuar.")
         except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
