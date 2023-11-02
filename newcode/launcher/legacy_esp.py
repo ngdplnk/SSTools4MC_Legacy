@@ -16,14 +16,14 @@ def limpiar_consola():
 
 # NOMBRE VENTANA
 if sys.platform.startswith('win32'):# WINDOWS
-    ctypes.windll.kernel32.SetConsoleTitleW("Lanzador de Servidores para Minecraft") # type: ignore
+    ctypes.windll.kernel32.SetConsoleTitleW("Legacy - Lanzador de Servidores para Minecraft") # type: ignore
 elif sys.platform.startswith('linux') or sys.platform.startswith('darwin'):# LINUX O MACOS
-    sys.stdout.write(f"\x1b]2;Lanzador de Servidores para Minecraft\x07")
+    sys.stdout.write(f"\x1b]2;Legacy - Lanzador de Servidores para Minecraft\x07")
 
 # INICIO
 def ram():
     limpiar_consola()
-    print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nPuedes volver al Menú Principal con 'N', o")
+    print("Legacy - Lanzador de Servidores para Minecraft\n-------------------------------------\n\nPuedes volver al Menú Principal con 'N', o")
     rammount = input("Ingresa los GB de RAM para asignar al Servidor= ")
     try:    
         if rammount.lower() == 'n':
@@ -38,14 +38,14 @@ def ram():
                 with open(eula_archivo, "w") as reemplazo:
                     reemplazo.write(eula)
                 limpiar_consola()
-                print("Lanzador de Servidores para Minecraft\n-------------------------------------\n")
+                print("Legacy - Lanzador de Servidores para Minecraft\n-------------------------------------\n")
                 print("Iniciando el Server con",gbs,"GB de RAM")
                 comando_java = f"java -Xmx{gbs}G -Xms{gbs}G -jar server.jar nogui"
                 comando_final = str(comando_java)
                 subprocess.run(comando_final, shell=True)
                 input("\nPresiona ENTER para continuar.")
                 limpiar_consola()
-                print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nServidor Cerrado\n\nPuedes revisar el registro en la carpeta 'logs'\n")
+                print("Legacy - Lanzador de Servidores para Minecraft\n-------------------------------------\n\nServidor Cerrado\n\nPuedes revisar el registro en la carpeta 'logs'\n")
                 input("Presiona ENTER para continuar.")
     except ValueError:
         ram()
@@ -54,7 +54,7 @@ def ram():
 def about():
     limpiar_consola()
     url = "https://github.com/NGDPLNk/SSTools4MC/blob/main/LICENSE"
-    print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nSe abrira la informacion sobre Licencia mas reciente en el navegador\n")
+    print("Legacy - Lanzador de Servidores para Minecraft\n-------------------------------------\n\nSe abrira la informacion sobre Licencia mas reciente en el navegador\n")
     print(url)
     print("")
     input("Presiona ENTER para continuar.")
@@ -70,7 +70,7 @@ def exiit():
 # MENÚ PRINCIPAL
 while True:
     limpiar_consola()
-    seleccion = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nMenú Principal\n\n(1) Iniciar Servidor\n(2) Licencia\n(3) Salir\n\nSelecciona una opción= ")    
+    seleccion = input("Legacy - Lanzador de Servidores para Minecraft\n-------------------------------------\n\nMenú Principal\n\n(1) Iniciar Servidor\n(2) Licencia\n(3) Salir\n\nSelecciona una opción= ")    
     if seleccion == "1":
         ram()
     elif seleccion == "2":

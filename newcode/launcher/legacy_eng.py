@@ -16,14 +16,14 @@ def limpiar_consola():
 
 # TITLE CHANGE
 if sys.platform.startswith('win32'):# WINDOWS
-    ctypes.windll.kernel32.SetConsoleTitleW("Server Launcher for Minecraft") # type: ignore
+    ctypes.windll.kernel32.SetConsoleTitleW("Legacy - Server Launcher for Minecraft") # type: ignore
 elif sys.platform.startswith('linux') or sys.platform.startswith('darwin'):# LINUX OR MACOS
-    sys.stdout.write(f"\x1b]2;Server Launcher for Minecraft\x07")
+    sys.stdout.write(f"\x1b]2;Legacy - Server Launcher for Minecraft\x07")
 
 # START
 def ram():
     limpiar_consola()
-    print("Server Launcher for Minecraft\n-------------------------------------\n\nYou can return to Main Menu with 'N', or")
+    print("Legacy - Server Launcher for Minecraft\n-------------------------------------\n\nYou can return to Main Menu with 'N', or")
     rammount = input("Type the amount of RAM to assign to your server= ")
     try:    
         if rammount.lower() == 'n':
@@ -38,14 +38,14 @@ def ram():
                 with open(eula_archivo, "w") as reemplazo:
                     reemplazo.write(eula)
                 limpiar_consola()
-                print("Server Launcher for Minecraft\n-------------------------------------\n")
+                print("Legacy - Server Launcher for Minecraft\n-------------------------------------\n")
                 print("Server starting with",gbs,"GB of RAM")
                 comando_java = f"java -Xmx{gbs}G -Xms{gbs}G -jar server.jar nogui"
                 comando_final = str(comando_java)
                 subprocess.run(comando_final, shell=True)
                 input("\nPress ENTER to continue.")
                 limpiar_consola()
-                print("Server Launcher for Minecraft\n-------------------------------------\n\nServer Closed\n\nYou can see the log in 'logs' folder\n")
+                print("Legacy - Server Launcher for Minecraft\n-------------------------------------\n\nServer Closed\n\nYou can see the log in 'logs' folder\n")
                 input("Press ENTER to continue.")
     except ValueError:
         ram()
@@ -54,7 +54,7 @@ def ram():
 def about():
     limpiar_consola()
     url = "https://github.com/NGDPLNk/SSTools4MC/blob/main/LICENSE"
-    print("Server Launcher for Minecraft\n-------------------------------------\n\nMost recent License information will be opened in the browser\n")
+    print("Legacy - Server Launcher for Minecraft\n-------------------------------------\n\nMost recent License information will be opened in the browser\n")
     print(url)
     print("")
     input("Press ENTER to continue.")
@@ -70,7 +70,7 @@ def exiit():
 # MAIN MENU
 while True:
     limpiar_consola()
-    seleccion = input("Server Launcher for Minecraft\n-------------------------------------\n\nMain Menu\n\n(1) Start Server\n(2) License\n(3) Exit\n\nSelect an option= ")    
+    seleccion = input("Legacy - Server Launcher for Minecraft\n-------------------------------------\n\nMain Menu\n\n(1) Start Server\n(2) License\n(3) Exit\n\nSelect an option= ")    
     if seleccion == "1":
         ram()
     elif seleccion == "2":
