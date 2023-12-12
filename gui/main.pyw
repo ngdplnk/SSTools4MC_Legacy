@@ -6,16 +6,36 @@ import os
 # Color palettes
 appdata_path = os.getenv('APPDATA')
 sstools_folder_path = os.path.join(appdata_path, "SSTools4MC")
-
-if os.path.exists(sstools_folder_path):
-  with open("config.sst","r") as config:
-    theme = config.readline()
-  if theme == "Dark":
+conf_access = f"{sstools_folder_path}\\config.sst"
+if os.path.exists(conf_access):
+  with open(conf_access, 'r') as file:
+    for line in file:
+      line = line.strip()
+      if line and not line.startswith('#'):
+        key, value = line.split('=')
+        conf[key.strip()] = value.strip()
+  if conf["theme"] == "dark":
     bg_color = "#1A1A1A"  # rgb(26, 26, 26)
-    button_color = "#D3D3D3"
+    button_color = "#D3D3D3"  # rgb(211, 211, 211)
     text_color = "white"  # White
+  elif conf["theme"] == "black":
+    bg_color = "black"  # Black
+    button_color = "white"  # White
+    text_color = "black"  # Black
+  elif conf["theme"] == "light":
+    bg_color = "white"  # White
+    button_color = "white"  # White
+    text_color = "black"  # Black
+  else:
+    bg_color = "#1A1A1A"  # rgb(26, 26, 26)
+    button_color = "#D3D3D3"  # rgb(211, 211, 211)
+    text_color = "white"  # White
+    conf["theme"] = "dark"
+    with open(conf_access, 'w') as file:
+      for key, value in conf.items():
+        file.write(f'{key}={value}\n')
 else:
-  print("La carpeta 'MiApp' no existe en '%appdata%'")
+  """asdasd"""
 
 
 
