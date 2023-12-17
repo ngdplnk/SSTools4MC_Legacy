@@ -1,3 +1,19 @@
+### THINGS TO FIX ###
+## Nothing for now
+##################################################
+### THINGS TO ADD ###
+## Server start menu
+# - Server start button
+# - Server RAM selection
+# - Server RAM saving for later
+# - Server JAR selection (not sure)
+## Server manage menu
+# - Port nogui program options
+# - Add more options
+## License and Extras menu
+# - Add more themes
+#########
+
 import tkinter as tk
 import webbrowser
 from PIL import Image, ImageTk
@@ -87,17 +103,103 @@ def theme(rt=False):
         archivo.write('theme=dark\n')
       theme(rt=True)
 
-# SUBMENÚ EMPRESAS ADHERIDAS
+# Check if fullscreen is enabled
+def fullscreen():
+  global appdata_path
+  global sstools_folder_path
+  global cfg_access
+  appdata_path = os.getenv("APPDATA")
+  sstools_folder_path = os.path.join(appdata_path, "SSTools4MC") # type: ignore
+  cfg_access = os.path.join(sstools_folder_path, "cfg.sst")
+  cfg = {}
+  if os.path.exists(sstools_folder_path):
+    if os.path.exists(cfg_access):
+      with open(cfg_access, 'r') as file:
+        for line in file:
+          line = line.strip()
+          if line and not line.startswith('#'):
+            key, value = line.split('=')
+            cfg[key.strip()] = value.strip()
+      try:
+        if cfg["fullscreen"] == "true":
+          return True
+        elif cfg["fullscreen"] == "false":
+          return False
+        else:
+          cfg["fullscreen"] = "false"
+          with open(cfg_access, 'w') as file:
+            for key, value in cfg.items():
+              file.write(f'{key}={value}\n')
+          return False
+      except KeyError:
+        cfg["fullscreen"] = "false"
+        with open(cfg_access, 'w') as file:
+          for key, value in cfg.items():
+            file.write(f'{key}={value}\n')
+        return False
+    else:
+      with open(cfg_access, 'w') as archivo:
+        archivo.write('fullscreen=false\n')
+      fullscreen()
+  else:
+    os.makedirs(sstools_folder_path)
+    with open(cfg_access, 'w') as archivo:
+      archivo.write('fullscreen=false\n')
+    fullscreen()
+
+# START SERVER MENU
 def startserver_menu():
   pass
 
-# SUBMENÚ QUIÉNES SOMOS
+# MANAGE SERVER MENU
 def manageserver_menu():
-  pass
+  # Clears the window
+  for widget in root.winfo_children():
+    widget.destroy()
+
+  # Window title
+  root.title("Server Management")
+
+  # Set BG
+  root.configure(bg=bg_color)
+
+  # Main frame
+  frame = tk.Frame(root, bg=bg_color)
+  frame.place(relx=0.5, rely=0.5, anchor='center')
+
+  # Title
+  title_font = ("Arial", 30, "bold")
+  title = tk.Label(frame, text="Server Management", font=title_font, bg=bg_color, fg=text_color)
+  title.pack(pady=5)
+
+  # Check if server.properties exists
+  props = "server.properties"
+  if os.path.exists(props):
+    global properties
+    properties = {}
+    online = "Error"
+    hard = "Error"
+    pvp = "Error"
+    with open('server.properties', 'r') as file:
+      for line in file:
+        line = line.strip()
+        if line and not line.startswith('#'):
+          key, value = line.split('=')
+          properties[key.strip()] = value.strip()
+  else:
+    # Subtitle
+    subtitle_text = "The server configuration files do not exist yet or are not available.\nYou must start the server properly at least once before you can configure it\n"
+    subtitle = tk.Label(frame, text=subtitle_text, font=("Arial", 12), wraplength=600, bg=bg_color, fg=text_color)
+    subtitle.pack(pady=5)
+
+    # "Return to Main Menu" button
+    main_button = tk.Button(frame, text="Return to Main Menu", command=main, height=3, width=30, bg=button_color, fg=buttontxt_color)
+    main_button.pack(pady=5)
 
 # LICENSE AND EXTRAS MENU
 def licensextras_menu():
   global ntheme
+  global screenmode
   # Clears the window
   for widget in root.winfo_children():
     widget.destroy()
@@ -124,7 +226,7 @@ def licensextras_menu():
   title.pack(pady=5)
 
   # Subtitle
-  subtitle_text = "SSTools4MC Release v2.0\n-------------------------------------\n\nMIT License - Copyright © 2023 NGDPL Nk\n\nHelpers:\n@naicoooossj\n@LegalizeNuclearBombs\n"
+  subtitle_text = "SSTools4MC PRIVATE BUILD\nBETA 2 FOR V2.0\n-------------------------------------\n\nMIT License - Copyright © 2023 NGDPL Nk\n\nHelpers:\n@naicoooossj\n@LegalizeNuclearBombs\n"
   subtitle = tk.Label(frame, text=subtitle_text, font=("Arial", 12), wraplength=600, bg=bg_color, fg=text_color)
   subtitle.pack(pady=5)
 
@@ -178,8 +280,48 @@ def licensextras_menu():
 
   # "Change Theme" button
   ntheme = theme(True)
-  ntheme_button = tk.Button(frame, text=f"Change to {ntheme} Theme", command=new_theme, height=3, width=30, bg=button_color, fg=buttontxt_color)
+  ntheme_button = tk.Button(frame, text=f"Set theme to {ntheme}", command=new_theme, height=3, width=30, bg=button_color, fg=buttontxt_color)
   ntheme_button.pack(pady=5)
+
+  # Change screen mode
+  def new_screenmode():
+    global screenmode
+    cfg = {}
+    if os.path.exists(sstools_folder_path):
+      if os.path.exists(cfg_access):
+        with open(cfg_access, 'r') as file:
+          for line in file:
+            line = line.strip()
+            if line and not line.startswith('#'):
+              key, value = line.split('=')
+              cfg[key.strip()] = value.strip()
+        if screenmode == "Fullscreen":
+          cfg["fullscreen"] = "true"
+          with open(cfg_access, 'w') as file:
+            for key, value in cfg.items():
+              file.write(f'{key}={value}\n')
+          root.attributes('-fullscreen', True)
+          licensextras_menu()
+        elif screenmode == "Windowed":
+          cfg["fullscreen"] = "false"
+          with open(cfg_access, 'w') as file:
+            for key, value in cfg.items():
+              file.write(f'{key}={value}\n')
+          root.attributes('-fullscreen', False)
+          licensextras_menu()
+      else:
+        with open(cfg_access, 'w') as archivo:
+          archivo.write('fullscreen=false\n')
+        screenmode = "Windowed"
+        new_screenmode()
+  
+  # "Change Screen Mode" button
+  if fullscreen():
+    screenmode = "Windowed"
+  else:
+    screenmode = "Fullscreen"
+  screenmode_button = tk.Button(frame, text=f"Set window mode to {screenmode}", command=new_screenmode, height=3, width=30, bg=button_color, fg=buttontxt_color)
+  screenmode_button.pack(pady=5)
 
   # Open GitHub Repo
   def view_repo():
@@ -218,12 +360,6 @@ def exit_menu():
   # Window title
   root.title("Thank you for using this tool")
 
-  # Min window size
-  root.minsize(600, 450)
-
-  # Set window size
-  root.geometry("800x450")
-
   # Set BG
   root.configure(bg=bg_color)
 
@@ -248,6 +384,7 @@ def main():
   if not running:
     running = True
     root = tk.Tk()
+    root.state("zoomed")
 
   root.iconbitmap("assets\\icon.ico")  # Icon
   root.title("SSTools4MC")  # Window title
@@ -258,18 +395,15 @@ def main():
 
   # Set BG
   root.configure(bg=bg_color)
+  
+  if fullscreen():
+    root.attributes('-fullscreen', True)
+  else:
+    # Min window size
+    root.minsize(850, 500)
 
-  # Min window size
-  root.minsize(600, 450)
-
-  # Maximize window size
-  root.attributes("-fullscreen", True)
-
-  ### COMMENT FOR LATER
-  ## Think clearly about the design of the window
-  # Its necessary to make it fullscreen?
-  # Or maybe a fixed size window?
-  ##################################################
+    # Set window size
+    root.geometry("850x500")
 
   # Main frame
   frame = tk.Frame(root, bg=bg_color)
@@ -303,7 +437,6 @@ def main():
 
   root.mainloop()
 
-
-
+########################
 # PROGRAM START
 theme()
