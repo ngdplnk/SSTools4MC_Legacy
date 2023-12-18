@@ -1,15 +1,9 @@
 ### THINGS TO FIX ###
-## IMPORTANT: Fix the "Start Server" menu
-# It doesn't work properly
-# It doesn't show the terminal
-# It doesn't start the server
-# It doesn't stop the server
-# It doesn't show the "Return to Main Menu" button
+## Nothing to fix
 ##################################################
 ### THINGS TO ADD ###
-## COMPLETE Server start menu
 ## License and Extras menu
-# - Add more themes
+# - Add more themes (maybe v2.1 update)
 #########
 
 import subprocess
