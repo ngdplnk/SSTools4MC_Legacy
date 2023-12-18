@@ -47,27 +47,38 @@ def theme(rt=False):
             if line and not line.startswith('#'):
               key, value = line.split('=')
               cfg[key.strip()] = value.strip()
-        if cfg["theme"] == "dark":
-          bg_color = "#1A1A1A"  # rgb(26, 26, 26)
-          button_color = "#D3D3D3"  # rgb(211, 211, 211)
-          buttontxt_color = "#1A1A1A"  # rgb(26, 26, 26)
-          text_color = "white"  # White
-          main()
-        elif cfg["theme"] == "light":
-          bg_color = "white"  # White
-          button_color = "white"  # White
-          buttontxt_color = "black"  # Black
-          text_color = "black"  # Black
-          main()
-        else:
+        try:
+          if cfg["theme"] == "dark":
+            bg_color = "#1A1A1A"  # rgb(26, 26, 26)
+            button_color = "#D3D3D3"  # rgb(211, 211, 211)
+            buttontxt_color = "#1A1A1A"  # rgb(26, 26, 26)
+            text_color = "white"  # White
+            main()
+          elif cfg["theme"] == "light":
+            bg_color = "white"  # White
+            button_color = "white"  # White
+            buttontxt_color = "black"  # Black
+            text_color = "black"  # Black
+            main()
+          else:
+            cfg["theme"] = "dark"
+            with open(cfg_access, 'w') as file:
+              for key, value in cfg.items():
+                file.write(f'{key}={value}\n')
+            bg_color = "#1A1A1A"  # rgb(26, 26, 26)
+            button_color = "#D3D3D3"  # rgb(211, 211, 211)
+            buttontxt_color = "#1A1A1A"  # rgb(26, 26, 26)
+            text_color = "white"  # White
+            main()
+        except KeyError:
           cfg["theme"] = "dark"
           with open(cfg_access, 'w') as file:
             for key, value in cfg.items():
               file.write(f'{key}={value}\n')
           bg_color = "#1A1A1A"  # rgb(26, 26, 26)
-          button_color = "#D3D3D3"  # rgb(211, 211, 211)
-          buttontxt_color = "#1A1A1A"  # rgb(26, 26, 26)
-          text_color = "white"  # White
+          button_color = "#D3D3D3"
+          buttontxt_color = "#1A1A1A"
+          text_color = "white"
           main()
       else:
         with open(cfg_access, 'w') as archivo:
@@ -87,11 +98,18 @@ def theme(rt=False):
             if line and not line.startswith('#'):
               key, value = line.split('=')
               cfg[key.strip()] = value.strip()
-        if cfg["theme"] == "dark":
-          return "Light"
-        elif cfg["theme"] == "light":
-          return "Dark"
-        else:
+        try:
+          if cfg["theme"] == "dark":
+            return "Light"
+          elif cfg["theme"] == "light":
+            return "Dark"
+          else:
+            return "Dark"
+        except KeyError:
+          cfg["theme"] = "dark"
+          with open(cfg_access, 'w') as file:
+            for key, value in cfg.items():
+              file.write(f'{key}={value}\n')
           return "Dark"
       else:
         with open(cfg_access, 'w') as archivo:
@@ -147,9 +165,167 @@ def fullscreen():
       archivo.write('fullscreen=false\n')
     fullscreen()
 
+# Check last ram used
+def last_ram():
+  global appdata_path
+  global sstools_folder_path
+  global cfg_access
+  appdata_path = os.getenv("APPDATA")
+  sstools_folder_path = os.path.join(appdata_path, "SSTools4MC") # type: ignore
+  cfg_access = os.path.join(sstools_folder_path, "cfg.sst")
+  cfg = {}
+  if os.path.exists(sstools_folder_path):
+    if os.path.exists(cfg_access):
+      with open(cfg_access, 'r') as file:
+        for line in file:
+          line = line.strip()
+          if line and not line.startswith('#'):
+            key, value = line.split('=')
+            cfg[key.strip()] = value.strip()
+      try:
+        return cfg["ram"]
+      except KeyError:
+        cfg["ram"] = "1"
+        with open(cfg_access, 'w') as file:
+          for key, value in cfg.items():
+            file.write(f'{key}={value}\n')
+        return cfg["ram"]
+    else:
+      with open(cfg_access, 'w') as archivo:
+        archivo.write('ram=1\n')
+      last_ram()
+  else:
+    os.makedirs(sstools_folder_path)
+    with open(cfg_access, 'w') as archivo:
+      archivo.write('ram=1\n')
+    last_ram()
+
+# Check last ram type used
+def last_ramtype():
+  global appdata_path
+  global sstools_folder_path
+  global cfg_access
+  appdata_path = os.getenv("APPDATA")
+  sstools_folder_path = os.path.join(appdata_path, "SSTools4MC") # type: ignore
+  cfg_access = os.path.join(sstools_folder_path, "cfg.sst")
+  cfg = {}
+  if os.path.exists(sstools_folder_path):
+    if os.path.exists(cfg_access):
+      with open(cfg_access, 'r') as file:
+        for line in file:
+          line = line.strip()
+          if line and not line.startswith('#'):
+            key, value = line.split('=')
+            cfg[key.strip()] = value.strip()
+      try:
+        return cfg["ramtype"]
+      except KeyError:
+        cfg["ramtype"] = "GB"
+        with open(cfg_access, 'w') as file:
+          for key, value in cfg.items():
+            file.write(f'{key}={value}\n')
+        return cfg["ramtype"]
+    else:
+      with open(cfg_access, 'w') as archivo:
+        archivo.write('ramtype=GB\n')
+      last_ramtype()
+  else:
+    os.makedirs(sstools_folder_path)
+    with open(cfg_access, 'w') as archivo:
+      archivo.write('ramtype=GB\n')
+    last_ramtype()
+
 # START SERVER MENU
 def startserver_menu():
-  pass
+  def validate_input(P):
+    ram_type = ramtype_var.get()
+    if P.isdigit():
+        P = int(P)
+        if (ram_type == "MB" and 842 <= P <= 76800) or (ram_type == "GB" and 1 <= P <= 75):
+            return True
+    elif P == "":
+        return True
+    return False
+
+  # Clears the window
+  for widget in root.winfo_children():
+    widget.destroy()
+
+  # Window title
+  root.title("Start Server")
+
+  # Set BG
+  root.configure(bg=bg_color)
+
+  # Main frame
+  frame = tk.Frame(root, bg=bg_color)
+  frame.place(relx=0.5, rely=0.5, anchor='center')
+
+  # Title
+  title_font = ("Arial", 30, "bold")
+  title = tk.Label(frame, text="Start Server", font=title_font, bg=bg_color, fg=text_color)
+  title.grid(row=0, column=0, columnspan=2, pady=5)
+
+  # Subtitle
+  subtitle_text = "Enter the ammount of RAM you want to Start your Server\n"
+  subtitle = tk.Label(frame, text=subtitle_text, font=("Arial", 12), wraplength=600, bg=bg_color, fg=text_color)
+  subtitle.grid(row=1, column=0, columnspan=2, pady=5)
+
+  # RAM Entry and Dropdown
+  ram_var = tk.StringVar(value=last_ram())
+  ramtype_var = tk.StringVar(value=last_ramtype())
+
+  vcmd = frame.register(validate_input)
+
+  ram_entry = tk.Entry(frame, textvariable=ram_var, validate="key", validatecommand=(vcmd, '%P'))
+  ram_entry.grid(row=2, column=0)
+
+  # RAM Type Change
+  def ram_change(*args):
+    cfg = {}
+    if os.path.exists(sstools_folder_path):
+      if os.path.exists(cfg_access):
+        with open(cfg_access, 'r') as file:
+          for line in file:
+            line = line.strip()
+            if line and not line.startswith('#'):
+              key, value = line.split('=')
+              cfg[key.strip()] = value.strip()
+        try:
+          cfg["ramtype"] = ramtype_var.get()
+          with open(cfg_access, 'w') as file:
+            for key, value in cfg.items():
+              file.write(f'{key}={value}\n')
+          startserver_menu()
+        except KeyError:
+          cfg["ramtype"] = "GB"
+          with open(cfg_access, 'w') as file:
+            for key, value in cfg.items():
+              file.write(f'{key}={value}\n')
+          startserver_menu()
+      else:
+        with open(cfg_access, 'w') as archivo:
+          archivo.write('ramtype=GB\n')
+        startserver_menu()
+    else:
+      os.makedirs(sstools_folder_path)
+      with open(cfg_access, 'w') as archivo:
+        archivo.write('ramtype=GB\n')
+      startserver_menu()
+
+  ramtype_var.trace_add('write', ram_change)
+
+  ramtype_dropdown = tk.OptionMenu(frame, ramtype_var, "MB", "GB")
+  ramtype_dropdown.grid(row=2, column=1)
+
+  # Start Server Button
+  def start_server():
+    ram = ram_var.get()
+    ram_type = ramtype_var.get()
+    # Code to start the server with `ram` amount of `ram_type` of RAM
+
+  start_button = tk.Button(frame, text="Start Server", command=start_server)
+  start_button.grid(row=3, column=0, columnspan=2)
 
 # MANAGE SERVER MENU
 def manageserver_menu():
@@ -170,31 +346,403 @@ def manageserver_menu():
   # Title
   title_font = ("Arial", 30, "bold")
   title = tk.Label(frame, text="Server Management", font=title_font, bg=bg_color, fg=text_color)
-  title.pack(pady=5)
+  title.grid(row=0, column=0, columnspan=5, pady=5)
 
   # Check if server.properties exists
   props = "server.properties"
   if os.path.exists(props):
     global properties
     properties = {}
-    online = "Error"
-    hard = "Error"
-    pvp = "Error"
     with open('server.properties', 'r') as file:
       for line in file:
         line = line.strip()
         if line and not line.startswith('#'):
           key, value = line.split('=')
           properties[key.strip()] = value.strip()
+    
+    # Subtitle
+    subtitle_text = "Welcome to the server management menu\n"
+    subtitle = tk.Label(frame, text=subtitle_text, font=("Arial", 12), wraplength=600, bg=bg_color, fg=text_color)
+    subtitle.grid(row=1, column=0, columnspan=5, pady=5)
+
+    # Enable/Disable Online Mode
+    def onlinemode(rt=False):
+      global properties
+      if not rt:
+        try:
+          if properties["online-mode"] == "true":
+            properties["online-mode"] = "false"
+            with open('server.properties', 'w') as file:
+              for key, value in properties.items():
+                file.write(f'{key}={value}\n')
+            manageserver_menu()
+          elif properties["online-mode"] == "false":
+            properties["online-mode"] = "true"
+            with open('server.properties', 'w') as file:
+              for key, value in properties.items():
+                file.write(f'{key}={value}\n')
+            manageserver_menu()
+          else:
+            properties["online-mode"] = "true"
+            with open('server.properties', 'w') as file:
+              for key, value in properties.items():
+                file.write(f'{key}={value}\n')
+            manageserver_menu()
+        except KeyError:
+          properties["online-mode"] = "true"
+          with open('server.properties', 'w') as file:
+            for key, value in properties.items():
+              file.write(f'{key}={value}\n')
+          manageserver_menu()
+      else:
+        try:
+          if properties["online-mode"] == "true":
+            return True
+          elif properties["online-mode"] == "false":
+            return False
+          else:
+            properties["online-mode"] = "true"
+            with open('server.properties', 'w') as file:
+              for key, value in properties.items():
+                file.write(f'{key}={value}\n')
+            return True
+        except KeyError:
+          properties["online-mode"] = "true"
+          with open('server.properties', 'w') as file:
+            for key, value in properties.items():
+              file.write(f'{key}={value}\n')
+          return True
+
+    # "Enable/Disable Online Mode" button
+    if onlinemode(True):
+      # "Online Mode:" label
+      online_label = tk.Label(frame, text="Online Mode:", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
+      online_label.grid(row=2, column=0, pady=5, sticky='e')
+
+      # "ENABLED" label
+      onlinemode_button = tk.Button(frame, text="ENABLED", command=onlinemode, height=2, width=20, bg=button_color, fg="green")
+      onlinemode_button.grid(row=2, column=1, padx=5, pady=5, sticky='w')
+    else:
+      # "Online Mode:" label
+      online_label = tk.Label(frame, text="Online Mode:", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
+      online_label.grid(row=2, column=0, pady=5, sticky='e')
+
+      # "DISABLED" label
+      onlinemode_button = tk.Button(frame, text="DISABLED", command=onlinemode, height=2, width=20, bg=button_color,fg="red")
+      onlinemode_button.grid(row=2, column=1, padx=5, pady=5, sticky='w')
+
+    # Enable/Disable Hardcore Mode
+    def hardcoremode(rt=False):
+      global properties
+      if not rt:
+        try:
+          if properties["hardcore"] == "true":
+            properties["hardcore"] = "false"
+            with open('server.properties', 'w') as file:
+              for key, value in properties.items():
+                file.write(f'{key}={value}\n')
+            manageserver_menu()
+          elif properties["hardcore"] == "false":
+            properties["hardcore"] = "true"
+            with open('server.properties', 'w') as file:
+              for key, value in properties.items():
+                file.write(f'{key}={value}\n')
+            manageserver_menu()
+          else:
+            properties["hardcore"] = "true"
+            with open('server.properties', 'w') as file:
+              for key, value in properties.items():
+                file.write(f'{key}={value}\n')
+            manageserver_menu()
+        except KeyError:
+          properties["hardcore"] = "false"
+          with open('server.properties', 'w') as file:
+            for key, value in properties.items():
+              file.write(f'{key}={value}\n')
+          manageserver_menu()
+      else:
+        try:
+          if properties["hardcore"] == "true":
+            return True
+          elif properties["hardcore"] == "false":
+            return False
+          else:
+            properties["hardcore"] = "true"
+            with open('server.properties', 'w') as file:
+              for key, value in properties.items():
+                file.write(f'{key}={value}\n')
+            return True
+        except KeyError:
+          properties["hardcore"] = "false"
+          with open('server.properties', 'w') as file:
+            for key, value in properties.items():
+              file.write(f'{key}={value}\n')
+          return False
+    
+    # "Enable/Disable Hardcore Mode" button
+    if hardcoremode(True):
+      # "Hardcore Mode:" label
+      hardcore_label = tk.Label(frame, text="Hardcore:", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
+      hardcore_label.grid(row=3, column=0, pady=5, sticky='e')
+
+      # "ENABLED" label
+      hardcoremode_button = tk.Button(frame, text="ENABLED", command=hardcoremode, height=2, width=20, bg=button_color, fg="green")
+      hardcoremode_button.grid(row=3, column=1, padx=5, pady=5, sticky='w')
+    else:
+      # "Hardcore Mode:" label
+      hardcore_label = tk.Label(frame, text="Hardcore:", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
+      hardcore_label.grid(row=3, column=0, pady=5, sticky='e')
+
+      # "DISABLED" label
+      hardcoremode_button = tk.Button(frame, text="DISABLED", command=hardcoremode, height=2, width=20, bg=button_color, fg="red")
+      hardcoremode_button.grid(row=3, column=1, padx=5, pady=5, sticky='w')
+
+    # Enable/Disable Command Blocks
+    def commandblocks(rt=False):
+      global properties
+      if not rt:
+        try:
+          if properties["enable-command-block"] == "true":
+            properties["enable-command-block"] = "false"
+            with open('server.properties', 'w') as file:
+              for key, value in properties.items():
+                file.write(f'{key}={value}\n')
+            manageserver_menu()
+          elif properties["enable-command-block"] == "false":
+            properties["enable-command-block"] = "true"
+            with open('server.properties', 'w') as file:
+              for key, value in properties.items():
+                file.write(f'{key}={value}\n')
+            manageserver_menu()
+          else:
+            properties["enable-command-block"] = "true"
+            with open('server.properties', 'w') as file:
+              for key, value in properties.items():
+                file.write(f'{key}={value}\n')
+            manageserver_menu()
+        except KeyError:
+          properties["enable-command-block"] = "true"
+          with open('server.properties', 'w') as file:
+            for key, value in properties.items():
+              file.write(f'{key}={value}\n')
+          manageserver_menu()
+      else:
+        try:
+          if properties["enable-command-block"] == "true":
+            return True
+          elif properties["enable-command-block"] == "false":
+            return False
+          else:
+            properties["enable-command-block"] = "true"
+            with open('server.properties', 'w') as file:
+              for key, value in properties.items():
+                file.write(f'{key}={value}\n')
+            return True
+        except KeyError:
+          properties["enable-command-block"] = "true"
+          with open('server.properties', 'w') as file:
+            for key, value in properties.items():
+              file.write(f'{key}={value}\n')
+          return True
+    
+    # "Enable/Disable Command Blocks" button
+    if commandblocks(True):
+      # "Command Blocks:" label
+      commandblocks_label = tk.Label(frame, text="Command Blocks:", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
+      commandblocks_label.grid(row=4, column=0, pady=5, sticky='e')
+
+      # "ENABLED" label
+      commandblocks_button = tk.Button(frame, text="ENABLED", command=commandblocks, height=2, width=20, bg=button_color, fg="green")
+      commandblocks_button.grid(row=4, column=1, padx=5, pady=5, sticky='w')
+    else:
+      # "Command Blocks:" label
+      commandblocks_label = tk.Label(frame, text="Command Blocks:", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
+      commandblocks_label.grid(row=4, column=0, pady=5, sticky='e')
+
+      # "DISABLED" label
+      commandblocks_button = tk.Button(frame, text="DISABLED", command=commandblocks, height=2, width=20, bg=button_color, fg="red")
+      commandblocks_button.grid(row=4, column=1, padx=5, pady=5, sticky='w')
+
+    # Enable/Disable PVP
+    def pvp(rt=False):
+      global properties
+      if not rt:
+        try:
+          if properties["pvp"] == "true":
+            properties["pvp"] = "false"
+            with open('server.properties', 'w') as file:
+              for key, value in properties.items():
+                file.write(f'{key}={value}\n')
+            manageserver_menu()
+          elif properties["pvp"] == "false":
+            properties["pvp"] = "true"
+            with open('server.properties', 'w') as file:
+              for key, value in properties.items():
+                file.write(f'{key}={value}\n')
+            manageserver_menu()
+          else:
+            properties["pvp"] = "true"
+            with open('server.properties', 'w') as file:
+              for key, value in properties.items():
+                file.write(f'{key}={value}\n')
+            manageserver_menu()
+        except KeyError:
+          properties["pvp"] = "true"
+          with open('server.properties', 'w') as file:
+            for key, value in properties.items():
+              file.write(f'{key}={value}\n')
+          manageserver_menu()
+      else:
+        try:
+          if properties["pvp"] == "true":
+            return True
+          elif properties["pvp"] == "false":
+            return False
+          else:
+            properties["pvp"] = "true"
+            with open('server.properties', 'w') as file:
+              for key, value in properties.items():
+                file.write(f'{key}={value}\n')
+            return True
+        except KeyError:
+          properties["pvp"] = "true"
+          with open('server.properties', 'w') as file:
+            for key, value in properties.items():
+              file.write(f'{key}={value}\n')
+          return True
+    
+    # "Enable/Disable PVP" button
+    if pvp(True):
+      # "PVP:" label
+      pvp_label = tk.Label(frame, text="PvP:", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
+      pvp_label.grid(row=5, column=0, pady=5, sticky='e')
+
+      # "ENABLED" label
+      pvp_button = tk.Button(frame, text="ENABLED", command=pvp, height=2, width=20, bg=button_color, fg="green")
+      pvp_button.grid(row=5, column=1, padx=5, pady=5, sticky='w')
+    else:
+      # "PVP:" label
+      pvp_label = tk.Label(frame, text="PvP:", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
+      pvp_label.grid(row=5, column=0, pady=5, sticky='e')
+
+      # "DISABLED" label
+      pvp_button = tk.Button(frame, text="DISABLED", command=pvp, height=2, width=20, bg=button_color, fg="red")
+      pvp_button.grid(row=5, column=1, padx=5, pady=5, sticky='w')
+
+    # Change Gamemode
+    def gamemode_change(*args):
+      global properties
+      properties["gamemode"] = gamemode_var.get().lower()
+      with open('server.properties', 'w') as file:
+        for key, value in properties.items():
+          file.write(f'{key}={value}\n')
+      manageserver_menu()
+    
+    # "Change Gamemode" Button
+    global gamemode_var
+    gamemode_var = tk.StringVar()
+    gamemode_var.set(f"{properties['gamemode'].upper()}")
+    gamemode_var.trace_add("write", gamemode_change)
+    gamemode_options = ["SURVIVAL", "CREATIVE", "ADVENTURE", "SPECTATOR"]
+    space_label = tk.Label(frame, text=" ", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
+    space_label.grid(row=2, column=2, padx=15, pady=5)
+    gamemode_label = tk.Label(frame, text="Gamemode:", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
+    gamemode_label.grid(row=2, column=3, pady=5, sticky='e')
+    gamemode_menu = tk.OptionMenu(frame, gamemode_var, *gamemode_options)
+    gamemode_menu.grid(row=2, column=4, padx=5, pady=5, sticky='w')
+
+    # Change Difficulty
+    def difficulty_change(*args):
+      global properties
+      properties["difficulty"] = difficulty_var.get().lower()
+      with open('server.properties', 'w') as file:
+        for key, value in properties.items():
+          file.write(f'{key}={value}\n')
+      manageserver_menu()
+    
+    # "Change Difficulty" Button
+    global difficulty_var
+    difficulty_var = tk.StringVar()
+    difficulty_var.set(f"{properties['difficulty'].upper()}")
+    difficulty_var.trace_add("write", difficulty_change)
+    difficulty_options = ["PEACEFUL", "EASY", "NORMAL", "HARD"]
+    space_label = tk.Label(frame, text=" ", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
+    space_label.grid(row=3, column=2, padx=15, pady=5)
+    difficulty_label = tk.Label(frame, text="Difficulty:", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
+    difficulty_label.grid(row=3, column=3, pady=5, sticky='e')
+    difficulty_menu = tk.OptionMenu(frame, difficulty_var, *difficulty_options)
+    difficulty_menu.grid(row=3, column=4, padx=5, pady=5, sticky='w')
+
+    # Change Level Type
+    def leveltype_change(*args):
+      global properties
+      properties["level-type"] = f"minecraft:{leveltype_var.get().lower()}"
+      with open('server.properties', 'w') as file:
+        for key, value in properties.items():
+          file.write(f'{key}={value}\n')
+      manageserver_menu()
+    
+    # "Change Level Type" Button
+    global leveltype_var
+    leveltype_var = tk.StringVar()
+    leveltype_var.set(f"{properties['level-type'].upper().replace('MINECRAFT:', '')}")
+    leveltype_var.trace_add("write", leveltype_change)
+    leveltype_options = ["DEFAULT", "FLAT", "LARGEBIOMES", "AMPLIFIED"]
+    space_label = tk.Label(frame, text=" ", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
+    space_label.grid(row=4, column=2, padx=15, pady=5)
+    leveltype_label = tk.Label(frame, text="Level Type:", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
+    leveltype_label.grid(row=4, column=3, pady=5, sticky='e')
+    leveltype_menu = tk.OptionMenu(frame, leveltype_var, *leveltype_options)
+    leveltype_menu.grid(row=4, column=4, padx=5, pady=5, sticky='w')
+
+    # Change Max Players
+    def maxplayers_change(*args):
+      global properties
+      if maxplayers_var.get() == "":
+        maxplayers_var.set("1")
+      elif int(maxplayers_var.get()) > 10000:
+        maxplayers_var.set("10000")
+      properties["max-players"] = maxplayers_var.get()
+      with open('server.properties', 'w') as file:
+        for key, value in properties.items():
+          file.write(f'{key}={value}\n')
+      manageserver_menu()
+    
+    # "Change Max Players" Button
+    global maxplayers_var
+    maxplayers_var = tk.StringVar()
+    maxplayers_var.set(f"{properties['max-players']}")
+    space_label = tk.Label(frame, text=" ", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
+    space_label.grid(row=5, column=2, padx=15, pady=5)
+    maxplayers_label = tk.Label(frame, text="Max Players:", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
+    maxplayers_label.grid(row=5, column=3, pady=5, sticky='e')
+    def validate_input(P):
+      # P is the new text after the edit
+      if str.isdigit(P) and 1 <= int(P) <= 99999999:
+          return True
+      elif P == "":
+          return True
+      else:
+          return False
+    vcmd = frame.register(validate_input)
+    maxplayers_entry = tk.Entry(frame, textvariable=maxplayers_var, width=8, validate="key", validatecommand=(vcmd, '%P'))
+    maxplayers_entry.grid(row=5, column=4, padx=5, pady=5, sticky='w')
+    save_button = tk.Button(frame, text="Save", command=maxplayers_change, height=1, width=5, bg=button_color, fg=buttontxt_color)
+    save_button.grid(row=5, column=4, pady=5, sticky='e')
+
+    # "Return to Main Menu" button
+    main_button = tk.Button(frame, text="Return to Main Menu", command=main, height=3, width=30, bg=button_color, fg=buttontxt_color)
+    main_button.grid(row=7, column=0, columnspan=5, pady=15, sticky="nsew")
+
   else:
     # Subtitle
     subtitle_text = "The server configuration files do not exist yet or are not available.\nYou must start the server properly at least once before you can configure it\n"
     subtitle = tk.Label(frame, text=subtitle_text, font=("Arial", 12), wraplength=600, bg=bg_color, fg=text_color)
-    subtitle.pack(pady=5)
+    subtitle.grid(row=1, column=0, columnspan=2, pady=5)
 
     # "Return to Main Menu" button
     main_button = tk.Button(frame, text="Return to Main Menu", command=main, height=3, width=30, bg=button_color, fg=buttontxt_color)
-    main_button.pack(pady=5)
+    main_button.grid(row=2, column=0, columnspan=2, pady=15, sticky="nsew")
 
 # LICENSE AND EXTRAS MENU
 def licensextras_menu():
@@ -208,10 +756,10 @@ def licensextras_menu():
   root.title("License and Extras")
 
   # Min window size
-  root.minsize(450, 620)
+  root.minsize(850, 600)
 
   # Set window size
-  root.geometry("450x620")
+  root.geometry("850x600")
 
   # Set BG
   root.configure(bg=bg_color)
@@ -223,12 +771,12 @@ def licensextras_menu():
   # Title
   title_font = ("Arial", 30, "bold")
   title = tk.Label(frame, text="License and Extras", font=title_font, bg=bg_color, fg=text_color)
-  title.pack(pady=5)
+  title.grid(row=0, column=0, columnspan=2, pady=5)
 
   # Subtitle
   subtitle_text = "SSTools4MC PRIVATE BUILD\nBETA 2 FOR V2.0\n-------------------------------------\n\nMIT License - Copyright © 2023 NGDPL Nk\n\nHelpers:\n@naicoooossj\n@LegalizeNuclearBombs\n"
   subtitle = tk.Label(frame, text=subtitle_text, font=("Arial", 12), wraplength=600, bg=bg_color, fg=text_color)
-  subtitle.pack(pady=5)
+  subtitle.grid(row=1, column=0, columnspan=2, pady=5)
 
   # Check current theme
   def new_theme():
@@ -281,7 +829,7 @@ def licensextras_menu():
   # "Change Theme" button
   ntheme = theme(True)
   ntheme_button = tk.Button(frame, text=f"Set theme to {ntheme}", command=new_theme, height=3, width=30, bg=button_color, fg=buttontxt_color)
-  ntheme_button.pack(pady=5)
+  ntheme_button.grid(row=2, column=0, padx=3, pady=5)
 
   # Change screen mode
   def new_screenmode():
@@ -321,7 +869,7 @@ def licensextras_menu():
   else:
     screenmode = "Fullscreen"
   screenmode_button = tk.Button(frame, text=f"Set window mode to {screenmode}", command=new_screenmode, height=3, width=30, bg=button_color, fg=buttontxt_color)
-  screenmode_button.pack(pady=5)
+  screenmode_button.grid(row=2, column=1, padx=3, pady=5)
 
   # Open GitHub Repo
   def view_repo():
@@ -329,7 +877,7 @@ def licensextras_menu():
   
   # "Open GitHub Repo" button
   repo_button = tk.Button(frame, text="Open GitHub Repo", command=view_repo, height=3, width=30, bg=button_color, fg=buttontxt_color)
-  repo_button.pack(pady=5)
+  repo_button.grid(row=3, column=0, padx=3, pady=5)
 
   # Open Text Formatting for MOTD's
   def view_motdsformat():
@@ -337,7 +885,15 @@ def licensextras_menu():
   
   # "Open Text Formatting for MOTD's" button
   motd_button = tk.Button(frame, text="Open Text Formatting for MOTD's", command=view_motdsformat, height=3, width=30, bg=button_color, fg=buttontxt_color)
-  motd_button.pack(pady=5)
+  motd_button.grid(row=3, column=1, padx=3, pady=5)
+
+  # Open server.properties wiki
+  def view_serverproperties():
+    webbrowser.open("https://minecraft.wiki/w/Server.properties")
+
+  # "Open server.properties wiki" button
+  serverproperties_button = tk.Button(frame, text="Open server.properties wiki", command=view_serverproperties, height=3, width=30, bg=button_color, fg=buttontxt_color)
+  serverproperties_button.grid(row=4, column=0, padx=3, pady=5)
 
   # Open License
   def view_license():
@@ -345,11 +901,11 @@ def licensextras_menu():
   
   # "Open License" button
   license_button = tk.Button(frame, text="Open License", command=view_license, height=3, width=30, bg=button_color, fg=buttontxt_color)
-  license_button.pack(pady=5)
+  license_button.grid(row=4, column=1, padx=3, pady=5)
 
   # "Return to Main Menu" button
   main_button = tk.Button(frame, text="Return to Main Menu", command=main, height=3, width=30, bg=button_color, fg=buttontxt_color)
-  main_button.pack(pady=5)
+  main_button.grid(row=5, column=0, columnspan=2, pady=15, sticky="nsew")
 
 # EXIT MENU
 def exit_menu():
