@@ -465,7 +465,7 @@ def startserver_menu():
       command_entry.bind('<Return>', send_command)
 
       # Stop Server Button
-      stop_button = tk.Button(frame, text="STOP", command=stop_server, height=2, width=30, bg="red", fg=buttontxt_color)
+      stop_button = tk.Button(frame, text="STOP", command=stop_server, height=2, width=30, bg="red", fg="white")
       stop_button.grid(row=7, column=0, columnspan=4, pady=15, sticky="nsew")
 
       # Start updating the terminal
@@ -475,7 +475,7 @@ def startserver_menu():
   ## PLACEHOLDER ##
 
   # "Start Server" button
-  start_button = tk.Button(frame, text="START", command=start_server, height=3, width=20, bg=button_color, fg="green")
+  start_button = tk.Button(frame, text="START", command=start_server, height=3, width=20, bg="green", fg="white")
   start_button.grid(row=3, column=0, columnspan=4, pady=5, sticky='nsew')
 
   # "Return to Main Menu" button
