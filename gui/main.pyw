@@ -1,23 +1,25 @@
 ### THINGS TO FIX ###
-## Nothing for now
+## IMPORTANT: Fix the "Start Server" menu
+# It doesn't work properly
+# It doesn't show the terminal
+# It doesn't start the server
+# It doesn't stop the server
+# It doesn't show the "Return to Main Menu" button
 ##################################################
 ### THINGS TO ADD ###
-## Server start menu
-# - Server start button
-# - Server RAM selection
-# - Server RAM saving for later
-# - Server JAR selection (not sure)
-## Server manage menu
-# - Port nogui program options
-# - Add more options
+## COMPLETE Server start menu
 ## License and Extras menu
 # - Add more themes
 #########
 
+import subprocess
+import threading
+import time
 import tkinter as tk
 import webbrowser
 from PIL import Image, ImageTk
 import os
+import queue
 
 # Global variables
 global running
@@ -165,41 +167,6 @@ def fullscreen():
       archivo.write('fullscreen=false\n')
     fullscreen()
 
-# Check last ram used
-def last_ram():
-  global appdata_path
-  global sstools_folder_path
-  global cfg_access
-  appdata_path = os.getenv("APPDATA")
-  sstools_folder_path = os.path.join(appdata_path, "SSTools4MC") # type: ignore
-  cfg_access = os.path.join(sstools_folder_path, "cfg.sst")
-  cfg = {}
-  if os.path.exists(sstools_folder_path):
-    if os.path.exists(cfg_access):
-      with open(cfg_access, 'r') as file:
-        for line in file:
-          line = line.strip()
-          if line and not line.startswith('#'):
-            key, value = line.split('=')
-            cfg[key.strip()] = value.strip()
-      try:
-        return cfg["ram"]
-      except KeyError:
-        cfg["ram"] = "1"
-        with open(cfg_access, 'w') as file:
-          for key, value in cfg.items():
-            file.write(f'{key}={value}\n')
-        return cfg["ram"]
-    else:
-      with open(cfg_access, 'w') as archivo:
-        archivo.write('ram=1\n')
-      last_ram()
-  else:
-    os.makedirs(sstools_folder_path)
-    with open(cfg_access, 'w') as archivo:
-      archivo.write('ram=1\n')
-    last_ram()
-
 # Check last ram type used
 def last_ramtype():
   global appdata_path
@@ -218,13 +185,16 @@ def last_ramtype():
             key, value = line.split('=')
             cfg[key.strip()] = value.strip()
       try:
-        return cfg["ramtype"]
+        if cfg["ramtype"] == "MB":
+          return "MB"
+        else:
+          return "GB"
       except KeyError:
         cfg["ramtype"] = "GB"
         with open(cfg_access, 'w') as file:
           for key, value in cfg.items():
             file.write(f'{key}={value}\n')
-        return cfg["ramtype"]
+        return "GB"
     else:
       with open(cfg_access, 'w') as archivo:
         archivo.write('ramtype=GB\n')
@@ -235,16 +205,80 @@ def last_ramtype():
       archivo.write('ramtype=GB\n')
     last_ramtype()
 
+# Check last ram used
+def last_ram():
+  global appdata_path
+  global sstools_folder_path
+  global cfg_access
+  appdata_path = os.getenv("APPDATA")
+  sstools_folder_path = os.path.join(appdata_path, "SSTools4MC") # type: ignore
+  cfg_access = os.path.join(sstools_folder_path, "cfg.sst")
+  cfg = {}
+  if os.path.exists(sstools_folder_path):
+    if os.path.exists(cfg_access):
+      with open(cfg_access, 'r') as file:
+        for line in file:
+          line = line.strip()
+          if line and not line.startswith('#'):
+            key, value = line.split('=')
+            cfg[key.strip()] = value.strip()
+      try:
+        if last_ramtype() == "GB":
+          if 0 < int(cfg["ram"]) <= 75:
+            return cfg["ram"]
+          else:
+            cfg["ram"] = "1"
+            with open(cfg_access, 'w') as file:
+              for key, value in cfg.items():
+                file.write(f'{key}={value}\n')
+            return "1"
+        else:
+          if 842 <= int(cfg["ram"]) <= 76800:
+            return cfg["ram"]
+          else:
+            cfg["ram"] = "1024"
+            with open(cfg_access, 'w') as file:
+              for key, value in cfg.items():
+                file.write(f'{key}={value}\n')
+            return "1024"
+      except (KeyError, ValueError):
+        if last_ramtype() == "GB":
+          cfg["ram"] = "1"
+          with open(cfg_access, 'w') as file:
+            for key, value in cfg.items():
+              file.write(f'{key}={value}\n')
+          return "1"
+        else:
+          cfg["ram"] = "1024"
+          with open(cfg_access, 'w') as file:
+            for key, value in cfg.items():
+              file.write(f'{key}={value}\n')
+          return "1024"
+    else:
+      if last_ramtype() == "GB":
+        with open(cfg_access, 'w') as archivo:
+          archivo.write('ram=1\n')
+        last_ram()
+      else:
+        with open(cfg_access, 'w') as archivo:
+          archivo.write('ram=1024\n')
+        last_ram()
+  else:
+    os.makedirs(sstools_folder_path)
+    with open(cfg_access, 'w') as archivo:
+      archivo.write('ram=1\n')
+    last_ram()
+
 # START SERVER MENU
 def startserver_menu():
   def validate_input(P):
-    ram_type = ramtype_var.get()
+    ram_type = last_ramtype()
     if P.isdigit():
-        P = int(P)
-        if (ram_type == "MB" and 842 <= P <= 76800) or (ram_type == "GB" and 1 <= P <= 75):
-            return True
-    elif P == "":
+      P = int(P)
+      if (ram_type == "GB" and 1 <= P <= 99) or (ram_type == "MB" and 1 <= P <= 99999):
         return True
+    elif P == "":
+      return True
     return False
 
   # Clears the window
@@ -264,12 +298,16 @@ def startserver_menu():
   # Title
   title_font = ("Arial", 30, "bold")
   title = tk.Label(frame, text="Start Server", font=title_font, bg=bg_color, fg=text_color)
-  title.grid(row=0, column=0, columnspan=2, pady=5)
+  title.grid(row=0, column=0, columnspan=4, pady=5)
 
   # Subtitle
-  subtitle_text = "Enter the ammount of RAM you want to Start your Server\n"
+  subtitle_text = "Prepare for Starting your Server\n"
   subtitle = tk.Label(frame, text=subtitle_text, font=("Arial", 12), wraplength=600, bg=bg_color, fg=text_color)
-  subtitle.grid(row=1, column=0, columnspan=2, pady=5)
+  subtitle.grid(row=1, column=0, columnspan=4, pady=5)
+
+  # "Start Server with" label
+  startserver_label = tk.Label(frame, text="Start Server with", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
+  startserver_label.grid(row=2, column=0, pady=5, sticky='e')
 
   # RAM Entry and Dropdown
   ram_var = tk.StringVar(value=last_ram())
@@ -277,8 +315,8 @@ def startserver_menu():
 
   vcmd = frame.register(validate_input)
 
-  ram_entry = tk.Entry(frame, textvariable=ram_var, validate="key", validatecommand=(vcmd, '%P'))
-  ram_entry.grid(row=2, column=0)
+  ram_entry = tk.Entry(frame, textvariable=ram_var, validate="key", validatecommand=(vcmd, '%P'), width=6)
+  ram_entry.grid(row=2, column=1, padx=5, pady=5)
 
   # RAM Type Change
   def ram_change(*args):
@@ -316,19 +354,137 @@ def startserver_menu():
   ramtype_var.trace_add('write', ram_change)
 
   ramtype_dropdown = tk.OptionMenu(frame, ramtype_var, "MB", "GB")
-  ramtype_dropdown.grid(row=2, column=1)
+  ramtype_dropdown.grid(row=2, column=2, padx=5, pady=5)
 
-  # Start Server Button
+  # "of RAM" label
+  ram_label = tk.Label(frame, text="of RAM", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
+  ram_label.grid(row=2, column=3, pady=5, sticky='w')
+
   def start_server():
-    ram = ram_var.get()
-    ram_type = ramtype_var.get()
-    # Code to start the server with `ram` amount of `ram_type` of RAM
+    global process
+    global terminal
+    global command_entry
 
-  start_button = tk.Button(frame, text="Start Server", command=start_server)
-  start_button.grid(row=3, column=0, columnspan=2)
+    if not os.path.exists(os.path.join(os.path.dirname(os.getcwd()), "server.jar")):
+      # Clear the window
+      for widget in root.winfo_children():
+        widget.destroy()
+
+      # Main frame
+      frame = tk.Frame(root, bg=bg_color)
+      frame.place(relx=0.5, rely=0.5, anchor='center')
+
+      # Title
+      title_font = ("Arial", 30, "bold")
+      title = tk.Label(frame, text="Start Server", font=title_font, bg=bg_color, fg=text_color)
+      title.grid(row=0, column=0, columnspan=4, pady=5)
+
+      # Subtitle
+      subtitle_text = "Server.jar not found :(\n"
+      subtitle = tk.Label(frame, text=subtitle_text, font=("Arial", 12), wraplength=600, bg=bg_color, fg=text_color)
+      subtitle.grid(row=1, column=0, columnspan=4, pady=5)
+
+      # "Return to Main Menu" button
+      main_button = tk.Button(frame, text="Return to Main Menu", command=main, height=2, width=30, bg=button_color, fg=buttontxt_color)
+      main_button.grid(row=2, column=0, columnspan=4, pady=15, sticky="nsew")
+      return
+    else:
+      process = None
+      output_queue = queue.Queue()
+
+      def execute_command(command):
+        global process
+        process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE, shell=True)
+
+        while True:
+          output = process.stdout.readline()
+          if output == '' and process.poll() is not None:
+            break
+          if output:
+            output_queue.put(output)
+
+      def update_terminal():
+        global terminal
+        while not output_queue.empty():
+          output = output_queue.get()
+          terminal.insert(tk.END, output)
+          terminal.see(tk.END)
+        root.after(100, update_terminal)
+
+      def send_command(event=None):
+        global command_entry
+        global process
+        command = command_entry.get()
+        if process and command:
+          process.stdin.write((command + '\n').encode())
+          process.stdin.flush()
+          command_entry.delete(0, tk.END)
+      
+      eula = os.path.join(os.path.dirname(os.getcwd()), "eula.txt")
+      with open(eula, "w") as reemplazo:
+        reemplazo.write("eula=true")
+
+      def stop_server():
+        global process
+        if process:
+          process.stdin.write('stop\n'.encode())
+          process.stdin.flush()
+
+      # Clear the window
+      for widget in root.winfo_children():
+        widget.destroy()
+
+      # Main frame
+      frame = tk.Frame(root, bg=bg_color)
+      frame.place(relx=0.5, rely=0.5, anchor='center')
+
+      ram = ram_var.get()
+      ram_type = ramtype_var.get()
+
+      if ram_type == "MB":
+        if ram < "842":
+          ram = "842"
+        elif ram > "76800":
+          ram = "76800"
+      elif ram_type == "GB":
+        if ram < "1":
+          ram = "1"
+        elif ram > "75":
+          ram = "75"
+
+      command = f"java -Xmx{ram}{ram_type} -Xms{ram}{ram_type} -jar server.jar nogui"
+      threading.Thread(target=execute_command, args=(command,)).start()
+
+      # Terminal
+      terminal = tk.Text(frame)
+      terminal.grid(row=5, column=0, columnspan=4)
+
+      # Command Entry
+      command_entry = tk.Entry(frame)
+      command_entry.grid(row=6, column=0, columnspan=4)
+      command_entry.bind('<Return>', send_command)
+
+      # Stop Server Button
+      stop_button = tk.Button(frame, text="STOP", command=stop_server, height=2, width=30, bg="red", fg=buttontxt_color)
+      stop_button.grid(row=7, column=0, columnspan=4, pady=15, sticky="nsew")
+
+      # Start updating the terminal
+      root.after(100, update_terminal)
+
+  ### WORKING HERE ###
+  ## PLACEHOLDER ##
+
+  # "Start Server" button
+  start_button = tk.Button(frame, text="START", command=start_server, height=3, width=20, bg=button_color, fg="green")
+  start_button.grid(row=3, column=0, columnspan=4, pady=5, sticky='nsew')
+
+  # "Return to Main Menu" button
+  main_button = tk.Button(frame, text="Return to Main Menu", command=main, height=2, width=30, bg=button_color, fg=buttontxt_color)
+  main_button.grid(row=4, column=0, columnspan=4, pady=15, sticky="nsew")
 
 # MANAGE SERVER MENU
 def manageserver_menu():
+  global props
   # Clears the window
   for widget in root.winfo_children():
     widget.destroy()
@@ -349,11 +505,11 @@ def manageserver_menu():
   title.grid(row=0, column=0, columnspan=5, pady=5)
 
   # Check if server.properties exists
-  props = "server.properties"
+  props = os.path.join(os.path.dirname(os.getcwd()), "server.properties")
   if os.path.exists(props):
     global properties
     properties = {}
-    with open('server.properties', 'r') as file:
+    with open(props, 'r') as file:
       for line in file:
         line = line.strip()
         if line and not line.startswith('#'):
@@ -372,25 +528,25 @@ def manageserver_menu():
         try:
           if properties["online-mode"] == "true":
             properties["online-mode"] = "false"
-            with open('server.properties', 'w') as file:
+            with open(props, 'w') as file:
               for key, value in properties.items():
                 file.write(f'{key}={value}\n')
             manageserver_menu()
           elif properties["online-mode"] == "false":
             properties["online-mode"] = "true"
-            with open('server.properties', 'w') as file:
+            with open(props, 'w') as file:
               for key, value in properties.items():
                 file.write(f'{key}={value}\n')
             manageserver_menu()
           else:
             properties["online-mode"] = "true"
-            with open('server.properties', 'w') as file:
+            with open(props, 'w') as file:
               for key, value in properties.items():
                 file.write(f'{key}={value}\n')
             manageserver_menu()
         except KeyError:
           properties["online-mode"] = "true"
-          with open('server.properties', 'w') as file:
+          with open(props, 'w') as file:
             for key, value in properties.items():
               file.write(f'{key}={value}\n')
           manageserver_menu()
@@ -402,13 +558,13 @@ def manageserver_menu():
             return False
           else:
             properties["online-mode"] = "true"
-            with open('server.properties', 'w') as file:
+            with open(props, 'w') as file:
               for key, value in properties.items():
                 file.write(f'{key}={value}\n')
             return True
         except KeyError:
           properties["online-mode"] = "true"
-          with open('server.properties', 'w') as file:
+          with open(props, 'w') as file:
             for key, value in properties.items():
               file.write(f'{key}={value}\n')
           return True
@@ -438,25 +594,25 @@ def manageserver_menu():
         try:
           if properties["hardcore"] == "true":
             properties["hardcore"] = "false"
-            with open('server.properties', 'w') as file:
+            with open(props, 'w') as file:
               for key, value in properties.items():
                 file.write(f'{key}={value}\n')
             manageserver_menu()
           elif properties["hardcore"] == "false":
             properties["hardcore"] = "true"
-            with open('server.properties', 'w') as file:
+            with open(props, 'w') as file:
               for key, value in properties.items():
                 file.write(f'{key}={value}\n')
             manageserver_menu()
           else:
             properties["hardcore"] = "true"
-            with open('server.properties', 'w') as file:
+            with open(props, 'w') as file:
               for key, value in properties.items():
                 file.write(f'{key}={value}\n')
             manageserver_menu()
         except KeyError:
           properties["hardcore"] = "false"
-          with open('server.properties', 'w') as file:
+          with open(props, 'w') as file:
             for key, value in properties.items():
               file.write(f'{key}={value}\n')
           manageserver_menu()
@@ -468,13 +624,13 @@ def manageserver_menu():
             return False
           else:
             properties["hardcore"] = "true"
-            with open('server.properties', 'w') as file:
+            with open(props, 'w') as file:
               for key, value in properties.items():
                 file.write(f'{key}={value}\n')
             return True
         except KeyError:
           properties["hardcore"] = "false"
-          with open('server.properties', 'w') as file:
+          with open(props, 'w') as file:
             for key, value in properties.items():
               file.write(f'{key}={value}\n')
           return False
@@ -504,25 +660,25 @@ def manageserver_menu():
         try:
           if properties["enable-command-block"] == "true":
             properties["enable-command-block"] = "false"
-            with open('server.properties', 'w') as file:
+            with open(props, 'w') as file:
               for key, value in properties.items():
                 file.write(f'{key}={value}\n')
             manageserver_menu()
           elif properties["enable-command-block"] == "false":
             properties["enable-command-block"] = "true"
-            with open('server.properties', 'w') as file:
+            with open(props, 'w') as file:
               for key, value in properties.items():
                 file.write(f'{key}={value}\n')
             manageserver_menu()
           else:
             properties["enable-command-block"] = "true"
-            with open('server.properties', 'w') as file:
+            with open(props, 'w') as file:
               for key, value in properties.items():
                 file.write(f'{key}={value}\n')
             manageserver_menu()
         except KeyError:
           properties["enable-command-block"] = "true"
-          with open('server.properties', 'w') as file:
+          with open(props, 'w') as file:
             for key, value in properties.items():
               file.write(f'{key}={value}\n')
           manageserver_menu()
@@ -534,13 +690,13 @@ def manageserver_menu():
             return False
           else:
             properties["enable-command-block"] = "true"
-            with open('server.properties', 'w') as file:
+            with open(props, 'w') as file:
               for key, value in properties.items():
                 file.write(f'{key}={value}\n')
             return True
         except KeyError:
           properties["enable-command-block"] = "true"
-          with open('server.properties', 'w') as file:
+          with open(props, 'w') as file:
             for key, value in properties.items():
               file.write(f'{key}={value}\n')
           return True
@@ -570,25 +726,25 @@ def manageserver_menu():
         try:
           if properties["pvp"] == "true":
             properties["pvp"] = "false"
-            with open('server.properties', 'w') as file:
+            with open(props, 'w') as file:
               for key, value in properties.items():
                 file.write(f'{key}={value}\n')
             manageserver_menu()
           elif properties["pvp"] == "false":
             properties["pvp"] = "true"
-            with open('server.properties', 'w') as file:
+            with open(props, 'w') as file:
               for key, value in properties.items():
                 file.write(f'{key}={value}\n')
             manageserver_menu()
           else:
             properties["pvp"] = "true"
-            with open('server.properties', 'w') as file:
+            with open(props, 'w') as file:
               for key, value in properties.items():
                 file.write(f'{key}={value}\n')
             manageserver_menu()
         except KeyError:
           properties["pvp"] = "true"
-          with open('server.properties', 'w') as file:
+          with open(props, 'w') as file:
             for key, value in properties.items():
               file.write(f'{key}={value}\n')
           manageserver_menu()
@@ -600,13 +756,13 @@ def manageserver_menu():
             return False
           else:
             properties["pvp"] = "true"
-            with open('server.properties', 'w') as file:
+            with open(props, 'w') as file:
               for key, value in properties.items():
                 file.write(f'{key}={value}\n')
             return True
         except KeyError:
           properties["pvp"] = "true"
-          with open('server.properties', 'w') as file:
+          with open(props, 'w') as file:
             for key, value in properties.items():
               file.write(f'{key}={value}\n')
           return True
@@ -633,7 +789,7 @@ def manageserver_menu():
     def gamemode_change(*args):
       global properties
       properties["gamemode"] = gamemode_var.get().lower()
-      with open('server.properties', 'w') as file:
+      with open(props, 'w') as file:
         for key, value in properties.items():
           file.write(f'{key}={value}\n')
       manageserver_menu()
@@ -655,7 +811,7 @@ def manageserver_menu():
     def difficulty_change(*args):
       global properties
       properties["difficulty"] = difficulty_var.get().lower()
-      with open('server.properties', 'w') as file:
+      with open(props, 'w') as file:
         for key, value in properties.items():
           file.write(f'{key}={value}\n')
       manageserver_menu()
@@ -677,7 +833,7 @@ def manageserver_menu():
     def leveltype_change(*args):
       global properties
       properties["level-type"] = f"minecraft:{leveltype_var.get().lower()}"
-      with open('server.properties', 'w') as file:
+      with open(props, 'w') as file:
         for key, value in properties.items():
           file.write(f'{key}={value}\n')
       manageserver_menu()
@@ -703,7 +859,7 @@ def manageserver_menu():
       elif int(maxplayers_var.get()) > 10000:
         maxplayers_var.set("10000")
       properties["max-players"] = maxplayers_var.get()
-      with open('server.properties', 'w') as file:
+      with open(props, 'w') as file:
         for key, value in properties.items():
           file.write(f'{key}={value}\n')
       manageserver_menu()
