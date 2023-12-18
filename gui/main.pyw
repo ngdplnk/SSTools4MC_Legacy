@@ -13,19 +13,23 @@
 #########
 
 import subprocess
-import threading
 import time
 import tkinter as tk
 import webbrowser
-from PIL import Image, ImageTk
 import os
-import queue
+import threading
+import requests
+import datetime
 
 # Global variables
 global running
+global run
+global props
 
 # Conditional variables
 running = False
+run = False
+props = os.path.join(os.path.dirname(os.getcwd()), "server.properties")
 
 # Theme selection
 def theme(rt=False):
@@ -271,102 +275,10 @@ def last_ram():
 
 # START SERVER MENU
 def startserver_menu():
-  def validate_input(P):
-    ram_type = last_ramtype()
-    if P.isdigit():
-      P = int(P)
-      if (ram_type == "GB" and 1 <= P <= 99) or (ram_type == "MB" and 1 <= P <= 99999):
-        return True
-    elif P == "":
-      return True
-    return False
-
-  # Clears the window
-  for widget in root.winfo_children():
-    widget.destroy()
-
-  # Window title
-  root.title("Start Server")
-
-  # Set BG
-  root.configure(bg=bg_color)
-
-  # Main frame
-  frame = tk.Frame(root, bg=bg_color)
-  frame.place(relx=0.5, rely=0.5, anchor='center')
-
-  # Title
-  title_font = ("Arial", 30, "bold")
-  title = tk.Label(frame, text="Start Server", font=title_font, bg=bg_color, fg=text_color)
-  title.grid(row=0, column=0, columnspan=4, pady=5)
-
-  # Subtitle
-  subtitle_text = "Prepare for Starting your Server\n"
-  subtitle = tk.Label(frame, text=subtitle_text, font=("Arial", 12), wraplength=600, bg=bg_color, fg=text_color)
-  subtitle.grid(row=1, column=0, columnspan=4, pady=5)
-
-  # "Start Server with" label
-  startserver_label = tk.Label(frame, text="Start Server with", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
-  startserver_label.grid(row=2, column=0, pady=5, sticky='e')
-
-  # RAM Entry and Dropdown
-  ram_var = tk.StringVar(value=last_ram())
-  ramtype_var = tk.StringVar(value=last_ramtype())
-
-  vcmd = frame.register(validate_input)
-
-  ram_entry = tk.Entry(frame, textvariable=ram_var, validate="key", validatecommand=(vcmd, '%P'), width=6)
-  ram_entry.grid(row=2, column=1, padx=5, pady=5)
-
-  # RAM Type Change
-  def ram_change(*args):
-    cfg = {}
-    if os.path.exists(sstools_folder_path):
-      if os.path.exists(cfg_access):
-        with open(cfg_access, 'r') as file:
-          for line in file:
-            line = line.strip()
-            if line and not line.startswith('#'):
-              key, value = line.split('=')
-              cfg[key.strip()] = value.strip()
-        try:
-          cfg["ramtype"] = ramtype_var.get()
-          with open(cfg_access, 'w') as file:
-            for key, value in cfg.items():
-              file.write(f'{key}={value}\n')
-          startserver_menu()
-        except KeyError:
-          cfg["ramtype"] = "GB"
-          with open(cfg_access, 'w') as file:
-            for key, value in cfg.items():
-              file.write(f'{key}={value}\n')
-          startserver_menu()
-      else:
-        with open(cfg_access, 'w') as archivo:
-          archivo.write('ramtype=GB\n')
-        startserver_menu()
-    else:
-      os.makedirs(sstools_folder_path)
-      with open(cfg_access, 'w') as archivo:
-        archivo.write('ramtype=GB\n')
-      startserver_menu()
-
-  ramtype_var.trace_add('write', ram_change)
-
-  ramtype_dropdown = tk.OptionMenu(frame, ramtype_var, "MB", "GB")
-  ramtype_dropdown.grid(row=2, column=2, padx=5, pady=5)
-
-  # "of RAM" label
-  ram_label = tk.Label(frame, text="of RAM", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
-  ram_label.grid(row=2, column=3, pady=5, sticky='w')
-
-  def start_server():
-    global process
-    global terminal
-    global command_entry
-
-    if not os.path.exists(os.path.join(os.path.dirname(os.getcwd()), "server.jar")):
-      # Clear the window
+  global public_ip
+  global server_port
+  if run and (start_time != None):
+    # Clear the window
       for widget in root.winfo_children():
         widget.destroy()
 
@@ -376,111 +288,453 @@ def startserver_menu():
 
       # Title
       title_font = ("Arial", 30, "bold")
-      title = tk.Label(frame, text="Start Server", font=title_font, bg=bg_color, fg=text_color)
+      title = tk.Label(frame, text="Server Running...", font=title_font, bg=bg_color, fg=text_color)
       title.grid(row=0, column=0, columnspan=4, pady=5)
 
       # Subtitle
-      subtitle_text = "Server.jar not found :(\n"
+      subtitle_text = "Your Server is running on a separated Terminal. Its status updates here every 1 minute\n"
       subtitle = tk.Label(frame, text=subtitle_text, font=("Arial", 12), wraplength=600, bg=bg_color, fg=text_color)
       subtitle.grid(row=1, column=0, columnspan=4, pady=5)
 
-      # "Return to Main Menu" button
-      main_button = tk.Button(frame, text="Return to Main Menu", command=main, height=2, width=30, bg=button_color, fg=buttontxt_color)
-      main_button.grid(row=2, column=0, columnspan=4, pady=15, sticky="nsew")
-      return
-    else:
-      process = None
-      output_queue = queue.Queue()
+      # Get server IP
+      def get_public_ip():
+        try:
+          ip = requests.get('https://api.ipify.org').text
+        except requests.exceptions.RequestException as err:
+          print ("Woops: Something Else Happened",err)
+          ip = "Your Public IP"
+        return ip
+      public_ip = get_public_ip()
 
-      def execute_command(command):
-        global process
-        process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE, shell=True)
+      # Get server port
+      def get_port():
+        global props
+        properties = {}
+        with open(props, 'r') as file:
+          for line in file:
+            line = line.strip()
+            if line and not line.startswith('#'):
+              key, value = line.split('=')
+              properties[key.strip()] = value.strip()
+        try:
+          port = properties["server-port"]
+          if port == "25565":
+            return ""
+        except KeyError:
+          return ""
+        return f":{port}"
+      server_port = get_port()
 
-        while True:
-          output = process.stdout.readline()
-          if output == '' and process.poll() is not None:
-            break
-          if output:
-            output_queue.put(output)
+      # IP label
+      ip_label = tk.Label(frame, text=f"Your Server IP is: {public_ip}{server_port}", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
+      ip_label.grid(row=2, column=1, pady=5, sticky='e')
 
-      def update_terminal():
-        global terminal
-        while not output_queue.empty():
-          output = output_queue.get()
-          terminal.insert(tk.END, output)
-          terminal.see(tk.END)
-        root.after(100, update_terminal)
+      # Copy IP to clipboard
+      def copy_ip():
+        global public_ip
+        global server_port
+        root.clipboard_clear()
+        root.clipboard_append(f"{public_ip}{server_port}")
+        
+      # "Copy IP" button
+      copy_button = tk.Button(frame, text="Copy IP", command=copy_ip, height=1, width=8, bg=button_color, fg=buttontxt_color)
+      copy_button.grid(row=2, column=2, pady=5, padx=10, sticky='w')
 
-      def send_command(event=None):
-        global command_entry
-        global process
-        command = command_entry.get()
-        if process and command:
-          process.stdin.write((command + '\n').encode())
-          process.stdin.flush()
-          command_entry.delete(0, tk.END)
-      
-      eula = os.path.join(os.path.dirname(os.getcwd()), "eula.txt")
-      with open(eula, "w") as reemplazo:
-        reemplazo.write("eula=true")
+      # "Your Server has been running for" label
+      running_label = tk.Label(frame, text="Your Server has been running for", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
+      running_label.grid(row=3, column=1, pady=5, sticky='e')
 
+      # Time Running
+      def time_running():
+        global run
+        global elapsed_minutes
+        global elapsed_time
+        if run:
+          global start_time
+          elapsed_time = time.time() - start_time
+          elapsed_minutes = int(elapsed_time // 60)
+          running_time.config(text=f"{elapsed_minutes} minutes")
+          running_time.after(60000, time_running)  # Update every minute
+        else:
+          return
+
+      # Time Running Label
+      running_time = tk.Label(frame, text="0 minutes", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
+      running_time.grid(row=3, column=2, pady=5, sticky='w')
+      time_running()
+
+      # Stop Server
       def stop_server():
-        global process
-        if process:
-          process.stdin.write('stop\n'.encode())
-          process.stdin.flush()
+        global run
+        global minecraft_server_process
+        if minecraft_server_process and minecraft_server_process.stdin:
+          command = "stop\n"
+          minecraft_server_process.stdin.write(command.encode())
+          minecraft_server_process.stdin.flush()
+        run = False
+        dnh_sys = datetime.datetime.now()
+        stop_date = str(dnh_sys.strftime("%d/%m/%Y"))
+        stop_hour = str(dnh_sys.strftime("%H:%M:%S"))
 
-      # Clear the window
-      for widget in root.winfo_children():
-        widget.destroy()
+        # Clear the window
+        for widget in root.winfo_children():
+          widget.destroy()
+        
+        # Window title
+        root.title("Server Stopped")
 
-      # Main frame
-      frame = tk.Frame(root, bg=bg_color)
-      frame.place(relx=0.5, rely=0.5, anchor='center')
+        # Main frame
+        frame = tk.Frame(root, bg=bg_color)
+        frame.place(relx=0.5, rely=0.5, anchor='center')
 
-      ram = ram_var.get()
-      ram_type = ramtype_var.get()
+        # Title
+        title_font = ("Arial", 30, "bold")
+        title = tk.Label(frame, text="Start Server", font=title_font, bg=bg_color, fg=text_color)
+        title.grid(row=0, column=0, columnspan=4, pady=5)
 
-      if ram_type == "MB":
-        if ram < "842":
-          ram = "842"
-        elif ram > "76800":
-          ram = "76800"
-      elif ram_type == "GB":
-        if ram < "1":
-          ram = "1"
-        elif ram > "75":
-          ram = "75"
+        # Subtitle
+        subtitle_text = "Server Stopped...\n"
+        subtitle = tk.Label(frame, text=subtitle_text, font=("Arial", 12), wraplength=600, bg=bg_color, fg=text_color)
+        subtitle.grid(row=1, column=0, columnspan=4, pady=5)
 
-      command = f"java -Xmx{ram}{ram_type} -Xms{ram}{ram_type} -jar server.jar nogui"
-      threading.Thread(target=execute_command, args=(command,)).start()
+        # "Your Server has been closed at <close_time>" label
+        close_label = tk.Label(frame, text=f"Your Server has been closed on {stop_date} at {stop_hour}\n\nYou can check the console log in the 'logs' folder.\n", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
+        close_label.grid(row=2, column=0, columnspan=4, pady=5)
 
-      # Terminal
-      terminal = tk.Text(frame)
-      terminal.grid(row=5, column=0, columnspan=4)
+        # "Return to Main Menu" button
+        main_button = tk.Button(frame, text="Return to Main Menu", command=main, height=2, width=30, bg=button_color, fg=buttontxt_color)
+        main_button.grid(row=3, column=0, columnspan=4, pady=15, sticky="nsew")
+      
+      def check_process():
+        global run
+        global minecraft_server_process
+        while run:
+          if minecraft_server_process.poll() is not None:
+            # The process has terminated
+            run = False
+            stop_server()
+            break
+          time.sleep(60)  # Wait for 1 minute
 
-      # Command Entry
-      command_entry = tk.Entry(frame)
-      command_entry.grid(row=6, column=0, columnspan=4)
-      command_entry.bind('<Return>', send_command)
+      # "Stop Server" Button
+      stop_server_button = tk.Button(frame, text="STOP SERVER", command=stop_server, height=3, width=20, bg="red", fg="white")
+      stop_server_button.grid(row=4, column=0, columnspan=4, pady=15, sticky='nsew')
+      threading.Thread(target=check_process).start()
 
-      # Stop Server Button
-      stop_button = tk.Button(frame, text="STOP", command=stop_server, height=2, width=30, bg="red", fg="white")
-      stop_button.grid(row=7, column=0, columnspan=4, pady=15, sticky="nsew")
+      # "Main Menu" Button
+      main_button = tk.Button(frame, text="Return to Main Menu", command=main, height=2, width=30, bg=button_color, fg=buttontxt_color)
+      main_button.grid(row=5, column=0, columnspan=4, pady=15, sticky="nsew")
+  else:
+    def validate_input(P):
+      ram_type = last_ramtype()
+      if P.isdigit():
+        P = int(P)
+        if (ram_type == "GB" and 1 <= P <= 99) or (ram_type == "MB" and 1 <= P <= 99999):
+          return True
+      elif P == "":
+        return True
+      return False
 
-      # Start updating the terminal
-      root.after(100, update_terminal)
+    # Clears the window
+    for widget in root.winfo_children():
+      widget.destroy()
 
-  ### WORKING HERE ###
-  ## PLACEHOLDER ##
+    # Window title
+    root.title("Start Server")
 
-  # "Start Server" button
-  start_button = tk.Button(frame, text="START", command=start_server, height=3, width=20, bg="green", fg="white")
-  start_button.grid(row=3, column=0, columnspan=4, pady=5, sticky='nsew')
+    # Set BG
+    root.configure(bg=bg_color)
 
-  # "Return to Main Menu" button
-  main_button = tk.Button(frame, text="Return to Main Menu", command=main, height=2, width=30, bg=button_color, fg=buttontxt_color)
-  main_button.grid(row=4, column=0, columnspan=4, pady=15, sticky="nsew")
+    # Main frame
+    frame = tk.Frame(root, bg=bg_color)
+    frame.place(relx=0.5, rely=0.5, anchor='center')
+
+    # Title
+    title_font = ("Arial", 30, "bold")
+    title = tk.Label(frame, text="Start Server", font=title_font, bg=bg_color, fg=text_color)
+    title.grid(row=0, column=0, columnspan=4, pady=5)
+
+    # Subtitle
+    subtitle_text = "Prepare for Starting your Server\n"
+    subtitle = tk.Label(frame, text=subtitle_text, font=("Arial", 12), wraplength=600, bg=bg_color, fg=text_color)
+    subtitle.grid(row=1, column=0, columnspan=4, pady=5)
+
+    # "Start Server with" label
+    startserver_label = tk.Label(frame, text="Start Server with", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
+    startserver_label.grid(row=2, column=0, pady=5, sticky='e')
+
+    # RAM Entry and Dropdown
+    ram_var = tk.StringVar(value=last_ram())
+    ramtype_var = tk.StringVar(value=last_ramtype())
+
+    vcmd = frame.register(validate_input)
+
+    ram_entry = tk.Entry(frame, textvariable=ram_var, validate="key", validatecommand=(vcmd, '%P'), width=6)
+    ram_entry.grid(row=2, column=1, padx=5, pady=5)
+
+    # RAM Type Change
+    def ram_change(*args):
+      cfg = {}
+      if os.path.exists(sstools_folder_path):
+        if os.path.exists(cfg_access):
+          with open(cfg_access, 'r') as file:
+            for line in file:
+              line = line.strip()
+              if line and not line.startswith('#'):
+                key, value = line.split('=')
+                cfg[key.strip()] = value.strip()
+          try:
+            cfg["ramtype"] = ramtype_var.get()
+            with open(cfg_access, 'w') as file:
+              for key, value in cfg.items():
+                file.write(f'{key}={value}\n')
+            startserver_menu()
+          except KeyError:
+            cfg["ramtype"] = "GB"
+            with open(cfg_access, 'w') as file:
+              for key, value in cfg.items():
+                file.write(f'{key}={value}\n')
+            startserver_menu()
+        else:
+          with open(cfg_access, 'w') as archivo:
+            archivo.write('ramtype=GB\n')
+          startserver_menu()
+      else:
+        os.makedirs(sstools_folder_path)
+        with open(cfg_access, 'w') as archivo:
+          archivo.write('ramtype=GB\n')
+        startserver_menu()
+
+    ramtype_var.trace_add('write', ram_change)
+
+    ramtype_dropdown = tk.OptionMenu(frame, ramtype_var, "MB", "GB")
+    ramtype_dropdown.grid(row=2, column=2, padx=5, pady=5)
+
+    # "of RAM" label
+    ram_label = tk.Label(frame, text="of RAM", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
+    ram_label.grid(row=2, column=3, pady=5, sticky='w')
+
+    def start_server():
+      # Set window title
+      root.title("Server Running...")
+      # Check if server.jar exists
+      if not os.path.exists(os.path.join(os.path.dirname(os.getcwd()), "server.jar")):
+        # Clear the window
+        for widget in root.winfo_children():
+          widget.destroy()
+
+        # Window title
+        root.title("Can't Start your Server")
+
+        # Main frame
+        frame = tk.Frame(root, bg=bg_color)
+        frame.place(relx=0.5, rely=0.5, anchor='center')
+
+        # Title
+        title_font = ("Arial", 30, "bold")
+        title = tk.Label(frame, text="Can't Start your Server", font=title_font, bg=bg_color, fg=text_color)
+        title.grid(row=0, column=0, columnspan=4, pady=5)
+
+        # Subtitle
+        subtitle_text = 'Uh oh, "server.jar" file not found :(\n'
+        subtitle = tk.Label(frame, text=subtitle_text, font=("Arial", 12), wraplength=600, bg=bg_color, fg=text_color)
+        subtitle.grid(row=1, column=0, columnspan=4, pady=5)
+
+        # "Return to Main Menu" button
+        main_button = tk.Button(frame, text="Return to Main Menu", command=main, height=2, width=30, bg=button_color, fg=buttontxt_color)
+        main_button.grid(row=2, column=0, columnspan=4, pady=15, sticky="nsew")
+        return
+      else:
+        global run
+        global start_time
+        global minecraft_server_process
+        global public_ip
+        global server_port
+
+        # Initialize variables
+        run = True
+        start_time = time.time()
+        ram = ram_var.get()
+        ramtype = ramtype_var.get()
+
+        if ramtype == "MB":
+          ramtype = "M"
+          if int(ram) > 76800:
+            ram = "76800"
+          elif int(ram) < 842:
+            ram = "842"
+        else:
+          ramtype = "G"
+          if int(ram) > 75:
+            ram = "75"
+          elif int(ram) < 1:
+            ram = "1"
+
+        # Accept EULA
+        with open(os.path.join(os.path.dirname(os.getcwd()), "eula.txt"), 'w') as file:
+          file.write("eula=true\n")
+          
+        # Start the server
+        command = f"java -Xmx{ram}{ramtype} -Xms{ram}{ramtype} -jar server.jar nogui"
+        try:
+          minecraft_server_process = subprocess.Popen(["wt", "-p", "Command Prompt", "-d", os.path.dirname(os.getcwd()), command], stdin=subprocess.PIPE)
+        except FileNotFoundError:
+          minecraft_server_process = subprocess.Popen(["cmd", "/C", command], cwd=os.path.dirname(os.getcwd()), stdin=subprocess.PIPE)
+
+        # Clear the window
+        for widget in root.winfo_children():
+          widget.destroy()
+
+        # Main frame
+        frame = tk.Frame(root, bg=bg_color)
+        frame.place(relx=0.5, rely=0.5, anchor='center')
+
+        # Title
+        title_font = ("Arial", 30, "bold")
+        title = tk.Label(frame, text="Server Running...", font=title_font, bg=bg_color, fg=text_color)
+        title.grid(row=0, column=0, columnspan=4, pady=5)
+
+        # Subtitle
+        subtitle_text = "Your Server is running on a separated Terminal. Its status updates here every 1 minute\n"
+        subtitle = tk.Label(frame, text=subtitle_text, font=("Arial", 12), wraplength=600, bg=bg_color, fg=text_color)
+        subtitle.grid(row=1, column=0, columnspan=4, pady=5)
+
+        # Get server IP
+        def get_public_ip():
+          try:
+            ip = requests.get('https://api.ipify.org').text
+          except requests.exceptions.RequestException as err:
+            print ("Woops: Something Else Happened",err)
+            ip = "Your Public IP"
+          return ip
+        public_ip = get_public_ip()
+
+        # Get server port
+        def get_port():
+          global props
+          properties = {}
+          with open(props, 'r') as file:
+            for line in file:
+              line = line.strip()
+              if line and not line.startswith('#'):
+                key, value = line.split('=')
+                properties[key.strip()] = value.strip()
+          try:
+            port = properties["server-port"]
+            if port == "25565":
+              return ""
+          except KeyError:
+            return ""
+          return f":{port}"
+        server_port = get_port()
+
+        # IP label
+        ip_label = tk.Label(frame, text=f"Your Server IP is: {public_ip}{server_port}", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
+        ip_label.grid(row=2, column=1, pady=5, sticky='e')
+
+        # Copy IP to clipboard
+        def copy_ip():
+          global public_ip
+          global server_port
+          root.clipboard_clear()
+          root.clipboard_append(f"{public_ip}{server_port}")
+        
+        # "Copy IP" button
+        copy_button = tk.Button(frame, text="Copy IP", command=copy_ip, height=1, width=8, bg=button_color, fg=buttontxt_color)
+        copy_button.grid(row=2, column=2, pady=5, padx=10, sticky='w')
+
+        # "Your Server has been running for" label
+        running_label = tk.Label(frame, text="Your Server has been running for", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
+        running_label.grid(row=3, column=1, pady=5, sticky='e')
+
+        # Time Running
+        def time_running():
+          global run
+          global elapsed_minutes
+          global elapsed_time
+          if run:
+            global start_time
+            elapsed_time = time.time() - start_time
+            elapsed_minutes = int(elapsed_time // 60)
+            running_time.config(text=f"{elapsed_minutes} minutes")
+            running_time.after(60000, time_running)  # Update every minute
+          else:
+            return
+
+        # Time Running Label
+        running_time = tk.Label(frame, text="0 minutes", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
+        running_time.grid(row=3, column=2, pady=5, sticky='w')
+        time_running()
+
+        # Stop Server
+        def stop_server():
+          global run
+          global minecraft_server_process
+          if minecraft_server_process and minecraft_server_process.stdin:
+            command = "stop\n"
+            minecraft_server_process.stdin.write(command.encode())
+            minecraft_server_process.stdin.flush()
+          run = False
+          dnh_sys = datetime.datetime.now()
+          stop_date = str(dnh_sys.strftime("%d/%m/%Y"))
+          stop_hour = str(dnh_sys.strftime("%H:%M:%S"))
+
+          # Clear the window
+          for widget in root.winfo_children():
+            widget.destroy()
+          
+          # Window title
+          root.title("Server Stopped")
+
+          # Main frame
+          frame = tk.Frame(root, bg=bg_color)
+          frame.place(relx=0.5, rely=0.5, anchor='center')
+
+          # Title
+          title_font = ("Arial", 30, "bold")
+          title = tk.Label(frame, text="Start Server", font=title_font, bg=bg_color, fg=text_color)
+          title.grid(row=0, column=0, columnspan=4, pady=5)
+
+          # Subtitle
+          subtitle_text = "Server Stopped...\n"
+          subtitle = tk.Label(frame, text=subtitle_text, font=("Arial", 12), wraplength=600, bg=bg_color, fg=text_color)
+          subtitle.grid(row=1, column=0, columnspan=4, pady=5)
+
+          # "Your Server has been closed at <close_time>" label
+          close_label = tk.Label(frame, text=f"Your Server has been closed on {stop_date} at {stop_hour}\n\nYou can check the console log in the 'logs' folder.\n", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
+          close_label.grid(row=2, column=0, columnspan=4, pady=5)
+
+          # "Return to Main Menu" button
+          main_button = tk.Button(frame, text="Return to Main Menu", command=main, height=2, width=30, bg=button_color, fg=buttontxt_color)
+          main_button.grid(row=3, column=0, columnspan=4, pady=15, sticky="nsew")
+        
+        def check_process():
+          global run
+          global minecraft_server_process
+          while run:
+            if minecraft_server_process.poll() is not None:
+              # The process has terminated
+              run = False
+              stop_server()
+              break
+            time.sleep(60)  # Wait for 1 minute
+
+        # "Stop Server" Button
+        stop_server_button = tk.Button(frame, text="STOP SERVER", command=stop_server, height=3, width=20, bg="red", fg="white")
+        stop_server_button.grid(row=4, column=0, columnspan=4, pady=15, sticky='nsew')
+        threading.Thread(target=check_process).start()
+
+        # "Main Menu" Button
+        main_button = tk.Button(frame, text="Return to Main Menu", command=main, height=2, width=30, bg=button_color, fg=buttontxt_color)
+        main_button.grid(row=5, column=0, columnspan=4, pady=15, sticky="nsew")
+
+    # "Start Server" button
+    start_button = tk.Button(frame, text="START SERVER", command=start_server, height=3, width=20, bg="green", fg="white")
+    start_button.grid(row=3, column=0, columnspan=4, pady=5, sticky='nsew')
+
+    # "Return to Main Menu" button
+    main_button = tk.Button(frame, text="Return to Main Menu", command=main, height=2, width=30, bg=button_color, fg=buttontxt_color)
+    main_button.grid(row=4, column=0, columnspan=4, pady=15, sticky="nsew")
 
 # MANAGE SERVER MENU
 def manageserver_menu():
@@ -517,7 +771,7 @@ def manageserver_menu():
           properties[key.strip()] = value.strip()
     
     # Subtitle
-    subtitle_text = "Welcome to the server management menu\n"
+    subtitle_text = "Welcome to the server management menu\nThese settings will apply the next time you start your server\n"
     subtitle = tk.Label(frame, text=subtitle_text, font=("Arial", 12), wraplength=600, bg=bg_color, fg=text_color)
     subtitle.grid(row=1, column=0, columnspan=5, pady=5)
 
@@ -1065,27 +1319,86 @@ def licensextras_menu():
 
 # EXIT MENU
 def exit_menu():
-  # Clears the window
-  for widget in root.winfo_children():
-    widget.destroy()
+  global run
+  if run:
+    # Clears the window
+    for widget in root.winfo_children():
+      widget.destroy()
+    
+    # Window title
+    root.title("Your Server is still running")
 
-  # Window title
-  root.title("Thank you for using this tool")
+    # Main frame
+    frame = tk.Frame(root, bg=bg_color)
+    frame.place(relx=0.5, rely=0.5, anchor='center')
 
-  # Set BG
-  root.configure(bg=bg_color)
+    # Title
+    title_font = ("Arial", 30, "bold")
+    title = tk.Label(frame, text="Your Server is still running", font=title_font, bg=bg_color, fg=text_color)
+    title.grid(row=0, column=0, pady=5)
 
-  # Main frame
-  frame = tk.Frame(root, bg=bg_color)
-  frame.place(relx=0.5, rely=0.5, anchor='center')
+    # Subtitle
+    subtitle_text = "ATTENTION! Your Server is still running. What do you want to do?\n"
+    subtitle = tk.Label(frame, text=subtitle_text, font=("Arial", 12), wraplength=600, bg=bg_color, fg=text_color)
+    subtitle.grid(row=1, column=0, pady=5)
 
-  # Title
-  title_font = ("Arial", 24, "bold")
-  title = tk.Label(frame, text="Thank you for using this tool\nMIT License - Copyright © 2023 NGDPL Nk", font=title_font, bg=bg_color, fg=text_color)
-  title.pack(pady=5)
+    # Stop and close
+    def stopnclose():
+      global run
+      global m
+      run = False
+      global minecraft_server_process
+      if minecraft_server_process and minecraft_server_process.stdin:
+        command = "stop\n"
+        minecraft_server_process.stdin.write(command.encode())
+        minecraft_server_process.stdin.flush()
+      run = False
+      # Clears the window
+      for widget in root.winfo_children():
+        widget.destroy()
 
-  # Close program after 1.8 seconds
-  root.after(1800, root.destroy)
+      # Window title
+      root.title("Thank you for using this tool")
+
+      # Main frame
+      frame = tk.Frame(root, bg=bg_color)
+      frame.place(relx=0.5, rely=0.5, anchor='center')
+
+      # Title
+      title_font = ("Arial", 24, "bold")
+      title = tk.Label(frame, text="Thank you for using this tool\nMIT License - Copyright © 2023 NGDPL Nk", font=title_font, bg=bg_color, fg=text_color)
+      title.pack(pady=5)
+
+      # Close program after 1.8 seconds
+      root.after(1800, root.destroy)
+
+    # "Stop Server" button
+    stop_button = tk.Button(frame, text="STOP SERVER AND EXIT", command=stopnclose, height=3, width=30, bg="red", fg="white")
+    stop_button.grid(row=2, column=0, pady=5)
+
+    # "Return to Main Menu" button
+    main_button = tk.Button(frame, text="Return to Main Menu", command=main, height=2, width=30, bg=button_color, fg=buttontxt_color)
+    main_button.grid(row=3, column=0, pady=15)
+
+  else:
+    # Clears the window
+    for widget in root.winfo_children():
+      widget.destroy()
+
+    # Window title
+    root.title("Thank you for using this tool")
+
+    # Main frame
+    frame = tk.Frame(root, bg=bg_color)
+    frame.place(relx=0.5, rely=0.5, anchor='center')
+
+    # Title
+    title_font = ("Arial", 24, "bold")
+    title = tk.Label(frame, text="Thank you for using this tool\nMIT License - Copyright © 2023 NGDPL Nk", font=title_font, bg=bg_color, fg=text_color)
+    title.pack(pady=5)
+
+    # Close program after 1.8 seconds
+    root.after(1800, root.destroy)
 
 # MAIN MENU
 def main():
