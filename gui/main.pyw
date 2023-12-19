@@ -1,5 +1,8 @@
 ### THINGS TO FIX ###
-## Nothing to fix
+## START SERVER MENU
+# - Fix console window not working properly
+# - Fix command line not working properly
+# - Fix "Stop Server" button not working properly
 ##################################################
 ### THINGS TO ADD ###
 ## License and Extras menu
@@ -304,6 +307,8 @@ def startserver_menu():
       def get_port():
         global props
         properties = {}
+        if not os.path.exists(props):
+          return ""
         with open(props, 'r') as file:
           for line in file:
             line = line.strip()
@@ -570,10 +575,7 @@ def startserver_menu():
           
         # Start the server
         command = f"java -Xmx{ram}{ramtype} -Xms{ram}{ramtype} -jar server.jar nogui"
-        try:
-          minecraft_server_process = subprocess.Popen(["wt", "-p", "Command Prompt", "-d", os.path.dirname(os.getcwd()), command], stdin=subprocess.PIPE)
-        except FileNotFoundError:
-          minecraft_server_process = subprocess.Popen(["cmd", "/C", command], cwd=os.path.dirname(os.getcwd()), stdin=subprocess.PIPE)
+        minecraft_server_process = subprocess.Popen(["cmd", "/K", command], cwd=os.path.dirname(os.getcwd()), creationflags=subprocess.CREATE_NEW_CONSOLE, stdin=subprocess.PIPE)
 
         # Clear the window
         for widget in root.winfo_children():
@@ -607,6 +609,8 @@ def startserver_menu():
         def get_port():
           global props
           properties = {}
+          if not os.path.exists(props):
+            return ""
           with open(props, 'r') as file:
             for line in file:
               line = line.strip()
@@ -1178,7 +1182,7 @@ def licensextras_menu():
   title.grid(row=0, column=0, columnspan=2, pady=5)
 
   # Subtitle
-  subtitle_text = "SSTools4MC PRIVATE BUILD\nBETA 2 FOR V2.0\n-------------------------------------\n\nMIT License - Copyright © 2023 NGDPL Nk\n\nHelpers:\n@naicoooossj\n@LegalizeNuclearBombs\n"
+  subtitle_text = "SSTools4MC PRIVATE BUILD\nBETA 3.2106 FOR V2.0REL\n-------------------------------------\n\nMIT License - Copyright © 2023 NGDPL Nk\n\nHelpers:\n@naicoooossj\n@LegalizeNuclearBombs\n"
   subtitle = tk.Label(frame, text=subtitle_text, font=("Arial", 12), wraplength=600, bg=bg_color, fg=text_color)
   subtitle.grid(row=1, column=0, columnspan=2, pady=5)
 
@@ -1314,7 +1318,7 @@ def licensextras_menu():
 # EXIT MENU
 def exit_menu():
   global run
-  if run:
+  if run and minecraft_server_process and minecraft_server_process.stdin:
     # Clears the window
     for widget in root.winfo_children():
       widget.destroy()
@@ -1367,7 +1371,7 @@ def exit_menu():
       root.after(1800, root.destroy)
 
     # "Stop Server" button
-    stop_button = tk.Button(frame, text="STOP SERVER AND EXIT", command=stopnclose, height=3, width=30, bg="red", fg="white")
+    stop_button = tk.Button(frame, text="SEND STOP COMMAND AND EXIT", command=stopnclose, height=3, width=30, bg="red", fg="white")
     stop_button.grid(row=2, column=0, pady=5)
 
     # "Return to Main Menu" button
