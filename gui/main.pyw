@@ -1,3 +1,10 @@
+### SSTools4MC v2.0.0 ###
+# SSTools4MC is a program that allows you to manage your Minecraft Server easily.
+# Made by: @ngdplnk
+# Github: https://github.com/NGDPLNk/SSTools4MC
+
+#######################
+
 ### THINGS TO FIX ###
 ## START SERVER MENU
 # - Fix console window not working properly
@@ -17,6 +24,7 @@ import os
 import threading
 import requests
 import datetime
+import ctypes
 
 # Global variables
 global running
@@ -272,9 +280,16 @@ def last_ram():
 
 # START SERVER MENU
 def startserver_menu():
+  global ramtype_var
+  global ram_var
   global public_ip
   global server_port
-  if run and (start_time != None):
+  global minecraft_server_process
+  global raam
+  global ramtypee
+  global run
+
+  if run and minecraft_server_process.stdin:
     # Clear the window
       for widget in root.winfo_children():
         widget.destroy()
@@ -285,7 +300,7 @@ def startserver_menu():
 
       # Title
       title_font = ("Arial", 30, "bold")
-      title = tk.Label(frame, text="Server Running...", font=title_font, bg=bg_color, fg=text_color)
+      title = tk.Label(frame, text=f"Server Running with {raam}{ramtypee}B of RAM", font=title_font, bg=bg_color, fg=text_color)
       title.grid(row=0, column=0, columnspan=4, pady=5)
 
       # Subtitle
@@ -348,7 +363,8 @@ def startserver_menu():
         global run
         global elapsed_minutes
         global elapsed_time
-        if run:
+        global minecraft_server_process
+        if run and minecraft_server_process.stdin:
           global start_time
           elapsed_time = time.time() - start_time
           elapsed_minutes = int(elapsed_time // 60)
@@ -366,7 +382,7 @@ def startserver_menu():
       def stop_server():
         global run
         global minecraft_server_process
-        if minecraft_server_process and minecraft_server_process.stdin:
+        if minecraft_server_process.stdin:
           command = "stop\n"
           minecraft_server_process.stdin.write(command.encode())
           minecraft_server_process.stdin.flush()
@@ -388,7 +404,7 @@ def startserver_menu():
 
         # Title
         title_font = ("Arial", 30, "bold")
-        title = tk.Label(frame, text="Start Server", font=title_font, bg=bg_color, fg=text_color)
+        title = tk.Label(frame, text="Server Stopped", font=title_font, bg=bg_color, fg=text_color)
         title.grid(row=0, column=0, columnspan=4, pady=5)
 
         # Subtitle
@@ -454,7 +470,7 @@ def startserver_menu():
     title.grid(row=0, column=0, columnspan=4, pady=5)
 
     # Subtitle
-    subtitle_text = "Prepare for Starting your Server\n"
+    subtitle_text = "Be prepared to start your server!\n"
     subtitle = tk.Label(frame, text=subtitle_text, font=("Arial", 12), wraplength=600, bg=bg_color, fg=text_color)
     subtitle.grid(row=1, column=0, columnspan=4, pady=5)
 
@@ -514,6 +530,66 @@ def startserver_menu():
     ram_label.grid(row=2, column=3, pady=5, sticky='w')
 
     def start_server():
+      global ramtype_var
+      global ram_var
+      cfg = {}
+      with open(cfg_access, 'r') as file:
+        for line in file:
+          line = line.strip()
+          if line and not line.startswith('#'):
+            key, value = line.split('=')
+            cfg[key.strip()] = value.strip()
+      try:
+        if ramtype_var.get() == "MB":
+          if ram_var.get() == "":
+            ram_var.set("1024")
+            cfg["ram"] = "1024"
+            with open(cfg_access, 'w') as file:
+              for key, value in cfg.items():
+                file.write(f'{key}={value}\n')
+          elif 842 <= int(ram_var.get()) <= 76800:
+            cfg["ram"] = ram_var.get()
+            with open(cfg_access, 'w') as file:
+              for key, value in cfg.items():
+                file.write(f'{key}={value}\n')
+          else:
+            ram_var.set("1024")
+            cfg["ram"] = "1024"
+            with open(cfg_access, 'w') as file:
+              for key, value in cfg.items():
+                file.write(f'{key}={value}\n')
+        else:
+          if ram_var.get() == "":
+            ram_var.set("1")
+            cfg["ram"] = "1"
+            with open(cfg_access, 'w') as file:
+              for key, value in cfg.items():
+                file.write(f'{key}={value}\n')
+          elif 0 < int(ram_var.get()) <= 75:
+            cfg["ram"] = ram_var.get()
+            with open(cfg_access, 'w') as file:
+              for key, value in cfg.items():
+                file.write(f'{key}={value}\n')
+          else:
+            ram_var.set("1")
+            cfg["ram"] = "1"
+            with open(cfg_access, 'w') as file:
+              for key, value in cfg.items():
+                file.write(f'{key}={value}\n')
+      except (ValueError, KeyError):
+        if ramtype_var.get() == "GB":
+          ram_var.set("1")
+          cfg["ram"] = "1"
+          with open(cfg_access, 'w') as file:
+            for key, value in cfg.items():
+              file.write(f'{key}={value}\n')
+        else:
+          ram_var.set("1024")
+          cfg["ram"] = "1024"
+          with open(cfg_access, 'w') as file:
+            for key, value in cfg.items():
+              file.write(f'{key}={value}\n')
+
       # Set window title
       root.title("Server Running...")
       # Check if server.jar exists
@@ -549,6 +625,8 @@ def startserver_menu():
         global minecraft_server_process
         global public_ip
         global server_port
+        global raam
+        global ramtypee
 
         # Initialize variables
         run = True
@@ -557,26 +635,37 @@ def startserver_menu():
         ramtype = ramtype_var.get()
 
         if ramtype == "MB":
-          ramtype = "M"
-          if int(ram) > 76800:
-            ram = "76800"
+          ramtypee = "M"
+          if ram == "":
+            raam = "1024"
+          elif int(ram) > 76800:
+            raam = "76800"
           elif int(ram) < 842:
-            ram = "842"
+            raam = "842"
+          else:
+            raam = ram
         else:
-          ramtype = "G"
+          ramtypee = "G"
+          if ram == "":
+            raam = "1"
           if int(ram) > 75:
-            ram = "75"
+            raam = "75"
           elif int(ram) < 1:
-            ram = "1"
+            raam = "1"
+          else:
+            raam = ram
 
         # Accept EULA
         with open(os.path.join(os.path.dirname(os.getcwd()), "eula.txt"), 'w') as file:
           file.write("eula=true\n")
-          
-        # Start the server
-        command = f"java -Xmx{ram}{ramtype} -Xms{ram}{ramtype} -jar server.jar nogui"
-        minecraft_server_process = subprocess.Popen(["cmd", "/K", command], cwd=os.path.dirname(os.getcwd()), creationflags=subprocess.CREATE_NEW_CONSOLE, stdin=subprocess.PIPE)
 
+        # Start the server
+        command = f"java -Xmx{raam}{ramtypee} -Xms{raam}{ramtypee} -jar server.jar nogui"
+        minecraft_server_process = subprocess.Popen(command, cwd=os.path.dirname(os.getcwd()), stdin=subprocess.PIPE)
+
+        # Detach the console
+        ctypes.windll.kernel32.FreeConsole()
+        
         # Clear the window
         for widget in root.winfo_children():
           widget.destroy()
@@ -587,7 +676,7 @@ def startserver_menu():
 
         # Title
         title_font = ("Arial", 30, "bold")
-        title = tk.Label(frame, text="Server Running...", font=title_font, bg=bg_color, fg=text_color)
+        title = tk.Label(frame, text=f"Server Running with {raam}{ramtypee}B of RAM", font=title_font, bg=bg_color, fg=text_color)
         title.grid(row=0, column=0, columnspan=4, pady=5)
 
         # Subtitle
@@ -650,7 +739,8 @@ def startserver_menu():
           global run
           global elapsed_minutes
           global elapsed_time
-          if run:
+          global minecraft_server_process
+          if run and minecraft_server_process.stdin:
             global start_time
             elapsed_time = time.time() - start_time
             elapsed_minutes = int(elapsed_time // 60)
@@ -668,7 +758,7 @@ def startserver_menu():
         def stop_server():
           global run
           global minecraft_server_process
-          if minecraft_server_process and minecraft_server_process.stdin:
+          if run and minecraft_server_process.stdin:
             command = "stop\n"
             minecraft_server_process.stdin.write(command.encode())
             minecraft_server_process.stdin.flush()
@@ -690,7 +780,7 @@ def startserver_menu():
 
           # Title
           title_font = ("Arial", 30, "bold")
-          title = tk.Label(frame, text="Start Server", font=title_font, bg=bg_color, fg=text_color)
+          title = tk.Label(frame, text="Server Stopped", font=title_font, bg=bg_color, fg=text_color)
           title.grid(row=0, column=0, columnspan=4, pady=5)
 
           # Subtitle
@@ -710,7 +800,7 @@ def startserver_menu():
           global run
           global minecraft_server_process
           while run:
-            if minecraft_server_process.poll() is not None:
+            if not minecraft_server_process.stdin:
               # The process has terminated
               run = False
               stop_server()
@@ -725,14 +815,18 @@ def startserver_menu():
         # "Main Menu" Button
         main_button = tk.Button(frame, text="Return to Main Menu", command=main, height=2, width=30, bg=button_color, fg=buttontxt_color)
         main_button.grid(row=5, column=0, columnspan=4, pady=15, sticky="nsew")
-
+  
     # "Start Server" button
     start_button = tk.Button(frame, text="START SERVER", command=start_server, height=3, width=20, bg="green", fg="white")
     start_button.grid(row=3, column=0, columnspan=4, pady=5, sticky='nsew')
 
+    # "Manage Server" button
+    manage_button = tk.Button(frame, text="Manage Server", command=manageserver_menu, height=2, width=30, bg="blue", fg="white")
+    manage_button.grid(row=4, column=0, columnspan=4, pady=5, sticky='nsew')
+
     # "Return to Main Menu" button
     main_button = tk.Button(frame, text="Return to Main Menu", command=main, height=2, width=30, bg=button_color, fg=buttontxt_color)
-    main_button.grid(row=4, column=0, columnspan=4, pady=15, sticky="nsew")
+    main_button.grid(row=5, column=0, columnspan=4, pady=15, sticky="nsew")
 
 # MANAGE SERVER MENU
 def manageserver_menu():
@@ -1138,9 +1232,25 @@ def manageserver_menu():
     save_button = tk.Button(frame, text="Save", command=maxplayers_change, height=1, width=5, bg=button_color, fg=buttontxt_color)
     save_button.grid(row=5, column=4, pady=5, sticky='e')
 
+    # Open server.properties
+    def open_props():
+      global props
+      try:
+        os.startfile(props)
+      except ValueError:
+        print("Error opening file")
+    
+    # "Open server.properties" button
+    open_button = tk.Button(frame, text="Open server.properties", command=open_props, height=3, width=30, bg="purple", fg="white")
+    open_button.grid(row=6, column=0, columnspan=2, pady=15, padx=5, sticky='nsew')
+
+    # "Go to Start Server Menu" button
+    start_button = tk.Button(frame, text="Go to Start Server Menu", command=startserver_menu, height=3, width=30, bg="blue", fg="white")
+    start_button.grid(row=6, column=2, columnspan=3, pady= 15, padx=5, sticky='nsew')
+
     # "Return to Main Menu" button
-    main_button = tk.Button(frame, text="Return to Main Menu", command=main, height=3, width=30, bg=button_color, fg=buttontxt_color)
-    main_button.grid(row=7, column=0, columnspan=5, pady=15, sticky="nsew")
+    main_button = tk.Button(frame, text="Return to Main Menu", command=main, height=2, width=30, bg=button_color, fg=buttontxt_color)
+    main_button.grid(row=7, column=0, columnspan=5, pady=5, sticky="nsew")
 
   else:
     # Subtitle
@@ -1318,7 +1428,7 @@ def licensextras_menu():
 # EXIT MENU
 def exit_menu():
   global run
-  if run and minecraft_server_process and minecraft_server_process.stdin:
+  if run and minecraft_server_process.stdin:
     # Clears the window
     for widget in root.winfo_children():
       widget.destroy()
@@ -1346,7 +1456,7 @@ def exit_menu():
       global m
       run = False
       global minecraft_server_process
-      if minecraft_server_process and minecraft_server_process.stdin:
+      if minecraft_server_process.stdin:
         command = "stop\n"
         minecraft_server_process.stdin.write(command.encode())
         minecraft_server_process.stdin.flush()
@@ -1377,7 +1487,6 @@ def exit_menu():
     # "Return to Main Menu" button
     main_button = tk.Button(frame, text="Return to Main Menu", command=main, height=2, width=30, bg=button_color, fg=buttontxt_color)
     main_button.grid(row=3, column=0, pady=15)
-
   else:
     # Clears the window
     for widget in root.winfo_children():
@@ -1435,28 +1544,28 @@ def main():
   # Title
   title_font = ("Arial", 30, "bold")
   title = tk.Label(frame, text="SSTools4MC", font=title_font, bg=bg_color, fg=text_color)
-  title.pack(pady=5)
+  title.grid(row=0, column=0, columnspan=5, pady=5)
 
   # Subtitle
   subtitle_text = "Welcome to SSTools4MC, a tool that allows you to manage your Minecraft server in a simple way\n\nPlease select an option below\n"
   subtitle = tk.Label(frame, text=subtitle_text, font=("Arial", 12), wraplength=600, bg=bg_color, fg=text_color)
-  subtitle.pack(pady=5)
+  subtitle.grid(row=1, column=0, columnspan=5, pady=5)
 
   # "Start Server" button
   start_button = tk.Button(frame, text="Start Server", command=startserver_menu, height=3, width=20, bg=button_color, fg=buttontxt_color)
-  start_button.pack(pady=5)
+  start_button.grid(row=2, column=1, columnspan=3, pady=5, sticky='nsew')
 
   # "Manage Server" button
   manage_button = tk.Button(frame, text="Manage Server", command=manageserver_menu, height=3, width=20, bg=button_color, fg=buttontxt_color)
-  manage_button.pack(pady=5)
+  manage_button.grid(row=3, column=1, columnspan=3, pady=5, sticky='nsew')
 
   # "License and Extras" button
   extras_button = tk.Button(frame, text="License and Extras", command=licensextras_menu, height=3, width=20, bg=button_color, fg=buttontxt_color)
-  extras_button.pack(pady=5)
+  extras_button.grid(row=4, column=1, columnspan=3, pady=5, sticky='nsew')
 
   # "Exit" button
   exit_button = tk.Button(frame, text="Exit", command=exit_menu, height=3, width=20, bg=button_color, fg=buttontxt_color)
-  exit_button.pack(pady=5)
+  exit_button.grid(row=5, column=1, columnspan=3, pady=5, sticky='nsew')
 
   root.mainloop()
 
