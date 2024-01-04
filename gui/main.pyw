@@ -1,20 +1,31 @@
 ### SSTools4MC v2.0.0 ###
-# SSTools4MC is a program that allows you to manage your Minecraft Server easily.
+## SSTools4MC is a set of tools designed to assist you hosting your own dedicated Minecraft server.
 # Made by: @ngdplnk
-# Github: https://github.com/NGDPLNk/SSTools4MC
+# Github repo: https://github.com/NGDPLNk/SSTools4MC
 
-#######################
+#####################
 
 ### THINGS TO FIX ###
+## GENERAL
+# - Clean redundant parts of code (like appdata path or cfg access unnecessary multiple creations)
 ## START SERVER MENU
 # - Fix console window not working properly
 # - Fix command line not working properly
 # - Fix "Stop Server" button not working properly
-##################################################
+
+#####################
+
 ### THINGS TO ADD ###
+## GENERAL
+# - Add debug mode messages (console prints for every action or error)
 ## License and Extras menu
 # - Add more themes (maybe v2.1 update)
-#########
+
+#####################
+
+### CODE ###
+
+
 
 import subprocess
 import time
