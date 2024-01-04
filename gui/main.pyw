@@ -1374,7 +1374,7 @@ def licensextras_menu():
   title.grid(row=0, column=0, columnspan=2, pady=5)
 
   # Subtitle
-  subtitle_text = "SSTools4MC PRIVATE BUILD\nBETA 3.2106 FOR V2.0REL\n-------------------------------------\n\nMIT License - Copyright © 2023 NGDPL Nk\n\nHelpers:\n@naicoooossj\n@LegalizeNuclearBombs\n"
+  subtitle_text = "SSTools4MC PRIVATE BUILD\nBETA A.1.24 W.I.P v2.0 Full Release\n-------------------------------------\n\nMIT License - Copyright © 2023 NGDPL Nk\n\nHelpers:\n@naicoooossj\n@LegalizeNuclearBombs\n"
   subtitle = tk.Label(frame, text=subtitle_text, font=("Arial", 12), wraplength=600, bg=bg_color, fg=text_color)
   subtitle.grid(row=1, column=0, columnspan=2, pady=5)
 
