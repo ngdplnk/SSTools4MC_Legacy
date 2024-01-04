@@ -7,7 +7,7 @@
 
 ### THINGS TO FIX ###
 ## GENERAL
-# - Clean redundant parts of code (like appdata path or cfg access unnecessary multiple creations)
+# - Clean redundant parts of code (like appdata path or cfg access unnecessary multiple creations) DONE, TESTING NEEDED
 ## START SERVER MENU
 # - Fix console window not working properly
 # - Fix command line not working properly
@@ -25,7 +25,7 @@
 
 ### CODE ###
 
-
+#####################
 
 import subprocess
 import time
@@ -41,26 +41,28 @@ import ctypes
 global running
 global run
 global props
+global sstfolder
+global confpath
 
 # Conditional variables
 running = False
 run = False
 props = os.path.join(os.path.dirname(os.getcwd()), "server.properties")
+jarpath = os.path.join(os.path.dirname(os.getcwd()), "server.jar")
+
+# Get SSTools4MC data folder and config file path
+appdpath = os.getenv("APPDATA")
+  sstfolder = os.path.join(appdpath, "SSTools4MC") # type: ignore
+  confpath = os.path.join(sstfolder, "sst.cfg")
 
 # Debug Mode selection
 def sstdebug_mode(rt=False):
   global enabled_debug
-  global appdata_path
-  global sstools_folder_path
-  global cfg_access
-  appdata_path = os.getenv("APPDATA")
-  sstools_folder_path = os.path.join(appdata_path, "SSTools4MC") # type: ignore
-  cfg_access = os.path.join(sstools_folder_path, "sst.cfg")
   cfg = {}
   if not rt:
-    if os.path.exists(sstools_folder_path):
-      if os.path.exists(cfg_access):
-        with open(cfg_access, 'r') as file:
+    if os.path.exists(sstfolder):
+      if os.path.exists(confpath):
+        with open(confpath, 'r') as file:
           for line in file:
             line = line.strip()
             if line and not line.startswith('#'):
@@ -75,31 +77,31 @@ def sstdebug_mode(rt=False):
             theme()
           else:
             cfg["debug"] = "false"
-            with open(cfg_access, 'w') as file:
+            with open(confpath, 'w') as file:
               for key, value in cfg.items():
                 file.write(f'{key}={value}\n')
             enabled_debug = False
             theme()
         except KeyError:
           cfg["debug"] = "false"
-          with open(cfg_access, 'w') as file:
+          with open(confpath, 'w') as file:
             for key, value in cfg.items():
               file.write(f'{key}={value}\n')
           enabled_debug = False
           theme()
       else:
-        with open(cfg_access, 'w') as archivo:
+        with open(confpath, 'w') as archivo:
           archivo.write('debug=false\n')
         theme()
     else:
-      os.makedirs(sstools_folder_path)
-      with open(cfg_access, 'w') as archivo:
+      os.makedirs(sstfolder)
+      with open(confpath, 'w') as archivo:
         archivo.write('debug=false\n')
       theme()
   else:
-    if os.path.exists(sstools_folder_path):
-      if os.path.exists(cfg_access):
-        with open(cfg_access, 'r') as file:
+    if os.path.exists(sstfolder):
+      if os.path.exists(confpath):
+        with open(confpath, 'r') as file:
           for line in file:
             line = line.strip()
             if line and not line.startswith('#'):
@@ -114,17 +116,17 @@ def sstdebug_mode(rt=False):
             return "Enable Debug Mode"
         except KeyError:
           cfg["debug"] = "false"
-          with open(cfg_access, 'w') as file:
+          with open(confpath, 'w') as file:
             for key, value in cfg.items():
               file.write(f'{key}={value}\n')
           return "Enable Debug Mode"
       else:
-        with open(cfg_access, 'w') as archivo:
+        with open(confpath, 'w') as archivo:
           archivo.write('debug=false\n')
         sstdebug_mode(rt=True)
     else:
-      os.makedirs(sstools_folder_path)
-      with open(cfg_access, 'w') as archivo:
+      os.makedirs(sstfolder)
+      with open(confpath, 'w') as archivo:
         archivo.write('debug=false\n')
       sstdebug_mode(rt=True)
 
@@ -134,17 +136,11 @@ def theme(rt=False):
   global button_color
   global buttontxt_color
   global text_color
-  global appdata_path
-  global sstools_folder_path
-  global cfg_access
-  appdata_path = os.getenv("APPDATA")
-  sstools_folder_path = os.path.join(appdata_path, "SSTools4MC") # type: ignore
-  cfg_access = os.path.join(sstools_folder_path, "sst.cfg")
   cfg = {}
   if not rt:
-    if os.path.exists(sstools_folder_path):
-      if os.path.exists(cfg_access):
-        with open(cfg_access, 'r') as file:
+    if os.path.exists(sstfolder):
+      if os.path.exists(confpath):
+        with open(confpath, 'r') as file:
           for line in file:
             line = line.strip()
             if line and not line.startswith('#'):
@@ -163,9 +159,10 @@ def theme(rt=False):
             buttontxt_color = "black"  # Black
             text_color = "black"  # Black
             main()
+          # Add more themes here (v2.1)
           else:
             cfg["theme"] = "dark"
-            with open(cfg_access, 'w') as file:
+            with open(confpath, 'w') as file:
               for key, value in cfg.items():
                 file.write(f'{key}={value}\n')
             bg_color = "#1A1A1A"  # rgb(26, 26, 26)
@@ -175,7 +172,7 @@ def theme(rt=False):
             main()
         except KeyError:
           cfg["theme"] = "dark"
-          with open(cfg_access, 'w') as file:
+          with open(confpath, 'w') as file:
             for key, value in cfg.items():
               file.write(f'{key}={value}\n')
           bg_color = "#1A1A1A"  # rgb(26, 26, 26)
@@ -184,18 +181,18 @@ def theme(rt=False):
           text_color = "white"
           main()
       else:
-        with open(cfg_access, 'w') as archivo:
+        with open(confpath, 'w') as archivo:
           archivo.write('theme=dark\n')
         theme()
     else:
-      os.makedirs(sstools_folder_path)
-      with open(cfg_access, 'w') as archivo:
+      os.makedirs(sstfolder)
+      with open(confpath, 'w') as archivo:
         archivo.write('theme=dark\n')
       theme()
   else:
-    if os.path.exists(sstools_folder_path):
-      if os.path.exists(cfg_access):
-        with open(cfg_access, 'r') as file:
+    if os.path.exists(sstfolder):
+      if os.path.exists(confpath):
+        with open(confpath, 'r') as file:
           for line in file:
             line = line.strip()
             if line and not line.startswith('#'):
@@ -206,36 +203,31 @@ def theme(rt=False):
             return "Light"
           elif cfg["theme"] == "light":
             return "Dark"
+          # Add more themes here (v2.1)
           else:
             return "Dark"
         except KeyError:
           cfg["theme"] = "dark"
-          with open(cfg_access, 'w') as file:
+          with open(confpath, 'w') as file:
             for key, value in cfg.items():
               file.write(f'{key}={value}\n')
           return "Dark"
       else:
-        with open(cfg_access, 'w') as archivo:
+        with open(confpath, 'w') as archivo:
           archivo.write('theme=dark\n')
         theme(rt=True)
     else:
-      os.makedirs(sstools_folder_path)
-      with open(cfg_access, 'w') as archivo:
+      os.makedirs(sstfolder)
+      with open(confpath, 'w') as archivo:
         archivo.write('theme=dark\n')
       theme(rt=True)
 
 # Check if fullscreen is enabled
 def fullscreen():
-  global appdata_path
-  global sstools_folder_path
-  global cfg_access
-  appdata_path = os.getenv("APPDATA")
-  sstools_folder_path = os.path.join(appdata_path, "SSTools4MC") # type: ignore
-  cfg_access = os.path.join(sstools_folder_path, "sst.cfg")
   cfg = {}
-  if os.path.exists(sstools_folder_path):
-    if os.path.exists(cfg_access):
-      with open(cfg_access, 'r') as file:
+  if os.path.exists(sstfolder):
+    if os.path.exists(confpath):
+      with open(confpath, 'r') as file:
         for line in file:
           line = line.strip()
           if line and not line.startswith('#'):
@@ -248,38 +240,32 @@ def fullscreen():
           return False
         else:
           cfg["fullscreen"] = "false"
-          with open(cfg_access, 'w') as file:
+          with open(confpath, 'w') as file:
             for key, value in cfg.items():
               file.write(f'{key}={value}\n')
           return False
       except KeyError:
         cfg["fullscreen"] = "false"
-        with open(cfg_access, 'w') as file:
+        with open(confpath, 'w') as file:
           for key, value in cfg.items():
             file.write(f'{key}={value}\n')
         return False
     else:
-      with open(cfg_access, 'w') as archivo:
+      with open(confpath, 'w') as archivo:
         archivo.write('fullscreen=false\n')
       fullscreen()
   else:
-    os.makedirs(sstools_folder_path)
-    with open(cfg_access, 'w') as archivo:
+    os.makedirs(sstfolder)
+    with open(confpath, 'w') as archivo:
       archivo.write('fullscreen=false\n')
     fullscreen()
 
 # Check last ram type used
 def last_ramtype():
-  global appdata_path
-  global sstools_folder_path
-  global cfg_access
-  appdata_path = os.getenv("APPDATA")
-  sstools_folder_path = os.path.join(appdata_path, "SSTools4MC") # type: ignore
-  cfg_access = os.path.join(sstools_folder_path, "sst.cfg")
   cfg = {}
-  if os.path.exists(sstools_folder_path):
-    if os.path.exists(cfg_access):
-      with open(cfg_access, 'r') as file:
+  if os.path.exists(sstfolder):
+    if os.path.exists(confpath):
+      with open(confpath, 'r') as file:
         for line in file:
           line = line.strip()
           if line and not line.startswith('#'):
@@ -292,32 +278,26 @@ def last_ramtype():
           return "GB"
       except KeyError:
         cfg["ramtype"] = "GB"
-        with open(cfg_access, 'w') as file:
+        with open(confpath, 'w') as file:
           for key, value in cfg.items():
             file.write(f'{key}={value}\n')
         return "GB"
     else:
-      with open(cfg_access, 'w') as archivo:
+      with open(confpath, 'w') as archivo:
         archivo.write('ramtype=GB\n')
       last_ramtype()
   else:
-    os.makedirs(sstools_folder_path)
-    with open(cfg_access, 'w') as archivo:
+    os.makedirs(sstfolder)
+    with open(confpath, 'w') as archivo:
       archivo.write('ramtype=GB\n')
     last_ramtype()
 
 # Check last ram used
 def last_ram():
-  global appdata_path
-  global sstools_folder_path
-  global cfg_access
-  appdata_path = os.getenv("APPDATA")
-  sstools_folder_path = os.path.join(appdata_path, "SSTools4MC") # type: ignore
-  cfg_access = os.path.join(sstools_folder_path, "sst.cfg")
   cfg = {}
-  if os.path.exists(sstools_folder_path):
-    if os.path.exists(cfg_access):
-      with open(cfg_access, 'r') as file:
+  if os.path.exists(sstfolder):
+    if os.path.exists(confpath):
+      with open(confpath, 'r') as file:
         for line in file:
           line = line.strip()
           if line and not line.startswith('#'):
@@ -329,7 +309,7 @@ def last_ram():
             return cfg["ram"]
           else:
             cfg["ram"] = "1"
-            with open(cfg_access, 'w') as file:
+            with open(confpath, 'w') as file:
               for key, value in cfg.items():
                 file.write(f'{key}={value}\n')
             return "1"
@@ -338,35 +318,35 @@ def last_ram():
             return cfg["ram"]
           else:
             cfg["ram"] = "1024"
-            with open(cfg_access, 'w') as file:
+            with open(confpath, 'w') as file:
               for key, value in cfg.items():
                 file.write(f'{key}={value}\n')
             return "1024"
       except (KeyError, ValueError):
         if last_ramtype() == "GB":
           cfg["ram"] = "1"
-          with open(cfg_access, 'w') as file:
+          with open(confpath, 'w') as file:
             for key, value in cfg.items():
               file.write(f'{key}={value}\n')
           return "1"
         else:
           cfg["ram"] = "1024"
-          with open(cfg_access, 'w') as file:
+          with open(confpath, 'w') as file:
             for key, value in cfg.items():
               file.write(f'{key}={value}\n')
           return "1024"
     else:
       if last_ramtype() == "GB":
-        with open(cfg_access, 'w') as archivo:
+        with open(confpath, 'w') as archivo:
           archivo.write('ram=1\n')
         last_ram()
       else:
-        with open(cfg_access, 'w') as archivo:
+        with open(confpath, 'w') as archivo:
           archivo.write('ram=1024\n')
         last_ram()
   else:
-    os.makedirs(sstools_folder_path)
-    with open(cfg_access, 'w') as archivo:
+    os.makedirs(sstfolder)
+    with open(confpath, 'w') as archivo:
       archivo.write('ram=1\n')
     last_ram()
 
@@ -412,7 +392,6 @@ def startserver_menu():
 
       # Get server port
       def get_port():
-        global props
         properties = {}
         if not os.path.exists(props):
           return ""
@@ -580,11 +559,11 @@ def startserver_menu():
     ram_entry.grid(row=2, column=1, padx=5, pady=5)
 
     # RAM Type Change
-    def ram_change(*args):
+    def ram_change():
       cfg = {}
-      if os.path.exists(sstools_folder_path):
-        if os.path.exists(cfg_access):
-          with open(cfg_access, 'r') as file:
+      if os.path.exists(sstfolder):
+        if os.path.exists(confpath):
+          with open(confpath, 'r') as file:
             for line in file:
               line = line.strip()
               if line and not line.startswith('#'):
@@ -592,23 +571,23 @@ def startserver_menu():
                 cfg[key.strip()] = value.strip()
           try:
             cfg["ramtype"] = ramtype_var.get()
-            with open(cfg_access, 'w') as file:
+            with open(confpath, 'w') as file:
               for key, value in cfg.items():
                 file.write(f'{key}={value}\n')
             startserver_menu()
           except KeyError:
             cfg["ramtype"] = "GB"
-            with open(cfg_access, 'w') as file:
+            with open(confpath, 'w') as file:
               for key, value in cfg.items():
                 file.write(f'{key}={value}\n')
             startserver_menu()
         else:
-          with open(cfg_access, 'w') as archivo:
+          with open(confpath, 'w') as archivo:
             archivo.write('ramtype=GB\n')
           startserver_menu()
       else:
-        os.makedirs(sstools_folder_path)
-        with open(cfg_access, 'w') as archivo:
+        os.makedirs(sstfolder)
+        with open(confpath, 'w') as archivo:
           archivo.write('ramtype=GB\n')
         startserver_menu()
 
@@ -625,7 +604,7 @@ def startserver_menu():
       global ramtype_var
       global ram_var
       cfg = {}
-      with open(cfg_access, 'r') as file:
+      with open(confpath, 'r') as file:
         for line in file:
           line = line.strip()
           if line and not line.startswith('#'):
@@ -636,56 +615,56 @@ def startserver_menu():
           if ram_var.get() == "":
             ram_var.set("1024")
             cfg["ram"] = "1024"
-            with open(cfg_access, 'w') as file:
+            with open(confpath, 'w') as file:
               for key, value in cfg.items():
                 file.write(f'{key}={value}\n')
           elif 842 <= int(ram_var.get()) <= 76800:
             cfg["ram"] = ram_var.get()
-            with open(cfg_access, 'w') as file:
+            with open(confpath, 'w') as file:
               for key, value in cfg.items():
                 file.write(f'{key}={value}\n')
           else:
             ram_var.set("1024")
             cfg["ram"] = "1024"
-            with open(cfg_access, 'w') as file:
+            with open(confpath, 'w') as file:
               for key, value in cfg.items():
                 file.write(f'{key}={value}\n')
         else:
           if ram_var.get() == "":
             ram_var.set("1")
             cfg["ram"] = "1"
-            with open(cfg_access, 'w') as file:
+            with open(confpath, 'w') as file:
               for key, value in cfg.items():
                 file.write(f'{key}={value}\n')
           elif 0 < int(ram_var.get()) <= 75:
             cfg["ram"] = ram_var.get()
-            with open(cfg_access, 'w') as file:
+            with open(confpath, 'w') as file:
               for key, value in cfg.items():
                 file.write(f'{key}={value}\n')
           else:
             ram_var.set("1")
             cfg["ram"] = "1"
-            with open(cfg_access, 'w') as file:
+            with open(confpath, 'w') as file:
               for key, value in cfg.items():
                 file.write(f'{key}={value}\n')
       except (ValueError, KeyError):
         if ramtype_var.get() == "GB":
           ram_var.set("1")
           cfg["ram"] = "1"
-          with open(cfg_access, 'w') as file:
+          with open(confpath, 'w') as file:
             for key, value in cfg.items():
               file.write(f'{key}={value}\n')
         else:
           ram_var.set("1024")
           cfg["ram"] = "1024"
-          with open(cfg_access, 'w') as file:
+          with open(confpath, 'w') as file:
             for key, value in cfg.items():
               file.write(f'{key}={value}\n')
 
       # Set window title
       root.title("Server Running...")
       # Check if server.jar exists
-      if not os.path.exists(os.path.join(os.path.dirname(os.getcwd()), "server.jar")):
+      if not os.path.exists(jarpath):
         # Clear the window
         for widget in root.winfo_children():
           widget.destroy()
@@ -943,7 +922,6 @@ def manageserver_menu():
   title.grid(row=0, column=0, columnspan=5, pady=5)
 
   # Check if server.properties exists
-  props = os.path.join(os.path.dirname(os.getcwd()), "server.properties")
   if os.path.exists(props):
     global properties
     properties = {}
@@ -1224,7 +1202,7 @@ def manageserver_menu():
       pvp_button.grid(row=5, column=1, padx=5, pady=5, sticky='w')
 
     # Change Gamemode
-    def gamemode_change(*args):
+    def gamemode_change():
       global properties
       properties["gamemode"] = gamemode_var.get().lower()
       with open(props, 'w') as file:
@@ -1246,7 +1224,7 @@ def manageserver_menu():
     gamemode_menu.grid(row=2, column=4, padx=5, pady=5, sticky='w')
 
     # Change Difficulty
-    def difficulty_change(*args):
+    def difficulty_change():
       global properties
       properties["difficulty"] = difficulty_var.get().lower()
       with open(props, 'w') as file:
@@ -1268,7 +1246,7 @@ def manageserver_menu():
     difficulty_menu.grid(row=3, column=4, padx=5, pady=5, sticky='w')
 
     # Change Level Type
-    def leveltype_change(*args):
+    def leveltype_change():
       global properties
       properties["level-type"] = f"minecraft:{leveltype_var.get().lower()}"
       with open(props, 'w') as file:
@@ -1290,7 +1268,7 @@ def manageserver_menu():
     leveltype_menu.grid(row=4, column=4, padx=5, pady=5, sticky='w')
 
     # Change Max Players
-    def maxplayers_change(*args):
+    def maxplayers_change():
       global properties
       if maxplayers_var.get() == "":
         maxplayers_var.set("1")
@@ -1326,7 +1304,6 @@ def manageserver_menu():
 
     # Open server.properties
     def open_props():
-      global props
       try:
         os.startfile(props)
       except ValueError:
@@ -1394,9 +1371,9 @@ def licensextras_menu():
     global deb
     global enabled_debug
     cfg = {}
-    if os.path.exists(sstools_folder_path):
-      if os.path.exists(cfg_access):
-        with open(cfg_access, 'r') as file:
+    if os.path.exists(sstfolder):
+      if os.path.exists(confpath):
+        with open(confpath, 'r') as file:
           for line in file:
             line = line.strip()
             if line and not line.startswith('#'):
@@ -1404,26 +1381,26 @@ def licensextras_menu():
               cfg[key.strip()] = value.strip()
         if deb == "Enable Debug Mode":
           cfg["debug"] = "true"
-          with open(cfg_access, 'w') as file:
+          with open(confpath, 'w') as file:
             for key, value in cfg.items():
               file.write(f'{key}={value}\n')
           enabled_debug = True
           licensextras_menu()
         elif deb == "Disable Debug Mode":
           cfg["debug"] = "false"
-          with open(cfg_access, 'w') as file:
+          with open(confpath, 'w') as file:
             for key, value in cfg.items():
               file.write(f'{key}={value}\n')
           enabled_debug = False
           licensextras_menu()
       else:
-        with open(cfg_access, 'w') as archivo:
+        with open(confpath, 'w') as archivo:
           archivo.write('debug=false\n')
         deb = "Enable Debug Mode"
         new_debug()
     else:
-      os.makedirs(sstools_folder_path)
-      with open(cfg_access, 'w') as archivo:
+      os.makedirs(sstfolder)
+      with open(confpath, 'w') as archivo:
         archivo.write('debug=false\n')
       deb = "Enable Debug Mode"
       new_debug()
@@ -1436,7 +1413,7 @@ def licensextras_menu():
   # Open cfg
   def open_cfg():
     try:
-      os.startfile(cfg_access)
+      os.startfile(confpath)
     except FileNotFoundError:
       print("Error opening file")
   
@@ -1452,9 +1429,9 @@ def licensextras_menu():
     global text_color
     global ntheme
     cfg = {}
-    if os.path.exists(sstools_folder_path):
-      if os.path.exists(cfg_access):
-        with open(cfg_access, 'r') as file:
+    if os.path.exists(sstfolder):
+      if os.path.exists(confpath):
+        with open(confpath, 'r') as file:
           for line in file:
             line = line.strip()
             if line and not line.startswith('#'):
@@ -1462,7 +1439,7 @@ def licensextras_menu():
               cfg[key.strip()] = value.strip()
         if ntheme == "Dark":
           cfg["theme"] = "dark"
-          with open(cfg_access, 'w') as file:
+          with open(confpath, 'w') as file:
             for key, value in cfg.items():
               file.write(f'{key}={value}\n')
           bg_color = "#1A1A1A"  # rgb(26, 26, 26)
@@ -1472,7 +1449,7 @@ def licensextras_menu():
           licensextras_menu()
         elif ntheme == "Light":
           cfg["theme"] = "light"
-          with open(cfg_access, 'w') as file:
+          with open(confpath, 'w') as file:
             for key, value in cfg.items():
               file.write(f'{key}={value}\n')
           bg_color = "white"  # White
@@ -1481,13 +1458,13 @@ def licensextras_menu():
           text_color = "black"  # Black
           licensextras_menu()
       else:
-        with open(cfg_access, 'w') as archivo:
+        with open(confpath, 'w') as archivo:
           archivo.write('theme=dark\n')
         ntheme = "Dark"
         new_theme()
     else:
-      os.makedirs(sstools_folder_path)
-      with open(cfg_access, 'w') as archivo:
+      os.makedirs(sstfolder)
+      with open(confpath, 'w') as archivo:
         archivo.write('theme=dark\n')
       ntheme = "Dark"
       new_theme()
@@ -1501,9 +1478,9 @@ def licensextras_menu():
   def new_screenmode():
     global screenmode
     cfg = {}
-    if os.path.exists(sstools_folder_path):
-      if os.path.exists(cfg_access):
-        with open(cfg_access, 'r') as file:
+    if os.path.exists(sstfolder):
+      if os.path.exists(confpath):
+        with open(confpath, 'r') as file:
           for line in file:
             line = line.strip()
             if line and not line.startswith('#'):
@@ -1511,20 +1488,20 @@ def licensextras_menu():
               cfg[key.strip()] = value.strip()
         if screenmode == "Fullscreen":
           cfg["fullscreen"] = "true"
-          with open(cfg_access, 'w') as file:
+          with open(confpath, 'w') as file:
             for key, value in cfg.items():
               file.write(f'{key}={value}\n')
           root.attributes('-fullscreen', True)
           licensextras_menu()
         elif screenmode == "Windowed":
           cfg["fullscreen"] = "false"
-          with open(cfg_access, 'w') as file:
+          with open(confpath, 'w') as file:
             for key, value in cfg.items():
               file.write(f'{key}={value}\n')
           root.attributes('-fullscreen', False)
           licensextras_menu()
       else:
-        with open(cfg_access, 'w') as archivo:
+        with open(confpath, 'w') as archivo:
           archivo.write('fullscreen=false\n')
         screenmode = "Windowed"
         new_screenmode()
@@ -1601,7 +1578,7 @@ def exit_menu():
     # Stop and close
     def stopnclose():
       global run
-      global m
+      global m # Check what this does lol
       run = False
       global minecraft_server_process
       if minecraft_server_process.stdin:
