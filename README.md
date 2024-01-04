@@ -1,6 +1,6 @@
 # SSTools4MC - Server Startup Tools for Minecraft
 
-SSTools4MC is a collection of tools designed to assist with various processes for your dedicated Minecraft server.
+SSTools4MC is a set of tools designed to assist you hosting your own dedicated Minecraft server.
 
 ## Table of Contents
 - [Getting Started](#getting-started)
