@@ -36,6 +36,87 @@ running = False
 run = False
 props = os.path.join(os.path.dirname(os.getcwd()), "server.properties")
 
+# Debug Mode selection
+def sstdebug_mode(rt=False):
+  global enabled_debug
+  global appdata_path
+  global sstools_folder_path
+  global cfg_access
+  appdata_path = os.getenv("APPDATA")
+  sstools_folder_path = os.path.join(appdata_path, "SSTools4MC") # type: ignore
+  cfg_access = os.path.join(sstools_folder_path, "sst.cfg")
+  cfg = {}
+  if not rt:
+    if os.path.exists(sstools_folder_path):
+      if os.path.exists(cfg_access):
+        with open(cfg_access, 'r') as file:
+          for line in file:
+            line = line.strip()
+            if line and not line.startswith('#'):
+              key, value = line.split('=')
+              cfg[key.strip()] = value.strip()
+        try:
+          if cfg["debug"] == "true":
+            enabled_debug = True
+            theme()
+          elif cfg["debug"] == "false":
+            enabled_debug = False
+            theme()
+          else:
+            cfg["debug"] = "false"
+            with open(cfg_access, 'w') as file:
+              for key, value in cfg.items():
+                file.write(f'{key}={value}\n')
+            enabled_debug = False
+            theme()
+        except KeyError:
+          cfg["debug"] = "false"
+          with open(cfg_access, 'w') as file:
+            for key, value in cfg.items():
+              file.write(f'{key}={value}\n')
+          enabled_debug = False
+          theme()
+      else:
+        with open(cfg_access, 'w') as archivo:
+          archivo.write('debug=false\n')
+        theme()
+    else:
+      os.makedirs(sstools_folder_path)
+      with open(cfg_access, 'w') as archivo:
+        archivo.write('debug=false\n')
+      theme()
+  else:
+    if os.path.exists(sstools_folder_path):
+      if os.path.exists(cfg_access):
+        with open(cfg_access, 'r') as file:
+          for line in file:
+            line = line.strip()
+            if line and not line.startswith('#'):
+              key, value = line.split('=')
+              cfg[key.strip()] = value.strip()
+        try:
+          if cfg["debug"] == "false":
+            return "Enable Debug Mode"
+          elif cfg["debug"] == "true":
+            return "Disable Debug Mode"
+          else:
+            return "Enable Debug Mode"
+        except KeyError:
+          cfg["debug"] = "false"
+          with open(cfg_access, 'w') as file:
+            for key, value in cfg.items():
+              file.write(f'{key}={value}\n')
+          return "Enable Debug Mode"
+      else:
+        with open(cfg_access, 'w') as archivo:
+          archivo.write('debug=false\n')
+        sstdebug_mode(rt=True)
+    else:
+      os.makedirs(sstools_folder_path)
+      with open(cfg_access, 'w') as archivo:
+        archivo.write('debug=false\n')
+      sstdebug_mode(rt=True)
+
 # Theme selection
 def theme(rt=False):
   global bg_color
@@ -47,7 +128,7 @@ def theme(rt=False):
   global cfg_access
   appdata_path = os.getenv("APPDATA")
   sstools_folder_path = os.path.join(appdata_path, "SSTools4MC") # type: ignore
-  cfg_access = os.path.join(sstools_folder_path, "cfg.sst")
+  cfg_access = os.path.join(sstools_folder_path, "sst.cfg")
   cfg = {}
   if not rt:
     if os.path.exists(sstools_folder_path):
@@ -139,7 +220,7 @@ def fullscreen():
   global cfg_access
   appdata_path = os.getenv("APPDATA")
   sstools_folder_path = os.path.join(appdata_path, "SSTools4MC") # type: ignore
-  cfg_access = os.path.join(sstools_folder_path, "cfg.sst")
+  cfg_access = os.path.join(sstools_folder_path, "sst.cfg")
   cfg = {}
   if os.path.exists(sstools_folder_path):
     if os.path.exists(cfg_access):
@@ -183,7 +264,7 @@ def last_ramtype():
   global cfg_access
   appdata_path = os.getenv("APPDATA")
   sstools_folder_path = os.path.join(appdata_path, "SSTools4MC") # type: ignore
-  cfg_access = os.path.join(sstools_folder_path, "cfg.sst")
+  cfg_access = os.path.join(sstools_folder_path, "sst.cfg")
   cfg = {}
   if os.path.exists(sstools_folder_path):
     if os.path.exists(cfg_access):
@@ -221,7 +302,7 @@ def last_ram():
   global cfg_access
   appdata_path = os.getenv("APPDATA")
   sstools_folder_path = os.path.join(appdata_path, "SSTools4MC") # type: ignore
-  cfg_access = os.path.join(sstools_folder_path, "cfg.sst")
+  cfg_access = os.path.join(sstools_folder_path, "sst.cfg")
   cfg = {}
   if os.path.exists(sstools_folder_path):
     if os.path.exists(cfg_access):
@@ -665,7 +746,7 @@ def startserver_menu():
 
         # Detach the console
         ctypes.windll.kernel32.FreeConsole()
-        
+
         # Clear the window
         for widget in root.winfo_children():
           widget.destroy()
@@ -1266,6 +1347,7 @@ def manageserver_menu():
 def licensextras_menu():
   global ntheme
   global screenmode
+  global deb
   # Clears the window
   for widget in root.winfo_children():
     widget.destroy()
@@ -1295,6 +1377,61 @@ def licensextras_menu():
   subtitle_text = "SSTools4MC PRIVATE BUILD\nBETA 3.2106 FOR V2.0REL\n-------------------------------------\n\nMIT License - Copyright © 2023 NGDPL Nk\n\nHelpers:\n@naicoooossj\n@LegalizeNuclearBombs\n"
   subtitle = tk.Label(frame, text=subtitle_text, font=("Arial", 12), wraplength=600, bg=bg_color, fg=text_color)
   subtitle.grid(row=1, column=0, columnspan=2, pady=5)
+
+  # Check current debug mode status
+  def new_debug():
+    global deb
+    global enabled_debug
+    cfg = {}
+    if os.path.exists(sstools_folder_path):
+      if os.path.exists(cfg_access):
+        with open(cfg_access, 'r') as file:
+          for line in file:
+            line = line.strip()
+            if line and not line.startswith('#'):
+              key, value = line.split('=')
+              cfg[key.strip()] = value.strip()
+        if deb == "Enable Debug Mode":
+          cfg["debug"] = "true"
+          with open(cfg_access, 'w') as file:
+            for key, value in cfg.items():
+              file.write(f'{key}={value}\n')
+          enabled_debug = True
+          licensextras_menu()
+        elif deb == "Disable Debug Mode":
+          cfg["debug"] = "false"
+          with open(cfg_access, 'w') as file:
+            for key, value in cfg.items():
+              file.write(f'{key}={value}\n')
+          enabled_debug = False
+          licensextras_menu()
+      else:
+        with open(cfg_access, 'w') as archivo:
+          archivo.write('debug=false\n')
+        deb = "Enable Debug Mode"
+        new_debug()
+    else:
+      os.makedirs(sstools_folder_path)
+      with open(cfg_access, 'w') as archivo:
+        archivo.write('debug=false\n')
+      deb = "Enable Debug Mode"
+      new_debug()
+
+  # "Debug Change" button
+  deb = sstdebug_mode(True)
+  debugchange_button = tk.Button(frame, text=f"{deb}", command=new_debug, height=3, width=30, bg=button_color, fg=buttontxt_color)
+  debugchange_button.grid(row=2, column=0, padx=3, pady=5, sticky='nsew')
+
+  # Open cfg
+  def open_cfg():
+    try:
+      os.startfile(cfg_access)
+    except FileNotFoundError:
+      print("Error opening file")
+  
+  # "Open cfg" button
+  cfg_button = tk.Button(frame, text="Open Tool Config File", command=open_cfg, height=3, width=30, bg=button_color, fg=buttontxt_color)
+  cfg_button.grid(row=2, column=1, padx=3, pady=5, sticky='nsew')
 
   # Check current theme
   def new_theme():
@@ -1347,7 +1484,7 @@ def licensextras_menu():
   # "Change Theme" button
   ntheme = theme(True)
   ntheme_button = tk.Button(frame, text=f"Set theme to {ntheme}", command=new_theme, height=3, width=30, bg=button_color, fg=buttontxt_color)
-  ntheme_button.grid(row=2, column=0, padx=3, pady=5)
+  ntheme_button.grid(row=3, column=0, padx=3, pady=5, sticky='nsew')
 
   # Change screen mode
   def new_screenmode():
@@ -1387,7 +1524,7 @@ def licensextras_menu():
   else:
     screenmode = "Fullscreen"
   screenmode_button = tk.Button(frame, text=f"Set window mode to {screenmode}", command=new_screenmode, height=3, width=30, bg=button_color, fg=buttontxt_color)
-  screenmode_button.grid(row=2, column=1, padx=3, pady=5)
+  screenmode_button.grid(row=3, column=1, padx=3, pady=5, sticky='nsew')
 
   # Open GitHub Repo
   def view_repo():
@@ -1395,7 +1532,7 @@ def licensextras_menu():
   
   # "Open GitHub Repo" button
   repo_button = tk.Button(frame, text="Open GitHub Repo", command=view_repo, height=3, width=30, bg=button_color, fg=buttontxt_color)
-  repo_button.grid(row=3, column=0, padx=3, pady=5)
+  repo_button.grid(row=4, column=0, padx=3, pady=5, sticky='nsew')
 
   # Open Text Formatting for MOTD's
   def view_motdsformat():
@@ -1403,7 +1540,7 @@ def licensextras_menu():
   
   # "Open Text Formatting for MOTD's" button
   motd_button = tk.Button(frame, text="Open Text Formatting for MOTD's", command=view_motdsformat, height=3, width=30, bg=button_color, fg=buttontxt_color)
-  motd_button.grid(row=3, column=1, padx=3, pady=5)
+  motd_button.grid(row=4, column=1, padx=3, pady=5, sticky='nsew')
 
   # Open server.properties wiki
   def view_serverproperties():
@@ -1411,7 +1548,7 @@ def licensextras_menu():
 
   # "Open server.properties wiki" button
   serverproperties_button = tk.Button(frame, text="Open server.properties wiki", command=view_serverproperties, height=3, width=30, bg=button_color, fg=buttontxt_color)
-  serverproperties_button.grid(row=4, column=0, padx=3, pady=5)
+  serverproperties_button.grid(row=5, column=0, padx=3, pady=5, sticky='nsew')
 
   # Open License
   def view_license():
@@ -1419,11 +1556,11 @@ def licensextras_menu():
   
   # "Open License" button
   license_button = tk.Button(frame, text="Open License", command=view_license, height=3, width=30, bg=button_color, fg=buttontxt_color)
-  license_button.grid(row=4, column=1, padx=3, pady=5)
+  license_button.grid(row=5, column=1, padx=3, pady=5, sticky='nsew')
 
   # "Return to Main Menu" button
   main_button = tk.Button(frame, text="Return to Main Menu", command=main, height=3, width=30, bg=button_color, fg=buttontxt_color)
-  main_button.grid(row=5, column=0, columnspan=2, pady=15, sticky="nsew")
+  main_button.grid(row=6, column=0, columnspan=2, pady=15, sticky="nsew")
 
 # EXIT MENU
 def exit_menu():
