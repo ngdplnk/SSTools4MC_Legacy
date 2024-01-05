@@ -863,6 +863,8 @@ def startserver_menu():
             raam = "1"
           else:
             raam = ram
+        if enabled_debug:
+          print(f"Setting RAM ammount and type for server start: {raam}{ramtypee}")
 
         # Accept EULA
         if enabled_debug:
@@ -880,6 +882,8 @@ def startserver_menu():
 
         # Detach the console
         ctypes.windll.kernel32.FreeConsole()
+        if enabled_debug:
+          print("Console detached")
 
         # Clear the window
         for widget in root.winfo_children():
@@ -904,7 +908,8 @@ def startserver_menu():
           try:
             ip = requests.get('https://api.ipify.org').text
           except requests.exceptions.RequestException as err:
-            print ("Woops: Something Else Happened",err)
+            if enabled_debug:
+              print ("Getting public IP failed",err)
             ip = "Your Public IP"
           return ip
         public_ip = get_public_ip()
@@ -914,6 +919,8 @@ def startserver_menu():
           global props
           properties = {}
           if not os.path.exists(props):
+            if enabled_debug:
+              print("Server properties file not found, returning empty port")
             return ""
           with open(props, 'r') as file:
             for line in file:
@@ -924,10 +931,19 @@ def startserver_menu():
           try:
             port = properties["server-port"]
             if port == "25565":
+              if enabled_debug:
+                print("Server port is default, returning empty port")
               return ""
           except KeyError:
+            if enabled_debug:
+              print("Server port not found, returning empty port")
             return ""
+          if enabled_debug:
+            print(f"Server port is {port}, returning it")
           return f":{port}"
+        
+        if enabled_debug:
+          print("Trying to get server port...")
         server_port = get_port()
 
         # IP label
@@ -938,8 +954,12 @@ def startserver_menu():
         def copy_ip():
           global public_ip
           global server_port
+          if enabled_debug:
+            print(f'Copying IP "{public_ip}{server_port}" to clipboard')
           root.clipboard_clear()
           root.clipboard_append(f"{public_ip}{server_port}")
+          if enabled_debug:
+            print("IP copied to clipboard")
         
         # "Copy IP" button
         copy_button = tk.Button(frame, text="Copy IP", command=copy_ip, height=1, width=8, bg=button_color, fg=buttontxt_color)
@@ -967,20 +987,28 @@ def startserver_menu():
         # Time Running Label
         running_time = tk.Label(frame, text="0 minutes", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
         running_time.grid(row=3, column=2, pady=5, sticky='w')
+        if enabled_debug:
+          print("Background server running check started...")
         time_running()
 
         # Stop Server
         def stop_server():
           global run
           global minecraft_server_process
+          if enabled_debug:
+            print("Checking if server is running to trying to stop it")
           if run and minecraft_server_process.stdin:
             command = "stop\n"
             minecraft_server_process.stdin.write(command.encode())
             minecraft_server_process.stdin.flush()
+            if enabled_debug:
+              print("Server was running, stop command sent to server")
           run = False
           dnh_sys = datetime.datetime.now()
           stop_date = str(dnh_sys.strftime("%d/%m/%Y"))
           stop_hour = str(dnh_sys.strftime("%H:%M:%S"))
+          if enabled_debug:
+            print(f'Server stopped on {stop_date} at {stop_hour}, updating GUI')
 
           # Clear the window
           for widget in root.winfo_children():
@@ -1016,6 +1044,8 @@ def startserver_menu():
           global minecraft_server_process
           while run:
             if not minecraft_server_process.stdin:
+              if enabled_debug:
+                print("Server process terminated, updating GUI")
               # The process has terminated
               run = False
               stop_server()
@@ -1046,6 +1076,8 @@ def startserver_menu():
 # MANAGE SERVER MENU
 def manageserver_menu():
   global props
+  if enabled_debug:
+    print("Manage Server Menu Opened")
   # Clears the window
   for widget in root.winfo_children():
     widget.destroy()
@@ -1066,7 +1098,11 @@ def manageserver_menu():
   title.grid(row=0, column=0, columnspan=5, pady=5)
 
   # Check if server.properties exists
+  if enabled_debug:
+    print('Checking if server.properties file exists...')
   if os.path.exists(props):
+    if enabled_debug:
+      print('server.properties file found, opening config menu...')
     global properties
     properties = {}
     with open(props, 'r') as file:
@@ -1091,46 +1127,64 @@ def manageserver_menu():
             with open(props, 'w') as file:
               for key, value in properties.items():
                 file.write(f'{key}={value}\n')
+            if enabled_debug:
+              print("Online Mode disabled, reloading menu")
             manageserver_menu()
           elif properties["online-mode"] == "false":
             properties["online-mode"] = "true"
             with open(props, 'w') as file:
               for key, value in properties.items():
                 file.write(f'{key}={value}\n')
+            if enabled_debug:
+              print("Online Mode enabled, reloading menu")
             manageserver_menu()
           else:
             properties["online-mode"] = "true"
             with open(props, 'w') as file:
               for key, value in properties.items():
                 file.write(f'{key}={value}\n')
+            if enabled_debug:
+              print("Online Mode was wrong, set to enabled and reloading menu")
             manageserver_menu()
         except KeyError:
           properties["online-mode"] = "true"
           with open(props, 'w') as file:
             for key, value in properties.items():
               file.write(f'{key}={value}\n')
+          if enabled_debug:
+            print("Online Mode was not set, set to enabled and reloading menu")
           manageserver_menu()
       else:
         try:
           if properties["online-mode"] == "true":
+            if enabled_debug:
+              print("Online Mode is enabled")
             return True
           elif properties["online-mode"] == "false":
+            if enabled_debug:
+              print("Online Mode is disabled")
             return False
           else:
             properties["online-mode"] = "true"
             with open(props, 'w') as file:
               for key, value in properties.items():
                 file.write(f'{key}={value}\n')
+            if enabled_debug:
+              print("Online Mode was wrong, set to enabled")
             return True
         except KeyError:
           properties["online-mode"] = "true"
           with open(props, 'w') as file:
             for key, value in properties.items():
               file.write(f'{key}={value}\n')
+          if enabled_debug:
+            print("Online Mode was not set, set to enabled")
           return True
 
     # "Enable/Disable Online Mode" button
     if onlinemode(True):
+      if enabled_debug:
+        print("Online Mode is enabled, showing enabled variant")
       # "Online Mode:" label
       online_label = tk.Label(frame, text="Online Mode:", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
       online_label.grid(row=2, column=0, pady=5, sticky='e')
@@ -1139,6 +1193,8 @@ def manageserver_menu():
       onlinemode_button = tk.Button(frame, text="ENABLED", command=onlinemode, height=2, width=20, bg=button_color, fg="green")
       onlinemode_button.grid(row=2, column=1, padx=5, pady=5, sticky='w')
     else:
+      if enabled_debug:
+        print("Online Mode is disabled, showing disabled variant")
       # "Online Mode:" label
       online_label = tk.Label(frame, text="Online Mode:", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
       online_label.grid(row=2, column=0, pady=5, sticky='e')
@@ -1157,46 +1213,64 @@ def manageserver_menu():
             with open(props, 'w') as file:
               for key, value in properties.items():
                 file.write(f'{key}={value}\n')
+            if enabled_debug:
+              print("Hardcore Mode disabled, reloading menu")
             manageserver_menu()
           elif properties["hardcore"] == "false":
             properties["hardcore"] = "true"
             with open(props, 'w') as file:
               for key, value in properties.items():
                 file.write(f'{key}={value}\n')
+            if enabled_debug:
+              print("Hardcore Mode enabled, reloading menu")
             manageserver_menu()
           else:
-            properties["hardcore"] = "true"
+            properties["hardcore"] = "false"
             with open(props, 'w') as file:
               for key, value in properties.items():
                 file.write(f'{key}={value}\n')
+            if enabled_debug:
+              print("Hardcore Mode was wrong, set to disabled and reloading menu")
             manageserver_menu()
         except KeyError:
           properties["hardcore"] = "false"
           with open(props, 'w') as file:
             for key, value in properties.items():
               file.write(f'{key}={value}\n')
+          if enabled_debug:
+            print("Hardcore Mode was not set, set to disabled and reloading menu")
           manageserver_menu()
       else:
         try:
           if properties["hardcore"] == "true":
+            if enabled_debug:
+              print("Hardcore Mode is enabled")
             return True
           elif properties["hardcore"] == "false":
+            if enabled_debug:
+              print("Hardcore Mode is disabled")
             return False
           else:
-            properties["hardcore"] = "true"
+            properties["hardcore"] = "false"
             with open(props, 'w') as file:
               for key, value in properties.items():
                 file.write(f'{key}={value}\n')
-            return True
+            if enabled_debug:
+              print("Hardcore Mode was wrong, set to disabled")
+            return False
         except KeyError:
           properties["hardcore"] = "false"
           with open(props, 'w') as file:
             for key, value in properties.items():
               file.write(f'{key}={value}\n')
+          if enabled_debug:
+            print("Hardcore Mode was not set, set to disabled")
           return False
     
     # "Enable/Disable Hardcore Mode" button
     if hardcoremode(True):
+      if enabled_debug:
+        print("Hardcore Mode is enabled, showing enabled variant")
       # "Hardcore Mode:" label
       hardcore_label = tk.Label(frame, text="Hardcore:", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
       hardcore_label.grid(row=3, column=0, pady=5, sticky='e')
@@ -1205,6 +1279,8 @@ def manageserver_menu():
       hardcoremode_button = tk.Button(frame, text="ENABLED", command=hardcoremode, height=2, width=20, bg=button_color, fg="green")
       hardcoremode_button.grid(row=3, column=1, padx=5, pady=5, sticky='w')
     else:
+      if enabled_debug:
+        print("Hardcore Mode is disabled, showing disabled variant")
       # "Hardcore Mode:" label
       hardcore_label = tk.Label(frame, text="Hardcore:", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
       hardcore_label.grid(row=3, column=0, pady=5, sticky='e')
@@ -1223,46 +1299,64 @@ def manageserver_menu():
             with open(props, 'w') as file:
               for key, value in properties.items():
                 file.write(f'{key}={value}\n')
+            if enabled_debug:
+              print("Command Blocks disabled, reloading menu")
             manageserver_menu()
           elif properties["enable-command-block"] == "false":
             properties["enable-command-block"] = "true"
             with open(props, 'w') as file:
               for key, value in properties.items():
                 file.write(f'{key}={value}\n')
+            if enabled_debug:
+              print("Command Blocks enabled, reloading menu")
             manageserver_menu()
           else:
             properties["enable-command-block"] = "true"
             with open(props, 'w') as file:
               for key, value in properties.items():
                 file.write(f'{key}={value}\n')
+            if enabled_debug:
+              print("Command Blocks was wrong, set to enabled and reloading menu")
             manageserver_menu()
         except KeyError:
           properties["enable-command-block"] = "true"
           with open(props, 'w') as file:
             for key, value in properties.items():
               file.write(f'{key}={value}\n')
+          if enabled_debug:
+            print("Command Blocks was not set, set to enabled and reloading menu")
           manageserver_menu()
       else:
         try:
           if properties["enable-command-block"] == "true":
+            if enabled_debug:
+              print("Command Blocks is enabled")
             return True
           elif properties["enable-command-block"] == "false":
+            if enabled_debug:
+              print("Command Blocks is disabled")
             return False
           else:
             properties["enable-command-block"] = "true"
             with open(props, 'w') as file:
               for key, value in properties.items():
                 file.write(f'{key}={value}\n')
+            if enabled_debug:
+              print("Command Blocks was wrong, set to enabled")
             return True
         except KeyError:
           properties["enable-command-block"] = "true"
           with open(props, 'w') as file:
             for key, value in properties.items():
               file.write(f'{key}={value}\n')
+          if enabled_debug:
+            print("Command Blocks was not set, set to enabled")
           return True
     
     # "Enable/Disable Command Blocks" button
     if commandblocks(True):
+      if enabled_debug:
+        print("Command Blocks is enabled, showing enabled variant")
       # "Command Blocks:" label
       commandblocks_label = tk.Label(frame, text="Command Blocks:", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
       commandblocks_label.grid(row=4, column=0, pady=5, sticky='e')
@@ -1271,6 +1365,8 @@ def manageserver_menu():
       commandblocks_button = tk.Button(frame, text="ENABLED", command=commandblocks, height=2, width=20, bg=button_color, fg="green")
       commandblocks_button.grid(row=4, column=1, padx=5, pady=5, sticky='w')
     else:
+      if enabled_debug:
+        print("Command Blocks is disabled, showing disabled variant")
       # "Command Blocks:" label
       commandblocks_label = tk.Label(frame, text="Command Blocks:", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
       commandblocks_label.grid(row=4, column=0, pady=5, sticky='e')
@@ -1289,46 +1385,64 @@ def manageserver_menu():
             with open(props, 'w') as file:
               for key, value in properties.items():
                 file.write(f'{key}={value}\n')
+            if enabled_debug:
+              print("PVP disabled, reloading menu")
             manageserver_menu()
           elif properties["pvp"] == "false":
             properties["pvp"] = "true"
             with open(props, 'w') as file:
               for key, value in properties.items():
                 file.write(f'{key}={value}\n')
+            if enabled_debug:
+              print("PVP enabled, reloading menu")
             manageserver_menu()
           else:
             properties["pvp"] = "true"
             with open(props, 'w') as file:
               for key, value in properties.items():
                 file.write(f'{key}={value}\n')
+            if enabled_debug:
+              print("PVP was wrong, set to enabled and reloading menu")
             manageserver_menu()
         except KeyError:
           properties["pvp"] = "true"
           with open(props, 'w') as file:
             for key, value in properties.items():
               file.write(f'{key}={value}\n')
+          if enabled_debug:
+            print("PVP was not set, set to enabled and reloading menu")
           manageserver_menu()
       else:
         try:
           if properties["pvp"] == "true":
+            if enabled_debug:
+              print("PVP is enabled")
             return True
           elif properties["pvp"] == "false":
+            if enabled_debug:
+              print("PVP is disabled")
             return False
           else:
             properties["pvp"] = "true"
             with open(props, 'w') as file:
               for key, value in properties.items():
                 file.write(f'{key}={value}\n')
+            if enabled_debug:
+              print("PVP was wrong, set to enabled")
             return True
         except KeyError:
           properties["pvp"] = "true"
           with open(props, 'w') as file:
             for key, value in properties.items():
               file.write(f'{key}={value}\n')
+          if enabled_debug:
+            print("PVP was not set, set to enabled")
           return True
     
     # "Enable/Disable PVP" button
     if pvp(True):
+      if enabled_debug:
+        print("PVP is enabled, showing enabled variant")
       # "PVP:" label
       pvp_label = tk.Label(frame, text="PvP:", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
       pvp_label.grid(row=5, column=0, pady=5, sticky='e')
@@ -1337,6 +1451,8 @@ def manageserver_menu():
       pvp_button = tk.Button(frame, text="ENABLED", command=pvp, height=2, width=20, bg=button_color, fg="green")
       pvp_button.grid(row=5, column=1, padx=5, pady=5, sticky='w')
     else:
+      if enabled_debug:
+        print("PVP is disabled, showing disabled variant")
       # "PVP:" label
       pvp_label = tk.Label(frame, text="PvP:", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
       pvp_label.grid(row=5, column=0, pady=5, sticky='e')
@@ -1352,6 +1468,8 @@ def manageserver_menu():
       with open(props, 'w') as file:
         for key, value in properties.items():
           file.write(f'{key}={value}\n')
+      if enabled_debug:
+        print(f"Gamemode changed to {gamemode_var.get()}, reloading menu")
       manageserver_menu()
     
     # "Change Gamemode" Button
@@ -1366,6 +1484,8 @@ def manageserver_menu():
     gamemode_label.grid(row=2, column=3, pady=5, sticky='e')
     gamemode_menu = tk.OptionMenu(frame, gamemode_var, *gamemode_options)
     gamemode_menu.grid(row=2, column=4, padx=5, pady=5, sticky='w')
+    if enabled_debug:
+      print("Gamemode changing menu created")
 
     # Change Difficulty
     def difficulty_change(*args):
@@ -1374,6 +1494,8 @@ def manageserver_menu():
       with open(props, 'w') as file:
         for key, value in properties.items():
           file.write(f'{key}={value}\n')
+      if enabled_debug:
+        print(f"Difficulty changed to {difficulty_var.get()}, reloading menu")
       manageserver_menu()
     
     # "Change Difficulty" Button
@@ -1388,6 +1510,8 @@ def manageserver_menu():
     difficulty_label.grid(row=3, column=3, pady=5, sticky='e')
     difficulty_menu = tk.OptionMenu(frame, difficulty_var, *difficulty_options)
     difficulty_menu.grid(row=3, column=4, padx=5, pady=5, sticky='w')
+    if enabled_debug:
+      print("Difficulty changing menu created")
 
     # Change Level Type
     def leveltype_change(*args):
@@ -1396,6 +1520,8 @@ def manageserver_menu():
       with open(props, 'w') as file:
         for key, value in properties.items():
           file.write(f'{key}={value}\n')
+      if enabled_debug:
+        print(f"Level Type changed to {leveltype_var.get()}, reloading menu")
       manageserver_menu()
     
     # "Change Level Type" Button
@@ -1410,18 +1536,26 @@ def manageserver_menu():
     leveltype_label.grid(row=4, column=3, pady=5, sticky='e')
     leveltype_menu = tk.OptionMenu(frame, leveltype_var, *leveltype_options)
     leveltype_menu.grid(row=4, column=4, padx=5, pady=5, sticky='w')
+    if enabled_debug:
+      print("Level Type changing menu created")
 
     # Change Max Players
     def maxplayers_change():
       global properties
       if maxplayers_var.get() == "":
+        if enabled_debug:
+          print("Max Players was empty, set to 1")
         maxplayers_var.set("1")
       elif int(maxplayers_var.get()) > 10000:
+        if enabled_debug:
+          print("Max Players was too high, set to 10000")
         maxplayers_var.set("10000")
       properties["max-players"] = maxplayers_var.get()
       with open(props, 'w') as file:
         for key, value in properties.items():
           file.write(f'{key}={value}\n')
+      if enabled_debug:
+        print(f"Max Players changed to {maxplayers_var.get()}, reloading menu")
       manageserver_menu()
     
     # "Change Max Players" Button
@@ -1445,13 +1579,19 @@ def manageserver_menu():
     maxplayers_entry.grid(row=5, column=4, padx=5, pady=5, sticky='w')
     save_button = tk.Button(frame, text="Save", command=maxplayers_change, height=1, width=5, bg=button_color, fg=buttontxt_color)
     save_button.grid(row=5, column=4, pady=5, sticky='e')
+    if enabled_debug:
+      print("Max Players changing menu created")
 
     # Open server.properties
     def open_props():
+      if enabled_debug:
+        print("Opening server.properties file...")
       try:
         os.startfile(props)
+        if enabled_debug:
+          print("server.properties file opened successfully")
       except FileNotFoundError:
-        print("Error opening file")
+        print("Error opening file (FileNotFoundError)")
     
     # "Open server.properties" button
     open_button = tk.Button(frame, text="Open server.properties", command=open_props, height=3, width=30, bg="purple", fg="white")
@@ -1466,6 +1606,8 @@ def manageserver_menu():
     main_button.grid(row=7, column=0, columnspan=5, pady=5, sticky="nsew")
 
   else:
+    if enabled_debug:
+      print('server.properties file not found, opening error menu...')
     # Subtitle
     subtitle_text = "The server configuration files do not exist yet or are not available.\nYou must start the server properly at least once before you can configure it\n"
     subtitle = tk.Label(frame, text=subtitle_text, font=("Arial", 12), wraplength=600, bg=bg_color, fg=text_color)
@@ -1480,6 +1622,10 @@ def licensextras_menu():
   global ntheme
   global screenmode
   global deb
+
+  if enabled_debug:
+    print("License and Extras Menu Opened")
+
   # Clears the window
   for widget in root.winfo_children():
     widget.destroy()
@@ -1529,12 +1675,16 @@ def licensextras_menu():
             for key, value in cfg.items():
               file.write(f'{key}={value}\n')
           enabled_debug = True
+          if enabled_debug:
+            print("Debug Mode enabled, reloading menu")
           licensextras_menu()
         elif deb == "Disable Debug Mode":
           cfg["debug"] = "false"
           with open(confpath, 'w') as file:
             for key, value in cfg.items():
               file.write(f'{key}={value}\n')
+          if enabled_debug:
+            print("Debug Mode disabled, reloading menu")
           enabled_debug = False
           licensextras_menu()
       else:
@@ -1556,10 +1706,14 @@ def licensextras_menu():
 
   # Open cfg
   def open_cfg():
+    if enabled_debug:
+      print("Opening config file...")
     try:
       os.startfile(confpath)
+      if enabled_debug:
+        print("Config file opened successfully")
     except FileNotFoundError:
-      print("Error opening file")
+      print("Error opening file (FileNotFoundError)")
   
   # "Open cfg" button
   cfg_button = tk.Button(frame, text="Open Tool Config File", command=open_cfg, height=3, width=30, bg=button_color, fg=buttontxt_color)
@@ -1590,6 +1744,7 @@ def licensextras_menu():
           button_color = "#D3D3D3"  # rgb(211, 211, 211)
           buttontxt_color = "#1A1A1A"  # rgb(26, 26, 26)
           text_color = "white"  # White
+          
           licensextras_menu()
         elif ntheme == "Light":
           cfg["theme"] = "light"
