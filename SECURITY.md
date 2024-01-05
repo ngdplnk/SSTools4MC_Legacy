@@ -27,11 +27,12 @@ We encourage you to practice responsible vulnerability disclosure. Please do not
 We will publish security updates in a timely manner and announce them in this repository. We strongly recommend that all users update to the latest versions to ensure their security.
 
 ## Support and Older Versions
-We will provide active support for current releases and only one previous version. Obsolete versions will be clearly marked as unsupported and will not receive security updates nor active support.
+We will provide active support for current releases and only one previous version. Obsolete versions will be clearly marked as unsupported and will not receive neither security updates nor active support.
 
 Are this versions supported?
-- PRE - v1.0 → :x:
+- PRE-v1.0 → :x:
 - v1.0 → :heavy_check_mark:
+- v2.0 → :heavy_check_mark:
 
 ## License and Copyright
 All tools in this repository are distributed under the MIT License. Please refer to the LICENSE.md file for complete details on the terms of the license and copyright.
