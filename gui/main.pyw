@@ -869,7 +869,7 @@ def startserver_menu():
         command = f"java -Xmx{raam}{ramtypee} -Xms{raam}{ramtypee} -jar server.jar"
         if enabled_debug:
           print(f'This command will start the server: {command}')
-        minecraft_server_process = subprocess.Popen(command, cwd=os.path.dirname(os.getcwd()), stdin=subprocess.PIPE)
+        minecraft_server_process = subprocess.Popen(["cmd", "/k", command], cwd=os.path.dirname(os.getcwd()), stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, creationflags=subprocess.CREATE_NO_WINDOW)
         if enabled_debug:
           print("Command sent and callable process created")
 
