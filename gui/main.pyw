@@ -6,23 +6,13 @@
 #####################
 
 ### THINGS TO FIX ###
-## CRITICAL ##
-# DEBUG MODE CRASHING THE APP IF THE SERVER IS STARTED (BEACUSE CONSOLE IS DEATACHED FROM THE APP AND CANNOT SEND PRINTS)
-# CONSOLE NOT WORKING PROPERLY (NOT SHOWING, RECEIVING INPUT, ETC)
-
-## GENERAL
-# - Clean redundant parts of code (like appdata path or cfg access unnecessary multiple creations) DONE, TESTING NEEDED
-## START SERVER MENU
-# - Fix console window not working properly
-# - Fix command line not working properly
-# - Fix "Stop Server" button not working properly
+# - Nothing to fix
 
 #####################
 
 ### THINGS TO ADD ###
-## GENERAL
-# - Add debug mode messages (console prints for every action or error)
-## License and Extras menu
+# - Rework server console to run in nogui mode (maybe update v2.1)
+# - Rework logging system to a more advanced one (maybe update v2.1; see commented lines 43-44)
 # - Add more themes (maybe v2.1 update)
 
 #####################
@@ -31,6 +21,7 @@
 
 #####################
 
+# Imports
 import subprocess
 import time
 import tkinter as tk
@@ -40,6 +31,8 @@ import threading
 import requests
 import datetime
 import ctypes
+### De-comment this for reworking log system (maybe update v2.1) ###
+# import logging
 
 # Global variables
 global enabled_debug
@@ -453,7 +446,7 @@ def startserver_menu():
       title.grid(row=0, column=0, columnspan=4, pady=5)
 
       # Subtitle
-      subtitle_text = "Your Server is running on a separated Terminal. Its status updates here every 1 minute\n"
+      subtitle_text = "Your Server will run on a separated window. Its status updates here every 1 minute\n"
       subtitle = tk.Label(frame, text=subtitle_text, font=("Arial", 12), wraplength=600, bg=bg_color, fg=text_color)
       subtitle.grid(row=1, column=0, columnspan=4, pady=5)
 
@@ -552,7 +545,7 @@ def startserver_menu():
         global run
         global minecraft_server_process
         if enabled_debug:
-          print("Checking if server is running to trying to stop it")
+          print("Checking if server is running to stop it...")
         if minecraft_server_process.stdin:
           command = "stop\n"
           minecraft_server_process.stdin.write(command.encode())
@@ -873,17 +866,12 @@ def startserver_menu():
           file.write("eula=true\n")
 
         # Start the server
-        command = f"java -Xmx{raam}{ramtypee} -Xms{raam}{ramtypee} -jar server.jar nogui"
+        command = f"java -Xmx{raam}{ramtypee} -Xms{raam}{ramtypee} -jar server.jar"
         if enabled_debug:
           print(f'This command will start the server: {command}')
         minecraft_server_process = subprocess.Popen(command, cwd=os.path.dirname(os.getcwd()), stdin=subprocess.PIPE)
         if enabled_debug:
-          print("Command sent and new terminal process created")
-
-        # Detach the console
-        ctypes.windll.kernel32.FreeConsole()
-        if enabled_debug:
-          print("Console detached")
+          print("Command sent and callable process created")
 
         # Clear the window
         for widget in root.winfo_children():
@@ -899,7 +887,7 @@ def startserver_menu():
         title.grid(row=0, column=0, columnspan=4, pady=5)
 
         # Subtitle
-        subtitle_text = "Your Server is running on a separated Terminal. Its status updates here every 1 minute\n"
+        subtitle_text = "Your Server will run on a separated window. Its status updates here every 1 minute\n"
         subtitle = tk.Label(frame, text=subtitle_text, font=("Arial", 12), wraplength=600, bg=bg_color, fg=text_color)
         subtitle.grid(row=1, column=0, columnspan=4, pady=5)
 
@@ -996,7 +984,7 @@ def startserver_menu():
           global run
           global minecraft_server_process
           if enabled_debug:
-            print("Checking if server is running to trying to stop it")
+            print("Checking if server is running to stop it...")
           if run and minecraft_server_process.stdin:
             command = "stop\n"
             minecraft_server_process.stdin.write(command.encode())
@@ -2000,21 +1988,16 @@ def main():
         print("Icon loaded successfully")
     except tk.TclError:
       print("Error loading icon (tk.TclError), running without icon")
-    if enabled_debug:
-      print("Program started, loading Main Menu...")
     if fullscreen():
       root.attributes('-fullscreen', True)
       if enabled_debug:
         print("Fullscreen enabled")
     else:
-      # Min window size
       root.minsize(850, 500)
-
-      # Set window size
-      root.geometry("850x500")
-
       if enabled_debug:
         print("Fullscreen disabled")
+    if enabled_debug:
+      print("Configs and resource loading finished, opening Main Menu...")
   else:
     if enabled_debug:
       print("Returned to Main Menu")
@@ -2057,6 +2040,9 @@ def main():
   # "Exit" button
   exit_button = tk.Button(frame, text="Exit", command=exit_menu, height=3, width=20, bg=button_color, fg=buttontxt_color)
   exit_button.grid(row=5, column=1, columnspan=3, pady=5, sticky='nsew')
+  
+  if enabled_debug:
+    print("Main Menu loaded")
   
   root.mainloop()
 
