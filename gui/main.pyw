@@ -6,6 +6,10 @@
 #####################
 
 ### THINGS TO FIX ###
+## CRITICAL ##
+# DEBUG MODE CRASHING THE APP IF THE SERVER IS STARTED (BEACUSE CONSOLE IS DEATACHED FROM THE APP AND CANNOT SEND PRINTS)
+# CONSOLE NOT WORKING PROPERLY (NOT SHOWING, RECEIVING INPUT, ETC)
+
 ## GENERAL
 # - Clean redundant parts of code (like appdata path or cfg access unnecessary multiple creations) DONE, TESTING NEEDED
 ## START SERVER MENU
@@ -38,6 +42,7 @@ import datetime
 import ctypes
 
 # Global variables
+global enabled_debug
 global running
 global run
 global props
@@ -47,13 +52,14 @@ global confpath
 # Conditional variables
 running = False
 run = False
+enabled_debug = False
 props = os.path.join(os.path.dirname(os.getcwd()), "server.properties")
 jarpath = os.path.join(os.path.dirname(os.getcwd()), "server.jar")
 
 # Get SSTools4MC data folder and config file path
 appdpath = os.getenv("APPDATA")
-  sstfolder = os.path.join(appdpath, "SSTools4MC") # type: ignore
-  confpath = os.path.join(sstfolder, "sst.cfg")
+sstfolder = os.path.join(appdpath, "SSTools4MC") # type: ignore
+confpath = os.path.join(sstfolder, "sst.cfg")
 
 # Debug Mode selection
 def sstdebug_mode(rt=False):
@@ -71,6 +77,8 @@ def sstdebug_mode(rt=False):
         try:
           if cfg["debug"] == "true":
             enabled_debug = True
+            if enabled_debug:
+              print('Saved Debug Mode status is "Enabled"')
             theme()
           elif cfg["debug"] == "false":
             enabled_debug = False
@@ -111,6 +119,7 @@ def sstdebug_mode(rt=False):
           if cfg["debug"] == "false":
             return "Enable Debug Mode"
           elif cfg["debug"] == "true":
+            print('Debug Mode is "Enabled" and it can be disabled')
             return "Disable Debug Mode"
           else:
             return "Enable Debug Mode"
@@ -152,14 +161,18 @@ def theme(rt=False):
             button_color = "#D3D3D3"  # rgb(211, 211, 211)
             buttontxt_color = "#1A1A1A"  # rgb(26, 26, 26)
             text_color = "white"  # White
+            if enabled_debug:
+              print('Saved theme is "dark"')
             main()
           elif cfg["theme"] == "light":
             bg_color = "white"  # White
             button_color = "white"  # White
             buttontxt_color = "black"  # Black
             text_color = "black"  # Black
+            if enabled_debug:
+              print('Saved theme is "light"')
             main()
-          # Add more themes here (v2.1)
+          ### Add more themes here (v2.1) ###
           else:
             cfg["theme"] = "dark"
             with open(confpath, 'w') as file:
@@ -169,6 +182,8 @@ def theme(rt=False):
             button_color = "#D3D3D3"  # rgb(211, 211, 211)
             buttontxt_color = "#1A1A1A"  # rgb(26, 26, 26)
             text_color = "white"  # White
+            if enabled_debug:
+              print('Unknown saved theme, set to "dark"')
             main()
         except KeyError:
           cfg["theme"] = "dark"
@@ -179,15 +194,21 @@ def theme(rt=False):
           button_color = "#D3D3D3"
           buttontxt_color = "#1A1A1A"
           text_color = "white"
+          if enabled_debug:
+            print('Not saved theme has been found, set to "dark"')
           main()
       else:
         with open(confpath, 'w') as archivo:
           archivo.write('theme=dark\n')
+        if enabled_debug:
+          print('No config file found, created the file and set theme to "dark"')
         theme()
     else:
       os.makedirs(sstfolder)
       with open(confpath, 'w') as archivo:
         archivo.write('theme=dark\n')
+      if enabled_debug:
+        print('No tool data folder found, created the folder, config file and set theme to "dark"')
       theme()
   else:
     if os.path.exists(sstfolder):
@@ -200,26 +221,38 @@ def theme(rt=False):
               cfg[key.strip()] = value.strip()
         try:
           if cfg["theme"] == "dark":
+            if enabled_debug:
+              print('Saved theme is "dark", it can be changed to "light"')
             return "Light"
           elif cfg["theme"] == "light":
+            if enabled_debug:
+              print('Saved theme is "light", it can be changed to "dark"')
             return "Dark"
-          # Add more themes here (v2.1)
+          ### Add more themes here (v2.1) ###
           else:
+            if enabled_debug:
+              print('Unknown saved theme, it can be changed to "dark"')
             return "Dark"
         except KeyError:
           cfg["theme"] = "dark"
           with open(confpath, 'w') as file:
             for key, value in cfg.items():
               file.write(f'{key}={value}\n')
+          if enabled_debug:
+            print('Not saved theme has been found, it can be changed to "dark"')
           return "Dark"
       else:
         with open(confpath, 'w') as archivo:
           archivo.write('theme=dark\n')
+        if enabled_debug:
+          print('No config file found, created the file, set theme to "dark" and retried request')
         theme(rt=True)
     else:
       os.makedirs(sstfolder)
       with open(confpath, 'w') as archivo:
         archivo.write('theme=dark\n')
+      if enabled_debug:
+        print('No tool data folder found, created the folder, config file, set theme to "dark" and retried request')
       theme(rt=True)
 
 # Check if fullscreen is enabled
@@ -235,29 +268,41 @@ def fullscreen():
             cfg[key.strip()] = value.strip()
       try:
         if cfg["fullscreen"] == "true":
+          if enabled_debug:
+            print('Saved fullscreen status was "Enabled"')
           return True
         elif cfg["fullscreen"] == "false":
+          if enabled_debug:
+            print('Saved fullscreen status was "Disabled"')
           return False
         else:
           cfg["fullscreen"] = "false"
           with open(confpath, 'w') as file:
             for key, value in cfg.items():
               file.write(f'{key}={value}\n')
+          if enabled_debug:
+            print('Unknown saved fullscreen status, set to "Disabled"')
           return False
       except KeyError:
         cfg["fullscreen"] = "false"
         with open(confpath, 'w') as file:
           for key, value in cfg.items():
             file.write(f'{key}={value}\n')
+        if enabled_debug:
+          print('Not saved fullscreen status has been found, set to "Disabled"')
         return False
     else:
       with open(confpath, 'w') as archivo:
         archivo.write('fullscreen=false\n')
+      if enabled_debug:
+        print('No config file found, created the file, set fullscreen status to "Disabled" and retried request')
       fullscreen()
   else:
     os.makedirs(sstfolder)
     with open(confpath, 'w') as archivo:
       archivo.write('fullscreen=false\n')
+    if enabled_debug:
+      print('No tool data folder found, created the folder, config file, set fullscreen status to "Disabled" and retried request')
     fullscreen()
 
 # Check last ram type used
@@ -273,23 +318,33 @@ def last_ramtype():
             cfg[key.strip()] = value.strip()
       try:
         if cfg["ramtype"] == "MB":
+          if enabled_debug:
+            print('Saved RAM type is "MB"')
           return "MB"
         else:
+          if enabled_debug:
+            print('Saved RAM type is "GB"')
           return "GB"
       except KeyError:
         cfg["ramtype"] = "GB"
         with open(confpath, 'w') as file:
           for key, value in cfg.items():
             file.write(f'{key}={value}\n')
+        if enabled_debug:
+          print('Not saved RAM type has been found, set to "GB"')
         return "GB"
     else:
       with open(confpath, 'w') as archivo:
         archivo.write('ramtype=GB\n')
+      if enabled_debug:
+        print('No config file found, created the file, set RAM type to "GB" and retried request')
       last_ramtype()
   else:
     os.makedirs(sstfolder)
     with open(confpath, 'w') as archivo:
       archivo.write('ramtype=GB\n')
+    if enabled_debug:
+      print('No tool data folder found, created the folder, config file, set RAM type to "GB" and retried request')
     last_ramtype()
 
 # Check last ram used
@@ -306,21 +361,29 @@ def last_ram():
       try:
         if last_ramtype() == "GB":
           if 0 < int(cfg["ram"]) <= 75:
+            if enabled_debug:
+              print(f'Saved RAM is {cfg["ram"]}GB')
             return cfg["ram"]
           else:
             cfg["ram"] = "1"
             with open(confpath, 'w') as file:
               for key, value in cfg.items():
                 file.write(f'{key}={value}\n')
+            if enabled_debug:
+              print('Saved RAM is not valid, set to 1GB')
             return "1"
         else:
           if 842 <= int(cfg["ram"]) <= 76800:
+            if enabled_debug:
+              print(f'Saved RAM is {cfg["ram"]}MB')
             return cfg["ram"]
           else:
             cfg["ram"] = "1024"
             with open(confpath, 'w') as file:
               for key, value in cfg.items():
                 file.write(f'{key}={value}\n')
+            if enabled_debug:
+              print('Saved RAM is not valid, set to 1024MB')
             return "1024"
       except (KeyError, ValueError):
         if last_ramtype() == "GB":
@@ -328,26 +391,36 @@ def last_ram():
           with open(confpath, 'w') as file:
             for key, value in cfg.items():
               file.write(f'{key}={value}\n')
+          if enabled_debug:
+            print('Not saved RAM was found, set to 1GB')
           return "1"
         else:
           cfg["ram"] = "1024"
           with open(confpath, 'w') as file:
             for key, value in cfg.items():
               file.write(f'{key}={value}\n')
+          if enabled_debug:
+            print('Not saved RAM was found, set to 1024MB')
           return "1024"
     else:
       if last_ramtype() == "GB":
         with open(confpath, 'w') as archivo:
           archivo.write('ram=1\n')
+        if enabled_debug:
+          print('No config file found, created the file, set RAM to 1GB and retried request')
         last_ram()
       else:
         with open(confpath, 'w') as archivo:
           archivo.write('ram=1024\n')
+        if enabled_debug:
+          print('No config file found, created the file, set RAM to 1024MB and retried request')
         last_ram()
   else:
     os.makedirs(sstfolder)
     with open(confpath, 'w') as archivo:
       archivo.write('ram=1\n')
+    if enabled_debug:
+      print('No tool data folder found, created the folder, config file, set RAM to 1GB and retried request')
     last_ram()
 
 # START SERVER MENU
@@ -361,7 +434,11 @@ def startserver_menu():
   global ramtypee
   global run
 
+  if enabled_debug:
+    print("Start Server Menu Opened, checking if server is running...")
   if run and minecraft_server_process.stdin:
+    if enabled_debug:
+      print("Server is running, opening Server Running Menu variant...")
     # Clear the window
       for widget in root.winfo_children():
         widget.destroy()
@@ -385,15 +462,21 @@ def startserver_menu():
         try:
           ip = requests.get('https://api.ipify.org').text
         except requests.exceptions.RequestException as err:
-          print ("Woops: Something Else Happened",err)
+          if enabled_debug:
+            print ('Getting public IP failed',err)
           ip = "Your Public IP"
         return ip
+      
+      if enabled_debug:
+        print("Trying to get public IP...")
       public_ip = get_public_ip()
 
       # Get server port
       def get_port():
         properties = {}
         if not os.path.exists(props):
+          if enabled_debug:
+            print("Server properties file not found, returning empty port")
           return ""
         with open(props, 'r') as file:
           for line in file:
@@ -404,10 +487,19 @@ def startserver_menu():
         try:
           port = properties["server-port"]
           if port == "25565":
+            if enabled_debug:
+              print("Server port is default, returning empty port")
             return ""
         except KeyError:
+          if enabled_debug:
+            print("Server port not found, returning empty port")
           return ""
+        if enabled_debug:
+          print(f"Server port is {port}, returning it")
         return f":{port}"
+      
+      if enabled_debug:
+        print("Trying to get server port...")
       server_port = get_port()
 
       # IP label
@@ -418,9 +510,13 @@ def startserver_menu():
       def copy_ip():
         global public_ip
         global server_port
+        if enabled_debug:
+          print(f'Copying IP "{public_ip}{server_port}" to clipboard')
         root.clipboard_clear()
         root.clipboard_append(f"{public_ip}{server_port}")
-        
+        if enabled_debug:
+          print("IP copied to clipboard")
+
       # "Copy IP" button
       copy_button = tk.Button(frame, text="Copy IP", command=copy_ip, height=1, width=8, bg=button_color, fg=buttontxt_color)
       copy_button.grid(row=2, column=2, pady=5, padx=10, sticky='w')
@@ -447,20 +543,28 @@ def startserver_menu():
       # Time Running Label
       running_time = tk.Label(frame, text="0 minutes", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
       running_time.grid(row=3, column=2, pady=5, sticky='w')
+      if enabled_debug:
+        print("Background server running check started...")
       time_running()
 
       # Stop Server
       def stop_server():
         global run
         global minecraft_server_process
+        if enabled_debug:
+          print("Checking if server is running to trying to stop it")
         if minecraft_server_process.stdin:
           command = "stop\n"
           minecraft_server_process.stdin.write(command.encode())
           minecraft_server_process.stdin.flush()
+          if enabled_debug:
+            print("Server was running, stop command sent to server")
         run = False
         dnh_sys = datetime.datetime.now()
         stop_date = str(dnh_sys.strftime("%d/%m/%Y"))
         stop_hour = str(dnh_sys.strftime("%H:%M:%S"))
+        if enabled_debug:
+          print(f'Server stopped on {stop_date} at {stop_hour}, updating GUI')
 
         # Clear the window
         for widget in root.winfo_children():
@@ -496,6 +600,8 @@ def startserver_menu():
         global minecraft_server_process
         while run:
           if minecraft_server_process.poll() is not None:
+            if enabled_debug:
+              print("Server process terminated, updating GUI")
             # The process has terminated
             run = False
             stop_server()
@@ -511,6 +617,8 @@ def startserver_menu():
       main_button = tk.Button(frame, text="Return to Main Menu", command=main, height=2, width=30, bg=button_color, fg=buttontxt_color)
       main_button.grid(row=5, column=0, columnspan=4, pady=15, sticky="nsew")
   else:
+    if enabled_debug:
+      print("Server is not running, opening normal Start Server Menu...")
     def validate_input(P):
       ram_type = last_ramtype()
       if P.isdigit():
@@ -551,7 +659,11 @@ def startserver_menu():
 
     # RAM Entry and Dropdown
     ram_var = tk.StringVar(value=last_ram())
+    if enabled_debug:
+      print(f"Getting last RAM used")
     ramtype_var = tk.StringVar(value=last_ramtype())
+    if enabled_debug:
+      print(f"Getting last RAM type used")
 
     vcmd = frame.register(validate_input)
 
@@ -559,7 +671,7 @@ def startserver_menu():
     ram_entry.grid(row=2, column=1, padx=5, pady=5)
 
     # RAM Type Change
-    def ram_change():
+    def ram_change(*args):
       cfg = {}
       if os.path.exists(sstfolder):
         if os.path.exists(confpath):
@@ -574,21 +686,29 @@ def startserver_menu():
             with open(confpath, 'w') as file:
               for key, value in cfg.items():
                 file.write(f'{key}={value}\n')
+            if enabled_debug:
+              print(f'RAM type changed to {ramtype_var.get()}, reloading menu')
             startserver_menu()
           except KeyError:
             cfg["ramtype"] = "GB"
             with open(confpath, 'w') as file:
               for key, value in cfg.items():
                 file.write(f'{key}={value}\n')
+            if enabled_debug:
+              print(f'RAM type has been not set, changed to GB, reloading menu')
             startserver_menu()
         else:
           with open(confpath, 'w') as archivo:
             archivo.write('ramtype=GB\n')
+          if enabled_debug:
+            print(f'No config file found, created the file, set RAM type to GB and retried request')
           startserver_menu()
       else:
         os.makedirs(sstfolder)
         with open(confpath, 'w') as archivo:
           archivo.write('ramtype=GB\n')
+        if enabled_debug:
+          print(f'No tool data folder found, created the folder, config file, set RAM type to GB and retried request')
         startserver_menu()
 
     ramtype_var.trace_add('write', ram_change)
@@ -618,17 +738,23 @@ def startserver_menu():
             with open(confpath, 'w') as file:
               for key, value in cfg.items():
                 file.write(f'{key}={value}\n')
+            if enabled_debug:
+              print(f'New RAM value saved, set to 1024MB')
           elif 842 <= int(ram_var.get()) <= 76800:
             cfg["ram"] = ram_var.get()
             with open(confpath, 'w') as file:
               for key, value in cfg.items():
                 file.write(f'{key}={value}\n')
+            if enabled_debug:
+              print(f'New RAM value saved, set to {ram_var.get()}MB')
           else:
             ram_var.set("1024")
             cfg["ram"] = "1024"
             with open(confpath, 'w') as file:
               for key, value in cfg.items():
                 file.write(f'{key}={value}\n')
+            if enabled_debug:
+              print(f'New RAM value saved, set to 1024MB')
         else:
           if ram_var.get() == "":
             ram_var.set("1")
@@ -636,17 +762,23 @@ def startserver_menu():
             with open(confpath, 'w') as file:
               for key, value in cfg.items():
                 file.write(f'{key}={value}\n')
+            if enabled_debug:
+              print(f'New RAM value saved, set to 1GB')
           elif 0 < int(ram_var.get()) <= 75:
             cfg["ram"] = ram_var.get()
             with open(confpath, 'w') as file:
               for key, value in cfg.items():
                 file.write(f'{key}={value}\n')
+            if enabled_debug:
+              print(f'New RAM value saved, set to {ram_var.get()}GB')
           else:
             ram_var.set("1")
             cfg["ram"] = "1"
             with open(confpath, 'w') as file:
               for key, value in cfg.items():
                 file.write(f'{key}={value}\n')
+            if enabled_debug:
+              print(f'New RAM value saved, set to 1GB')
       except (ValueError, KeyError):
         if ramtype_var.get() == "GB":
           ram_var.set("1")
@@ -654,17 +786,23 @@ def startserver_menu():
           with open(confpath, 'w') as file:
             for key, value in cfg.items():
               file.write(f'{key}={value}\n')
+          if enabled_debug:
+            print(f'New RAM value saved, set to 1GB')
         else:
           ram_var.set("1024")
           cfg["ram"] = "1024"
           with open(confpath, 'w') as file:
             for key, value in cfg.items():
               file.write(f'{key}={value}\n')
+          if enabled_debug:
+            print(f'New RAM value saved, set to 1024MB')
 
       # Set window title
       root.title("Server Running...")
       # Check if server.jar exists
       if not os.path.exists(jarpath):
+        if enabled_debug:
+          print('Server.jar file not found, opening "Cant Start your Server" menu variant...')
         # Clear the window
         for widget in root.winfo_children():
           widget.destroy()
@@ -727,12 +865,18 @@ def startserver_menu():
             raam = ram
 
         # Accept EULA
+        if enabled_debug:
+          print("Accepting EULA...")
         with open(os.path.join(os.path.dirname(os.getcwd()), "eula.txt"), 'w') as file:
           file.write("eula=true\n")
 
         # Start the server
         command = f"java -Xmx{raam}{ramtypee} -Xms{raam}{ramtypee} -jar server.jar nogui"
+        if enabled_debug:
+          print(f'This command will start the server: {command}')
         minecraft_server_process = subprocess.Popen(command, cwd=os.path.dirname(os.getcwd()), stdin=subprocess.PIPE)
+        if enabled_debug:
+          print("Command sent and new terminal process created")
 
         # Detach the console
         ctypes.windll.kernel32.FreeConsole()
@@ -1202,7 +1346,7 @@ def manageserver_menu():
       pvp_button.grid(row=5, column=1, padx=5, pady=5, sticky='w')
 
     # Change Gamemode
-    def gamemode_change():
+    def gamemode_change(*args):
       global properties
       properties["gamemode"] = gamemode_var.get().lower()
       with open(props, 'w') as file:
@@ -1224,7 +1368,7 @@ def manageserver_menu():
     gamemode_menu.grid(row=2, column=4, padx=5, pady=5, sticky='w')
 
     # Change Difficulty
-    def difficulty_change():
+    def difficulty_change(*args):
       global properties
       properties["difficulty"] = difficulty_var.get().lower()
       with open(props, 'w') as file:
@@ -1246,7 +1390,7 @@ def manageserver_menu():
     difficulty_menu.grid(row=3, column=4, padx=5, pady=5, sticky='w')
 
     # Change Level Type
-    def leveltype_change():
+    def leveltype_change(*args):
       global properties
       properties["level-type"] = f"minecraft:{leveltype_var.get().lower()}"
       with open(props, 'w') as file:
@@ -1306,7 +1450,7 @@ def manageserver_menu():
     def open_props():
       try:
         os.startfile(props)
-      except ValueError:
+      except FileNotFoundError:
         print("Error opening file")
     
     # "Open server.properties" button
@@ -1696,4 +1840,4 @@ def main():
 
 ########################
 # PROGRAM START
-theme()
+sstdebug_mode()
