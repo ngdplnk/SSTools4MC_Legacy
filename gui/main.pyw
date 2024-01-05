@@ -269,11 +269,11 @@ def fullscreen():
       try:
         if cfg["fullscreen"] == "true":
           if enabled_debug:
-            print('Saved fullscreen status was "Enabled"')
+            print('Saved fullscreen status is "Enabled"')
           return True
         elif cfg["fullscreen"] == "false":
           if enabled_debug:
-            print('Saved fullscreen status was "Disabled"')
+            print('Saved fullscreen status is "Disabled"')
           return False
         else:
           cfg["fullscreen"] = "false"
@@ -1652,7 +1652,7 @@ def licensextras_menu():
   title.grid(row=0, column=0, columnspan=2, pady=5)
 
   # Subtitle
-  subtitle_text = "SSTools4MC PRIVATE BUILD\nBETA A.1.24 W.I.P v2.0 Full Release\n-------------------------------------\n\nMIT License - Copyright © 2023 NGDPL Nk\n\nHelpers:\n@naicoooossj\n@LegalizeNuclearBombs\n"
+  subtitle_text = "SSTools4MC PRIVATE BUILD\nBETA 1.24.B W.I.P v2.0 Full Release\n-------------------------------------\n\nMIT License - Copyright © 2023 NGDPL Nk\n\nHelpers:\n@naicoooossj\n@LegalizeNuclearBombs\n"
   subtitle = tk.Label(frame, text=subtitle_text, font=("Arial", 12), wraplength=600, bg=bg_color, fg=text_color)
   subtitle.grid(row=1, column=0, columnspan=2, pady=5)
 
@@ -1744,7 +1744,8 @@ def licensextras_menu():
           button_color = "#D3D3D3"  # rgb(211, 211, 211)
           buttontxt_color = "#1A1A1A"  # rgb(26, 26, 26)
           text_color = "white"  # White
-          
+          if enabled_debug:
+            print("Theme changed to Dark, reloading menu")
           licensextras_menu()
         elif ntheme == "Light":
           cfg["theme"] = "light"
@@ -1755,17 +1756,23 @@ def licensextras_menu():
           button_color = "white"  # White
           buttontxt_color = "black"  # Black
           text_color = "black"  # Black
+          if enabled_debug:
+            print("Theme changed to Light, reloading menu")
           licensextras_menu()
       else:
         with open(confpath, 'w') as archivo:
           archivo.write('theme=dark\n')
         ntheme = "Dark"
+        if enabled_debug:
+          print('Config file not found, set theme to "Dark" and retrying...')
         new_theme()
     else:
       os.makedirs(sstfolder)
       with open(confpath, 'w') as archivo:
         archivo.write('theme=dark\n')
       ntheme = "Dark"
+      if enabled_debug:
+        print('Tool data folder not found, created it and config file, set theme to "Dark" and retrying...')
       new_theme()
 
   # "Change Theme" button
@@ -1791,6 +1798,8 @@ def licensextras_menu():
             for key, value in cfg.items():
               file.write(f'{key}={value}\n')
           root.attributes('-fullscreen', True)
+          if enabled_debug:
+            print("Fullscreen enabled, reloading menu")
           licensextras_menu()
         elif screenmode == "Windowed":
           cfg["fullscreen"] = "false"
@@ -1798,23 +1807,41 @@ def licensextras_menu():
             for key, value in cfg.items():
               file.write(f'{key}={value}\n')
           root.attributes('-fullscreen', False)
+          if enabled_debug:
+            print("Fullscreen disabled, reloading menu")
           licensextras_menu()
       else:
         with open(confpath, 'w') as archivo:
           archivo.write('fullscreen=false\n')
         screenmode = "Windowed"
+        if enabled_debug:
+          print('Config file not found, set screen mode to "Windowed" and retrying...')
         new_screenmode()
+    else:
+      os.makedirs(sstfolder)
+      with open(confpath, 'w') as archivo:
+        archivo.write('fullscreen=false\n')
+      screenmode = "Windowed"
+      if enabled_debug:
+        print('Tool data folder not found, created it and config file, set screen mode to "Windowed" and retrying...')
+      new_screenmode()
   
   # "Change Screen Mode" button
   if fullscreen():
     screenmode = "Windowed"
+    if enabled_debug:
+      print("Fullscreen is enabled, showing enabled variant")
   else:
+    if enabled_debug:
+      print("Fullscreen is disabled, showing disabled variant")
     screenmode = "Fullscreen"
   screenmode_button = tk.Button(frame, text=f"Set window mode to {screenmode}", command=new_screenmode, height=3, width=30, bg=button_color, fg=buttontxt_color)
   screenmode_button.grid(row=3, column=1, padx=3, pady=5, sticky='nsew')
 
   # Open GitHub Repo
   def view_repo():
+    if enabled_debug:
+      print("Opening GitHub Repo...")
     webbrowser.open("https://github.com/NGDPLNk/SSTools4MC")
   
   # "Open GitHub Repo" button
@@ -1823,6 +1850,8 @@ def licensextras_menu():
 
   # Open Text Formatting for MOTD's
   def view_motdsformat():
+    if enabled_debug:
+      print("Opening Text Formatting for MOTD's...")
     webbrowser.open("https://minecraft.wiki/w/Formatting_codes")
   
   # "Open Text Formatting for MOTD's" button
@@ -1831,6 +1860,8 @@ def licensextras_menu():
 
   # Open server.properties wiki
   def view_serverproperties():
+    if enabled_debug:
+      print("Opening server.properties wiki...")
     webbrowser.open("https://minecraft.wiki/w/Server.properties")
 
   # "Open server.properties wiki" button
@@ -1839,6 +1870,8 @@ def licensextras_menu():
 
   # Open License
   def view_license():
+    if enabled_debug:
+      print("Opening License...")
     webbrowser.open("https://github.com/NGDPLNk/SSTools4MC/blob/main/LICENSE")
   
   # "Open License" button
@@ -1852,7 +1885,12 @@ def licensextras_menu():
 # EXIT MENU
 def exit_menu():
   global run
+  if enabled_debug:
+    print("Exit Menu Opened, checking if server is running...")
   if run and minecraft_server_process.stdin:
+    if enabled_debug:
+      print("Server is running, showing warning variant")
+    
     # Clears the window
     for widget in root.winfo_children():
       widget.destroy()
@@ -1880,10 +1918,14 @@ def exit_menu():
       global m # Check what this does lol
       run = False
       global minecraft_server_process
+      if enabled_debug:
+        print("Sending stop command to server...")
       if minecraft_server_process.stdin:
         command = "stop\n"
         minecraft_server_process.stdin.write(command.encode())
         minecraft_server_process.stdin.flush()
+        if enabled_debug:
+          print("Sending stop command to server...")
       run = False
       # Clears the window
       for widget in root.winfo_children():
@@ -1901,6 +1943,9 @@ def exit_menu():
       title = tk.Label(frame, text="Thank you for using this tool\nMIT License - Copyright © 2023 NGDPL Nk", font=title_font, bg=bg_color, fg=text_color)
       title.pack(pady=5)
 
+      if enabled_debug:
+        print("Closing program...")
+
       # Close program after 1.8 seconds
       root.after(1800, root.destroy)
 
@@ -1912,6 +1957,9 @@ def exit_menu():
     main_button = tk.Button(frame, text="Return to Main Menu", command=main, height=2, width=30, bg=button_color, fg=buttontxt_color)
     main_button.grid(row=3, column=0, pady=15)
   else:
+    if enabled_debug:
+      print("Server is not running, showing normal variant")
+
     # Clears the window
     for widget in root.winfo_children():
       widget.destroy()
@@ -1928,6 +1976,9 @@ def exit_menu():
     title = tk.Label(frame, text="Thank you for using this tool\nMIT License - Copyright © 2023 NGDPL Nk", font=title_font, bg=bg_color, fg=text_color)
     title.pack(pady=5)
 
+    if enabled_debug:
+      print("Closing program...")
+
     # Close program after 1.8 seconds
     root.after(1800, root.destroy)
 
@@ -1941,8 +1992,33 @@ def main():
     running = True
     root = tk.Tk()
     root.state("zoomed")
+    if enabled_debug:
+      print("Trying to load icon...")
+    try:
+      root.iconbitmap("assets\\icon.ico")  # Icon
+      if enabled_debug:
+        print("Icon loaded successfully")
+    except tk.TclError:
+      print("Error loading icon (tk.TclError), running without icon")
+    if enabled_debug:
+      print("Program started, loading Main Menu...")
+    if fullscreen():
+      root.attributes('-fullscreen', True)
+      if enabled_debug:
+        print("Fullscreen enabled")
+    else:
+      # Min window size
+      root.minsize(850, 500)
 
-  root.iconbitmap("assets\\icon.ico")  # Icon
+      # Set window size
+      root.geometry("850x500")
+
+      if enabled_debug:
+        print("Fullscreen disabled")
+  else:
+    if enabled_debug:
+      print("Returned to Main Menu")
+  
   root.title("SSTools4MC")  # Window title
 
   # Clears the window
@@ -1951,15 +2027,6 @@ def main():
 
   # Set BG
   root.configure(bg=bg_color)
-  
-  if fullscreen():
-    root.attributes('-fullscreen', True)
-  else:
-    # Min window size
-    root.minsize(850, 500)
-
-    # Set window size
-    root.geometry("850x500")
 
   # Main frame
   frame = tk.Frame(root, bg=bg_color)
@@ -1990,7 +2057,7 @@ def main():
   # "Exit" button
   exit_button = tk.Button(frame, text="Exit", command=exit_menu, height=3, width=20, bg=button_color, fg=buttontxt_color)
   exit_button.grid(row=5, column=1, columnspan=3, pady=5, sticky='nsew')
-
+  
   root.mainloop()
 
 ########################
