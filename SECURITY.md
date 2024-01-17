@@ -32,7 +32,7 @@ We will provide active support for current releases and only one previous versio
 Are this versions supported?
 - PRE-v1.0 → :x:
 - v1.0 → :heavy_check_mark:
-- v2.0 → :heavy_check_mark:
+- v2.0 Betas → :heavy_check_mark:
 
 ## License and Copyright
 All tools in this repository are distributed under the MIT License. Please refer to the LICENSE.md file for complete details on the terms of the license and copyright.
