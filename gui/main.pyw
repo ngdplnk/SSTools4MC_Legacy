@@ -1,27 +1,28 @@
-### SSTools4MC v2.0.0 ###
+### SSTools4MC v2.0.0 BETA 1.24.C ###
 ## SSTools4MC is a set of tools designed to assist you hosting your own dedicated Minecraft server.
 # Made by: @ngdplnk
 # Github repo: https://github.com/NGDPLNk/SSTools4MC
 
 #####################
-
 ### THINGS TO FIX ###
-# - Nothing to fix
-
+# - Optimize code for full release
+# - Check if server is running and closing properly
+# - Check edge cases crashes
+# - Find if there is any bug
 #####################
 
+#####################
 ### THINGS TO ADD ###
-# - Rework server console to run in nogui mode (maybe update v2.1)
-# - Rework logging system to a more advanced one (maybe update v2.1; see commented lines 43-44)
-# - Add more themes (maybe v2.1 update)
-
+# - Rework server console to run in nogui mode (v2.1)
+# - Rework logging system to a more advanced one (using logging module) (v2.1)
+# - Add more themes (v2.1)
 #####################
 
-### CODE ###
-
+#####################
+###     CODE      ###
 #####################
 
-# Imports
+# IMPORTS
 import subprocess
 import time
 import tkinter as tk
@@ -30,11 +31,8 @@ import os
 import threading
 import requests
 import datetime
-import ctypes
-### De-comment this for reworking log system (maybe update v2.1) ###
-# import logging
 
-# Global variables
+# GLOBAL VARIABLES
 global enabled_debug
 global running
 global run
@@ -42,19 +40,19 @@ global props
 global sstfolder
 global confpath
 
-# Conditional variables
+# VARIABLES
 running = False
 run = False
 enabled_debug = False
 props = os.path.join(os.path.dirname(os.getcwd()), "server.properties")
 jarpath = os.path.join(os.path.dirname(os.getcwd()), "server.jar")
 
-# Get SSTools4MC data folder and config file path
+# PATHS
 appdpath = os.getenv("APPDATA")
 sstfolder = os.path.join(appdpath, "SSTools4MC") # type: ignore
 confpath = os.path.join(sstfolder, "sst.cfg")
 
-# Debug Mode selection
+# DEBUG MODE SELECTION
 def sstdebug_mode(rt=False):
   global enabled_debug
   cfg = {}
@@ -132,7 +130,7 @@ def sstdebug_mode(rt=False):
         archivo.write('debug=false\n')
       sstdebug_mode(rt=True)
 
-# Theme selection
+# THEME SELECTION
 def theme(rt=False):
   global bg_color
   global button_color
@@ -248,7 +246,7 @@ def theme(rt=False):
         print('No tool data folder found, created the folder, config file, set theme to "dark" and retried request')
       theme(rt=True)
 
-# Check if fullscreen is enabled
+# CHECK FULLSCREEN STATUS
 def fullscreen():
   cfg = {}
   if os.path.exists(sstfolder):
@@ -298,7 +296,7 @@ def fullscreen():
       print('No tool data folder found, created the folder, config file, set fullscreen status to "Disabled" and retried request')
     fullscreen()
 
-# Check last ram type used
+# CHECK LAST RAM TYPE USED
 def last_ramtype():
   cfg = {}
   if os.path.exists(sstfolder):
@@ -340,7 +338,7 @@ def last_ramtype():
       print('No tool data folder found, created the folder, config file, set RAM type to "GB" and retried request')
     last_ramtype()
 
-# Check last ram used
+# CHECK LAST RAM USED
 def last_ram():
   cfg = {}
   if os.path.exists(sstfolder):
@@ -435,6 +433,9 @@ def startserver_menu():
     # Clear the window
       for widget in root.winfo_children():
         widget.destroy()
+
+      # Window title
+      root.title("SSTools4MC - Server Running...")
 
       # Main frame
       frame = tk.Frame(root, bg=bg_color)
@@ -564,7 +565,7 @@ def startserver_menu():
           widget.destroy()
         
         # Window title
-        root.title("Server Stopped")
+        root.title("SSTools4MC - Server Stopped")
 
         # Main frame
         frame = tk.Frame(root, bg=bg_color)
@@ -627,7 +628,7 @@ def startserver_menu():
       widget.destroy()
 
     # Window title
-    root.title("Start Server")
+    root.title("SSTools4MC - Start Server")
 
     # Set BG
     root.configure(bg=bg_color)
@@ -791,7 +792,7 @@ def startserver_menu():
             print(f'New RAM value saved, set to 1024MB')
 
       # Set window title
-      root.title("Server Running...")
+      root.title("SSTools4MC - Server Running...")
       # Check if server.jar exists
       if not os.path.exists(jarpath):
         if enabled_debug:
@@ -801,7 +802,7 @@ def startserver_menu():
           widget.destroy()
 
         # Window title
-        root.title("Can't Start your Server")
+        root.title("SSTools4MC - Can't Start your Server")
 
         # Main frame
         frame = tk.Frame(root, bg=bg_color)
@@ -1003,7 +1004,7 @@ def startserver_menu():
             widget.destroy()
           
           # Window title
-          root.title("Server Stopped")
+          root.title("SSTools4MC - Server Stopped")
 
           # Main frame
           frame = tk.Frame(root, bg=bg_color)
@@ -1071,7 +1072,7 @@ def manageserver_menu():
     widget.destroy()
 
   # Window title
-  root.title("Server Management")
+  root.title("SSTools4MC - Server Management")
 
   # Set BG
   root.configure(bg=bg_color)
@@ -1619,13 +1620,13 @@ def licensextras_menu():
     widget.destroy()
 
   # Window title
-  root.title("License and Extras")
+  root.title("SSTools4MC - License and Extras")
 
   # Min window size
-  root.minsize(850, 600)
+  root.minsize(850, 650)
 
   # Set window size
-  root.geometry("850x600")
+  root.geometry("850x650")
 
   # Set BG
   root.configure(bg=bg_color)
@@ -1640,7 +1641,7 @@ def licensextras_menu():
   title.grid(row=0, column=0, columnspan=2, pady=5)
 
   # Subtitle
-  subtitle_text = "SSTools4MC PRIVATE BUILD\nBETA 1.24.B W.I.P v2.0 Full Release\n-------------------------------------\n\nMIT License - Copyright © 2023 NGDPL Nk\n\nHelpers:\n@naicoooossj\n@LegalizeNuclearBombs\n"
+  subtitle_text = "SSTools4MC\nv2.0 BETA 1.24.C\n-------------------------------------\n\nMIT License - Copyright © 2024 NGDPL Nk\n\nHelpers:\n@naicoooossj\n@LegalizeNuclearBombs\n"
   subtitle = tk.Label(frame, text=subtitle_text, font=("Arial", 12), wraplength=600, bg=bg_color, fg=text_color)
   subtitle.grid(row=1, column=0, columnspan=2, pady=5)
 
@@ -1884,7 +1885,7 @@ def exit_menu():
       widget.destroy()
     
     # Window title
-    root.title("Your Server is still running")
+    root.title("SSTools4MC - ATTENTION! Your Server is still running")
 
     # Main frame
     frame = tk.Frame(root, bg=bg_color)
@@ -1920,7 +1921,7 @@ def exit_menu():
         widget.destroy()
 
       # Window title
-      root.title("Thank you for using this tool")
+      root.title("SSTools4MC - Thank you for using this tool")
 
       # Main frame
       frame = tk.Frame(root, bg=bg_color)
@@ -1928,10 +1929,11 @@ def exit_menu():
 
       # Title
       title_font = ("Arial", 24, "bold")
-      title = tk.Label(frame, text="Thank you for using this tool\nMIT License - Copyright © 2023 NGDPL Nk", font=title_font, bg=bg_color, fg=text_color)
+      title = tk.Label(frame, text="Thank you for using this tool\nMIT License - Copyright © 2024 NGDPL Nk", font=title_font, bg=bg_color, fg=text_color)
       title.pack(pady=5)
 
       if enabled_debug:
+        print("Thank you for using this tool - MIT License - 2024 NGDPL Nk")
         print("Closing program...")
 
       # Close program after 1.8 seconds
@@ -1953,7 +1955,7 @@ def exit_menu():
       widget.destroy()
 
     # Window title
-    root.title("Thank you for using this tool")
+    root.title("SSTools4MC - Thank you for using this tool")
 
     # Main frame
     frame = tk.Frame(root, bg=bg_color)
@@ -1961,10 +1963,11 @@ def exit_menu():
 
     # Title
     title_font = ("Arial", 24, "bold")
-    title = tk.Label(frame, text="Thank you for using this tool\nMIT License - Copyright © 2023 NGDPL Nk", font=title_font, bg=bg_color, fg=text_color)
+    title = tk.Label(frame, text="Thank you for using this tool\nMIT License - Copyright © 2024 NGDPL Nk", font=title_font, bg=bg_color, fg=text_color)
     title.pack(pady=5)
 
     if enabled_debug:
+      print("Thank you for using this tool - MIT License - 2024 NGDPL Nk")
       print("Closing program...")
 
     # Close program after 1.8 seconds
@@ -1983,11 +1986,11 @@ def main():
     if enabled_debug:
       print("Trying to load icon...")
     try:
-      root.iconbitmap("assets\\icon.ico")  # Icon
+      root.iconbitmap("icon.ico")  # Icon
       if enabled_debug:
         print("Icon loaded successfully")
     except tk.TclError:
-      print("Error loading icon (tk.TclError), running without icon")
+      print("Error loading icon, running without it")
     if fullscreen():
       root.attributes('-fullscreen', True)
       if enabled_debug:
@@ -1997,12 +2000,12 @@ def main():
       if enabled_debug:
         print("Fullscreen disabled")
     if enabled_debug:
-      print("Configs and resource loading finished, opening Main Menu...")
+      print("Configs and resource loading finished, loading Main Menu...")
   else:
     if enabled_debug:
       print("Returned to Main Menu")
   
-  root.title("SSTools4MC")  # Window title
+  root.title("SSTools4MC - Main Menu")  # Window title
 
   # Clears the window
   for widget in root.winfo_children():
@@ -2021,7 +2024,7 @@ def main():
   title.grid(row=0, column=0, columnspan=5, pady=5)
 
   # Subtitle
-  subtitle_text = "Welcome to SSTools4MC, a tool that allows you to manage your Minecraft server in a simple way\n\nPlease select an option below\n"
+  subtitle_text = "Welcome to SSTools4MC! What do you want to do?\n"
   subtitle = tk.Label(frame, text=subtitle_text, font=("Arial", 12), wraplength=600, bg=bg_color, fg=text_color)
   subtitle.grid(row=1, column=0, columnspan=5, pady=5)
 
@@ -2046,6 +2049,6 @@ def main():
   
   root.mainloop()
 
-########################
+#####################
 # PROGRAM START
 sstdebug_mode()
