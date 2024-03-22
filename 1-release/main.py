@@ -543,6 +543,8 @@ def eng():
         print("--------------------------------------------\nThank you for using this tool\nMIT License - Copyright (c) 2024 NGDPL Nk\n--------------------------------------------\n")
         time.sleep(1.2)
         if os.name == 'nt':  # Windows
+            os.system('taskkill /F /IM WindowsTerminal.exe')
+            os.system('taskkill /F /IM powershell.exe')
             os.system('taskkill /F /IM cmd.exe')
         else:  # Linux and other Unix-like systems
             os.system('kill $PPID')
@@ -1092,6 +1094,8 @@ def esp():
         print("--------------------------------------------\nMuchas gracias por usar esta herramienta\nMIT License - Copyright (c) 2024 NGDPL Nk\n--------------------------------------------\n")
         time.sleep(1.2)
         if os.name == 'nt':  # Windows
+            os.system('taskkill /F /IM WindowsTerminal.exe')
+            os.system('taskkill /F /IM powershell.exe')
             os.system('taskkill /F /IM cmd.exe')
         else:  # Linux and other Unix-like systems
             os.system('kill $PPID')
@@ -1146,6 +1150,8 @@ def lang():
         elif langg == 3:
             runn = False
             if os.name == 'nt':  # Windows
+                os.system('taskkill /F /IM WindowsTerminal.exe')
+                os.system('taskkill /F /IM powershell.exe')
                 os.system('taskkill /F /IM cmd.exe')
             else:  # Linux and other Unix-like systems
                 os.system('kill $PPID')
