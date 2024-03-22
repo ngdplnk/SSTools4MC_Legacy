@@ -16,6 +16,8 @@ ICON_PATH = os.path.join(PROGRAM_PATH, "assets", "icon.ico")
 os.makedirs(PROGRAM_PATH, exist_ok=True)
 os.makedirs(ASSETS_PATH, exist_ok=True)
 
+#############################
+# LANGUAGE VARIANTS NEEDS TO BE FIXED
 system_lang = locale.getlocale()[0]
 system_lang = str(system_lang)
 
