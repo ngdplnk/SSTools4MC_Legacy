@@ -55,4 +55,4 @@ So many thanks to [@naicoooossj](https://github.com/naicoooossj) and [@LegalizeN
 
 Thank you for using SSTools4MC!
 
-© 2023 - NGDPL Nk
+© 2024 - NGDPL Nk
