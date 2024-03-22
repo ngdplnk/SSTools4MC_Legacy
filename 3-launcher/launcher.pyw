@@ -25,9 +25,15 @@ try:
         icon = requests.get("https://raw.githubusercontent.com/ngdplnk/SSTools4MC/main/1-release/icon.ico")
         with open(ICON_PATH, 'wb') as writeicon:
             writeicon.write(icon.content)
-    subprocess.run(["python", CODE_PATH], shell=True)
+    if os.name == 'nt':  # Windows
+        subprocess.Popen(["start", "cmd", "/k", "python", CODE_PATH], shell=True)
+    else:  # Linux and other Unix-like systems
+        subprocess.Popen(["gnome-terminal", "--", "python3", CODE_PATH])
 except Exception:
     if os.path.isfile(CODE_PATH):
-        subprocess.run(["python", CODE_PATH], shell=True)
+        if os.name == 'nt':  # Windows
+            subprocess.Popen(["start", "cmd", "/k", "python", CODE_PATH], shell=True)
+        else:  # Linux and other Unix-like systems
+            subprocess.Popen(["gnome-terminal", "--", "python3", CODE_PATH])
     else:
         messagebox.showerror("Error", "Conéctate a internet para obtener la última versión del programa.")

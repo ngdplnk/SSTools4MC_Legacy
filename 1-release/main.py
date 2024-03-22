@@ -542,7 +542,10 @@ def eng():
         limpiar_consola()
         print("--------------------------------------------\nThank you for using this tool\nMIT License - Copyright (c) 2024 NGDPL Nk\n--------------------------------------------\n")
         time.sleep(1.2)
-        sys.exit()
+        if os.name == 'nt':  # Windows
+            os.system('exit')
+        else:  # Linux and other Unix-like systems
+            os.system('kill $PPID')
 
     # MAIN MENU
     def menu():
@@ -1088,7 +1091,10 @@ def esp():
         limpiar_consola()
         print("--------------------------------------------\nMuchas gracias por usar esta herramienta\nMIT License - Copyright (c) 2024 NGDPL Nk\n--------------------------------------------\n")
         time.sleep(1.2)
-        sys.exit()
+        if os.name == 'nt':  # Windows
+            os.system('exit')
+        else:  # Linux and other Unix-like systems
+            os.system('kill $PPID')
 
     # MENÚ PRINCIPAL
     def menu():
@@ -1139,7 +1145,10 @@ def lang():
             esp()
         elif langg == 3:
             runn = False
-            return
+            if os.name == 'nt':  # Windows
+                os.system('exit')
+            else:  # Linux and other Unix-like systems
+                os.system('kill $PPID')
         else:
             lang()
     except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
