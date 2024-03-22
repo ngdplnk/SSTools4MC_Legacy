@@ -8,6 +8,7 @@ import ctypes
 import subprocess
 import webbrowser
 import datetime
+import locale
 from termcolor import colored
 
 # VARIABLES
@@ -569,7 +570,7 @@ def eng():
             elif sel == 3:
                 about()
             elif sel == 4:
-                return
+                esp()
             elif sel == 5:
                 exiit()
             menu()
@@ -1120,7 +1121,7 @@ def esp():
             elif sel == 3:
                 about()
             elif sel == 4:
-                return
+                eng()
             elif sel == 5:
                 exiit()
             menu()
@@ -1131,35 +1132,12 @@ def esp():
 
 # SELECCIÓN DE IDIOMA - LANGUAGE SELECTION
 def lang():
-    global runn
-    limpiar_consola()
-    lng = input(f"\n(1) English\n(2) Español\n(3) Exit/Salir\n\nSelect your language/Selecciona tu idioma= ")
-    try:
-        if any(char in "0123456789+-*/" for char in lng):
-            if not lng[0].isalpha():
-                langg = eval(lng)
-            else:
-                langg = lng
-        else:
-            langg = lng
-        langg = int(langg)
-        if langg == 1:
-            eng()
-        elif langg == 2:
-            esp()
-        elif langg == 3:
-            runn = False
-            if os.name == 'nt':  # Windows
-                os.system('taskkill /F /IM WindowsTerminal.exe')
-                os.system('taskkill /F /IM powershell.exe')
-                os.system('taskkill /F /IM cmd.exe')
-            else:  # Linux and other Unix-like systems
-                os.system('kill $PPID')
-        else:
-            lang()
-    except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
-        lang()
+    system_lang = locale.getlocale()[0]
+    system_lang = str(system_lang)
+    if system_lang.startswith("es") or system_lang.startswith("Spanish"):
+        esp()
+    else:
+        eng()
 
 # INICIAR HERRAMIENTA - RUN TOOL
-while runn == True:
-    lang()
+lang()
