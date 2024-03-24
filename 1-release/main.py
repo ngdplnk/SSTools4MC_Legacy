@@ -719,7 +719,7 @@ def eng():
         global newserver
         global foldname
         limpiar_consola()
-        inconfirm = input("Server Launcher for Minecraft\n-------------------------------------\n\nFirst, lets select a folder to save your New Server's files.\n\n(1) Select folder for the new Server\n(2) Cancel\n\nSelect one of the options= ")
+        inconfirm = input("Server Launcher for Minecraft\n-------------------------------------\n\nFirst, lets select a folder to save your New Server's files.\n\n(1) Select folder for the new Server\n(2) Cancel\n\nSelect one of the options= ").replace(" ", "")
         try:
             if any(char in "0123456789+-*/" for char in inconfirm):
                 if not inconfirm[0].isalpha():
@@ -1505,7 +1505,7 @@ def esp():
         global newserver
         global foldname
         limpiar_consola()
-        inconfirm = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nPrimero, seleccionemos una carpeta para guardar los archivos de tu Nuevo Server.\n\n(1) Seleccionar una carpeta para el Nuevo Server\n(2) Cancelar\n\nElige una de las opciones= ")
+        inconfirm = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nPrimero, seleccionemos una carpeta para guardar los archivos de tu Nuevo Server.\n\n(1) Seleccionar una carpeta para el Nuevo Server\n(2) Cancelar\n\nElige una de las opciones= ").replace(" ", "")
         try:
             if any(char in "0123456789+-*/" for char in inconfirm):
                 if not inconfirm[0].isalpha():
