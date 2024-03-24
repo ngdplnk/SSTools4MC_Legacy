@@ -32,13 +32,13 @@ try:
         with open(ICON_PATH, 'wb') as writeicon:
             writeicon.write(icon.content)
     if os.name == 'nt':  # Windows
-        subprocess.Popen(["start", "cmd", "/k", "python", CODE_PATH], shell=True)
+        subprocess.Popen(["start", "cmd", "/c", "python", CODE_PATH], shell=True)
     else:  # Linux and other Unix-like systems
         subprocess.Popen(["gnome-terminal", "--", "python3", CODE_PATH])
 except Exception:
     if os.path.isfile(CODE_PATH):
         if os.name == 'nt':  # Windows
-            subprocess.Popen(["start", "cmd", "/k", "python", CODE_PATH], shell=True)
+            subprocess.Popen(["start", "cmd", "/c", "python", CODE_PATH], shell=True)
         else:  # Linux and other Unix-like systems
             subprocess.Popen(["gnome-terminal", "--", "python3", CODE_PATH])
     else:
