@@ -202,7 +202,6 @@ def eng():
                                     if 1 <= servsel <= len(server_keys):
                                         servsel = server_keys[servsel - 1]
                                         servpath = sservers[servsel]
-                                        servsel = colored(servsel, "yellow")
                                         servestring = f"{servsel}<[=]>{servpath}\n"
                                     os.makedirs(CONFIG_PATH, exist_ok=True)
                                     with open(SAVED_SERVERS, 'r') as file:
@@ -998,7 +997,6 @@ def esp():
                                     if 1 <= servsel <= len(server_keys):
                                         servsel = server_keys[servsel - 1]
                                         servpath = sservers[servsel]
-                                        servsel = colored(servsel, "yellow")
                                         servestring = f"{servsel}<[=]>{servpath}\n"
                                     os.makedirs(CONFIG_PATH, exist_ok=True)
                                     with open(SAVED_SERVERS, 'r') as file:
