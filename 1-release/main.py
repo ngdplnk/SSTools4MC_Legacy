@@ -766,7 +766,7 @@ def eng():
                                         limpiar_consola()
                                         print("Server Launcher for Minecraft\n-------------------------------------\n\nAvailable versions:\n")
                                         for i, version in enumerate(MCVERSIONS, start=1):
-                                            print(f"({i}) {version}")
+                                            print(f"(-) {version}")
                                         listselection = input("\n(B) Back\n(R) Return to main menu\n\nSelect one of the options=")
                                         try:
                                             if listselection.lower() == "b":
@@ -1451,7 +1451,7 @@ def esp():
                 nameserver = servername
                 limpiar_consola()
                 gbs = 0
-                rammount = input(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nestás a punto de iniciar el Server "{nameserver}"\n\n(M) Configurar Server\n(C) Usar RAM en {gbormb}\n(B) Atrás\n(N) Volver al menú principal\n\nElige una de las opciones o ingresa los {valor1} de RAM para asignar a tu Server= ').replace(" ", "")
+                rammount = input(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEstás a punto de iniciar el Server "{nameserver}"\n\n(M) Configurar Server\n(C) Usar RAM en {gbormb}\n(B) Atrás\n(N) Volver al menú principal\n\nElige una de las opciones o ingresa los {valor1} de RAM para asignar a tu Server= ').replace(" ", "")
                 try:
                     if rammount.lower() == "m":
                         config()  
@@ -1561,8 +1561,8 @@ def esp():
                                         limpiar_consola()
                                         print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nVersiones disponibles:\n")
                                         for i, version in enumerate(MCVERSIONS, start=1):
-                                            print(f"({i}) {version}")
-                                        listselection = input("\n(B) Atrás\n(R) Volver al menú principal\n\nelige una de las opciones=")
+                                            print(f"(-) {version}")
+                                        listselection = input("\n(B) Atrás\n(R) Volver al menú principal\n\nElige una de las opciones=")
                                         try:
                                             if listselection.lower() == "b":
                                                 vers_select()
