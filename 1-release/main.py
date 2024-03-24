@@ -10,6 +10,7 @@ import webbrowser
 import datetime
 import locale
 import requests
+from tkinter import Tk
 from tkinter import filedialog
 from termcolor import colored
 
@@ -155,6 +156,8 @@ def eng():
                 servsel = input("\nSelect one of the options or enter the number of the server to start= ").replace(" ", "")
                 try:
                     if servsel.lower() == "n":
+                        root = Tk()
+                        root.withdraw()
                         newserv = filedialog.askdirectory()
                         servname = os.path.basename(newserv)
                         if newserv == "" or servname == "":
@@ -280,6 +283,8 @@ def eng():
                         saveconf = saveconfirm
                     saveconf = int(saveconf)
                     if saveconf == 1:
+                        root = Tk()
+                        root.withdraw()
                         newserv = filedialog.askdirectory()
                         servname = os.path.basename(newserv)
                         if newserv == "" or servname == "":
@@ -311,6 +316,8 @@ def eng():
                 file.write("# Server Launcher for Minecraft\n# Saved servers\n")
             limpiar_consola()
             input('Server Launcher for Minecraft\n-------------------------------------\n\nThere are no saved servers.\n\nPress ENTER to select a folder with a Server and add it to "Your Servers" list.')
+            root = Tk()
+            root.withdraw()
             newserv = filedialog.askdirectory()
             servname = os.path.basename(newserv)
             if newserv == "" or servname == "":
@@ -733,6 +740,8 @@ def eng():
                 def reselect():
                     global newserver
                     global foldname
+                    root = Tk()
+                    root.withdraw()
                     newserver = filedialog.askdirectory()
                     foldname = colored(os.path.basename(newserver), "green")
                     if newserver == "" or foldname == "":
@@ -943,6 +952,8 @@ def esp():
                 servsel = input("\nElige una de las opciones o escribe el número del Server que iniciarás= ").replace(" ", "")
                 try:
                     if servsel.lower() == "n":
+                        root = Tk()
+                        root.withdraw()
                         newserv = filedialog.askdirectory()
                         servname = os.path.basename(newserv)
                         if newserv == "" or servname == "":
@@ -1068,6 +1079,8 @@ def esp():
                         saveconf = saveconfirm
                     saveconf = int(saveconf)
                     if saveconf == 1:
+                        root = Tk()
+                        root.withdraw()
                         newserv = filedialog.askdirectory()
                         servname = os.path.basename(newserv)
                         if newserv == "" or servname == "":
@@ -1099,6 +1112,8 @@ def esp():
                 file.write("# Lanzador de Servidores para Minecraft\n# Servers Guardados\n")
             limpiar_consola()
             input('Lanzador de Servidores para Minecraft\n-------------------------------------\n\nNo tienes ningún Server guardado.\n\nPresiona ENTER para seleccionar una carpeta con tu Server y guardarlo en la Lista "Tus Servidores".')
+            root = Tk()
+            root.withdraw()
             newserv = filedialog.askdirectory()
             servname = os.path.basename(newserv)
             if newserv == "" or servname == "":
@@ -1521,6 +1536,8 @@ def esp():
                 def reselect():
                     global newserver
                     global foldname
+                    root = Tk()
+                    root.withdraw()
                     newserver = filedialog.askdirectory()
                     foldname = colored(os.path.basename(newserver), "green")
                     if newserver == "" or foldname == "":
