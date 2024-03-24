@@ -884,6 +884,8 @@ def eng():
 
     # MAIN MENU
     def menu():
+        os.makedirs(SSTOOLS_FOLDER, exist_ok=True)
+        os.chdir(SSTOOLS_FOLDER)
         limpiar_consola()
         seleccion = input("Server Launcher for Minecraft\n-------------------------------------\n\nHi! You are in the main menu.\n\n(1) Start a Server\n(2) Install a New Server\n(3) Extras\n(4) Change Language\n(5) Exit\n\nSelect one of the options= ")
         try:
@@ -1670,6 +1672,8 @@ def esp():
 
     # MAIN MENU
     def menu():
+        os.makedirs(SSTOOLS_FOLDER, exist_ok=True)
+        os.chdir(SSTOOLS_FOLDER)
         limpiar_consola()
         seleccion = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nHola! Estás en el menú principal.\n\n(1) Inciar un Server\n(2) Instalar un Nuevo Server\n(3) Extras\n(4) Cambiar Lenguaje\n(5) Sair\n\nElige una de las opciones= ")
         try:
