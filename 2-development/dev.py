@@ -19,7 +19,7 @@ runn = True
 
 # PATHS
 APPDATA = os.getenv('APPDATA')
-SSTOOLS_FOLDER = os.path.join(APPDATA, "SSTools4MC") # type: ignore
+SSTOOLS_FOLDER = os.path.join(APPDATA, "TLSoftware", "SSTools4MC") # type: ignore
 CONFIG_PATH = os.path.join(SSTOOLS_FOLDER, "config") # type: ignore
 SAVED_SERVERS = os.path.join(CONFIG_PATH, "saved-servers.cfg") # type: ignore
 
@@ -144,12 +144,14 @@ def eng():
                         sservers[key.strip()] = value.strip()
             if sservers:
                 limpiar_consola()
-                print('Server Launcher for Minecraft\n-------------------------------------\n\n"Your Servers" List\nSelect the server you want to start.\n')
+                print('Server Launcher for Minecraft\n-------------------------------------\n\n"Your Servers" List\n')
                 server_keys = list(sservers.keys())
                 for i, key in enumerate(server_keys, start=1):
                     print(f"({i}) {key}")
-
-                print("\n(N) New server\n(D) Delete a Server from the list\n(C) Clear list\n(R) Return to main menu")
+                nserv = colored("Add","cyan")
+                delserv = colored("Delete","red")
+                clearlist = colored("Clear","magenta")
+                print(f"\n(N) {nserv} Server\n(D) {delserv} a Server from the list\n(C) {clearlist} List\n(R) Return to main menu")
                 servsel = input("\nSelect one of the options or enter the number of the server to start= ").replace(" ", "")
                 try:
                     if servsel.lower() == "n":
@@ -161,6 +163,7 @@ def eng():
                             time.sleep(2.5)
                             ram()
                         if newserv and servname:
+                            servname = colored(os.path.basename(newserv), "yellow")
                             servstring = f"{servname}<[=]>{newserv}\n"
                             os.makedirs(CONFIG_PATH, exist_ok=True)
                             with open(SAVED_SERVERS, 'r+') as file:
@@ -168,74 +171,79 @@ def eng():
                                 if servstring not in lines:
                                     file.write(servstring)
                         limpiar_consola()
-                        print(f"Server Launcher for Minecraft\n-------------------------------------\n\nThe server {servname} has been saved.")
+                        print(f'Server Launcher for Minecraft\n-------------------------------------\n\nThe server "{servname}" has been saved.')
                         time.sleep(1.5)
                         ram()
                     elif servsel.lower() == "d":
-                        limpiar_consola()
-                        print("Server Launcher for Minecraft\n-------------------------------------\n\nSelect the server to delete from the list.\n")
-                        for i, key in enumerate(server_keys, start=1):
-                            print(f"({i}) {key}")
-                        print("\n(N) Cancel\n(R) Return to main menu")
-                        servsel = input("\nSelect one of the options or enter the number of the server to delete= ").replace(" ", "")
-                        try:
-                            if servsel.lower() == "r":
-                                eng()
-                            elif servsel.lower() == "n":
-                                ram()
-                            else:
-                                if any(char in "0123456789+-*/" for char in servsel):
-                                    if not servsel[0].isalpha():
-                                        servv = eval(servsel)
+                        def servdel():
+                            limpiar_consola()
+                            print("Server Launcher for Minecraft\n-------------------------------------\n\nSelect the server to delete from the list.\n")
+                            for i, key in enumerate(server_keys, start=1):
+                                print(f"({i}) {key}")
+                            print("\n(N) Cancel\n(R) Return to main menu")
+                            servsel = input("\nSelect one of the options or enter the number of the server to delete= ").replace(" ", "")
+                            try:
+                                if servsel.lower() == "r":
+                                    eng()
+                                elif servsel.lower() == "n":
+                                    ram()
+                                else:
+                                    if any(char in "0123456789+-*/" for char in servsel):
+                                        if not servsel[0].isalpha():
+                                            servv = eval(servsel)
+                                        else:
+                                            servv = servsel
                                     else:
                                         servv = servsel
-                                else:
-                                    servv = servsel
-                                servsel = int(servv)
-                                if 1 <= servsel <= len(server_keys):
-                                    servsel = server_keys[servsel - 1]
-                                    servpath = sservers[servsel]
-                                    servestring = f"{servsel}<[=]>{servpath}\n"
-                                os.makedirs(CONFIG_PATH, exist_ok=True)
-                                with open(SAVED_SERVERS, 'r') as file:
-                                    lines = file.readlines()
+                                    servsel = int(servv)
+                                    if 1 <= servsel <= len(server_keys):
+                                        servsel = server_keys[servsel - 1]
+                                        servpath = sservers[servsel]
+                                        servsel = colored(servsel, "yellow")
+                                        servestring = f"{servsel}<[=]>{servpath}\n"
                                     os.makedirs(CONFIG_PATH, exist_ok=True)
-                                    with open(SAVED_SERVERS, 'w') as file:
-                                        for line in lines:
-                                            if line != servestring:
-                                                file.write(line)
-                                limpiar_consola()
-                                print(f"Server Launcher for Minecraft\n-------------------------------------\n\nThe server {servsel} has been deleted from the list.")
-                                time.sleep(1.5)
-                                ram()             
-                        except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
-                            ram()
+                                    with open(SAVED_SERVERS, 'r') as file:
+                                        lines = file.readlines()
+                                        os.makedirs(CONFIG_PATH, exist_ok=True)
+                                        with open(SAVED_SERVERS, 'w') as file:
+                                            for line in lines:
+                                                if line != servestring:
+                                                    file.write(line)
+                                    limpiar_consola()
+                                    print(f'Server Launcher for Minecraft\n-------------------------------------\n\nThe server "{servsel}" has been deleted from the list.')
+                                    time.sleep(1.5)
+                                    ram()             
+                            except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                                servdel()
+                        servdel()
                     elif servsel.lower() == "c":
-                        limpiar_consola()
-                        clearconfirm = input("Server Launcher for Minecraft\n-------------------------------------\n\nAre you sure you want to clear the list of saved servers?\n\n(1) Yes\n(2) No\n\nSelect one of the options= ")
-                        try:
-                            if any(char in "0123456789+-*/" for char in clearconfirm):
-                                if not clearconfirm[0].isalpha():
-                                    clearconf = eval(clearconfirm)
+                        def lisclear():
+                            limpiar_consola()
+                            yess = colored("Yes","green")
+                            noo = colored("No","red")
+                            clearconfirm = input(f'Server Launcher for Minecraft\n-------------------------------------\n\nAre you sure you want to clear the "Your Servers" List?\n\n(1) {yess}\n(2) {noo}\n\nSelect one of the options= ')
+                            try:
+                                if any(char in "0123456789+-*/" for char in clearconfirm):
+                                    if not clearconfirm[0].isalpha():
+                                        clearconf = eval(clearconfirm)
+                                    else:
+                                        clearconf = clearconfirm
                                 else:
                                     clearconf = clearconfirm
-                            else:
-                                clearconf = clearconfirm
-                            clearconf = int(clearconf)
-                            if clearconf == 1:
-                                os.makedirs(CONFIG_PATH, exist_ok=True)
-                                with open(SAVED_SERVERS, 'w') as file:
-                                    file.write("# Server Launcher for Minecraft\n# Saved servers\n")
-                                limpiar_consola()
-                                print("Server Launcher for Minecraft\n-------------------------------------\n\nThe list of saved servers has been cleared.")
-                                time.sleep(1.5)
-                                ram()
-                            elif clearconf == 2:
-                                ram()
-                            else:
-                                ram()
-                        except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
-                            ram()
+                                clearconf = int(clearconf)
+                                if clearconf == 1:
+                                    os.makedirs(CONFIG_PATH, exist_ok=True)
+                                    with open(SAVED_SERVERS, 'w') as file:
+                                        file.write("# Server Launcher for Minecraft\n# Saved servers\n")
+                                    limpiar_consola()
+                                    print('Server Launcher for Minecraft\n-------------------------------------\n\nThe "Your Servers" List has been cleared.')
+                                    time.sleep(1.5)
+                                    ram()
+                                elif clearconf == 2:
+                                    ram()
+                            except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                                lisclear()
+                        lisclear()
                     elif servsel.lower() == "r":
                         eng()
                     else:
@@ -260,7 +268,8 @@ def eng():
                 with open(SAVED_SERVERS, 'w') as file:
                     file.write("# Server Launcher for Minecraft\n# Saved servers\n")
                 limpiar_consola()
-                saveconfirm = input("Server Launcher for Minecraft\n-------------------------------------\n\nThere are no saved servers.\n\n(1) Add a Server\n(2) Return to the main menu\n\nSelect one of the options= ")
+                adds = colored("Add a Server","cyan")
+                saveconfirm = input(f"Server Launcher for Minecraft\n-------------------------------------\n\nThere are no saved servers.\n\n(1) {adds}\n(2) Return to main menu\n\nSelect one of the options= ")
                 try:
                     if any(char in "0123456789+-*/" for char in saveconfirm):
                         if not saveconfirm[0].isalpha():
@@ -279,6 +288,7 @@ def eng():
                             time.sleep(2.5)
                             ram()
                         if newserv and servname:
+                            servname = colored(os.path.basename(newserv), "yellow")
                             servstring = f"{servname}<[=]>{newserv}\n"
                             os.makedirs(CONFIG_PATH, exist_ok=True)
                             with open(SAVED_SERVERS, 'r+') as file:
@@ -286,7 +296,7 @@ def eng():
                                 if servstring not in lines:
                                     file.write(servstring)
                         limpiar_consola()
-                        print(f"Server Launcher for Minecraft\n-------------------------------------\n\nThe server {servname} has been saved.")
+                        print(f'Server Launcher for Minecraft\n-------------------------------------\n\nThe server "{servname}" has been saved.')
                         time.sleep(1.5)
                         ram()
                     elif saveconf == 2:
@@ -303,20 +313,324 @@ def eng():
             input('Server Launcher for Minecraft\n-------------------------------------\n\nThere are no saved servers.\n\nPress ENTER to select a folder with a Server and add it to "Your Servers" list.')
             newserv = filedialog.askdirectory()
             servname = os.path.basename(newserv)
+            if newserv == "" or servname == "":
+                limpiar_consola()
+                print('Server Launcher for Minecraft\n-------------------------------------\n\nYou must select a folder to save it in "Your Servers" List.')
+                time.sleep(2.5)
+                ram()
             if newserv and servname:
+                servname = colored(os.path.basename(newserv), "yellow")
                 servstring = f"{servname}<[=]>{newserv}\n"
                 with open(SAVED_SERVERS, 'r+') as file:
                     lines = file.readlines()
                     if servstring not in lines:
                         file.write(servstring)
             limpiar_consola()
-            print(f"Server Launcher for Minecraft\n-------------------------------------\n\nThe server {servname} has been saved.")
+            print(f'Server Launcher for Minecraft\n-------------------------------------\n\nThe server "{servname}" has been saved.')
             time.sleep(1.5)
             ram()
         if os.path.exists("server.jar"):
+            # CONFIG
+            def config():
+                global nameserver
+                limpiar_consola()
+                props = "server.properties"
+                if os.path.exists(props):
+                    global properties
+                    properties = {}
+                    online = "Error"
+                    hard = "Error"
+                    pvp = "Error"
+                    with open('server.properties', 'r') as file:
+                        for line in file:
+                            line = line.strip()
+                            if line and not line.startswith('#'):
+                                key, value = line.split('=')
+                                properties[key.strip()] = value.strip()
+                    if properties["online-mode"] == "false":
+                        online = colored("ENABLE","green")
+                    elif properties["online-mode"] == "true":
+                        online = colored("DISABLE","red")
+                    if properties["hardcore"] == "false":
+                        hard = colored("ENABLE","green")
+                    elif properties["hardcore"] == "true":
+                        hard = colored("DISABLE","red")
+                    if properties["pvp"] == "false":
+                        pvp = colored("ENABLE","green")
+                    elif properties["pvp"] == "true":
+                        pvp = colored("DISABLE","red")
+                    limpiar_consola()
+                    confsel = input(f'Server Launcher for Minecraft\n-------------------------------------\n\nLets manage "{nameserver}"!\n\n(1) {online} online mode\n(2) {hard} hardcore mode\n(3) {pvp} PvP\n(4) Change gamemode\n(5) Change difficulty\n(6) Change max players limit\n(7) Back\n(8) Return to main menu\n\nSelect one of the options= ')
+                    if properties["online-mode"] == "false":
+                        online = "ENABLE"
+                    elif properties["online-mode"] == "true":
+                        online = "DISABLE"
+                    if properties["hardcore"] == "false":
+                        hard = "ENABLE"
+                    elif properties["hardcore"] == "true":
+                        hard = "DISABLE"
+                    if properties["pvp"] == "false":
+                        pvp = "ENABLE"
+                    elif properties["pvp"] == "true":
+                        pvp = "DISABLE"
+                    try:
+                        if any(char in "0123456789+-*/" for char in confsel):
+                            if not confsel[0].isalpha():
+                                confug = eval(confsel)
+                            else:
+                                confug = confsel
+                        else:
+                            confug = confsel
+                        confug = int(confug) 
+                        if confug == 1:
+                            if online == "ENABLE":
+                                properties["online-mode"] = "true"
+                                with open('server.properties', 'w') as file:
+                                    for key, value in properties.items():
+                                        file.write(f'{key}={value}\n')
+                                online = colored("ENABLED","green")
+                            elif online == "DISABLE":
+                                properties["online-mode"] = "false"
+                                with open('server.properties', 'w') as file:
+                                    for key, value in properties.items():
+                                        file.write(f'{key}={value}\n')
+                                online = colored("DISABLED","red")
+                            limpiar_consola()
+                            print(f"Server Launcher for Minecraft\n-------------------------------------\n\nOnline mode has been {online}.")
+                            time.sleep(1.5)
+                            config()
+                        elif confug == 2:
+                            if hard == "ENABLE":
+                                properties["hardcore"] = "true"
+                                with open('server.properties', 'w') as file:
+                                    for key, value in properties.items():
+                                        file.write(f'{key}={value}\n')
+                                hard = colored("ENABLED","green")
+                            elif hard == "DISABLE":
+                                properties["hardcore"] = "false"
+                                with open('server.properties', 'w') as file:
+                                    for key, value in properties.items():
+                                        file.write(f'{key}={value}\n')
+                                hard = colored("DISABLED","red")
+                            limpiar_consola()
+                            print(f"Server Launcher for Minecraft\n-------------------------------------\n\nHardcore mode has been {hard}.")
+                            time.sleep(1.5)
+                            config()
+                        elif confug == 3:
+                            if pvp == "ENABLE":
+                                properties["pvp"] = "true"
+                                with open('server.properties', 'w') as file:
+                                    for key, value in properties.items():
+                                        file.write(f'{key}={value}\n')
+                                pvp = colored("ENABLED","green")
+                            elif pvp == "DISABLE":
+                                properties["pvp"] = "false"
+                                with open('server.properties', 'w') as file:
+                                    for key, value in properties.items():
+                                        file.write(f'{key}={value}\n')
+                                pvp = colored("DISABLED","red")
+                            limpiar_consola()
+                            print(f"Server Launcher for Minecraft\n-------------------------------------\n\nPvP has been {pvp}.")
+                            time.sleep(1.5)
+                            config()
+                        elif confug == 4:
+                            def juego():
+                                global properties
+                                modo = properties["gamemode"]
+                                if modo == "survival" or modo == "0":
+                                    modo = colored("SURVIVAL","cyan")
+                                elif modo == "creative" or modo == "1":
+                                    modo = colored("CREATIVE","cyan")
+                                elif modo == "adventure" or modo == "2":
+                                    modo = colored("ADVENTURE","cyan")
+                                elif modo == "spectator" or modo == "3":
+                                    modo = colored("SPECTATOR","cyan")
+                                superv = colored("SURVIVAL","yellow")
+                                creat = colored("CREATIVE","yellow")
+                                avent = colored("ADVENTURE","yellow")
+                                espect = colored("SPECTATOR","yellow")
+                                limpiar_consola()
+                                modosel = input(f"Server Launcher for Minecraft\n-------------------------------------\n\nThe current game mode is {modo}.\n\n(1) Change to {superv} gamemode\n(2) Change to {creat} gamemode\n(3) Change to {avent} gamemode\n(4) Change to {espect} gamemode\n(5) Go back\n(6) Return to main menu\n\nSelect one of the options= ")
+                                try:
+                                    if any(char in "0123456789+-*/" for char in modosel):
+                                        if not modosel[0].isalpha():
+                                            coonf = eval(modosel)
+                                        else:
+                                            coonf = modosel
+                                    else:
+                                        coonf = modosel
+                                    coonf = int(coonf)
+                                    if coonf == 1:
+                                        properties["gamemode"] = "0"
+                                        with open('server.properties', 'w') as file:
+                                            for key, value in properties.items():
+                                                file.write(f'{key}={value}\n')
+                                        limpiar_consola()
+                                        print(f"Server Launcher for Minecraft\n-------------------------------------\n\nGamemode has been set to {superv}.")
+                                        time.sleep(1.5)
+                                        juego()
+                                    elif coonf == 2:
+                                        properties["gamemode"] = "1"
+                                        with open('server.properties', 'w') as file:
+                                            for key, value in properties.items():
+                                                file.write(f'{key}={value}\n')
+                                        limpiar_consola()
+                                        print(f"Server Launcher for Minecraft\n-------------------------------------\n\nGamemode has been set to {creat}.")
+                                        time.sleep(1.5)
+                                        juego()
+                                    elif coonf == 3:
+                                        properties["gamemode"] = "2"
+                                        with open('server.properties', 'w') as file:
+                                            for key, value in properties.items():
+                                                file.write(f'{key}={value}\n')
+                                        limpiar_consola()
+                                        print(f"Server Launcher for Minecraft\n-------------------------------------\n\nGamemode has been set to {avent}.")
+                                        time.sleep(1.5)
+                                        juego()
+                                    elif coonf == 4:
+                                        properties["gamemode"] = "3"
+                                        with open('server.properties', 'w') as file:
+                                            for key, value in properties.items():
+                                                file.write(f'{key}={value}\n')
+                                        limpiar_consola()
+                                        print(f"Server Launcher for Minecraft\n-------------------------------------\n\nGamemode has been set to {espect}.")
+                                        time.sleep(1.5)
+                                        juego()
+                                    elif coonf == 5:
+                                        config()
+                                    elif coonf == 6:
+                                        eng()
+                                    else:
+                                        juego()
+                                except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                                    juego()
+                            juego()
+                        elif confug == 5:
+                            def difconf():
+                                global properties
+                                dificultad = properties["difficulty"]
+                                if dificultad == "peaceful" or dificultad == "0":
+                                    dificultad = colored("PEACEFUL","cyan")
+                                elif dificultad == "easy" or dificultad == "1":
+                                    dificultad = colored("EASY","cyan")
+                                elif dificultad == "normal" or dificultad == "2":
+                                    dificultad = colored("NORMAL","cyan")
+                                elif dificultad == "hard" or dificultad == "3":
+                                    dificultad = colored("HARD","cyan")
+                                pacif = colored("PEACEFUL","yellow")
+                                facil = colored("EASY","yellow")
+                                normal = colored("NORMAL","yellow")
+                                dificil = colored("HARD","yellow")
+                                limpiar_consola()
+                                difsel = input(f"Server Launcher for Minecraft\n-------------------------------------\n\nThe current difficulty is {dificultad}.\n\n(1) Change difficulty to {pacif}\n(2) Change difficulty to {facil}\n(3) Change difficulty to {normal}\n(4) Change difficulty to {dificil}\n(5) Go back\n(6) Return to main menu\n\nSelect one of the options= ")
+                                try:
+                                    if any(char in "0123456789+-*/" for char in difsel):
+                                        if not difsel[0].isalpha():
+                                            difcc = eval(difsel)
+                                        else:
+                                            difcc = difsel
+                                    else:
+                                        difcc = difsel
+                                    difcc = int(difcc)
+                                    if difcc == 1:
+                                        properties["difficulty"] = "0"
+                                        with open('server.properties', 'w') as file:
+                                            for key, value in properties.items():
+                                                file.write(f'{key}={value}\n')
+                                        limpiar_consola()
+                                        print(f"Server Launcher for Minecraft\n-------------------------------------\n\nDifficulty has been set to {pacif}.")
+                                        time.sleep(1.5)
+                                        difconf()
+                                    elif difcc == 2:
+                                        properties["difficulty"] = "1"
+                                        with open('server.properties', 'w') as file:
+                                            for key, value in properties.items():
+                                                file.write(f'{key}={value}\n')
+                                        limpiar_consola()
+                                        print(f"Server Launcher for Minecraft\n-------------------------------------\n\nDifficulty has been set to {facil}.")
+                                        time.sleep(1.5)
+                                        difconf()
+                                    elif difcc == 3:
+                                        properties["difficulty"] = "2"
+                                        with open('server.properties', 'w') as file:
+                                            for key, value in properties.items():
+                                                file.write(f'{key}={value}\n')
+                                        limpiar_consola()
+                                        print(f"Server Launcher for Minecraft\n-------------------------------------\n\nDifficulty has been set to {normal}.")
+                                        time.sleep(1.5)
+                                        difconf()
+                                    elif difcc == 4:
+                                        properties["difficulty"] = "3"
+                                        with open('server.properties', 'w') as file:
+                                            for key, value in properties.items():
+                                                file.write(f'{key}={value}\n')
+                                        limpiar_consola()
+                                        print(f"Server Launcher for Minecraft\n-------------------------------------\n\nDifficulty has been set to {dificil}.")
+                                        time.sleep(1.5)
+                                        difconf()
+                                    elif difcc == 5:
+                                        config()
+                                    elif difcc == 6:
+                                        eng()
+                                    else:
+                                        difconf()
+                                except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                                    difconf()
+                            difconf()
+                        elif confug == 6:
+                            def playct():
+                                global properties
+                                players = colored(properties["max-players"],"cyan")
+                                limpiar_consola()
+                                newpl = input(f"Server Launcher for Minecraft\n-------------------------------------\n\nThe current player limit is a maximum of {players}.\n\n(N) Go back\n(M) Return to main menu\n\nSelect one of the options or enter the new player limit= ").replace(" ", "")
+                                try:
+                                    if newpl.lower() == "n":
+                                        config()
+                                    elif newpl.lower() == "m":
+                                        eng()
+                                    else:
+                                        if any(char in "0123456789+-*/" for char in newpl):
+                                            if not newpl[0].isalpha():
+                                                entero = eval(newpl)
+                                            else:
+                                                entero = newpl
+                                        else:
+                                            entero = newpl
+                                        entero = int(entero)
+                                        if entero <= 0 or entero > 100000:
+                                            limpiar_consola()
+                                            print(f"Server Launcher for Minecraft\n-------------------------------------\n\nEnter a valid number between 1 and 100,000.")
+                                            time.sleep(1.5)
+                                            playct()
+                                        else:
+                                            properties["max-players"] = entero
+                                            with open('server.properties', 'w') as file:
+                                                for key, value in properties.items():
+                                                    file.write(f'{key}={value}\n')
+                                            entero = colored(str(entero),"yellow")
+                                            limpiar_consola()
+                                            print(f"Server Launcher for Minecraft\n-------------------------------------\n\nThe maximum player limit is now {entero}.")
+                                            time.sleep(1.5)
+                                            playct()
+                                except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                                    playct()
+                            playct()
+                        elif confug == 7:
+                            run_server()
+                        elif confug == 8:
+                            eng()
+                        else:
+                            config()
+                    except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                        config()
+                else:
+                    limpiar_consola()
+                    input("Server Launcher for Minecraft\n-------------------------------------\n\nThe server configuration files do not exist yet or are not available.\nYou must start the server properly at least once before you can configure it.\n\nPress ENTER to continue.")
+                    run_server()
             def run_server():
                 global servername
                 global valor
+                global nameserver
                 valor1 = None
                 gbormb = None
                 vjava = None
@@ -333,11 +647,13 @@ def eng():
                     valor1 = colored("MEGABYTES","cyan")
                     vjava = "M"
                     gbormb = colored("GIGABYTES","yellow")
-                nameserver = colored(servername,"green")
+                nameserver = servername
                 limpiar_consola()
                 gbs = 0
-                rammount = input(f'Server Launcher for Minecraft\n-------------------------------------\n\nYou are about to start the Server "{nameserver}"\n\n(C) Use RAM in {gbormb}\n(B) Back\n(N) Return to main menu\n\nSelect one of the options or enter the {valor1} of RAM to assing to the server= ').replace(" ", "")
-                try:    
+                rammount = input(f'Server Launcher for Minecraft\n-------------------------------------\n\nYou are about to start the Server "{nameserver}"\n\n(M) Manage Server\n(C) Use RAM in {gbormb}\n(B) Back\n(N) Return to main menu\n\nSelect one of the options or enter the {valor1} of RAM to assing to the server= ').replace(" ", "")
+                try:
+                    if rammount.lower() == "m":
+                        config()  
                     if rammount.lower() == "c":
                         if valor == "GB":
                             limpiar_consola()
@@ -387,339 +703,23 @@ def eng():
                             hora_cerrado = str(fyh_sistema.strftime("%H:%M:%S"))
                             input("\nPress ENTER to continue.")
                             limpiar_consola()
-                            input(f"Server Launcher for Minecraft\n-------------------------------------\n\nThe server has closed on {fecha_cerrado} at {hora_cerrado}.\n\nYou can check the console log in the 'logs' folder.\n\nPress ENTER to continue.")
+                            input(f"Server Launcher for Minecraft\n-------------------------------------\n\nThe server has closed on {fecha_cerrado} at {hora_cerrado}.\n\nYou can check the console log in the 'logs' folder inside your Server's main folder.\n\nPress ENTER to continue.")
                             ram()
                 except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
                     run_server()
             run_server()
         else:
             limpiar_consola()
-            print("Server Launcher for Minecraft\n-------------------------------------\n\nServer.jar not found in this folder.\n\nAre you sure this is a Server?")
+            print('Server Launcher for Minecraft\n-------------------------------------\n\n"server.jar" not found in this folder.\n\nAre you sure this is a Server?')
             time.sleep(2.5)
             ram()
-
-    # CONFIG
-    def config():
-        limpiar_consola()
-        props = "server.properties"
-        if os.path.exists(props):
-            global properties
-            properties = {}
-            online = "Error"
-            hard = "Error"
-            pvp = "Error"
-            with open('server.properties', 'r') as file:
-                for line in file:
-                    line = line.strip()
-                    if line and not line.startswith('#'):
-                        key, value = line.split('=')
-                        properties[key.strip()] = value.strip()
-            if properties["online-mode"] == "false":
-                online = colored("ENABLE","green")
-            elif properties["online-mode"] == "true":
-                online = colored("DISABLE","red")
-            if properties["hardcore"] == "false":
-                hard = colored("ENABLE","green")
-            elif properties["hardcore"] == "true":
-                hard = colored("DISABLE","red")
-            if properties["pvp"] == "false":
-                pvp = colored("ENABLE","green")
-            elif properties["pvp"] == "true":
-                pvp = colored("DISABLE","red")
-            limpiar_consola()
-            confsel = input(f"Server Launcher for Minecraft\n-------------------------------------\n\nServer configuration\n\n(1) {online} online mode\n(2) {hard} hardcore mode\n(3) {pvp} PvP\n(4) Change gamemode\n(5) Change difficulty\n(6) Change max players limit\n(7) Return to main menu\n\nSelect one of the options= ")
-            if properties["online-mode"] == "false":
-                online = "ENABLE"
-            elif properties["online-mode"] == "true":
-                online = "DISABLE"
-            if properties["hardcore"] == "false":
-                hard = "ENABLE"
-            elif properties["hardcore"] == "true":
-                hard = "DISABLE"
-            if properties["pvp"] == "false":
-                pvp = "ENABLE"
-            elif properties["pvp"] == "true":
-                pvp = "DISABLE"
-            try:
-                if any(char in "0123456789+-*/" for char in confsel):
-                    if not confsel[0].isalpha():
-                        confug = eval(confsel)
-                    else:
-                        confug = confsel
-                else:
-                    confug = confsel
-                confug = int(confug) 
-                if confug == 1:
-                    if online == "ENABLE":
-                        properties["online-mode"] = "true"
-                        with open('server.properties', 'w') as file:
-                            for key, value in properties.items():
-                                file.write(f'{key}={value}\n')
-                        online = colored("ENABLED","green")
-                    elif online == "DISABLE":
-                        properties["online-mode"] = "false"
-                        with open('server.properties', 'w') as file:
-                            for key, value in properties.items():
-                                file.write(f'{key}={value}\n')
-                        online = colored("DISABLED","red")
-                    limpiar_consola()
-                    print(f"Server Launcher for Minecraft\n-------------------------------------\n\nOnline mode has been {online}.")
-                    time.sleep(1.5)
-                    config()
-                elif confug == 2:
-                    if hard == "ENABLE":
-                        properties["hardcore"] = "true"
-                        with open('server.properties', 'w') as file:
-                            for key, value in properties.items():
-                                file.write(f'{key}={value}\n')
-                        hard = colored("ENABLED","green")
-                    elif hard == "DISABLE":
-                        properties["hardcore"] = "false"
-                        with open('server.properties', 'w') as file:
-                            for key, value in properties.items():
-                                file.write(f'{key}={value}\n')
-                        hard = colored("DISABLED","red")
-                    limpiar_consola()
-                    print(f"Server Launcher for Minecraft\n-------------------------------------\n\nHardcore mode has been {hard}.")
-                    time.sleep(1.5)
-                    config()
-                elif confug == 3:
-                    if pvp == "ENABLE":
-                        properties["pvp"] = "true"
-                        with open('server.properties', 'w') as file:
-                            for key, value in properties.items():
-                                file.write(f'{key}={value}\n')
-                        pvp = colored("ENABLED","green")
-                    elif pvp == "DISABLE":
-                        properties["pvp"] = "false"
-                        with open('server.properties', 'w') as file:
-                            for key, value in properties.items():
-                                file.write(f'{key}={value}\n')
-                        pvp = colored("DISABLED","red")
-                    limpiar_consola()
-                    print(f"Server Launcher for Minecraft\n-------------------------------------\n\nPvP has been {pvp}.")
-                    time.sleep(1.5)
-                    config()
-                elif confug == 4:
-                    def juego():
-                        global properties
-                        modo = properties["gamemode"]
-                        forzar = properties["force-gamemode"]
-                        if modo == "survival" or modo == "0":
-                            modo = colored("SURVIVAL","cyan")
-                        elif modo == "creative" or modo == "1":
-                            modo = colored("CREATIVE","cyan")
-                        elif modo == "adventure" or modo == "2":
-                            modo = colored("ADVENTURE","cyan")
-                        elif modo == "spectator" or modo == "3":
-                            modo = colored("SPECTATOR","cyan")
-                        if forzar == "false":
-                            forzar = colored("ENABLE","green")
-                        elif forzar == "true":
-                            forzar = colored("DISABLE","red")
-                        superv = colored("SURVIVAL","yellow")
-                        creat = colored("CREATIVE","yellow")
-                        avent = colored("ADVENTURE","yellow")
-                        espect = colored("SPECTATOR","yellow")
-                        limpiar_consola()
-                        modosel = input(f"Server Launcher for Minecraft\n-------------------------------------\n\nThe current game mode is {modo}.\n\n(1) Change to {superv} gamemode\n(2) Change to {creat} gamemode\n(3) Change to {avent} gamemode\n(4) Change to {espect} gamemode\n(5) {forzar} force gamemode\n(6) Go back\n(7) Return to main menu\n\nSelect one of the options= ")
-                        try:
-                            if any(char in "0123456789+-*/" for char in modosel):
-                                if not modosel[0].isalpha():
-                                    coonf = eval(modosel)
-                                else:
-                                    coonf = modosel
-                            else:
-                                coonf = modosel
-                            coonf = int(coonf)
-                            if coonf == 1:
-                                properties["gamemode"] = "0"
-                                with open('server.properties', 'w') as file:
-                                    for key, value in properties.items():
-                                        file.write(f'{key}={value}\n')
-                                limpiar_consola()
-                                print(f"Server Launcher for Minecraft\n-------------------------------------\n\nGamemode has been set to {superv}.")
-                                time.sleep(1.5)
-                                juego()
-                            elif coonf == 2:
-                                properties["gamemode"] = "1"
-                                with open('server.properties', 'w') as file:
-                                    for key, value in properties.items():
-                                        file.write(f'{key}={value}\n')
-                                limpiar_consola()
-                                print(f"Server Launcher for Minecraft\n-------------------------------------\n\nGamemode has been set to {creat}.")
-                                time.sleep(1.5)
-                                juego()
-                            elif coonf == 3:
-                                properties["gamemode"] = "2"
-                                with open('server.properties', 'w') as file:
-                                    for key, value in properties.items():
-                                        file.write(f'{key}={value}\n')
-                                limpiar_consola()
-                                print(f"Server Launcher for Minecraft\n-------------------------------------\n\nGamemode has been set to {avent}.")
-                                time.sleep(1.5)
-                                juego()
-                            elif coonf == 4:
-                                properties["gamemode"] = "3"
-                                with open('server.properties', 'w') as file:
-                                    for key, value in properties.items():
-                                        file.write(f'{key}={value}\n')
-                                limpiar_consola()
-                                print(f"Server Launcher for Minecraft\n-------------------------------------\n\nGamemode has been set to {espect}.")
-                                time.sleep(1.5)
-                                juego()
-                            elif coonf == 5:
-                                if forzar == "ENABLE":
-                                    properties["force-gamemode"] = "true"
-                                    with open('server.properties', 'w') as file:
-                                        for key, value in properties.items():
-                                            file.write(f'{key}={value}\n')
-                                    forzar = "ENABLED"
-                                elif forzar == "DISABLE":
-                                    properties["force-gamemode"] = "false"
-                                    with open('server.properties', 'w') as file:
-                                        for key, value in properties.items():
-                                            file.write(f'{key}={value}\n')
-                                    forzar = "DISABLED"
-                                limpiar_consola()
-                                print(f"Server Launcher for Minecraft\n-------------------------------------\n\nForce gamemode has been {forzar}.")
-                                time.sleep(1.5)
-                                juego()
-                            elif coonf == 6:
-                                config()
-                            elif coonf == 7:
-                                eng()
-                            else:
-                                juego()
-                        except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
-                            juego()
-                    juego()
-                elif confug == 5:
-                    def difconf():
-                        global properties
-                        dificultad = properties["difficulty"]
-                        if dificultad == "peaceful" or dificultad == "0":
-                            dificultad = colored("PEACEFUL","cyan")
-                        elif dificultad == "easy" or dificultad == "1":
-                            dificultad = colored("EASY","cyan")
-                        elif dificultad == "normal" or dificultad == "2":
-                            dificultad = colored("NORMAL","cyan")
-                        elif dificultad == "hard" or dificultad == "3":
-                            dificultad = colored("HARD","cyan")
-                        pacif = colored("PEACEFUL","yellow")
-                        facil = colored("EASY","yellow")
-                        normal = colored("NORMAL","yellow")
-                        dificil = colored("HARD","yellow")
-                        limpiar_consola()
-                        difsel = input(f"Server Launcher for Minecraft\n-------------------------------------\n\nThe current difficulty is {dificultad}.\n\n(1) Change difficulty to {pacif}\n(2) Change difficulty to {facil}\n(3) Change difficulty to {normal}\n(4) Change difficulty to {dificil}\n(5) Go back\n(6) Return to main menu\n\nSelect one of the options= ")
-                        try:
-                            if any(char in "0123456789+-*/" for char in difsel):
-                                if not difsel[0].isalpha():
-                                    difcc = eval(difsel)
-                                else:
-                                    difcc = difsel
-                            else:
-                                difcc = difsel
-                            difcc = int(difcc)
-                            if difcc == 1:
-                                properties["difficulty"] = "0"
-                                with open('server.properties', 'w') as file:
-                                    for key, value in properties.items():
-                                        file.write(f'{key}={value}\n')
-                                limpiar_consola()
-                                print(f"Server Launcher for Minecraft\n-------------------------------------\n\nDifficulty has been set to {pacif}.")
-                                time.sleep(1.5)
-                                difconf()
-                            elif difcc == 2:
-                                properties["difficulty"] = "1"
-                                with open('server.properties', 'w') as file:
-                                    for key, value in properties.items():
-                                        file.write(f'{key}={value}\n')
-                                limpiar_consola()
-                                print(f"Server Launcher for Minecraft\n-------------------------------------\n\nDifficulty has been set to {facil}.")
-                                time.sleep(1.5)
-                                difconf()
-                            elif difcc == 3:
-                                properties["difficulty"] = "2"
-                                with open('server.properties', 'w') as file:
-                                    for key, value in properties.items():
-                                        file.write(f'{key}={value}\n')
-                                limpiar_consola()
-                                print(f"Server Launcher for Minecraft\n-------------------------------------\n\nDifficulty has been set to {normal}.")
-                                time.sleep(1.5)
-                                difconf()
-                            elif difcc == 4:
-                                properties["difficulty"] = "3"
-                                with open('server.properties', 'w') as file:
-                                    for key, value in properties.items():
-                                        file.write(f'{key}={value}\n')
-                                limpiar_consola()
-                                print(f"Server Launcher for Minecraft\n-------------------------------------\n\nDifficulty has been set to {dificil}.")
-                                time.sleep(1.5)
-                                difconf()
-                            elif difcc == 5:
-                                config()
-                            elif difcc == 6:
-                                eng()
-                            else:
-                                difconf()
-                        except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
-                            difconf()
-                    difconf()
-                elif confug == 6:
-                    def playct():
-                        global properties
-                        players = colored(properties["max-players"],"cyan")
-                        limpiar_consola()
-                        newpl = input(f"Server Launcher for Minecraft\n-------------------------------------\n\nThe current player limit is a maximum of {players}.\n\n(N) Go back\n(M) Return to main menu\n\nSelect one of the options or enter the new player limit= ").replace(" ", "")
-                        try:
-                            if newpl.lower() == "n":
-                                config()
-                            elif newpl.lower() == "m":
-                                eng()
-                            else:
-                                if any(char in "0123456789+-*/" for char in newpl):
-                                    if not newpl[0].isalpha():
-                                        entero = eval(newpl)
-                                    else:
-                                        entero = newpl
-                                else:
-                                    entero = newpl
-                                entero = int(entero)
-                                if entero <= 0 or entero > 100000:
-                                    limpiar_consola()
-                                    print(f"Server Launcher for Minecraft\n-------------------------------------\n\nEnter a valid number between 1 and 100,000.")
-                                    time.sleep(1.5)
-                                    playct()
-                                else:
-                                    properties["max-players"] = entero
-                                    with open('server.properties', 'w') as file:
-                                        for key, value in properties.items():
-                                            file.write(f'{key}={value}\n')
-                                    entero = colored(str(entero),"yellow")
-                                    limpiar_consola()
-                                    print(f"Server Launcher for Minecraft\n-------------------------------------\n\nThe maximum player limit is now {entero}.")
-                                    time.sleep(1.5)
-                                    playct()
-                        except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
-                            playct()
-                    playct()
-                elif confug == 7:
-                    eng()
-                else:
-                    config()
-            except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
-                config()
-        else:
-            limpiar_consola()
-            input("Server Launcher for Minecraft\n-------------------------------------\n\nThe server configuration files do not exist yet or are not available.\nYou must start the server properly at least once before you can configure it.\n\nPress ENTER to continue.")
 
     # INSTALL NEW SERVER
     def installmenu():
         global newserver
         global foldname
         limpiar_consola()
-        inconfirm = input("Server Launcher for Minecraft\n-------------------------------------\n\nFirst, lets select a folder to save your new server.\n\n(1) Select folder for the new Server\n(2) Cancel\n\nSelect one of the options= ")
+        inconfirm = input("Server Launcher for Minecraft\n-------------------------------------\n\nFirst, lets select a folder to save your New Server's files.\n\n(1) Select folder for the new Server\n(2) Cancel\n\nSelect one of the options= ")
         try:
             if any(char in "0123456789+-*/" for char in inconfirm):
                 if not inconfirm[0].isalpha():
@@ -735,6 +735,11 @@ def eng():
                     global foldname
                     newserver = filedialog.askdirectory()
                     foldname = colored(os.path.basename(newserver), "green")
+                    if newserver == "" or foldname == "":
+                        limpiar_consola()
+                        print('Server Launcher for Minecraft\n-------------------------------------\n\nYou must select a folder to save the New Server.')
+                        time.sleep(2.5)
+                        installmenu()
                     os.makedirs(newserver, exist_ok=True)
                     os.chdir(newserver)
                     if newserver and foldname:
@@ -742,7 +747,7 @@ def eng():
                             global newserver
                             global foldname
                             limpiar_consola()
-                            verss = input(f'Server Launcher for Minecraft\n-------------------------------------\n\nYour new server will be saved in "{foldname}"\n\n(L) List of available versions\n(R) Re-select server folder\n(N) Return to the main menu\n\nSelect one of the options or type the Server version to install= ').replace(" ", "")
+                            verss = input(f'Server Launcher for Minecraft\n-------------------------------------\n\nYour New Server will be saved in "{foldname}".\n\n(L) List of available versions\n(R) Re-select a folder for the New server\n(N) Return to main menu\n\nSelect one of the options or type the New Server version to install= ').replace(" ", "")
                             try:
                                 if verss.lower() == "n":
                                     eng()
@@ -754,7 +759,7 @@ def eng():
                                         print("Server Launcher for Minecraft\n-------------------------------------\n\nAvailable versions:\n")
                                         for i, version in enumerate(MCVERSIONS, start=1):
                                             print(f"({i}) {version}")
-                                        listselection = input("\n(B) Back\n(R) Return to main menu")
+                                        listselection = input("\n(B) Back\n(R) Return to main menu\n\nSelect one of the options=")
                                         try:
                                             if listselection.lower() == "b":
                                                 vers_select()
@@ -772,7 +777,7 @@ def eng():
                                         version = verss.lower()
                                         url = MCVERSIONS[version]
                                         limpiar_consola()
-                                        print(f'Server Launcher for Minecraft\n-------------------------------------\n\nThe server is being downloaded.\n\nVersion: {version}\nTarget Folder: "{foldname}"\n\nPlease wait...\n')
+                                        print(f'Server Launcher for Minecraft\n-------------------------------------\n\nYour New Server is being downloaded.\n\nVersion: {version}\nTarget Folder: "{foldname}"\n\nPlease wait...\n')
                                         time.sleep(0.5)
                                         os.makedirs(newserver, exist_ok=True)
                                         os.chdir(newserver)
@@ -801,7 +806,9 @@ def eng():
                                         except Exception:
                                             def erragain():
                                                 limpiar_consola()
-                                                errtry = input("Server Launcher for Minecraft\n-------------------------------------\n\nAn error occurred while downloading the server.\nTry again?\n\n(1) Yes\n(2) No\n\nSelect one of the options= ")
+                                                yup = colored("Yes","green")
+                                                nop = colored("No","red")
+                                                errtry = input(f"Server Launcher for Minecraft\n-------------------------------------\n\nAn error occurred while downloading the server.\nTry again?\n\n(1) {yup}\n(2) {nop}\n\nSelect one of the options= ")
                                                 try:
                                                     if any(char in "0123456789+-*/" for char in errtry):
                                                         if not errtry[0].isalpha():
@@ -837,7 +844,7 @@ def eng():
     # LICENSE AND EXTRAS
     def about():
         limpiar_consola()
-        copyr = input("Server Launcher for Minecraft\n-------------------------------------\n\nMIT License - Copyright (c) 2024 NGDPL Nk\n\nHelpers:\n@naicoooossj\n@LegalizeNuclearBombs\n\n-------------------------------------\n\n(1) View the repository in the browser\n(2) View the license in the browser\n(3) View text formatting for MOTD in the browser\n(4) Return to main menu\n\nSelect one of the options= ")
+        copyr = input("Server Launcher for Minecraft\n-------------------------------------\n\nMIT License - Copyright (c) 2024 NGDPL Nk\n\nSSTools4MC v24.03.24\n\nHelpers:\n@naicoooossj\n@LegalizeNuclearBombs\n\n-------------------------------------\n\n(1) View repository in the browser\n(2) View license in the browser\n(3) Return to main menu\n\nSelect one of the options= ")
         try:
             if any(char in "0123456789+-*/" for char in copyr):
                 if not copyr[0].isalpha():
@@ -853,22 +860,15 @@ def eng():
                 input(f"Server Launcher for Minecraft\n-------------------------------------\n\nThe repository will open in your browser.\n\n{url}\n\nPress ENTER to continue.")
                 url = "https://github.com/NGDPLNk/SSTools4MC"
                 webbrowser.open(url)
+                about()
             elif selec == 2:
                 url = colored("https://github.com/NGDPLNk/SSTools4MC/blob/main/LICENSE","cyan")
                 limpiar_consola()
-                input(f"Server Launcher for Minecraft\n-------------------------------------\n\nThe tool's license will open in your browser.\n\n{url}\n\nPress ENTER to continue.")
+                input(f"Server Launcher for Minecraft\n-------------------------------------\n\nThe license will open in your browser.\n\n{url}\n\nPress ENTER to continue.")
                 url = "https://github.com/NGDPLNk/SSTools4MC/blob/main/LICENSE"
                 webbrowser.open(url)
+                about()
             elif selec == 3:
-                url = colored("https://minecraft.tools/en/motd.php","cyan")
-                url2 = colored("https://www.digminecraft.com/lists/color_list_pc.php","cyan")
-                limpiar_consola()
-                input(f"Server Launcher for Minecraft\n-------------------------------------\n\nTwo pages will open in your browser to view text formatting for MOTD.\n\n{url}\n\n{url2}\n\nPress ENTER to continue.")
-                url = "https://minecraft.tools/en/motd.php"
-                webbrowser.open(url)
-                url2 = "https://www.digminecraft.com/lists/color_list_pc.php"
-                webbrowser.open(url2)
-            elif selec == 4:
                 eng()
             else:
                 about()
@@ -885,7 +885,7 @@ def eng():
     # MAIN MENU
     def menu():
         limpiar_consola()
-        seleccion = input("Server Launcher for Minecraft\n-------------------------------------\n\nHi! You are in the main menu.\n\n(1) Start server\n(2) Manage server\n(3) Install New Server\n(4) Extras\n(5) Change Language\n(6) Exit\n\nSelect one of the options= ")
+        seleccion = input("Server Launcher for Minecraft\n-------------------------------------\n\nHi! You are in the main menu.\n\n(1) Start a Server\n(2) Install a New Server\n(3) Extras\n(4) Change Language\n(5) Exit\n\nSelect one of the options= ")
         try:
             if any(char in "0123456789+-*/" for char in seleccion):
                 if not seleccion[0].isalpha():
@@ -898,14 +898,12 @@ def eng():
             if sel == 1:
                 ram()
             elif sel == 2:
-                config()
-            elif sel == 3:
                 installmenu()
-            elif sel == 4:
+            elif sel == 3:
                 about()
-            elif sel == 5:
+            elif sel == 4:
                 esp()
-            elif sel == 6:
+            elif sel == 5:
                 exiit()
             menu()
         except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
@@ -915,403 +913,724 @@ def eng():
 
 # ESPAÑOL
 def esp():
-    # CAMBIAR TÍTULO DE VENTANA
+    # CHANGE WINDOW TITLE
     window_title("Lanzador de Servidores para Minecraft")
 
-    # INICIO DEL SERVIDOR
+    # SERVER STARTUP
     def ram():
-        global valor
-        valor1 = None
-        gbormb = None
-        vjava = None
-        if valor == None:
-            valor = "GB"
-            valor1 = colored("GIGABYTES","cyan")
-            vjava = "G"
-            gbormb = colored("MEGABYTES","yellow")
-        if valor == "GB":
-            valor1 = colored("GIGABYTES","cyan")
-            vjava = "G"
-            gbormb = colored("MEGABYTES","yellow")
-        elif valor == "MB":
-            valor1 = colored("MEGABYTES","cyan")
-            vjava = "M"
-            gbormb = colored("GIGABYTES","yellow")
+        global servername
         limpiar_consola()
-        gbs = 0
-        rammount = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\n(C) Usar RAM en {gbormb}\n(N) Volver al menú principal\n\nSelecciona una de las opciones o ingresa los {valor1} de RAM para asignar al servidor= ").replace(" ", "")
-        try:    
-            if rammount.lower() == "c":
-                if valor == "GB":
-                    limpiar_consola()
-                    print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nAhora la RAM está en {gbormb}.")
-                    time.sleep(1.5)
-                    valor = "MB"
-                    ram()
-                elif valor == "MB":
-                    limpiar_consola()
-                    print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nAhora la RAM está en {gbormb}.")
-                    time.sleep(1.5)
-                    valor = "GB"
-                    ram()
-            elif rammount.lower() == "n":
-                return
-            else:
-                if any(char in "0123456789+-*/" for char in rammount):
-                    if not rammount[0].isalpha():
-                        gbs = eval(rammount)
-                    else:
-                        gbs = rammount
-                else:
-                    gbs = rammount
-                gbs = int(gbs)
-                if valor == "GB" and (gbs <= 0 or gbs > 75):
-                    limpiar_consola()
-                    print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nIngresa una cantidad válida entre 1 y 75 Gigabytes.")
-                    time.sleep(1.5)
-                    ram()
-                elif valor == "MB" and (gbs <= 511 or gbs > 76800):
-                    limpiar_consola()
-                    print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nIngresa una cantidad válida entre 512 y 76,800 Megabytes.")
-                    time.sleep(1.5)
-                    ram()
-                else:
-                    eula = "eula.txt"
-                    with open(eula, "w") as reemplazo:
-                        reemplazo.write("eula=true")
-                    limpiar_consola()
-                    print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nIniciando el servidor con {gbs}{valor} de RAM.\n")
-                    comando_java = f"java -Xmx{gbs}{vjava} -Xms{gbs}{vjava} -jar server.jar nogui"
-                    subprocess.run(comando_java, shell=True)
-                    fyh_sistema = datetime.datetime.now()
-                    fecha_cerrado = str(fyh_sistema.strftime("%d/%m/%Y"))
-                    hora_cerrado = str(fyh_sistema.strftime("%H:%M:%S"))
-                    input("\nPresiona ENTER para continuar.")
-                    limpiar_consola()
-                    input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl servidor se ha cerrado el {fecha_cerrado} a las {hora_cerrado}.\n\nPuedes revisar el registro de la consola en la carpeta 'logs'\n\nPresiona ENTER para continuar.")
-        except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
-            ram()
-
-    # CONFIG
-    def config():
-        limpiar_consola()
-        props = "server.properties"
-        if os.path.exists(props):
-            global properties
-            properties = {}
-            online = "Error"
-            hard = "Error"
-            pvp = "Error"
-            with open('server.properties', 'r') as file:
+        sservers = {}
+        if os.path.exists(SAVED_SERVERS):
+            with open(SAVED_SERVERS, 'r') as file:
                 for line in file:
                     line = line.strip()
                     if line and not line.startswith('#'):
-                        key, value = line.split('=')
-                        properties[key.strip()] = value.strip()
-            if properties["online-mode"] == "false":
-                online = colored("ACTIVAR","green")
-            elif properties["online-mode"] == "true":
-                online = colored("DESACTIVAR","red")
-            if properties["hardcore"] == "false":
-                hard = colored("ACTIVAR","green")
-            elif properties["hardcore"] == "true":
-                hard = colored("DESACTIVAR","red")
-            if properties["pvp"] == "false":
-                pvp = colored("ACTIVAR","green")
-            elif properties["pvp"] == "true":
-                pvp = colored("DESACTIVAR","red")
-            limpiar_consola()
-            confsel = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nConfiguración del servidor\n\n(1) {online} el modo online\n(2) {hard} el modo hardcore\n(3) {pvp} el PvP\n(4) Cambiar el modo de juego\n(5) Cambiar la dificultad\n(6) Cambiar el límite de jugadores\n(7) Volver al menú principal\n\nSelecciona una de las opciones= ")
-            if properties["online-mode"] == "false":
-                online = "ACTIVAR"
-            elif properties["online-mode"] == "true":
-                online = "DESACTIVAR"
-            if properties["hardcore"] == "false":
-                hard = "ACTIVAR"
-            elif properties["hardcore"] == "true":
-                hard = "DESACTIVAR"
-            if properties["pvp"] == "false":
-                pvp = "ACTIVAR"
-            elif properties["pvp"] == "true":
-                pvp = "DESACTIVAR"
-            try:
-                if any(char in "0123456789+-*/" for char in confsel):
-                    if not confsel[0].isalpha():
-                        confug = eval(confsel)
-                    else:
-                        confug = confsel
-                else:
-                    confug = confsel
-                confug = int(confug)
-                if confug == 1:
-                    if online == "ACTIVAR":
-                        properties["online-mode"] = "true"
-                        with open('server.properties', 'w') as file:
-                            for key, value in properties.items():
-                                file.write(f'{key}={value}\n')
-                        online = colored("ACTIVADO","green")
-                    elif online == "DESACTIVAR":
-                        properties["online-mode"] = "false"
-                        with open('server.properties', 'w') as file:
-                            for key, value in properties.items():
-                                file.write(f'{key}={value}\n')
-                        online = colored("DESACTIVADO","red")
-                    limpiar_consola()
-                    print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl modo online se ha {online}.")
-                    time.sleep(1.5)
-                    config()
-                elif confug == 2:
-                    if hard == "ACTIVAR":
-                        properties["hardcore"] = "true"
-                        with open('server.properties', 'w') as file:
-                            for key, value in properties.items():
-                                file.write(f'{key}={value}\n')
-                        hard = colored("ACTIVADO","green")
-                    elif hard == "DESACTIVAR":
-                        properties["hardcore"] = "false"
-                        with open('server.properties', 'w') as file:
-                            for key, value in properties.items():
-                                file.write(f'{key}={value}\n')
-                        hard = colored("DESACTIVADO","red")
-                    limpiar_consola()
-                    print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl modo hardcore se ha {hard}.")
-                    time.sleep(1.5)
-                    config()
-                elif confug == 3:
-                    if pvp == "ACTIVAR":
-                        properties["pvp"] = "true"
-                        with open('server.properties', 'w') as file:
-                            for key, value in properties.items():
-                                file.write(f'{key}={value}\n')
-                        pvp = colored("ACTIVADO","green")
-                    elif pvp == "DESACTIVAR":
-                        properties["pvp"] = "false"
-                        with open('server.properties', 'w') as file:
-                            for key, value in properties.items():
-                                file.write(f'{key}={value}\n')
-                        pvp = colored("DESACTIVADO","red")
-                    limpiar_consola()
-                    print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl PvP se ha {pvp}.")
-                    time.sleep(1.5)
-                    config()
-                elif confug == 4:
-                    def juego():
-                        global properties
-                        modo = properties["gamemode"]
-                        forzar = properties["force-gamemode"]
-                        if modo == "survival" or modo == "0":
-                            modo = colored("SUPERVIVENCIA","cyan")
-                        elif modo == "creative" or modo == "1":
-                            modo = colored("CREATIVO","cyan")
-                        elif modo == "adventure" or modo == "2":
-                            modo = colored("AVENTURA","cyan")
-                        elif modo == "spectator" or modo == "3":
-                            modo = colored("ESPECTADOR","cyan")
-                        if forzar == "false":
-                            forzar = colored("ACTIVAR","green")
-                        elif forzar == "true":
-                            forzar = colored("DESACTIVAR","red")
-                        superv = colored("SUPERVIVENCIA","yellow")
-                        creat = colored("CREATIVO","yellow")
-                        avent = colored("AVENTURA","yellow")
-                        espect = colored("ESPECTADOR","yellow")
+                        key, value = line.split('<[=]>')
+                        sservers[key.strip()] = value.strip()
+            if sservers:
+                limpiar_consola()
+                print('Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLista "Tus Servidores"\n')
+                server_keys = list(sservers.keys())
+                for i, key in enumerate(server_keys, start=1):
+                    print(f"({i}) {key}")
+                nserv = colored("Añadir","cyan")
+                delserv = colored("Eliminar","red")
+                clearlist = colored("Limpiar","magenta")
+                print(f"\n(N) {nserv} Server\n(D) {delserv} un Server de la Lista\n(C) {clearlist} Lista\n(R) Volver al menú principal")
+                servsel = input("\nElige una de las opciones o escribe el número del Server que iniciarás= ").replace(" ", "")
+                try:
+                    if servsel.lower() == "n":
+                        newserv = filedialog.askdirectory()
+                        servname = os.path.basename(newserv)
+                        if newserv == "" or servname == "":
+                            limpiar_consola()
+                            print('Lanzador de Servidores para Minecraft\n-------------------------------------\n\nDebes elegir una carpeta para guardarla en la Lista "Tus Servidores".')
+                            time.sleep(2.5)
+                            ram()
+                        if newserv and servname:
+                            servname = colored(os.path.basename(newserv), "yellow")
+                            servstring = f"{servname}<[=]>{newserv}\n"
+                            os.makedirs(CONFIG_PATH, exist_ok=True)
+                            with open(SAVED_SERVERS, 'r+') as file:
+                                lines = file.readlines()
+                                if servstring not in lines:
+                                    file.write(servstring)
                         limpiar_consola()
-                        modosel = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl modo de juego actual es {modo}.\n\n(1) Cambiar a modo {superv}\n(2) Cambiar a modo {creat}\n(3) Cambiar a modo {avent}\n(4) Cambiar a modo {espect}\n(5) {forzar} forzar el modo de juego\n(6) Volver atrás\n(7) Volver al menú principal\n\nSelecciona una de las opciones= ")
-                        try:
-                            if any(char in "0123456789+-*/" for char in modosel):
-                                if not modosel[0].isalpha():
-                                    coonf = eval(modosel)
+                        print(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl Server "{servname}" ha sido guardado.')
+                        time.sleep(1.5)
+                        ram()
+                    elif servsel.lower() == "d":
+                        def servdel():
+                            limpiar_consola()
+                            print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nSelecciona el Server que eliminarás de la lista.\n")
+                            for i, key in enumerate(server_keys, start=1):
+                                print(f"({i}) {key}")
+                            print("\n(N) Cancelar\n(R) Volver al menú principal")
+                            servsel = input("\nSelecciona una de las opciones o ingresa el número del Server que eliminarás de la lista= ").replace(" ", "")
+                            try:
+                                if servsel.lower() == "r":
+                                    esp()
+                                elif servsel.lower() == "n":
+                                    ram()
                                 else:
-                                    coonf = modosel
-                            else:
-                                coonf = modosel
-                            coonf = int(coonf)
-                            if coonf == 1:
-                                properties["gamemode"] = "0"
-                                with open('server.properties', 'w') as file:
-                                    for key, value in properties.items():
-                                        file.write(f'{key}={value}\n')
-                                limpiar_consola()
-                                print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl modo de juego ahora es {superv}.")
-                                time.sleep(1.5)
-                                juego()
-                            elif coonf == 2:
-                                properties["gamemode"] = "1"
-                                with open('server.properties', 'w') as file:
-                                    for key, value in properties.items():
-                                        file.write(f'{key}={value}\n')
-                                limpiar_consola()
-                                print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl modo de juego ahora es {creat}.")
-                                time.sleep(1.5)
-                                juego()
-                            elif coonf == 3:
-                                properties["gamemode"] = "2"
-                                with open('server.properties', 'w') as file:
-                                    for key, value in properties.items():
-                                        file.write(f'{key}={value}\n')
-                                limpiar_consola()
-                                print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl modo de juego ahora es {avent}.")
-                                time.sleep(1.5)
-                                juego()
-                            elif coonf == 4:
-                                properties["gamemode"] = "3"
-                                with open('server.properties', 'w') as file:
-                                    for key, value in properties.items():
-                                        file.write(f'{key}={value}\n')
-                                limpiar_consola()
-                                print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl modo de juego ahora es {espect}.")
-                                time.sleep(1.5)
-                                juego()
-                            elif coonf == 5:
-                                if forzar == "ACTIVAR":
-                                    properties["force-gamemode"] = "true"
-                                    with open('server.properties', 'w') as file:
-                                        for key, value in properties.items():
-                                            file.write(f'{key}={value}\n')
-                                    forzar = "ACTIVADO"
-                                elif forzar == "DESACTIVAR":
-                                    properties["force-gamemode"] = "false"
-                                    with open('server.properties', 'w') as file:
-                                        for key, value in properties.items():
-                                            file.write(f'{key}={value}\n')
-                                    forzar = "DESACTIVADO"
-                                limpiar_consola()
-                                print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nForzar el modo de juego se ha {forzar}.")
-                                time.sleep(1.5)
-                                juego()
-                            elif coonf == 6:
-                                config()
-                            elif coonf == 7:
-                                return
-                            else:
-                                juego()
-                        except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
-                            juego()
-                    juego()
-                elif confug == 5:
-                    def difconf():
-                        global properties
-                        dificultad = properties["difficulty"]
-                        if dificultad == "peaceful" or dificultad == "0":
-                            dificultad = colored("PACÍFICO","cyan")
-                        elif dificultad == "easy" or dificultad == "1":
-                            dificultad = colored("FÁCIL","cyan")
-                        elif dificultad == "normal" or dificultad == "2":
-                            dificultad = colored("NORMAL","cyan")
-                        elif dificultad == "hard" or dificultad == "3":
-                            dificultad = colored("DIFÍCIL","cyan")
-                        pacif = colored("PACÍFICO","yellow")
-                        facil = colored("FÁCIL","yellow")
-                        normal = colored("NORMAL","yellow")
-                        dificil = colored("DIFÍCIL","yellow")
-                        limpiar_consola()
-                        difsel = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLa dificultad actual es {dificultad}.\n\n(1) Cambiar a dificultad {pacif}\n(2) Cambiar a dificultad {facil}\n(3) Cambiar a dificultad {normal}\n(4) Cambiar a dificultad {dificil}\n(5) Volver atrás\n(6) Volver al menú principal\n\nSelecciona una de las opciones= ")
-                        try:
-                            if any(char in "0123456789+-*/" for char in difsel):
-                                if not difsel[0].isalpha():
-                                    difcc = eval(difsel)
-                                else:
-                                    difcc = difsel
-                            else:
-                                difcc = difsel
-                            difcc = int(difcc)
-                            if difcc == 1:
-                                properties["difficulty"] = "0"
-                                with open('server.properties', 'w') as file:
-                                    for key, value in properties.items():
-                                        file.write(f'{key}={value}\n')
-                                limpiar_consola()
-                                print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLa dificultad ahora es {pacif}.")
-                                time.sleep(1.5)
-                                difconf()
-                            elif difcc == 2:
-                                properties["difficulty"] = "1"
-                                with open('server.properties', 'w') as file:
-                                    for key, value in properties.items():
-                                        file.write(f'{key}={value}\n')
-                                limpiar_consola()
-                                print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLa dificultad ahora es {facil}.")
-                                time.sleep(1.5)
-                                difconf()
-                            elif difcc == 3:
-                                properties["difficulty"] = "2"
-                                with open('server.properties', 'w') as file:
-                                    for key, value in properties.items():
-                                        file.write(f'{key}={value}\n')
-                                limpiar_consola()
-                                print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLa dificultad ahora es {normal}.")
-                                time.sleep(1.5)
-                                difconf()
-                            elif difcc == 4:
-                                properties["difficulty"] = "3"
-                                with open('server.properties', 'w') as file:
-                                    for key, value in properties.items():
-                                        file.write(f'{key}={value}\n')
-                                limpiar_consola()
-                                print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLa dificultad ahora es {dificil}.")
-                                time.sleep(1.5)
-                                difconf()
-                            elif difcc == 5:
-                                config()
-                            elif difcc == 6:
-                                return
-                            else:
-                                difconf()
-                        except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
-                            difconf()
-                    difconf()
-                elif confug == 6:
-                    def playct():
-                        global properties
-                        players = colored(properties["max-players"],"cyan")
-                        limpiar_consola()
-                        newpl = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl límite actual de jugadores es de máximo {players}.\n\n(N) Volver atrás\n(M) Volver al menú principal\n\nSelecciona una de las opciones o escribe el nuevo límite de jugadores= ").replace(" ", "")
-                        try:
-                            if newpl.lower() == "n":
-                                config()
-                            elif newpl.lower() == "m":
-                                return
-                            else:
-                                if any(char in "0123456789+-*/" for char in newpl):
-                                    if not newpl[0].isalpha():
-                                        entero = eval(newpl)
+                                    if any(char in "0123456789+-*/" for char in servsel):
+                                        if not servsel[0].isalpha():
+                                            servv = eval(servsel)
+                                        else:
+                                            servv = servsel
                                     else:
-                                        entero = newpl
-                                else:
-                                    entero = newpl
-                                entero = int(entero)
-                                if entero <= 0 or entero > 100000:
+                                        servv = servsel
+                                    servsel = int(servv)
+                                    if 1 <= servsel <= len(server_keys):
+                                        servsel = server_keys[servsel - 1]
+                                        servpath = sservers[servsel]
+                                        servsel = colored(servsel, "yellow")
+                                        servestring = f"{servsel}<[=]>{servpath}\n"
+                                    os.makedirs(CONFIG_PATH, exist_ok=True)
+                                    with open(SAVED_SERVERS, 'r') as file:
+                                        lines = file.readlines()
+                                        os.makedirs(CONFIG_PATH, exist_ok=True)
+                                        with open(SAVED_SERVERS, 'w') as file:
+                                            for line in lines:
+                                                if line != servestring:
+                                                    file.write(line)
                                     limpiar_consola()
-                                    print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nIngresa un número válido entre 1 y 100,000.")
+                                    print(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl Server "{servsel}" ha sido eliminado de la lista.')
                                     time.sleep(1.5)
-                                    playct()
+                                    ram()             
+                            except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                                servdel()
+                        servdel()
+                    elif servsel.lower() == "c":
+                        def lisclear():
+                            limpiar_consola()
+                            yess = colored("Sí","green")
+                            noo = colored("No","red")
+                            clearconfirm = input(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEstás seguro de que quieres limpiar la Lista "Tus Servidores"?\n\n(1) {yess}\n(2) {noo}\n\nElige una de las opciones= ')
+                            try:
+                                if any(char in "0123456789+-*/" for char in clearconfirm):
+                                    if not clearconfirm[0].isalpha():
+                                        clearconf = eval(clearconfirm)
+                                    else:
+                                        clearconf = clearconfirm
                                 else:
-                                    properties["max-players"] = entero
-                                    with open('server.properties', 'w') as file:
-                                        for key, value in properties.items():
-                                            file.write(f'{key}={value}\n')
-                                    entero = colored(str(entero),"yellow")
+                                    clearconf = clearconfirm
+                                clearconf = int(clearconf)
+                                if clearconf == 1:
+                                    os.makedirs(CONFIG_PATH, exist_ok=True)
+                                    with open(SAVED_SERVERS, 'w') as file:
+                                        file.write("# Lanzador de Servidores para Minecraft\n# Servers guardados\n")
                                     limpiar_consola()
-                                    print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl límite máximo de jugadores ahora es {entero}.")
+                                    print('Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLa Lista "Tus Servidores" ha sido limpiada.')
                                     time.sleep(1.5)
+                                    ram()
+                                elif clearconf == 2:
+                                    ram()
+                            except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                                lisclear()
+                        lisclear()
+                    elif servsel.lower() == "r":
+                        esp()
+                    else:
+                        if any(char in "0123456789+-*/" for char in servsel):
+                            if not servsel[0].isalpha():
+                                servv = eval(servsel)
+                            else:
+                                servv = servsel
+                        else:
+                            servv = servsel
+                        servsel = int(servv)
+                        if 1 <= servsel <= len(server_keys):
+                            servsel = server_keys[servsel - 1]
+                            servpath = sservers[servsel]
+                            os.makedirs(servpath, exist_ok=True)
+                            os.chdir(servpath)
+                            servername = servsel
+                except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                    ram()
+            else:
+                os.makedirs(CONFIG_PATH, exist_ok=True)
+                with open(SAVED_SERVERS, 'w') as file:
+                    file.write("# Lanzador de Servidores para Minecraft\n# Servidores Guardados\n")
+                limpiar_consola()
+                adds = colored("Añadir un Server","cyan")
+                saveconfirm = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nNo tienes ningún Server guardado.\n\n(1) {adds}\n(2) Volver al menú principal\n\nElige una de las opciones= ")
+                try:
+                    if any(char in "0123456789+-*/" for char in saveconfirm):
+                        if not saveconfirm[0].isalpha():
+                            saveconf = eval(saveconfirm)
+                        else:
+                            saveconf = saveconfirm
+                    else:
+                        saveconf = saveconfirm
+                    saveconf = int(saveconf)
+                    if saveconf == 1:
+                        newserv = filedialog.askdirectory()
+                        servname = os.path.basename(newserv)
+                        if newserv == "" or servname == "":
+                            limpiar_consola()
+                            print('Lanzador de Servidores para Minecraft\n-------------------------------------\n\nDebes elegir una carpeta para guardarla en la Lista "Tus Servidores".')
+                            time.sleep(2.5)
+                            ram()
+                        if newserv and servname:
+                            servname = colored(os.path.basename(newserv), "yellow")
+                            servstring = f"{servname}<[=]>{newserv}\n"
+                            os.makedirs(CONFIG_PATH, exist_ok=True)
+                            with open(SAVED_SERVERS, 'r+') as file:
+                                lines = file.readlines()
+                                if servstring not in lines:
+                                    file.write(servstring)
+                        limpiar_consola()
+                        print(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl Server "{servname}" ha sido guardado.')
+                        time.sleep(1.5)
+                        ram()
+                    elif saveconf == 2:
+                        esp()
+                    else:
+                        ram()
+                except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                    ram()
+        else:
+            os.makedirs(CONFIG_PATH, exist_ok=True)
+            with open(SAVED_SERVERS, 'w') as file:
+                file.write("# Lanzador de Servidores para Minecraft\n# Servers Guardados\n")
+            limpiar_consola()
+            input('Lanzador de Servidores para Minecraft\n-------------------------------------\n\nNo tienes ningún Server guardado.\n\nPresiona ENTER para seleccionar una carpeta con tu Server y guardarlo en la Lista "Tus Servidores".')
+            newserv = filedialog.askdirectory()
+            servname = os.path.basename(newserv)
+            if newserv == "" or servname == "":
+                limpiar_consola()
+                print('Lanzador de Servidores para Minecraft\n-------------------------------------\n\nDebes elegir una carpeta para guardarla en la Lista "Tus Servidores".')
+                time.sleep(2.5)
+                ram()
+            if newserv and servname:
+                servname = colored(os.path.basename(newserv), "yellow")
+                servstring = f"{servname}<[=]>{newserv}\n"
+                with open(SAVED_SERVERS, 'r+') as file:
+                    lines = file.readlines()
+                    if servstring not in lines:
+                        file.write(servstring)
+            limpiar_consola()
+            print(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl Server "{servname}" ha sido guardado.')
+            time.sleep(1.5)
+            ram()
+        if os.path.exists("server.jar"):
+            # CONFIG
+            def config():
+                global nameserver
+                limpiar_consola()
+                props = "server.properties"
+                if os.path.exists(props):
+                    global properties
+                    properties = {}
+                    online = "Error"
+                    hard = "Error"
+                    pvp = "Error"
+                    with open('server.properties', 'r') as file:
+                        for line in file:
+                            line = line.strip()
+                            if line and not line.startswith('#'):
+                                key, value = line.split('=')
+                                properties[key.strip()] = value.strip()
+                    if properties["online-mode"] == "false":
+                        online = colored("ACTIVAR","green")
+                    elif properties["online-mode"] == "true":
+                        online = colored("DESACTIVAR","red")
+                    if properties["hardcore"] == "false":
+                        hard = colored("ACTIVAR","green")
+                    elif properties["hardcore"] == "true":
+                        hard = colored("DESACTIVAR","red")
+                    if properties["pvp"] == "false":
+                        pvp = colored("ACTIVAR","green")
+                    elif properties["pvp"] == "true":
+                        pvp = colored("DESACTIVAR","red")
+                    limpiar_consola()
+                    confsel = input(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nConfiguremos "{nameserver}"!\n\n(1) {online} modo online\n(2) {hard} modo extremo\n(3) {pvp} PvP\n(4) Cambiar modo de juego\n(5) Cambiar dificultad\n(6) Cambiar el límite de jugadores\n(7) Atrás\n(8) Volver al menú principal\n\nElige una de las opciones= ')
+                    if properties["online-mode"] == "false":
+                        online = "ENABLE"
+                    elif properties["online-mode"] == "true":
+                        online = "DISABLE"
+                    if properties["hardcore"] == "false":
+                        hard = "ENABLE"
+                    elif properties["hardcore"] == "true":
+                        hard = "DISABLE"
+                    if properties["pvp"] == "false":
+                        pvp = "ENABLE"
+                    elif properties["pvp"] == "true":
+                        pvp = "DISABLE"
+                    try:
+                        if any(char in "0123456789+-*/" for char in confsel):
+                            if not confsel[0].isalpha():
+                                confug = eval(confsel)
+                            else:
+                                confug = confsel
+                        else:
+                            confug = confsel
+                        confug = int(confug) 
+                        if confug == 1:
+                            if online == "ENABLE":
+                                properties["online-mode"] = "true"
+                                with open('server.properties', 'w') as file:
+                                    for key, value in properties.items():
+                                        file.write(f'{key}={value}\n')
+                                online = colored("ACTIVADO","green")
+                            elif online == "DISABLE":
+                                properties["online-mode"] = "false"
+                                with open('server.properties', 'w') as file:
+                                    for key, value in properties.items():
+                                        file.write(f'{key}={value}\n')
+                                online = colored("DESACTIVADO","red")
+                            limpiar_consola()
+                            print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl modo online se ha {online}.")
+                            time.sleep(1.5)
+                            config()
+                        elif confug == 2:
+                            if hard == "ENABLE":
+                                properties["hardcore"] = "true"
+                                with open('server.properties', 'w') as file:
+                                    for key, value in properties.items():
+                                        file.write(f'{key}={value}\n')
+                                hard = colored("ACTIVADO","green")
+                            elif hard == "DISABLE":
+                                properties["hardcore"] = "false"
+                                with open('server.properties', 'w') as file:
+                                    for key, value in properties.items():
+                                        file.write(f'{key}={value}\n')
+                                hard = colored("DESACTIVADO","red")
+                            limpiar_consola()
+                            print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl modo extremo se ha {hard}.")
+                            time.sleep(1.5)
+                            config()
+                        elif confug == 3:
+                            if pvp == "ENABLE":
+                                properties["pvp"] = "true"
+                                with open('server.properties', 'w') as file:
+                                    for key, value in properties.items():
+                                        file.write(f'{key}={value}\n')
+                                pvp = colored("ACTIVADO","green")
+                            elif pvp == "DISABLE":
+                                properties["pvp"] = "false"
+                                with open('server.properties', 'w') as file:
+                                    for key, value in properties.items():
+                                        file.write(f'{key}={value}\n')
+                                pvp = colored("DESACTIVADO","red")
+                            limpiar_consola()
+                            print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl PvP se ha {pvp}.")
+                            time.sleep(1.5)
+                            config()
+                        elif confug == 4:
+                            def juego():
+                                global properties
+                                modo = properties["gamemode"]
+                                if modo == "survival" or modo == "0":
+                                    modo = colored("SUPERVIVENCIA","cyan")
+                                elif modo == "creative" or modo == "1":
+                                    modo = colored("CREATIVO","cyan")
+                                elif modo == "adventure" or modo == "2":
+                                    modo = colored("AVENTURA","cyan")
+                                elif modo == "spectator" or modo == "3":
+                                    modo = colored("ESPECTADOR","cyan")
+                                superv = colored("SUPERVIVENCIA","yellow")
+                                creat = colored("CREATIVO","yellow")
+                                avent = colored("AVENTURA","yellow")
+                                espect = colored("ESPECTADOR","yellow")
+                                limpiar_consola()
+                                modosel = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl modo de juego actual es {modo}.\n\n(1) Cambiar a modo {superv}\n(2) Cambiar a modo {creat}\n(3) Cambiar a modo {avent}\n(4) Cambiar a modo {espect}\n(5) Atrás\n(6) Volver al menú principal\n\nElige una de las opciones= ")
+                                try:
+                                    if any(char in "0123456789+-*/" for char in modosel):
+                                        if not modosel[0].isalpha():
+                                            coonf = eval(modosel)
+                                        else:
+                                            coonf = modosel
+                                    else:
+                                        coonf = modosel
+                                    coonf = int(coonf)
+                                    if coonf == 1:
+                                        properties["gamemode"] = "0"
+                                        with open('server.properties', 'w') as file:
+                                            for key, value in properties.items():
+                                                file.write(f'{key}={value}\n')
+                                        limpiar_consola()
+                                        print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl modo de juego se ha cambiado a {superv}.")
+                                        time.sleep(1.5)
+                                        juego()
+                                    elif coonf == 2:
+                                        properties["gamemode"] = "1"
+                                        with open('server.properties', 'w') as file:
+                                            for key, value in properties.items():
+                                                file.write(f'{key}={value}\n')
+                                        limpiar_consola()
+                                        print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl modo de juego se ha cambiado a {creat}.")
+                                        time.sleep(1.5)
+                                        juego()
+                                    elif coonf == 3:
+                                        properties["gamemode"] = "2"
+                                        with open('server.properties', 'w') as file:
+                                            for key, value in properties.items():
+                                                file.write(f'{key}={value}\n')
+                                        limpiar_consola()
+                                        print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl modo de juego se ha cambiado a {avent}.")
+                                        time.sleep(1.5)
+                                        juego()
+                                    elif coonf == 4:
+                                        properties["gamemode"] = "3"
+                                        with open('server.properties', 'w') as file:
+                                            for key, value in properties.items():
+                                                file.write(f'{key}={value}\n')
+                                        limpiar_consola()
+                                        print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl modo de juego se ha cambiado a {espect}.")
+                                        time.sleep(1.5)
+                                        juego()
+                                    elif coonf == 5:
+                                        config()
+                                    elif coonf == 6:
+                                        esp()
+                                    else:
+                                        juego()
+                                except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                                    juego()
+                            juego()
+                        elif confug == 5:
+                            def difconf():
+                                global properties
+                                dificultad = properties["difficulty"]
+                                if dificultad == "peaceful" or dificultad == "0":
+                                    dificultad = colored("PACÍFICO","cyan")
+                                elif dificultad == "easy" or dificultad == "1":
+                                    dificultad = colored("FÁCIL","cyan")
+                                elif dificultad == "normal" or dificultad == "2":
+                                    dificultad = colored("NORMAL","cyan")
+                                elif dificultad == "hard" or dificultad == "3":
+                                    dificultad = colored("DIFÍCIL","cyan")
+                                pacif = colored("PACÍFICO","yellow")
+                                facil = colored("FÁCIL","yellow")
+                                normal = colored("NORMAL","yellow")
+                                dificil = colored("DIFÍCIL","yellow")
+                                limpiar_consola()
+                                difsel = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLa dificultad actual es {dificultad}.\n\n(1) Cambiar a dificultad {pacif}\n(2) Cambiar a dificultad {facil}\n(3) Cambiar a dificultad {normal}\n(4) Cambiar a dificultad {dificil}\n(5) Atrás\n(6) Volver al menú principal\n\nElige una de las opciones= ")
+                                try:
+                                    if any(char in "0123456789+-*/" for char in difsel):
+                                        if not difsel[0].isalpha():
+                                            difcc = eval(difsel)
+                                        else:
+                                            difcc = difsel
+                                    else:
+                                        difcc = difsel
+                                    difcc = int(difcc)
+                                    if difcc == 1:
+                                        properties["difficulty"] = "0"
+                                        with open('server.properties', 'w') as file:
+                                            for key, value in properties.items():
+                                                file.write(f'{key}={value}\n')
+                                        limpiar_consola()
+                                        print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLa dificultad se ha cambiado a {pacif}.")
+                                        time.sleep(1.5)
+                                        difconf()
+                                    elif difcc == 2:
+                                        properties["difficulty"] = "1"
+                                        with open('server.properties', 'w') as file:
+                                            for key, value in properties.items():
+                                                file.write(f'{key}={value}\n')
+                                        limpiar_consola()
+                                        print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLa dificultad se ha cambiado a {facil}.")
+                                        time.sleep(1.5)
+                                        difconf()
+                                    elif difcc == 3:
+                                        properties["difficulty"] = "2"
+                                        with open('server.properties', 'w') as file:
+                                            for key, value in properties.items():
+                                                file.write(f'{key}={value}\n')
+                                        limpiar_consola()
+                                        print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLa dificultad se ha cambiado a {normal}.")
+                                        time.sleep(1.5)
+                                        difconf()
+                                    elif difcc == 4:
+                                        properties["difficulty"] = "3"
+                                        with open('server.properties', 'w') as file:
+                                            for key, value in properties.items():
+                                                file.write(f'{key}={value}\n')
+                                        limpiar_consola()
+                                        print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLa dificultad se ha cambiado a {dificil}.")
+                                        time.sleep(1.5)
+                                        difconf()
+                                    elif difcc == 5:
+                                        config()
+                                    elif difcc == 6:
+                                        esp()
+                                    else:
+                                        difconf()
+                                except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                                    difconf()
+                            difconf()
+                        elif confug == 6:
+                            def playct():
+                                global properties
+                                players = colored(properties["max-players"],"cyan")
+                                limpiar_consola()
+                                newpl = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl límite de jugadores actual es de {players} jugadores.\n\n(N) Atrás\n(M) Volver al menú principal\n\nElige una de las opciones o ingresa el nuevo límite de jugadores= ").replace(" ", "")
+                                try:
+                                    if newpl.lower() == "n":
+                                        config()
+                                    elif newpl.lower() == "m":
+                                        esp()
+                                    else:
+                                        if any(char in "0123456789+-*/" for char in newpl):
+                                            if not newpl[0].isalpha():
+                                                entero = eval(newpl)
+                                            else:
+                                                entero = newpl
+                                        else:
+                                            entero = newpl
+                                        entero = int(entero)
+                                        if entero <= 0 or entero > 100000:
+                                            limpiar_consola()
+                                            print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nIngresa un número válido entre 1 y 100.000.")
+                                            time.sleep(1.5)
+                                            playct()
+                                        else:
+                                            properties["max-players"] = entero
+                                            with open('server.properties', 'w') as file:
+                                                for key, value in properties.items():
+                                                    file.write(f'{key}={value}\n')
+                                            entero = colored(str(entero),"yellow")
+                                            limpiar_consola()
+                                            print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl límite de jugadores ahora es {entero}.")
+                                            time.sleep(1.5)
+                                            playct()
+                                except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
                                     playct()
-                        except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
                             playct()
-                    playct()
-                elif confug == 7:
-                    return
+                        elif confug == 7:
+                            run_server()
+                        elif confug == 8:
+                            esp()
+                        else:
+                            config()
+                    except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                        config()
                 else:
-                    config()
-            except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
-                config()
+                    limpiar_consola()
+                    input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLos achivos de configuración del Server aún no existen o no están disponibles.\nDebes iniciar el Server correctamente al menos 1 vez antes de poder configurarlo.\n\nPresiona ENTER para continuar.")
+                    run_server()
+            def run_server():
+                global servername
+                global valor
+                global nameserver
+                valor1 = None
+                gbormb = None
+                vjava = None
+                if valor == None:
+                    valor = "GB"
+                    valor1 = colored("GIGABYTES","cyan")
+                    vjava = "G"
+                    gbormb = colored("MEGABYTES","yellow")
+                if valor == "GB":
+                    valor1 = colored("GIGABYTES","cyan")
+                    vjava = "G"
+                    gbormb = colored("MEGABYTES","yellow")
+                elif valor == "MB":
+                    valor1 = colored("MEGABYTES","cyan")
+                    vjava = "M"
+                    gbormb = colored("GIGABYTES","yellow")
+                nameserver = servername
+                limpiar_consola()
+                gbs = 0
+                rammount = input(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nestás a punto de iniciar el Server "{nameserver}"\n\n(M) Configurar Server\n(C) Usar RAM en {gbormb}\n(B) Atrás\n(N) Volver al menú principal\n\nElige una de las opciones o ingresa los {valor1} de RAM para asignar a tu Server= ').replace(" ", "")
+                try:
+                    if rammount.lower() == "m":
+                        config()  
+                    if rammount.lower() == "c":
+                        if valor == "GB":
+                            limpiar_consola()
+                            print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nAhora la RAM está en {gbormb}.")
+                            time.sleep(1.5)
+                            valor = "MB"
+                            run_server()
+                        elif valor == "MB":
+                            limpiar_consola()
+                            print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nAhora la RAM está en {gbormb}.")
+                            time.sleep(1.5)
+                            valor = "GB"
+                            run_server()
+                    elif rammount.lower() == "b":
+                        ram()
+                    elif rammount.lower() == "n":
+                        esp()
+                    else:
+                        if any(char in "0123456789+-*/" for char in rammount):
+                            if not rammount[0].isalpha():
+                                gbs = eval(rammount)
+                            else:
+                                gbs = rammount
+                        else:
+                            gbs = rammount
+                        gbs = int(gbs)
+                        if valor == "GB" and (gbs <= 0 or gbs > 75):
+                            limpiar_consola()
+                            print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nIngresa una cantidad válida entre 1 y 75 Gigabytes.")
+                            time.sleep(1.5)
+                            run_server()
+                        elif valor == "MB" and (gbs <= 511 or gbs > 76800):
+                            limpiar_consola()
+                            print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nIngresa una cantidad válida entre 512 y 76.800 Megabytes.")
+                            time.sleep(1.5)
+                            run_server()
+                        else:
+                            eula = "eula.txt"
+                            with open(eula, "w") as reemplazo:
+                                reemplazo.write("eula=true")
+                            limpiar_consola()
+                            print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nIniciando el Server con {gbs}{valor} de RAM.\n")
+                            comando_java = f"java -Xmx{gbs}{vjava} -Xms{gbs}{vjava} -jar server.jar nogui"
+                            subprocess.run(comando_java, shell=True)
+                            fyh_sistema = datetime.datetime.now()
+                            fecha_cerrado = str(fyh_sistema.strftime("%d/%m/%Y"))
+                            hora_cerrado = str(fyh_sistema.strftime("%H:%M:%S"))
+                            input("\nPresiona ENTER para continuar.")
+                            limpiar_consola()
+                            input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl Server se ha cerrado el {fecha_cerrado} a las {hora_cerrado}.\n\nPuedes ver el registro de la consola en la carpeta 'logs' dentro de la carpeta principal de tu Server.\n\nPresiona ENTER para continuar.")
+                            ram()
+                except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                    run_server()
+            run_server()
         else:
             limpiar_consola()
-            input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLos archivos de configuración del servidor aún no existen o no están disponibles.\nDebes iniciar correctamente el servidor al menos 1 vez antes de poder configurar.\n\nPresiona ENTER para continuar.")
+            print('Lanzador de Servidores para Minecraft\n-------------------------------------\n\nNo se encuentra "server.jar" en esta carpeta.\n\nEstás seguro que esto es un Server?')
+            time.sleep(2.5)
+            ram()
 
-    # LICENCIA Y EXTRAS
+    # INSTALL NEW SERVER
+    def installmenu():
+        global newserver
+        global foldname
+        limpiar_consola()
+        inconfirm = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nPrimero, seleccionemos una carpeta para guardar los archivos de tu Nuevo Server.\n\n(1) Seleccionar una carpeta para el Nuevo Server\n(2) Cancelar\n\nElige una de las opciones= ")
+        try:
+            if any(char in "0123456789+-*/" for char in inconfirm):
+                if not inconfirm[0].isalpha():
+                    inconf = eval(inconfirm)
+                else:
+                    inconf = inconfirm
+            else:
+                inconf = inconfirm
+            inconf = int(inconf)
+            if inconf == 1:
+                def reselect():
+                    global newserver
+                    global foldname
+                    newserver = filedialog.askdirectory()
+                    foldname = colored(os.path.basename(newserver), "green")
+                    if newserver == "" or foldname == "":
+                        limpiar_consola()
+                        print('Lanzador de Servidores para Minecraft\n-------------------------------------\n\nDebes elegir una carpeta para guardar tu Nuevo Server.')
+                        time.sleep(2.5)
+                        installmenu()
+                    os.makedirs(newserver, exist_ok=True)
+                    os.chdir(newserver)
+                    if newserver and foldname:
+                        def vers_select():
+                            global newserver
+                            global foldname
+                            limpiar_consola()
+                            verss = input(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nTu Nuevo Server se guardará en "{foldname}".\n\n(L) Lista de versiones disponibles\n(R) Reelegir una carpeta para el Nuevo Server\n(N) Volver al menú principal\n\nElige una de las opciones o escribe la versión para instalar tu Nuevo Server= ').replace(" ", "")
+                            try:
+                                if verss.lower() == "n":
+                                    esp()
+                                elif verss.lower() == "r":
+                                    reselect()
+                                elif verss.lower() == "l":
+                                    def versionl():
+                                        limpiar_consola()
+                                        print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nVersiones disponibles:\n")
+                                        for i, version in enumerate(MCVERSIONS, start=1):
+                                            print(f"({i}) {version}")
+                                        listselection = input("\n(B) Atrás\n(R) Volver al menú principal\n\nelige una de las opciones=")
+                                        try:
+                                            if listselection.lower() == "b":
+                                                vers_select()
+                                            elif listselection.lower() == "r":
+                                                esp()
+                                            else:
+                                                versionl()
+                                        except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                                            versionl()
+                                    versionl()
+                                elif verss.lower() in MCVERSIONS.keys():
+                                    def servdownload():
+                                        global newserver
+                                        global foldname
+                                        version = verss.lower()
+                                        url = MCVERSIONS[version]
+                                        limpiar_consola()
+                                        print(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nTu Nuevo Server está siendo descargado.\n\nVersión: {version}\nCarpeta de destino: "{foldname}"\n\nEspera por favor...\n')
+                                        time.sleep(0.5)
+                                        os.makedirs(newserver, exist_ok=True)
+                                        os.chdir(newserver)
+                                        try:
+                                            response = requests.get(url, stream=True)
+                                            total_size_in_bytes = int(response.headers.get('content-length', 0))
+                                            block_size = 1024  # 1 Kibibyte
+                                            total_data = 0
+                                            with open("server.jar", "wb") as file:
+                                                for data in response.iter_content(block_size):
+                                                    total_data += len(data)
+                                                    file.write(data)
+                                                    completed = int(50 * total_data / total_size_in_bytes)
+                                                    print("\r[%s%s]" % ('#' * completed, '.' * (50 - completed)), end='')
+                                            print()
+                                            limpiar_consola()
+                                            input('Lanzador de Servidores para Minecraft\n-------------------------------------\n\nTu Nuevo Server se ha instalado correctamente y ha sido añadido a la Lista "Tus Servidores".\n\nPresiona ENTER para continuar.')
+                                            servname = os.path.basename(newserver)
+                                            servstring = f"{servname}<[=]>{newserver}\n"
+                                            os.makedirs(CONFIG_PATH, exist_ok=True)
+                                            with open(SAVED_SERVERS, 'r+') as file:
+                                                lines = file.readlines()
+                                                if servstring not in lines:
+                                                    file.write(servstring)
+                                            esp()
+                                        except Exception:
+                                            def erragain():
+                                                limpiar_consola()
+                                                yup = colored("Sí","green")
+                                                nop = colored("No","red")
+                                                errtry = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nHa ocurrido un error mientras se descargaba tu Nuevo Server.\nReintentar?\n\n(1) {yup}\n(2) {nop}\n\nElige una de las opciones= ")
+                                                try:
+                                                    if any(char in "0123456789+-*/" for char in errtry):
+                                                        if not errtry[0].isalpha():
+                                                            errtr = eval(errtry)
+                                                        else:
+                                                            errtr = errtry
+                                                    else:
+                                                        errtr = errtry
+                                                    errtr = int(errtr)
+                                                    if errtr == 1:
+                                                        servdownload()
+                                                    elif errtr == 2:
+                                                        esp()
+                                                    else:
+                                                        erragain()
+                                                except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                                                    erragain()
+                                            erragain()
+                                    servdownload()
+                            except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                                installmenu()
+                        vers_select()
+                    else:
+                        installmenu()
+                reselect()
+            elif inconf == 2:
+                esp()
+            else:
+                installmenu()
+        except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+            installmenu()  
+
+    # LICENSE AND EXTRAS
     def about():
         limpiar_consola()
-        copyr = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nMIT License - Copyright (c) 2024 NGDPL Nk\n\nHelpers:\n@naicoooossj\n@LegalizeNuclearBombs\n\n-------------------------------------\n\n(1) Ver el repositorio en el navegador\n(2) Ver la licencia en el navegador\n(3) Ver formato de texto para los MOTD en el navegador\n(4) Volver al menú principal\n\nSelecciona una de las opciones= ")
+        copyr = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nMIT License - Copyright (c) 2024 NGDPL Nk\n\nSSTools4MC v24.03.24\n\nHelpers:\n@naicoooossj\n@LegalizeNuclearBombs\n\n-------------------------------------\n\n(1) Ver repositorio en el navegador\n(2) Ver licencia en el navegador\n(3) Volver al menú principal\n\nElige una de las opciones= ")
         try:
             if any(char in "0123456789+-*/" for char in copyr):
                 if not copyr[0].isalpha():
@@ -1322,44 +1641,37 @@ def esp():
                 selec = copyr
             selec = int(selec)
             if selec == 1:
-                url = colored("https://github.com/NGDPLNk/SSTools4MC","cyan")
+                url = colored("https://github.com/ngdplnk/SSTools4MC","cyan")
                 limpiar_consola()
-                input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nSe abrirá el repositorio en tu navegador.\n\n{url}\n\nPress ENTER to continue.")
-                url = "https://github.com/NGDPLNk/SSTools4MC"
+                input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl repositorio se abrirá en tu navegador.\n\n{url}\n\nPresiona ENTER para continuar.")
+                url = "https://github.com/ngdplnk/SSTools4MC"
                 webbrowser.open(url)
+                about()
             elif selec == 2:
-                url = colored("https://github.com/NGDPLNk/SSTools4MC/blob/main/LICENSE","cyan")
+                url = colored("https://github.com/ngdplnk/SSTools4MC/blob/main/LICENSE","cyan")
                 limpiar_consola()
-                input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nSe abrirá la licencia de la herramienta en tu navegador.\n\n{url}\n\nPress ENTER to continue.")
-                url = "https://github.com/NGDPLNk/SSTools4MC/blob/main/LICENSE"
+                input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLa licencia se abrirá en tu navegador.\n\n{url}\n\nPresiona ENTER para continuar.")
+                url = "https://github.com/ngdplnk/SSTools4MC/blob/main/LICENSE"
                 webbrowser.open(url)
+                about()
             elif selec == 3:
-                url = colored("https://minecraft.tools/es/motd.php","cyan")
-                url2 = colored("https://www.digminecraft.com/lists/color_list_pc.php","cyan")
-                limpiar_consola()
-                input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nSe abrirán 2 páginas para ver el formato de texto en los MOTD, en tu navegador.\n\n{url}\n\n{url2}\n\nPress ENTER to continue.")
-                url = "https://minecraft.tools/es/motd.php"
-                webbrowser.open(url)
-                url2 = "https://www.digminecraft.com/lists/color_list_pc.php"
-                webbrowser.open(url2)
-            elif selec == 4:
-                return
+                esp()
             else:
                 about()
         except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
             about()
 
-    # SALIDA
+    # EXIT
     def exiit():
         limpiar_consola()
         print("--------------------------------------------\nMuchas gracias por usar esta herramienta\nMIT License - Copyright (c) 2024 NGDPL Nk\n--------------------------------------------\n")
         time.sleep(1.2)
         sys.exit()
 
-    # MENÚ PRINCIPAL
+    # MAIN MENU
     def menu():
         limpiar_consola()
-        seleccion = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\n¡Hola! Estás en el menú principal.\n\n(1) Iniciar el servidor\n(2) Administrar el servidor\n(3) Ver licencia y extras\n(4) Cambiar idioma\n(5) Salir\n\nSelecciona una de las opciones= ")
+        seleccion = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nHola! Estás en el menú principal.\n\n(1) Inciar un Server\n(2) Instalar un Nuevo Server\n(3) Extras\n(4) Cambiar Lenguaje\n(5) Sair\n\nElige una de las opciones= ")
         try:
             if any(char in "0123456789+-*/" for char in seleccion):
                 if not seleccion[0].isalpha():
@@ -1372,11 +1684,11 @@ def esp():
             if sel == 1:
                 ram()
             elif sel == 2:
-                config()
+                installmenu()
             elif sel == 3:
                 about()
             elif sel == 4:
-                eng()
+                esp()
             elif sel == 5:
                 exiit()
             menu()
