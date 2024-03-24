@@ -1709,7 +1709,7 @@ def esp():
             elif sel == 3:
                 about()
             elif sel == 4:
-                esp()
+                eng()
             elif sel == 5:
                 exiit()
             menu()
