@@ -8,7 +8,7 @@ SSTools4MC is a set of tools designed to assist you hosting your own dedicated M
   - [Minimum Requirements](#minimum-requirements)
   - [Python Installation and Required Modules](#python-installation-and-required-modules)
   - [Java Installation](#java-installation)
-- [Build SSTools4MC Yourself](#build-sstools4mc-yourself)
+- [Build SSTools4MC Installer by yourself](#build-sstools4mc-installer-by-yourself)
   - [Clone this Repository](#clone-this-repository)
   - [Install NSIS](#install-nsis)
   - [Verify Files](#verify-files)
@@ -55,7 +55,7 @@ If Java 22 is correctly installed, the command should display the installed Java
 
 Java is necessary to your machine to be able to run your Minecraft servers.
 
-## Build SSTools4MC Yourself
+## Build SSTools4MC Installer by yourself
 
 Follow these steps to build the SSTools4MC installer from the source code by yourself.
 
