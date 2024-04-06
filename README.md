@@ -57,7 +57,8 @@ Java is necessary to your machine to be able to run your Minecraft servers.
 
 ## Build SSTools4MC Installer by yourself
 
-Follow these steps to build the SSTools4MC installer from the source code by yourself.
+You can follow this steps if you want to build the SSTools4MC Installer from the source code by yourself.
+Please note that this is not mandatory. You can always download the latest version of the installer from the [GitHub Releases](https://github.com/NGDPLNk/SSTools4MC/releases/latest) page.
 
 ### Clone this Repository
 
