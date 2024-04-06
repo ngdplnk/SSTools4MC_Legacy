@@ -5,7 +5,9 @@ SSTools4MC is a set of tools designed to assist you hosting your own dedicated M
 ## Table of Contents
 - [Getting Started](#getting-started)
 - [Installation](#installation)
-  - [Python and Required Modules](#python-and-required-modules)
+  - [Minimum Requirements](#minimum-requirements)
+  - [Python Installation and Required Modules](#python-installation-and-required-modules)
+  - [Java Installation](#java-installation)
 - [Copyright and Disclaimer](#copyright-and-disclaimer)
 - [Important and Acknowledgments](#important-and-acknowledgments)
 
@@ -17,7 +19,7 @@ To get started with SSTools4MC, follow these steps:
 3. Enjoy!
 
 ## Installation
-### Minimum Requirements:
+### Minimum Requirements
 - Operating System: Windows 10 (64-bit - Version 10.0.14393.6796) or newer. Windows 10 22H2 recommended.
 - Processor: 2 cores at 1.00GHz; x64 architecture.
 - RAM: At least 1GB.
@@ -26,7 +28,7 @@ To get started with SSTools4MC, follow these steps:
 
 Administrator privileges are also required in old releases of SSTools4MC to access server files and folders.
 
-### Python Installation and Required Modules:
+### Python Installation and Required Modules
 1. Download and install Python 3.9 or newer from the [official Python website](https://www.python.org/downloads/). When installing Python, be sure to select the "Add Python to PATH" option.
 2. After you successfully installed Python with this option, open a command prompt, powershell or terminal with administrator privileges.
 3. Install the required Python modules by running the following commands:
@@ -35,7 +37,7 @@ Administrator privileges are also required in old releases of SSTools4MC to acce
     pip install termcolor
     ```
 
-### Java Installation:
+### Java Installation
 1. Download the Java 22 installer from the [official Oracle website](https://www.oracle.com/cl/java/technologies/downloads/#jdk22-windows).
 2. Run the installer and follow the on-screen instructions to install Java 22.
 3. Verify the installation by opening a command prompt, powershell or terminal and running:
