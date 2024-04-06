@@ -424,6 +424,7 @@ def startserver_menu():
   global raam
   global ramtypee
   global run
+  global jarpath
 
   if enabled_debug:
     print("Start Server Menu Opened, checking if server is running...")
@@ -717,6 +718,7 @@ def startserver_menu():
     def start_server():
       global ramtype_var
       global ram_var
+      global jarpath
       cfg = {}
       with open(confpath, 'r') as file:
         for line in file:
