@@ -8,6 +8,12 @@ SSTools4MC is a set of tools designed to assist you hosting your own dedicated M
   - [Minimum Requirements](#minimum-requirements)
   - [Python Installation and Required Modules](#python-installation-and-required-modules)
   - [Java Installation](#java-installation)
+- [Build SSTools4MC Yourself](#build-sstools4mc-yourself)
+  - [Clone this Repository](#clone-this-repository)
+  - [Install NSIS](#install-nsis)
+  - [Verify Files](#verify-files)
+  - [Edit build.nsi file][#edit-buildnsi-file]
+  - [Compile the Installer](#compile-the-installer)
 - [Copyright and Disclaimer](#copyright-and-disclaimer)
 - [Important and Acknowledgments](#important-and-acknowledgments)
 
@@ -48,6 +54,44 @@ Administrator privileges are also required in old releases of SSTools4MC to acce
 If Java 22 is correctly installed, the command should display the installed Java version.
 
 Java is necessary to your machine to be able to run your Minecraft servers.
+
+## Build SSTools4MC Yourself
+
+Follow these steps to build the SSTools4MC installer from the source code by yourself.
+
+### Clone this Repository
+
+First, download or clone this repository:
+
+```bash
+git clone https://github.com/ngdplnk/SSTools4MC.git
+```
+
+### Install NSIS
+
+You need to install the latest NSIS (Nullsoft Scriptable Install System) version to build the installer. You can download it from [NSIS Official Website](https://nsis.sourceforge.io/Download). Be sure to follow the on-screen instructions to complete the installation.
+
+### Verify Files
+
+Navigate to the `3 - launcher` folder in the cloned repository. Ensure that you have the following files (there may be more, but you should have at least these):
+
+- `build.nsi`
+- `icon.ico`
+- `launcher.pyw`
+
+If any of these files are missing, please download them from the repository.
+
+### Edit build.nsi File
+
+Open the `build.nsi` file in a text editor and replace the placeholders `<TYPE THE ICON.ICO PATH HERE>` and `<TYPE THE LAUNCHER.PYW PATH HERE>` with the actual paths to your `icon.ico` and `launcher.pyw` files, respectively. Save the changes.
+
+### Compile the Installer
+
+1. Open NSIS.
+2. Select the option "Compile NSIS Scripts".
+3. Drag and drop the `build.nsi` file you just edited into the NSIS window.
+4. An installer for the SSTools4MC program will be created.
+5. Enjoy!
 
 ## Copyright and Disclaimer
 **SSTools4MC and each of its tools are not official Minecraft products and are not endorsed by Mojang.**
