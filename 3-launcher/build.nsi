@@ -1,5 +1,19 @@
+!define APP_VERSION "1.1"
+!define PRODUCT_VERSION "1.1.0.0"
+!define APP_EDITOR "TLSoftware"
+
 Outfile "SSTools4MC_Launcher.exe"
 SetCompressor /SOLID lzma
+Icon "C:\Users\nicolas\Desktop\icon.ico"
+
+VIProductVersion "${PRODUCT_VERSION}"
+VIAddVersionKey "ProductName" "SSTools4MC Launcher"
+VIAddVersionKey "CompanyName" "TLSoftware"
+VIAddVersionKey "FileDescription" "SSTools4MC Launcher"
+VIAddVersionKey "FileVersion" "${APP_VERSION}"
+VIAddVersionKey "LegalCopyright" "Copyright (C) 2024 TLSoftware"
+VIAddVersionKey "OriginalFilename" "SSTools4MC_Launcher.exe"
+VIAddVersionKey "Comments" "Created by ${APP_EDITOR}"
 
 # Define the installation directory
 InstallDir $APPDATA\TLSoftware\SSTools4MC
@@ -31,7 +45,7 @@ Section "MainSection" SEC01
   WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\SSTools4MC" "DisplayName" "SSTools4MC Launcher"
   WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\SSTools4MC" "UninstallString" "$INSTDIR\uninstaller.exe"
   WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\SSTools4MC" "Publisher" "TLSoftware"
-  WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\SSTools4MC" "DisplayVersion" "1.1"
+  WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\SSTools4MC" "DisplayVersion" "${APP_VERSION}"
   WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\SSTools4MC" "DisplayIcon" "$INSTDIR\assets\icon.ico"
   WriteUninstaller "$INSTDIR\uninstaller.exe"
 
