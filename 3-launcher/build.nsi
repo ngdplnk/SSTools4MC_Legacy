@@ -4,7 +4,7 @@
 
 Outfile "SSTools4MC_Launcher.exe"
 SetCompressor /SOLID lzma
-Icon "C:\Users\nicolas\Desktop\icon.ico"
+Icon "<TYPE THE ICON.ICO PATH HERE>"
 
 VIProductVersion "${PRODUCT_VERSION}"
 VIAddVersionKey "ProductName" "SSTools4MC Launcher"
@@ -27,13 +27,13 @@ Section "MainSection" SEC01
   SetOutPath $APPDATA\TLSoftware\SSTools4MC
 
   # Copy the file
-  File /oname=launcher.pyw "C:\Users\nicolas\Desktop\launcher.pyw"
+  File /oname=launcher.pyw "<TYPE THE LAUNCHER.PYW PATH HERE"
 
   # Define the directory for the icon
   SetOutPath $APPDATA\TLSoftware\SSTools4MC\assets
 
   # Copy the file
-  File /oname=icon.ico "C:\Users\nicolas\Desktop\icon.ico"
+  File /oname=icon.ico "TYPE THE ICON.ICO PATH HERE"
 
   # Create a desktop shortcut
   CreateShortCut "$DESKTOP\SSTools4MC Launcher.lnk" "$APPDATA\TLSoftware\SSTools4MC\launcher.pyw" "" "$APPDATA\TLSoftware\SSTools4MC\assets\icon.ico" 0
