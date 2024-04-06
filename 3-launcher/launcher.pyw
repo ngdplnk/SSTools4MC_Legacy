@@ -3,7 +3,6 @@
 
 import requests
 import os
-import subprocess
 import locale
 from tkinter import messagebox
 
@@ -16,8 +15,6 @@ ICON_PATH = os.path.join(PROGRAM_PATH, "assets", "icon.ico")
 os.makedirs(PROGRAM_PATH, exist_ok=True)
 os.makedirs(ASSETS_PATH, exist_ok=True)
 
-#############################
-# LANGUAGE VARIANTS NEEDS TO BE FIXED
 system_lang = locale.getlocale()[0]
 system_lang = str(system_lang)
 
@@ -32,15 +29,15 @@ try:
         with open(ICON_PATH, 'wb') as writeicon:
             writeicon.write(icon.content)
     if os.name == 'nt':  # Windows
-        subprocess.Popen(["start", "cmd", "/c", "python", CODE_PATH], shell=True)
+        os.system(f"start cmd /c python {CODE_PATH}")
     else:  # Linux and other Unix-like systems
-        subprocess.Popen(["gnome-terminal", "--", "python3", CODE_PATH])
+        os.system(f"gnome-terminal -- python3 {CODE_PATH}")
 except Exception:
     if os.path.isfile(CODE_PATH):
         if os.name == 'nt':  # Windows
-            subprocess.Popen(["start", "cmd", "/c", "python", CODE_PATH], shell=True)
+            os.system(f"start cmd /c python {CODE_PATH}")
         else:  # Linux and other Unix-like systems
-            subprocess.Popen(["gnome-terminal", "--", "python3", CODE_PATH])
+            os.system(f"gnome-terminal -- python3 {CODE_PATH}")
     else:
         if system_lang.startswith('Spanish') or system_lang.startswith('es'):
             messagebox.showerror("Error", "Conéctate a internet para obtener la última versión de SSTools4MC.")

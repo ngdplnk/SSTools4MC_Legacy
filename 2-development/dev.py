@@ -10,6 +10,7 @@ import webbrowser
 import datetime
 import locale
 import requests
+import tkinter as tk
 from tkinter import filedialog
 from termcolor import colored
 
@@ -199,7 +200,6 @@ def eng():
                                     if 1 <= servsel <= len(server_keys):
                                         servsel = server_keys[servsel - 1]
                                         servpath = sservers[servsel]
-                                        servsel = colored(servsel, "yellow")
                                         servestring = f"{servsel}<[=]>{servpath}\n"
                                     os.makedirs(CONFIG_PATH, exist_ok=True)
                                     with open(SAVED_SERVERS, 'r') as file:
@@ -758,7 +758,7 @@ def eng():
                                         limpiar_consola()
                                         print("Server Launcher for Minecraft\n-------------------------------------\n\nAvailable versions:\n")
                                         for i, version in enumerate(MCVERSIONS, start=1):
-                                            print(f"({i}) {version}")
+                                            print(f"(-) {version}")
                                         listselection = input("\n(B) Back\n(R) Return to main menu\n\nSelect one of the options=")
                                         try:
                                             if listselection.lower() == "b":
@@ -987,7 +987,6 @@ def esp():
                                     if 1 <= servsel <= len(server_keys):
                                         servsel = server_keys[servsel - 1]
                                         servpath = sservers[servsel]
-                                        servsel = colored(servsel, "yellow")
                                         servestring = f"{servsel}<[=]>{servpath}\n"
                                     os.makedirs(CONFIG_PATH, exist_ok=True)
                                     with open(SAVED_SERVERS, 'r') as file:
@@ -1438,7 +1437,7 @@ def esp():
                 nameserver = servername
                 limpiar_consola()
                 gbs = 0
-                rammount = input(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nestás a punto de iniciar el Server "{nameserver}"\n\n(M) Configurar Server\n(C) Usar RAM en {gbormb}\n(B) Atrás\n(N) Volver al menú principal\n\nElige una de las opciones o ingresa los {valor1} de RAM para asignar a tu Server= ').replace(" ", "")
+                rammount = input(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEstás a punto de iniciar el Server "{nameserver}"\n\n(M) Configurar Server\n(C) Usar RAM en {gbormb}\n(B) Atrás\n(N) Volver al menú principal\n\nElige una de las opciones o ingresa los {valor1} de RAM para asignar a tu Server= ').replace(" ", "")
                 try:
                     if rammount.lower() == "m":
                         config()  
@@ -1546,8 +1545,8 @@ def esp():
                                         limpiar_consola()
                                         print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nVersiones disponibles:\n")
                                         for i, version in enumerate(MCVERSIONS, start=1):
-                                            print(f"({i}) {version}")
-                                        listselection = input("\n(B) Atrás\n(R) Volver al menú principal\n\nelige una de las opciones=")
+                                            print(f"(-) {version}")
+                                        listselection = input("\n(B) Atrás\n(R) Volver al menú principal\n\nElige una de las opciones=")
                                         try:
                                             if listselection.lower() == "b":
                                                 vers_select()
@@ -1675,7 +1674,7 @@ def esp():
         os.makedirs(SSTOOLS_FOLDER, exist_ok=True)
         os.chdir(SSTOOLS_FOLDER)
         limpiar_consola()
-        seleccion = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nHola! Estás en el menú principal.\n\n(1) Inciar un Server\n(2) Instalar un Nuevo Server\n(3) Extras\n(4) Cambiar Lenguaje\n(5) Sair\n\nElige una de las opciones= ")
+        seleccion = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nHola! Estás en el menú principal.\n\n(1) Inciar un Server\n(2) Instalar un Nuevo Server\n(3) Extras\n(4) Cambiar Lenguaje\n(5) Salir\n\nElige una de las opciones= ")
         try:
             if any(char in "0123456789+-*/" for char in seleccion):
                 if not seleccion[0].isalpha():
@@ -1692,7 +1691,7 @@ def esp():
             elif sel == 3:
                 about()
             elif sel == 4:
-                esp()
+                eng()
             elif sel == 5:
                 exiit()
             menu()
