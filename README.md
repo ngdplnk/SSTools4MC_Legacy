@@ -12,7 +12,7 @@ SSTools4MC is a set of tools designed to assist you hosting your own dedicated M
   - [Clone this Repository](#clone-this-repository)
   - [Install NSIS](#install-nsis)
   - [Verify Files](#verify-files)
-  - [Edit build.nsi file][#edit-buildnsi-file]
+  - [Edit build.nsi file](#edit-buildnsi-file)
   - [Compile the Installer](#compile-the-installer)
 - [Copyright and Disclaimer](#copyright-and-disclaimer)
 - [Important and Acknowledgments](#important-and-acknowledgments)
@@ -61,7 +61,7 @@ Follow these steps to build the SSTools4MC installer from the source code by you
 
 ### Clone this Repository
 
-First, download or clone this repository:
+First, clone/download this repository:
 
 ```bash
 git clone https://github.com/ngdplnk/SSTools4MC.git
@@ -73,7 +73,7 @@ You need to install the latest NSIS (Nullsoft Scriptable Install System) version
 
 ### Verify Files
 
-Navigate to the `3 - launcher` folder in the cloned repository. Ensure that you have the following files (there may be more, but you should have at least these):
+Navigate to the `3 - launcher` folder in the cloned repository. Ensure that you have the following files (there may be more, but you need to have at least these):
 
 - `build.nsi`
 - `icon.ico`
