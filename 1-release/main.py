@@ -126,6 +126,21 @@ def window_title(title):
     elif sys.platform.startswith('linux') or sys.platform.startswith('darwin'): # En sistemas Unix-like - On Unix-like systems
         sys.stdout.write(f"\x1b]2;{title}\x07")
 
+# BRING WINDOW TO FRONT
+def front():
+    if os.name == 'nt':  # For Windows
+        # Get the handle of the console window
+        h_wnd = ctypes.windll.kernel32.GetConsoleWindow()
+
+        # Bring the console window to the foreground
+        ctypes.windll.user32.SetForegroundWindow(h_wnd)
+    else:  # For Linux/OS X
+        # Get the PID of the current process
+        pid = os.getpid()
+
+        # Use wmctrl to bring the window with the given PID to the front
+        subprocess.call(['wmctrl', '-ia', str(pid)])
+
 # ENGLISH
 def eng():
     # CHANGE WINDOW TITLE
@@ -156,9 +171,8 @@ def eng():
                 servsel = input("\nSelect one of the options or enter the number of the server to start= ").replace(" ", "")
                 try:
                     if servsel.lower() == "n":
-                        root = tk.Tk()
-                        root.withdraw()
                         newserv = filedialog.askdirectory()
+                        front()
                         servname = os.path.basename(newserv)
                         if newserv == "" or servname == "":
                             limpiar_consola()
@@ -282,9 +296,8 @@ def eng():
                         saveconf = saveconfirm
                     saveconf = int(saveconf)
                     if saveconf == 1:
-                        root = tk.Tk()
-                        root.withdraw()
                         newserv = filedialog.askdirectory()
+                        front()
                         servname = os.path.basename(newserv)
                         if newserv == "" or servname == "":
                             limpiar_consola()
@@ -315,9 +328,8 @@ def eng():
                 file.write("# Server Launcher for Minecraft\n# Saved servers\n")
             limpiar_consola()
             input('Server Launcher for Minecraft\n-------------------------------------\n\nThere are no saved servers.\n\nPress ENTER to select a folder with a Server and add it to "Your Servers" list.')
-            root = tk.Tk()
-            root.withdraw()
             newserv = filedialog.askdirectory()
+            front()
             servname = os.path.basename(newserv)
             if newserv == "" or servname == "":
                 limpiar_consola()
@@ -739,9 +751,8 @@ def eng():
                 def reselect():
                     global newserver
                     global foldname
-                    root = tk.Tk()
-                    root.withdraw()
                     newserver = filedialog.askdirectory()
+                    front()
                     foldname = colored(os.path.basename(newserver), "green")
                     if newserver == "" or foldname == "":
                         limpiar_consola()
@@ -852,7 +863,7 @@ def eng():
     # LICENSE AND EXTRAS
     def about():
         limpiar_consola()
-        copyr = input("Server Launcher for Minecraft\n-------------------------------------\n\nMIT License - Copyright (c) 2024 NGDPL Nk\n\nSSTools4MC v24.03.24\n\nHelpers:\n@naicoooossj\n@LegalizeNuclearBombs\n\n-------------------------------------\n\n(1) View repository in the browser\n(2) View license in the browser\n(3) Return to main menu\n\nSelect one of the options= ")
+        copyr = input("Server Launcher for Minecraft\n-------------------------------------\n\nMIT License - Copyright (c) 2024 NGDPL Nk\n\nSSTools4MC v24.04.05\n\nHelpers:\n@naicoooossj\n@LegalizeNuclearBombs\n\n-------------------------------------\n\n(1) View repository in the browser\n(2) View license in the browser\n(3) Return to main menu\n\nSelect one of the options= ")
         try:
             if any(char in "0123456789+-*/" for char in copyr):
                 if not copyr[0].isalpha():
@@ -951,9 +962,8 @@ def esp():
                 servsel = input("\nElige una de las opciones o escribe el número del Server que iniciarás= ").replace(" ", "")
                 try:
                     if servsel.lower() == "n":
-                        root = tk.Tk()
-                        root.withdraw()
                         newserv = filedialog.askdirectory()
+                        front()
                         servname = os.path.basename(newserv)
                         if newserv == "" or servname == "":
                             limpiar_consola()
@@ -1077,9 +1087,8 @@ def esp():
                         saveconf = saveconfirm
                     saveconf = int(saveconf)
                     if saveconf == 1:
-                        root = tk.Tk()
-                        root.withdraw()
                         newserv = filedialog.askdirectory()
+                        front()
                         servname = os.path.basename(newserv)
                         if newserv == "" or servname == "":
                             limpiar_consola()
@@ -1110,9 +1119,8 @@ def esp():
                 file.write("# Lanzador de Servidores para Minecraft\n# Servers Guardados\n")
             limpiar_consola()
             input('Lanzador de Servidores para Minecraft\n-------------------------------------\n\nNo tienes ningún Server guardado.\n\nPresiona ENTER para seleccionar una carpeta con tu Server y guardarlo en la Lista "Tus Servidores".')
-            root = tk.Tk()
-            root.withdraw()
             newserv = filedialog.askdirectory()
+            front()
             servname = os.path.basename(newserv)
             if newserv == "" or servname == "":
                 limpiar_consola()
@@ -1534,9 +1542,8 @@ def esp():
                 def reselect():
                     global newserver
                     global foldname
-                    root = tk.Tk()
-                    root.withdraw()
                     newserver = filedialog.askdirectory()
+                    front()
                     foldname = colored(os.path.basename(newserver), "green")
                     if newserver == "" or foldname == "":
                         limpiar_consola()
@@ -1647,7 +1654,7 @@ def esp():
     # LICENSE AND EXTRAS
     def about():
         limpiar_consola()
-        copyr = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nMIT License - Copyright (c) 2024 NGDPL Nk\n\nSSTools4MC v24.03.24\n\nHelpers:\n@naicoooossj\n@LegalizeNuclearBombs\n\n-------------------------------------\n\n(1) Ver repositorio en el navegador\n(2) Ver licencia en el navegador\n(3) Volver al menú principal\n\nElige una de las opciones= ")
+        copyr = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nMIT License - Copyright (c) 2024 NGDPL Nk\n\nSSTools4MC v24.04.05\n\nHelpers:\n@naicoooossj\n@LegalizeNuclearBombs\n\n-------------------------------------\n\n(1) Ver repositorio en el navegador\n(2) Ver licencia en el navegador\n(3) Volver al menú principal\n\nElige una de las opciones= ")
         try:
             if any(char in "0123456789+-*/" for char in copyr):
                 if not copyr[0].isalpha():
@@ -1690,7 +1697,7 @@ def esp():
         os.makedirs(SSTOOLS_FOLDER, exist_ok=True)
         os.chdir(SSTOOLS_FOLDER)
         limpiar_consola()
-        seleccion = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nHola! Estás en el menú principal.\n\n(1) Inciar un Server\n(2) Instalar un Nuevo Server\n(3) Extras\n(4) Cambiar Lenguaje\n(5) Sair\n\nElige una de las opciones= ")
+        seleccion = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nHola! Estás en el menú principal.\n\n(1) Inciar un Server\n(2) Instalar un Nuevo Server\n(3) Extras\n(4) Cambiar Lenguaje\n(5) Salir\n\nElige una de las opciones= ")
         try:
             if any(char in "0123456789+-*/" for char in seleccion):
                 if not seleccion[0].isalpha():
