@@ -794,7 +794,7 @@ def startserver_menu():
       # Set window title
       root.title("SSTools4MC - Server Running...")
       # Check if server.jar exists
-      if not os.path.exists(jarpath):
+      if not os.path.exists("server.jar"):
         if enabled_debug:
           print('Server.jar file not found, opening "Cant Start your Server" menu variant...')
         # Clear the window
