@@ -10,7 +10,6 @@ import webbrowser
 import datetime
 import locale
 import requests
-import tkinter as tk
 from tkinter import filedialog
 from termcolor import colored
 
