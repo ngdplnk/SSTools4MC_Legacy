@@ -28,8 +28,11 @@ Section "MainSection" SEC01
   CreateShortCut "$SMPROGRAMS\SSTools4MC Launcher.lnk" "$APPDATA\TLSoftware\SSTools4MC\launcher.pyw" "" "$APPDATA\TLSoftware\SSTools4MC\assets\icon.ico" 0
 
   # Write the uninstall keys for Add/Remove Programs
-  WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\SSTools4MC" "DisplayName" "SSTools4MC"
+  WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\SSTools4MC" "DisplayName" "SSTools4MC Launcher"
   WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\SSTools4MC" "UninstallString" "$INSTDIR\uninstaller.exe"
+  WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\SSTools4MC" "Publisher" "TLSoftware"
+  WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\SSTools4MC" "DisplayVersion" "1.1"
+  WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\SSTools4MC" "DisplayIcon" "$INSTDIR\assets\icon.ico"
   WriteUninstaller "$INSTDIR\uninstaller.exe"
 
 SectionEnd
