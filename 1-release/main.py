@@ -1,2056 +1,1735 @@
-### SSTools4MC v2.0.0 BETA 1.24.C ###
-## SSTools4MC is a set of tools designed to assist you hosting your own dedicated Minecraft server.
-# Made by: @ngdplnk
-# Github repo: https://github.com/NGDPLNk/SSTools4MC
+#!/usr/bin/env python3
 
-#####################
-### THINGS TO FIX ###
-# - Optimize code for full release
-# - Check if server is running and closing properly
-# - Check edge cases crashes
-# - Find if there is any bug
-#####################
-
-#####################
-### THINGS TO ADD ###
-# - Rework server console to run in nogui mode (v2.1)
-# - Rework logging system to a more advanced one (using logging module) (v2.1)
-# - Add more themes (v2.1)
-#####################
-
-#####################
-###     CODE      ###
-#####################
-
-# IMPORTS
-import subprocess
-import time
-import tkinter as tk
-import webbrowser
+# MÓDULOS IMPORTADOS - IMPORTED MODULES
 import os
-import threading
-import requests
+import time
+import sys
+import ctypes
+import subprocess
+import webbrowser
 import datetime
-
-# GLOBAL VARIABLES
-global enabled_debug
-global running
-global run
-global props
-global sstfolder
-global confpath
+import locale
+import requests
+from tkinter import filedialog
+from termcolor import colored
 
 # VARIABLES
-running = False
-run = False
-enabled_debug = False
-props = os.path.join(os.path.dirname(os.getcwd()), "server.properties")
-jarpath = os.path.join(os.path.dirname(os.getcwd()), "server.jar")
+valor = None
+runn = True
 
 # PATHS
-appdpath = os.getenv("APPDATA")
-sstfolder = os.path.join(appdpath, "SSTools4MC") # type: ignore
-confpath = os.path.join(sstfolder, "sst.cfg")
+APPDATA = os.getenv('APPDATA')
+SSTOOLS_FOLDER = os.path.join(APPDATA, "TLSoftware", "SSTools4MC") # type: ignore
+CONFIG_PATH = os.path.join(SSTOOLS_FOLDER, "config") # type: ignore
+SAVED_SERVERS = os.path.join(CONFIG_PATH, "saved-servers.cfg") # type: ignore
 
-# DEBUG MODE SELECTION
-def sstdebug_mode(rt=False):
-  global enabled_debug
-  cfg = {}
-  if not rt:
-    if os.path.exists(sstfolder):
-      if os.path.exists(confpath):
-        with open(confpath, 'r') as file:
-          for line in file:
-            line = line.strip()
-            if line and not line.startswith('#'):
-              key, value = line.split('=')
-              cfg[key.strip()] = value.strip()
-        try:
-          if cfg["debug"] == "true":
-            enabled_debug = True
-            if enabled_debug:
-              print('Saved Debug Mode status is "Enabled"')
-            theme()
-          elif cfg["debug"] == "false":
-            enabled_debug = False
-            theme()
-          else:
-            cfg["debug"] = "false"
-            with open(confpath, 'w') as file:
-              for key, value in cfg.items():
-                file.write(f'{key}={value}\n')
-            enabled_debug = False
-            theme()
-        except KeyError:
-          cfg["debug"] = "false"
-          with open(confpath, 'w') as file:
-            for key, value in cfg.items():
-              file.write(f'{key}={value}\n')
-          enabled_debug = False
-          theme()
-      else:
-        with open(confpath, 'w') as archivo:
-          archivo.write('debug=false\n')
-        theme()
-    else:
-      os.makedirs(sstfolder)
-      with open(confpath, 'w') as archivo:
-        archivo.write('debug=false\n')
-      theme()
-  else:
-    if os.path.exists(sstfolder):
-      if os.path.exists(confpath):
-        with open(confpath, 'r') as file:
-          for line in file:
-            line = line.strip()
-            if line and not line.startswith('#'):
-              key, value = line.split('=')
-              cfg[key.strip()] = value.strip()
-        try:
-          if cfg["debug"] == "false":
-            return "Enable Debug Mode"
-          elif cfg["debug"] == "true":
-            print('Debug Mode is "Enabled" and it can be disabled')
-            return "Disable Debug Mode"
-          else:
-            return "Enable Debug Mode"
-        except KeyError:
-          cfg["debug"] = "false"
-          with open(confpath, 'w') as file:
-            for key, value in cfg.items():
-              file.write(f'{key}={value}\n')
-          return "Enable Debug Mode"
-      else:
-        with open(confpath, 'w') as archivo:
-          archivo.write('debug=false\n')
-        sstdebug_mode(rt=True)
-    else:
-      os.makedirs(sstfolder)
-      with open(confpath, 'w') as archivo:
-        archivo.write('debug=false\n')
-      sstdebug_mode(rt=True)
+# MINECRAFT VERSIONS
+## 81 VERSIONS ADDED (1.2.1 - 1.20.4)
+# LAST UPDATE: 23-03-2024
+MCVERSIONS = {
+    "1.2.1": "https://assets.minecraft.net/1_2/minecraft_server.jar",
+    "1.2.2": "https://assets.minecraft.net/1_2/minecraft_server.jar",
+    "1.2.3": "https://assets.minecraft.net/1_2/minecraft_server.jar",
+    "1.2.4": "https://assets.minecraft.net/1_2_5/minecraft_server.jar",
+    "1.2.5": "https://launcher.mojang.com/v1/objects/d8321edc9470e56b8ad5c67bbd16beba25843336/server.jar",
+    "1.3.1": "https://launcher.mojang.com/v1/objects/82563ce498bfc1fc8a2cb5bf236f7da86a390646/server.jar",
+    "1.3.2": "https://launcher.mojang.com/v1/objects/3de2ae6c488135596e073a9589842800c9f53bfe/server.jar",
+    "1.4.2": "https://launcher.mojang.com/v1/objects/5be700523a729bb78ef99206fb480a63dcd09825/server.jar",
+    "1.4.4": "https://launcher.mojang.com/v1/objects/4215dcadb706508bf9d6d64209a0080b9cee9e71/server.jar",
+    "1.4.5": "https://launcher.mojang.com/v1/objects/c12fd88a8233d2c517dbc8196ba2ae855f4d36ea/server.jar",
+    "1.4.6": "https://launcher.mojang.com/v1/objects/a0aeb5709af5f2c3058c1cf0dc6b110a7a61278c/server.jar",
+    "1.4.7": "https://launcher.mojang.com/v1/objects/2f0ec8efddd2f2c674c77be9ddb370b727dec676/server.jar",
+    "1.5.1": "https://launcher.mojang.com/v1/objects/d07c71ee2767dabb79fb32dad8162e1b854d5324/server.jar",
+    "1.5.2": "https://launcher.mojang.com/v1/objects/f9ae3f651319151ce99a0bfad6b34fa16eb6775f/server.jar",
+    "1.6.1": "https://launcher.mojang.com/v1/objects/0252918a5f9d47e3c6eb1dfec02134d1374a89b4/server.jar",
+    "1.6.2": "https://launcher.mojang.com/v1/objects/01b6ea555c6978e6713e2a2dfd7fe19b1449ca54/server.jar",
+    "1.6.4": "https://launcher.mojang.com/v1/objects/050f93c1f3fe9e2052398f7bd6aca10c63d64a87/server.jar",
+    "1.7.2": "https://launcher.mojang.com/v1/objects/3716cac82982e7c2eb09f83028b555e9ea606002/server.jar",
+    "1.7.3": "https://launcher.mojang.com/v1/objects/707857a7bc7bf54fe60d557cca71004c34aa07bb/server.jar",
+    "1.7.4": "https://launcher.mojang.com/v1/objects/61220311cef80aecc4cd8afecd5f18ca6b9461ff/server.jar",
+    "1.7.5": "https://launcher.mojang.com/v1/objects/e1d557b2e31ea881404e41b05ec15c810415e060/server.jar",
+    "1.7.6": "https://launcher.mojang.com/v1/objects/41ea7757d4d7f74b95fc1ac20f919a8e521e910c/server.jar",
+    "1.7.7": "https://launcher.mojang.com/v1/objects/a6ffc1624da980986c6cc12a1ddc79ab1b025c62/server.jar",
+    "1.7.8": "https://launcher.mojang.com/v1/objects/c69ebfb84c2577661770371c4accdd5f87b8b21d/server.jar",
+    "1.7.9": "https://launcher.mojang.com/v1/objects/4cec86a928ec171fdc0c6b40de2de102f21601b5/server.jar",
+    "1.7.10": "https://launcher.mojang.com/v1/objects/952438ac4e01b4d115c5fc38f891710c4941df29/server.jar",
+    "1.8": "https://launcher.mojang.com/v1/objects/a028f00e678ee5c6aef0e29656dca091b5df11c7/server.jar",
+    "1.8.1": "https://launcher.mojang.com/v1/objects/68bfb524888f7c0ab939025e07e5de08843dac0f/server.jar",
+    "1.8.2": "https://launcher.mojang.com/v1/objects/a37bdd5210137354ed1bfe3dac0a5b77fe08fe2e/server.jar",
+    "1.8.3": "https://launcher.mojang.com/v1/objects/163ba351cb86f6390450bb2a67fafeb92b6c0f2f/server.jar",
+    "1.8.4": "https://launcher.mojang.com/v1/objects/dd4b5eba1c79500390e0b0f45162fa70d38f8a3d/server.jar",
+    "1.8.5": "https://launcher.mojang.com/v1/objects/ea6dd23658b167dbc0877015d1072cac21ab6eee/server.jar",
+    "1.8.6": "https://launcher.mojang.com/v1/objects/2bd44b53198f143fb278f8bec3a505dad0beacd2/server.jar",
+    "1.8.7": "https://launcher.mojang.com/v1/objects/35c59e16d1f3b751cd20b76b9b8a19045de363a9/server.jar",
+    "1.8.8": "https://launcher.mojang.com/v1/objects/5fafba3f58c40dc51b5c3ca72a98f62dfdae1db7/server.jar",
+    "1.8.9": "https://launcher.mojang.com/v1/objects/b58b2ceb36e01bcd8dbf49c8fb66c55a9f0676cd/server.jar",
+    "1.9": "https://launcher.mojang.com/v1/objects/b4d449cf2918e0f3bd8aa18954b916a4d1880f0d/server.jar",
+    "1.9.1": "https://launcher.mojang.com/v1/objects/bf95d9118d9b4b827f524c878efd275125b56181/server.jar",
+    "1.9.2": "https://launcher.mojang.com/v1/objects/2b95cc7b136017e064c46d04a5825fe4cfa1be30/server.jar",
+    "1.9.3": "https://launcher.mojang.com/v1/objects/8e897b6b6d784f745332644f4d104f7a6e737ccf/server.jar",
+    "1.9.4": "https://launcher.mojang.com/v1/objects/edbb7b1758af33d365bf835eb9d13de005b1e274/server.jar",
+    "1.10": "https://launcher.mojang.com/v1/objects/a96617ffdf5dabbb718ab11a9a68e50545fc5bee/server.jar",
+    "1.10.1": "https://launcher.mojang.com/v1/objects/cb4c6f9f51a845b09a8861cdbe0eea3ff6996dee/server.jar",
+    "1.10.2": "https://launcher.mojang.com/v1/objects/3d501b23df53c548254f5e3f66492d178a48db63/server.jar",
+    "1.11": "https://launcher.mojang.com/v1/objects/48820c84cb1ed502cb5b2fe23b8153d5e4fa61c0/server.jar",
+    "1.11.1": "https://launcher.mojang.com/v1/objects/1f97bd101e508d7b52b3d6a7879223b000b5eba0/server.jar",
+    "1.11.2": "https://launcher.mojang.com/v1/objects/f00c294a1576e03fddcac777c3cf4c7d404c4ba4/server.jar",
+    "1.12": "https://launcher.mojang.com/v1/objects/8494e844e911ea0d63878f64da9dcc21f53a3463/server.jar",
+    "1.12.1": "https://launcher.mojang.com/v1/objects/561c7b2d54bae80cc06b05d950633a9ac95da816/server.jar",
+    "1.12.2": "https://launcher.mojang.com/v1/objects/886945bfb2b978778c3a0288fd7fab09d315b25f/server.jar",
+    "1.13": "https://launcher.mojang.com/v1/objects/d0caafb8438ebd206f99930cfaecfa6c9a13dca0/server.jar",
+    "1.13.1": "https://launcher.mojang.com/v1/objects/fe123682e9cb30031eae351764f653500b7396c9/server.jar",
+    "1.13.2": "https://launcher.mojang.com/v1/objects/3737db93722a9e39eeada7c27e7aca28b144ffa7/server.jar",
+    "1.14": "https://launcher.mojang.com/v1/objects/f1a0073671057f01aa843443fef34330281333ce/server.jar",
+    "1.14.1": "https://launcher.mojang.com/v1/objects/ed76d597a44c5266be2a7fcd77a8270f1f0bc118/server.jar",
+    "1.14.2": "https://launcher.mojang.com/v1/objects/808be3869e2ca6b62378f9f4b33c946621620019/server.jar",
+    "1.14.3": "https://launcher.mojang.com/v1/objects/d0d0fe2b1dc6ab4c65554cb734270872b72dadd6/server.jar",
+    "1.14.4": "https://launcher.mojang.com/v1/objects/3dc3d84a581f14691199cf6831b71ed1296a9fdf/server.jar",
+    "1.15": "https://launcher.mojang.com/v1/objects/e9f105b3c5c7e85c7b445249a93362a22f62442d/server.jar",
+    "1.15.1": "https://launcher.mojang.com/v1/objects/4d1826eebac84847c71a77f9349cc22afd0cf0a1/server.jar",
+    "1.15.2": "https://launcher.mojang.com/v1/objects/bb2b6b1aefcd70dfd1892149ac3a215f6c636b07/server.jar",
+    "1.16": "https://launcher.mojang.com/v1/objects/a0d03225615ba897619220e256a266cb33a44b6b/server.jar",
+    "1.16.1": "https://launcher.mojang.com/v1/objects/a412fd69db1f81db3f511c1463fd304675244077/server.jar",
+    "1.16.2": "https://launcher.mojang.com/v1/objects/c5f6fb23c3876461d46ec380421e42b289789530/server.jar",
+    "1.16.3": "https://launcher.mojang.com/v1/objects/f02f4473dbf152c23d7d484952121db0b36698cb/server.jar",
+    "1.16.4": "https://launcher.mojang.com/v1/objects/35139deedbd5182953cf1caa23835da59ca3d7cd/server.jar",
+    "1.16.5": "https://launcher.mojang.com/v1/objects/1b557e7b033b583cd9f66746b7a9ab1ec1673ced/server.jar",
+    "1.17": "https://launcher.mojang.com/v1/objects/0a269b5f2c5b93b1712d0f5dc43b6182b9ab254e/server.jar",
+    "1.17.1": "https://launcher.mojang.com/v1/objects/a16d67e5807f57fc4e550299cf20226194497dc2/server.jar",
+    "1.18": "https://launcher.mojang.com/v1/objects/3cf24a8694aca6267883b17d934efacc5e44440d/server.jar",
+    "1.18.1": "https://launcher.mojang.com/v1/objects/125e5adf40c659fd3bce3e66e67a16bb49ecc1b9/server.jar",
+    "1.18.2": "https://launcher.mojang.com/v1/objects/c8f83c5655308435b3dcf03c06d9fe8740a77469/server.jar",
+    "1.19": "https://launcher.mojang.com/v1/objects/e00c4052dac1d59a1188b2aa9d5a87113aaf1122/server.jar",
+    "1.19.1": "https://piston-data.mojang.com/v1/objects/8399e1211e95faa421c1507b322dbeae86d604df/server.jar",
+    "1.19.2": "https://piston-data.mojang.com/v1/objects/f69c284232d7c7580bd89a5a4931c3581eae1378/server.jar",
+    "1.19.3": "https://piston-data.mojang.com/v1/objects/c9df48efed58511cdd0213c56b9013a7b5c9ac1f/server.jar",
+    "1.19.4": "https://piston-data.mojang.com/v1/objects/8f3112a1049751cc472ec13e397eade5336ca7ae/server.jar",
+    "1.20": "https://piston-data.mojang.com/v1/objects/15c777e2cfe0556eef19aab534b186c0c6f277e1/server.jar",
+    "1.20.1": "https://piston-data.mojang.com/v1/objects/84194a2f286ef7c14ed7ce0090dba59902951553/server.jar",
+    "1.20.2": "https://piston-data.mojang.com/v1/objects/5b868151bd02b41319f54c8d4061b8cae84e665c/server.jar",
+    "1.20.3": "https://piston-data.mojang.com/v1/objects/4fb536bfd4a83d61cdbaf684b8d311e66e7d4c49/server.jar",
+    "1.20.4": "https://piston-data.mojang.com/v1/objects/8dd1a28015f51b1803213892b50b7b4fc76e594d/server.jar"
+}
 
-# THEME SELECTION
-def theme(rt=False):
-  global bg_color
-  global button_color
-  global buttontxt_color
-  global text_color
-  cfg = {}
-  if not rt:
-    if os.path.exists(sstfolder):
-      if os.path.exists(confpath):
-        with open(confpath, 'r') as file:
-          for line in file:
-            line = line.strip()
-            if line and not line.startswith('#'):
-              key, value = line.split('=')
-              cfg[key.strip()] = value.strip()
-        try:
-          if cfg["theme"] == "dark":
-            bg_color = "#1A1A1A"  # rgb(26, 26, 26)
-            button_color = "#D3D3D3"  # rgb(211, 211, 211)
-            buttontxt_color = "#1A1A1A"  # rgb(26, 26, 26)
-            text_color = "white"  # White
-            if enabled_debug:
-              print('Saved theme is "dark"')
-            main()
-          elif cfg["theme"] == "light":
-            bg_color = "white"  # White
-            button_color = "white"  # White
-            buttontxt_color = "black"  # Black
-            text_color = "black"  # Black
-            if enabled_debug:
-              print('Saved theme is "light"')
-            main()
-          ### Add more themes here (v2.1) ###
-          else:
-            cfg["theme"] = "dark"
-            with open(confpath, 'w') as file:
-              for key, value in cfg.items():
-                file.write(f'{key}={value}\n')
-            bg_color = "#1A1A1A"  # rgb(26, 26, 26)
-            button_color = "#D3D3D3"  # rgb(211, 211, 211)
-            buttontxt_color = "#1A1A1A"  # rgb(26, 26, 26)
-            text_color = "white"  # White
-            if enabled_debug:
-              print('Unknown saved theme, set to "dark"')
-            main()
-        except KeyError:
-          cfg["theme"] = "dark"
-          with open(confpath, 'w') as file:
-            for key, value in cfg.items():
-              file.write(f'{key}={value}\n')
-          bg_color = "#1A1A1A"  # rgb(26, 26, 26)
-          button_color = "#D3D3D3"
-          buttontxt_color = "#1A1A1A"
-          text_color = "white"
-          if enabled_debug:
-            print('Not saved theme has been found, set to "dark"')
-          main()
-      else:
-        with open(confpath, 'w') as archivo:
-          archivo.write('theme=dark\n')
-        if enabled_debug:
-          print('No config file found, created the file and set theme to "dark"')
-        theme()
-    else:
-      os.makedirs(sstfolder)
-      with open(confpath, 'w') as archivo:
-        archivo.write('theme=dark\n')
-      if enabled_debug:
-        print('No tool data folder found, created the folder, config file and set theme to "dark"')
-      theme()
-  else:
-    if os.path.exists(sstfolder):
-      if os.path.exists(confpath):
-        with open(confpath, 'r') as file:
-          for line in file:
-            line = line.strip()
-            if line and not line.startswith('#'):
-              key, value = line.split('=')
-              cfg[key.strip()] = value.strip()
-        try:
-          if cfg["theme"] == "dark":
-            if enabled_debug:
-              print('Saved theme is "dark", it can be changed to "light"')
-            return "Light"
-          elif cfg["theme"] == "light":
-            if enabled_debug:
-              print('Saved theme is "light", it can be changed to "dark"')
-            return "Dark"
-          ### Add more themes here (v2.1) ###
-          else:
-            if enabled_debug:
-              print('Unknown saved theme, it can be changed to "dark"')
-            return "Dark"
-        except KeyError:
-          cfg["theme"] = "dark"
-          with open(confpath, 'w') as file:
-            for key, value in cfg.items():
-              file.write(f'{key}={value}\n')
-          if enabled_debug:
-            print('Not saved theme has been found, it can be changed to "dark"')
-          return "Dark"
-      else:
-        with open(confpath, 'w') as archivo:
-          archivo.write('theme=dark\n')
-        if enabled_debug:
-          print('No config file found, created the file, set theme to "dark" and retried request')
-        theme(rt=True)
-    else:
-      os.makedirs(sstfolder)
-      with open(confpath, 'w') as archivo:
-        archivo.write('theme=dark\n')
-      if enabled_debug:
-        print('No tool data folder found, created the folder, config file, set theme to "dark" and retried request')
-      theme(rt=True)
+# CLS
+def limpiar_consola():
+    if os.name == 'nt': # En Windows - On Windows
+        os.system('cls')
+    else: # En sistemas Unix-like - On Unix-like systems
+        os.system('clear')
 
-# CHECK FULLSCREEN STATUS
-def fullscreen():
-  cfg = {}
-  if os.path.exists(sstfolder):
-    if os.path.exists(confpath):
-      with open(confpath, 'r') as file:
-        for line in file:
-          line = line.strip()
-          if line and not line.startswith('#'):
-            key, value = line.split('=')
-            cfg[key.strip()] = value.strip()
-      try:
-        if cfg["fullscreen"] == "true":
-          if enabled_debug:
-            print('Saved fullscreen status is "Enabled"')
-          return True
-        elif cfg["fullscreen"] == "false":
-          if enabled_debug:
-            print('Saved fullscreen status is "Disabled"')
-          return False
+# WINDOW TITLE
+def window_title(title):
+    if sys.platform.startswith('win32'): # En Windows - On Windows
+        ctypes.windll.kernel32.SetConsoleTitleW(title)
+    elif sys.platform.startswith('linux') or sys.platform.startswith('darwin'): # En sistemas Unix-like - On Unix-like systems
+        sys.stdout.write(f"\x1b]2;{title}\x07")
+
+# BRING WINDOW TO FRONT
+def front():
+    if os.name == 'nt':  # For Windows
+        # Get the handle of the console window
+        h_wnd = ctypes.windll.kernel32.GetConsoleWindow()
+
+        # Bring the console window to the foreground
+        ctypes.windll.user32.SetForegroundWindow(h_wnd)
+    else:  # For Linux/OS X
+        # Get the PID of the current process
+        pid = os.getpid()
+
+        # Use wmctrl to bring the window with the given PID to the front
+        subprocess.call(['wmctrl', '-ia', str(pid)])
+
+# ENGLISH
+def eng():
+    # CHANGE WINDOW TITLE
+    window_title("Server Launcher for Minecraft")
+
+    # SERVER STARTUP
+    def ram():
+        global servername
+        limpiar_consola()
+        sservers = {}
+        if os.path.exists(SAVED_SERVERS):
+            with open(SAVED_SERVERS, 'r') as file:
+                for line in file:
+                    line = line.strip()
+                    if line and not line.startswith('#'):
+                        key, value = line.split('<[=]>')
+                        sservers[key.strip()] = value.strip()
+            if sservers:
+                limpiar_consola()
+                print('Server Launcher for Minecraft\n-------------------------------------\n\n"Your Servers" List\n')
+                server_keys = list(sservers.keys())
+                for i, key in enumerate(server_keys, start=1):
+                    print(f"({i}) {key}")
+                nserv = colored("Add","cyan")
+                delserv = colored("Delete","red")
+                clearlist = colored("Clear","magenta")
+                print(f"\n(N) {nserv} Server\n(D) {delserv} a Server from the list\n(C) {clearlist} List\n(R) Return to main menu")
+                servsel = input("\nSelect one of the options or enter the number of the server to start= ").replace(" ", "")
+                try:
+                    if servsel.lower() == "n":
+                        newserv = filedialog.askdirectory()
+                        front()
+                        servname = os.path.basename(newserv)
+                        if newserv == "" or servname == "":
+                            limpiar_consola()
+                            print('Server Launcher for Minecraft\n-------------------------------------\n\nYou must select a folder to save it in "Your Servers" List.')
+                            time.sleep(2.5)
+                            ram()
+                        if newserv and servname:
+                            servname = colored(os.path.basename(newserv), "yellow")
+                            servstring = f"{servname}<[=]>{newserv}\n"
+                            os.makedirs(CONFIG_PATH, exist_ok=True)
+                            with open(SAVED_SERVERS, 'r+') as file:
+                                lines = file.readlines()
+                                if servstring not in lines:
+                                    file.write(servstring)
+                        limpiar_consola()
+                        print(f'Server Launcher for Minecraft\n-------------------------------------\n\nThe server "{servname}" has been saved.')
+                        time.sleep(1.5)
+                        ram()
+                    elif servsel.lower() == "d":
+                        def servdel():
+                            limpiar_consola()
+                            print("Server Launcher for Minecraft\n-------------------------------------\n\nSelect the server to delete from the list.\n")
+                            for i, key in enumerate(server_keys, start=1):
+                                print(f"({i}) {key}")
+                            print("\n(N) Cancel\n(R) Return to main menu")
+                            servsel = input("\nSelect one of the options or enter the number of the server to delete= ").replace(" ", "")
+                            try:
+                                if servsel.lower() == "r":
+                                    eng()
+                                elif servsel.lower() == "n":
+                                    ram()
+                                else:
+                                    if any(char in "0123456789+-*/" for char in servsel):
+                                        if not servsel[0].isalpha():
+                                            servv = eval(servsel)
+                                        else:
+                                            servv = servsel
+                                    else:
+                                        servv = servsel
+                                    servsel = int(servv)
+                                    if 1 <= servsel <= len(server_keys):
+                                        servsel = server_keys[servsel - 1]
+                                        servpath = sservers[servsel]
+                                        servestring = f"{servsel}<[=]>{servpath}\n"
+                                    os.makedirs(CONFIG_PATH, exist_ok=True)
+                                    with open(SAVED_SERVERS, 'r') as file:
+                                        lines = file.readlines()
+                                        os.makedirs(CONFIG_PATH, exist_ok=True)
+                                        with open(SAVED_SERVERS, 'w') as file:
+                                            for line in lines:
+                                                if line != servestring:
+                                                    file.write(line)
+                                    limpiar_consola()
+                                    print(f'Server Launcher for Minecraft\n-------------------------------------\n\nThe server "{servsel}" has been deleted from the list.')
+                                    time.sleep(1.5)
+                                    ram()             
+                            except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                                servdel()
+                        servdel()
+                    elif servsel.lower() == "c":
+                        def lisclear():
+                            limpiar_consola()
+                            yess = colored("Yes","green")
+                            noo = colored("No","red")
+                            clearconfirm = input(f'Server Launcher for Minecraft\n-------------------------------------\n\nAre you sure you want to clear the "Your Servers" List?\n\n(1) {yess}\n(2) {noo}\n\nSelect one of the options= ')
+                            try:
+                                if any(char in "0123456789+-*/" for char in clearconfirm):
+                                    if not clearconfirm[0].isalpha():
+                                        clearconf = eval(clearconfirm)
+                                    else:
+                                        clearconf = clearconfirm
+                                else:
+                                    clearconf = clearconfirm
+                                clearconf = int(clearconf)
+                                if clearconf == 1:
+                                    os.makedirs(CONFIG_PATH, exist_ok=True)
+                                    with open(SAVED_SERVERS, 'w') as file:
+                                        file.write("# Server Launcher for Minecraft\n# Saved servers\n")
+                                    limpiar_consola()
+                                    print('Server Launcher for Minecraft\n-------------------------------------\n\nThe "Your Servers" List has been cleared.')
+                                    time.sleep(1.5)
+                                    ram()
+                                elif clearconf == 2:
+                                    ram()
+                            except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                                lisclear()
+                        lisclear()
+                    elif servsel.lower() == "r":
+                        eng()
+                    else:
+                        if any(char in "0123456789+-*/" for char in servsel):
+                            if not servsel[0].isalpha():
+                                servv = eval(servsel)
+                            else:
+                                servv = servsel
+                        else:
+                            servv = servsel
+                        servsel = int(servv)
+                        if 1 <= servsel <= len(server_keys):
+                            servsel = server_keys[servsel - 1]
+                            servpath = sservers[servsel]
+                            os.makedirs(servpath, exist_ok=True)
+                            os.chdir(servpath)
+                            servername = servsel
+                except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                    ram()
+            else:
+                os.makedirs(CONFIG_PATH, exist_ok=True)
+                with open(SAVED_SERVERS, 'w') as file:
+                    file.write("# Server Launcher for Minecraft\n# Saved servers\n")
+                limpiar_consola()
+                adds = colored("Add a Server","cyan")
+                saveconfirm = input(f"Server Launcher for Minecraft\n-------------------------------------\n\nThere are no saved servers.\n\n(1) {adds}\n(2) Return to main menu\n\nSelect one of the options= ")
+                try:
+                    if any(char in "0123456789+-*/" for char in saveconfirm):
+                        if not saveconfirm[0].isalpha():
+                            saveconf = eval(saveconfirm)
+                        else:
+                            saveconf = saveconfirm
+                    else:
+                        saveconf = saveconfirm
+                    saveconf = int(saveconf)
+                    if saveconf == 1:
+                        newserv = filedialog.askdirectory()
+                        front()
+                        servname = os.path.basename(newserv)
+                        if newserv == "" or servname == "":
+                            limpiar_consola()
+                            print('Server Launcher for Minecraft\n-------------------------------------\n\nYou must select a folder to save it in "Your Servers" List.')
+                            time.sleep(2.5)
+                            ram()
+                        if newserv and servname:
+                            servname = colored(os.path.basename(newserv), "yellow")
+                            servstring = f"{servname}<[=]>{newserv}\n"
+                            os.makedirs(CONFIG_PATH, exist_ok=True)
+                            with open(SAVED_SERVERS, 'r+') as file:
+                                lines = file.readlines()
+                                if servstring not in lines:
+                                    file.write(servstring)
+                        limpiar_consola()
+                        print(f'Server Launcher for Minecraft\n-------------------------------------\n\nThe server "{servname}" has been saved.')
+                        time.sleep(1.5)
+                        ram()
+                    elif saveconf == 2:
+                        eng()
+                    else:
+                        ram()
+                except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                    ram()
         else:
-          cfg["fullscreen"] = "false"
-          with open(confpath, 'w') as file:
-            for key, value in cfg.items():
-              file.write(f'{key}={value}\n')
-          if enabled_debug:
-            print('Unknown saved fullscreen status, set to "Disabled"')
-          return False
-      except KeyError:
-        cfg["fullscreen"] = "false"
-        with open(confpath, 'w') as file:
-          for key, value in cfg.items():
-            file.write(f'{key}={value}\n')
-        if enabled_debug:
-          print('Not saved fullscreen status has been found, set to "Disabled"')
-        return False
-    else:
-      with open(confpath, 'w') as archivo:
-        archivo.write('fullscreen=false\n')
-      if enabled_debug:
-        print('No config file found, created the file, set fullscreen status to "Disabled" and retried request')
-      fullscreen()
-  else:
-    os.makedirs(sstfolder)
-    with open(confpath, 'w') as archivo:
-      archivo.write('fullscreen=false\n')
-    if enabled_debug:
-      print('No tool data folder found, created the folder, config file, set fullscreen status to "Disabled" and retried request')
-    fullscreen()
-
-# CHECK LAST RAM TYPE USED
-def last_ramtype():
-  cfg = {}
-  if os.path.exists(sstfolder):
-    if os.path.exists(confpath):
-      with open(confpath, 'r') as file:
-        for line in file:
-          line = line.strip()
-          if line and not line.startswith('#'):
-            key, value = line.split('=')
-            cfg[key.strip()] = value.strip()
-      try:
-        if cfg["ramtype"] == "MB":
-          if enabled_debug:
-            print('Saved RAM type is "MB"')
-          return "MB"
+            os.makedirs(CONFIG_PATH, exist_ok=True)
+            with open(SAVED_SERVERS, 'w') as file:
+                file.write("# Server Launcher for Minecraft\n# Saved servers\n")
+            limpiar_consola()
+            input('Server Launcher for Minecraft\n-------------------------------------\n\nThere are no saved servers.\n\nPress ENTER to select a folder with a Server and add it to "Your Servers" list.')
+            newserv = filedialog.askdirectory()
+            front()
+            servname = os.path.basename(newserv)
+            if newserv == "" or servname == "":
+                limpiar_consola()
+                print('Server Launcher for Minecraft\n-------------------------------------\n\nYou must select a folder to save it in "Your Servers" List.')
+                time.sleep(2.5)
+                ram()
+            if newserv and servname:
+                servname = colored(os.path.basename(newserv), "yellow")
+                servstring = f"{servname}<[=]>{newserv}\n"
+                with open(SAVED_SERVERS, 'r+') as file:
+                    lines = file.readlines()
+                    if servstring not in lines:
+                        file.write(servstring)
+            limpiar_consola()
+            print(f'Server Launcher for Minecraft\n-------------------------------------\n\nThe server "{servname}" has been saved.')
+            time.sleep(1.5)
+            ram()
+        if os.path.exists("server.jar"):
+            # CONFIG
+            def config():
+                global nameserver
+                limpiar_consola()
+                props = "server.properties"
+                if os.path.exists(props):
+                    global properties
+                    properties = {}
+                    online = "Error"
+                    hard = "Error"
+                    pvp = "Error"
+                    with open('server.properties', 'r') as file:
+                        for line in file:
+                            line = line.strip()
+                            if line and not line.startswith('#'):
+                                key, value = line.split('=')
+                                properties[key.strip()] = value.strip()
+                    if properties["online-mode"] == "false":
+                        online = colored("ENABLE","green")
+                    elif properties["online-mode"] == "true":
+                        online = colored("DISABLE","red")
+                    if properties["hardcore"] == "false":
+                        hard = colored("ENABLE","green")
+                    elif properties["hardcore"] == "true":
+                        hard = colored("DISABLE","red")
+                    if properties["pvp"] == "false":
+                        pvp = colored("ENABLE","green")
+                    elif properties["pvp"] == "true":
+                        pvp = colored("DISABLE","red")
+                    limpiar_consola()
+                    confsel = input(f'Server Launcher for Minecraft\n-------------------------------------\n\nLets manage "{nameserver}"!\n\n(1) {online} online mode\n(2) {hard} hardcore mode\n(3) {pvp} PvP\n(4) Change gamemode\n(5) Change difficulty\n(6) Change max players limit\n(7) Back\n(8) Return to main menu\n\nSelect one of the options= ')
+                    if properties["online-mode"] == "false":
+                        online = "ENABLE"
+                    elif properties["online-mode"] == "true":
+                        online = "DISABLE"
+                    if properties["hardcore"] == "false":
+                        hard = "ENABLE"
+                    elif properties["hardcore"] == "true":
+                        hard = "DISABLE"
+                    if properties["pvp"] == "false":
+                        pvp = "ENABLE"
+                    elif properties["pvp"] == "true":
+                        pvp = "DISABLE"
+                    try:
+                        if any(char in "0123456789+-*/" for char in confsel):
+                            if not confsel[0].isalpha():
+                                confug = eval(confsel)
+                            else:
+                                confug = confsel
+                        else:
+                            confug = confsel
+                        confug = int(confug) 
+                        if confug == 1:
+                            if online == "ENABLE":
+                                properties["online-mode"] = "true"
+                                with open('server.properties', 'w') as file:
+                                    for key, value in properties.items():
+                                        file.write(f'{key}={value}\n')
+                                online = colored("ENABLED","green")
+                            elif online == "DISABLE":
+                                properties["online-mode"] = "false"
+                                with open('server.properties', 'w') as file:
+                                    for key, value in properties.items():
+                                        file.write(f'{key}={value}\n')
+                                online = colored("DISABLED","red")
+                            limpiar_consola()
+                            print(f"Server Launcher for Minecraft\n-------------------------------------\n\nOnline mode has been {online}.")
+                            time.sleep(1.5)
+                            config()
+                        elif confug == 2:
+                            if hard == "ENABLE":
+                                properties["hardcore"] = "true"
+                                with open('server.properties', 'w') as file:
+                                    for key, value in properties.items():
+                                        file.write(f'{key}={value}\n')
+                                hard = colored("ENABLED","green")
+                            elif hard == "DISABLE":
+                                properties["hardcore"] = "false"
+                                with open('server.properties', 'w') as file:
+                                    for key, value in properties.items():
+                                        file.write(f'{key}={value}\n')
+                                hard = colored("DISABLED","red")
+                            limpiar_consola()
+                            print(f"Server Launcher for Minecraft\n-------------------------------------\n\nHardcore mode has been {hard}.")
+                            time.sleep(1.5)
+                            config()
+                        elif confug == 3:
+                            if pvp == "ENABLE":
+                                properties["pvp"] = "true"
+                                with open('server.properties', 'w') as file:
+                                    for key, value in properties.items():
+                                        file.write(f'{key}={value}\n')
+                                pvp = colored("ENABLED","green")
+                            elif pvp == "DISABLE":
+                                properties["pvp"] = "false"
+                                with open('server.properties', 'w') as file:
+                                    for key, value in properties.items():
+                                        file.write(f'{key}={value}\n')
+                                pvp = colored("DISABLED","red")
+                            limpiar_consola()
+                            print(f"Server Launcher for Minecraft\n-------------------------------------\n\nPvP has been {pvp}.")
+                            time.sleep(1.5)
+                            config()
+                        elif confug == 4:
+                            def juego():
+                                global properties
+                                modo = properties["gamemode"]
+                                if modo == "survival" or modo == "0":
+                                    modo = colored("SURVIVAL","cyan")
+                                elif modo == "creative" or modo == "1":
+                                    modo = colored("CREATIVE","cyan")
+                                elif modo == "adventure" or modo == "2":
+                                    modo = colored("ADVENTURE","cyan")
+                                elif modo == "spectator" or modo == "3":
+                                    modo = colored("SPECTATOR","cyan")
+                                superv = colored("SURVIVAL","yellow")
+                                creat = colored("CREATIVE","yellow")
+                                avent = colored("ADVENTURE","yellow")
+                                espect = colored("SPECTATOR","yellow")
+                                limpiar_consola()
+                                modosel = input(f"Server Launcher for Minecraft\n-------------------------------------\n\nThe current game mode is {modo}.\n\n(1) Change to {superv} gamemode\n(2) Change to {creat} gamemode\n(3) Change to {avent} gamemode\n(4) Change to {espect} gamemode\n(5) Go back\n(6) Return to main menu\n\nSelect one of the options= ")
+                                try:
+                                    if any(char in "0123456789+-*/" for char in modosel):
+                                        if not modosel[0].isalpha():
+                                            coonf = eval(modosel)
+                                        else:
+                                            coonf = modosel
+                                    else:
+                                        coonf = modosel
+                                    coonf = int(coonf)
+                                    if coonf == 1:
+                                        properties["gamemode"] = "0"
+                                        with open('server.properties', 'w') as file:
+                                            for key, value in properties.items():
+                                                file.write(f'{key}={value}\n')
+                                        limpiar_consola()
+                                        print(f"Server Launcher for Minecraft\n-------------------------------------\n\nGamemode has been set to {superv}.")
+                                        time.sleep(1.5)
+                                        juego()
+                                    elif coonf == 2:
+                                        properties["gamemode"] = "1"
+                                        with open('server.properties', 'w') as file:
+                                            for key, value in properties.items():
+                                                file.write(f'{key}={value}\n')
+                                        limpiar_consola()
+                                        print(f"Server Launcher for Minecraft\n-------------------------------------\n\nGamemode has been set to {creat}.")
+                                        time.sleep(1.5)
+                                        juego()
+                                    elif coonf == 3:
+                                        properties["gamemode"] = "2"
+                                        with open('server.properties', 'w') as file:
+                                            for key, value in properties.items():
+                                                file.write(f'{key}={value}\n')
+                                        limpiar_consola()
+                                        print(f"Server Launcher for Minecraft\n-------------------------------------\n\nGamemode has been set to {avent}.")
+                                        time.sleep(1.5)
+                                        juego()
+                                    elif coonf == 4:
+                                        properties["gamemode"] = "3"
+                                        with open('server.properties', 'w') as file:
+                                            for key, value in properties.items():
+                                                file.write(f'{key}={value}\n')
+                                        limpiar_consola()
+                                        print(f"Server Launcher for Minecraft\n-------------------------------------\n\nGamemode has been set to {espect}.")
+                                        time.sleep(1.5)
+                                        juego()
+                                    elif coonf == 5:
+                                        config()
+                                    elif coonf == 6:
+                                        eng()
+                                    else:
+                                        juego()
+                                except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                                    juego()
+                            juego()
+                        elif confug == 5:
+                            def difconf():
+                                global properties
+                                dificultad = properties["difficulty"]
+                                if dificultad == "peaceful" or dificultad == "0":
+                                    dificultad = colored("PEACEFUL","cyan")
+                                elif dificultad == "easy" or dificultad == "1":
+                                    dificultad = colored("EASY","cyan")
+                                elif dificultad == "normal" or dificultad == "2":
+                                    dificultad = colored("NORMAL","cyan")
+                                elif dificultad == "hard" or dificultad == "3":
+                                    dificultad = colored("HARD","cyan")
+                                pacif = colored("PEACEFUL","yellow")
+                                facil = colored("EASY","yellow")
+                                normal = colored("NORMAL","yellow")
+                                dificil = colored("HARD","yellow")
+                                limpiar_consola()
+                                difsel = input(f"Server Launcher for Minecraft\n-------------------------------------\n\nThe current difficulty is {dificultad}.\n\n(1) Change difficulty to {pacif}\n(2) Change difficulty to {facil}\n(3) Change difficulty to {normal}\n(4) Change difficulty to {dificil}\n(5) Go back\n(6) Return to main menu\n\nSelect one of the options= ")
+                                try:
+                                    if any(char in "0123456789+-*/" for char in difsel):
+                                        if not difsel[0].isalpha():
+                                            difcc = eval(difsel)
+                                        else:
+                                            difcc = difsel
+                                    else:
+                                        difcc = difsel
+                                    difcc = int(difcc)
+                                    if difcc == 1:
+                                        properties["difficulty"] = "0"
+                                        with open('server.properties', 'w') as file:
+                                            for key, value in properties.items():
+                                                file.write(f'{key}={value}\n')
+                                        limpiar_consola()
+                                        print(f"Server Launcher for Minecraft\n-------------------------------------\n\nDifficulty has been set to {pacif}.")
+                                        time.sleep(1.5)
+                                        difconf()
+                                    elif difcc == 2:
+                                        properties["difficulty"] = "1"
+                                        with open('server.properties', 'w') as file:
+                                            for key, value in properties.items():
+                                                file.write(f'{key}={value}\n')
+                                        limpiar_consola()
+                                        print(f"Server Launcher for Minecraft\n-------------------------------------\n\nDifficulty has been set to {facil}.")
+                                        time.sleep(1.5)
+                                        difconf()
+                                    elif difcc == 3:
+                                        properties["difficulty"] = "2"
+                                        with open('server.properties', 'w') as file:
+                                            for key, value in properties.items():
+                                                file.write(f'{key}={value}\n')
+                                        limpiar_consola()
+                                        print(f"Server Launcher for Minecraft\n-------------------------------------\n\nDifficulty has been set to {normal}.")
+                                        time.sleep(1.5)
+                                        difconf()
+                                    elif difcc == 4:
+                                        properties["difficulty"] = "3"
+                                        with open('server.properties', 'w') as file:
+                                            for key, value in properties.items():
+                                                file.write(f'{key}={value}\n')
+                                        limpiar_consola()
+                                        print(f"Server Launcher for Minecraft\n-------------------------------------\n\nDifficulty has been set to {dificil}.")
+                                        time.sleep(1.5)
+                                        difconf()
+                                    elif difcc == 5:
+                                        config()
+                                    elif difcc == 6:
+                                        eng()
+                                    else:
+                                        difconf()
+                                except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                                    difconf()
+                            difconf()
+                        elif confug == 6:
+                            def playct():
+                                global properties
+                                players = colored(properties["max-players"],"cyan")
+                                limpiar_consola()
+                                newpl = input(f"Server Launcher for Minecraft\n-------------------------------------\n\nThe current player limit is a maximum of {players}.\n\n(N) Go back\n(M) Return to main menu\n\nSelect one of the options or enter the new player limit= ").replace(" ", "")
+                                try:
+                                    if newpl.lower() == "n":
+                                        config()
+                                    elif newpl.lower() == "m":
+                                        eng()
+                                    else:
+                                        if any(char in "0123456789+-*/" for char in newpl):
+                                            if not newpl[0].isalpha():
+                                                entero = eval(newpl)
+                                            else:
+                                                entero = newpl
+                                        else:
+                                            entero = newpl
+                                        entero = int(entero)
+                                        if entero <= 0 or entero > 100000:
+                                            limpiar_consola()
+                                            print(f"Server Launcher for Minecraft\n-------------------------------------\n\nEnter a valid number between 1 and 100,000.")
+                                            time.sleep(1.5)
+                                            playct()
+                                        else:
+                                            properties["max-players"] = entero
+                                            with open('server.properties', 'w') as file:
+                                                for key, value in properties.items():
+                                                    file.write(f'{key}={value}\n')
+                                            entero = colored(str(entero),"yellow")
+                                            limpiar_consola()
+                                            print(f"Server Launcher for Minecraft\n-------------------------------------\n\nThe maximum player limit is now {entero}.")
+                                            time.sleep(1.5)
+                                            playct()
+                                except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                                    playct()
+                            playct()
+                        elif confug == 7:
+                            run_server()
+                        elif confug == 8:
+                            eng()
+                        else:
+                            config()
+                    except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                        config()
+                else:
+                    limpiar_consola()
+                    input("Server Launcher for Minecraft\n-------------------------------------\n\nThe server configuration files do not exist yet or are not available.\nYou must start the server properly at least once before you can configure it.\n\nPress ENTER to continue.")
+                    run_server()
+            def run_server():
+                global servername
+                global valor
+                global nameserver
+                valor1 = None
+                gbormb = None
+                vjava = None
+                if valor == None:
+                    valor = "GB"
+                    valor1 = colored("GIGABYTES","cyan")
+                    vjava = "G"
+                    gbormb = colored("MEGABYTES","yellow")
+                if valor == "GB":
+                    valor1 = colored("GIGABYTES","cyan")
+                    vjava = "G"
+                    gbormb = colored("MEGABYTES","yellow")
+                elif valor == "MB":
+                    valor1 = colored("MEGABYTES","cyan")
+                    vjava = "M"
+                    gbormb = colored("GIGABYTES","yellow")
+                nameserver = servername
+                limpiar_consola()
+                gbs = 0
+                rammount = input(f'Server Launcher for Minecraft\n-------------------------------------\n\nYou are about to start the Server "{nameserver}"\n\n(M) Manage Server\n(C) Use RAM in {gbormb}\n(B) Back\n(N) Return to main menu\n\nSelect one of the options or enter the {valor1} of RAM to assing to the server= ').replace(" ", "")
+                try:
+                    if rammount.lower() == "m":
+                        config()  
+                    if rammount.lower() == "c":
+                        if valor == "GB":
+                            limpiar_consola()
+                            print(f"Server Launcher for Minecraft\n-------------------------------------\n\nNow the RAM is on {gbormb}.")
+                            time.sleep(1.5)
+                            valor = "MB"
+                            run_server()
+                        elif valor == "MB":
+                            limpiar_consola()
+                            print(f"Server Launcher for Minecraft\n-------------------------------------\n\nNow the RAM is on {gbormb}.")
+                            time.sleep(1.5)
+                            valor = "GB"
+                            run_server()
+                    elif rammount.lower() == "b":
+                        ram()
+                    elif rammount.lower() == "n":
+                        eng()
+                    else:
+                        if any(char in "0123456789+-*/" for char in rammount):
+                            if not rammount[0].isalpha():
+                                gbs = eval(rammount)
+                            else:
+                                gbs = rammount
+                        else:
+                            gbs = rammount
+                        gbs = int(gbs)
+                        if valor == "GB" and (gbs <= 0 or gbs > 75):
+                            limpiar_consola()
+                            print(f"Server Launcher for Minecraft\n-------------------------------------\n\nEnter a valid amount between 1 and 75 Gigabytes.")
+                            time.sleep(1.5)
+                            run_server()
+                        elif valor == "MB" and (gbs <= 511 or gbs > 76800):
+                            limpiar_consola()
+                            print(f"Server Launcher for Minecraft\n-------------------------------------\n\nEnter a valid amount between 512 and 76,800 Megabytes.")
+                            time.sleep(1.5)
+                            run_server()
+                        else:
+                            eula = "eula.txt"
+                            with open(eula, "w") as reemplazo:
+                                reemplazo.write("eula=true")
+                            limpiar_consola()
+                            print(f"Server Launcher for Minecraft\n-------------------------------------\n\nStarting the server with {gbs}{valor} of RAM.\n")
+                            comando_java = f"java -Xmx{gbs}{vjava} -Xms{gbs}{vjava} -jar server.jar nogui"
+                            subprocess.run(comando_java, shell=True)
+                            fyh_sistema = datetime.datetime.now()
+                            fecha_cerrado = str(fyh_sistema.strftime("%d/%m/%Y"))
+                            hora_cerrado = str(fyh_sistema.strftime("%H:%M:%S"))
+                            input("\nPress ENTER to continue.")
+                            limpiar_consola()
+                            input(f"Server Launcher for Minecraft\n-------------------------------------\n\nThe server has closed on {fecha_cerrado} at {hora_cerrado}.\n\nYou can check the console log in the 'logs' folder inside your Server's main folder.\n\nPress ENTER to continue.")
+                            ram()
+                except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                    run_server()
+            run_server()
         else:
-          if enabled_debug:
-            print('Saved RAM type is "GB"')
-          return "GB"
-      except KeyError:
-        cfg["ramtype"] = "GB"
-        with open(confpath, 'w') as file:
-          for key, value in cfg.items():
-            file.write(f'{key}={value}\n')
-        if enabled_debug:
-          print('Not saved RAM type has been found, set to "GB"')
-        return "GB"
-    else:
-      with open(confpath, 'w') as archivo:
-        archivo.write('ramtype=GB\n')
-      if enabled_debug:
-        print('No config file found, created the file, set RAM type to "GB" and retried request')
-      last_ramtype()
-  else:
-    os.makedirs(sstfolder)
-    with open(confpath, 'w') as archivo:
-      archivo.write('ramtype=GB\n')
-    if enabled_debug:
-      print('No tool data folder found, created the folder, config file, set RAM type to "GB" and retried request')
-    last_ramtype()
+            limpiar_consola()
+            print('Server Launcher for Minecraft\n-------------------------------------\n\n"server.jar" not found in this folder.\n\nAre you sure this is a Server?')
+            time.sleep(2.5)
+            ram()
 
-# CHECK LAST RAM USED
-def last_ram():
-  cfg = {}
-  if os.path.exists(sstfolder):
-    if os.path.exists(confpath):
-      with open(confpath, 'r') as file:
-        for line in file:
-          line = line.strip()
-          if line and not line.startswith('#'):
-            key, value = line.split('=')
-            cfg[key.strip()] = value.strip()
-      try:
-        if last_ramtype() == "GB":
-          if 0 < int(cfg["ram"]) <= 75:
-            if enabled_debug:
-              print(f'Saved RAM is {cfg["ram"]}GB')
-            return cfg["ram"]
-          else:
-            cfg["ram"] = "1"
-            with open(confpath, 'w') as file:
-              for key, value in cfg.items():
-                file.write(f'{key}={value}\n')
-            if enabled_debug:
-              print('Saved RAM is not valid, set to 1GB')
-            return "1"
+    # INSTALL NEW SERVER
+    def installmenu():
+        global newserver
+        global foldname
+        limpiar_consola()
+        inconfirm = input("Server Launcher for Minecraft\n-------------------------------------\n\nFirst, lets select a folder to save your New Server's files.\n\n(1) Select folder for the new Server\n(2) Cancel\n\nSelect one of the options= ").replace(" ", "")
+        try:
+            if any(char in "0123456789+-*/" for char in inconfirm):
+                if not inconfirm[0].isalpha():
+                    inconf = eval(inconfirm)
+                else:
+                    inconf = inconfirm
+            else:
+                inconf = inconfirm
+            inconf = int(inconf)
+            if inconf == 1:
+                def reselect():
+                    global newserver
+                    global foldname
+                    newserver = filedialog.askdirectory()
+                    front()
+                    foldname = colored(os.path.basename(newserver), "green")
+                    if newserver == "" or foldname == "":
+                        limpiar_consola()
+                        print('Server Launcher for Minecraft\n-------------------------------------\n\nYou must select a folder to save the New Server.')
+                        time.sleep(2.5)
+                        installmenu()
+                    os.makedirs(newserver, exist_ok=True)
+                    os.chdir(newserver)
+                    if newserver and foldname:
+                        def vers_select():
+                            global newserver
+                            global foldname
+                            limpiar_consola()
+                            verss = input(f'Server Launcher for Minecraft\n-------------------------------------\n\nYour New Server will be saved in "{foldname}".\n\n(L) List of available versions\n(R) Re-select a folder for the New server\n(N) Return to main menu\n\nSelect one of the options or type the New Server version to install= ').replace(" ", "")
+                            try:
+                                if verss.lower() == "n":
+                                    eng()
+                                elif verss.lower() == "r":
+                                    reselect()
+                                elif verss.lower() == "l":
+                                    def versionl():
+                                        limpiar_consola()
+                                        print("Server Launcher for Minecraft\n-------------------------------------\n\nAvailable versions:\n")
+                                        for i, version in enumerate(MCVERSIONS, start=1):
+                                            print(f"(-) {version}")
+                                        listselection = input("\n(B) Back\n(R) Return to main menu\n\nSelect one of the options=")
+                                        try:
+                                            if listselection.lower() == "b":
+                                                vers_select()
+                                            elif listselection.lower() == "r":
+                                                eng()
+                                            else:
+                                                versionl()
+                                        except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                                            versionl()
+                                    versionl()
+                                elif verss.lower() in MCVERSIONS.keys():
+                                    def servdownload():
+                                        global newserver
+                                        global foldname
+                                        version = verss.lower()
+                                        url = MCVERSIONS[version]
+                                        limpiar_consola()
+                                        print(f'Server Launcher for Minecraft\n-------------------------------------\n\nYour New Server is being downloaded.\n\nVersion: {version}\nTarget Folder: "{foldname}"\n\nPlease wait...\n')
+                                        time.sleep(0.5)
+                                        os.makedirs(newserver, exist_ok=True)
+                                        os.chdir(newserver)
+                                        try:
+                                            response = requests.get(url, stream=True)
+                                            total_size_in_bytes = int(response.headers.get('content-length', 0))
+                                            block_size = 1024  # 1 Kibibyte
+                                            total_data = 0
+                                            with open("server.jar", "wb") as file:
+                                                for data in response.iter_content(block_size):
+                                                    total_data += len(data)
+                                                    file.write(data)
+                                                    completed = int(50 * total_data / total_size_in_bytes)
+                                                    print("\r[%s%s]" % ('#' * completed, '.' * (50 - completed)), end='')
+                                            print()
+                                            limpiar_consola()
+                                            input('Server Launcher for Minecraft\n-------------------------------------\n\nThe server has been installed successfully and added to "Your Servers" list.\n\nPress ENTER to continue.')
+                                            servname = os.path.basename(newserver)
+                                            servstring = f"{servname}<[=]>{newserver}\n"
+                                            os.makedirs(CONFIG_PATH, exist_ok=True)
+                                            with open(SAVED_SERVERS, 'r+') as file:
+                                                lines = file.readlines()
+                                                if servstring not in lines:
+                                                    file.write(servstring)
+                                            eng()
+                                        except Exception:
+                                            def erragain():
+                                                limpiar_consola()
+                                                yup = colored("Yes","green")
+                                                nop = colored("No","red")
+                                                errtry = input(f"Server Launcher for Minecraft\n-------------------------------------\n\nAn error occurred while downloading the server.\nTry again?\n\n(1) {yup}\n(2) {nop}\n\nSelect one of the options= ")
+                                                try:
+                                                    if any(char in "0123456789+-*/" for char in errtry):
+                                                        if not errtry[0].isalpha():
+                                                            errtr = eval(errtry)
+                                                        else:
+                                                            errtr = errtry
+                                                    else:
+                                                        errtr = errtry
+                                                    errtr = int(errtr)
+                                                    if errtr == 1:
+                                                        servdownload()
+                                                    elif errtr == 2:
+                                                        eng()
+                                                    else:
+                                                        erragain()
+                                                except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                                                    erragain()
+                                            erragain()
+                                    servdownload()
+                            except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                                installmenu()
+                        vers_select()
+                    else:
+                        installmenu()
+                reselect()
+            elif inconf == 2:
+                eng()
+            else:
+                installmenu()
+        except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+            installmenu()  
+
+    # LICENSE AND EXTRAS
+    def about():
+        limpiar_consola()
+        copyr = input("Server Launcher for Minecraft\n-------------------------------------\n\nMIT License - Copyright (c) 2024 NGDPL Nk\n\nSSTools4MC v24.04.05-B\n\nHelpers:\n@naicoooossj\n@LegalizeNuclearBombs\n\n-------------------------------------\n\n(1) View repository in the browser\n(2) View license in the browser\n(3) Return to main menu\n\nSelect one of the options= ")
+        try:
+            if any(char in "0123456789+-*/" for char in copyr):
+                if not copyr[0].isalpha():
+                    selec = eval(copyr)
+                else:
+                    selec = copyr
+            else:
+                selec = copyr
+            selec = int(selec)
+            if selec == 1:
+                url = colored("https://github.com/NGDPLNk/SSTools4MC","cyan")
+                limpiar_consola()
+                input(f"Server Launcher for Minecraft\n-------------------------------------\n\nThe repository will open in your browser.\n\n{url}\n\nPress ENTER to continue.")
+                url = "https://github.com/NGDPLNk/SSTools4MC"
+                webbrowser.open(url)
+                about()
+            elif selec == 2:
+                url = colored("https://github.com/NGDPLNk/SSTools4MC/blob/main/LICENSE","cyan")
+                limpiar_consola()
+                input(f"Server Launcher for Minecraft\n-------------------------------------\n\nThe license will open in your browser.\n\n{url}\n\nPress ENTER to continue.")
+                url = "https://github.com/NGDPLNk/SSTools4MC/blob/main/LICENSE"
+                webbrowser.open(url)
+                about()
+            elif selec == 3:
+                eng()
+            else:
+                about()
+        except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+            about()
+
+    # EXIT
+    def exiit():
+        limpiar_consola()
+        print("--------------------------------------------\nThank you for using this tool\nMIT License - Copyright (c) 2024 NGDPL Nk\n--------------------------------------------\n")
+        time.sleep(1.2)
+        sys.exit()
+
+    # MAIN MENU
+    def menu():
+        os.makedirs(SSTOOLS_FOLDER, exist_ok=True)
+        os.chdir(SSTOOLS_FOLDER)
+        limpiar_consola()
+        seleccion = input("Server Launcher for Minecraft\n-------------------------------------\n\nHi! You are in the main menu.\n\n(1) Start a Server\n(2) Install a New Server\n(3) Extras\n(4) Change Language\n(5) Exit\n\nSelect one of the options= ")
+        try:
+            if any(char in "0123456789+-*/" for char in seleccion):
+                if not seleccion[0].isalpha():
+                    sel = eval(seleccion)
+                else:
+                    sel = seleccion
+            else:
+                sel = seleccion
+            sel = int(sel)
+            if sel == 1:
+                ram()
+            elif sel == 2:
+                installmenu()
+            elif sel == 3:
+                about()
+            elif sel == 4:
+                esp()
+            elif sel == 5:
+                exiit()
+            menu()
+        except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+            menu()
+
+    menu()
+
+# ESPAÑOL
+def esp():
+    # CHANGE WINDOW TITLE
+    window_title("Lanzador de Servidores para Minecraft")
+
+    # SERVER STARTUP
+    def ram():
+        global servername
+        limpiar_consola()
+        sservers = {}
+        if os.path.exists(SAVED_SERVERS):
+            with open(SAVED_SERVERS, 'r') as file:
+                for line in file:
+                    line = line.strip()
+                    if line and not line.startswith('#'):
+                        key, value = line.split('<[=]>')
+                        sservers[key.strip()] = value.strip()
+            if sservers:
+                limpiar_consola()
+                print('Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLista "Tus Servidores"\n')
+                server_keys = list(sservers.keys())
+                for i, key in enumerate(server_keys, start=1):
+                    print(f"({i}) {key}")
+                nserv = colored("Añadir","cyan")
+                delserv = colored("Eliminar","red")
+                clearlist = colored("Limpiar","magenta")
+                print(f"\n(N) {nserv} Server\n(D) {delserv} un Server de la Lista\n(C) {clearlist} Lista\n(R) Volver al menú principal")
+                servsel = input("\nElige una de las opciones o escribe el número del Server que iniciarás= ").replace(" ", "")
+                try:
+                    if servsel.lower() == "n":
+                        newserv = filedialog.askdirectory()
+                        front()
+                        servname = os.path.basename(newserv)
+                        if newserv == "" or servname == "":
+                            limpiar_consola()
+                            print('Lanzador de Servidores para Minecraft\n-------------------------------------\n\nDebes elegir una carpeta para guardarla en la Lista "Tus Servidores".')
+                            time.sleep(2.5)
+                            ram()
+                        if newserv and servname:
+                            servname = colored(os.path.basename(newserv), "yellow")
+                            servstring = f"{servname}<[=]>{newserv}\n"
+                            os.makedirs(CONFIG_PATH, exist_ok=True)
+                            with open(SAVED_SERVERS, 'r+') as file:
+                                lines = file.readlines()
+                                if servstring not in lines:
+                                    file.write(servstring)
+                        limpiar_consola()
+                        print(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl Server "{servname}" ha sido guardado.')
+                        time.sleep(1.5)
+                        ram()
+                    elif servsel.lower() == "d":
+                        def servdel():
+                            limpiar_consola()
+                            print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nSelecciona el Server que eliminarás de la lista.\n")
+                            for i, key in enumerate(server_keys, start=1):
+                                print(f"({i}) {key}")
+                            print("\n(N) Cancelar\n(R) Volver al menú principal")
+                            servsel = input("\nSelecciona una de las opciones o ingresa el número del Server que eliminarás de la lista= ").replace(" ", "")
+                            try:
+                                if servsel.lower() == "r":
+                                    esp()
+                                elif servsel.lower() == "n":
+                                    ram()
+                                else:
+                                    if any(char in "0123456789+-*/" for char in servsel):
+                                        if not servsel[0].isalpha():
+                                            servv = eval(servsel)
+                                        else:
+                                            servv = servsel
+                                    else:
+                                        servv = servsel
+                                    servsel = int(servv)
+                                    if 1 <= servsel <= len(server_keys):
+                                        servsel = server_keys[servsel - 1]
+                                        servpath = sservers[servsel]
+                                        servestring = f"{servsel}<[=]>{servpath}\n"
+                                    os.makedirs(CONFIG_PATH, exist_ok=True)
+                                    with open(SAVED_SERVERS, 'r') as file:
+                                        lines = file.readlines()
+                                        os.makedirs(CONFIG_PATH, exist_ok=True)
+                                        with open(SAVED_SERVERS, 'w') as file:
+                                            for line in lines:
+                                                if line != servestring:
+                                                    file.write(line)
+                                    limpiar_consola()
+                                    print(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl Server "{servsel}" ha sido eliminado de la lista.')
+                                    time.sleep(1.5)
+                                    ram()             
+                            except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                                servdel()
+                        servdel()
+                    elif servsel.lower() == "c":
+                        def lisclear():
+                            limpiar_consola()
+                            yess = colored("Sí","green")
+                            noo = colored("No","red")
+                            clearconfirm = input(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEstás seguro de que quieres limpiar la Lista "Tus Servidores"?\n\n(1) {yess}\n(2) {noo}\n\nElige una de las opciones= ')
+                            try:
+                                if any(char in "0123456789+-*/" for char in clearconfirm):
+                                    if not clearconfirm[0].isalpha():
+                                        clearconf = eval(clearconfirm)
+                                    else:
+                                        clearconf = clearconfirm
+                                else:
+                                    clearconf = clearconfirm
+                                clearconf = int(clearconf)
+                                if clearconf == 1:
+                                    os.makedirs(CONFIG_PATH, exist_ok=True)
+                                    with open(SAVED_SERVERS, 'w') as file:
+                                        file.write("# Lanzador de Servidores para Minecraft\n# Servers guardados\n")
+                                    limpiar_consola()
+                                    print('Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLa Lista "Tus Servidores" ha sido limpiada.')
+                                    time.sleep(1.5)
+                                    ram()
+                                elif clearconf == 2:
+                                    ram()
+                            except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                                lisclear()
+                        lisclear()
+                    elif servsel.lower() == "r":
+                        esp()
+                    else:
+                        if any(char in "0123456789+-*/" for char in servsel):
+                            if not servsel[0].isalpha():
+                                servv = eval(servsel)
+                            else:
+                                servv = servsel
+                        else:
+                            servv = servsel
+                        servsel = int(servv)
+                        if 1 <= servsel <= len(server_keys):
+                            servsel = server_keys[servsel - 1]
+                            servpath = sservers[servsel]
+                            os.makedirs(servpath, exist_ok=True)
+                            os.chdir(servpath)
+                            servername = servsel
+                except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                    ram()
+            else:
+                os.makedirs(CONFIG_PATH, exist_ok=True)
+                with open(SAVED_SERVERS, 'w') as file:
+                    file.write("# Lanzador de Servidores para Minecraft\n# Servidores Guardados\n")
+                limpiar_consola()
+                adds = colored("Añadir un Server","cyan")
+                saveconfirm = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nNo tienes ningún Server guardado.\n\n(1) {adds}\n(2) Volver al menú principal\n\nElige una de las opciones= ")
+                try:
+                    if any(char in "0123456789+-*/" for char in saveconfirm):
+                        if not saveconfirm[0].isalpha():
+                            saveconf = eval(saveconfirm)
+                        else:
+                            saveconf = saveconfirm
+                    else:
+                        saveconf = saveconfirm
+                    saveconf = int(saveconf)
+                    if saveconf == 1:
+                        newserv = filedialog.askdirectory()
+                        front()
+                        servname = os.path.basename(newserv)
+                        if newserv == "" or servname == "":
+                            limpiar_consola()
+                            print('Lanzador de Servidores para Minecraft\n-------------------------------------\n\nDebes elegir una carpeta para guardarla en la Lista "Tus Servidores".')
+                            time.sleep(2.5)
+                            ram()
+                        if newserv and servname:
+                            servname = colored(os.path.basename(newserv), "yellow")
+                            servstring = f"{servname}<[=]>{newserv}\n"
+                            os.makedirs(CONFIG_PATH, exist_ok=True)
+                            with open(SAVED_SERVERS, 'r+') as file:
+                                lines = file.readlines()
+                                if servstring not in lines:
+                                    file.write(servstring)
+                        limpiar_consola()
+                        print(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl Server "{servname}" ha sido guardado.')
+                        time.sleep(1.5)
+                        ram()
+                    elif saveconf == 2:
+                        esp()
+                    else:
+                        ram()
+                except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                    ram()
         else:
-          if 842 <= int(cfg["ram"]) <= 76800:
-            if enabled_debug:
-              print(f'Saved RAM is {cfg["ram"]}MB')
-            return cfg["ram"]
-          else:
-            cfg["ram"] = "1024"
-            with open(confpath, 'w') as file:
-              for key, value in cfg.items():
-                file.write(f'{key}={value}\n')
-            if enabled_debug:
-              print('Saved RAM is not valid, set to 1024MB')
-            return "1024"
-      except (KeyError, ValueError):
-        if last_ramtype() == "GB":
-          cfg["ram"] = "1"
-          with open(confpath, 'w') as file:
-            for key, value in cfg.items():
-              file.write(f'{key}={value}\n')
-          if enabled_debug:
-            print('Not saved RAM was found, set to 1GB')
-          return "1"
+            os.makedirs(CONFIG_PATH, exist_ok=True)
+            with open(SAVED_SERVERS, 'w') as file:
+                file.write("# Lanzador de Servidores para Minecraft\n# Servers Guardados\n")
+            limpiar_consola()
+            input('Lanzador de Servidores para Minecraft\n-------------------------------------\n\nNo tienes ningún Server guardado.\n\nPresiona ENTER para seleccionar una carpeta con tu Server y guardarlo en la Lista "Tus Servidores".')
+            newserv = filedialog.askdirectory()
+            front()
+            servname = os.path.basename(newserv)
+            if newserv == "" or servname == "":
+                limpiar_consola()
+                print('Lanzador de Servidores para Minecraft\n-------------------------------------\n\nDebes elegir una carpeta para guardarla en la Lista "Tus Servidores".')
+                time.sleep(2.5)
+                ram()
+            if newserv and servname:
+                servname = colored(os.path.basename(newserv), "yellow")
+                servstring = f"{servname}<[=]>{newserv}\n"
+                with open(SAVED_SERVERS, 'r+') as file:
+                    lines = file.readlines()
+                    if servstring not in lines:
+                        file.write(servstring)
+            limpiar_consola()
+            print(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl Server "{servname}" ha sido guardado.')
+            time.sleep(1.5)
+            ram()
+        if os.path.exists("server.jar"):
+            # CONFIG
+            def config():
+                global nameserver
+                limpiar_consola()
+                props = "server.properties"
+                if os.path.exists(props):
+                    global properties
+                    properties = {}
+                    online = "Error"
+                    hard = "Error"
+                    pvp = "Error"
+                    with open('server.properties', 'r') as file:
+                        for line in file:
+                            line = line.strip()
+                            if line and not line.startswith('#'):
+                                key, value = line.split('=')
+                                properties[key.strip()] = value.strip()
+                    if properties["online-mode"] == "false":
+                        online = colored("ACTIVAR","green")
+                    elif properties["online-mode"] == "true":
+                        online = colored("DESACTIVAR","red")
+                    if properties["hardcore"] == "false":
+                        hard = colored("ACTIVAR","green")
+                    elif properties["hardcore"] == "true":
+                        hard = colored("DESACTIVAR","red")
+                    if properties["pvp"] == "false":
+                        pvp = colored("ACTIVAR","green")
+                    elif properties["pvp"] == "true":
+                        pvp = colored("DESACTIVAR","red")
+                    limpiar_consola()
+                    confsel = input(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nConfiguremos "{nameserver}"!\n\n(1) {online} modo online\n(2) {hard} modo extremo\n(3) {pvp} PvP\n(4) Cambiar modo de juego\n(5) Cambiar dificultad\n(6) Cambiar el límite de jugadores\n(7) Atrás\n(8) Volver al menú principal\n\nElige una de las opciones= ')
+                    if properties["online-mode"] == "false":
+                        online = "ENABLE"
+                    elif properties["online-mode"] == "true":
+                        online = "DISABLE"
+                    if properties["hardcore"] == "false":
+                        hard = "ENABLE"
+                    elif properties["hardcore"] == "true":
+                        hard = "DISABLE"
+                    if properties["pvp"] == "false":
+                        pvp = "ENABLE"
+                    elif properties["pvp"] == "true":
+                        pvp = "DISABLE"
+                    try:
+                        if any(char in "0123456789+-*/" for char in confsel):
+                            if not confsel[0].isalpha():
+                                confug = eval(confsel)
+                            else:
+                                confug = confsel
+                        else:
+                            confug = confsel
+                        confug = int(confug) 
+                        if confug == 1:
+                            if online == "ENABLE":
+                                properties["online-mode"] = "true"
+                                with open('server.properties', 'w') as file:
+                                    for key, value in properties.items():
+                                        file.write(f'{key}={value}\n')
+                                online = colored("ACTIVADO","green")
+                            elif online == "DISABLE":
+                                properties["online-mode"] = "false"
+                                with open('server.properties', 'w') as file:
+                                    for key, value in properties.items():
+                                        file.write(f'{key}={value}\n')
+                                online = colored("DESACTIVADO","red")
+                            limpiar_consola()
+                            print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl modo online se ha {online}.")
+                            time.sleep(1.5)
+                            config()
+                        elif confug == 2:
+                            if hard == "ENABLE":
+                                properties["hardcore"] = "true"
+                                with open('server.properties', 'w') as file:
+                                    for key, value in properties.items():
+                                        file.write(f'{key}={value}\n')
+                                hard = colored("ACTIVADO","green")
+                            elif hard == "DISABLE":
+                                properties["hardcore"] = "false"
+                                with open('server.properties', 'w') as file:
+                                    for key, value in properties.items():
+                                        file.write(f'{key}={value}\n')
+                                hard = colored("DESACTIVADO","red")
+                            limpiar_consola()
+                            print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl modo extremo se ha {hard}.")
+                            time.sleep(1.5)
+                            config()
+                        elif confug == 3:
+                            if pvp == "ENABLE":
+                                properties["pvp"] = "true"
+                                with open('server.properties', 'w') as file:
+                                    for key, value in properties.items():
+                                        file.write(f'{key}={value}\n')
+                                pvp = colored("ACTIVADO","green")
+                            elif pvp == "DISABLE":
+                                properties["pvp"] = "false"
+                                with open('server.properties', 'w') as file:
+                                    for key, value in properties.items():
+                                        file.write(f'{key}={value}\n')
+                                pvp = colored("DESACTIVADO","red")
+                            limpiar_consola()
+                            print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl PvP se ha {pvp}.")
+                            time.sleep(1.5)
+                            config()
+                        elif confug == 4:
+                            def juego():
+                                global properties
+                                modo = properties["gamemode"]
+                                if modo == "survival" or modo == "0":
+                                    modo = colored("SUPERVIVENCIA","cyan")
+                                elif modo == "creative" or modo == "1":
+                                    modo = colored("CREATIVO","cyan")
+                                elif modo == "adventure" or modo == "2":
+                                    modo = colored("AVENTURA","cyan")
+                                elif modo == "spectator" or modo == "3":
+                                    modo = colored("ESPECTADOR","cyan")
+                                superv = colored("SUPERVIVENCIA","yellow")
+                                creat = colored("CREATIVO","yellow")
+                                avent = colored("AVENTURA","yellow")
+                                espect = colored("ESPECTADOR","yellow")
+                                limpiar_consola()
+                                modosel = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl modo de juego actual es {modo}.\n\n(1) Cambiar a modo {superv}\n(2) Cambiar a modo {creat}\n(3) Cambiar a modo {avent}\n(4) Cambiar a modo {espect}\n(5) Atrás\n(6) Volver al menú principal\n\nElige una de las opciones= ")
+                                try:
+                                    if any(char in "0123456789+-*/" for char in modosel):
+                                        if not modosel[0].isalpha():
+                                            coonf = eval(modosel)
+                                        else:
+                                            coonf = modosel
+                                    else:
+                                        coonf = modosel
+                                    coonf = int(coonf)
+                                    if coonf == 1:
+                                        properties["gamemode"] = "0"
+                                        with open('server.properties', 'w') as file:
+                                            for key, value in properties.items():
+                                                file.write(f'{key}={value}\n')
+                                        limpiar_consola()
+                                        print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl modo de juego se ha cambiado a {superv}.")
+                                        time.sleep(1.5)
+                                        juego()
+                                    elif coonf == 2:
+                                        properties["gamemode"] = "1"
+                                        with open('server.properties', 'w') as file:
+                                            for key, value in properties.items():
+                                                file.write(f'{key}={value}\n')
+                                        limpiar_consola()
+                                        print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl modo de juego se ha cambiado a {creat}.")
+                                        time.sleep(1.5)
+                                        juego()
+                                    elif coonf == 3:
+                                        properties["gamemode"] = "2"
+                                        with open('server.properties', 'w') as file:
+                                            for key, value in properties.items():
+                                                file.write(f'{key}={value}\n')
+                                        limpiar_consola()
+                                        print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl modo de juego se ha cambiado a {avent}.")
+                                        time.sleep(1.5)
+                                        juego()
+                                    elif coonf == 4:
+                                        properties["gamemode"] = "3"
+                                        with open('server.properties', 'w') as file:
+                                            for key, value in properties.items():
+                                                file.write(f'{key}={value}\n')
+                                        limpiar_consola()
+                                        print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl modo de juego se ha cambiado a {espect}.")
+                                        time.sleep(1.5)
+                                        juego()
+                                    elif coonf == 5:
+                                        config()
+                                    elif coonf == 6:
+                                        esp()
+                                    else:
+                                        juego()
+                                except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                                    juego()
+                            juego()
+                        elif confug == 5:
+                            def difconf():
+                                global properties
+                                dificultad = properties["difficulty"]
+                                if dificultad == "peaceful" or dificultad == "0":
+                                    dificultad = colored("PACÍFICO","cyan")
+                                elif dificultad == "easy" or dificultad == "1":
+                                    dificultad = colored("FÁCIL","cyan")
+                                elif dificultad == "normal" or dificultad == "2":
+                                    dificultad = colored("NORMAL","cyan")
+                                elif dificultad == "hard" or dificultad == "3":
+                                    dificultad = colored("DIFÍCIL","cyan")
+                                pacif = colored("PACÍFICO","yellow")
+                                facil = colored("FÁCIL","yellow")
+                                normal = colored("NORMAL","yellow")
+                                dificil = colored("DIFÍCIL","yellow")
+                                limpiar_consola()
+                                difsel = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLa dificultad actual es {dificultad}.\n\n(1) Cambiar a dificultad {pacif}\n(2) Cambiar a dificultad {facil}\n(3) Cambiar a dificultad {normal}\n(4) Cambiar a dificultad {dificil}\n(5) Atrás\n(6) Volver al menú principal\n\nElige una de las opciones= ")
+                                try:
+                                    if any(char in "0123456789+-*/" for char in difsel):
+                                        if not difsel[0].isalpha():
+                                            difcc = eval(difsel)
+                                        else:
+                                            difcc = difsel
+                                    else:
+                                        difcc = difsel
+                                    difcc = int(difcc)
+                                    if difcc == 1:
+                                        properties["difficulty"] = "0"
+                                        with open('server.properties', 'w') as file:
+                                            for key, value in properties.items():
+                                                file.write(f'{key}={value}\n')
+                                        limpiar_consola()
+                                        print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLa dificultad se ha cambiado a {pacif}.")
+                                        time.sleep(1.5)
+                                        difconf()
+                                    elif difcc == 2:
+                                        properties["difficulty"] = "1"
+                                        with open('server.properties', 'w') as file:
+                                            for key, value in properties.items():
+                                                file.write(f'{key}={value}\n')
+                                        limpiar_consola()
+                                        print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLa dificultad se ha cambiado a {facil}.")
+                                        time.sleep(1.5)
+                                        difconf()
+                                    elif difcc == 3:
+                                        properties["difficulty"] = "2"
+                                        with open('server.properties', 'w') as file:
+                                            for key, value in properties.items():
+                                                file.write(f'{key}={value}\n')
+                                        limpiar_consola()
+                                        print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLa dificultad se ha cambiado a {normal}.")
+                                        time.sleep(1.5)
+                                        difconf()
+                                    elif difcc == 4:
+                                        properties["difficulty"] = "3"
+                                        with open('server.properties', 'w') as file:
+                                            for key, value in properties.items():
+                                                file.write(f'{key}={value}\n')
+                                        limpiar_consola()
+                                        print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLa dificultad se ha cambiado a {dificil}.")
+                                        time.sleep(1.5)
+                                        difconf()
+                                    elif difcc == 5:
+                                        config()
+                                    elif difcc == 6:
+                                        esp()
+                                    else:
+                                        difconf()
+                                except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                                    difconf()
+                            difconf()
+                        elif confug == 6:
+                            def playct():
+                                global properties
+                                players = colored(properties["max-players"],"cyan")
+                                limpiar_consola()
+                                newpl = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl límite de jugadores actual es de {players} jugadores.\n\n(N) Atrás\n(M) Volver al menú principal\n\nElige una de las opciones o ingresa el nuevo límite de jugadores= ").replace(" ", "")
+                                try:
+                                    if newpl.lower() == "n":
+                                        config()
+                                    elif newpl.lower() == "m":
+                                        esp()
+                                    else:
+                                        if any(char in "0123456789+-*/" for char in newpl):
+                                            if not newpl[0].isalpha():
+                                                entero = eval(newpl)
+                                            else:
+                                                entero = newpl
+                                        else:
+                                            entero = newpl
+                                        entero = int(entero)
+                                        if entero <= 0 or entero > 100000:
+                                            limpiar_consola()
+                                            print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nIngresa un número válido entre 1 y 100.000.")
+                                            time.sleep(1.5)
+                                            playct()
+                                        else:
+                                            properties["max-players"] = entero
+                                            with open('server.properties', 'w') as file:
+                                                for key, value in properties.items():
+                                                    file.write(f'{key}={value}\n')
+                                            entero = colored(str(entero),"yellow")
+                                            limpiar_consola()
+                                            print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl límite de jugadores ahora es {entero}.")
+                                            time.sleep(1.5)
+                                            playct()
+                                except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                                    playct()
+                            playct()
+                        elif confug == 7:
+                            run_server()
+                        elif confug == 8:
+                            esp()
+                        else:
+                            config()
+                    except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                        config()
+                else:
+                    limpiar_consola()
+                    input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLos achivos de configuración del Server aún no existen o no están disponibles.\nDebes iniciar el Server correctamente al menos 1 vez antes de poder configurarlo.\n\nPresiona ENTER para continuar.")
+                    run_server()
+            def run_server():
+                global servername
+                global valor
+                global nameserver
+                valor1 = None
+                gbormb = None
+                vjava = None
+                if valor == None:
+                    valor = "GB"
+                    valor1 = colored("GIGABYTES","cyan")
+                    vjava = "G"
+                    gbormb = colored("MEGABYTES","yellow")
+                if valor == "GB":
+                    valor1 = colored("GIGABYTES","cyan")
+                    vjava = "G"
+                    gbormb = colored("MEGABYTES","yellow")
+                elif valor == "MB":
+                    valor1 = colored("MEGABYTES","cyan")
+                    vjava = "M"
+                    gbormb = colored("GIGABYTES","yellow")
+                nameserver = servername
+                limpiar_consola()
+                gbs = 0
+                rammount = input(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEstás a punto de iniciar el Server "{nameserver}"\n\n(M) Configurar Server\n(C) Usar RAM en {gbormb}\n(B) Atrás\n(N) Volver al menú principal\n\nElige una de las opciones o ingresa los {valor1} de RAM para asignar a tu Server= ').replace(" ", "")
+                try:
+                    if rammount.lower() == "m":
+                        config()  
+                    if rammount.lower() == "c":
+                        if valor == "GB":
+                            limpiar_consola()
+                            print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nAhora la RAM está en {gbormb}.")
+                            time.sleep(1.5)
+                            valor = "MB"
+                            run_server()
+                        elif valor == "MB":
+                            limpiar_consola()
+                            print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nAhora la RAM está en {gbormb}.")
+                            time.sleep(1.5)
+                            valor = "GB"
+                            run_server()
+                    elif rammount.lower() == "b":
+                        ram()
+                    elif rammount.lower() == "n":
+                        esp()
+                    else:
+                        if any(char in "0123456789+-*/" for char in rammount):
+                            if not rammount[0].isalpha():
+                                gbs = eval(rammount)
+                            else:
+                                gbs = rammount
+                        else:
+                            gbs = rammount
+                        gbs = int(gbs)
+                        if valor == "GB" and (gbs <= 0 or gbs > 75):
+                            limpiar_consola()
+                            print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nIngresa una cantidad válida entre 1 y 75 Gigabytes.")
+                            time.sleep(1.5)
+                            run_server()
+                        elif valor == "MB" and (gbs <= 511 or gbs > 76800):
+                            limpiar_consola()
+                            print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nIngresa una cantidad válida entre 512 y 76.800 Megabytes.")
+                            time.sleep(1.5)
+                            run_server()
+                        else:
+                            eula = "eula.txt"
+                            with open(eula, "w") as reemplazo:
+                                reemplazo.write("eula=true")
+                            limpiar_consola()
+                            print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nIniciando el Server con {gbs}{valor} de RAM.\n")
+                            comando_java = f"java -Xmx{gbs}{vjava} -Xms{gbs}{vjava} -jar server.jar nogui"
+                            subprocess.run(comando_java, shell=True)
+                            fyh_sistema = datetime.datetime.now()
+                            fecha_cerrado = str(fyh_sistema.strftime("%d/%m/%Y"))
+                            hora_cerrado = str(fyh_sistema.strftime("%H:%M:%S"))
+                            input("\nPresiona ENTER para continuar.")
+                            limpiar_consola()
+                            input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl Server se ha cerrado el {fecha_cerrado} a las {hora_cerrado}.\n\nPuedes ver el registro de la consola en la carpeta 'logs' dentro de la carpeta principal de tu Server.\n\nPresiona ENTER para continuar.")
+                            ram()
+                except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                    run_server()
+            run_server()
         else:
-          cfg["ram"] = "1024"
-          with open(confpath, 'w') as file:
-            for key, value in cfg.items():
-              file.write(f'{key}={value}\n')
-          if enabled_debug:
-            print('Not saved RAM was found, set to 1024MB')
-          return "1024"
+            limpiar_consola()
+            print('Lanzador de Servidores para Minecraft\n-------------------------------------\n\nNo se encuentra "server.jar" en esta carpeta.\n\nEstás seguro que esto es un Server?')
+            time.sleep(2.5)
+            ram()
+
+    # INSTALL NEW SERVER
+    def installmenu():
+        global newserver
+        global foldname
+        limpiar_consola()
+        inconfirm = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nPrimero, seleccionemos una carpeta para guardar los archivos de tu Nuevo Server.\n\n(1) Seleccionar una carpeta para el Nuevo Server\n(2) Cancelar\n\nElige una de las opciones= ").replace(" ", "")
+        try:
+            if any(char in "0123456789+-*/" for char in inconfirm):
+                if not inconfirm[0].isalpha():
+                    inconf = eval(inconfirm)
+                else:
+                    inconf = inconfirm
+            else:
+                inconf = inconfirm
+            inconf = int(inconf)
+            if inconf == 1:
+                def reselect():
+                    global newserver
+                    global foldname
+                    newserver = filedialog.askdirectory()
+                    front()
+                    foldname = colored(os.path.basename(newserver), "green")
+                    if newserver == "" or foldname == "":
+                        limpiar_consola()
+                        print('Lanzador de Servidores para Minecraft\n-------------------------------------\n\nDebes elegir una carpeta para guardar tu Nuevo Server.')
+                        time.sleep(2.5)
+                        installmenu()
+                    os.makedirs(newserver, exist_ok=True)
+                    os.chdir(newserver)
+                    if newserver and foldname:
+                        def vers_select():
+                            global newserver
+                            global foldname
+                            limpiar_consola()
+                            verss = input(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nTu Nuevo Server se guardará en "{foldname}".\n\n(L) Lista de versiones disponibles\n(R) Reelegir una carpeta para el Nuevo Server\n(N) Volver al menú principal\n\nElige una de las opciones o escribe la versión para instalar tu Nuevo Server= ').replace(" ", "")
+                            try:
+                                if verss.lower() == "n":
+                                    esp()
+                                elif verss.lower() == "r":
+                                    reselect()
+                                elif verss.lower() == "l":
+                                    def versionl():
+                                        limpiar_consola()
+                                        print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nVersiones disponibles:\n")
+                                        for i, version in enumerate(MCVERSIONS, start=1):
+                                            print(f"(-) {version}")
+                                        listselection = input("\n(B) Atrás\n(R) Volver al menú principal\n\nElige una de las opciones=")
+                                        try:
+                                            if listselection.lower() == "b":
+                                                vers_select()
+                                            elif listselection.lower() == "r":
+                                                esp()
+                                            else:
+                                                versionl()
+                                        except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                                            versionl()
+                                    versionl()
+                                elif verss.lower() in MCVERSIONS.keys():
+                                    def servdownload():
+                                        global newserver
+                                        global foldname
+                                        version = verss.lower()
+                                        url = MCVERSIONS[version]
+                                        limpiar_consola()
+                                        print(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nTu Nuevo Server está siendo descargado.\n\nVersión: {version}\nCarpeta de destino: "{foldname}"\n\nEspera por favor...\n')
+                                        time.sleep(0.5)
+                                        os.makedirs(newserver, exist_ok=True)
+                                        os.chdir(newserver)
+                                        try:
+                                            response = requests.get(url, stream=True)
+                                            total_size_in_bytes = int(response.headers.get('content-length', 0))
+                                            block_size = 1024  # 1 Kibibyte
+                                            total_data = 0
+                                            with open("server.jar", "wb") as file:
+                                                for data in response.iter_content(block_size):
+                                                    total_data += len(data)
+                                                    file.write(data)
+                                                    completed = int(50 * total_data / total_size_in_bytes)
+                                                    print("\r[%s%s]" % ('#' * completed, '.' * (50 - completed)), end='')
+                                            print()
+                                            limpiar_consola()
+                                            input('Lanzador de Servidores para Minecraft\n-------------------------------------\n\nTu Nuevo Server se ha instalado correctamente y ha sido añadido a la Lista "Tus Servidores".\n\nPresiona ENTER para continuar.')
+                                            servname = os.path.basename(newserver)
+                                            servstring = f"{servname}<[=]>{newserver}\n"
+                                            os.makedirs(CONFIG_PATH, exist_ok=True)
+                                            with open(SAVED_SERVERS, 'r+') as file:
+                                                lines = file.readlines()
+                                                if servstring not in lines:
+                                                    file.write(servstring)
+                                            esp()
+                                        except Exception:
+                                            def erragain():
+                                                limpiar_consola()
+                                                yup = colored("Sí","green")
+                                                nop = colored("No","red")
+                                                errtry = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nHa ocurrido un error mientras se descargaba tu Nuevo Server.\nReintentar?\n\n(1) {yup}\n(2) {nop}\n\nElige una de las opciones= ")
+                                                try:
+                                                    if any(char in "0123456789+-*/" for char in errtry):
+                                                        if not errtry[0].isalpha():
+                                                            errtr = eval(errtry)
+                                                        else:
+                                                            errtr = errtry
+                                                    else:
+                                                        errtr = errtry
+                                                    errtr = int(errtr)
+                                                    if errtr == 1:
+                                                        servdownload()
+                                                    elif errtr == 2:
+                                                        esp()
+                                                    else:
+                                                        erragain()
+                                                except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                                                    erragain()
+                                            erragain()
+                                    servdownload()
+                            except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                                installmenu()
+                        vers_select()
+                    else:
+                        installmenu()
+                reselect()
+            elif inconf == 2:
+                esp()
+            else:
+                installmenu()
+        except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+            installmenu()  
+
+    # LICENSE AND EXTRAS
+    def about():
+        limpiar_consola()
+        copyr = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nMIT License - Copyright (c) 2024 NGDPL Nk\n\nSSTools4MC v24.04.05-B\n\nHelpers:\n@naicoooossj\n@LegalizeNuclearBombs\n\n-------------------------------------\n\n(1) Ver repositorio en el navegador\n(2) Ver licencia en el navegador\n(3) Volver al menú principal\n\nElige una de las opciones= ")
+        try:
+            if any(char in "0123456789+-*/" for char in copyr):
+                if not copyr[0].isalpha():
+                    selec = eval(copyr)
+                else:
+                    selec = copyr
+            else:
+                selec = copyr
+            selec = int(selec)
+            if selec == 1:
+                url = colored("https://github.com/ngdplnk/SSTools4MC","cyan")
+                limpiar_consola()
+                input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl repositorio se abrirá en tu navegador.\n\n{url}\n\nPresiona ENTER para continuar.")
+                url = "https://github.com/ngdplnk/SSTools4MC"
+                webbrowser.open(url)
+                about()
+            elif selec == 2:
+                url = colored("https://github.com/ngdplnk/SSTools4MC/blob/main/LICENSE","cyan")
+                limpiar_consola()
+                input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLa licencia se abrirá en tu navegador.\n\n{url}\n\nPresiona ENTER para continuar.")
+                url = "https://github.com/ngdplnk/SSTools4MC/blob/main/LICENSE"
+                webbrowser.open(url)
+                about()
+            elif selec == 3:
+                esp()
+            else:
+                about()
+        except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+            about()
+
+    # EXIT
+    def exiit():
+        limpiar_consola()
+        print("--------------------------------------------\nMuchas gracias por usar esta herramienta\nMIT License - Copyright (c) 2024 NGDPL Nk\n--------------------------------------------\n")
+        time.sleep(1.2)
+        sys.exit()
+
+    # MAIN MENU
+    def menu():
+        os.makedirs(SSTOOLS_FOLDER, exist_ok=True)
+        os.chdir(SSTOOLS_FOLDER)
+        limpiar_consola()
+        seleccion = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nHola! Estás en el menú principal.\n\n(1) Inciar un Server\n(2) Instalar un Nuevo Server\n(3) Extras\n(4) Cambiar Lenguaje\n(5) Salir\n\nElige una de las opciones= ")
+        try:
+            if any(char in "0123456789+-*/" for char in seleccion):
+                if not seleccion[0].isalpha():
+                    sel = eval(seleccion)
+                else:
+                    sel = seleccion
+            else:
+                sel = seleccion
+            sel = int(sel)
+            if sel == 1:
+                ram()
+            elif sel == 2:
+                installmenu()
+            elif sel == 3:
+                about()
+            elif sel == 4:
+                eng()
+            elif sel == 5:
+                exiit()
+            menu()
+        except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+            menu()
+
+    menu()
+
+# SELECCIÓN DE IDIOMA - LANGUAGE SELECTION
+def lang():
+    system_lang = locale.getlocale()[0]
+    system_lang = str(system_lang)
+    if system_lang.startswith("es") or system_lang.startswith("Spanish"):
+        esp()
     else:
-      if last_ramtype() == "GB":
-        with open(confpath, 'w') as archivo:
-          archivo.write('ram=1\n')
-        if enabled_debug:
-          print('No config file found, created the file, set RAM to 1GB and retried request')
-        last_ram()
-      else:
-        with open(confpath, 'w') as archivo:
-          archivo.write('ram=1024\n')
-        if enabled_debug:
-          print('No config file found, created the file, set RAM to 1024MB and retried request')
-        last_ram()
-  else:
-    os.makedirs(sstfolder)
-    with open(confpath, 'w') as archivo:
-      archivo.write('ram=1\n')
-    if enabled_debug:
-      print('No tool data folder found, created the folder, config file, set RAM to 1GB and retried request')
-    last_ram()
+        eng()
 
-# START SERVER MENU
-def startserver_menu():
-  global ramtype_var
-  global ram_var
-  global public_ip
-  global server_port
-  global minecraft_server_process
-  global raam
-  global ramtypee
-  global run
-  global jarpath
-
-  if enabled_debug:
-    print("Start Server Menu Opened, checking if server is running...")
-  if run and minecraft_server_process.stdin:
-    if enabled_debug:
-      print("Server is running, opening Server Running Menu variant...")
-    # Clear the window
-      for widget in root.winfo_children():
-        widget.destroy()
-
-      # Window title
-      root.title("SSTools4MC - Server Running...")
-
-      # Main frame
-      frame = tk.Frame(root, bg=bg_color)
-      frame.place(relx=0.5, rely=0.5, anchor='center')
-
-      # Title
-      title_font = ("Arial", 30, "bold")
-      title = tk.Label(frame, text=f"Server Running with {raam}{ramtypee}B of RAM", font=title_font, bg=bg_color, fg=text_color)
-      title.grid(row=0, column=0, columnspan=4, pady=5)
-
-      # Subtitle
-      subtitle_text = "Your Server will run on a separated window. Its status updates here every 1 minute\n"
-      subtitle = tk.Label(frame, text=subtitle_text, font=("Arial", 12), wraplength=600, bg=bg_color, fg=text_color)
-      subtitle.grid(row=1, column=0, columnspan=4, pady=5)
-
-      # Get server IP
-      def get_public_ip():
-        try:
-          ip = requests.get('https://api.ipify.org').text
-        except requests.exceptions.RequestException as err:
-          if enabled_debug:
-            print ('Getting public IP failed',err)
-          ip = "Your Public IP"
-        return ip
-      
-      if enabled_debug:
-        print("Trying to get public IP...")
-      public_ip = get_public_ip()
-
-      # Get server port
-      def get_port():
-        properties = {}
-        if not os.path.exists(props):
-          if enabled_debug:
-            print("Server properties file not found, returning empty port")
-          return ""
-        with open(props, 'r') as file:
-          for line in file:
-            line = line.strip()
-            if line and not line.startswith('#'):
-              key, value = line.split('=')
-              properties[key.strip()] = value.strip()
-        try:
-          port = properties["server-port"]
-          if port == "25565":
-            if enabled_debug:
-              print("Server port is default, returning empty port")
-            return ""
-        except KeyError:
-          if enabled_debug:
-            print("Server port not found, returning empty port")
-          return ""
-        if enabled_debug:
-          print(f"Server port is {port}, returning it")
-        return f":{port}"
-      
-      if enabled_debug:
-        print("Trying to get server port...")
-      server_port = get_port()
-
-      # IP label
-      ip_label = tk.Label(frame, text=f"Your Server IP is: {public_ip}{server_port}", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
-      ip_label.grid(row=2, column=1, pady=5, sticky='e')
-
-      # Copy IP to clipboard
-      def copy_ip():
-        global public_ip
-        global server_port
-        if enabled_debug:
-          print(f'Copying IP "{public_ip}{server_port}" to clipboard')
-        root.clipboard_clear()
-        root.clipboard_append(f"{public_ip}{server_port}")
-        if enabled_debug:
-          print("IP copied to clipboard")
-
-      # "Copy IP" button
-      copy_button = tk.Button(frame, text="Copy IP", command=copy_ip, height=1, width=8, bg=button_color, fg=buttontxt_color)
-      copy_button.grid(row=2, column=2, pady=5, padx=10, sticky='w')
-
-      # "Your Server has been running for" label
-      running_label = tk.Label(frame, text="Your Server has been running for", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
-      running_label.grid(row=3, column=1, pady=5, sticky='e')
-
-      # Time Running
-      def time_running():
-        global run
-        global elapsed_minutes
-        global elapsed_time
-        global minecraft_server_process
-        if run and minecraft_server_process.stdin:
-          global start_time
-          elapsed_time = time.time() - start_time
-          elapsed_minutes = int(elapsed_time // 60)
-          running_time.config(text=f"{elapsed_minutes} minutes")
-          running_time.after(60000, time_running)  # Update every minute
-        else:
-          return
-
-      # Time Running Label
-      running_time = tk.Label(frame, text="0 minutes", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
-      running_time.grid(row=3, column=2, pady=5, sticky='w')
-      if enabled_debug:
-        print("Background server running check started...")
-      time_running()
-
-      # Stop Server
-      def stop_server():
-        global run
-        global minecraft_server_process
-        if enabled_debug:
-          print("Checking if server is running to stop it...")
-        if minecraft_server_process.stdin:
-          command = "stop\n"
-          minecraft_server_process.stdin.write(command.encode())
-          minecraft_server_process.stdin.flush()
-          if enabled_debug:
-            print("Server was running, stop command sent to server")
-        run = False
-        dnh_sys = datetime.datetime.now()
-        stop_date = str(dnh_sys.strftime("%d/%m/%Y"))
-        stop_hour = str(dnh_sys.strftime("%H:%M:%S"))
-        if enabled_debug:
-          print(f'Server stopped on {stop_date} at {stop_hour}, updating GUI')
-
-        # Clear the window
-        for widget in root.winfo_children():
-          widget.destroy()
-        
-        # Window title
-        root.title("SSTools4MC - Server Stopped")
-
-        # Main frame
-        frame = tk.Frame(root, bg=bg_color)
-        frame.place(relx=0.5, rely=0.5, anchor='center')
-
-        # Title
-        title_font = ("Arial", 30, "bold")
-        title = tk.Label(frame, text="Server Stopped", font=title_font, bg=bg_color, fg=text_color)
-        title.grid(row=0, column=0, columnspan=4, pady=5)
-
-        # Subtitle
-        subtitle_text = "Server Stopped...\n"
-        subtitle = tk.Label(frame, text=subtitle_text, font=("Arial", 12), wraplength=600, bg=bg_color, fg=text_color)
-        subtitle.grid(row=1, column=0, columnspan=4, pady=5)
-
-        # "Your Server has been closed at <close_time>" label
-        close_label = tk.Label(frame, text=f"Your Server has been closed on {stop_date} at {stop_hour}\n\nYou can check the console log in the 'logs' folder.\n", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
-        close_label.grid(row=2, column=0, columnspan=4, pady=5)
-
-        # "Return to Main Menu" button
-        main_button = tk.Button(frame, text="Return to Main Menu", command=main, height=2, width=30, bg=button_color, fg=buttontxt_color)
-        main_button.grid(row=3, column=0, columnspan=4, pady=15, sticky="nsew")
-      
-      def check_process():
-        global run
-        global minecraft_server_process
-        while run:
-          if minecraft_server_process.poll() is not None:
-            if enabled_debug:
-              print("Server process terminated, updating GUI")
-            # The process has terminated
-            run = False
-            stop_server()
-            break
-          time.sleep(60)  # Wait for 1 minute
-
-      # "Stop Server" Button
-      stop_server_button = tk.Button(frame, text="STOP SERVER", command=stop_server, height=3, width=20, bg="red", fg="white")
-      stop_server_button.grid(row=4, column=0, columnspan=4, pady=15, sticky='nsew')
-      threading.Thread(target=check_process).start()
-
-      # "Main Menu" Button
-      main_button = tk.Button(frame, text="Return to Main Menu", command=main, height=2, width=30, bg=button_color, fg=buttontxt_color)
-      main_button.grid(row=5, column=0, columnspan=4, pady=15, sticky="nsew")
-  else:
-    if enabled_debug:
-      print("Server is not running, opening normal Start Server Menu...")
-    def validate_input(P):
-      ram_type = last_ramtype()
-      if P.isdigit():
-        P = int(P)
-        if (ram_type == "GB" and 1 <= P <= 99) or (ram_type == "MB" and 1 <= P <= 99999):
-          return True
-      elif P == "":
-        return True
-      return False
-
-    # Clears the window
-    for widget in root.winfo_children():
-      widget.destroy()
-
-    # Window title
-    root.title("SSTools4MC - Start Server")
-
-    # Set BG
-    root.configure(bg=bg_color)
-
-    # Main frame
-    frame = tk.Frame(root, bg=bg_color)
-    frame.place(relx=0.5, rely=0.5, anchor='center')
-
-    # Title
-    title_font = ("Arial", 30, "bold")
-    title = tk.Label(frame, text="Start Server", font=title_font, bg=bg_color, fg=text_color)
-    title.grid(row=0, column=0, columnspan=4, pady=5)
-
-    # Subtitle
-    subtitle_text = "Be prepared to start your server!\n"
-    subtitle = tk.Label(frame, text=subtitle_text, font=("Arial", 12), wraplength=600, bg=bg_color, fg=text_color)
-    subtitle.grid(row=1, column=0, columnspan=4, pady=5)
-
-    # "Start Server with" label
-    startserver_label = tk.Label(frame, text="Start Server with", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
-    startserver_label.grid(row=2, column=0, pady=5, sticky='e')
-
-    # RAM Entry and Dropdown
-    ram_var = tk.StringVar(value=last_ram())
-    if enabled_debug:
-      print(f"Getting last RAM used")
-    ramtype_var = tk.StringVar(value=last_ramtype())
-    if enabled_debug:
-      print(f"Getting last RAM type used")
-
-    vcmd = frame.register(validate_input)
-
-    ram_entry = tk.Entry(frame, textvariable=ram_var, validate="key", validatecommand=(vcmd, '%P'), width=6)
-    ram_entry.grid(row=2, column=1, padx=5, pady=5)
-
-    # RAM Type Change
-    def ram_change(*args):
-      cfg = {}
-      if os.path.exists(sstfolder):
-        if os.path.exists(confpath):
-          with open(confpath, 'r') as file:
-            for line in file:
-              line = line.strip()
-              if line and not line.startswith('#'):
-                key, value = line.split('=')
-                cfg[key.strip()] = value.strip()
-          try:
-            cfg["ramtype"] = ramtype_var.get()
-            with open(confpath, 'w') as file:
-              for key, value in cfg.items():
-                file.write(f'{key}={value}\n')
-            if enabled_debug:
-              print(f'RAM type changed to {ramtype_var.get()}, reloading menu')
-            startserver_menu()
-          except KeyError:
-            cfg["ramtype"] = "GB"
-            with open(confpath, 'w') as file:
-              for key, value in cfg.items():
-                file.write(f'{key}={value}\n')
-            if enabled_debug:
-              print(f'RAM type has been not set, changed to GB, reloading menu')
-            startserver_menu()
-        else:
-          with open(confpath, 'w') as archivo:
-            archivo.write('ramtype=GB\n')
-          if enabled_debug:
-            print(f'No config file found, created the file, set RAM type to GB and retried request')
-          startserver_menu()
-      else:
-        os.makedirs(sstfolder)
-        with open(confpath, 'w') as archivo:
-          archivo.write('ramtype=GB\n')
-        if enabled_debug:
-          print(f'No tool data folder found, created the folder, config file, set RAM type to GB and retried request')
-        startserver_menu()
-
-    ramtype_var.trace_add('write', ram_change)
-
-    ramtype_dropdown = tk.OptionMenu(frame, ramtype_var, "MB", "GB")
-    ramtype_dropdown.grid(row=2, column=2, padx=5, pady=5)
-
-    # "of RAM" label
-    ram_label = tk.Label(frame, text="of RAM", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
-    ram_label.grid(row=2, column=3, pady=5, sticky='w')
-
-    def start_server():
-      global ramtype_var
-      global ram_var
-      global jarpath
-      cfg = {}
-      with open(confpath, 'r') as file:
-        for line in file:
-          line = line.strip()
-          if line and not line.startswith('#'):
-            key, value = line.split('=')
-            cfg[key.strip()] = value.strip()
-      try:
-        if ramtype_var.get() == "MB":
-          if ram_var.get() == "":
-            ram_var.set("1024")
-            cfg["ram"] = "1024"
-            with open(confpath, 'w') as file:
-              for key, value in cfg.items():
-                file.write(f'{key}={value}\n')
-            if enabled_debug:
-              print(f'New RAM value saved, set to 1024MB')
-          elif 842 <= int(ram_var.get()) <= 76800:
-            cfg["ram"] = ram_var.get()
-            with open(confpath, 'w') as file:
-              for key, value in cfg.items():
-                file.write(f'{key}={value}\n')
-            if enabled_debug:
-              print(f'New RAM value saved, set to {ram_var.get()}MB')
-          else:
-            ram_var.set("1024")
-            cfg["ram"] = "1024"
-            with open(confpath, 'w') as file:
-              for key, value in cfg.items():
-                file.write(f'{key}={value}\n')
-            if enabled_debug:
-              print(f'New RAM value saved, set to 1024MB')
-        else:
-          if ram_var.get() == "":
-            ram_var.set("1")
-            cfg["ram"] = "1"
-            with open(confpath, 'w') as file:
-              for key, value in cfg.items():
-                file.write(f'{key}={value}\n')
-            if enabled_debug:
-              print(f'New RAM value saved, set to 1GB')
-          elif 0 < int(ram_var.get()) <= 75:
-            cfg["ram"] = ram_var.get()
-            with open(confpath, 'w') as file:
-              for key, value in cfg.items():
-                file.write(f'{key}={value}\n')
-            if enabled_debug:
-              print(f'New RAM value saved, set to {ram_var.get()}GB')
-          else:
-            ram_var.set("1")
-            cfg["ram"] = "1"
-            with open(confpath, 'w') as file:
-              for key, value in cfg.items():
-                file.write(f'{key}={value}\n')
-            if enabled_debug:
-              print(f'New RAM value saved, set to 1GB')
-      except (ValueError, KeyError):
-        if ramtype_var.get() == "GB":
-          ram_var.set("1")
-          cfg["ram"] = "1"
-          with open(confpath, 'w') as file:
-            for key, value in cfg.items():
-              file.write(f'{key}={value}\n')
-          if enabled_debug:
-            print(f'New RAM value saved, set to 1GB')
-        else:
-          ram_var.set("1024")
-          cfg["ram"] = "1024"
-          with open(confpath, 'w') as file:
-            for key, value in cfg.items():
-              file.write(f'{key}={value}\n')
-          if enabled_debug:
-            print(f'New RAM value saved, set to 1024MB')
-
-      # Set window title
-      root.title("SSTools4MC - Server Running...")
-      # Check if server.jar exists
-      if not os.path.exists(jarpath):
-        if enabled_debug:
-          print('Server.jar file not found, opening "Cant Start your Server" menu variant...')
-        # Clear the window
-        for widget in root.winfo_children():
-          widget.destroy()
-
-        # Window title
-        root.title("SSTools4MC - Can't Start your Server")
-
-        # Main frame
-        frame = tk.Frame(root, bg=bg_color)
-        frame.place(relx=0.5, rely=0.5, anchor='center')
-
-        # Title
-        title_font = ("Arial", 30, "bold")
-        title = tk.Label(frame, text="Can't Start your Server", font=title_font, bg=bg_color, fg=text_color)
-        title.grid(row=0, column=0, columnspan=4, pady=5)
-
-        # Subtitle
-        subtitle_text = 'Uh oh, "server.jar" file not found :(\n'
-        subtitle = tk.Label(frame, text=subtitle_text, font=("Arial", 12), wraplength=600, bg=bg_color, fg=text_color)
-        subtitle.grid(row=1, column=0, columnspan=4, pady=5)
-
-        # "Return to Main Menu" button
-        main_button = tk.Button(frame, text="Return to Main Menu", command=main, height=2, width=30, bg=button_color, fg=buttontxt_color)
-        main_button.grid(row=2, column=0, columnspan=4, pady=15, sticky="nsew")
-        return
-      else:
-        global run
-        global start_time
-        global minecraft_server_process
-        global public_ip
-        global server_port
-        global raam
-        global ramtypee
-
-        # Initialize variables
-        run = True
-        start_time = time.time()
-        ram = ram_var.get()
-        ramtype = ramtype_var.get()
-
-        if ramtype == "MB":
-          ramtypee = "M"
-          if ram == "":
-            raam = "1024"
-          elif int(ram) > 76800:
-            raam = "76800"
-          elif int(ram) < 842:
-            raam = "842"
-          else:
-            raam = ram
-        else:
-          ramtypee = "G"
-          if ram == "":
-            raam = "1"
-          if int(ram) > 75:
-            raam = "75"
-          elif int(ram) < 1:
-            raam = "1"
-          else:
-            raam = ram
-        if enabled_debug:
-          print(f"Setting RAM ammount and type for server start: {raam}{ramtypee}")
-
-        # Accept EULA
-        if enabled_debug:
-          print("Accepting EULA...")
-        with open(os.path.join(os.path.dirname(os.getcwd()), "eula.txt"), 'w') as file:
-          file.write("eula=true\n")
-
-        # Start the server
-        command = f"java -Xmx{raam}{ramtypee} -Xms{raam}{ramtypee} -jar server.jar"
-        if enabled_debug:
-          print(f'This command will start the server: {command}')
-        minecraft_server_process = subprocess.Popen(["cmd", "/k", command], cwd=os.path.dirname(os.getcwd()), stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, creationflags=subprocess.CREATE_NO_WINDOW)
-        if enabled_debug:
-          print("Command sent and callable process created")
-
-        # Clear the window
-        for widget in root.winfo_children():
-          widget.destroy()
-
-        # Main frame
-        frame = tk.Frame(root, bg=bg_color)
-        frame.place(relx=0.5, rely=0.5, anchor='center')
-
-        # Title
-        title_font = ("Arial", 30, "bold")
-        title = tk.Label(frame, text=f"Server Running with {raam}{ramtypee}B of RAM", font=title_font, bg=bg_color, fg=text_color)
-        title.grid(row=0, column=0, columnspan=4, pady=5)
-
-        # Subtitle
-        subtitle_text = "Your Server will run on a separated window. Its status updates here every 1 minute\n"
-        subtitle = tk.Label(frame, text=subtitle_text, font=("Arial", 12), wraplength=600, bg=bg_color, fg=text_color)
-        subtitle.grid(row=1, column=0, columnspan=4, pady=5)
-
-        # Get server IP
-        def get_public_ip():
-          try:
-            ip = requests.get('https://api.ipify.org').text
-          except requests.exceptions.RequestException as err:
-            if enabled_debug:
-              print ("Getting public IP failed",err)
-            ip = "Your Public IP"
-          return ip
-        public_ip = get_public_ip()
-
-        # Get server port
-        def get_port():
-          global props
-          properties = {}
-          if not os.path.exists(props):
-            if enabled_debug:
-              print("Server properties file not found, returning empty port")
-            return ""
-          with open(props, 'r') as file:
-            for line in file:
-              line = line.strip()
-              if line and not line.startswith('#'):
-                key, value = line.split('=')
-                properties[key.strip()] = value.strip()
-          try:
-            port = properties["server-port"]
-            if port == "25565":
-              if enabled_debug:
-                print("Server port is default, returning empty port")
-              return ""
-          except KeyError:
-            if enabled_debug:
-              print("Server port not found, returning empty port")
-            return ""
-          if enabled_debug:
-            print(f"Server port is {port}, returning it")
-          return f":{port}"
-        
-        if enabled_debug:
-          print("Trying to get server port...")
-        server_port = get_port()
-
-        # IP label
-        ip_label = tk.Label(frame, text=f"Your Server IP is: {public_ip}{server_port}", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
-        ip_label.grid(row=2, column=1, pady=5, sticky='e')
-
-        # Copy IP to clipboard
-        def copy_ip():
-          global public_ip
-          global server_port
-          if enabled_debug:
-            print(f'Copying IP "{public_ip}{server_port}" to clipboard')
-          root.clipboard_clear()
-          root.clipboard_append(f"{public_ip}{server_port}")
-          if enabled_debug:
-            print("IP copied to clipboard")
-        
-        # "Copy IP" button
-        copy_button = tk.Button(frame, text="Copy IP", command=copy_ip, height=1, width=8, bg=button_color, fg=buttontxt_color)
-        copy_button.grid(row=2, column=2, pady=5, padx=10, sticky='w')
-
-        # "Your Server has been running for" label
-        running_label = tk.Label(frame, text="Your Server has been running for", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
-        running_label.grid(row=3, column=1, pady=5, sticky='e')
-
-        # Time Running
-        def time_running():
-          global run
-          global elapsed_minutes
-          global elapsed_time
-          global minecraft_server_process
-          if run and minecraft_server_process.stdin:
-            global start_time
-            elapsed_time = time.time() - start_time
-            elapsed_minutes = int(elapsed_time // 60)
-            running_time.config(text=f"{elapsed_minutes} minutes")
-            running_time.after(60000, time_running)  # Update every minute
-          else:
-            return
-
-        # Time Running Label
-        running_time = tk.Label(frame, text="0 minutes", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
-        running_time.grid(row=3, column=2, pady=5, sticky='w')
-        if enabled_debug:
-          print("Background server running check started...")
-        time_running()
-
-        # Stop Server
-        def stop_server():
-          global run
-          global minecraft_server_process
-          if enabled_debug:
-            print("Checking if server is running to stop it...")
-          if run and minecraft_server_process.stdin:
-            command = "stop\n"
-            minecraft_server_process.stdin.write(command.encode())
-            minecraft_server_process.stdin.flush()
-            if enabled_debug:
-              print("Server was running, stop command sent to server")
-          run = False
-          dnh_sys = datetime.datetime.now()
-          stop_date = str(dnh_sys.strftime("%d/%m/%Y"))
-          stop_hour = str(dnh_sys.strftime("%H:%M:%S"))
-          if enabled_debug:
-            print(f'Server stopped on {stop_date} at {stop_hour}, updating GUI')
-
-          # Clear the window
-          for widget in root.winfo_children():
-            widget.destroy()
-          
-          # Window title
-          root.title("SSTools4MC - Server Stopped")
-
-          # Main frame
-          frame = tk.Frame(root, bg=bg_color)
-          frame.place(relx=0.5, rely=0.5, anchor='center')
-
-          # Title
-          title_font = ("Arial", 30, "bold")
-          title = tk.Label(frame, text="Server Stopped", font=title_font, bg=bg_color, fg=text_color)
-          title.grid(row=0, column=0, columnspan=4, pady=5)
-
-          # Subtitle
-          subtitle_text = "Server Stopped...\n"
-          subtitle = tk.Label(frame, text=subtitle_text, font=("Arial", 12), wraplength=600, bg=bg_color, fg=text_color)
-          subtitle.grid(row=1, column=0, columnspan=4, pady=5)
-
-          # "Your Server has been closed at <close_time>" label
-          close_label = tk.Label(frame, text=f"Your Server has been closed on {stop_date} at {stop_hour}\n\nYou can check the console log in the 'logs' folder.\n", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
-          close_label.grid(row=2, column=0, columnspan=4, pady=5)
-
-          # "Return to Main Menu" button
-          main_button = tk.Button(frame, text="Return to Main Menu", command=main, height=2, width=30, bg=button_color, fg=buttontxt_color)
-          main_button.grid(row=3, column=0, columnspan=4, pady=15, sticky="nsew")
-        
-        def check_process():
-          global run
-          global minecraft_server_process
-          while run:
-            if not minecraft_server_process.stdin:
-              if enabled_debug:
-                print("Server process terminated, updating GUI")
-              # The process has terminated
-              run = False
-              stop_server()
-              break
-            time.sleep(60)  # Wait for 1 minute
-
-        # "Stop Server" Button
-        stop_server_button = tk.Button(frame, text="STOP SERVER", command=stop_server, height=3, width=20, bg="red", fg="white")
-        stop_server_button.grid(row=4, column=0, columnspan=4, pady=15, sticky='nsew')
-        threading.Thread(target=check_process).start()
-
-        # "Main Menu" Button
-        main_button = tk.Button(frame, text="Return to Main Menu", command=main, height=2, width=30, bg=button_color, fg=buttontxt_color)
-        main_button.grid(row=5, column=0, columnspan=4, pady=15, sticky="nsew")
-  
-    # "Start Server" button
-    start_button = tk.Button(frame, text="START SERVER", command=start_server, height=3, width=20, bg="green", fg="white")
-    start_button.grid(row=3, column=0, columnspan=4, pady=5, sticky='nsew')
-
-    # "Manage Server" button
-    manage_button = tk.Button(frame, text="Manage Server", command=manageserver_menu, height=2, width=30, bg="blue", fg="white")
-    manage_button.grid(row=4, column=0, columnspan=4, pady=5, sticky='nsew')
-
-    # "Return to Main Menu" button
-    main_button = tk.Button(frame, text="Return to Main Menu", command=main, height=2, width=30, bg=button_color, fg=buttontxt_color)
-    main_button.grid(row=5, column=0, columnspan=4, pady=15, sticky="nsew")
-
-# MANAGE SERVER MENU
-def manageserver_menu():
-  global props
-  if enabled_debug:
-    print("Manage Server Menu Opened")
-  # Clears the window
-  for widget in root.winfo_children():
-    widget.destroy()
-
-  # Window title
-  root.title("SSTools4MC - Server Management")
-
-  # Set BG
-  root.configure(bg=bg_color)
-
-  # Main frame
-  frame = tk.Frame(root, bg=bg_color)
-  frame.place(relx=0.5, rely=0.5, anchor='center')
-
-  # Title
-  title_font = ("Arial", 30, "bold")
-  title = tk.Label(frame, text="Server Management", font=title_font, bg=bg_color, fg=text_color)
-  title.grid(row=0, column=0, columnspan=5, pady=5)
-
-  # Check if server.properties exists
-  if enabled_debug:
-    print('Checking if server.properties file exists...')
-  if os.path.exists(props):
-    if enabled_debug:
-      print('server.properties file found, opening config menu...')
-    global properties
-    properties = {}
-    with open(props, 'r') as file:
-      for line in file:
-        line = line.strip()
-        if line and not line.startswith('#'):
-          key, value = line.split('=')
-          properties[key.strip()] = value.strip()
-    
-    # Subtitle
-    subtitle_text = "Welcome to the server management menu\nThese settings will apply the next time you start your server\n"
-    subtitle = tk.Label(frame, text=subtitle_text, font=("Arial", 12), wraplength=600, bg=bg_color, fg=text_color)
-    subtitle.grid(row=1, column=0, columnspan=5, pady=5)
-
-    # Enable/Disable Online Mode
-    def onlinemode(rt=False):
-      global properties
-      if not rt:
-        try:
-          if properties["online-mode"] == "true":
-            properties["online-mode"] = "false"
-            with open(props, 'w') as file:
-              for key, value in properties.items():
-                file.write(f'{key}={value}\n')
-            if enabled_debug:
-              print("Online Mode disabled, reloading menu")
-            manageserver_menu()
-          elif properties["online-mode"] == "false":
-            properties["online-mode"] = "true"
-            with open(props, 'w') as file:
-              for key, value in properties.items():
-                file.write(f'{key}={value}\n')
-            if enabled_debug:
-              print("Online Mode enabled, reloading menu")
-            manageserver_menu()
-          else:
-            properties["online-mode"] = "true"
-            with open(props, 'w') as file:
-              for key, value in properties.items():
-                file.write(f'{key}={value}\n')
-            if enabled_debug:
-              print("Online Mode was wrong, set to enabled and reloading menu")
-            manageserver_menu()
-        except KeyError:
-          properties["online-mode"] = "true"
-          with open(props, 'w') as file:
-            for key, value in properties.items():
-              file.write(f'{key}={value}\n')
-          if enabled_debug:
-            print("Online Mode was not set, set to enabled and reloading menu")
-          manageserver_menu()
-      else:
-        try:
-          if properties["online-mode"] == "true":
-            if enabled_debug:
-              print("Online Mode is enabled")
-            return True
-          elif properties["online-mode"] == "false":
-            if enabled_debug:
-              print("Online Mode is disabled")
-            return False
-          else:
-            properties["online-mode"] = "true"
-            with open(props, 'w') as file:
-              for key, value in properties.items():
-                file.write(f'{key}={value}\n')
-            if enabled_debug:
-              print("Online Mode was wrong, set to enabled")
-            return True
-        except KeyError:
-          properties["online-mode"] = "true"
-          with open(props, 'w') as file:
-            for key, value in properties.items():
-              file.write(f'{key}={value}\n')
-          if enabled_debug:
-            print("Online Mode was not set, set to enabled")
-          return True
-
-    # "Enable/Disable Online Mode" button
-    if onlinemode(True):
-      if enabled_debug:
-        print("Online Mode is enabled, showing enabled variant")
-      # "Online Mode:" label
-      online_label = tk.Label(frame, text="Online Mode:", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
-      online_label.grid(row=2, column=0, pady=5, sticky='e')
-
-      # "ENABLED" label
-      onlinemode_button = tk.Button(frame, text="ENABLED", command=onlinemode, height=2, width=20, bg=button_color, fg="green")
-      onlinemode_button.grid(row=2, column=1, padx=5, pady=5, sticky='w')
-    else:
-      if enabled_debug:
-        print("Online Mode is disabled, showing disabled variant")
-      # "Online Mode:" label
-      online_label = tk.Label(frame, text="Online Mode:", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
-      online_label.grid(row=2, column=0, pady=5, sticky='e')
-
-      # "DISABLED" label
-      onlinemode_button = tk.Button(frame, text="DISABLED", command=onlinemode, height=2, width=20, bg=button_color,fg="red")
-      onlinemode_button.grid(row=2, column=1, padx=5, pady=5, sticky='w')
-
-    # Enable/Disable Hardcore Mode
-    def hardcoremode(rt=False):
-      global properties
-      if not rt:
-        try:
-          if properties["hardcore"] == "true":
-            properties["hardcore"] = "false"
-            with open(props, 'w') as file:
-              for key, value in properties.items():
-                file.write(f'{key}={value}\n')
-            if enabled_debug:
-              print("Hardcore Mode disabled, reloading menu")
-            manageserver_menu()
-          elif properties["hardcore"] == "false":
-            properties["hardcore"] = "true"
-            with open(props, 'w') as file:
-              for key, value in properties.items():
-                file.write(f'{key}={value}\n')
-            if enabled_debug:
-              print("Hardcore Mode enabled, reloading menu")
-            manageserver_menu()
-          else:
-            properties["hardcore"] = "false"
-            with open(props, 'w') as file:
-              for key, value in properties.items():
-                file.write(f'{key}={value}\n')
-            if enabled_debug:
-              print("Hardcore Mode was wrong, set to disabled and reloading menu")
-            manageserver_menu()
-        except KeyError:
-          properties["hardcore"] = "false"
-          with open(props, 'w') as file:
-            for key, value in properties.items():
-              file.write(f'{key}={value}\n')
-          if enabled_debug:
-            print("Hardcore Mode was not set, set to disabled and reloading menu")
-          manageserver_menu()
-      else:
-        try:
-          if properties["hardcore"] == "true":
-            if enabled_debug:
-              print("Hardcore Mode is enabled")
-            return True
-          elif properties["hardcore"] == "false":
-            if enabled_debug:
-              print("Hardcore Mode is disabled")
-            return False
-          else:
-            properties["hardcore"] = "false"
-            with open(props, 'w') as file:
-              for key, value in properties.items():
-                file.write(f'{key}={value}\n')
-            if enabled_debug:
-              print("Hardcore Mode was wrong, set to disabled")
-            return False
-        except KeyError:
-          properties["hardcore"] = "false"
-          with open(props, 'w') as file:
-            for key, value in properties.items():
-              file.write(f'{key}={value}\n')
-          if enabled_debug:
-            print("Hardcore Mode was not set, set to disabled")
-          return False
-    
-    # "Enable/Disable Hardcore Mode" button
-    if hardcoremode(True):
-      if enabled_debug:
-        print("Hardcore Mode is enabled, showing enabled variant")
-      # "Hardcore Mode:" label
-      hardcore_label = tk.Label(frame, text="Hardcore:", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
-      hardcore_label.grid(row=3, column=0, pady=5, sticky='e')
-
-      # "ENABLED" label
-      hardcoremode_button = tk.Button(frame, text="ENABLED", command=hardcoremode, height=2, width=20, bg=button_color, fg="green")
-      hardcoremode_button.grid(row=3, column=1, padx=5, pady=5, sticky='w')
-    else:
-      if enabled_debug:
-        print("Hardcore Mode is disabled, showing disabled variant")
-      # "Hardcore Mode:" label
-      hardcore_label = tk.Label(frame, text="Hardcore:", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
-      hardcore_label.grid(row=3, column=0, pady=5, sticky='e')
-
-      # "DISABLED" label
-      hardcoremode_button = tk.Button(frame, text="DISABLED", command=hardcoremode, height=2, width=20, bg=button_color, fg="red")
-      hardcoremode_button.grid(row=3, column=1, padx=5, pady=5, sticky='w')
-
-    # Enable/Disable Command Blocks
-    def commandblocks(rt=False):
-      global properties
-      if not rt:
-        try:
-          if properties["enable-command-block"] == "true":
-            properties["enable-command-block"] = "false"
-            with open(props, 'w') as file:
-              for key, value in properties.items():
-                file.write(f'{key}={value}\n')
-            if enabled_debug:
-              print("Command Blocks disabled, reloading menu")
-            manageserver_menu()
-          elif properties["enable-command-block"] == "false":
-            properties["enable-command-block"] = "true"
-            with open(props, 'w') as file:
-              for key, value in properties.items():
-                file.write(f'{key}={value}\n')
-            if enabled_debug:
-              print("Command Blocks enabled, reloading menu")
-            manageserver_menu()
-          else:
-            properties["enable-command-block"] = "true"
-            with open(props, 'w') as file:
-              for key, value in properties.items():
-                file.write(f'{key}={value}\n')
-            if enabled_debug:
-              print("Command Blocks was wrong, set to enabled and reloading menu")
-            manageserver_menu()
-        except KeyError:
-          properties["enable-command-block"] = "true"
-          with open(props, 'w') as file:
-            for key, value in properties.items():
-              file.write(f'{key}={value}\n')
-          if enabled_debug:
-            print("Command Blocks was not set, set to enabled and reloading menu")
-          manageserver_menu()
-      else:
-        try:
-          if properties["enable-command-block"] == "true":
-            if enabled_debug:
-              print("Command Blocks is enabled")
-            return True
-          elif properties["enable-command-block"] == "false":
-            if enabled_debug:
-              print("Command Blocks is disabled")
-            return False
-          else:
-            properties["enable-command-block"] = "true"
-            with open(props, 'w') as file:
-              for key, value in properties.items():
-                file.write(f'{key}={value}\n')
-            if enabled_debug:
-              print("Command Blocks was wrong, set to enabled")
-            return True
-        except KeyError:
-          properties["enable-command-block"] = "true"
-          with open(props, 'w') as file:
-            for key, value in properties.items():
-              file.write(f'{key}={value}\n')
-          if enabled_debug:
-            print("Command Blocks was not set, set to enabled")
-          return True
-    
-    # "Enable/Disable Command Blocks" button
-    if commandblocks(True):
-      if enabled_debug:
-        print("Command Blocks is enabled, showing enabled variant")
-      # "Command Blocks:" label
-      commandblocks_label = tk.Label(frame, text="Command Blocks:", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
-      commandblocks_label.grid(row=4, column=0, pady=5, sticky='e')
-
-      # "ENABLED" label
-      commandblocks_button = tk.Button(frame, text="ENABLED", command=commandblocks, height=2, width=20, bg=button_color, fg="green")
-      commandblocks_button.grid(row=4, column=1, padx=5, pady=5, sticky='w')
-    else:
-      if enabled_debug:
-        print("Command Blocks is disabled, showing disabled variant")
-      # "Command Blocks:" label
-      commandblocks_label = tk.Label(frame, text="Command Blocks:", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
-      commandblocks_label.grid(row=4, column=0, pady=5, sticky='e')
-
-      # "DISABLED" label
-      commandblocks_button = tk.Button(frame, text="DISABLED", command=commandblocks, height=2, width=20, bg=button_color, fg="red")
-      commandblocks_button.grid(row=4, column=1, padx=5, pady=5, sticky='w')
-
-    # Enable/Disable PVP
-    def pvp(rt=False):
-      global properties
-      if not rt:
-        try:
-          if properties["pvp"] == "true":
-            properties["pvp"] = "false"
-            with open(props, 'w') as file:
-              for key, value in properties.items():
-                file.write(f'{key}={value}\n')
-            if enabled_debug:
-              print("PVP disabled, reloading menu")
-            manageserver_menu()
-          elif properties["pvp"] == "false":
-            properties["pvp"] = "true"
-            with open(props, 'w') as file:
-              for key, value in properties.items():
-                file.write(f'{key}={value}\n')
-            if enabled_debug:
-              print("PVP enabled, reloading menu")
-            manageserver_menu()
-          else:
-            properties["pvp"] = "true"
-            with open(props, 'w') as file:
-              for key, value in properties.items():
-                file.write(f'{key}={value}\n')
-            if enabled_debug:
-              print("PVP was wrong, set to enabled and reloading menu")
-            manageserver_menu()
-        except KeyError:
-          properties["pvp"] = "true"
-          with open(props, 'w') as file:
-            for key, value in properties.items():
-              file.write(f'{key}={value}\n')
-          if enabled_debug:
-            print("PVP was not set, set to enabled and reloading menu")
-          manageserver_menu()
-      else:
-        try:
-          if properties["pvp"] == "true":
-            if enabled_debug:
-              print("PVP is enabled")
-            return True
-          elif properties["pvp"] == "false":
-            if enabled_debug:
-              print("PVP is disabled")
-            return False
-          else:
-            properties["pvp"] = "true"
-            with open(props, 'w') as file:
-              for key, value in properties.items():
-                file.write(f'{key}={value}\n')
-            if enabled_debug:
-              print("PVP was wrong, set to enabled")
-            return True
-        except KeyError:
-          properties["pvp"] = "true"
-          with open(props, 'w') as file:
-            for key, value in properties.items():
-              file.write(f'{key}={value}\n')
-          if enabled_debug:
-            print("PVP was not set, set to enabled")
-          return True
-    
-    # "Enable/Disable PVP" button
-    if pvp(True):
-      if enabled_debug:
-        print("PVP is enabled, showing enabled variant")
-      # "PVP:" label
-      pvp_label = tk.Label(frame, text="PvP:", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
-      pvp_label.grid(row=5, column=0, pady=5, sticky='e')
-
-      # "ENABLED" label
-      pvp_button = tk.Button(frame, text="ENABLED", command=pvp, height=2, width=20, bg=button_color, fg="green")
-      pvp_button.grid(row=5, column=1, padx=5, pady=5, sticky='w')
-    else:
-      if enabled_debug:
-        print("PVP is disabled, showing disabled variant")
-      # "PVP:" label
-      pvp_label = tk.Label(frame, text="PvP:", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
-      pvp_label.grid(row=5, column=0, pady=5, sticky='e')
-
-      # "DISABLED" label
-      pvp_button = tk.Button(frame, text="DISABLED", command=pvp, height=2, width=20, bg=button_color, fg="red")
-      pvp_button.grid(row=5, column=1, padx=5, pady=5, sticky='w')
-
-    # Change Gamemode
-    def gamemode_change(*args):
-      global properties
-      properties["gamemode"] = gamemode_var.get().lower()
-      with open(props, 'w') as file:
-        for key, value in properties.items():
-          file.write(f'{key}={value}\n')
-      if enabled_debug:
-        print(f"Gamemode changed to {gamemode_var.get()}, reloading menu")
-      manageserver_menu()
-    
-    # "Change Gamemode" Button
-    global gamemode_var
-    gamemode_var = tk.StringVar()
-    gamemode_var.set(f"{properties['gamemode'].upper()}")
-    gamemode_var.trace_add("write", gamemode_change)
-    gamemode_options = ["SURVIVAL", "CREATIVE", "ADVENTURE", "SPECTATOR"]
-    space_label = tk.Label(frame, text=" ", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
-    space_label.grid(row=2, column=2, padx=15, pady=5)
-    gamemode_label = tk.Label(frame, text="Gamemode:", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
-    gamemode_label.grid(row=2, column=3, pady=5, sticky='e')
-    gamemode_menu = tk.OptionMenu(frame, gamemode_var, *gamemode_options)
-    gamemode_menu.grid(row=2, column=4, padx=5, pady=5, sticky='w')
-    if enabled_debug:
-      print("Gamemode changing menu created")
-
-    # Change Difficulty
-    def difficulty_change(*args):
-      global properties
-      properties["difficulty"] = difficulty_var.get().lower()
-      with open(props, 'w') as file:
-        for key, value in properties.items():
-          file.write(f'{key}={value}\n')
-      if enabled_debug:
-        print(f"Difficulty changed to {difficulty_var.get()}, reloading menu")
-      manageserver_menu()
-    
-    # "Change Difficulty" Button
-    global difficulty_var
-    difficulty_var = tk.StringVar()
-    difficulty_var.set(f"{properties['difficulty'].upper()}")
-    difficulty_var.trace_add("write", difficulty_change)
-    difficulty_options = ["PEACEFUL", "EASY", "NORMAL", "HARD"]
-    space_label = tk.Label(frame, text=" ", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
-    space_label.grid(row=3, column=2, padx=15, pady=5)
-    difficulty_label = tk.Label(frame, text="Difficulty:", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
-    difficulty_label.grid(row=3, column=3, pady=5, sticky='e')
-    difficulty_menu = tk.OptionMenu(frame, difficulty_var, *difficulty_options)
-    difficulty_menu.grid(row=3, column=4, padx=5, pady=5, sticky='w')
-    if enabled_debug:
-      print("Difficulty changing menu created")
-
-    # Change Level Type
-    def leveltype_change(*args):
-      global properties
-      properties["level-type"] = f"minecraft:{leveltype_var.get().lower()}"
-      with open(props, 'w') as file:
-        for key, value in properties.items():
-          file.write(f'{key}={value}\n')
-      if enabled_debug:
-        print(f"Level Type changed to {leveltype_var.get()}, reloading menu")
-      manageserver_menu()
-    
-    # "Change Level Type" Button
-    global leveltype_var
-    leveltype_var = tk.StringVar()
-    leveltype_var.set(f"{properties['level-type'].upper().replace('MINECRAFT:', '')}")
-    leveltype_var.trace_add("write", leveltype_change)
-    leveltype_options = ["DEFAULT", "FLAT", "LARGEBIOMES", "AMPLIFIED"]
-    space_label = tk.Label(frame, text=" ", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
-    space_label.grid(row=4, column=2, padx=15, pady=5)
-    leveltype_label = tk.Label(frame, text="Level Type:", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
-    leveltype_label.grid(row=4, column=3, pady=5, sticky='e')
-    leveltype_menu = tk.OptionMenu(frame, leveltype_var, *leveltype_options)
-    leveltype_menu.grid(row=4, column=4, padx=5, pady=5, sticky='w')
-    if enabled_debug:
-      print("Level Type changing menu created")
-
-    # Change Max Players
-    def maxplayers_change():
-      global properties
-      if maxplayers_var.get() == "":
-        if enabled_debug:
-          print("Max Players was empty, set to 1")
-        maxplayers_var.set("1")
-      elif int(maxplayers_var.get()) > 10000:
-        if enabled_debug:
-          print("Max Players was too high, set to 10000")
-        maxplayers_var.set("10000")
-      properties["max-players"] = maxplayers_var.get()
-      with open(props, 'w') as file:
-        for key, value in properties.items():
-          file.write(f'{key}={value}\n')
-      if enabled_debug:
-        print(f"Max Players changed to {maxplayers_var.get()}, reloading menu")
-      manageserver_menu()
-    
-    # "Change Max Players" Button
-    global maxplayers_var
-    maxplayers_var = tk.StringVar()
-    maxplayers_var.set(f"{properties['max-players']}")
-    space_label = tk.Label(frame, text=" ", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
-    space_label.grid(row=5, column=2, padx=15, pady=5)
-    maxplayers_label = tk.Label(frame, text="Max Players:", font=("Arial", 12, "bold"), bg=bg_color, fg=text_color)
-    maxplayers_label.grid(row=5, column=3, pady=5, sticky='e')
-    def validate_input(P):
-      # P is the new text after the edit
-      if str.isdigit(P) and 1 <= int(P) <= 99999999:
-          return True
-      elif P == "":
-          return True
-      else:
-          return False
-    vcmd = frame.register(validate_input)
-    maxplayers_entry = tk.Entry(frame, textvariable=maxplayers_var, width=8, validate="key", validatecommand=(vcmd, '%P'))
-    maxplayers_entry.grid(row=5, column=4, padx=5, pady=5, sticky='w')
-    save_button = tk.Button(frame, text="Save", command=maxplayers_change, height=1, width=5, bg=button_color, fg=buttontxt_color)
-    save_button.grid(row=5, column=4, pady=5, sticky='e')
-    if enabled_debug:
-      print("Max Players changing menu created")
-
-    # Open server.properties
-    def open_props():
-      if enabled_debug:
-        print("Opening server.properties file...")
-      try:
-        os.startfile(props)
-        if enabled_debug:
-          print("server.properties file opened successfully")
-      except FileNotFoundError:
-        print("Error opening file (FileNotFoundError)")
-    
-    # "Open server.properties" button
-    open_button = tk.Button(frame, text="Open server.properties", command=open_props, height=3, width=30, bg="purple", fg="white")
-    open_button.grid(row=6, column=0, columnspan=2, pady=15, padx=5, sticky='nsew')
-
-    # "Go to Start Server Menu" button
-    start_button = tk.Button(frame, text="Go to Start Server Menu", command=startserver_menu, height=3, width=30, bg="blue", fg="white")
-    start_button.grid(row=6, column=2, columnspan=3, pady= 15, padx=5, sticky='nsew')
-
-    # "Return to Main Menu" button
-    main_button = tk.Button(frame, text="Return to Main Menu", command=main, height=2, width=30, bg=button_color, fg=buttontxt_color)
-    main_button.grid(row=7, column=0, columnspan=5, pady=5, sticky="nsew")
-
-  else:
-    if enabled_debug:
-      print('server.properties file not found, opening error menu...')
-    # Subtitle
-    subtitle_text = "The server configuration files do not exist yet or are not available.\nYou must start the server properly at least once before you can configure it\n"
-    subtitle = tk.Label(frame, text=subtitle_text, font=("Arial", 12), wraplength=600, bg=bg_color, fg=text_color)
-    subtitle.grid(row=1, column=0, columnspan=2, pady=5)
-
-    # "Return to Main Menu" button
-    main_button = tk.Button(frame, text="Return to Main Menu", command=main, height=3, width=30, bg=button_color, fg=buttontxt_color)
-    main_button.grid(row=2, column=0, columnspan=2, pady=15, sticky="nsew")
-
-# LICENSE AND EXTRAS MENU
-def licensextras_menu():
-  global ntheme
-  global screenmode
-  global deb
-
-  if enabled_debug:
-    print("License and Extras Menu Opened")
-
-  # Clears the window
-  for widget in root.winfo_children():
-    widget.destroy()
-
-  # Window title
-  root.title("SSTools4MC - License and Extras")
-
-  # Min window size
-  root.minsize(850, 650)
-
-  # Set window size
-  root.geometry("850x650")
-
-  # Set BG
-  root.configure(bg=bg_color)
-
-  # Main frame
-  frame = tk.Frame(root, bg=bg_color)
-  frame.place(relx=0.5, rely=0.5, anchor='center')
-
-  # Title
-  title_font = ("Arial", 30, "bold")
-  title = tk.Label(frame, text="License and Extras", font=title_font, bg=bg_color, fg=text_color)
-  title.grid(row=0, column=0, columnspan=2, pady=5)
-
-  # Subtitle
-  subtitle_text = "SSTools4MC\nv2.0 BETA 1.24.C\n-------------------------------------\n\nMIT License - Copyright © 2024 NGDPL Nk\n\nHelpers:\n@naicoooossj\n@LegalizeNuclearBombs\n"
-  subtitle = tk.Label(frame, text=subtitle_text, font=("Arial", 12), wraplength=600, bg=bg_color, fg=text_color)
-  subtitle.grid(row=1, column=0, columnspan=2, pady=5)
-
-  # Check current debug mode status
-  def new_debug():
-    global deb
-    global enabled_debug
-    cfg = {}
-    if os.path.exists(sstfolder):
-      if os.path.exists(confpath):
-        with open(confpath, 'r') as file:
-          for line in file:
-            line = line.strip()
-            if line and not line.startswith('#'):
-              key, value = line.split('=')
-              cfg[key.strip()] = value.strip()
-        if deb == "Enable Debug Mode":
-          cfg["debug"] = "true"
-          with open(confpath, 'w') as file:
-            for key, value in cfg.items():
-              file.write(f'{key}={value}\n')
-          enabled_debug = True
-          if enabled_debug:
-            print("Debug Mode enabled, reloading menu")
-          licensextras_menu()
-        elif deb == "Disable Debug Mode":
-          cfg["debug"] = "false"
-          with open(confpath, 'w') as file:
-            for key, value in cfg.items():
-              file.write(f'{key}={value}\n')
-          if enabled_debug:
-            print("Debug Mode disabled, reloading menu")
-          enabled_debug = False
-          licensextras_menu()
-      else:
-        with open(confpath, 'w') as archivo:
-          archivo.write('debug=false\n')
-        deb = "Enable Debug Mode"
-        new_debug()
-    else:
-      os.makedirs(sstfolder)
-      with open(confpath, 'w') as archivo:
-        archivo.write('debug=false\n')
-      deb = "Enable Debug Mode"
-      new_debug()
-
-  # "Debug Change" button
-  deb = sstdebug_mode(True)
-  debugchange_button = tk.Button(frame, text=f"{deb}", command=new_debug, height=3, width=30, bg=button_color, fg=buttontxt_color)
-  debugchange_button.grid(row=2, column=0, padx=3, pady=5, sticky='nsew')
-
-  # Open cfg
-  def open_cfg():
-    if enabled_debug:
-      print("Opening config file...")
-    try:
-      os.startfile(confpath)
-      if enabled_debug:
-        print("Config file opened successfully")
-    except FileNotFoundError:
-      print("Error opening file (FileNotFoundError)")
-  
-  # "Open cfg" button
-  cfg_button = tk.Button(frame, text="Open Tool Config File", command=open_cfg, height=3, width=30, bg=button_color, fg=buttontxt_color)
-  cfg_button.grid(row=2, column=1, padx=3, pady=5, sticky='nsew')
-
-  # Check current theme
-  def new_theme():
-    global bg_color
-    global button_color
-    global buttontxt_color
-    global text_color
-    global ntheme
-    cfg = {}
-    if os.path.exists(sstfolder):
-      if os.path.exists(confpath):
-        with open(confpath, 'r') as file:
-          for line in file:
-            line = line.strip()
-            if line and not line.startswith('#'):
-              key, value = line.split('=')
-              cfg[key.strip()] = value.strip()
-        if ntheme == "Dark":
-          cfg["theme"] = "dark"
-          with open(confpath, 'w') as file:
-            for key, value in cfg.items():
-              file.write(f'{key}={value}\n')
-          bg_color = "#1A1A1A"  # rgb(26, 26, 26)
-          button_color = "#D3D3D3"  # rgb(211, 211, 211)
-          buttontxt_color = "#1A1A1A"  # rgb(26, 26, 26)
-          text_color = "white"  # White
-          if enabled_debug:
-            print("Theme changed to Dark, reloading menu")
-          licensextras_menu()
-        elif ntheme == "Light":
-          cfg["theme"] = "light"
-          with open(confpath, 'w') as file:
-            for key, value in cfg.items():
-              file.write(f'{key}={value}\n')
-          bg_color = "white"  # White
-          button_color = "white"  # White
-          buttontxt_color = "black"  # Black
-          text_color = "black"  # Black
-          if enabled_debug:
-            print("Theme changed to Light, reloading menu")
-          licensextras_menu()
-      else:
-        with open(confpath, 'w') as archivo:
-          archivo.write('theme=dark\n')
-        ntheme = "Dark"
-        if enabled_debug:
-          print('Config file not found, set theme to "Dark" and retrying...')
-        new_theme()
-    else:
-      os.makedirs(sstfolder)
-      with open(confpath, 'w') as archivo:
-        archivo.write('theme=dark\n')
-      ntheme = "Dark"
-      if enabled_debug:
-        print('Tool data folder not found, created it and config file, set theme to "Dark" and retrying...')
-      new_theme()
-
-  # "Change Theme" button
-  ntheme = theme(True)
-  ntheme_button = tk.Button(frame, text=f"Set theme to {ntheme}", command=new_theme, height=3, width=30, bg=button_color, fg=buttontxt_color)
-  ntheme_button.grid(row=3, column=0, padx=3, pady=5, sticky='nsew')
-
-  # Change screen mode
-  def new_screenmode():
-    global screenmode
-    cfg = {}
-    if os.path.exists(sstfolder):
-      if os.path.exists(confpath):
-        with open(confpath, 'r') as file:
-          for line in file:
-            line = line.strip()
-            if line and not line.startswith('#'):
-              key, value = line.split('=')
-              cfg[key.strip()] = value.strip()
-        if screenmode == "Fullscreen":
-          cfg["fullscreen"] = "true"
-          with open(confpath, 'w') as file:
-            for key, value in cfg.items():
-              file.write(f'{key}={value}\n')
-          root.attributes('-fullscreen', True)
-          if enabled_debug:
-            print("Fullscreen enabled, reloading menu")
-          licensextras_menu()
-        elif screenmode == "Windowed":
-          cfg["fullscreen"] = "false"
-          with open(confpath, 'w') as file:
-            for key, value in cfg.items():
-              file.write(f'{key}={value}\n')
-          root.attributes('-fullscreen', False)
-          if enabled_debug:
-            print("Fullscreen disabled, reloading menu")
-          licensextras_menu()
-      else:
-        with open(confpath, 'w') as archivo:
-          archivo.write('fullscreen=false\n')
-        screenmode = "Windowed"
-        if enabled_debug:
-          print('Config file not found, set screen mode to "Windowed" and retrying...')
-        new_screenmode()
-    else:
-      os.makedirs(sstfolder)
-      with open(confpath, 'w') as archivo:
-        archivo.write('fullscreen=false\n')
-      screenmode = "Windowed"
-      if enabled_debug:
-        print('Tool data folder not found, created it and config file, set screen mode to "Windowed" and retrying...')
-      new_screenmode()
-  
-  # "Change Screen Mode" button
-  if fullscreen():
-    screenmode = "Windowed"
-    if enabled_debug:
-      print("Fullscreen is enabled, showing enabled variant")
-  else:
-    if enabled_debug:
-      print("Fullscreen is disabled, showing disabled variant")
-    screenmode = "Fullscreen"
-  screenmode_button = tk.Button(frame, text=f"Set window mode to {screenmode}", command=new_screenmode, height=3, width=30, bg=button_color, fg=buttontxt_color)
-  screenmode_button.grid(row=3, column=1, padx=3, pady=5, sticky='nsew')
-
-  # Open GitHub Repo
-  def view_repo():
-    if enabled_debug:
-      print("Opening GitHub Repo...")
-    webbrowser.open("https://github.com/NGDPLNk/SSTools4MC")
-  
-  # "Open GitHub Repo" button
-  repo_button = tk.Button(frame, text="Open GitHub Repo", command=view_repo, height=3, width=30, bg=button_color, fg=buttontxt_color)
-  repo_button.grid(row=4, column=0, padx=3, pady=5, sticky='nsew')
-
-  # Open Text Formatting for MOTD's
-  def view_motdsformat():
-    if enabled_debug:
-      print("Opening Text Formatting for MOTD's...")
-    webbrowser.open("https://minecraft.wiki/w/Formatting_codes")
-  
-  # "Open Text Formatting for MOTD's" button
-  motd_button = tk.Button(frame, text="Open Text Formatting for MOTD's", command=view_motdsformat, height=3, width=30, bg=button_color, fg=buttontxt_color)
-  motd_button.grid(row=4, column=1, padx=3, pady=5, sticky='nsew')
-
-  # Open server.properties wiki
-  def view_serverproperties():
-    if enabled_debug:
-      print("Opening server.properties wiki...")
-    webbrowser.open("https://minecraft.wiki/w/Server.properties")
-
-  # "Open server.properties wiki" button
-  serverproperties_button = tk.Button(frame, text="Open server.properties wiki", command=view_serverproperties, height=3, width=30, bg=button_color, fg=buttontxt_color)
-  serverproperties_button.grid(row=5, column=0, padx=3, pady=5, sticky='nsew')
-
-  # Open License
-  def view_license():
-    if enabled_debug:
-      print("Opening License...")
-    webbrowser.open("https://github.com/NGDPLNk/SSTools4MC/blob/main/LICENSE")
-  
-  # "Open License" button
-  license_button = tk.Button(frame, text="Open License", command=view_license, height=3, width=30, bg=button_color, fg=buttontxt_color)
-  license_button.grid(row=5, column=1, padx=3, pady=5, sticky='nsew')
-
-  # "Return to Main Menu" button
-  main_button = tk.Button(frame, text="Return to Main Menu", command=main, height=3, width=30, bg=button_color, fg=buttontxt_color)
-  main_button.grid(row=6, column=0, columnspan=2, pady=15, sticky="nsew")
-
-# EXIT MENU
-def exit_menu():
-  global run
-  if enabled_debug:
-    print("Exit Menu Opened, checking if server is running...")
-  if run and minecraft_server_process.stdin:
-    if enabled_debug:
-      print("Server is running, showing warning variant")
-    
-    # Clears the window
-    for widget in root.winfo_children():
-      widget.destroy()
-    
-    # Window title
-    root.title("SSTools4MC - ATTENTION! Your Server is still running")
-
-    # Main frame
-    frame = tk.Frame(root, bg=bg_color)
-    frame.place(relx=0.5, rely=0.5, anchor='center')
-
-    # Title
-    title_font = ("Arial", 30, "bold")
-    title = tk.Label(frame, text="Your Server is still running", font=title_font, bg=bg_color, fg=text_color)
-    title.grid(row=0, column=0, pady=5)
-
-    # Subtitle
-    subtitle_text = "ATTENTION! Your Server is still running. What do you want to do?\n"
-    subtitle = tk.Label(frame, text=subtitle_text, font=("Arial", 12), wraplength=600, bg=bg_color, fg=text_color)
-    subtitle.grid(row=1, column=0, pady=5)
-
-    # Stop and close
-    def stopnclose():
-      global run
-      global m # Check what this does lol
-      run = False
-      global minecraft_server_process
-      if enabled_debug:
-        print("Sending stop command to server...")
-      if minecraft_server_process.stdin:
-        command = "stop\n"
-        minecraft_server_process.stdin.write(command.encode())
-        minecraft_server_process.stdin.flush()
-        if enabled_debug:
-          print("Sending stop command to server...")
-      run = False
-      # Clears the window
-      for widget in root.winfo_children():
-        widget.destroy()
-
-      # Window title
-      root.title("SSTools4MC - Thank you for using this tool")
-
-      # Main frame
-      frame = tk.Frame(root, bg=bg_color)
-      frame.place(relx=0.5, rely=0.5, anchor='center')
-
-      # Title
-      title_font = ("Arial", 24, "bold")
-      title = tk.Label(frame, text="Thank you for using this tool\nMIT License - Copyright © 2024 NGDPL Nk", font=title_font, bg=bg_color, fg=text_color)
-      title.pack(pady=5)
-
-      if enabled_debug:
-        print("Thank you for using this tool - MIT License - 2024 NGDPL Nk")
-        print("Closing program...")
-
-      # Close program after 1.8 seconds
-      root.after(1800, root.destroy)
-
-    # "Stop Server" button
-    stop_button = tk.Button(frame, text="SEND STOP COMMAND AND EXIT", command=stopnclose, height=3, width=30, bg="red", fg="white")
-    stop_button.grid(row=2, column=0, pady=5)
-
-    # "Return to Main Menu" button
-    main_button = tk.Button(frame, text="Return to Main Menu", command=main, height=2, width=30, bg=button_color, fg=buttontxt_color)
-    main_button.grid(row=3, column=0, pady=15)
-  else:
-    if enabled_debug:
-      print("Server is not running, showing normal variant")
-
-    # Clears the window
-    for widget in root.winfo_children():
-      widget.destroy()
-
-    # Window title
-    root.title("SSTools4MC - Thank you for using this tool")
-
-    # Main frame
-    frame = tk.Frame(root, bg=bg_color)
-    frame.place(relx=0.5, rely=0.5, anchor='center')
-
-    # Title
-    title_font = ("Arial", 24, "bold")
-    title = tk.Label(frame, text="Thank you for using this tool\nMIT License - Copyright © 2024 NGDPL Nk", font=title_font, bg=bg_color, fg=text_color)
-    title.pack(pady=5)
-
-    if enabled_debug:
-      print("Thank you for using this tool - MIT License - 2024 NGDPL Nk")
-      print("Closing program...")
-
-    # Close program after 1.8 seconds
-    root.after(1800, root.destroy)
-
-# MAIN MENU
-def main():
-  global root
-  global running
-  
-  # Check if return from another menu
-  if not running:
-    running = True
-    root = tk.Tk()
-    root.state("zoomed")
-    if enabled_debug:
-      print("Trying to load icon...")
-    try:
-      root.iconbitmap("icon.ico")  # Icon
-      if enabled_debug:
-        print("Icon loaded successfully")
-    except tk.TclError:
-      print("Error loading icon, running without it")
-    if fullscreen():
-      root.attributes('-fullscreen', True)
-      if enabled_debug:
-        print("Fullscreen enabled")
-    else:
-      root.minsize(850, 500)
-      if enabled_debug:
-        print("Fullscreen disabled")
-    if enabled_debug:
-      print("Configs and resource loading finished, loading Main Menu...")
-  else:
-    if enabled_debug:
-      print("Returned to Main Menu")
-  
-  root.title("SSTools4MC - Main Menu")  # Window title
-
-  # Clears the window
-  for widget in root.winfo_children():
-    widget.destroy()
-
-  # Set BG
-  root.configure(bg=bg_color)
-
-  # Main frame
-  frame = tk.Frame(root, bg=bg_color)
-  frame.place(relx=0.5, rely=0.5, anchor='center')
-
-  # Title
-  title_font = ("Arial", 30, "bold")
-  title = tk.Label(frame, text="SSTools4MC", font=title_font, bg=bg_color, fg=text_color)
-  title.grid(row=0, column=0, columnspan=5, pady=5)
-
-  # Subtitle
-  subtitle_text = "Welcome to SSTools4MC! What do you want to do?\n"
-  subtitle = tk.Label(frame, text=subtitle_text, font=("Arial", 12), wraplength=600, bg=bg_color, fg=text_color)
-  subtitle.grid(row=1, column=0, columnspan=5, pady=5)
-
-  # "Start Server" button
-  start_button = tk.Button(frame, text="Start Server", command=startserver_menu, height=3, width=20, bg=button_color, fg=buttontxt_color)
-  start_button.grid(row=2, column=1, columnspan=3, pady=5, sticky='nsew')
-
-  # "Manage Server" button
-  manage_button = tk.Button(frame, text="Manage Server", command=manageserver_menu, height=3, width=20, bg=button_color, fg=buttontxt_color)
-  manage_button.grid(row=3, column=1, columnspan=3, pady=5, sticky='nsew')
-
-  # "License and Extras" button
-  extras_button = tk.Button(frame, text="License and Extras", command=licensextras_menu, height=3, width=20, bg=button_color, fg=buttontxt_color)
-  extras_button.grid(row=4, column=1, columnspan=3, pady=5, sticky='nsew')
-
-  # "Exit" button
-  exit_button = tk.Button(frame, text="Exit", command=exit_menu, height=3, width=20, bg=button_color, fg=buttontxt_color)
-  exit_button.grid(row=5, column=1, columnspan=3, pady=5, sticky='nsew')
-  
-  if enabled_debug:
-    print("Main Menu loaded")
-  
-  root.mainloop()
-
-#####################
-# PROGRAM START
-sstdebug_mode()
+# INICIAR HERRAMIENTA - RUN TOOL
+lang()
