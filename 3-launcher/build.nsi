@@ -1,14 +1,21 @@
-!define APP_VERSION "1.1"
-!define PRODUCT_VERSION "1.1.0.0"
-!define APP_EDITOR "TLSoftware"
-
 # FILL THIS WITH THE NEEDED PATHS
 !define ICON_PATH "<TYPE THE ICON.ICO PATH HERE>"
 !define LAUNCHER_PATH "<TYPE THE LAUNCHER.PYW PATH HERE>"
 
+############################################################
+
+Caption "SSTools4MC Installer"
+UninstallCaption "SSTools4MC Uninstaller"
+!define APP_VERSION "1.1"
+!define PRODUCT_VERSION "1.1.0.0"
+!define APP_EDITOR "TLSoftware"
+
 Outfile "SSTools4MC_Launcher.exe"
 SetCompressor /SOLID lzma
 Icon "${ICON_PATH}"
+
+SilentInstall silent
+SilentUninstall silent
 
 VIProductVersion "${PRODUCT_VERSION}"
 VIAddVersionKey "ProductName" "SSTools4MC Launcher"
@@ -54,7 +61,7 @@ Section "MainSection" SEC01
   WriteUninstaller "$INSTDIR\uninstaller.exe"
 
   # Show a message when the program is completely installed
-  MessageBox MB_YESNO "SSTools has been completely installed. Do you want to open it now?" IDYES runProgram
+  MessageBox MB_YESNO|MB_ICONINFORMATION "SSTools has been completely installed. Do you want to open it now?" IDYES runProgram
 
   # Don't run the program if the user clicked "No"
   Goto end
@@ -91,6 +98,6 @@ Section "Uninstall"
   RMDir /r $APPDATA\TLSoftware\SSTools4MC
 
   # Show a message when the program is completely uninstalled
-  MessageBox MB_OK "SSTools4MC has been completely uninstalled."
+  MessageBox MB_OK|MB_ICONINFORMATION "SSTools4MC has been completely uninstalled."
 
 SectionEnd
