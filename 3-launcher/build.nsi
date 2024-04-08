@@ -11,7 +11,7 @@ UninstallCaption "SSTools4MC Uninstaller"
 !define PRODUCT_VERSION "1.1.0.0"
 !define APP_EDITOR "TLSoftware"
 
-Outfile "SSTools4MC_Launcher.exe"
+Outfile "SSTools4MC_Launcher_v1.1.exe"
 SetCompressor /SOLID lzma
 Icon "${ICON_PATH}"
 
