@@ -74,24 +74,27 @@ You need to install the latest NSIS (Nullsoft Scriptable Install System) version
 
 ### Verify Files
 
-Navigate to the `3 - launcher` folder in the cloned repository. Ensure that you have the following files (there may be more, but you need to have at least these):
+Navigate to the `3-launcher` folder in the cloned repository. Ensure that you have the following files (there may be more, but you need to have at least these):
 
+- `base.py`
 - `build.nsi`
 - `icon.ico`
 - `launcher.pyw`
 
 If any of these files are missing, please download them from the repository.
 
+You can also use the `main.py` file from the `1-release` folder as your `base.py` if you rename it.
+
 ### Edit build.nsi File
 
-Open the `build.nsi` file in a text editor and replace the placeholders `<TYPE THE ICON.ICO PATH HERE>` and `<TYPE THE LAUNCHER.PYW PATH HERE>` with the actual paths to your `icon.ico` and `launcher.pyw` files, respectively. Save the changes.
+Open the `build.nsi` file in a text editor and replace the placeholders `<TYPE THE ICON.ICO PATH HERE>`, `<TYPE THE LAUNCHER.PYW PATH HERE>` and `<TYPE THE BASE.PY PATH HERE>` with the actual paths to your `icon.ico`, `launcher.pyw` and `base.py` files, respectively. Save the changes.
 
 ### Compile the Installer
 
 1. Open NSIS.
 2. Select the option "Compile NSIS Scripts".
 3. Drag and drop the `build.nsi` file you just edited into the NSIS window.
-4. An installer for the SSTools4MC program will be created.
+4. An installer for SSTools4MC will be created.
 5. Enjoy!
 
 ## Copyright and Disclaimer
