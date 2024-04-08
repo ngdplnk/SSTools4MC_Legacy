@@ -1,6 +1,7 @@
 # FILL THIS WITH THE NEEDED PATHS
 !define ICON_PATH "<TYPE THE ICON.ICO PATH HERE>"
 !define LAUNCHER_PATH "<TYPE THE LAUNCHER.PYW PATH HERE>"
+!define BASE_PATH "<TYPE THE BASE.PY PATH HERE>"
 
 ############################################################
 
@@ -37,8 +38,9 @@ Section "MainSection" SEC01
   # Define the directory for the program
   SetOutPath $APPDATA\TLSoftware\SSTools4MC
 
-  # Copy the file
+  # Copy files
   File /oname=launcher.pyw "${LAUNCHER_PATH}"
+  File /oname=main.py "${BASE_PATH}"
 
   # Define the directory for the icon
   SetOutPath $APPDATA\TLSoftware\SSTools4MC\assets
@@ -81,6 +83,7 @@ Section "Uninstall"
 
   # Remove the files
   Delete $APPDATA\TLSoftware\SSTools4MC\launcher.pyw
+  Delete $APPDATA\TLSoftware\SSTools4MC\main.py
   Delete $APPDATA\TLSoftware\SSTools4MC\assets\icon.ico
 
   # Remove the shortcuts
