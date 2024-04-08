@@ -31,8 +31,8 @@ We will provide active support for current releases and only one previous versio
 
 Are this versions supported?
 - PRE-v1.0 → :x:
-- v1.0 → :heavy_check_mark:
-- v2.0 Betas → :heavy_check_mark:
+- v1.0 → :x:
+- v1.1 → ✔️
 
 ## License and Copyright
 All tools in this repository are distributed under the MIT License. Please refer to the LICENSE.md file for complete details on the terms of the license and copyright.
@@ -42,4 +42,4 @@ This security policy will be reviewed and updated periodically to ensure it alig
 
 Thank you for contributing to the security of our project. Your collaboration is essential to maintaining a safe and reliable environment for all users of our Minecraft server tools.
 
-©2023 - NGDPL Nk
+©2024 - TLSoftware - NGDPL Nk
