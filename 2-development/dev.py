@@ -115,30 +115,22 @@ MCVERSIONS = {
 def limpiar_consola():
     if os.name == 'nt': # En Windows - On Windows
         os.system('cls')
-    else: # En sistemas Unix-like - On Unix-like systems
+    else: # For Linux
         os.system('clear')
 
 # WINDOW TITLE
 def window_title(title):
     if sys.platform.startswith('win32'): # En Windows - On Windows
         ctypes.windll.kernel32.SetConsoleTitleW(title)
-    elif sys.platform.startswith('linux') or sys.platform.startswith('darwin'): # En sistemas Unix-like - On Unix-like systems
+    elif sys.platform.startswith('linux') or sys.platform.startswith('darwin'): # For Linux
         sys.stdout.write(f"\x1b]2;{title}\x07")
 
 # BRING WINDOW TO FRONT
 def front():
     if os.name == 'nt':  # For Windows
-        # Get the handle of the console window
-        h_wnd = ctypes.windll.kernel32.GetConsoleWindow()
-
-        # Bring the console window to the foreground
-        ctypes.windll.user32.SetForegroundWindow(h_wnd)
-    else:  # For Linux/OS X
-        # Get the PID of the current process
-        pid = os.getpid()
-
-        # Use wmctrl to bring the window with the given PID to the front
-        subprocess.call(['wmctrl', '-ia', str(pid)])
+        os.system("echo off && echo ShowConsole && echo on")
+    else:  # For Linux
+        os.system("wmctrl -a 'Terminal'")
 
 # ENGLISH
 def eng():
