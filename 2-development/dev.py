@@ -767,6 +767,62 @@ def eng():
                             limpiar_consola()
                             verss = input(f'Server Launcher for Minecraft\n-------------------------------------\n\nYour New Server will be saved in "{foldname}".\n\n(L) List of available versions\n(R) Re-select a folder for the New server\n(N) Return to main menu\n\nSelect one of the options or type the New Server version to install= ').replace(" ", "")
                             try:
+                                def servdownload(versionname):
+                                    global newserver
+                                    global foldname
+                                    version = versionname.lower()
+                                    url = MCVERSIONS[version]
+                                    limpiar_consola()
+                                    print(f'Server Launcher for Minecraft\n-------------------------------------\n\nYour New Server is being downloaded.\n\nVersion: {version}\nTarget Folder: "{foldname}"\n\nPlease wait...\n')
+                                    time.sleep(0.5)
+                                    os.makedirs(newserver, exist_ok=True)
+                                    os.chdir(newserver)
+                                    try:
+                                        response = requests.get(url, stream=True)
+                                        total_size_in_bytes = int(response.headers.get('content-length', 0))
+                                        block_size = 1024  # 1 Kibibyte
+                                        total_data = 0
+                                        with open("server.jar", "wb") as file:
+                                            for data in response.iter_content(block_size):
+                                                total_data += len(data)
+                                                file.write(data)
+                                                completed = int(50 * total_data / total_size_in_bytes)
+                                                print("\r[%s%s]" % ('#' * completed, '.' * (50 - completed)), end='')
+                                        print()
+                                        limpiar_consola()
+                                        input('Server Launcher for Minecraft\n-------------------------------------\n\nThe server has been installed successfully and added to "Your Servers" list.\n\nPress ENTER to continue.')
+                                        servname = os.path.basename(newserver)
+                                        servstring = f"{servname}<[=]>{newserver}\n"
+                                        os.makedirs(CONFIG_PATH, exist_ok=True)
+                                        with open(SAVED_SERVERS, 'r+') as file:
+                                            lines = file.readlines()
+                                            if servstring not in lines:
+                                                file.write(servstring)
+                                        eng()
+                                    except Exception:
+                                        def erragain():
+                                            limpiar_consola()
+                                            yup = colored("Yes","green")
+                                            nop = colored("No","red")
+                                            errtry = input(f"Server Launcher for Minecraft\n-------------------------------------\n\nAn error occurred while downloading the server.\nTry again?\n\n(1) {yup}\n(2) {nop}\n\nSelect one of the options= ")
+                                            try:
+                                                if any(char in "0123456789+-*/" for char in errtry):
+                                                    if not errtry[0].isalpha():
+                                                        errtr = eval(errtry)
+                                                    else:
+                                                        errtr = errtry
+                                                else:
+                                                    errtr = errtry
+                                                errtr = int(errtr)
+                                                if errtr == 1:
+                                                    servdownload(version)
+                                                elif errtr == 2:
+                                                    eng()
+                                                else:
+                                                    erragain()
+                                            except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                                                erragain()
+                                            erragain()
                                 if verss.lower() == "n":
                                     eng()
                                 elif verss.lower() == "r":
@@ -777,75 +833,23 @@ def eng():
                                         print("Server Launcher for Minecraft\n-------------------------------------\n\nAvailable versions:\n")
                                         for i, version in enumerate(MCVERSIONS, start=1):
                                             print(f"(-) {version}")
-                                        listselection = input("\n(B) Back\n(R) Return to main menu\n\nSelect one of the options=")
+                                        listselection = input("\n(B) Back\n(R) Return to main menu\n\nType a version or select one of the options=")
                                         try:
                                             if listselection.lower() == "b":
                                                 vers_select()
                                             elif listselection.lower() == "r":
                                                 eng()
+                                            elif listselection.lower() in MCVERSIONS.keys():
+                                                servdownload(listselection)
                                             else:
                                                 versionl()
                                         except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
                                             versionl()
                                     versionl()
                                 elif verss.lower() in MCVERSIONS.keys():
-                                    def servdownload():
-                                        global newserver
-                                        global foldname
-                                        version = verss.lower()
-                                        url = MCVERSIONS[version]
-                                        limpiar_consola()
-                                        print(f'Server Launcher for Minecraft\n-------------------------------------\n\nYour New Server is being downloaded.\n\nVersion: {version}\nTarget Folder: "{foldname}"\n\nPlease wait...\n')
-                                        time.sleep(0.5)
-                                        os.makedirs(newserver, exist_ok=True)
-                                        os.chdir(newserver)
-                                        try:
-                                            response = requests.get(url, stream=True)
-                                            total_size_in_bytes = int(response.headers.get('content-length', 0))
-                                            block_size = 1024  # 1 Kibibyte
-                                            total_data = 0
-                                            with open("server.jar", "wb") as file:
-                                                for data in response.iter_content(block_size):
-                                                    total_data += len(data)
-                                                    file.write(data)
-                                                    completed = int(50 * total_data / total_size_in_bytes)
-                                                    print("\r[%s%s]" % ('#' * completed, '.' * (50 - completed)), end='')
-                                            print()
-                                            limpiar_consola()
-                                            input('Server Launcher for Minecraft\n-------------------------------------\n\nThe server has been installed successfully and added to "Your Servers" list.\n\nPress ENTER to continue.')
-                                            servname = os.path.basename(newserver)
-                                            servstring = f"{servname}<[=]>{newserver}\n"
-                                            os.makedirs(CONFIG_PATH, exist_ok=True)
-                                            with open(SAVED_SERVERS, 'r+') as file:
-                                                lines = file.readlines()
-                                                if servstring not in lines:
-                                                    file.write(servstring)
-                                            eng()
-                                        except Exception:
-                                            def erragain():
-                                                limpiar_consola()
-                                                yup = colored("Yes","green")
-                                                nop = colored("No","red")
-                                                errtry = input(f"Server Launcher for Minecraft\n-------------------------------------\n\nAn error occurred while downloading the server.\nTry again?\n\n(1) {yup}\n(2) {nop}\n\nSelect one of the options= ")
-                                                try:
-                                                    if any(char in "0123456789+-*/" for char in errtry):
-                                                        if not errtry[0].isalpha():
-                                                            errtr = eval(errtry)
-                                                        else:
-                                                            errtr = errtry
-                                                    else:
-                                                        errtr = errtry
-                                                    errtr = int(errtr)
-                                                    if errtr == 1:
-                                                        servdownload()
-                                                    elif errtr == 2:
-                                                        eng()
-                                                    else:
-                                                        erragain()
-                                                except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
-                                                    erragain()
-                                            erragain()
-                                    servdownload()
+                                    servdownload(verss)
+                                else:
+                                    vers_select()
                             except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
                                 installmenu()
                         vers_select()
@@ -1558,6 +1562,62 @@ def esp():
                             limpiar_consola()
                             verss = input(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nTu Nuevo Server se guardará en "{foldname}".\n\n(L) Lista de versiones disponibles\n(R) Reelegir una carpeta para el Nuevo Server\n(N) Volver al menú principal\n\nElige una de las opciones o escribe la versión para instalar tu Nuevo Server= ').replace(" ", "")
                             try:
+                                def servdownload(versionname):
+                                    global newserver
+                                    global foldname
+                                    version = versionname.lower()
+                                    url = MCVERSIONS[version]
+                                    limpiar_consola()
+                                    print(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nTu Nuevo Server está siendo descargado.\n\nVersión: {version}\nCarpeta de destino: "{foldname}"\n\nEspera por favor...\n')
+                                    time.sleep(0.5)
+                                    os.makedirs(newserver, exist_ok=True)
+                                    os.chdir(newserver)
+                                    try:
+                                        response = requests.get(url, stream=True)
+                                        total_size_in_bytes = int(response.headers.get('content-length', 0))
+                                        block_size = 1024  # 1 Kibibyte
+                                        total_data = 0
+                                        with open("server.jar", "wb") as file:
+                                            for data in response.iter_content(block_size):
+                                                total_data += len(data)
+                                                file.write(data)
+                                                completed = int(50 * total_data / total_size_in_bytes)
+                                                print("\r[%s%s]" % ('#' * completed, '.' * (50 - completed)), end='')
+                                        print()
+                                        limpiar_consola()
+                                        input('Lanzador de Servidores para Minecraft\n-------------------------------------\n\nTu Nuevo Server se ha instalado correctamente y ha sido añadido a la Lista "Tus Servidores".\n\nPresiona ENTER para continuar.')
+                                        servname = os.path.basename(newserver)
+                                        servstring = f"{servname}<[=]>{newserver}\n"
+                                        os.makedirs(CONFIG_PATH, exist_ok=True)
+                                        with open(SAVED_SERVERS, 'r+') as file:
+                                            lines = file.readlines()
+                                            if servstring not in lines:
+                                                file.write(servstring)
+                                        esp()
+                                    except Exception:
+                                        def erragain():
+                                            limpiar_consola()
+                                            yup = colored("Sí","green")
+                                            nop = colored("No","red")
+                                            errtry = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nHa ocurrido un error mientras se descargaba tu Nuevo Server.\nReintentar?\n\n(1) {yup}\n(2) {nop}\n\nElige una de las opciones= ")
+                                            try:
+                                                if any(char in "0123456789+-*/" for char in errtry):
+                                                    if not errtry[0].isalpha():
+                                                        errtr = eval(errtry)
+                                                    else:
+                                                        errtr = errtry
+                                                else:
+                                                    errtr = errtry
+                                                errtr = int(errtr)
+                                                if errtr == 1:
+                                                    servdownload(version)
+                                                elif errtr == 2:
+                                                    esp()
+                                                else:
+                                                    erragain()
+                                            except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
+                                                erragain()
+                                        erragain()
                                 if verss.lower() == "n":
                                     esp()
                                 elif verss.lower() == "r":
@@ -1568,75 +1628,23 @@ def esp():
                                         print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nVersiones disponibles:\n")
                                         for i, version in enumerate(MCVERSIONS, start=1):
                                             print(f"(-) {version}")
-                                        listselection = input("\n(B) Atrás\n(R) Volver al menú principal\n\nElige una de las opciones=")
+                                        listselection = input("\n(B) Atrás\n(R) Volver al menú principal\n\nEscribe una versión o elige una de las opciones=")
                                         try:
                                             if listselection.lower() == "b":
                                                 vers_select()
                                             elif listselection.lower() == "r":
                                                 esp()
+                                            elif listselection.lower() in MCVERSIONS.keys():
+                                                servdownload(listselection)
                                             else:
                                                 versionl()
                                         except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
                                             versionl()
                                     versionl()
                                 elif verss.lower() in MCVERSIONS.keys():
-                                    def servdownload():
-                                        global newserver
-                                        global foldname
-                                        version = verss.lower()
-                                        url = MCVERSIONS[version]
-                                        limpiar_consola()
-                                        print(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nTu Nuevo Server está siendo descargado.\n\nVersión: {version}\nCarpeta de destino: "{foldname}"\n\nEspera por favor...\n')
-                                        time.sleep(0.5)
-                                        os.makedirs(newserver, exist_ok=True)
-                                        os.chdir(newserver)
-                                        try:
-                                            response = requests.get(url, stream=True)
-                                            total_size_in_bytes = int(response.headers.get('content-length', 0))
-                                            block_size = 1024  # 1 Kibibyte
-                                            total_data = 0
-                                            with open("server.jar", "wb") as file:
-                                                for data in response.iter_content(block_size):
-                                                    total_data += len(data)
-                                                    file.write(data)
-                                                    completed = int(50 * total_data / total_size_in_bytes)
-                                                    print("\r[%s%s]" % ('#' * completed, '.' * (50 - completed)), end='')
-                                            print()
-                                            limpiar_consola()
-                                            input('Lanzador de Servidores para Minecraft\n-------------------------------------\n\nTu Nuevo Server se ha instalado correctamente y ha sido añadido a la Lista "Tus Servidores".\n\nPresiona ENTER para continuar.')
-                                            servname = os.path.basename(newserver)
-                                            servstring = f"{servname}<[=]>{newserver}\n"
-                                            os.makedirs(CONFIG_PATH, exist_ok=True)
-                                            with open(SAVED_SERVERS, 'r+') as file:
-                                                lines = file.readlines()
-                                                if servstring not in lines:
-                                                    file.write(servstring)
-                                            esp()
-                                        except Exception:
-                                            def erragain():
-                                                limpiar_consola()
-                                                yup = colored("Sí","green")
-                                                nop = colored("No","red")
-                                                errtry = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nHa ocurrido un error mientras se descargaba tu Nuevo Server.\nReintentar?\n\n(1) {yup}\n(2) {nop}\n\nElige una de las opciones= ")
-                                                try:
-                                                    if any(char in "0123456789+-*/" for char in errtry):
-                                                        if not errtry[0].isalpha():
-                                                            errtr = eval(errtry)
-                                                        else:
-                                                            errtr = errtry
-                                                    else:
-                                                        errtr = errtry
-                                                    errtr = int(errtr)
-                                                    if errtr == 1:
-                                                        servdownload()
-                                                    elif errtr == 2:
-                                                        esp()
-                                                    else:
-                                                        erragain()
-                                                except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
-                                                    erragain()
-                                            erragain()
-                                    servdownload()
+                                    servdownload(verss)
+                                else:
+                                    vers_select()
                             except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
                                 installmenu()
                         vers_select()
