@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
 
+#####################
+### THINGS TO FIX ###
+# - Download progressbar has a bug that when the console i untabbed, freezes and corrupts the file.
+# - In specific conditions, the server startup cancelling with CTRL+C shows an unexpected screen from other function.
+#####################
+
 # MÓDULOS IMPORTADOS - IMPORTED MODULES
 import os
 import time
