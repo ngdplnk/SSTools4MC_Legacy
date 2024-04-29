@@ -30,8 +30,8 @@ CONFIG_PATH = os.path.join(SSTOOLS_FOLDER, "config") # type: ignore
 SAVED_SERVERS = os.path.join(CONFIG_PATH, "saved-servers.cfg") # type: ignore
 
 # MINECRAFT VERSIONS
-## 82 VERSIONS ADDED (1.2.1 - 1.20.5)
-# LAST UPDATE: 23-04-2024
+## 83 VERSIONS ADDED (1.2.1 - 1.20.6)
+# LAST UPDATE: 29-04-2024
 MCVERSIONS = {
     "1.2.1": "https://assets.minecraft.net/1_2/minecraft_server.jar",
     "1.2.2": "https://assets.minecraft.net/1_2/minecraft_server.jar",
@@ -115,7 +115,8 @@ MCVERSIONS = {
     "1.20.2": "https://piston-data.mojang.com/v1/objects/5b868151bd02b41319f54c8d4061b8cae84e665c/server.jar",
     "1.20.3": "https://piston-data.mojang.com/v1/objects/4fb536bfd4a83d61cdbaf684b8d311e66e7d4c49/server.jar",
     "1.20.4": "https://piston-data.mojang.com/v1/objects/8dd1a28015f51b1803213892b50b7b4fc76e594d/server.jar",
-    "1.20.5": "https://piston-data.mojang.com/v1/objects/79493072f65e17243fd36a699c9a96b4381feb91/server.jar"
+    "1.20.5": "https://piston-data.mojang.com/v1/objects/79493072f65e17243fd36a699c9a96b4381feb91/server.jar",
+    "1.20.6": "https://piston-data.mojang.com/v1/objects/145ff0858209bcfc164859ba735d4199aafa1eea/server.jar"
 }
 
 # CLS
@@ -865,7 +866,7 @@ def eng():
     # LICENSE AND EXTRAS
     def about():
         limpiar_consola()
-        copyr = input("Server Launcher for Minecraft\n-------------------------------------\n\nMIT License - Copyright (c) 2024 NGDPL Nk\n\nSSTools4MC v24.04.23 - ADDED SUPPORT FOR 1.20.5\n\nHelpers:\n@naicoooossj\n@LegalizeNuclearBombs\n\n-------------------------------------\n\n(1) View repository in the browser\n(2) View license in the browser\n(3) Return to main menu\n\nSelect one of the options= ")
+        copyr = input("Server Launcher for Minecraft\n-------------------------------------\n\nMIT License - Copyright (c) 2024 NGDPL Nk\n\nSSTools4MC v29.04.23 - ADDED SUPPORT FOR 1.20.6\n\nHelpers:\n@naicoooossj\n@LegalizeNuclearBombs\n\n-------------------------------------\n\n(1) View repository in the browser\n(2) View license in the browser\n(3) Return to main menu\n\nSelect one of the options= ")
         try:
             if any(char in "0123456789+-*/" for char in copyr):
                 if not copyr[0].isalpha():
@@ -1660,7 +1661,7 @@ def esp():
     # LICENSE AND EXTRAS
     def about():
         limpiar_consola()
-        copyr = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nMIT License - Copyright (c) 2024 NGDPL Nk\n\nSSTools4MC v24.04.23 - SE AÑADE SOPRTE PARA LA 1.20.5\n\nHelpers:\n@naicoooossj\n@LegalizeNuclearBombs\n\n-------------------------------------\n\n(1) Ver repositorio en el navegador\n(2) Ver licencia en el navegador\n(3) Volver al menú principal\n\nElige una de las opciones= ")
+        copyr = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nMIT License - Copyright (c) 2024 NGDPL Nk\n\nSSTools4MC v29.04.23 - SE AÑADE SOPRTE PARA LA 1.20.6\n\nHelpers:\n@naicoooossj\n@LegalizeNuclearBombs\n\n-------------------------------------\n\n(1) Ver repositorio en el navegador\n(2) Ver licencia en el navegador\n(3) Volver al menú principal\n\nElige una de las opciones= ")
         try:
             if any(char in "0123456789+-*/" for char in copyr):
                 if not copyr[0].isalpha():
