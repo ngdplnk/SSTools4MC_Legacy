@@ -129,7 +129,7 @@ def limpiar_consola():
 # WINDOW TITLE
 def window_title(title):
     if sys.platform.startswith('win32'): # En Windows - On Windows
-        ctypes.windll.kernel32.SetConsoleTitleW(title)
+        ctypes.windll.kernel32.SetConsoleTitleW(title) # type: ignore
     elif sys.platform.startswith('linux') or sys.platform.startswith('darwin'): # For Linux
         sys.stdout.write(f"\x1b]2;{title}\x07")
 
