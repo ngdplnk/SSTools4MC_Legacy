@@ -116,7 +116,8 @@ MCVERSIONS = {
     "1.20.3": "https://piston-data.mojang.com/v1/objects/4fb536bfd4a83d61cdbaf684b8d311e66e7d4c49/server.jar",
     "1.20.4": "https://piston-data.mojang.com/v1/objects/8dd1a28015f51b1803213892b50b7b4fc76e594d/server.jar",
     "1.20.5": "https://piston-data.mojang.com/v1/objects/79493072f65e17243fd36a699c9a96b4381feb91/server.jar",
-    "1.20.6": "https://piston-data.mojang.com/v1/objects/145ff0858209bcfc164859ba735d4199aafa1eea/server.jar"
+    "1.20.6": "https://piston-data.mojang.com/v1/objects/145ff0858209bcfc164859ba735d4199aafa1eea/server.jar",
+    "1.21": "https://piston-data.mojang.com/v1/objects/450698d1863ab5180c25d7c804ef0fe6369dd1ba/server.jar"
 }
 
 # CLS
@@ -129,7 +130,7 @@ def limpiar_consola():
 # WINDOW TITLE
 def window_title(title):
     if sys.platform.startswith('win32'): # En Windows - On Windows
-        ctypes.windll.kernel32.SetConsoleTitleW(title) # type: ignore
+        ctypes.windll.kernel32.SetConsoleTitleW(title)
     elif sys.platform.startswith('linux') or sys.platform.startswith('darwin'): # For Linux
         sys.stdout.write(f"\x1b]2;{title}\x07")
 
@@ -866,7 +867,7 @@ def eng():
     # LICENSE AND EXTRAS
     def about():
         limpiar_consola()
-        copyr = input("Server Launcher for Minecraft\n-------------------------------------\n\nMIT License - Copyright (c) 2024 NGDPL Nk\n\nSSTools4MC v29.04.23 - ADDED SUPPORT FOR 1.20.6\n\nHelpers:\n@naicoooossj\n@LegalizeNuclearBombs\n\n-------------------------------------\n\n(1) View repository in the browser\n(2) View license in the browser\n(3) Return to main menu\n\nSelect one of the options= ")
+        copyr = input("Server Launcher for Minecraft\n-------------------------------------\n\nMIT License - Copyright (c) 2024 NGDPL Nk\n\nSSTools4MC v24.06.27 - ADDED SUPPORT FOR 1.21\n\nHelpers:\n@naicoooossj\n@LegalizeNuclearBombs\n\n-------------------------------------\n\n(1) View repository in the browser\n(2) View license in the browser\n(3) Return to main menu\n\nSelect one of the options= ")
         try:
             if any(char in "0123456789+-*/" for char in copyr):
                 if not copyr[0].isalpha():
@@ -1661,7 +1662,7 @@ def esp():
     # LICENSE AND EXTRAS
     def about():
         limpiar_consola()
-        copyr = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nMIT License - Copyright (c) 2024 NGDPL Nk\n\nSSTools4MC v29.04.23 - SE AÑADE SOPRTE PARA LA 1.20.6\n\nHelpers:\n@naicoooossj\n@LegalizeNuclearBombs\n\n-------------------------------------\n\n(1) Ver repositorio en el navegador\n(2) Ver licencia en el navegador\n(3) Volver al menú principal\n\nElige una de las opciones= ")
+        copyr = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nMIT License - Copyright (c) 2024 NGDPL Nk\n\nSSTools4MC v24.06.27 - SE AÑADE SOPRTE PARA LA 1.21\n\nHelpers:\n@naicoooossj\n@LegalizeNuclearBombs\n\n-------------------------------------\n\n(1) Ver repositorio en el navegador\n(2) Ver licencia en el navegador\n(3) Volver al menú principal\n\nElige una de las opciones= ")
         try:
             if any(char in "0123456789+-*/" for char in copyr):
                 if not copyr[0].isalpha():
