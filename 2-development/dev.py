@@ -2,7 +2,7 @@
 
 #####################
 ### THINGS TO FIX ###
-# - Download progressbar has a bug that when the console i untabbed, freezes and corrupts the file.
+# - Download progressbar has a bug that when the console is untabbed, freezes and corrupts the file.
 # - In specific conditions, the server startup cancelling with CTRL+C shows an unexpected screen from other function.
 #####################
 
@@ -29,10 +29,12 @@ SSTOOLS_FOLDER = os.path.join(APPDATA, "TLSoftware", "SSTools4MC") # type: ignor
 CONFIG_PATH = os.path.join(SSTOOLS_FOLDER, "config") # type: ignore
 SAVED_SERVERS = os.path.join(CONFIG_PATH, "saved-servers.cfg") # type: ignore
 
-# MINECRAFT VERSIONS
-## 83 VERSIONS ADDED (1.2.1 - 1.20.6)
-# LAST UPDATE: 29-04-2024
+### MINECRAFT VERSIONS
+## 83 STABLE VERSIONS ADDED (1.2.1 - 1.20.6)
+## X SNAPSHOT VERSIONS ADDED (1.3 - 1.21-rc1)
+# LAST UPDATE: 29-07-2024
 MCVERSIONS = {
+    # Stable
     "1.2.1": "https://assets.minecraft.net/1_2/minecraft_server.jar",
     "1.2.2": "https://assets.minecraft.net/1_2/minecraft_server.jar",
     "1.2.3": "https://assets.minecraft.net/1_2/minecraft_server.jar",
@@ -117,7 +119,111 @@ MCVERSIONS = {
     "1.20.4": "https://piston-data.mojang.com/v1/objects/8dd1a28015f51b1803213892b50b7b4fc76e594d/server.jar",
     "1.20.5": "https://piston-data.mojang.com/v1/objects/79493072f65e17243fd36a699c9a96b4381feb91/server.jar",
     "1.20.6": "https://piston-data.mojang.com/v1/objects/145ff0858209bcfc164859ba735d4199aafa1eea/server.jar",
-    "1.21": "https://piston-data.mojang.com/v1/objects/450698d1863ab5180c25d7c804ef0fe6369dd1ba/server.jar"
+    "1.21": "https://piston-data.mojang.com/v1/objects/450698d1863ab5180c25d7c804ef0fe6369dd1ba/server.jar",
+    # Snapshot
+    "1.3": "https://launcher.mojang.com/v1/objects/cb21a9aaaf599c94dd7fa1b777b2f0cc37a776c7/server.jar",
+    "1.4": "https://launcher.mojang.com/v1/objects/9470a2bb0fcb8a426328441a01dba164fbbe52c9/server.jar",
+    "1.4.1": "https://launcher.mojang.com/v1/objects/baa4e4a7adc3dc9fbfc5ea36f0777b68c9eb7f4a/server.jar",
+    "1.4.3": "https://launcher.mojang.com/v1/objects/9be68adf6e80721975df12f2445fa24617328d18/server.jar",
+    "1.5": "https://launcher.mojang.com/v1/objects/aedad5159ef56d69c5bcf77ed141f53430af43c3/server.jar",
+    "13w16a": "https://launcher.mojang.com/v1/objects/dd76b63bad493e42b303dd8952c240f330251760/server.jar",
+    "13w16b": "https://launcher.mojang.com/v1/objects/c125111764b5774403ff2183debbb9da4805a64f/server.jar",
+    "13w17a": "https://launcher.mojang.com/v1/objects/48ece561c3512b2f9c0915dad7c3cb65560ceb39/server.jar",
+    "13w18a": "https://launcher.mojang.com/v1/objects/6084eae41c6e28d58fe8a1ee4ab4389a392f0139/server.jar",
+    "13w18b": "https://launcher.mojang.com/v1/objects/af7fd5e8cdc610f1e533ba7963bc39de422df1b6/server.jar",
+    "13w18c": "https://launcher.mojang.com/v1/objects/3f8dc565567174d777a416f979901e0fee010d2a/server.jar",
+    "13w19a": "https://launcher.mojang.com/v1/objects/17997ee2d9a3ad1070a74707f58ebb3e3a46ae10/server.jar",
+    "13w21a": "https://launcher.mojang.com/v1/objects/a04b6f0349b8de64c68a9311b4eaff478e37b558/server.jar",
+    "13w21b": "https://launcher.mojang.com/v1/objects/f5236a7628c74c22c33f57b50cb755598042aa5b/server.jar",
+    "13w22a": "https://launcher.mojang.com/v1/objects/94b99928dccee27ad9b1d90bd00e8f68f38f92e4/server.jar",
+    "13w23a": "https://launcher.mojang.com/v1/objects/b26a278856a6a4703054ad266b79b1ef397676c2/server.jar",
+    "13w23b": "https://launcher.mojang.com/v1/objects/b6b627c0a5fe9f53a22892f21c473e19617c1c0d/server.jar",
+    "13w24a": "https://launcher.mojang.com/v1/objects/d0f1eb0455c1bc3f73d5fc7252e282fd614f1f5b/server.jar",
+    "13w24b": "https://launcher.mojang.com/v1/objects/9c312da9bdcc562dc57e235a7a56900148c77f8d/server.jar",
+    "13w25a": "https://launcher.mojang.com/v1/objects/e1c2e7376fe489c5eba744b010993c402ab3f3f2/server.jar",
+    "13w25b": "https://launcher.mojang.com/v1/objects/9f7f205d7c00098d9aa6abd67ce4f93d0eeddcd7/server.jar",
+    "13w25c": "https://launcher.mojang.com/v1/objects/0f21dbd39728a50843d1b20cf832f26aaada353d/server.jar",
+    "13w26a": "https://launcher.mojang.com/v1/objects/bafe11faf3419c8813beb948e353912239d50bc1/server.jar",
+    "1.6": "https://launcher.mojang.com/v1/objects/ee6d5161ac28eef285df571dc1235d48f03c3e88/server.jar",
+    "13w36a": "https://launcher.mojang.com/v1/objects/8453f031175bac1a92db000befd14f70c8df8fb7/server.jar",
+    "13w36b": "https://launcher.mojang.com/v1/objects/2b6cdcd2df82ca8f04c1c2c7d77faf4cd25151ea/server.jar",
+    "13w37a": "https://launcher.mojang.com/v1/objects/c3d3d936394b35f20b871b140f5a8e6079822e51/server.jar",
+    "1.6.3": "https://launcher.mojang.com/v1/objects/5a4c69bdf7c4a9aa9580096805d8497ba7721e05/server.jar",
+    "13w37b": "https://launcher.mojang.com/v1/objects/f6322a6791bbeabac94cbaa1cf9b779ad88b120f/server.jar",
+    "13w38a": "https://launcher.mojang.com/v1/objects/627585cdb9386e7f05cdfb8f092e5a303d4fd5f3/server.jar",
+    "13w38b": "https://launcher.mojang.com/v1/objects/82588f79a6a61c4c4289a9dc60b7b7b3fedaead9/server.jar",
+    "13w38c": "https://launcher.mojang.com/v1/objects/03081b4b569174ec68ef9cdd574ee4feca05dea5/server.jar",
+    "13w39a": "https://launcher.mojang.com/v1/objects/10e8687a623cb3def606fa3855aaed5ef79aac66/server.jar",
+    "13w39b": "https://launcher.mojang.com/v1/objects/1db7286055aeb35c709d98ace1c9cdc739206d5a/server.jar",
+    "13w41a": "https://launcher.mojang.com/v1/objects/fbe939a8a9246db801428e33a1c53506af637247/server.jar",
+    "13w41b": "https://launcher.mojang.com/v1/objects/d0f1808505d59bd69c47d8e0ce01dc5936d34c34/server.jar",
+    "13w42a": "https://launcher.mojang.com/v1/objects/d7007e5f46bb1ad4f4d38dc8cd2ea54898c6cccb/server.jar",
+    "13w42b": "https://launcher.mojang.com/v1/objects/1416ebe3d6e6aa62eaae305ce542c39b7dfcb2b9/server.jar",
+    "13w43a": "https://launcher.mojang.com/v1/objects/0fd72957ddbedd604d2bdf155dd03c8501c48f48/server.jar",
+    "1.7": "https://launcher.mojang.com/v1/objects/3f031ab8b9cafedeb822febe89d271b72565712c/server.jar",
+    "1.7.1": "https://launcher.mojang.com/v1/objects/d26d79675147253b7a35dd32dc5dbba0af1be7e2/server.jar",
+    "13w47a": "https://launcher.mojang.com/v1/objects/f3210daa0a05a88b8b8edadfc8af385ff3f88987/server.jar",
+    "13w47b": "https://launcher.mojang.com/v1/objects/7c1b69de43b6edf1d20f5030b88df78fd08ad8c7/server.jar",
+    "13w47c": "https://launcher.mojang.com/v1/objects/5cf618125f87452e665f0097171d089f73dc7e1c/server.jar",
+    "13w47d": "https://launcher.mojang.com/v1/objects/28982e580acf736120a4f1c3e7418e2a8daa3a8c/server.jar",
+    "13w47e": "https://launcher.mojang.com/v1/objects/0f08e81b37b2c06ead45f498a7c8efa10a02633a/server.jar",
+    "13w48a": "https://launcher.mojang.com/v1/objects/8f43e47eb288d3485f7825c422e9c5bcaf6418af/server.jar",
+    "13w48b": "https://launcher.mojang.com/v1/objects/9ab8a06fe77ed7f553ae3427d304e9f55de339d9/server.jar",
+    "13w49a": "https://launcher.mojang.com/v1/objects/164c350e011f491f6e12861ee4988ef2ccecfe0e/server.jar",
+    "14w02a": "https://launcher.mojang.com/v1/objects/b908214fb99891c4f1e77c21b1fcbe4f7cafdd58/server.jar",
+    "14w02b": "https://launcher.mojang.com/v1/objects/2f873b2fd721c9ed5ef51e80df96d10e5390ee9f/server.jar",
+    "14w02c": "https://launcher.mojang.com/v1/objects/c844eb4e22c6c0a3b87835fc61a508caeeced1f9/server.jar",
+    "14w03a": "https://launcher.mojang.com/v1/objects/5cbd5319a7b1198f049286d443148f1b88ff7bc7/server.jar",
+    "14w03b": "https://launcher.mojang.com/v1/objects/b8bee8cbf485aad0be9789fe58ab266d8fe82215/server.jar",
+    "14w04a": "https://launcher.mojang.com/v1/objects/bd483603d1b07d3ce3fde76a35abfb0489933d72/server.jar",
+    "14w04b": "https://launcher.mojang.com/v1/objects/7af6befa241678d09d4031fed5578785dd3c126d/server.jar",
+    "14w05a": "https://launcher.mojang.com/v1/objects/27abecb729cab3a6e11f635dae2cf9be5f620a75/server.jar",
+    "14w05b": "https://launcher.mojang.com/v1/objects/d2d2b00952748af9ee8e60f49b9998dcfad3071f/server.jar",
+    "14w06a": "https://launcher.mojang.com/v1/objects/a6a41979ed198086f2c8ae638f26286b2dc931db/server.jar",
+    "14w06b": "https://launcher.mojang.com/v1/objects/0591a5e7e299182c6849e705704095d2a1efe1d5/server.jar",
+    "14w07a": "https://launcher.mojang.com/v1/objects/de78ac487cf3fb6770e8c15f83e2219d4df851ae/server.jar",
+    "14w08a": "https://launcher.mojang.com/v1/objects/a2716623b9e2c01cf0a1ec44497cc3279fce8f6a/server.jar",
+    "14w10a": "https://launcher.mojang.com/v1/objects/03503dc8c3f615bf8b65d8e1ebbf923e81162e3e/server.jar",
+    "14w10b": "https://launcher.mojang.com/v1/objects/2dd525cb725635b94c763c2efa5e1fe931a0d6d6/server.jar",
+    "14w10c": "https://launcher.mojang.com/v1/objects/d97cc24dad232b5452644facde54c47854283b99/server.jar",
+    "1.7.6-pre1": "https://launcher.mojang.com/v1/objects/121176f19f38780d0cd04bef87c1296fedb37cd0/server.jar",
+    "1.7.6-pre2": "https://launcher.mojang.com/v1/objects/5aa5deddbe750a384bdb5ed0652bbda33cf4e5c8/server.jar",
+    "14w11a": "https://launcher.mojang.com/v1/objects/286924e7082ff1f6baed77a100f73abae81f25e3/server.jar",
+    "14w11b": "https://launcher.mojang.com/v1/objects/58694879e09c500dccb00751ed85a1d6b983229d/server.jar",
+    "14w17a": "https://launcher.mojang.com/v1/objects/701dca9511fa3e6b26799d11475fb3a719d6a26a/server.jar",
+    "14w18a": "https://launcher.mojang.com/v1/objects/48d6b3b47e870f61a95645e2bc1a84a27a1da068/server.jar",
+    "14w18b": "https://launcher.mojang.com/v1/objects/d7300a576860c056938760153cbf56ed98e9c7f9/server.jar",
+    "14w19a": "https://launcher.mojang.com/v1/objects/a7df79e00c4d75e3916438658839785a476bd6ac/server.jar",
+    "1.7.10-pre1": "https://launcher.mojang.com/v1/objects/db79ef4be8b37093c7ca4ddbd54ede2ca21d2a9f/server.jar",
+    "1.7.10-pre2": "https://launcher.mojang.com/v1/objects/ea9fdacf5b0eadfbec5f8aed89c4da3c6be87060/server.jar",
+    "1.7.10-pre3": "https://launcher.mojang.com/v1/objects/b9fdcbd17407d9eaeedcf4ff79b3121ee40133db/server.jar",
+    "1.7.10-pre4": "https://launcher.mojang.com/v1/objects/7c8249c626996c4474afe4f26071a91e7efd825a/server.jar",
+    "14w20a": "https://launcher.mojang.com/v1/objects/4dfd82a84113cfb7e4b489c52caa68bc3f21198e/server.jar",
+    "14w20b": "https://launcher.mojang.com/v1/objects/93ff3d1043ecf25eaf7c9626d8cbde7986dde65d/server.jar",
+    "14w21a": "https://launcher.mojang.com/v1/objects/7e26d5c2feb9df58353b942418640164a8cd0fbd/server.jar",
+    "14w21b": "https://launcher.mojang.com/v1/objects/b02c5506df94aa5d5200ef063f1bab22ce260c8a/server.jar",
+    "14w25a": "https://launcher.mojang.com/v1/objects/e22dedab430bc1c0f938a1e1a2811d11fe29f67e/server.jar",
+    "14w25b": "https://launcher.mojang.com/v1/objects/29209a8e73b6f4afa691d0682aa848c2a1f52dd7/server.jar",
+    "14w26a": "https://launcher.mojang.com/v1/objects/9d167e0b009b99d637ad102a1cb4f5aeb1501e45/server.jar",
+    "14w26b": "https://launcher.mojang.com/v1/objects/0b461d7af1194a192f5b7a9a8989bab83f7317b0/server.jar",
+    "14w26c": "https://launcher.mojang.com/v1/objects/247352905e446c66db85ecb26361a9b5a8eec4ea/server.jar",
+    "14w27a": "https://launcher.mojang.com/v1/objects/b5350953ff062646d4a61b7c8fb4c0570829843a/server.jar",
+    "14w27b": "https://launcher.mojang.com/v1/objects/c5be337237224f752b2ea09d3a2a00a00b26e14b/server.jar",
+    "14w28a": "https://launcher.mojang.com/v1/objects/6987a36f248e88fd8b2366e87fd88834b4a06f7a/server.jar",
+    "14w28b": "https://launcher.mojang.com/v1/objects/aacec09f5ed0475eb474052a4a55b3ca6edaeecc/server.jar",
+    "14w29a": "https://launcher.mojang.com/v1/objects/c16a61be653b5921391c55b337640ddfd7a5b472/server.jar",
+    "14w29b": "https://launcher.mojang.com/v1/objects/b81bb5f919d5489859e9a38c7f6b49e6931a8cc8/server.jar",
+    "14w30a": "https://launcher.mojang.com/v1/objects/cb7bd4bebcb40c128a571c8f15fe1990b1f50a32/server.jar",
+    "14w30b": "https://launcher.mojang.com/v1/objects/ee24a6e63b007b9ec97a591afe1a29a6bbbfe143/server.jar",
+    "14w30c": "https://launcher.mojang.com/v1/objects/2c936d1f410d636a348f100ab926d94d92b743b7/server.jar",
+    "14w31a": "https://launcher.mojang.com/v1/objects/05fde0b4039104a27df8c7b95d327ecafc06cde7/server.jar",
+    "14w32a": "https://launcher.mojang.com/v1/objects/d3b96be87d921fa4f95ea43e5283a253b778f24e/server.jar",
+    "14w32b": "https://launcher.mojang.com/v1/objects/8aa6b045d31cc4a9224ecce602e9f5f748d8f460/server.jar",
+    "14w32c": "https://launcher.mojang.com/v1/objects/5fee0612322feaf374867336375810580da6fab9/server.jar",
+    "14w32d": "https://launcher.mojang.com/v1/objects/83d7acb6f94dc606591ebe4d7a06ad29127cd3de/server.jar",
+    "14w33a": "https://launcher.mojang.com/v1/objects/6c0d06c1b3d8c3365be6e1b9b269725eb4e05ee7/server.jar",
+    "14w33b": "https://launcher.mojang.com/v1/objects/7e0e5511b0049ba92e5c991b6bd0264932559af2/server.jar",
+    
 }
 
 # CLS
