@@ -120,12 +120,12 @@ All Mojang Synergies AB-related elements and names are used in compliance with t
 
 All Oracle-related elements and names are used in compliance with the [Oracle Terms of Use](https://www.oracle.com/legal/terms.html) and [Trademarks](https://www.oracle.com/legal/trademarks.html).
 
-## Important and Acknowledgments
-- Administrator privileges are required in old releases of SSTools4MC in order to access server files and folders.
-- Old releases of SSTools4MC and in some cases its installer, are detected as viruses. You can avoid this by allowing them in your antivirus. Dont worry, there are no viruses here. You can take a look to the source if you still don't believe it.
+## Credits and Acknowledgements
 
 So many thanks to [@naicoooossj](https://github.com/naicoooossj) and [@LegalizeNuclearBombs](https://steamcommunity.com/id/LegalizeNucelarBombs/) :shipit: for testing and giving new ideas to this project.
 
+Credits to [Alfredo Creates on Flaticon for creating the icon used in SSTools4MC](https://www.flaticon.es/icono-gratis/juegos_10125663?term=minecraft&page=1&position=77&origin=tag&related_id=10125663) - Licensed under [CC 3.0 BY](https://creativecommons.org/licenses/by/3.0/)
+
 Thank you for using SSTools4MC!
 
-© 2024 - ngdplnk
+Licensed under [MIT License](https://opensource.org/license/mit) - Copyright © 2024 @ngdplnk
