@@ -20,7 +20,7 @@ SSTools4MC is a set of tools designed to assist you hosting your own dedicated M
 ## Getting Started
 To get started with SSTools4MC, follow these steps:
 
-1. Download the latest version of SSTools4MC from the [GitHub Releases](https://github.com/NGDPLNk/SSTools4MC/releases/latest) page.
+1. Download the latest version of SSTools4MC from the [GitHub Releases](https://github.com/ngdplnk/SSTools4MC/releases/latest) page.
 2. Run the installer. A shortcut should be created on your desktop and in your Windows start menu.
 3. Enjoy!
 
@@ -31,8 +31,6 @@ To get started with SSTools4MC, follow these steps:
 - RAM: At least 1GB.
 - Disk Space: Varies depending on the server.
 - Python: 3.9 or newer.
-
-Administrator privileges are also required in old releases of SSTools4MC to access server files and folders.
 
 ### Python Installation and Required Modules
 1. Download and install Python 3.9 or newer from the [official Python website](https://www.python.org/downloads/). When installing Python, be sure to select the "Add Python to PATH" option.
@@ -58,7 +56,7 @@ Java is necessary to your machine to be able to run your Minecraft servers.
 ## Build SSTools4MC Installer by yourself
 
 You can follow this steps if you want to build the SSTools4MC Installer from the source code by yourself.
-Please note that this is not mandatory. You can always download the latest version of the installer from the [GitHub Releases](https://github.com/NGDPLNk/SSTools4MC/releases/latest) page.
+Please note that this is not mandatory. You can always download the latest version of the installer from the [GitHub Releases](https://github.com/ngdplnk/SSTools4MC/releases/latest) page.
 
 ### Clone this Repository
 
@@ -126,4 +124,4 @@ So many thanks to [@naicoooossj](https://github.com/naicoooossj) and [@LegalizeN
 
 Thank you for using SSTools4MC!
 
-© 2024 - TLSoftware - NGDPL Nk
+© 2024 - ngdplnk
