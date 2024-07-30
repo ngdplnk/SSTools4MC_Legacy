@@ -5,13 +5,13 @@
 
 ############################################################
 
-Caption "SSTools4MC v1.1 Installer"
+Caption "SSTools4MC v1.2 Installer"
 UninstallCaption "SSTools4MC Uninstaller"
-!define APP_VERSION "1.1"
-!define PRODUCT_VERSION "1.1.0.0"
-!define APP_EDITOR "TLSoftware"
+!define APP_VERSION "1.2"
+!define PRODUCT_VERSION "1.2.0.0"
+!define APP_EDITOR "ngdplnk"
 
-Outfile "SSTools4MC_Setup_v1.1.exe"
+Outfile "SSTools4MC_Setup_v1.2.exe"
 SetCompressor /SOLID lzma
 Icon "${ICON_PATH}"
 
@@ -20,15 +20,15 @@ SilentUninstall silent
 
 VIProductVersion "${PRODUCT_VERSION}"
 VIAddVersionKey "ProductName" "SSTools4MC Launcher"
-VIAddVersionKey "CompanyName" "TLSoftware"
+VIAddVersionKey "CompanyName" "ngdplnk"
 VIAddVersionKey "FileDescription" "SSTools4MC Launcher"
 VIAddVersionKey "FileVersion" "${APP_VERSION}"
-VIAddVersionKey "LegalCopyright" "Copyright (C) 2024 TLSoftware"
+VIAddVersionKey "LegalCopyright" "Copyright (C) 2024 ngdplnk"
 VIAddVersionKey "OriginalFilename" "SSTools4MC_Launcher.exe"
 VIAddVersionKey "Comments" "Created by ${APP_EDITOR}"
 
 # Define the installation directory
-InstallDir $APPDATA\TLSoftware\SSTools4MC
+InstallDir $APPDATA\SSTools4MC
 
 Section "MainSection" SEC01
 
@@ -36,23 +36,23 @@ Section "MainSection" SEC01
   SetAutoClose true
 
   # Define the directory for the program
-  SetOutPath $APPDATA\TLSoftware\SSTools4MC
+  SetOutPath $APPDATA\SSTools4MC
 
   # Copy files
   File /oname=launcher.pyw "${LAUNCHER_PATH}"
   File /oname=main.py "${BASE_PATH}"
 
   # Define the directory for the icon
-  SetOutPath $APPDATA\TLSoftware\SSTools4MC\assets
+  SetOutPath $APPDATA\SSTools4MC\assets
 
   # Copy the file
   File /oname=icon.ico "${ICON_PATH}"
 
   # Create a desktop shortcut
-  CreateShortCut "$DESKTOP\SSTools4MC Launcher.lnk" "$APPDATA\TLSoftware\SSTools4MC\launcher.pyw" "" "$APPDATA\TLSoftware\SSTools4MC\assets\icon.ico" 0
+  CreateShortCut "$DESKTOP\SSTools4MC Launcher.lnk" "$APPDATA\SSTools4MC\launcher.pyw" "" "$APPDATA\SSTools4MC\assets\icon.ico" 0
 
   # Create a Start Menu shortcut
-  CreateShortCut "$SMPROGRAMS\SSTools4MC Launcher.lnk" "$APPDATA\TLSoftware\SSTools4MC\launcher.pyw" "" "$APPDATA\TLSoftware\SSTools4MC\assets\icon.ico" 0
+  CreateShortCut "$SMPROGRAMS\SSTools4MC Launcher.lnk" "$APPDATA\SSTools4MC\launcher.pyw" "" "$APPDATA\SSTools4MC\assets\icon.ico" 0
 
   # Write the uninstall keys for Add/Remove Programs
   WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\SSTools4MC" "DisplayName" "SSTools4MC Launcher"
@@ -70,7 +70,7 @@ Section "MainSection" SEC01
 
   runProgram:
   # Run the program if the user clicked "Yes"
-  ExecShell "" "$APPDATA\TLSoftware\SSTools4MC\launcher.pyw"
+  ExecShell "" "$APPDATA\SSTools4MC\launcher.pyw"
 
   end:
 
@@ -82,9 +82,9 @@ Section "Uninstall"
   SetAutoClose true
 
   # Remove the files
-  Delete $APPDATA\TLSoftware\SSTools4MC\launcher.pyw
-  Delete $APPDATA\TLSoftware\SSTools4MC\main.py
-  Delete $APPDATA\TLSoftware\SSTools4MC\assets\icon.ico
+  Delete $APPDATA\SSTools4MC\launcher.pyw
+  Delete $APPDATA\SSTools4MC\main.py
+  Delete $APPDATA\SSTools4MC\assets\icon.ico
 
   # Remove the shortcuts
   Delete "$DESKTOP\SSTools4MC Launcher.lnk"
@@ -97,8 +97,8 @@ Section "Uninstall"
   DeleteRegKey HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\SSTools4MC"
 
   # Remove the directories
-  RMDir /r $APPDATA\TLSoftware\SSTools4MC\assets
-  RMDir /r $APPDATA\TLSoftware\SSTools4MC
+  RMDir /r $APPDATA\SSTools4MC\assets
+  RMDir /r $APPDATA\SSTools4MC
 
   # Show a message when the program is completely uninstalled
   MessageBox MB_OK|MB_ICONINFORMATION "SSTools4MC has been completely uninstalled."
