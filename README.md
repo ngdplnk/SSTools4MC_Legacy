@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ngdplnk/SSTools4MC/main/3-launcher/icon.png" alt="SSTools4MC Icon" width="200" />
+</p>
+
 # SSTools4MC - Server Startup Tools for Minecraft
 
 SSTools4MC is a set of tools designed to assist you hosting your own dedicated Minecraft server.
