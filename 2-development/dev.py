@@ -11,7 +11,6 @@
 import os
 import time
 import sys
-import ctypes
 import subprocess
 import webbrowser
 import datetime
