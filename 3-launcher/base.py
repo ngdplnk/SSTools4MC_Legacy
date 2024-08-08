@@ -1,9 +1,9 @@
 #### SSTOOLS4MC MAIN PROGRAM ####
 ####  DEVELOPED BY: NGDPLNK  ####
 ####      PROGRAM INFO       ####
-SSVERSION = 'v24.08.07'
-CHANGELOG_ENG = 'ADDED 1.21.1-rc1 SUPPORT'
-CHANGELOG_SPA = 'SOPORTE PARA 1.21.1-rc1 AÑADIDO'
+SSVERSION = 'v24.08.07.B'
+CHANGELOG_ENG = 'ADDED 1.21.1-rc1 SUPPORT - ADDED ICON WHILE RUNNING'
+CHANGELOG_SPA = 'SOPORTE PARA 1.21.1-rc1 AÑADIDO - ICONO AÑADIDO MIENTRAS SE EJECUTA'
 
 ### THINGS TO FIX
 # - Download progressbar has a bug that when the console is untabbed, freezes and corrupts the file.
@@ -12,6 +12,7 @@ CHANGELOG_SPA = 'SOPORTE PARA 1.21.1-rc1 AÑADIDO'
 
 # MODULES
 import os
+import ctypes
 import time
 import sys
 import subprocess
@@ -30,6 +31,7 @@ runn = True
 APPDATA = os.getenv('APPDATA')
 SSTOOLS_FOLDER = os.path.join(APPDATA, "SSTools4MC") # type: ignore
 CONFIG_PATH = os.path.join(SSTOOLS_FOLDER, "config") # type: ignore
+ICON_PATH = os.path.join(SSTOOLS_FOLDER, "assets", "icon.ico") # type: ignore
 SAVED_SERVERS = os.path.join(CONFIG_PATH, "saved-servers.cfg") # type: ignore
 
 ### MINECRAFT VERSIONS
@@ -2568,6 +2570,17 @@ def esp():
 
 # STARTUP
 def startup():
+    # ICON
+    try:
+        ico = os.path.abspath(ICON_PATH)
+        hIcon = ctypes.windll.user32.LoadImageW(
+            None, ico, 1, 0, 0, 0x00000010
+        )
+        hwnd = ctypes.windll.kernel32.GetConsoleWindow()
+        ctypes.windll.user32.SendMessageW(hwnd, 0x0080, 0, hIcon)
+    except Exception:
+        pass
+    # LANGUAGE
     system_lang = locale.getlocale()[0]
     system_lang = str(system_lang)
     if system_lang.startswith("es") or system_lang.startswith("Spanish"):
