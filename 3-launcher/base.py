@@ -1,17 +1,19 @@
 #### SSTOOLS4MC MAIN PROGRAM ####
 ####  DEVELOPED BY: NGDPLNK  ####
+####      PROGRAM INFO       ####
+SSVERSION = 'v24.08.07'
+CHANGELOG_ENG = 'ADDED 1.21.1-rc1 SUPPORT'
+CHANGELOG_SPA = 'SOPORTE PARA 1.21.1-rc1 AÑADIDO'
 
 ### THINGS TO FIX
 # - Download progressbar has a bug that when the console is untabbed, freezes and corrupts the file.
-# - In specific conditions, the server startup cancelling with CTRL+C shows an unexpected screen from other function.
 
-#####################
+#################################
 
 # MODULES
 import os
 import time
 import sys
-import ctypes
 import subprocess
 import webbrowser
 import datetime
@@ -120,8 +122,8 @@ MCSTABLE = {
     "1.20.6": "https://piston-data.mojang.com/v1/objects/145ff0858209bcfc164859ba735d4199aafa1eea/server.jar",
     "1.21": "https://piston-data.mojang.com/v1/objects/450698d1863ab5180c25d7c804ef0fe6369dd1ba/server.jar"
 }
-## 613 SNAPSHOT VERSIONS ADDED (1.3 - 1.21-rc1)
-# LAST UPDATE: 29-07-2024
+## 614 SNAPSHOT VERSIONS ADDED (1.3 - 1.21.1-rc1)
+# LAST UPDATE: 07-08-2024
 MCSNAPSHOT = {
     "1.3": "https://launcher.mojang.com/v1/objects/cb21a9aaaf599c94dd7fa1b777b2f0cc37a776c7/server.jar",
     "1.4": "https://launcher.mojang.com/v1/objects/9470a2bb0fcb8a426328441a01dba164fbbe52c9/server.jar",
@@ -736,7 +738,8 @@ MCSNAPSHOT = {
     "1.21-pre2": "https://piston-data.mojang.com/v1/objects/3a8da3a1afcfb09d701fa17e405d09cd0c635748/server.jar",
     "1.21-pre3": "https://piston-data.mojang.com/v1/objects/96266e18a95faa1c785ac852315e886d0e8bb174/server.jar",
     "1.21-pre4": "https://piston-data.mojang.com/v1/objects/14b1a86d9fcfc82c013e82910e8209617c3a721e/server.jar",
-    "1.21-rc1": "https://piston-data.mojang.com/v1/objects/902101d2fb0f968b9c0ddb8b8cff9afef23f72c7/server.jar"
+    "1.21-rc1": "https://piston-data.mojang.com/v1/objects/902101d2fb0f968b9c0ddb8b8cff9afef23f72c7/server.jar",
+    "1.21.1-rc1": "https://piston-data.mojang.com/v1/objects/e56720aba46f7f07238c4c054a160fc942da9f78/server.jar"
 }
 
 # CLS
@@ -751,11 +754,13 @@ def window_title(title):
 def front():
     os.system('echo ShowConsole')
 
+# GET DATE
+def getdate():
+    dayy = str(datetime.datetime.now().strftime("%d/%m/%Y"))
+    return dayy
+
 # ENGLISH
 def eng():
-    # CHANGE WINDOW TITLE
-    window_title("Server Launcher for Minecraft")
-
     # SERVER STARTUP
     def ram():
         global servername
@@ -770,7 +775,9 @@ def eng():
                         sservers[key.strip()] = value.strip()
             if sservers:
                 cls()
-                print('Server Launcher for Minecraft\n-------------------------------------\n\n"Your Servers" List\n')
+                window_title('SSTools4MC - Your Servers')
+                day = getdate()
+                print(f'SSTools4MC - {day}\n--------------------------\n\n"Your Servers" List\n')
                 server_keys = list(sservers.keys())
                 for i, key in enumerate(server_keys, start=1):
                     print(f"({i}) {key}")
@@ -786,7 +793,9 @@ def eng():
                         servname = os.path.basename(newserv)
                         if newserv == "" or servname == "":
                             cls()
-                            print('Server Launcher for Minecraft\n-------------------------------------\n\nYou must select a folder to save it in "Your Servers" List.')
+                            window_title('SSTools4MC - You must select a folder')
+                            day = getdate()
+                            print(f'SSTools4MC - {day}\n--------------------------\n\nYou must select a folder to save it in "Your Servers" List.')
                             time.sleep(2.5)
                             ram()
                         if newserv and servname:
@@ -798,13 +807,17 @@ def eng():
                                 if servstring not in lines:
                                     file.write(servstring)
                         cls()
-                        print(f'Server Launcher for Minecraft\n-------------------------------------\n\nThe server "{servname}" has been saved.')
+                        window_title('SSTools4MC - Server saved')
+                        day = getdate()
+                        print(f'SSTools4MC - {day}\n--------------------------\n\nThe server "{servname}" has been saved.')
                         time.sleep(1.5)
                         ram()
                     elif servsel.lower() == "d":
                         def servdel():
                             cls()
-                            print("Server Launcher for Minecraft\n-------------------------------------\n\nSelect the server to delete from the list.\n")
+                            window_title('SSTools4MC - Delete a server')
+                            day = getdate()
+                            print(f"SSTools4MC - {day}\n--------------------------\n\nSelect the server to delete from the list.\n")
                             for i, key in enumerate(server_keys, start=1):
                                 print(f"({i}) {key}")
                             print("\n(N) Cancel\n(R) Return to main menu")
@@ -836,7 +849,9 @@ def eng():
                                                 if line != servestring:
                                                     file.write(line)
                                     cls()
-                                    print(f'Server Launcher for Minecraft\n-------------------------------------\n\nThe server "{servsel}" has been deleted from the list.')
+                                    window_title('SSTools4MC - Server deleted')
+                                    day = getdate()
+                                    print(f'SSTools4MC - {day}\n--------------------------\n\nThe server "{servsel}" has been deleted from the list.')
                                     time.sleep(1.5)
                                     ram()             
                             except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
@@ -847,7 +862,9 @@ def eng():
                             cls()
                             yess = colored("Yes","green")
                             noo = colored("No","red")
-                            clearconfirm = input(f'Server Launcher for Minecraft\n-------------------------------------\n\nAre you sure you want to clear the "Your Servers" List?\n\n(1) {yess}\n(2) {noo}\n\nSelect one of the options= ')
+                            window_title('SSTools4MC - Are you sure?')
+                            day = getdate()
+                            clearconfirm = input(f'SSTools4MC - {day}\n--------------------------\n\nAre you sure you want to clear the "Your Servers" List?\n\n(1) {yess}\n(2) {noo}\n\nSelect one of the options= ')
                             try:
                                 if any(char in "0123456789+-*/" for char in clearconfirm):
                                     if not clearconfirm[0].isalpha():
@@ -860,9 +877,11 @@ def eng():
                                 if clearconf == 1:
                                     os.makedirs(CONFIG_PATH, exist_ok=True)
                                     with open(SAVED_SERVERS, 'w') as file:
-                                        file.write("# Server Launcher for Minecraft\n# Saved servers\n")
+                                        file.write("# SSTools4MC\n# Saved servers\n")
                                     cls()
-                                    print('Server Launcher for Minecraft\n-------------------------------------\n\nThe "Your Servers" List has been cleared.')
+                                    window_title('SSTools4MC - List cleared')
+                                    day = getdate()
+                                    print(f'SSTools4MC - {day}\n--------------------------\n\nThe "Your Servers" List has been cleared.')
                                     time.sleep(1.5)
                                     ram()
                                 elif clearconf == 2:
@@ -892,10 +911,12 @@ def eng():
             else:
                 os.makedirs(CONFIG_PATH, exist_ok=True)
                 with open(SAVED_SERVERS, 'w') as file:
-                    file.write("# Server Launcher for Minecraft\n# Saved servers\n")
+                    file.write("# SSTools4MC\n# Saved servers\n")
                 cls()
                 adds = colored("Add a Server","cyan")
-                saveconfirm = input(f"Server Launcher for Minecraft\n-------------------------------------\n\nThere are no saved servers.\n\n(1) {adds}\n(2) Return to main menu\n\nSelect one of the options= ")
+                window_title('SSTools4MC - There are no saved servers.')
+                day = getdate()
+                saveconfirm = input(f"SSTools4MC - {day}\n--------------------------\n\nThere are no saved servers.\n\n(1) {adds}\n(2) Return to main menu\n\nSelect one of the options= ")
                 try:
                     if any(char in "0123456789+-*/" for char in saveconfirm):
                         if not saveconfirm[0].isalpha():
@@ -911,7 +932,9 @@ def eng():
                         servname = os.path.basename(newserv)
                         if newserv == "" or servname == "":
                             cls()
-                            print('Server Launcher for Minecraft\n-------------------------------------\n\nYou must select a folder to save it in "Your Servers" List.')
+                            window_title('SSTools4MC - You must select a folder')
+                            day = getdate()
+                            print(f'SSTools4MC - {day}\n--------------------------\n\nYou must select a folder to save it in "Your Servers" List.')
                             time.sleep(2.5)
                             ram()
                         if newserv and servname:
@@ -923,7 +946,9 @@ def eng():
                                 if servstring not in lines:
                                     file.write(servstring)
                         cls()
-                        print(f'Server Launcher for Minecraft\n-------------------------------------\n\nThe server "{servname}" has been saved.')
+                        window_title('SSTools4MC - Server saved')
+                        day = getdate()
+                        print(f'SSTools4MC - {day}\n--------------------------\n\nThe server "{servname}" has been saved.')
                         time.sleep(1.5)
                         ram()
                     elif saveconf == 2:
@@ -935,15 +960,19 @@ def eng():
         else:
             os.makedirs(CONFIG_PATH, exist_ok=True)
             with open(SAVED_SERVERS, 'w') as file:
-                file.write("# Server Launcher for Minecraft\n# Saved servers\n")
+                file.write("# SSTools4MC\n# Saved servers\n")
             cls()
-            input('Server Launcher for Minecraft\n-------------------------------------\n\nThere are no saved servers.\n\nPress ENTER to select a folder with a Server and add it to "Your Servers" list.')
+            window_title('SSTools4MC - There are no saved servers')
+            day = getdate()
+            input(f'SSTools4MC - {day}\n--------------------------\n\nThere are no saved servers.\n\nPress ENTER to select a folder with a Server and add it to "Your Servers" list.')
             newserv = filedialog.askdirectory()
             front()
             servname = os.path.basename(newserv)
             if newserv == "" or servname == "":
                 cls()
-                print('Server Launcher for Minecraft\n-------------------------------------\n\nYou must select a folder to save it in "Your Servers" List.')
+                window_title('SSTools4MC - You must select a folder')
+                day = getdate()
+                print(f'SSTools4MC - {day}\n--------------------------\n\nYou must select a folder to save it in "Your Servers" List.')
                 time.sleep(2.5)
                 ram()
             if newserv and servname:
@@ -954,7 +983,9 @@ def eng():
                     if servstring not in lines:
                         file.write(servstring)
             cls()
-            print(f'Server Launcher for Minecraft\n-------------------------------------\n\nThe server "{servname}" has been saved.')
+            window_title('SSTools4MC - Server saved')
+            day = getdate()
+            print(f'SSTools4MC - {day}\n--------------------------\n\nThe server "{servname}" has been saved.')
             time.sleep(1.5)
             ram()
         if os.path.exists("server.jar"):
@@ -988,7 +1019,9 @@ def eng():
                     elif properties["pvp"] == "true":
                         pvp = colored("DISABLE","red")
                     cls()
-                    confsel = input(f'Server Launcher for Minecraft\n-------------------------------------\n\nLets manage "{nameserver}"!\n\n(1) {online} online mode\n(2) {hard} hardcore mode\n(3) {pvp} PvP\n(4) Change gamemode\n(5) Change difficulty\n(6) Change max players limit\n(7) Back\n(8) Return to main menu\n\nSelect one of the options= ')
+                    window_title('SSTools4MC - Server Configuration')
+                    day = getdate()
+                    confsel = input(f'SSTools4MC - {day}\n--------------------------\n\nLets manage "{nameserver}"!\n\n(1) {online} online mode\n(2) {hard} hardcore mode\n(3) {pvp} PvP\n(4) Change gamemode\n(5) Change difficulty\n(6) Change max players limit\n(7) Back\n(8) Return to main menu\n\nSelect one of the options= ')
                     if properties["online-mode"] == "false":
                         online = "ENABLE"
                     elif properties["online-mode"] == "true":
@@ -1024,7 +1057,9 @@ def eng():
                                         file.write(f'{key}={value}\n')
                                 online = colored("DISABLED","red")
                             cls()
-                            print(f"Server Launcher for Minecraft\n-------------------------------------\n\nOnline mode has been {online}.")
+                            window_title('SSTools4MC - Online mode changed')
+                            day = getdate()
+                            print(f"SSTools4MC - {day}\n--------------------------\n\nOnline mode has been {online}.")
                             time.sleep(1.5)
                             config()
                         elif confug == 2:
@@ -1041,7 +1076,9 @@ def eng():
                                         file.write(f'{key}={value}\n')
                                 hard = colored("DISABLED","red")
                             cls()
-                            print(f"Server Launcher for Minecraft\n-------------------------------------\n\nHardcore mode has been {hard}.")
+                            window_title('SSTools4MC - Hardcore mode changed')
+                            day = getdate()
+                            print(f"SSTools4MC - {day}\n--------------------------\n\nHardcore mode has been {hard}.")
                             time.sleep(1.5)
                             config()
                         elif confug == 3:
@@ -1058,7 +1095,9 @@ def eng():
                                         file.write(f'{key}={value}\n')
                                 pvp = colored("DISABLED","red")
                             cls()
-                            print(f"Server Launcher for Minecraft\n-------------------------------------\n\nPvP has been {pvp}.")
+                            window_title('SSTools4MC - PvP changed')
+                            day = getdate()
+                            print(f"SSTools4MC - {day}\n--------------------------\n\nPvP has been {pvp}.")
                             time.sleep(1.5)
                             config()
                         elif confug == 4:
@@ -1078,7 +1117,9 @@ def eng():
                                 avent = colored("ADVENTURE","yellow")
                                 espect = colored("SPECTATOR","yellow")
                                 cls()
-                                modosel = input(f"Server Launcher for Minecraft\n-------------------------------------\n\nThe current game mode is {modo}.\n\n(1) Change to {superv} gamemode\n(2) Change to {creat} gamemode\n(3) Change to {avent} gamemode\n(4) Change to {espect} gamemode\n(5) Go back\n(6) Return to main menu\n\nSelect one of the options= ")
+                                window_title('SSTools4MC - Gamemode Configuration')
+                                day = getdate()
+                                modosel = input(f"SSTools4MC - {day}\n--------------------------\n\nThe current game mode is {modo}.\n\n(1) Change to {superv} gamemode\n(2) Change to {creat} gamemode\n(3) Change to {avent} gamemode\n(4) Change to {espect} gamemode\n(5) Go back\n(6) Return to main menu\n\nSelect one of the options= ")
                                 try:
                                     if any(char in "0123456789+-*/" for char in modosel):
                                         if not modosel[0].isalpha():
@@ -1094,7 +1135,9 @@ def eng():
                                             for key, value in properties.items():
                                                 file.write(f'{key}={value}\n')
                                         cls()
-                                        print(f"Server Launcher for Minecraft\n-------------------------------------\n\nGamemode has been set to {superv}.")
+                                        window_title('SSTools4MC - Gamemode changed')
+                                        day = getdate()
+                                        print(f"SSTools4MC - {day}\n--------------------------\n\nGamemode has been set to {superv}.")
                                         time.sleep(1.5)
                                         juego()
                                     elif coonf == 2:
@@ -1103,7 +1146,9 @@ def eng():
                                             for key, value in properties.items():
                                                 file.write(f'{key}={value}\n')
                                         cls()
-                                        print(f"Server Launcher for Minecraft\n-------------------------------------\n\nGamemode has been set to {creat}.")
+                                        window_title('SSTools4MC - Gamemode changed')
+                                        day = getdate()
+                                        print(f"SSTools4MC - {day}\n--------------------------\n\nGamemode has been set to {creat}.")
                                         time.sleep(1.5)
                                         juego()
                                     elif coonf == 3:
@@ -1112,7 +1157,9 @@ def eng():
                                             for key, value in properties.items():
                                                 file.write(f'{key}={value}\n')
                                         cls()
-                                        print(f"Server Launcher for Minecraft\n-------------------------------------\n\nGamemode has been set to {avent}.")
+                                        window_title('SSTools4MC - Gamemode changed')
+                                        day = getdate()
+                                        print(f"SSTools4MC - {day}\n--------------------------\n\nGamemode has been set to {avent}.")
                                         time.sleep(1.5)
                                         juego()
                                     elif coonf == 4:
@@ -1121,7 +1168,9 @@ def eng():
                                             for key, value in properties.items():
                                                 file.write(f'{key}={value}\n')
                                         cls()
-                                        print(f"Server Launcher for Minecraft\n-------------------------------------\n\nGamemode has been set to {espect}.")
+                                        window_title('SSTools4MC - Gamemode changed')
+                                        day = getdate()
+                                        print(f"SSTools4MC - {day}\n--------------------------\n\nGamemode has been set to {espect}.")
                                         time.sleep(1.5)
                                         juego()
                                     elif coonf == 5:
@@ -1150,7 +1199,9 @@ def eng():
                                 normal = colored("NORMAL","yellow")
                                 dificil = colored("HARD","yellow")
                                 cls()
-                                difsel = input(f"Server Launcher for Minecraft\n-------------------------------------\n\nThe current difficulty is {dificultad}.\n\n(1) Change difficulty to {pacif}\n(2) Change difficulty to {facil}\n(3) Change difficulty to {normal}\n(4) Change difficulty to {dificil}\n(5) Go back\n(6) Return to main menu\n\nSelect one of the options= ")
+                                window_title('SSTools4MC - Difficulty Configuration')
+                                day = getdate()
+                                difsel = input(f"SSTools4MC - {day}\n--------------------------\n\nThe current difficulty is {dificultad}.\n\n(1) Change difficulty to {pacif}\n(2) Change difficulty to {facil}\n(3) Change difficulty to {normal}\n(4) Change difficulty to {dificil}\n(5) Go back\n(6) Return to main menu\n\nSelect one of the options= ")
                                 try:
                                     if any(char in "0123456789+-*/" for char in difsel):
                                         if not difsel[0].isalpha():
@@ -1166,7 +1217,9 @@ def eng():
                                             for key, value in properties.items():
                                                 file.write(f'{key}={value}\n')
                                         cls()
-                                        print(f"Server Launcher for Minecraft\n-------------------------------------\n\nDifficulty has been set to {pacif}.")
+                                        window_title('SSTools4MC - Difficulty changed')
+                                        day = getdate()
+                                        print(f"SSTools4MC - {day}\n--------------------------\n\nDifficulty has been set to {pacif}.")
                                         time.sleep(1.5)
                                         difconf()
                                     elif difcc == 2:
@@ -1175,7 +1228,9 @@ def eng():
                                             for key, value in properties.items():
                                                 file.write(f'{key}={value}\n')
                                         cls()
-                                        print(f"Server Launcher for Minecraft\n-------------------------------------\n\nDifficulty has been set to {facil}.")
+                                        window_title('SSTools4MC - Difficulty changed')
+                                        day = getdate()
+                                        print(f"SSTools4MC - {day}\n--------------------------\n\nDifficulty has been set to {facil}.")
                                         time.sleep(1.5)
                                         difconf()
                                     elif difcc == 3:
@@ -1184,7 +1239,9 @@ def eng():
                                             for key, value in properties.items():
                                                 file.write(f'{key}={value}\n')
                                         cls()
-                                        print(f"Server Launcher for Minecraft\n-------------------------------------\n\nDifficulty has been set to {normal}.")
+                                        window_title('SSTools4MC - Difficulty changed')
+                                        day = getdate()
+                                        print(f"SSTools4MC - {day}\n--------------------------\n\nDifficulty has been set to {normal}.")
                                         time.sleep(1.5)
                                         difconf()
                                     elif difcc == 4:
@@ -1193,7 +1250,9 @@ def eng():
                                             for key, value in properties.items():
                                                 file.write(f'{key}={value}\n')
                                         cls()
-                                        print(f"Server Launcher for Minecraft\n-------------------------------------\n\nDifficulty has been set to {dificil}.")
+                                        window_title('SSTools4MC - Difficulty changed')
+                                        day = getdate()
+                                        print(f"SSTools4MC - {day}\n--------------------------\n\nDifficulty has been set to {dificil}.")
                                         time.sleep(1.5)
                                         difconf()
                                     elif difcc == 5:
@@ -1210,7 +1269,9 @@ def eng():
                                 global properties
                                 players = colored(properties["max-players"],"cyan")
                                 cls()
-                                newpl = input(f"Server Launcher for Minecraft\n-------------------------------------\n\nThe current player limit is a maximum of {players}.\n\n(N) Go back\n(M) Return to main menu\n\nSelect one of the options or enter the new player limit= ").replace(" ", "")
+                                window_title('SSTools4MC - Player Limit Configuration')
+                                day = getdate()
+                                newpl = input(f"SSTools4MC - {day}\n--------------------------\n\nThe current player limit is a maximum of {players}.\n\n(N) Go back\n(M) Return to main menu\n\nSelect one of the options or enter the new player limit= ").replace(" ", "")
                                 try:
                                     if newpl.lower() == "n":
                                         config()
@@ -1227,7 +1288,9 @@ def eng():
                                         entero = int(entero)
                                         if entero <= 0 or entero > 100000:
                                             cls()
-                                            print(f"Server Launcher for Minecraft\n-------------------------------------\n\nEnter a valid number between 1 and 100,000.")
+                                            window_title('SSTools4MC - Invalid player limit')
+                                            day = getdate()
+                                            print(f"SSTools4MC - {day}\n--------------------------\n\nEnter a valid number between 1 and 100,000.")
                                             time.sleep(1.5)
                                             playct()
                                         else:
@@ -1237,7 +1300,9 @@ def eng():
                                                     file.write(f'{key}={value}\n')
                                             entero = colored(str(entero),"yellow")
                                             cls()
-                                            print(f"Server Launcher for Minecraft\n-------------------------------------\n\nThe maximum player limit is now {entero}.")
+                                            window_title('SSTools4MC - Player Limit changed')
+                                            day = getdate()
+                                            print(f"SSTools4MC - {day}\n--------------------------\n\nThe maximum player limit is now {entero}.")
                                             time.sleep(1.5)
                                             playct()
                                 except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
@@ -1253,7 +1318,9 @@ def eng():
                         config()
                 else:
                     cls()
-                    input("Server Launcher for Minecraft\n-------------------------------------\n\nThe server configuration files do not exist yet or are not available.\nYou must start the server properly at least once before you can configure it.\n\nPress ENTER to continue.")
+                    window_title('SSTools4MC - Server Configuration')
+                    day = getdate()
+                    input(f"SSTools4MC - {day}\n--------------------------\n\nThe server configuration files do not exist yet or are not available.\nYou must start the server properly at least once before you can configure it.\n\nPress ENTER to continue.")
                     run_server()
             def run_server():
                 global servername
@@ -1278,20 +1345,26 @@ def eng():
                 nameserver = servername
                 cls()
                 gbs = 0
-                rammount = input(f'Server Launcher for Minecraft\n-------------------------------------\n\nYou are about to start the Server "{nameserver}"\n\n(M) Manage Server\n(C) Use RAM in {gbormb}\n(B) Back\n(N) Return to main menu\n\nSelect one of the options or enter the {valor1} of RAM to assing to the server= ').replace(" ", "")
+                window_title('SSTools4MC - Almost starting!')
+                day = getdate()
+                rammount = input(f'SSTools4MC - {day}\n--------------------------\n\nYou are about to start the Server "{nameserver}"\n\n(M) Manage Server\n(C) Use RAM in {gbormb}\n(B) Back\n(N) Return to main menu\n\nSelect one of the options or enter the {valor1} of RAM to assing to the server= ').replace(" ", "")
                 try:
                     if rammount.lower() == "m":
                         config()  
                     if rammount.lower() == "c":
                         if valor == "GB":
                             cls()
-                            print(f"Server Launcher for Minecraft\n-------------------------------------\n\nNow the RAM is on {gbormb}.")
+                            window_title('SSTools4MC - RAM type changed')
+                            day = getdate()
+                            print(f"SSTools4MC - {day}\n--------------------------\n\nNow the RAM is on {gbormb}.")
                             time.sleep(1.5)
                             valor = "MB"
                             run_server()
                         elif valor == "MB":
                             cls()
-                            print(f"Server Launcher for Minecraft\n-------------------------------------\n\nNow the RAM is on {gbormb}.")
+                            window_title('SSTools4MC - RAM type changed')
+                            day = getdate()
+                            print(f"SSTools4MC - {day}\n--------------------------\n\nNow the RAM is on {gbormb}.")
                             time.sleep(1.5)
                             valor = "GB"
                             run_server()
@@ -1310,20 +1383,25 @@ def eng():
                         gbs = int(gbs)
                         if valor == "GB" and (gbs <= 0 or gbs > 75):
                             cls()
-                            print(f"Server Launcher for Minecraft\n-------------------------------------\n\nEnter a valid amount between 1 and 75 Gigabytes.")
+                            window_title('SSTools4MC - Invalid amount of RAM')
+                            day = getdate()
+                            print(f"SSTools4MC - {day}\n--------------------------\n\nEnter a valid amount between 1 and 75 Gigabytes.")
                             time.sleep(1.5)
                             run_server()
                         elif valor == "MB" and (gbs <= 511 or gbs > 76800):
                             cls()
-                            print(f"Server Launcher for Minecraft\n-------------------------------------\n\nEnter a valid amount between 512 and 76,800 Megabytes.")
+                            window_title('SSTools4MC - Invalid amount of RAM')
+                            day = getdate()
+                            print(f"SSTools4MC - {day}\n--------------------------\n\nEnter a valid amount between 512 and 76,800 Megabytes.")
                             time.sleep(1.5)
                             run_server()
                         else:
-                            eula = "eula.txt"
-                            with open(eula, "w") as reemplazo:
+                            with open("eula.txt", "w") as reemplazo:
                                 reemplazo.write("eula=true")
                             cls()
-                            print(f"Server Launcher for Minecraft\n-------------------------------------\n\nStarting the server with {gbs}{valor} of RAM.\n")
+                            window_title('SSTools4MC - Starting server')
+                            day = getdate()
+                            print(f"SSTools4MC - {day}\n--------------------------\n\nStarting the server with {gbs}{valor} of RAM.\n")
                             comando_java = f"java -Xmx{gbs}{vjava} -Xms{gbs}{vjava} -jar server.jar nogui"
                             subprocess.run(comando_java, shell=True)
                             fyh_sistema = datetime.datetime.now()
@@ -1331,14 +1409,18 @@ def eng():
                             hora_cerrado = str(fyh_sistema.strftime("%H:%M:%S"))
                             input("\nPress ENTER to continue.")
                             cls()
-                            input(f"Server Launcher for Minecraft\n-------------------------------------\n\nThe server has closed on {fecha_cerrado} at {hora_cerrado}.\n\nYou can check the console log in the 'logs' folder inside your Server's main folder.\n\nPress ENTER to continue.")
+                            window_title('SSTools4MC - Server closed')
+                            day = getdate()
+                            input(f"SSTools4MC - {day}\n--------------------------\n\nThe server has closed on {fecha_cerrado} at {hora_cerrado}.\n\nYou can check the console log in the 'logs' folder inside your Server's main folder.\n\nPress ENTER to continue.")
                             ram()
                 except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
                     run_server()
             run_server()
         else:
             cls()
-            print('Server Launcher for Minecraft\n-------------------------------------\n\n"server.jar" not found in this folder.\n\nAre you sure this is a Server?')
+            window_title('SSTools4MC - Server not found')
+            day = getdate()
+            print(f'SSTools4MC - {day}\n--------------------------\n\n"server.jar" not found in this folder.\n\nAre you sure this is a Server?')
             time.sleep(2.5)
             ram()
 
@@ -1347,7 +1429,9 @@ def eng():
         global newserver
         global foldname
         cls()
-        inconfirm = input("Server Launcher for Minecraft\n-------------------------------------\n\nFirst, lets select a folder to save your New Server's files.\n\n(1) Select folder for the new Server\n(2) Cancel\n\nSelect one of the options= ").replace(" ", "")
+        window_title('SSTools4MC - Installing a new server')
+        day = getdate()
+        inconfirm = input(f"SSTools4MC - {day}\n--------------------------\n\nFirst, lets select a folder to save your New Server's files.\n\n(1) Select folder for the new Server\n(2) Cancel\n\nSelect one of the options= ").replace(" ", "")
         try:
             if any(char in "0123456789+-*/" for char in inconfirm):
                 if not inconfirm[0].isalpha():
@@ -1366,7 +1450,9 @@ def eng():
                     foldname = colored(os.path.basename(newserver), "green")
                     if newserver == "" or foldname == "":
                         cls()
-                        print('Server Launcher for Minecraft\n-------------------------------------\n\nYou must select a folder to save the New Server.')
+                        window_title('SSTools4MC - You must select a folder')
+                        day = getdate()
+                        print(f'SSTools4MC - {day}\n--------------------------\n\nYou must select a folder to save the New Server.')
                         time.sleep(2.5)
                         installmenu()
                     os.makedirs(newserver, exist_ok=True)
@@ -1376,7 +1462,9 @@ def eng():
                             global newserver
                             global foldname
                             cls()
-                            verss = input(f'Server Launcher for Minecraft\n-------------------------------------\n\nYour New Server will be saved in "{foldname}".\n\n(L) See available versions\n(R) Re-select a folder for the New server\n(N) Return to main menu\n\nSelect one of the options or type the New Server version to install= ').replace(" ", "")
+                            window_title('SSTools4MC - Select version')
+                            day = getdate()
+                            verss = input(f'SSTools4MC - {day}\n--------------------------\n\nYour New Server will be saved in "{foldname}".\n\n(L) See available versions\n(R) Re-select a folder for the New server\n(N) Return to main menu\n\nSelect one of the options or type the New Server version to install= ').replace(" ", "")
                             try:
                                 def servdownload(versionname,type):
                                     global newserver
@@ -1387,7 +1475,9 @@ def eng():
                                     else:
                                         url = MCSNAPSHOT[version]
                                     cls()
-                                    print(f'Server Launcher for Minecraft\n-------------------------------------\n\nYour New Server is being downloaded.\n\nVersion: {version}\nTarget Folder: "{foldname}"\n\nPlease wait...\n')
+                                    window_title('SSTools4MC - Downloading server files')
+                                    day = getdate()
+                                    print(f'SSTools4MC - {day}\n--------------------------\n\nYour New Server is being downloaded.\n\nVersion: {version}\nTarget Folder: "{foldname}"\n\nPlease wait...\n')
                                     time.sleep(0.5)
                                     os.makedirs(newserver, exist_ok=True)
                                     os.chdir(newserver)
@@ -1404,7 +1494,9 @@ def eng():
                                                 print("\r[%s%s]" % ('#' * completed, '.' * (50 - completed)), end='')
                                         print()
                                         cls()
-                                        input('Server Launcher for Minecraft\n-------------------------------------\n\nThe server has been installed successfully and added to "Your Servers" list.\n\nPress ENTER to continue.')
+                                        window_title('SSTools4MC - Server downloaded')
+                                        day = getdate()
+                                        input(f'SSTools4MC - {day}\n--------------------------\n\nThe server has been installed successfully and added to "Your Servers" list.\n\nPress ENTER to continue.')
                                         servname = os.path.basename(newserver)
                                         servstring = f"{servname}<[=]>{newserver}\n"
                                         os.makedirs(CONFIG_PATH, exist_ok=True)
@@ -1418,7 +1510,9 @@ def eng():
                                             cls()
                                             yup = colored("Yes","green")
                                             nop = colored("No","red")
-                                            errtry = input(f"Server Launcher for Minecraft\n-------------------------------------\n\nAn error occurred while downloading the server.\nTry again?\n\n(1) {yup}\n(2) {nop}\n\nSelect one of the options= ")
+                                            window_title('SSTools4MC - Error downloading server')
+                                            day = getdate()
+                                            errtry = input(f"SSTools4MC - {day}\n--------------------------\n\nAn error occurred while downloading the server.\nTry again?\n\n(1) {yup}\n(2) {nop}\n\nSelect one of the options= ")
                                             try:
                                                 if any(char in "0123456789+-*/" for char in errtry):
                                                     if not errtry[0].isalpha():
@@ -1444,7 +1538,9 @@ def eng():
                                 elif verss.lower() == "l":
                                     def select_list():
                                         cls()
-                                        print("Server Launcher for Minecraft\n-------------------------------------\n")
+                                        window_title('SSTools4MC - Available versions')
+                                        day = getdate()
+                                        print(f"SSTools4MC - {day}\n--------------------------\n")
                                         print("STABLE VERSIONS:")
                                         for i, version in enumerate(MCSTABLE, start=1):
                                             print(f"(-) {version}")
@@ -1489,7 +1585,9 @@ def eng():
     # LICENSE AND EXTRAS
     def about():
         cls()
-        copyr = input("Server Launcher for Minecraft\n-------------------------------------\n\nMIT License - Copyright (c) 2024 ngdplnk\n\nSSTools4MC v24.07.29 - ADDED SUPPORT FOR SNAPSHOT VERSIONS\n\nHelpers:\n@naicoooossj\n@LegalizeNuclearBombs\n\n-------------------------------------\n\n(1) View repository in the browser\n(2) View license in the browser\n(3) Return to main menu\n\nSelect one of the options= ")
+        window_title('SSTools4MC - About')
+        day = getdate()
+        copyr = input(f"SSTools4MC - {day}\n--------------------------\n\nMIT License - Copyright (c) 2024 ngdplnk\n\nSSTools4MC {SSVERSION} - {CHANGELOG_ENG}\n\nHelpers:\n@naicoooossj\n@LegalizeNuclearBombs\n\n-------------------------------------\n\n(1) View repository in the browser\n(2) View license in the browser\n(3) Return to main menu\n\nSelect one of the options= ")
         try:
             if any(char in "0123456789+-*/" for char in copyr):
                 if not copyr[0].isalpha():
@@ -1502,14 +1600,18 @@ def eng():
             if selec == 1:
                 url = colored("https://github.com/ngdplnk/SSTools4MC","cyan")
                 cls()
-                input(f"Server Launcher for Minecraft\n-------------------------------------\n\nThe repository will open in your browser.\n\n{url}\n\nPress ENTER to continue.")
+                window_title('SSTools4MC - Repository')
+                day = getdate()
+                input(f"SSTools4MC - {day}\n--------------------------\n\nThe repository will open in your browser.\n\n{url}\n\nPress ENTER to continue.")
                 url = "https://github.com/ngdplnk/SSTools4MC"
                 webbrowser.open(url)
                 about()
             elif selec == 2:
                 url = colored("https://github.com/ngdplnk/SSTools4MC/blob/main/LICENSE","cyan")
                 cls()
-                input(f"Server Launcher for Minecraft\n-------------------------------------\n\nThe license will open in your browser.\n\n{url}\n\nPress ENTER to continue.")
+                window_title('SSTools4MC - License')
+                day = getdate()
+                input(f"SSTools4MC - {day}\n--------------------------\n\nThe license will open in your browser.\n\n{url}\n\nPress ENTER to continue.")
                 url = "https://github.com/ngdplnk/SSTools4MC/blob/main/LICENSE"
                 webbrowser.open(url)
                 about()
@@ -1523,6 +1625,7 @@ def eng():
     # EXIT
     def exiit():
         cls()
+        window_title('SSTools4MC - Goodbye!')
         print("--------------------------------------------\nSee ya later!\nMIT License - Copyright (c) 2024 ngdplnk\n--------------------------------------------\n")
         time.sleep(1.2)
         sys.exit()
@@ -1532,7 +1635,9 @@ def eng():
         os.makedirs(SSTOOLS_FOLDER, exist_ok=True)
         os.chdir(SSTOOLS_FOLDER)
         cls()
-        seleccion = input("Server Launcher for Minecraft\n-------------------------------------\n\nHi! You are in the main menu.\n\n(1) Start a Server\n(2) Install a New Server\n(3) Extras\n(4) Change Language\n(5) Exit\n\nSelect one of the options= ")
+        window_title('SSTools4MC - Main Menu')
+        day = getdate()
+        seleccion = input(f"SSTools4MC - {day}\n--------------------------\n\nHi! You are in the main menu.\n\n(1) Start a Server\n(2) Install a New Server\n(3) Extras\n(4) Change Language\n(5) Exit\n\nSelect one of the options= ")
         try:
             if any(char in "0123456789+-*/" for char in seleccion):
                 if not seleccion[0].isalpha():
@@ -1560,9 +1665,6 @@ def eng():
 
 # SPANISH
 def esp():
-    # CHANGE WINDOW TITLE
-    window_title("Lanzador de Servidores para Minecraft")
-
     # SERVER STARTUP
     def ram():
         global servername
@@ -1577,7 +1679,9 @@ def esp():
                         sservers[key.strip()] = value.strip()
             if sservers:
                 cls()
-                print('Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLista "Tus Servidores"\n')
+                window_title('SSTools4MC - Tus Servidores')
+                day = getdate()
+                print(f'SSTools4MC - {day}\n--------------------------\n\nLista "Tus Servidores"\n')
                 server_keys = list(sservers.keys())
                 for i, key in enumerate(server_keys, start=1):
                     print(f"({i}) {key}")
@@ -1593,7 +1697,9 @@ def esp():
                         servname = os.path.basename(newserv)
                         if newserv == "" or servname == "":
                             cls()
-                            print('Lanzador de Servidores para Minecraft\n-------------------------------------\n\nDebes elegir una carpeta para guardarla en la Lista "Tus Servidores".')
+                            window_title('SSTools4MC - Debes seleccionar una carpeta')
+                            day = getdate()
+                            print(f'SSTools4MC - {day}\n--------------------------\n\nDebes elegir una carpeta para guardarla en la Lista "Tus Servidores".')
                             time.sleep(2.5)
                             ram()
                         if newserv and servname:
@@ -1605,13 +1711,17 @@ def esp():
                                 if servstring not in lines:
                                     file.write(servstring)
                         cls()
-                        print(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl Server "{servname}" ha sido guardado.')
+                        window_title('SSTools4MC - Server guardado')
+                        day = getdate()
+                        print(f'SSTools4MC - {day}\n--------------------------\n\nEl Server "{servname}" ha sido guardado.')
                         time.sleep(1.5)
                         ram()
                     elif servsel.lower() == "d":
                         def servdel():
                             cls()
-                            print("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nSelecciona el Server que eliminarás de la lista.\n")
+                            window_title('SSTools4MC - Eliminar un Server')
+                            day = getdate()
+                            print(f"SSTools4MC - {day}\n--------------------------\n\nSelecciona el Server que eliminarás de la lista.\n")
                             for i, key in enumerate(server_keys, start=1):
                                 print(f"({i}) {key}")
                             print("\n(N) Cancelar\n(R) Volver al menú principal")
@@ -1643,7 +1753,9 @@ def esp():
                                                 if line != servestring:
                                                     file.write(line)
                                     cls()
-                                    print(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl Server "{servsel}" ha sido eliminado de la lista.')
+                                    window_title('SSTools4MC - Server eliminado')
+                                    day = getdate()
+                                    print(f'SSTools4MC - {day}\n--------------------------\n\nEl Server "{servsel}" ha sido eliminado de la lista.')
                                     time.sleep(1.5)
                                     ram()             
                             except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
@@ -1654,7 +1766,9 @@ def esp():
                             cls()
                             yess = colored("Sí","green")
                             noo = colored("No","red")
-                            clearconfirm = input(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEstás seguro de que quieres limpiar la Lista "Tus Servidores"?\n\n(1) {yess}\n(2) {noo}\n\nElige una de las opciones= ')
+                            window_title('SSTools4MC - Estás seguro?')
+                            day = getdate()
+                            clearconfirm = input(f'SSTools4MC - {day}\n--------------------------\n\nEstás seguro de que quieres limpiar la Lista "Tus Servidores"?\n\n(1) {yess}\n(2) {noo}\n\nElige una de las opciones= ')
                             try:
                                 if any(char in "0123456789+-*/" for char in clearconfirm):
                                     if not clearconfirm[0].isalpha():
@@ -1667,9 +1781,10 @@ def esp():
                                 if clearconf == 1:
                                     os.makedirs(CONFIG_PATH, exist_ok=True)
                                     with open(SAVED_SERVERS, 'w') as file:
-                                        file.write("# Lanzador de Servidores para Minecraft\n# Servers guardados\n")
+                                        file.write("# SSTools4MC\n# Servers guardados\n")
                                     cls()
-                                    print('Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLa Lista "Tus Servidores" ha sido limpiada.')
+                                    window_title('SSTools4MC - Lista limpiada')
+                                    print(f'SSTools4MC - {day}\n--------------------------\n\nLa Lista "Tus Servidores" ha sido limpiada.')
                                     time.sleep(1.5)
                                     ram()
                                 elif clearconf == 2:
@@ -1699,10 +1814,12 @@ def esp():
             else:
                 os.makedirs(CONFIG_PATH, exist_ok=True)
                 with open(SAVED_SERVERS, 'w') as file:
-                    file.write("# Lanzador de Servidores para Minecraft\n# Servidores Guardados\n")
+                    file.write("# SSTools4MC\n# Servidores Guardados\n")
                 cls()
                 adds = colored("Añadir un Server","cyan")
-                saveconfirm = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nNo tienes ningún Server guardado.\n\n(1) {adds}\n(2) Volver al menú principal\n\nElige una de las opciones= ")
+                window_title('SSTools4MC - No hay Servers guardados')
+                day = getdate()
+                saveconfirm = input(f"SSTools4MC - {day}\n--------------------------\n\nNo tienes ningún Server guardado.\n\n(1) {adds}\n(2) Volver al menú principal\n\nElige una de las opciones= ")
                 try:
                     if any(char in "0123456789+-*/" for char in saveconfirm):
                         if not saveconfirm[0].isalpha():
@@ -1718,7 +1835,9 @@ def esp():
                         servname = os.path.basename(newserv)
                         if newserv == "" or servname == "":
                             cls()
-                            print('Lanzador de Servidores para Minecraft\n-------------------------------------\n\nDebes elegir una carpeta para guardarla en la Lista "Tus Servidores".')
+                            window_title('SSTools4MC - Debes seleccionar una carpeta')
+                            day = getdate()
+                            print(f'SSTools4MC - {day}\n--------------------------\n\nDebes elegir una carpeta para guardarla en la Lista "Tus Servidores".')
                             time.sleep(2.5)
                             ram()
                         if newserv and servname:
@@ -1730,7 +1849,9 @@ def esp():
                                 if servstring not in lines:
                                     file.write(servstring)
                         cls()
-                        print(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl Server "{servname}" ha sido guardado.')
+                        window_title('SSTools4MC - Server guardado')
+                        day = getdate()
+                        print(f'SSTools4MC - {day}\n--------------------------\n\nEl Server "{servname}" ha sido guardado.')
                         time.sleep(1.5)
                         ram()
                     elif saveconf == 2:
@@ -1742,15 +1863,19 @@ def esp():
         else:
             os.makedirs(CONFIG_PATH, exist_ok=True)
             with open(SAVED_SERVERS, 'w') as file:
-                file.write("# Lanzador de Servidores para Minecraft\n# Servers Guardados\n")
+                file.write("# SSTools4MC\n# Servers Guardados\n")
             cls()
-            input('Lanzador de Servidores para Minecraft\n-------------------------------------\n\nNo tienes ningún Server guardado.\n\nPresiona ENTER para seleccionar una carpeta con tu Server y guardarlo en la Lista "Tus Servidores".')
+            window_title('SSTools4MC - No hay Servers guardados')
+            day = getdate()
+            input(f'SSTools4MC - {day}\n--------------------------\n\nNo tienes ningún Server guardado.\n\nPresiona ENTER para seleccionar una carpeta con tu Server y guardarlo en la Lista "Tus Servidores".')
             newserv = filedialog.askdirectory()
             front()
             servname = os.path.basename(newserv)
             if newserv == "" or servname == "":
                 cls()
-                print('Lanzador de Servidores para Minecraft\n-------------------------------------\n\nDebes elegir una carpeta para guardarla en la Lista "Tus Servidores".')
+                window_title('SSTools4MC - Debes seleccionar una carpeta')
+                day = getdate()
+                print(f'SSTools4MC - {day}\n--------------------------\n\nDebes elegir una carpeta para guardarla en la Lista "Tus Servidores".')
                 time.sleep(2.5)
                 ram()
             if newserv and servname:
@@ -1761,7 +1886,9 @@ def esp():
                     if servstring not in lines:
                         file.write(servstring)
             cls()
-            print(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl Server "{servname}" ha sido guardado.')
+            window_title('SSTools4MC - Server guardado')
+            day = getdate()
+            print(f'SSTools4MC - {day}\n--------------------------\n\nEl Server "{servname}" ha sido guardado.')
             time.sleep(1.5)
             ram()
         if os.path.exists("server.jar"):
@@ -1795,7 +1922,9 @@ def esp():
                     elif properties["pvp"] == "true":
                         pvp = colored("DESACTIVAR","red")
                     cls()
-                    confsel = input(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nConfiguremos "{nameserver}"!\n\n(1) {online} modo online\n(2) {hard} modo extremo\n(3) {pvp} PvP\n(4) Cambiar modo de juego\n(5) Cambiar dificultad\n(6) Cambiar el límite de jugadores\n(7) Atrás\n(8) Volver al menú principal\n\nElige una de las opciones= ')
+                    window_title('SSTools4MC - Configuración del Server')
+                    day = getdate()
+                    confsel = input(f'SSTools4MC - {day}\n--------------------------\n\nConfiguremos "{nameserver}"!\n\n(1) {online} modo online\n(2) {hard} modo extremo\n(3) {pvp} PvP\n(4) Cambiar modo de juego\n(5) Cambiar dificultad\n(6) Cambiar el límite de jugadores\n(7) Atrás\n(8) Volver al menú principal\n\nElige una de las opciones= ')
                     if properties["online-mode"] == "false":
                         online = "ENABLE"
                     elif properties["online-mode"] == "true":
@@ -1831,7 +1960,9 @@ def esp():
                                         file.write(f'{key}={value}\n')
                                 online = colored("DESACTIVADO","red")
                             cls()
-                            print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl modo online se ha {online}.")
+                            window_title('SSTools4MC - Modo online cambiado')
+                            day = getdate()
+                            print(f"SSTools4MC - {day}\n--------------------------\n\nEl modo online se ha {online}.")
                             time.sleep(1.5)
                             config()
                         elif confug == 2:
@@ -1848,7 +1979,9 @@ def esp():
                                         file.write(f'{key}={value}\n')
                                 hard = colored("DESACTIVADO","red")
                             cls()
-                            print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl modo extremo se ha {hard}.")
+                            window_title('SSTools4MC - Modo extremo cambiado')
+                            day = getdate()
+                            print(f"SSTools4MC - {day}\n--------------------------\n\nEl modo extremo se ha {hard}.")
                             time.sleep(1.5)
                             config()
                         elif confug == 3:
@@ -1865,7 +1998,9 @@ def esp():
                                         file.write(f'{key}={value}\n')
                                 pvp = colored("DESACTIVADO","red")
                             cls()
-                            print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl PvP se ha {pvp}.")
+                            window_title('SSTools4MC - PvP cambiado')
+                            day = getdate()
+                            print(f"SSTools4MC - {day}\n--------------------------\n\nEl PvP se ha {pvp}.")
                             time.sleep(1.5)
                             config()
                         elif confug == 4:
@@ -1885,7 +2020,9 @@ def esp():
                                 avent = colored("AVENTURA","yellow")
                                 espect = colored("ESPECTADOR","yellow")
                                 cls()
-                                modosel = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl modo de juego actual es {modo}.\n\n(1) Cambiar a modo {superv}\n(2) Cambiar a modo {creat}\n(3) Cambiar a modo {avent}\n(4) Cambiar a modo {espect}\n(5) Atrás\n(6) Volver al menú principal\n\nElige una de las opciones= ")
+                                window_title('SSTools4MC - Configurar Modo de juego')
+                                day = getdate()
+                                modosel = input(f"SSTools4MC - {day}\n--------------------------\n\nEl modo de juego actual es {modo}.\n\n(1) Cambiar a modo {superv}\n(2) Cambiar a modo {creat}\n(3) Cambiar a modo {avent}\n(4) Cambiar a modo {espect}\n(5) Atrás\n(6) Volver al menú principal\n\nElige una de las opciones= ")
                                 try:
                                     if any(char in "0123456789+-*/" for char in modosel):
                                         if not modosel[0].isalpha():
@@ -1901,7 +2038,9 @@ def esp():
                                             for key, value in properties.items():
                                                 file.write(f'{key}={value}\n')
                                         cls()
-                                        print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl modo de juego se ha cambiado a {superv}.")
+                                        window_title('SSTools4MC - Modo de juego cambiado')
+                                        day = getdate()
+                                        print(f"SSTools4MC - {day}\n--------------------------\n\nEl modo de juego se ha cambiado a {superv}.")
                                         time.sleep(1.5)
                                         juego()
                                     elif coonf == 2:
@@ -1910,7 +2049,9 @@ def esp():
                                             for key, value in properties.items():
                                                 file.write(f'{key}={value}\n')
                                         cls()
-                                        print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl modo de juego se ha cambiado a {creat}.")
+                                        window_title('SSTools4MC - Modo de juego cambiado')
+                                        day = getdate()
+                                        print(f"SSTools4MC - {day}\n--------------------------\n\nEl modo de juego se ha cambiado a {creat}.")
                                         time.sleep(1.5)
                                         juego()
                                     elif coonf == 3:
@@ -1919,7 +2060,9 @@ def esp():
                                             for key, value in properties.items():
                                                 file.write(f'{key}={value}\n')
                                         cls()
-                                        print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl modo de juego se ha cambiado a {avent}.")
+                                        window_title('SSTools4MC - Modo de juego cambiado')
+                                        day = getdate()
+                                        print(f"SSTools4MC - {day}\n--------------------------\n\nEl modo de juego se ha cambiado a {avent}.")
                                         time.sleep(1.5)
                                         juego()
                                     elif coonf == 4:
@@ -1928,7 +2071,9 @@ def esp():
                                             for key, value in properties.items():
                                                 file.write(f'{key}={value}\n')
                                         cls()
-                                        print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl modo de juego se ha cambiado a {espect}.")
+                                        window_title('SSTools4MC - Modo de juego cambiado')
+                                        day = getdate()
+                                        print(f"SSTools4MC - {day}\n--------------------------\n\nEl modo de juego se ha cambiado a {espect}.")
                                         time.sleep(1.5)
                                         juego()
                                     elif coonf == 5:
@@ -1957,7 +2102,9 @@ def esp():
                                 normal = colored("NORMAL","yellow")
                                 dificil = colored("DIFÍCIL","yellow")
                                 cls()
-                                difsel = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLa dificultad actual es {dificultad}.\n\n(1) Cambiar a dificultad {pacif}\n(2) Cambiar a dificultad {facil}\n(3) Cambiar a dificultad {normal}\n(4) Cambiar a dificultad {dificil}\n(5) Atrás\n(6) Volver al menú principal\n\nElige una de las opciones= ")
+                                window_title('SSTools4MC - Configurar Dificultad')
+                                day = getdate()
+                                difsel = input(f"SSTools4MC - {day}\n--------------------------\n\nLa dificultad actual es {dificultad}.\n\n(1) Cambiar a dificultad {pacif}\n(2) Cambiar a dificultad {facil}\n(3) Cambiar a dificultad {normal}\n(4) Cambiar a dificultad {dificil}\n(5) Atrás\n(6) Volver al menú principal\n\nElige una de las opciones= ")
                                 try:
                                     if any(char in "0123456789+-*/" for char in difsel):
                                         if not difsel[0].isalpha():
@@ -1973,7 +2120,9 @@ def esp():
                                             for key, value in properties.items():
                                                 file.write(f'{key}={value}\n')
                                         cls()
-                                        print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLa dificultad se ha cambiado a {pacif}.")
+                                        window_title('SSTools4MC - Dificultad cambiada')
+                                        day = getdate()
+                                        print(f"SSTools4MC - {day}\n--------------------------\n\nLa dificultad se ha cambiado a {pacif}.")
                                         time.sleep(1.5)
                                         difconf()
                                     elif difcc == 2:
@@ -1982,7 +2131,9 @@ def esp():
                                             for key, value in properties.items():
                                                 file.write(f'{key}={value}\n')
                                         cls()
-                                        print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLa dificultad se ha cambiado a {facil}.")
+                                        window_title('SSTools4MC - Dificultad cambiada')
+                                        day = getdate()
+                                        print(f"SSTools4MC - {day}\n--------------------------\n\nLa dificultad se ha cambiado a {facil}.")
                                         time.sleep(1.5)
                                         difconf()
                                     elif difcc == 3:
@@ -1991,7 +2142,9 @@ def esp():
                                             for key, value in properties.items():
                                                 file.write(f'{key}={value}\n')
                                         cls()
-                                        print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLa dificultad se ha cambiado a {normal}.")
+                                        window_title('SSTools4MC - Dificultad cambiada')
+                                        day = getdate()
+                                        print(f"SSTools4MC - {day}\n--------------------------\n\nLa dificultad se ha cambiado a {normal}.")
                                         time.sleep(1.5)
                                         difconf()
                                     elif difcc == 4:
@@ -2000,7 +2153,9 @@ def esp():
                                             for key, value in properties.items():
                                                 file.write(f'{key}={value}\n')
                                         cls()
-                                        print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLa dificultad se ha cambiado a {dificil}.")
+                                        window_title('SSTools4MC - Dificultad cambiada')
+                                        day = getdate()
+                                        print(f"SSTools4MC - {day}\n--------------------------\n\nLa dificultad se ha cambiado a {dificil}.")
                                         time.sleep(1.5)
                                         difconf()
                                     elif difcc == 5:
@@ -2017,7 +2172,9 @@ def esp():
                                 global properties
                                 players = colored(properties["max-players"],"cyan")
                                 cls()
-                                newpl = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl límite de jugadores actual es de {players} jugadores.\n\n(N) Atrás\n(M) Volver al menú principal\n\nElige una de las opciones o ingresa el nuevo límite de jugadores= ").replace(" ", "")
+                                window_title('SSTools4MC - Cambiar límite de jugadores')
+                                day = getdate()
+                                newpl = input(f"SSTools4MC - {day}\n--------------------------\n\nEl límite de jugadores actual es de {players} jugadores.\n\n(N) Atrás\n(M) Volver al menú principal\n\nElige una de las opciones o ingresa el nuevo límite de jugadores= ").replace(" ", "")
                                 try:
                                     if newpl.lower() == "n":
                                         config()
@@ -2034,7 +2191,9 @@ def esp():
                                         entero = int(entero)
                                         if entero <= 0 or entero > 100000:
                                             cls()
-                                            print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nIngresa un número válido entre 1 y 100.000.")
+                                            window_title('SSTools4MC - Número inválido')
+                                            day = getdate()
+                                            print(f"SSTools4MC - {day}\n--------------------------\n\nIngresa un número válido entre 1 y 100.000.")
                                             time.sleep(1.5)
                                             playct()
                                         else:
@@ -2044,7 +2203,9 @@ def esp():
                                                     file.write(f'{key}={value}\n')
                                             entero = colored(str(entero),"yellow")
                                             cls()
-                                            print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl límite de jugadores ahora es {entero}.")
+                                            window_title('SSTools4MC - Límite de jugadores cambiado')
+                                            day = getdate()
+                                            print(f"SSTools4MC - {day}\n--------------------------\n\nEl límite de jugadores ahora es {entero}.")
                                             time.sleep(1.5)
                                             playct()
                                 except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
@@ -2060,7 +2221,9 @@ def esp():
                         config()
                 else:
                     cls()
-                    input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLos achivos de configuración del Server aún no existen o no están disponibles.\nDebes iniciar el Server correctamente al menos 1 vez antes de poder configurarlo.\n\nPresiona ENTER para continuar.")
+                    window_title('SSTools4MC - Configuración del Server')
+                    day = getdate()
+                    input(f"SSTools4MC - {day}\n--------------------------\n\nLos achivos de configuración del Server aún no existen o no están disponibles.\nDebes iniciar el Server correctamente al menos 1 vez antes de poder configurarlo.\n\nPresiona ENTER para continuar.")
                     run_server()
             def run_server():
                 global servername
@@ -2085,20 +2248,26 @@ def esp():
                 nameserver = servername
                 cls()
                 gbs = 0
-                rammount = input(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEstás a punto de iniciar el Server "{nameserver}"\n\n(M) Configurar Server\n(C) Usar RAM en {gbormb}\n(B) Atrás\n(N) Volver al menú principal\n\nElige una de las opciones o ingresa los {valor1} de RAM para asignar a tu Server= ').replace(" ", "")
+                window_title('SSTools4MC - Apunto de iniciar!')
+                day = getdate()
+                rammount = input(f'SSTools4MC - {day}\n--------------------------\n\nEstás a punto de iniciar el Server "{nameserver}"\n\n(M) Configurar Server\n(C) Usar RAM en {gbormb}\n(B) Atrás\n(N) Volver al menú principal\n\nElige una de las opciones o ingresa los {valor1} de RAM para asignar a tu Server= ').replace(" ", "")
                 try:
                     if rammount.lower() == "m":
                         config()  
                     if rammount.lower() == "c":
                         if valor == "GB":
                             cls()
-                            print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nAhora la RAM está en {gbormb}.")
+                            window_title('SSTools4MC - Tipo de RAM cambiada')
+                            day = getdate()
+                            print(f"SSTools4MC - {day}\n--------------------------\n\nAhora la RAM está en {gbormb}.")
                             time.sleep(1.5)
                             valor = "MB"
                             run_server()
                         elif valor == "MB":
                             cls()
-                            print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nAhora la RAM está en {gbormb}.")
+                            window_title('SSTools4MC - Tipo de RAM cambiada')
+                            day = getdate()
+                            print(f"SSTools4MC - {day}\n--------------------------\n\nAhora la RAM está en {gbormb}.")
                             time.sleep(1.5)
                             valor = "GB"
                             run_server()
@@ -2117,20 +2286,25 @@ def esp():
                         gbs = int(gbs)
                         if valor == "GB" and (gbs <= 0 or gbs > 75):
                             cls()
-                            print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nIngresa una cantidad válida entre 1 y 75 Gigabytes.")
+                            window_title('SSTools4MC - Cantidad inválida')
+                            day = getdate()
+                            print(f"SSTools4MC - {day}\n--------------------------\n\nIngresa una cantidad válida entre 1 y 75 Gigabytes.")
                             time.sleep(1.5)
                             run_server()
                         elif valor == "MB" and (gbs <= 511 or gbs > 76800):
                             cls()
-                            print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nIngresa una cantidad válida entre 512 y 76.800 Megabytes.")
+                            window_title('SSTools4MC - Cantidad inválida')
+                            day = getdate()
+                            print(f"SSTools4MC - {day}\n--------------------------\n\nIngresa una cantidad válida entre 512 y 76.800 Megabytes.")
                             time.sleep(1.5)
                             run_server()
                         else:
-                            eula = "eula.txt"
-                            with open(eula, "w") as reemplazo:
+                            with open('eula.txt', "w") as reemplazo:
                                 reemplazo.write("eula=true")
                             cls()
-                            print(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nIniciando el Server con {gbs}{valor} de RAM.\n")
+                            window_title('SSTools4MC - Iniciando Server')
+                            day = getdate()
+                            print(f"SSTools4MC - {day}\n--------------------------\n\nIniciando el Server con {gbs}{valor} de RAM.\n")
                             comando_java = f"java -Xmx{gbs}{vjava} -Xms{gbs}{vjava} -jar server.jar nogui"
                             subprocess.run(comando_java, shell=True)
                             fyh_sistema = datetime.datetime.now()
@@ -2138,14 +2312,18 @@ def esp():
                             hora_cerrado = str(fyh_sistema.strftime("%H:%M:%S"))
                             input("\nPresiona ENTER para continuar.")
                             cls()
-                            input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl Server se ha cerrado el {fecha_cerrado} a las {hora_cerrado}.\n\nPuedes ver el registro de la consola en la carpeta 'logs' dentro de la carpeta principal de tu Server.\n\nPresiona ENTER para continuar.")
+                            window_title('SSTools4MC - Server cerrado')
+                            day = getdate()
+                            input(f"SSTools4MC - {day}\n--------------------------\n\nEl Server se ha cerrado el {fecha_cerrado} a las {hora_cerrado}.\n\nPuedes ver el registro de la consola en la carpeta 'logs' dentro de la carpeta principal de tu Server.\n\nPresiona ENTER para continuar.")
                             ram()
                 except (ValueError, SyntaxError, IndexError, ZeroDivisionError):
                     run_server()
             run_server()
         else:
             cls()
-            print('Lanzador de Servidores para Minecraft\n-------------------------------------\n\nNo se encuentra "server.jar" en esta carpeta.\n\nEstás seguro que esto es un Server?')
+            window_title('SSTools4MC - No se encuentra el Server')
+            day = getdate()
+            print(f'SSTools4MC - {day}\n--------------------------\n\nNo se encuentra "server.jar" en esta carpeta.\n\nEstás seguro que esto es un Server?')
             time.sleep(2.5)
             ram()
 
@@ -2154,7 +2332,9 @@ def esp():
         global newserver
         global foldname
         cls()
-        inconfirm = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nPrimero, seleccionemos una carpeta para guardar los archivos de tu Nuevo Server.\n\n(1) Seleccionar una carpeta para el Nuevo Server\n(2) Cancelar\n\nElige una de las opciones= ").replace(" ", "")
+        window_title('SSTools4MC - Instalar Nuevo Server')
+        day = getdate()
+        inconfirm = input(f"SSTools4MC - {day}\n--------------------------\n\nPrimero, seleccionemos una carpeta para guardar los archivos de tu Nuevo Server.\n\n(1) Seleccionar una carpeta para el Nuevo Server\n(2) Cancelar\n\nElige una de las opciones= ").replace(" ", "")
         try:
             if any(char in "0123456789+-*/" for char in inconfirm):
                 if not inconfirm[0].isalpha():
@@ -2173,7 +2353,9 @@ def esp():
                     foldname = colored(os.path.basename(newserver), "green")
                     if newserver == "" or foldname == "":
                         cls()
-                        print('Lanzador de Servidores para Minecraft\n-------------------------------------\n\nDebes elegir una carpeta para guardar tu Nuevo Server.')
+                        window_title('SSTools4MC - Debes seleccionar una carpeta')
+                        day = getdate()
+                        print(f'SSTools4MC - {day}\n--------------------------\n\nDebes elegir una carpeta para guardar tu Nuevo Server.')
                         time.sleep(2.5)
                         installmenu()
                     os.makedirs(newserver, exist_ok=True)
@@ -2183,7 +2365,9 @@ def esp():
                             global newserver
                             global foldname
                             cls()
-                            verss = input(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nTu Nuevo Server se guardará en "{foldname}".\n\n(L) Ver versiones disponibles\n(R) Reelegir una carpeta para el Nuevo Server\n(N) Volver al menú principal\n\nElige una de las opciones o escribe la versión para instalar tu Nuevo Server= ').replace(" ", "")
+                            window_title('SSTools4MC - Seleccionar Versión')
+                            day = getdate()
+                            verss = input(f'SSTools4MC - {day}\n--------------------------\n\nTu Nuevo Server se guardará en "{foldname}".\n\n(L) Ver versiones disponibles\n(R) Reelegir una carpeta para el Nuevo Server\n(N) Volver al menú principal\n\nElige una de las opciones o escribe la versión para instalar tu Nuevo Server= ').replace(" ", "")
                             try:
                                 def servdownload(versionname,type):
                                     global newserver
@@ -2194,7 +2378,9 @@ def esp():
                                     else:
                                         url = MCSNAPSHOT[version]
                                     cls()
-                                    print(f'Lanzador de Servidores para Minecraft\n-------------------------------------\n\nTu Nuevo Server está siendo descargado.\n\nVersión: {version}\nCarpeta de destino: "{foldname}"\n\nEspera por favor...\n')
+                                    window_title('SSTools4MC - Descargando Server')
+                                    day = getdate()
+                                    print(f'SSTools4MC - {day}\n--------------------------\n\nTu Nuevo Server está siendo descargado.\n\nVersión: {version}\nCarpeta de destino: "{foldname}"\n\nEspera por favor...\n')
                                     time.sleep(0.5)
                                     os.makedirs(newserver, exist_ok=True)
                                     os.chdir(newserver)
@@ -2211,7 +2397,9 @@ def esp():
                                                 print("\r[%s%s]" % ('#' * completed, '.' * (50 - completed)), end='')
                                         print()
                                         cls()
-                                        input('Lanzador de Servidores para Minecraft\n-------------------------------------\n\nTu Nuevo Server se ha instalado correctamente y ha sido añadido a la Lista "Tus Servidores".\n\nPresiona ENTER para continuar.')
+                                        window_title('SSTools4MC - Server descargado')
+                                        day = getdate()
+                                        input(f'SSTools4MC - {day}\n--------------------------\n\nTu Nuevo Server se ha instalado correctamente y ha sido añadido a la Lista "Tus Servidores".\n\nPresiona ENTER para continuar.')
                                         servname = os.path.basename(newserver)
                                         servstring = f"{servname}<[=]>{newserver}\n"
                                         os.makedirs(CONFIG_PATH, exist_ok=True)
@@ -2225,7 +2413,9 @@ def esp():
                                             cls()
                                             yup = colored("Sí","green")
                                             nop = colored("No","red")
-                                            errtry = input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nHa ocurrido un error mientras se descargaba tu Nuevo Server.\nReintentar?\n\n(1) {yup}\n(2) {nop}\n\nElige una de las opciones= ")
+                                            window_title('SSTools4MC - Error al descargar')
+                                            day = getdate()
+                                            errtry = input(f"SSTools4MC - {day}\n--------------------------\n\nHa ocurrido un error mientras se descargaba tu Nuevo Server.\nReintentar?\n\n(1) {yup}\n(2) {nop}\n\nElige una de las opciones= ")
                                             try:
                                                 if any(char in "0123456789+-*/" for char in errtry):
                                                     if not errtry[0].isalpha():
@@ -2251,7 +2441,9 @@ def esp():
                                 elif verss.lower() == "l":
                                     def select_list():
                                         cls()
-                                        print("Lanzador de Servidores para Minecraft\n-------------------------------------\n")
+                                        window_title('SSTools4MC - Versiones Disponibles')
+                                        day = getdate()
+                                        print(f"SSTools4MC - {day}\n--------------------------\n")
                                         print("VERSIONES ESTABLES:")
                                         for i, version in enumerate(MCSTABLE, start=1):
                                             print(f"(-) {version}")
@@ -2296,7 +2488,9 @@ def esp():
     # LICENSE AND EXTRAS
     def about():
         cls()
-        copyr = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nMIT License - Copyright (c) 2024 ngdplnk\n\nSSTools4MC v24.07.29 - SE AÑADE SOPRTE PARA VERSIONES SNAPSHOT\n\nHelpers:\n@naicoooossj\n@LegalizeNuclearBombs\n\n-------------------------------------\n\n(1) Ver repositorio en el navegador\n(2) Ver licencia en el navegador\n(3) Volver al menú principal\n\nElige una de las opciones= ")
+        window_title('SSTools4MC - Acerca de')
+        day = getdate()
+        copyr = input(f"SSTools4MC - {day}\n--------------------------\n\nMIT License - Copyright (c) 2024 ngdplnk\n\nSSTools4MC {SSVERSION} - {CHANGELOG_SPA}\n\nHelpers:\n@naicoooossj\n@LegalizeNuclearBombs\n\n-------------------------------------\n\n(1) Ver repositorio en el navegador\n(2) Ver licencia en el navegador\n(3) Volver al menú principal\n\nElige una de las opciones= ")
         try:
             if any(char in "0123456789+-*/" for char in copyr):
                 if not copyr[0].isalpha():
@@ -2309,14 +2503,18 @@ def esp():
             if selec == 1:
                 url = colored("https://github.com/ngdplnk/SSTools4MC","cyan")
                 cls()
-                input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nEl repositorio se abrirá en tu navegador.\n\n{url}\n\nPresiona ENTER para continuar.")
+                window_title('SSTools4MC - Repositorio')
+                day = getdate()
+                input(f"SSTools4MC - {day}\n--------------------------\n\nEl repositorio se abrirá en tu navegador.\n\n{url}\n\nPresiona ENTER para continuar.")
                 url = "https://github.com/ngdplnk/SSTools4MC"
                 webbrowser.open(url)
                 about()
             elif selec == 2:
                 url = colored("https://github.com/ngdplnk/SSTools4MC/blob/main/LICENSE","cyan")
                 cls()
-                input(f"Lanzador de Servidores para Minecraft\n-------------------------------------\n\nLa licencia se abrirá en tu navegador.\n\n{url}\n\nPresiona ENTER para continuar.")
+                window_title('SSTools4MC - Licencia')
+                day = getdate()
+                input(f"SSTools4MC - {day}\n--------------------------\n\nLa licencia se abrirá en tu navegador.\n\n{url}\n\nPresiona ENTER para continuar.")
                 url = "https://github.com/ngdplnk/SSTools4MC/blob/main/LICENSE"
                 webbrowser.open(url)
                 about()
@@ -2330,6 +2528,7 @@ def esp():
     # EXIT
     def exiit():
         cls()
+        window_title('SSTools4MC - Nos vemos!')
         print("--------------------------------------------\nNos vemos pronto!\nMIT License - Copyright (c) 2024 ngdplnk\n--------------------------------------------\n")
         time.sleep(1.2)
         sys.exit()
@@ -2339,7 +2538,9 @@ def esp():
         os.makedirs(SSTOOLS_FOLDER, exist_ok=True)
         os.chdir(SSTOOLS_FOLDER)
         cls()
-        seleccion = input("Lanzador de Servidores para Minecraft\n-------------------------------------\n\nHola! Estás en el menú principal.\n\n(1) Inciar un Server\n(2) Instalar un Nuevo Server\n(3) Extras\n(4) Cambiar Lenguaje\n(5) Salir\n\nElige una de las opciones= ")
+        window_title('SSTools4MC - Menú Principal')
+        day = getdate()
+        seleccion = input(f"SSTools4MC - {day}\n--------------------------\n\nHola! Estás en el menú principal.\n\n(1) Inciar un Server\n(2) Instalar un Nuevo Server\n(3) Extras\n(4) Cambiar Lenguaje\n(5) Salir\n\nElige una de las opciones= ")
         try:
             if any(char in "0123456789+-*/" for char in seleccion):
                 if not seleccion[0].isalpha():
@@ -2375,4 +2576,5 @@ def startup():
         eng()
 
 # RUN TOOL
+window_title("SSTools4MC - Starting Program")
 startup()
