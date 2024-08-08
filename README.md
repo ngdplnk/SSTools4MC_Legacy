@@ -128,4 +128,4 @@ Credits to [Alfredo Creates on Flaticon for creating the icon used in SSTools4MC
 
 Thank you for using SSTools4MC!
 
-Licensed under [MIT License](https://opensource.org/license/mit) - Copyright © 2024 ngdplnk
+Licensed under [MIT License](https://github.com/ngdplnk/SSTools4MC/blob/main/LICENSE) - Copyright © 2024 ngdplnk
