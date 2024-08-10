@@ -86,6 +86,8 @@ Section "Uninstall"
   # Remove the shortcuts
   Delete "$DESKTOP\SSTools4MC Launcher.lnk"
   Delete "$SMPROGRAMS\SSTools4MC Launcher.lnk"
+  Delete "$DESKTOP\SSTools4MC Launcher (Dev Channel).lnk"
+  Delete "$SMPROGRAMS\SSTools4MC Launcher (Dev Channel).lnk"
 
   # Remove the uninstaller
   Delete "$INSTDIR\uninstaller.exe"
