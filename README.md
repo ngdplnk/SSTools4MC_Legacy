@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ngdplnk/SSTools4MC/main/3-launcher/icon.png" alt="SSTools4MC Icon" width="200" />
+  <img src="https://raw.githubusercontent.com/ngdplnk/SSTools4MC/main/3-launcher/1-stable-channel/icon.png" alt="SSTools4MC Icon" width="200" />
 </p>
 
 # SSTools4MC - Server Startup Tools for Minecraft
