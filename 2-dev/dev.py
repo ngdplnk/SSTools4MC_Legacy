@@ -1,15 +1,13 @@
 #### SSTOOLS4MC MAIN PROGRAM ####
 ####  DEVELOPED BY: NGDPLNK  ####
-
+#################################
 ####      PROGRAM INFO       ####
-
-SSVERSION = 'v24.08.10'
+SSVERSION = 'v24.08.10-dev'
 CHANNEL = 'dev'
 YEAR = '2024'
 CHANGELOG_ENG = 'ADDED SUPPORT FOR MANY MORE VERSIONS'
 CHANGELOG_SPA = 'SE AÑADE SOPORTE PARA MUCHAS MÁS VERSIONES'
 HELPERS = 'Helpers:\n@naicoooossj\n@LegalizeNuclearBombs'
-
 #################################
 
 # MODULES
