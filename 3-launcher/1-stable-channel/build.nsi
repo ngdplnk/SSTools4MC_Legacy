@@ -1,17 +1,19 @@
+### THIS BUILD SCRIPT IS FOR THE STABLE CHANNEL OF SSTools4MC
+
 # FILL THIS WITH THE NEEDED PATHS
 !define ICON_PATH "<TYPE THE ICON.ICO PATH HERE>"
 !define LAUNCHER_PATH "<TYPE THE LAUNCHER.PYW PATH HERE>"
-!define BASE_PATH "<TYPE THE BASE.PY PATH HERE>"
+!define BASE_PATH "<TYPE THE MAIN.PY PATH HERE>"
 
 ############################################################
 
-Caption "SSTools4MC v1.2 Installer"
+Caption "SSTools4MC Launcher v1.3 Installer"
 UninstallCaption "SSTools4MC Uninstaller"
-!define APP_VERSION "1.2"
-!define PRODUCT_VERSION "1.2.0.0"
+!define APP_VERSION "1.3"
+!define PRODUCT_VERSION "1.3.0.0"
 !define APP_EDITOR "ngdplnk"
 
-Outfile "SSTools4MC_Setup_v1.2.exe"
+Outfile "SSTools4MC_Launcher_v1.3_Setup.exe"
 SetCompressor /SOLID lzma
 Icon "${ICON_PATH}"
 
@@ -57,13 +59,13 @@ Section "MainSection" SEC01
   # Write the uninstall keys for Add/Remove Programs
   WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\SSTools4MC" "DisplayName" "SSTools4MC Launcher"
   WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\SSTools4MC" "UninstallString" "$INSTDIR\uninstaller.exe"
-  WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\SSTools4MC" "Publisher" "TLSoftware"
+  WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\SSTools4MC" "Publisher" "ngdplnk"
   WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\SSTools4MC" "DisplayVersion" "${APP_VERSION}"
   WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\SSTools4MC" "DisplayIcon" "$INSTDIR\assets\icon.ico"
   WriteUninstaller "$INSTDIR\uninstaller.exe"
 
   # Show a message when the program is completely installed
-  MessageBox MB_YESNO|MB_ICONINFORMATION "SSTools has been completely installed. Do you want to open it now?" IDYES runProgram
+  MessageBox MB_YESNO|MB_ICONINFORMATION "SSTools4MC Launcher has been completely installed. Do you want to open it now?" IDYES runProgram
 
   # Don't run the program if the user clicked "No"
   Goto end
@@ -81,11 +83,6 @@ Section "Uninstall"
   # Set the uninstaller to close automatically when done
   SetAutoClose true
 
-  # Remove the files
-  Delete $APPDATA\SSTools4MC\launcher.pyw
-  Delete $APPDATA\SSTools4MC\main.py
-  Delete $APPDATA\SSTools4MC\assets\icon.ico
-
   # Remove the shortcuts
   Delete "$DESKTOP\SSTools4MC Launcher.lnk"
   Delete "$SMPROGRAMS\SSTools4MC Launcher.lnk"
@@ -96,8 +93,7 @@ Section "Uninstall"
   # Remove the uninstall keys
   DeleteRegKey HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\SSTools4MC"
 
-  # Remove the directories
-  RMDir /r $APPDATA\SSTools4MC\assets
+  # Remove all SSTools4MC files
   RMDir /r $APPDATA\SSTools4MC
 
   # Show a message when the program is completely uninstalled

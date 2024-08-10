@@ -16,7 +16,7 @@ SSTools4MC is a set of tools designed to assist you hosting your own dedicated M
   - [Clone this Repository](#clone-this-repository)
   - [Install NSIS](#install-nsis)
   - [Verify Files](#verify-files)
-  - [Edit build.nsi file](#edit-buildnsi-file)
+  - [Edit .nsi file](#edit-nsi-file)
   - [Compile the Installer](#compile-the-installer)
 - [Copyright and Disclaimer](#copyright-and-disclaimer)
 - [Important and Acknowledgments](#important-and-acknowledgments)
@@ -76,27 +76,32 @@ You need to install the latest NSIS (Nullsoft Scriptable Install System) version
 
 ### Verify Files
 
-Navigate to the `3-launcher` folder in the cloned repository. Ensure that you have the following files (there may be more, but you need to have at least these):
+Navigate to the `3-launcher` folder in the cloned repository and there select a release channel that you want to build the launcher for (continue in subdirectory `1-stable-channel` for Stable channel or in subdirectory `2-dev-channel` for Dev Channel). Ensure that you have the following files (there may be more, but you need to have at least these):
 
-- `base.py`
+If you are building the launcher for the Stable channel:
 - `build.nsi`
 - `icon.ico`
 - `launcher.pyw`
 
-If any of these files are missing, please download them from the repository.
+If you are building the launcher for the Dev channel:
+- `build-dev.nsi`
+- `icon-dev.ico`
+- `launcher-dev.pyw`
 
-You can also use the `main.py` file from the `1-release` folder as your `base.py` if you rename it.
+If any of these files are missing, please download them directly from the repository.
 
-### Edit build.nsi File
+You will use the `main.py` from the `1-stable` folder if you are building the Stable Channel Launcher, or the `dev.py` file from the `2-dev` folder as your bundled version in the launcher you are building.
 
-Open the `build.nsi` file in a text editor and replace the placeholders `<TYPE THE ICON.ICO PATH HERE>`, `<TYPE THE LAUNCHER.PYW PATH HERE>` and `<TYPE THE BASE.PY PATH HERE>` with the actual paths to your `icon.ico`, `launcher.pyw` and `base.py` files, respectively. Save the changes.
+### Edit .nsi File
+
+Open the `build.nsi` or `build-dev.nsi` file in a text editor and replace the placeholders `<TYPE THE XXXX PATH HERE>` with the actual paths to your files, respectively. Save the changes.
 
 ### Compile the Installer
 
 1. Open NSIS.
-2. Select the option "Compile NSIS Scripts".
-3. Drag and drop the `build.nsi` file you just edited into the NSIS window.
-4. An installer for SSTools4MC will be created.
+2. Select the option "Compile NSI Scripts".
+3. Drag and drop the file you just edited into the NSIS window.
+4. An installer for your desired SSTools4MC release channel will be created.
 5. Enjoy!
 
 ## Copyright and Disclaimer
@@ -124,7 +129,7 @@ All Oracle-related elements and names are used in compliance with the [Oracle Te
 
 So many thanks to [@naicoooossj](https://github.com/naicoooossj) and [@LegalizeNuclearBombs](https://steamcommunity.com/id/LegalizeNucelarBombs/) :shipit: for testing and giving new ideas to this project.
 
-Credits to [Alfredo Creates on Flaticon for creating the icon used in SSTools4MC](https://www.flaticon.es/icono-gratis/juegos_10125663?term=minecraft&page=1&position=77&origin=tag&related_id=10125663) - Licensed under [CC 3.0 BY](https://creativecommons.org/licenses/by/3.0/)
+Credits to Alfredo Creates on Flaticon for creating the icons used in SSTools4MC: [(1)](https://www.flaticon.es/icono-gratis/juegos_10125663?term=minecraft&page=1&position=77&origin=tag&related_id=10125663) and [(2)](https://www.flaticon.es/icono-gratis/juego_10125654?related_id=10125654&origin=pack)- Both licensed under [CC 3.0 BY](https://creativecommons.org/licenses/by/3.0/)
 
 Thank you for using SSTools4MC!
 
