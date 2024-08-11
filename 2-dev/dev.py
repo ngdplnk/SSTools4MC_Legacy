@@ -2,19 +2,18 @@
 ####  DEVELOPED BY: NGDPLNK  ####
 #################################
 ####      PROGRAM INFO       ####
-SSVERSION = 'v24.08.10.InternalTesting-1-dev'
+SSVERSION = 'v24.08.10-B-dev'
 CHANNEL = 'dev'
 YEAR = '2024'
-CHANGELOG_ENG = 'ADDED SUPPORT FOR MANY MORE VERSIONS'
-CHANGELOG_SPA = 'SE AÑADE SOPORTE PARA MUCHAS MÁS VERSIONES'
-HELPERS = 'Helpers:\n@naicoooossj\n@LegalizeNuclearBombs'
+CHANGELOG_ENG = 'Fixed bugs with server list - Thanks to @LegalizeNuclearBombs for the help :)'
+CHANGELOG_SPA = 'Se solucionaron errores con la lista de servidores - Gracias a @LegalizeNuclearBombs por la ayuda :)'
+HELPERS = 'Helpers:\n@LegalizeNuclearBombs\n@naicoooossj'
 #################################
 
-### THINGS TO DO/FIX - UPDATED: 11/08/2024 ###
-# - Test if old versions work properly.
-# - Fix bug with duplicated servers on the list.
-# - Fix server list not showing expected colors for the servers.
-# - Improve server.jar verification before adding it to the list.
+### THINGS TO DO/FIX - UPDATED: 10/08/2024 ###
+# - [Pending] Test if old server versions work properly.
+# - [Pending] Add more languages.
+##############################################
 
 # MODULES
 import os
@@ -39,10 +38,13 @@ SSTOOLS_FOLDER = os.path.join(APPDATA, "SSTools4MC") # type: ignore
 CONFIG_PATH = os.path.join(SSTOOLS_FOLDER, "config")
 SAVED_SERVERS = os.path.join(CONFIG_PATH, "saved-servers.cfg")
 
-# CHECK RELEASE CHANNEL
+# CHECK RELEASE TYPE
 if CHANNEL == 'dev':
     ICON_PATH = os.path.join(SSTOOLS_FOLDER, "assets", "icon-dev.ico")
-    SSTITLE = "SSTools4MC Internal Testing by LegalizeNuclearBombs"
+    SSTITLE = "SSTools4MC (DEV)"
+if CHANNEL == 'internal-testing':
+    ICON_PATH = os.path.join(SSTOOLS_FOLDER, "assets", "icon-dev.ico")
+    SSTITLE = "SSTools4MC (INTERNAL TESTING)"
 else:
     ICON_PATH = os.path.join(SSTOOLS_FOLDER, "assets", "icon.ico")
     SSTITLE = "SSTools4MC"
