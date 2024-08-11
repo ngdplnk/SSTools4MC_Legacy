@@ -2,13 +2,19 @@
 ####  DEVELOPED BY: NGDPLNK  ####
 #################################
 ####      PROGRAM INFO       ####
-SSVERSION = 'v24.08.10-dev'
+SSVERSION = 'v24.08.10.InternalTesting-1-dev'
 CHANNEL = 'dev'
 YEAR = '2024'
 CHANGELOG_ENG = 'ADDED SUPPORT FOR MANY MORE VERSIONS'
 CHANGELOG_SPA = 'SE AÑADE SOPORTE PARA MUCHAS MÁS VERSIONES'
 HELPERS = 'Helpers:\n@naicoooossj\n@LegalizeNuclearBombs'
 #################################
+
+### THINGS TO DO/FIX - UPDATED: 11/08/2024 ###
+# - Test if old versions work properly.
+# - Fix bug with duplicated servers on the list.
+# - Fix server list not showing expected colors for the servers.
+# - Improve server.jar verification before adding it to the list.
 
 # MODULES
 import os
@@ -36,7 +42,7 @@ SAVED_SERVERS = os.path.join(CONFIG_PATH, "saved-servers.cfg")
 # CHECK RELEASE CHANNEL
 if CHANNEL == 'dev':
     ICON_PATH = os.path.join(SSTOOLS_FOLDER, "assets", "icon-dev.ico")
-    SSTITLE = "SSTools4MC Dev Channel"
+    SSTITLE = "SSTools4MC Internal Testing by LegalizeNuclearBombs"
 else:
     ICON_PATH = os.path.join(SSTOOLS_FOLDER, "assets", "icon.ico")
     SSTITLE = "SSTools4MC"
@@ -877,21 +883,26 @@ def eng():
                         newserv = filedialog.askdirectory()
                         front()
                         servname = os.path.basename(newserv)
+                        server_jar_path = os.path.join(newserv, "server.jar")
                         if newserv == "" or servname == "":
+                            newserv = False
+                            servname = False
+                        if newserv and servname and os.path.isfile(server_jar_path):
+                            servname = colored(servname, "yellow")
+                            with open(SAVED_SERVERS, 'r') as file:
+                                lines = file.readlines()
+                                servstring = f"{servname}<[=]>{newserv}\n"
+                                if servstring not in lines:
+                                    os.makedirs(CONFIG_PATH, exist_ok=True)
+                                    with open(SAVED_SERVERS, 'r+') as file:
+                                        file.write(servstring)
+                        else:
                             cls()
-                            window_title(f'{SSTITLE} - You must select a folder')
+                            window_title(f'{SSTITLE} - You must select a valid server folder')
                             day = getdate()
-                            print(f'{SSTITLE} - {day}\n--------------------------\n\nYou must select a folder to save it in "Your Servers" List.')
+                            print(f'{SSTITLE} - {day}\n--------------------------\n\nYou must select a valid server folder to save it in "Your Servers" List.')
                             time.sleep(2.5)
                             ram()
-                        if newserv and servname:
-                            servname = colored(os.path.basename(newserv), "yellow")
-                            servstring = f"{servname}<[=]>{newserv}\n"
-                            os.makedirs(CONFIG_PATH, exist_ok=True)
-                            with open(SAVED_SERVERS, 'r+') as file:
-                                lines = file.readlines()
-                                if servstring not in lines:
-                                    file.write(servstring)
                         cls()
                         window_title(f'{SSTITLE} - Server saved')
                         day = getdate()
@@ -1016,21 +1027,32 @@ def eng():
                         newserv = filedialog.askdirectory()
                         front()
                         servname = os.path.basename(newserv)
+                        server_jar_path = os.path.join(newserv, "server.jar")
                         if newserv == "" or servname == "":
+                            newserv = False
+                            servname = False
+                        if newserv and servname and os.path.isfile(server_jar_path):
+                            servname = colored(servname, "yellow")
+                            with open(SAVED_SERVERS, 'r') as file:
+                                lines = file.readlines()
+                                servstring = f"{servname}<[=]>{newserv}\n"
+                                if servstring not in lines:
+                                    os.makedirs(CONFIG_PATH, exist_ok=True)
+                                    with open(SAVED_SERVERS, 'r+') as file:
+                                        file.write(servstring)
+                        else:
                             cls()
-                            window_title(f'{SSTITLE} - You must select a folder')
+                            window_title(f'{SSTITLE} - You must select a valid server folder')
                             day = getdate()
-                            print(f'{SSTITLE} - {day}\n--------------------------\n\nYou must select a folder to save it in "Your Servers" List.')
+                            print(f'{SSTITLE} - {day}\n--------------------------\n\nYou must select a valid server folder to save it in "Your Servers" List.')
                             time.sleep(2.5)
                             ram()
-                        if newserv and servname:
-                            servname = colored(os.path.basename(newserv), "yellow")
-                            servstring = f"{servname}<[=]>{newserv}\n"
-                            os.makedirs(CONFIG_PATH, exist_ok=True)
-                            with open(SAVED_SERVERS, 'r+') as file:
-                                lines = file.readlines()
-                                if servstring not in lines:
-                                    file.write(servstring)
+                        cls()
+                        window_title(f'{SSTITLE} - Server saved')
+                        day = getdate()
+                        print(f'{SSTITLE} - {day}\n--------------------------\n\nThe server "{servname}" has been saved.')
+                        time.sleep(1.5)
+                        ram()
                         cls()
                         window_title(f'{SSTITLE} - Server saved')
                         day = getdate()
@@ -1054,20 +1076,32 @@ def eng():
             newserv = filedialog.askdirectory()
             front()
             servname = os.path.basename(newserv)
+            server_jar_path = os.path.join(newserv, "server.jar")
             if newserv == "" or servname == "":
+                newserv = False
+                servname = False
+            if newserv and servname and os.path.isfile(server_jar_path):
+                servname = colored(servname, "yellow")
+                with open(SAVED_SERVERS, 'r') as file:
+                    lines = file.readlines()
+                    servstring = f"{servname}<[=]>{newserv}\n"
+                    if servstring not in lines:
+                        os.makedirs(CONFIG_PATH, exist_ok=True)
+                        with open(SAVED_SERVERS, 'r+') as file:
+                            file.write(servstring)
+            else:
                 cls()
-                window_title(f'{SSTITLE} - You must select a folder')
+                window_title(f'{SSTITLE} - You must select a valid server folder')
                 day = getdate()
-                print(f'{SSTITLE} - {day}\n--------------------------\n\nYou must select a folder to save it in "Your Servers" List.')
+                print(f'{SSTITLE} - {day}\n--------------------------\n\nYou must select a valid server folder to save it in "Your Servers" List.')
                 time.sleep(2.5)
                 ram()
-            if newserv and servname:
-                servname = colored(os.path.basename(newserv), "yellow")
-                servstring = f"{servname}<[=]>{newserv}\n"
-                with open(SAVED_SERVERS, 'r+') as file:
-                    lines = file.readlines()
-                    if servstring not in lines:
-                        file.write(servstring)
+            cls()
+            window_title(f'{SSTITLE} - Server saved')
+            day = getdate()
+            print(f'{SSTITLE} - {day}\n--------------------------\n\nThe server "{servname}" has been saved.')
+            time.sleep(1.5)
+            ram()
             cls()
             window_title(f'{SSTITLE} - Server saved')
             day = getdate()
@@ -1533,7 +1567,7 @@ def eng():
                     global foldname
                     newserver = filedialog.askdirectory()
                     front()
-                    foldname = colored(os.path.basename(newserver), "green")
+                    foldname = colored(os.path.basename(newserver), "yellow")
                     if newserver == "" or foldname == "":
                         cls()
                         window_title(f'{SSTITLE} - You must select a folder')
@@ -1803,25 +1837,30 @@ def esp():
                         newserv = filedialog.askdirectory()
                         front()
                         servname = os.path.basename(newserv)
+                        server_jar_path = os.path.join(newserv, "server.jar")
                         if newserv == "" or servname == "":
+                            newserv = False
+                            servname = False
+                        if newserv and servname and os.path.isfile(server_jar_path):
+                            servname = colored(servname, "yellow")
+                            with open(SAVED_SERVERS, 'r') as file:
+                                lines = file.readlines()
+                                servstring = f"{servname}<[=]>{newserv}\n"
+                                if servstring not in lines:
+                                    os.makedirs(CONFIG_PATH, exist_ok=True)
+                                    with open(SAVED_SERVERS, 'r+') as file:
+                                        file.write(servstring)
+                        else:
                             cls()
-                            window_title(f'{SSTITLE} - Debes seleccionar una carpeta')
+                            window_title(f'{SSTITLE} - Debes seleccionar una carpeta válida con un servidor')
                             day = getdate()
-                            print(f'{SSTITLE} - {day}\n--------------------------\n\nDebes seleccionar una carpeta para guardarla en la Lista "Tus Servidores".')
+                            print(f'{SSTITLE} - {day}\n--------------------------\n\nDebes seleccionar una carpeta válida con un servidor para guardarla en la Lista "Tus Servidores".')
                             time.sleep(2.5)
                             ram()
-                        if newserv and servname:
-                            servname = colored(os.path.basename(newserv), "yellow")
-                            servstring = f"{servname}<[=]>{newserv}\n"
-                            os.makedirs(CONFIG_PATH, exist_ok=True)
-                            with open(SAVED_SERVERS, 'r+') as file:
-                                lines = file.readlines()
-                                if servstring not in lines:
-                                    file.write(servstring)
                         cls()
                         window_title(f'{SSTITLE} - Servidor guardado')
                         day = getdate()
-                        print(f'{SSTITLE} - {day}\n--------------------------\n\nEl Servidor "{servname}" ha sido guardado.')
+                        print(f'{SSTITLE} - {day}\n--------------------------\n\nEl servidor "{servname}" ha sido guardado.')
                         time.sleep(1.5)
                         ram()
                     elif servsel.lower() == "d":
@@ -1941,21 +1980,26 @@ def esp():
                         newserv = filedialog.askdirectory()
                         front()
                         servname = os.path.basename(newserv)
+                        server_jar_path = os.path.join(newserv, "server.jar")
                         if newserv == "" or servname == "":
+                            newserv = False
+                            servname = False
+                        if newserv and servname and os.path.isfile(server_jar_path):
+                            servname = colored(servname, "yellow")
+                            with open(SAVED_SERVERS, 'r') as file:
+                                lines = file.readlines()
+                                servstring = f"{servname}<[=]>{newserv}\n"
+                                if servstring not in lines:
+                                    os.makedirs(CONFIG_PATH, exist_ok=True)
+                                    with open(SAVED_SERVERS, 'r+') as file:
+                                        file.write(servstring)
+                        else:
                             cls()
-                            window_title(f'{SSTITLE} - Debes seleccionar una carpeta')
+                            window_title(f'{SSTITLE} - Debes seleccionar una carpeta válida con un servidor')
                             day = getdate()
-                            print(f'{SSTITLE} - {day}\n--------------------------\n\nDebes elegir una carpeta para guardarla en la Lista "Tus Servidores".')
+                            print(f'{SSTITLE} - {day}\n--------------------------\n\nDebes seleccionar una carpeta válida con un servidor para guardarla en la Lista "Tus Servidores".')
                             time.sleep(2.5)
                             ram()
-                        if newserv and servname:
-                            servname = colored(os.path.basename(newserv), "yellow")
-                            servstring = f"{servname}<[=]>{newserv}\n"
-                            os.makedirs(CONFIG_PATH, exist_ok=True)
-                            with open(SAVED_SERVERS, 'r+') as file:
-                                lines = file.readlines()
-                                if servstring not in lines:
-                                    file.write(servstring)
                         cls()
                         window_title(f'{SSTITLE} - Servidor guardado')
                         day = getdate()
@@ -1979,20 +2023,26 @@ def esp():
             newserv = filedialog.askdirectory()
             front()
             servname = os.path.basename(newserv)
+            server_jar_path = os.path.join(newserv, "server.jar")
             if newserv == "" or servname == "":
+                newserv = False
+                servname = False
+            if newserv and servname and os.path.isfile(server_jar_path):
+                servname = colored(servname, "yellow")
+                with open(SAVED_SERVERS, 'r') as file:
+                    lines = file.readlines()
+                    servstring = f"{servname}<[=]>{newserv}\n"
+                    if servstring not in lines:
+                        os.makedirs(CONFIG_PATH, exist_ok=True)
+                        with open(SAVED_SERVERS, 'r+') as file:
+                            file.write(servstring)
+            else:
                 cls()
-                window_title(f'{SSTITLE} - Debes seleccionar una carpeta')
+                window_title(f'{SSTITLE} - Debes seleccionar una carpeta válida con un servidor')
                 day = getdate()
-                print(f'{SSTITLE} - {day}\n--------------------------\n\nDebes elegir una carpeta para guardarla en la Lista "Tus Servidores".')
+                print(f'{SSTITLE} - {day}\n--------------------------\n\nDebes seleccionar una carpeta válida con un servidor para guardarla en la Lista "Tus Servidores".')
                 time.sleep(2.5)
                 ram()
-            if newserv and servname:
-                servname = colored(os.path.basename(newserv), "yellow")
-                servstring = f"{servname}<[=]>{newserv}\n"
-                with open(SAVED_SERVERS, 'r+') as file:
-                    lines = file.readlines()
-                    if servstring not in lines:
-                        file.write(servstring)
             cls()
             window_title(f'{SSTITLE} - Servidor guardado')
             day = getdate()
@@ -2458,7 +2508,7 @@ def esp():
                     global foldname
                     newserver = filedialog.askdirectory()
                     front()
-                    foldname = colored(os.path.basename(newserver), "green")
+                    foldname = colored(os.path.basename(newserver), "yellow")
                     if newserver == "" or foldname == "":
                         cls()
                         window_title(f'{SSTITLE} - Debes seleccionar una carpeta')
