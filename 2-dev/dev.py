@@ -2,17 +2,27 @@
 ####  DEVELOPED BY: NGDPLNK  ####
 #################################
 ####      PROGRAM INFO       ####
-SSVERSION = 'v24.09.05-dev'
+SSVERSION = 'v24.09.06-dev'
 CHANNEL = 'dev'
 YEAR = '2024'
-CHANGELOG_ENG = 'Added support for 24w36a'
-CHANGELOG_SPA = 'Soporte añadido para 24w36a'
+CHANGELOG_ENG = 'Added support for Combat Test versions'
+CHANGELOG_SPA = 'Soporte añadido para versiones Combat Test'
 HELPERS = 'Helpers:\n@LegalizeNuclearBombs\n@naicoooossj'
 #################################
 ### THINGS TO DO/FIX - UPDATED: 10/08/2024 ###
 # - [Pending] Test if old server versions work properly.
 # - [Pending] Add more languages.
+# - [Pending] Add support for detailed logs.
+# - [Pending] Add a custom server.properties file for every version in order to avoid errors on old builds of Minecraft.
 #################################
+### DEVELOPER NOTES ###
+# - I'm currently testing if old versions of Minecraft work properly.
+# - If they aren't working properly, I'll remove them from the program.
+# - Also, I'm planning to remove the download of server.properties file and instead make the program able to add a new file corresponding to the needs of every version.
+# - Something that I'm planning to add is the support for detailed logs to help me debug the program.
+#################################
+
+#### PROGRAM ####
 
 # MODULES
 import os
@@ -782,8 +792,22 @@ MC_APRILS = {
     "24w14potato-reupload": "https://piston-data.mojang.com/v1/objects/2d29eee4f5a71f323d20b36d623e2ec21dab74f7/server.jar"
 }
 
-## 50 OLD VERSIONS ADDED (c1.4-reupload - b1.8.1)
-# LAST UPDATED: 10/08/2024
+## 9 COMBAT TEST VERSIONS ADDED (1.14.3 Combat Test - Combat Test 8c)
+# LAST UPDATED: 06/09/2024
+MC_COMBAT = {
+    "1.14.3 Combat Test": "https://piston-data.mojang.com/v1/objects/168ae89abc66fd4ee2d84c844cd980ddae26e784/server.jar",
+    "Combat Test 2": "https://piston-data.mojang.com/v1/objects/dbed2de0763a834bfaa851c0478c56aeee654010/server.jar",
+    "Combat Test 3": "https://piston-data.mojang.com/v1/objects/8f8ff833e6c775286a54935dad282f8499578f9a/server.jar",
+    "Combat Test 4": "https://piston-data.mojang.com/v1/objects/4914bb3f9ae37dabdcbd68aa05eda1783f605336/server.jar",
+    "Combat Test 5": "https://piston-data.mojang.com/v1/objects/0cc9a1582949297c8f1ca83b937c8d84ad295ffe/server.jar",
+    "Combat Test 6": "https://piston-data.mojang.com/v1/objects/1c35c493ade7a39e2d02bcc326498aaab96f1a09/server.jar",
+    "Combat Test 7c": "https://piston-data.mojang.com/v1/objects/53c43fdae7d2ed01bbb31a82d99e31b9348e2a4b/server.jar",
+    "Combat Test 8b": "https://piston-data.mojang.com/v1/objects/635866257b4fc1ade528db8bd53ebbebb4816e5e/server.jar",
+    "Combat Test 8c": "https://piston-data.mojang.com/v1/objects/b707c44ac1503ad179fde86c78d41aa4d0cc78a5/server.jar"
+}
+
+## 51 OLD VERSIONS ADDED (c1.4-reupload - b1.8.1)
+# LAST UPDATED: 06/09/2024
 MC_OLD = {
     "c1.4-reupload": "https://files.betacraft.uk/server-archive/classic/c1.4-1422.jar",
     "c1.10": "https://files.betacraft.uk/server-archive/classic/c1.10.jar",
@@ -822,8 +846,9 @@ MC_OLD = {
     "b1.5": "https://files.betacraft.uk/server-archive/beta/b1.5.jar",
     "b1.5_01": "https://files.betacraft.uk/server-archive/beta/b1.5_01.jar",
     "b1.5_02": "https://files.betacraft.uk/server-archive/beta/b1.5_02.jar",
+    "b1.6_test_build_3": "https://files.betacraft.uk/server-archive/beta/prerelease/b1.6-tb3.jar",
+    "b1.6_preview": "https://files.betacraft.uk/server-archive/beta/prerelease/b1.6-pre-trailer.jar",
     "b1.6": "https://files.betacraft.uk/server-archive/beta/b1.6.jar",
-    "b1.6-pre-trailer": "https://files.betacraft.uk/server-archive/beta/prerelease/b1.6-pre-trailer.jar",
     "b1.6.1": "https://files.betacraft.uk/server-archive/beta/b1.6.1.jar",
     "b1.6.2": "https://files.betacraft.uk/server-archive/beta/b1.6.2.jar",
     "b1.6.3": "https://files.betacraft.uk/server-archive/beta/b1.6.3.jar",
@@ -1600,6 +1625,8 @@ def eng():
                                         url = MC_SNAPSHOT[version]
                                     elif type == "aprils":
                                         url = MC_APRILS[version]
+                                    elif type == "combat":
+                                        url = MC_COMBAT[version]
                                     elif type == "old":
                                         url = MC_OLD[version]
                                     else:
@@ -1683,6 +1710,10 @@ def eng():
                                         for i, version in enumerate(MC_APRILS, start=1):
                                             print(f"(-) {version}")
                                         print('')
+                                        print("COMBAT TEST VERSIONS:")
+                                        for i, version in enumerate(MC_COMBAT, start=1):
+                                            print(f"(-) {version}")
+                                        print('')
                                         print("OLD VERSIONS:")
                                         for i, version in enumerate(MC_OLD, start=1):
                                             print(f"(-) {version}")
@@ -1698,6 +1729,8 @@ def eng():
                                                 servdownload(listselection,"snapshot")
                                             elif listselection.lower() in MC_APRILS.keys():
                                                 servdownload(listselection,"aprils")
+                                            elif listselection.lower() in MC_COMBAT.keys():
+                                                servdownload(listselection,"combat")
                                             elif listselection.lower() in MC_OLD.keys():
                                                 servdownload(listselection,"old")
                                             else:
@@ -1711,6 +1744,8 @@ def eng():
                                     servdownload(verss,"snapshot")
                                 elif verss.lower() in MC_APRILS.keys():
                                     servdownload(verss,"aprils")
+                                elif verss.lower() in MC_COMBAT.keys():
+                                    servdownload(verss,"combat")
                                 elif verss.lower() in MC_OLD.keys():
                                     servdownload(verss,"old")
                                 else:
@@ -2541,6 +2576,8 @@ def esp():
                                         url = MC_SNAPSHOT[version]
                                     elif type == "aprils":
                                         url = MC_APRILS[version]
+                                    elif type == "combat":
+                                        url = MC_COMBAT[version]
                                     elif type == "old":
                                         url = MC_OLD[version]
                                     else:
@@ -2624,6 +2661,10 @@ def esp():
                                         for i, version in enumerate(MC_APRILS, start=1):
                                             print(f"(-) {version}")
                                         print('')
+                                        print("VERSIONES COMBAT TEST:")
+                                        for i, version in enumerate(MC_COMBAT, start=1):
+                                            print(f"(-) {version}")
+                                        print('')
                                         print("VERSIONES ANTIGUAS:")
                                         for i, version in enumerate(MC_OLD, start=1):
                                             print(f"(-) {version}")
@@ -2639,6 +2680,8 @@ def esp():
                                                 servdownload(listselection,"snapshot")
                                             elif listselection.lower() in MC_APRILS.keys():
                                                 servdownload(listselection,"aprils")
+                                            elif listselection.lower() in MC_COMBAT.keys():
+                                                servdownload(listselection,"combat")
                                             elif listselection.lower() in MC_OLD.keys():
                                                 servdownload(listselection,"old")
                                             else:
@@ -2652,6 +2695,8 @@ def esp():
                                     servdownload(verss,"snapshot")
                                 elif verss.lower() in MC_APRILS.keys():
                                     servdownload(verss,"aprils")
+                                elif verss.lower() in MC_COMBAT.keys():
+                                    servdownload(verss,"combat")
                                 elif verss.lower() in MC_OLD.keys():
                                     servdownload(verss,"old")
                                 else:
@@ -2773,3 +2818,5 @@ def startup():
 # RUN TOOL
 window_title(f'{SSTITLE} is starting...')
 startup()
+
+#### END OF PROGRAM ####
