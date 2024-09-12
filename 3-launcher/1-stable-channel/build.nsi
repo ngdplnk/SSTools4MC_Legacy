@@ -7,13 +7,13 @@
 
 ############################################################
 
-Caption "SSTools4MC Launcher v1.3 Installer"
+Caption "SSTools4MC Launcher v1.4 Installer"
 UninstallCaption "SSTools4MC Uninstaller"
-!define APP_VERSION "1.3"
-!define PRODUCT_VERSION "1.3.0.0"
+!define APP_VERSION "1.4"
+!define PRODUCT_VERSION "1.4.0.0"
 !define APP_EDITOR "ngdplnk"
 
-Outfile "SSTools4MC_Launcher_v1.3_Setup.exe"
+Outfile "SSTools4MC_Launcher_v1.4_Setup.exe"
 SetCompressor /SOLID lzma
 Icon "${ICON_PATH}"
 
