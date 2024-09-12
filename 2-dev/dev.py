@@ -2,11 +2,11 @@
 ####  DEVELOPED BY: NGDPLNK  ####
 #################################
 ####      PROGRAM INFO       ####
-SSVERSION = 'v24.09.12E-dev'
+SSVERSION = 'v24.09.12F-dev'
 CHANNEL = 'dev'
 YEAR = '2024'
-CHANGELOG_ENG = '- [HOTFIX] Fixed log file creation (again).'
-CHANGELOG_SPA = '- [HOTFIX] Creación del archivo log solucionado (otra vez).'
+CHANGELOG_ENG = '- SSTools4MC Launcher v1.4 Released!'
+CHANGELOG_SPA = '- Se lanzó SSTools4MC Launcher v1.4!'
 HELPERS = 'Helpers:\n@LegalizeNuclearBombs\n@naicoooossj'
 NEEDED_MODULES = {
     # 'Module': 'Function (if needed)'

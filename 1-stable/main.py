@@ -2,11 +2,11 @@
 ####  DEVELOPED BY: NGDPLNK  ####
 #################################
 ####      PROGRAM INFO       ####
-SSVERSION = 'v24.09.12B'
+SSVERSION = 'v24.09.12F'
 CHANNEL = 'stable'
 YEAR = '2024'
-CHANGELOG_ENG = '- Added support for Combat Test versions\n- Changed minimum ammount of RAM to 1GB/1024MB\n- Added new module import logic\n- Added logging system logic'
-CHANGELOG_SPA = '- Soporte para versiones Combat Test añadido\n- Se cambia la cantidad mínima de RAM a 1GB/1024MB\n- Se añade nueva lógica de importación de módulos\n- Se añade lógica de sistema de logs'
+CHANGELOG_ENG = '- SSTools4MC Launcher v1.4 Released!'
+CHANGELOG_SPA = '- Se lanzó SSTools4MC Launcher v1.4!'
 HELPERS = 'Helpers:\n@LegalizeNuclearBombs\n@naicoooossj'
 NEEDED_MODULES = {
     # 'Module': 'Function (if needed)'
