@@ -10,7 +10,7 @@ SSTools4MC is a set of tools designed to assist you hosting your own dedicated M
 - [Getting Started](#getting-started)
 - [Installation](#installation)
   - [Minimum Requirements](#minimum-requirements)
-  - [Python Installation and Required Modules](#python-installation-and-required-modules)
+  - [Python Installation](#python-installation)
   - [Java Installation](#java-installation)
 - [Build SSTools4MC Installer by yourself](#build-sstools4mc-installer-by-yourself)
   - [Clone this Repository](#clone-this-repository)
@@ -36,24 +36,21 @@ To get started with SSTools4MC, follow these steps:
 - Disk Space: Varies depending on the server.
 - Python: 3.9 or newer.
 
-### Python Installation and Required Modules
+### Python Installation
 1. Download and install Python 3.9 or newer from the [official Python website](https://www.python.org/downloads/). When installing Python, be sure to select the "Add Python to PATH" option.
-2. After you successfully installed Python with this option, open a command prompt, powershell or terminal with administrator privileges.
-3. Install the required Python modules by running the following commands:
-    ```bash
-    pip install requests
-    pip install termcolor
-    ```
+2. Done!
+
+Python is necessary to run the program.
 
 ### Java Installation
-1. Download the Java 22 installer from the [official Oracle website](https://www.oracle.com/cl/java/technologies/downloads/#jdk22-windows).
-2. Run the installer and follow the on-screen instructions to install Java 22.
+1. Download the latest Java version installer from the [official Oracle website](https://www.oracle.com/cl/java/technologies/downloads/).
+2. Run the installer and follow the on-screen instructions to install Java.
 3. Verify the installation by opening a command prompt, powershell or terminal and running:
     ```bash
     java -version
     ```
 
-If Java 22 is correctly installed, the command should display the installed Java version.
+If Java is correctly installed, the command should display the installed Java version.
 
 Java is necessary to your machine to be able to run your Minecraft servers.
 
