@@ -2,11 +2,11 @@
 ####  DEVELOPED BY: NGDPLNK  ####
 #################################
 ####      PROGRAM INFO       ####
-SSVERSION = 'v24.09.12B-dev'
+SSVERSION = 'v24.09.12C-dev'
 CHANNEL = 'dev'
 YEAR = '2024'
-CHANGELOG_ENG = '- Changed minimum RAM ammount to 1GB/1024MB.\n- Added new module import logic.'
-CHANGELOG_SPA = '- Se cambia la cantidad mínima de RAM a 1GB/1024MB.\n- Se añade una nueva lógica de importación de módulos.'
+CHANGELOG_ENG = '- Added logging system logic.'
+CHANGELOG_SPA = '- Lógica de logging añadida.'
 HELPERS = 'Helpers:\n@LegalizeNuclearBombs\n@naicoooossj'
 NEEDED_MODULES = {
     # 'Module': 'Function (if needed)'
@@ -19,6 +19,7 @@ NEEDED_MODULES = {
 ## 92 STABLE VERSIONS ADDED (1.0.0-tominecon - 1.21.1)
 # LAST UPDATED: 10/08/2024
 MC_STABLE = {
+    # "Version name": "Download link"
     "1.0.0-tominecon": "https://vault.omniarchive.uk/archive/java/misc/1.0.0-tominecon-server.jar",
     "1.0.0": "https://files.betacraft.uk/server-archive/release/1.0/1.0.0.jar",
     "1.0.1": "https://files.betacraft.uk/server-archive/release/1.0/1.0.1.jar",
@@ -117,6 +118,7 @@ MC_STABLE = {
 ## 612 SNAPSHOT VERSIONS ADDED (1.3 - 24w37a)
 # LAST UPDATED: 12/09/2024
 MC_SNAPSHOT = {
+    # "Version name": "Download link"
     "1.3": "https://piston-data.mojang.com/v1/objects/cb21a9aaaf599c94dd7fa1b777b2f0cc37a776c7/server.jar",
     "1.4": "https://piston-data.mojang.com/v1/objects/9470a2bb0fcb8a426328441a01dba164fbbe52c9/server.jar",
     "1.4.1": "https://piston-data.mojang.com/v1/objects/baa4e4a7adc3dc9fbfc5ea36f0777b68c9eb7f4a/server.jar",
@@ -735,6 +737,7 @@ MC_SNAPSHOT = {
 ## 12 APRIL'S FOOLS VERSIONS ADDED (2.0-blue - 24w14potato-reupload)
 # LAST UPDATED: 10/08/2024
 MC_APRILS = {
+    # "Version name": "Download link"
     "2.0-blue": "https://archive.org/download/2point-0-blue/2point0_blue_server.jar",
     "2.0-red": "https://archive.org/download/2point-0-red/2point0_red_server.jar",
     "2.0-purple": "https://archive.org/download/2point-0-purple/2point0_purple_server.jar",
@@ -752,6 +755,7 @@ MC_APRILS = {
 ## 9 COMBAT TEST VERSIONS ADDED (1.14.3 Combat Test - Combat Test 8c)
 # LAST UPDATED: 06/09/2024
 MC_COMBAT = {
+    # "Version name": "Download link"
     "1.14.3 Combat Test": "https://piston-data.mojang.com/v1/objects/168ae89abc66fd4ee2d84c844cd980ddae26e784/server.jar",
     "Combat Test 2": "https://piston-data.mojang.com/v1/objects/dbed2de0763a834bfaa851c0478c56aeee654010/server.jar",
     "Combat Test 3": "https://piston-data.mojang.com/v1/objects/8f8ff833e6c775286a54935dad282f8499578f9a/server.jar",
@@ -766,6 +770,7 @@ MC_COMBAT = {
 ## 51 OLD VERSIONS ADDED (c1.4-reupload - b1.8.1)
 # LAST UPDATED: 06/09/2024
 MC_OLD = {
+    # "Version name": "Download link"
     "c1.4-reupload": "https://files.betacraft.uk/server-archive/classic/c1.4-1422.jar",
     "c1.10": "https://files.betacraft.uk/server-archive/classic/c1.10.jar",
     "a0.1.0": "https://files.betacraft.uk/server-archive/alpha/a0.1.0.jar",
@@ -820,62 +825,90 @@ MC_OLD = {
     "b1.8.1": "https://files.betacraft.uk/server-archive/beta/b1.8.1.jar"
 }
 #################################
-### THINGS TO DO/FIX - UPDATED: 10/08/2024 ###
+### THINGS TO DO/FIX - UPDATED: 12/09/2024 ###
+# - [WIP] Add support for detailed logs.
 # - [Pending] Test if old server versions work properly.
 # - [Pending] Add more languages.
-# - [Pending] Add support for detailed logs.
 # - [Pending] Add a custom server.properties file for every version in order to avoid errors on old builds of Minecraft.
 #################################
 ### DEVELOPER NOTES ###
-# - I'm currently testing if old versions of Minecraft work properly.
-# - If they aren't working properly, I'll remove them from the program.
-# - Also, I'm planning to remove the download of server.properties file and instead make the program able to add a new file corresponding to the needs of every version.
-# - Something that I'm planning to add is the support for detailed logs to help me debug the program.
+# - Logging system needs to be improved.
 #################################
 
 #### PROGRAM ####
 
+# SET-UP LOGGER
+import logging
+import os
+from datetime import datetime
+APPDATA = os.getenv('APPDATA')
+SSTOOLS_FOLDER = os.path.join(APPDATA, "SSTools4MC") # type: ignore
+LOG_PATH = os.path.join(SSTOOLS_FOLDER, "logs")
+logger = logging.getLogger('SSTools4MC') # logger name
+logger.setLevel(logging.DEBUG) # log level
+current_date = datetime.now()
+formatted_date = current_date.strftime('%Y-%m-%d')
+log_file = os.path.join(LOG_PATH, f'{formatted_date}.log') # log file
+if not os.path.exists(log_file):
+    open(log_file, 'w').close() # create log file if it doesn't exist
+file_handler = logging.FileHandler(log_file)
+file_handler.setLevel(logging.DEBUG)
+formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s') # log format
+file_handler.setFormatter(formatter)
+logger.addHandler(file_handler)
+logger.propagate = False # disable console logging
+logger.info('Logging system loaded')
+
 # SYSTEM LANGUAGE
 import locale
-SYSTEM_LANG = str(locale.getlocale()[0])
+SYSTEM_LANG = str(locale.getlocale()[0]) # get system language
+if SYSTEM_LANG.startswith('es') or SYSTEM_LANG.startswith('Spanish'):
+    logger.info('System language: Spanish')
+else:
+    logger.info('System language: English')
 
-# IMPORTS
-import os
+# IMPORTS (INTERNAL)
 import sys
 import time
 import ctypes
-import datetime
 import webbrowser
 import subprocess
 from tkinter import filedialog
 from tkinter import messagebox
 
 # DEFAULTS
+# This variables are setted to None to handle errors
 valor = None
 runn = True
 
 # PATHS
-APPDATA = os.getenv('APPDATA')
-SSTOOLS_FOLDER = os.path.join(APPDATA, "SSTools4MC") # type: ignore
 CONFIG_PATH = os.path.join(SSTOOLS_FOLDER, "config")
 SAVED_SERVERS = os.path.join(CONFIG_PATH, "saved-servers.cfg")
 
 # CHECK RELEASE TYPE
 if CHANNEL == 'dev':
+    # Set dev channel parameters
     ICON_PATH = os.path.join(SSTOOLS_FOLDER, "assets", "icon-dev.ico")
     SSTITLE = "SSTools4MC (DEV)"
+    logger.info('Release type: DEV')
 elif CHANNEL == 'internal-testing':
+    # Set internal testing parameters
     ICON_PATH = os.path.join(SSTOOLS_FOLDER, "assets", "icon-dev.ico")
     SSTITLE = "SSTools4MC (INTERNAL TESTING)"
+    logger.info('Release type: INTERNAL TESTING')
 else:
+    # Set stable channel parameters
     ICON_PATH = os.path.join(SSTOOLS_FOLDER, "assets", "icon.ico")
     SSTITLE = "SSTools4MC"
+    logger.info('Release type: STABLE')
 
 # CHANGE WINDOW TITLE
 def window_title(title):
     os.system(f'title {title}')
+    logger.info(f'Window title changed to: {title}')
 
 # PROGRAM STARTING TITLE
+logger.info(f'{SSTITLE} is starting...')
 if SYSTEM_LANG.startswith('es') or SYSTEM_LANG.startswith('Spanish'):
     window_title(f'{SSTITLE} está iniciando...')
     print(f'{SSTITLE} está iniciando...')
@@ -884,42 +917,49 @@ else:
     print(f'{SSTITLE} is starting...')
 
 # IMPORTS (EXTERNAL)
-for lib, func in NEEDED_MODULES.items():
-    mdl = lib
+for lib, func in NEEDED_MODULES.items(): # try to import needed modules from the dictionary
     try:
-        if func == '':
+        if func == '': # if the function is empty, import the whole module
             exec(f'import {lib}')
-        else:
+            logger.info(f'Module "{lib}" imported successfully')
+        else: # if the function is not empty, import it from the corresponding module
             exec(f'from {lib} import {func}')
-    except ImportError:
+            logger.info(f'Function "{func}" from module "{lib}" imported successfully')
+    except ImportError: # if the module is not found, try to install it
+        logger.warning(f'Module "{lib}" not found. Trying to install it...')
         if SYSTEM_LANG.startswith('es') or SYSTEM_LANG.startswith('Spanish'):
             print(f"- Instalando módulo necesario: {lib}")
         else:
             print(f"- Installing needed module: {lib}")
         try:
             subprocess.check_call([sys.executable, "-m", "pip", "install", lib], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-            if func == '':
+            if func == '': # if the function is empty, import the whole module
+                logger.info(f'Module "{lib}" installed successfully. Importing...')
                 exec(f'import {lib}')
-            else:
+            else: # if the function is not empty, import it from the corresponding module
+                logger.info(f'Module "{lib}" installed successfully. Importing "{func}" function...')
                 exec(f'from {lib} import {func}')
-        except Exception:
+        except Exception: # if the module or function can't be installed or accessed, show an error message and exit the program
+            logger.critical(f'Error with module "{lib}". Please retry or install it manually.')
             if SYSTEM_LANG.startswith('es') or SYSTEM_LANG.startswith('Spanish'):
-                messagebox.showerror("Error", f"No se pudo instalar el módulo '{lib}'. Por favor, reintenta abrir el programa o instálalo manualmente.")
+                messagebox.showerror("Error", f"No se pudo acceder al módulo '{lib}'. Por favor, reintenta abrir el programa o instálalo manualmente.")
             else:
-                messagebox.showerror("Error", f"Couldn't install the '{lib}' module. Please try reopening the program or install it manually.")
+                messagebox.showerror("Error", f"Couldn't access '{lib}' module. Please try reopening the program or install it manually.")
             sys.exit(1)
 
 # CLS
 def cls():
-    os.system('cls')
+    os.system('cls') # clear console
+    logger.info('Console cleared')
 
 # BRING WINDOW TO FRONT
 def front():
-    os.system('echo ShowConsole')
+    os.system('echo ShowConsole') # this command brings the console window to front
+    logger.info('Window brought to front')
 
 # GET DATE
 def getdate():
-    dayy = str(datetime.datetime.now().strftime("%d/%m/%Y"))
+    dayy = str(datetime.now().strftime("%d/%m/%Y")) # get current date to use in titles (day/month/year)
     return dayy
 
 # ENGLISH
@@ -930,19 +970,19 @@ def eng():
         cls()
         sservers = {}
         if os.path.exists(SAVED_SERVERS):
-            with open(SAVED_SERVERS, 'r') as file:
+            with open(SAVED_SERVERS, 'r') as file: # read saved servers file
                 for line in file:
                     line = line.strip()
                     if line and not line.startswith('#'):
                         key, value = line.split('<[=]>')
                         sservers[key.strip()] = value.strip()
-            if sservers:
+            if sservers: # if there are saved servers, show the list
                 cls()
                 window_title(f'{SSTITLE} - "Your Servers" list')
                 day = getdate()
                 print(f'{SSTITLE} - {day}\n--------------------------\n\n"Your Servers" List\n')
                 server_keys = list(sservers.keys())
-                for i, key in enumerate(server_keys, start=1):
+                for i, key in enumerate(server_keys, start=1): # print saved servers from loaded list
                     print(f"({i}) {key}")
                 nserv = colored("Add","cyan") # type: ignore
                 delserv = colored("Delete","red") # type: ignore
@@ -1595,7 +1635,7 @@ def eng():
                             print(f"{SSTITLE} - {day}\n--------------------------\n\nStarting the server with {gbs}{valor} of RAM.\n")
                             comando_java = f"java -Xmx{gbs}{vjava} -Xms{gbs}{vjava} -jar server.jar nogui"
                             subprocess.run(comando_java, shell=True)
-                            fyh_sistema = datetime.datetime.now()
+                            fyh_sistema = datetime.now()
                             fecha_cerrado = str(fyh_sistema.strftime("%d/%m/%Y"))
                             hora_cerrado = str(fyh_sistema.strftime("%H:%M:%S"))
                             input("\nPress ENTER to continue.")
@@ -1851,6 +1891,7 @@ def eng():
         window_title(f'{SSTITLE} - See ya later!')
         print(f"--------------------------------------------\nSee ya later!\nMIT License - Copyright (c) {YEAR} ngdplnk\n--------------------------------------------\n")
         time.sleep(1.2)
+        logger.info("QUITTING PROGRAM...")
         sys.exit()
 
     # MAIN MENU
@@ -2546,7 +2587,7 @@ def esp():
                             print(f"{SSTITLE} - {day}\n--------------------------\n\nIniciando el Servidor con {gbs}{valor} de RAM.\n")
                             comando_java = f"java -Xmx{gbs}{vjava} -Xms{gbs}{vjava} -jar server.jar nogui"
                             subprocess.run(comando_java, shell=True)
-                            fyh_sistema = datetime.datetime.now()
+                            fyh_sistema = datetime.now()
                             fecha_cerrado = str(fyh_sistema.strftime("%d/%m/%Y"))
                             hora_cerrado = str(fyh_sistema.strftime("%H:%M:%S"))
                             input("\nPresiona ENTER para continuar.")
@@ -2802,6 +2843,7 @@ def esp():
         window_title(f'{SSTITLE} - Nos vemos pronto!')
         print(f"--------------------------------------------\nNos vemos pronto!\nMIT License - Copyright (c) {YEAR} ngdplnk\n--------------------------------------------\n")
         time.sleep(1.2)
+        logger.info("QUITTING PROGRAM...")  
         sys.exit()
 
     # MAIN MENU
@@ -2841,13 +2883,15 @@ def esp():
 def startup():
     # ICON
     try:
+        logger.info("Setting up icon...")
         ico = os.path.abspath(ICON_PATH)
         hIcon = ctypes.windll.user32.LoadImageW(
             None, ico, 1, 0, 0, 0x00000010
         )
         hwnd = ctypes.windll.kernel32.GetConsoleWindow()
         ctypes.windll.user32.SendMessageW(hwnd, 0x0080, 0, hIcon)
-    except Exception:
+    except Exception as e:
+        logger.error(f"Error setting up icon: {e}.")
         pass
     if SYSTEM_LANG.startswith("es") or SYSTEM_LANG.startswith("Spanish"):
         esp()
