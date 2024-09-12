@@ -2,11 +2,11 @@
 ####  DEVELOPED BY: NGDPLNK  ####
 #################################
 ####      PROGRAM INFO       ####
-SSVERSION = 'v24.09.12C-dev'
+SSVERSION = 'v24.09.12D-dev'
 CHANNEL = 'dev'
 YEAR = '2024'
-CHANGELOG_ENG = '- Added logging system logic.'
-CHANGELOG_SPA = '- Lógica de logging añadida.'
+CHANGELOG_ENG = '- [HOTFIX] Fixed log file creation.'
+CHANGELOG_SPA = '- [HOTFIX] Creación del archivo log solucionada.'
 HELPERS = 'Helpers:\n@LegalizeNuclearBombs\n@naicoooossj'
 NEEDED_MODULES = {
     # 'Module': 'Function (if needed)'
@@ -850,14 +850,16 @@ current_date = datetime.now()
 formatted_date = current_date.strftime('%Y-%m-%d')
 log_file = os.path.join(LOG_PATH, f'{formatted_date}.log') # log file
 if not os.path.exists(log_file):
-    open(log_file, 'w').close() # create log file if it doesn't exist
+    os.makedirs(LOG_PATH) # create log folder if it doesn't exist
+    with open(log_file, 'w+'):
+        pass # create log file if it doesn't exist
 file_handler = logging.FileHandler(log_file)
 file_handler.setLevel(logging.DEBUG)
-formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s') # log format
+formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s', datefmt='%H:%M:%S') # log format
 file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 logger.propagate = False # disable console logging
-logger.info('Logging system loaded')
+logger.info('LOGGING STARTED...')
 
 # SYSTEM LANGUAGE
 import locale
@@ -2882,17 +2884,17 @@ def esp():
 # STARTUP
 def startup():
     # ICON
-    try:
-        logger.info("Setting up icon...")
-        ico = os.path.abspath(ICON_PATH)
+    logger.info("Setting up icon...")
+    ico = os.path.abspath(ICON_PATH)
+    if not os.path.exists(ico):
+        logger.error("Icon not found")
+    else:
         hIcon = ctypes.windll.user32.LoadImageW(
             None, ico, 1, 0, 0, 0x00000010
         )
         hwnd = ctypes.windll.kernel32.GetConsoleWindow()
         ctypes.windll.user32.SendMessageW(hwnd, 0x0080, 0, hIcon)
-    except Exception as e:
-        logger.error(f"Error setting up icon: {e}.")
-        pass
+    # LANGUAGE
     if SYSTEM_LANG.startswith("es") or SYSTEM_LANG.startswith("Spanish"):
         esp()
     else:
