@@ -2,62 +2,18 @@
 ####  DEVELOPED BY: NGDPLNK  ####
 #################################
 ####      PROGRAM INFO       ####
-SSVERSION = 'v24.09.12-dev'
+SSVERSION = 'v24.09.12B-dev'
 CHANNEL = 'dev'
 YEAR = '2024'
-CHANGELOG_ENG = 'Added support for 24w37a'
-CHANGELOG_SPA = 'Soporte añadido para 24w37a'
+CHANGELOG_ENG = '- Changed minimum RAM ammount to 1GB/1024MB.\n- Added new module import logic.'
+CHANGELOG_SPA = '- Se cambia la cantidad mínima de RAM a 1GB/1024MB.\n- Se añade una nueva lógica de importación de módulos.'
 HELPERS = 'Helpers:\n@LegalizeNuclearBombs\n@naicoooossj'
+NEEDED_MODULES = {
+    # 'Module': 'Function (if needed)'
+    'requests': '',
+    'termcolor': 'colored'
+}
 #################################
-### THINGS TO DO/FIX - UPDATED: 10/08/2024 ###
-# - [Pending] Test if old server versions work properly.
-# - [Pending] Add more languages.
-# - [Pending] Add support for detailed logs.
-# - [Pending] Add a custom server.properties file for every version in order to avoid errors on old builds of Minecraft.
-#################################
-### DEVELOPER NOTES ###
-# - I'm currently testing if old versions of Minecraft work properly.
-# - If they aren't working properly, I'll remove them from the program.
-# - Also, I'm planning to remove the download of server.properties file and instead make the program able to add a new file corresponding to the needs of every version.
-# - Something that I'm planning to add is the support for detailed logs to help me debug the program.
-#################################
-
-#### PROGRAM ####
-
-# MODULES
-import os
-import ctypes
-import time
-import sys
-import subprocess
-import webbrowser
-import datetime
-import locale
-import requests
-from tkinter import filedialog
-from termcolor import colored
-
-# DEFAULTS
-valor = None
-runn = True
-
-# PATHS
-APPDATA = os.getenv('APPDATA')
-SSTOOLS_FOLDER = os.path.join(APPDATA, "SSTools4MC") # type: ignore
-CONFIG_PATH = os.path.join(SSTOOLS_FOLDER, "config")
-SAVED_SERVERS = os.path.join(CONFIG_PATH, "saved-servers.cfg")
-
-# CHECK RELEASE TYPE
-if CHANNEL == 'dev':
-    ICON_PATH = os.path.join(SSTOOLS_FOLDER, "assets", "icon-dev.ico")
-    SSTITLE = "SSTools4MC (DEV)"
-elif CHANNEL == 'internal-testing':
-    ICON_PATH = os.path.join(SSTOOLS_FOLDER, "assets", "icon-dev.ico")
-    SSTITLE = "SSTools4MC (INTERNAL TESTING)"
-else:
-    ICON_PATH = os.path.join(SSTOOLS_FOLDER, "assets", "icon.ico")
-    SSTITLE = "SSTools4MC"
-
 ### MINECRAFT VERSIONS ###
 
 ## 92 STABLE VERSIONS ADDED (1.0.0-tominecon - 1.21.1)
@@ -863,14 +819,99 @@ MC_OLD = {
     "b1.8": "https://files.betacraft.uk/server-archive/beta/b1.8.jar",
     "b1.8.1": "https://files.betacraft.uk/server-archive/beta/b1.8.1.jar"
 }
+#################################
+### THINGS TO DO/FIX - UPDATED: 10/08/2024 ###
+# - [Pending] Test if old server versions work properly.
+# - [Pending] Add more languages.
+# - [Pending] Add support for detailed logs.
+# - [Pending] Add a custom server.properties file for every version in order to avoid errors on old builds of Minecraft.
+#################################
+### DEVELOPER NOTES ###
+# - I'm currently testing if old versions of Minecraft work properly.
+# - If they aren't working properly, I'll remove them from the program.
+# - Also, I'm planning to remove the download of server.properties file and instead make the program able to add a new file corresponding to the needs of every version.
+# - Something that I'm planning to add is the support for detailed logs to help me debug the program.
+#################################
 
-# CLS
-def cls():
-    os.system('cls')
+#### PROGRAM ####
+
+# SYSTEM LANGUAGE
+import locale
+SYSTEM_LANG = str(locale.getlocale()[0])
+
+# IMPORTS
+import os
+import sys
+import time
+import ctypes
+import datetime
+import webbrowser
+import subprocess
+from tkinter import filedialog
+from tkinter import messagebox
+
+# DEFAULTS
+valor = None
+runn = True
+
+# PATHS
+APPDATA = os.getenv('APPDATA')
+SSTOOLS_FOLDER = os.path.join(APPDATA, "SSTools4MC") # type: ignore
+CONFIG_PATH = os.path.join(SSTOOLS_FOLDER, "config")
+SAVED_SERVERS = os.path.join(CONFIG_PATH, "saved-servers.cfg")
+
+# CHECK RELEASE TYPE
+if CHANNEL == 'dev':
+    ICON_PATH = os.path.join(SSTOOLS_FOLDER, "assets", "icon-dev.ico")
+    SSTITLE = "SSTools4MC (DEV)"
+elif CHANNEL == 'internal-testing':
+    ICON_PATH = os.path.join(SSTOOLS_FOLDER, "assets", "icon-dev.ico")
+    SSTITLE = "SSTools4MC (INTERNAL TESTING)"
+else:
+    ICON_PATH = os.path.join(SSTOOLS_FOLDER, "assets", "icon.ico")
+    SSTITLE = "SSTools4MC"
 
 # CHANGE WINDOW TITLE
 def window_title(title):
     os.system(f'title {title}')
+
+# PROGRAM STARTING TITLE
+if SYSTEM_LANG.startswith('es') or SYSTEM_LANG.startswith('Spanish'):
+    window_title(f'{SSTITLE} está iniciando...')
+    print(f'{SSTITLE} está iniciando...')
+else:
+    window_title(f'{SSTITLE} is starting...')
+    print(f'{SSTITLE} is starting...')
+
+# IMPORTS (EXTERNAL)
+for lib, func in NEEDED_MODULES.items():
+    mdl = lib
+    try:
+        if func == '':
+            exec(f'import {lib}')
+        else:
+            exec(f'from {lib} import {func}')
+    except ImportError:
+        if SYSTEM_LANG.startswith('es') or SYSTEM_LANG.startswith('Spanish'):
+            print(f"- Instalando módulo necesario: {lib}")
+        else:
+            print(f"- Installing needed module: {lib}")
+        try:
+            subprocess.check_call([sys.executable, "-m", "pip", "install", lib], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            if func == '':
+                exec(f'import {lib}')
+            else:
+                exec(f'from {lib} import {func}')
+        except Exception:
+            if SYSTEM_LANG.startswith('es') or SYSTEM_LANG.startswith('Spanish'):
+                messagebox.showerror("Error", f"No se pudo instalar el módulo '{lib}'. Por favor, reintenta abrir el programa o instálalo manualmente.")
+            else:
+                messagebox.showerror("Error", f"Couldn't install the '{lib}' module. Please try reopening the program or install it manually.")
+            sys.exit(1)
+
+# CLS
+def cls():
+    os.system('cls')
 
 # BRING WINDOW TO FRONT
 def front():
@@ -903,9 +944,9 @@ def eng():
                 server_keys = list(sservers.keys())
                 for i, key in enumerate(server_keys, start=1):
                     print(f"({i}) {key}")
-                nserv = colored("Add","cyan")
-                delserv = colored("Delete","red")
-                clearlist = colored("Clear","magenta")
+                nserv = colored("Add","cyan") # type: ignore
+                delserv = colored("Delete","red") # type: ignore
+                clearlist = colored("Clear","magenta") # type: ignore
                 print(f"\n(N) {nserv} Server\n(D) {delserv} a Server from the list\n(C) {clearlist} List\n(R) Return to main menu")
                 servsel = input("\nSelect one of the options or enter the number of the server to start= ").replace(" ", "")
                 try:
@@ -918,7 +959,7 @@ def eng():
                             newserv = False
                             servname = False
                         if newserv and servname and os.path.isfile(server_jar_path):
-                            servname = colored(servname, "yellow")
+                            servname = colored(servname, "yellow") # type: ignore
                             with open(SAVED_SERVERS, 'r') as file:
                                 lines = file.readlines()
                                 servstring = f"{servname}<[=]>{newserv}\n"
@@ -987,8 +1028,8 @@ def eng():
                     elif servsel.lower() == "c":
                         def lisclear():
                             cls()
-                            yess = colored("Yes","green")
-                            noo = colored("No","red")
+                            yess = colored("Yes","green") # type: ignore
+                            noo = colored("No","red") # type: ignore
                             window_title(f'{SSTITLE} - Are you sure?')
                             day = getdate()
                             clearconfirm = input(f'{SSTITLE} - {day}\n--------------------------\n\nAre you sure you want to clear the "Your Servers" List?\n\n(1) {yess}\n(2) {noo}\n\nSelect one of the options= ')
@@ -1040,7 +1081,7 @@ def eng():
                 with open(SAVED_SERVERS, 'w') as file:
                     file.write("# SSTools4MC\n# Saved servers\n")
                 cls()
-                adds = colored("Add a Server","cyan")
+                adds = colored("Add a Server","cyan") # type: ignore
                 window_title(f'{SSTITLE} - There are no saved servers.')
                 day = getdate()
                 saveconfirm = input(f"{SSTITLE} - {day}\n--------------------------\n\nThere are no saved servers.\n\n(1) {adds}\n(2) Return to main menu\n\nSelect one of the options= ")
@@ -1062,7 +1103,7 @@ def eng():
                             newserv = False
                             servname = False
                         if newserv and servname and os.path.isfile(server_jar_path):
-                            servname = colored(servname, "yellow")
+                            servname = colored(servname, "yellow") # type: ignore
                             with open(SAVED_SERVERS, 'r') as file:
                                 lines = file.readlines()
                                 servstring = f"{servname}<[=]>{newserv}\n"
@@ -1111,7 +1152,7 @@ def eng():
                 newserv = False
                 servname = False
             if newserv and servname and os.path.isfile(server_jar_path):
-                servname = colored(servname, "yellow")
+                servname = colored(servname, "yellow") # type: ignore
                 with open(SAVED_SERVERS, 'r') as file:
                     lines = file.readlines()
                     servstring = f"{servname}<[=]>{newserv}\n"
@@ -1157,17 +1198,17 @@ def eng():
                                 key, value = line.split('=')
                                 properties[key.strip()] = value.strip()
                     if properties["online-mode"] == "false":
-                        online = colored("ENABLE","green")
+                        online = colored("ENABLE","green") # type: ignore
                     elif properties["online-mode"] == "true":
-                        online = colored("DISABLE","red")
+                        online = colored("DISABLE","red") # type: ignore
                     if properties["hardcore"] == "false":
-                        hard = colored("ENABLE","green")
+                        hard = colored("ENABLE","green") # type: ignore
                     elif properties["hardcore"] == "true":
-                        hard = colored("DISABLE","red")
+                        hard = colored("DISABLE","red") # type: ignore
                     if properties["pvp"] == "false":
-                        pvp = colored("ENABLE","green")
+                        pvp = colored("ENABLE","green") # type: ignore
                     elif properties["pvp"] == "true":
-                        pvp = colored("DISABLE","red")
+                        pvp = colored("DISABLE","red") # type: ignore
                     cls()
                     window_title(f'{SSTITLE} - Server management')
                     day = getdate()
@@ -1199,13 +1240,13 @@ def eng():
                                 with open('server.properties', 'w') as file:
                                     for key, value in properties.items():
                                         file.write(f'{key}={value}\n')
-                                online = colored("ENABLED","green")
+                                online = colored("ENABLED","green") # type: ignore
                             elif online == "DISABLE":
                                 properties["online-mode"] = "false"
                                 with open('server.properties', 'w') as file:
                                     for key, value in properties.items():
                                         file.write(f'{key}={value}\n')
-                                online = colored("DISABLED","red")
+                                online = colored("DISABLED","red") # type: ignore
                             cls()
                             window_title(f'{SSTITLE} - Online mode toggled')
                             day = getdate()
@@ -1218,13 +1259,13 @@ def eng():
                                 with open('server.properties', 'w') as file:
                                     for key, value in properties.items():
                                         file.write(f'{key}={value}\n')
-                                hard = colored("ENABLED","green")
+                                hard = colored("ENABLED","green") # type: ignore
                             elif hard == "DISABLE":
                                 properties["hardcore"] = "false"
                                 with open('server.properties', 'w') as file:
                                     for key, value in properties.items():
                                         file.write(f'{key}={value}\n')
-                                hard = colored("DISABLED","red")
+                                hard = colored("DISABLED","red") # type: ignore
                             cls()
                             window_title(f'{SSTITLE} - Hardcore mode toggled')
                             day = getdate()
@@ -1237,13 +1278,13 @@ def eng():
                                 with open('server.properties', 'w') as file:
                                     for key, value in properties.items():
                                         file.write(f'{key}={value}\n')
-                                pvp = colored("ENABLED","green")
+                                pvp = colored("ENABLED","green") # type: ignore
                             elif pvp == "DISABLE":
                                 properties["pvp"] = "false"
                                 with open('server.properties', 'w') as file:
                                     for key, value in properties.items():
                                         file.write(f'{key}={value}\n')
-                                pvp = colored("DISABLED","red")
+                                pvp = colored("DISABLED","red") # type: ignore
                             cls()
                             window_title(f'{SSTITLE} - PvP toggled')
                             day = getdate()
@@ -1255,17 +1296,17 @@ def eng():
                                 global properties
                                 modo = properties["gamemode"]
                                 if modo == "survival" or modo == "0":
-                                    modo = colored("SURVIVAL","cyan")
+                                    modo = colored("SURVIVAL","cyan") # type: ignore
                                 elif modo == "creative" or modo == "1":
-                                    modo = colored("CREATIVE","cyan")
+                                    modo = colored("CREATIVE","cyan") # type: ignore
                                 elif modo == "adventure" or modo == "2":
-                                    modo = colored("ADVENTURE","cyan")
+                                    modo = colored("ADVENTURE","cyan") # type: ignore
                                 elif modo == "spectator" or modo == "3":
-                                    modo = colored("SPECTATOR","cyan")
-                                superv = colored("SURVIVAL","yellow")
-                                creat = colored("CREATIVE","yellow")
-                                avent = colored("ADVENTURE","yellow")
-                                espect = colored("SPECTATOR","yellow")
+                                    modo = colored("SPECTATOR","cyan") # type: ignore
+                                superv = colored("SURVIVAL","yellow") # type: ignore
+                                creat = colored("CREATIVE","yellow") # type: ignore
+                                avent = colored("ADVENTURE","yellow") # type: ignore
+                                espect = colored("SPECTATOR","yellow") # type: ignore
                                 cls()
                                 window_title(f'{SSTITLE} - Gamemode configuration')
                                 day = getdate()
@@ -1337,17 +1378,17 @@ def eng():
                                 global properties
                                 dificultad = properties["difficulty"]
                                 if dificultad == "peaceful" or dificultad == "0":
-                                    dificultad = colored("PEACEFUL","cyan")
+                                    dificultad = colored("PEACEFUL","cyan") # type: ignore
                                 elif dificultad == "easy" or dificultad == "1":
-                                    dificultad = colored("EASY","cyan")
+                                    dificultad = colored("EASY","cyan") # type: ignore
                                 elif dificultad == "normal" or dificultad == "2":
-                                    dificultad = colored("NORMAL","cyan")
+                                    dificultad = colored("NORMAL","cyan") # type: ignore
                                 elif dificultad == "hard" or dificultad == "3":
-                                    dificultad = colored("HARD","cyan")
-                                pacif = colored("PEACEFUL","yellow")
-                                facil = colored("EASY","yellow")
-                                normal = colored("NORMAL","yellow")
-                                dificil = colored("HARD","yellow")
+                                    dificultad = colored("HARD","cyan") # type: ignore
+                                pacif = colored("PEACEFUL","yellow") # type: ignore
+                                facil = colored("EASY","yellow") # type: ignore
+                                normal = colored("NORMAL","yellow") # type: ignore
+                                dificil = colored("HARD","yellow") # type: ignore
                                 cls()
                                 window_title(f'{SSTITLE} - Difficulty configuration')
                                 day = getdate()
@@ -1417,7 +1458,7 @@ def eng():
                         elif confug == 6:
                             def playct():
                                 global properties
-                                players = colored(properties["max-players"],"cyan")
+                                players = colored(properties["max-players"],"cyan") # type: ignore
                                 cls()
                                 window_title(f'{SSTITLE} - Player limit configuration')
                                 day = getdate()
@@ -1448,7 +1489,7 @@ def eng():
                                             with open('server.properties', 'w') as file:
                                                 for key, value in properties.items():
                                                     file.write(f'{key}={value}\n')
-                                            entero = colored(str(entero),"yellow")
+                                            entero = colored(str(entero),"yellow") # type: ignore
                                             cls()
                                             window_title(f'{SSTITLE} - Player limit changed')
                                             day = getdate()
@@ -1481,17 +1522,17 @@ def eng():
                 vjava = None
                 if valor == None:
                     valor = "GB"
-                    valor1 = colored("GIGABYTES","cyan")
+                    valor1 = colored("GIGABYTES","cyan") # type: ignore
                     vjava = "G"
-                    gbormb = colored("MEGABYTES","yellow")
+                    gbormb = colored("MEGABYTES","yellow") # type: ignore
                 if valor == "GB":
-                    valor1 = colored("GIGABYTES","cyan")
+                    valor1 = colored("GIGABYTES","cyan") # type: ignore
                     vjava = "G"
-                    gbormb = colored("MEGABYTES","yellow")
+                    gbormb = colored("MEGABYTES","yellow") # type: ignore
                 elif valor == "MB":
-                    valor1 = colored("MEGABYTES","cyan")
+                    valor1 = colored("MEGABYTES","cyan") # type: ignore
                     vjava = "M"
-                    gbormb = colored("GIGABYTES","yellow")
+                    gbormb = colored("GIGABYTES","yellow") # type: ignore
                 nameserver = servername
                 cls()
                 gbs = 0
@@ -1538,11 +1579,11 @@ def eng():
                             print(f"{SSTITLE} - {day}\n--------------------------\n\nEnter a valid amount between 1 and 75 Gigabytes.")
                             time.sleep(1.5)
                             run_server()
-                        elif valor == "MB" and (gbs <= 511 or gbs > 76800):
+                        elif valor == "MB" and (gbs <= 1023 or gbs > 76800):
                             cls()
                             window_title(f'{SSTITLE} - Invalid amount of RAM')
                             day = getdate()
-                            print(f"{SSTITLE} - {day}\n--------------------------\n\nEnter a valid amount between 512 and 76,800 Megabytes.")
+                            print(f"{SSTITLE} - {day}\n--------------------------\n\nEnter a valid amount between 1,024 and 76,800 Megabytes.")
                             time.sleep(1.5)
                             run_server()
                         else:
@@ -1597,7 +1638,7 @@ def eng():
                     global foldname
                     newserver = filedialog.askdirectory()
                     front()
-                    foldname = colored(os.path.basename(newserver), "yellow")
+                    foldname = colored(os.path.basename(newserver), "yellow") # type: ignore
                     if newserver == "" or foldname == "":
                         cls()
                         window_title(f'{SSTITLE} - You must select a folder')
@@ -1640,7 +1681,7 @@ def eng():
                                     os.makedirs(newserver, exist_ok=True)
                                     os.chdir(newserver)
                                     try:
-                                        response = requests.get(url, stream=True)
+                                        response = requests.get(url, stream=True) # type: ignore
                                         total_size_in_bytes = int(response.headers.get('content-length', 0))
                                         block_size = 1024
                                         total_data = 0
@@ -1666,8 +1707,8 @@ def eng():
                                     except Exception:
                                         def erragain():
                                             cls()
-                                            yup = colored("Yes","green")
-                                            nop = colored("No","red")
+                                            yup = colored("Yes","green") # type: ignore
+                                            nop = colored("No","red") # type: ignore
                                             window_title(f'{SSTITLE} - An error occurred while downloading the server :(')
                                             day = getdate()
                                             errtry = input(f"{SSTITLE} - {day}\n--------------------------\n\nAn error occurred while downloading your new server.\nTry again?\n\n(1) {yup}\n(2) {nop}\n\nSelect one of the options= ")
@@ -1769,7 +1810,7 @@ def eng():
         cls()
         window_title(f'{SSTITLE} - About {SSTITLE}')
         day = getdate()
-        copyr = input(f"{SSTITLE} - {day}\n--------------------------\n\nMIT License - Copyright (c) {YEAR} ngdplnk\n\n{SSTITLE} {SSVERSION} - {CHANGELOG_ENG}\n\n{HELPERS}\n\n-------------------------------------\n\n(1) View repository in the browser\n(2) View license in the browser\n(3) Return to main menu\n\nSelect one of the options= ")
+        copyr = input(f"{SSTITLE} - {day}\n--------------------------\n\nMIT License - Copyright (c) {YEAR} ngdplnk\n\n{SSTITLE} {SSVERSION}\n\n{CHANGELOG_ENG}\n\n{HELPERS}\n\n-------------------------------------\n\n(1) View repository in the browser\n(2) View license in the browser\n(3) Return to main menu\n\nSelect one of the options= ")
         try:
             if any(char in "0123456789+-*/" for char in copyr):
                 if not copyr[0].isalpha():
@@ -1780,7 +1821,7 @@ def eng():
                 selec = copyr
             selec = int(selec)
             if selec == 1:
-                url = colored("https://github.com/ngdplnk/SSTools4MC","cyan")
+                url = colored("https://github.com/ngdplnk/SSTools4MC","cyan") # type: ignore
                 cls()
                 window_title(f'{SSTITLE} - View repository')
                 day = getdate()
@@ -1789,7 +1830,7 @@ def eng():
                 webbrowser.open(url)
                 about()
             elif selec == 2:
-                url = colored("https://github.com/ngdplnk/SSTools4MC/blob/main/LICENSE","cyan")
+                url = colored("https://github.com/ngdplnk/SSTools4MC/blob/main/LICENSE","cyan") # type: ignore
                 cls()
                 window_title(f'{SSTITLE} - View license')
                 day = getdate()
@@ -1867,9 +1908,9 @@ def esp():
                 server_keys = list(sservers.keys())
                 for i, key in enumerate(server_keys, start=1):
                     print(f"({i}) {key}")
-                nserv = colored("Añadir","cyan")
-                delserv = colored("Eliminar","red")
-                clearlist = colored("Limpiar","magenta")
+                nserv = colored("Añadir","cyan") # type: ignore
+                delserv = colored("Eliminar","red") # type: ignore
+                clearlist = colored("Limpiar","magenta") # type: ignore
                 print(f"\n(N) {nserv} Servidor\n(D) {delserv} un Servidor de la Lista\n(C) {clearlist} Lista\n(R) Volver al menú principal")
                 servsel = input("\nElige una de las opciones o escribe el número del Servidor que iniciarás= ").replace(" ", "")
                 try:
@@ -1882,7 +1923,7 @@ def esp():
                             newserv = False
                             servname = False
                         if newserv and servname and os.path.isfile(server_jar_path):
-                            servname = colored(servname, "yellow")
+                            servname = colored(servname, "yellow") # type: ignore
                             with open(SAVED_SERVERS, 'r') as file:
                                 lines = file.readlines()
                                 servstring = f"{servname}<[=]>{newserv}\n"
@@ -1951,8 +1992,8 @@ def esp():
                     elif servsel.lower() == "c":
                         def lisclear():
                             cls()
-                            yess = colored("Sí","green")
-                            noo = colored("No","red")
+                            yess = colored("Sí","green") # type: ignore
+                            noo = colored("No","red") # type: ignore
                             window_title(f'{SSTITLE} - Estás seguro?')
                             day = getdate()
                             clearconfirm = input(f'{SSTITLE} - {day}\n--------------------------\n\nEstás seguro de que quieres limpiar la Lista "Tus Servidores"?\n\n(1) {yess}\n(2) {noo}\n\nElige una de las opciones= ')
@@ -2003,7 +2044,7 @@ def esp():
                 with open(SAVED_SERVERS, 'w') as file:
                     file.write("# SSTools4MC\n# Servidores Guardados\n")
                 cls()
-                adds = colored("Añadir un Servidor","cyan")
+                adds = colored("Añadir un Servidor","cyan") # type: ignore
                 window_title(f'{SSTITLE} - No hay servidores guardados')
                 day = getdate()
                 saveconfirm = input(f"{SSTITLE} - {day}\n--------------------------\n\nNo tienes ningún Servidor guardado.\n\n(1) {adds}\n(2) Volver al menú principal\n\nElige una de las opciones= ")
@@ -2025,7 +2066,7 @@ def esp():
                             newserv = False
                             servname = False
                         if newserv and servname and os.path.isfile(server_jar_path):
-                            servname = colored(servname, "yellow")
+                            servname = colored(servname, "yellow") # type: ignore
                             with open(SAVED_SERVERS, 'r') as file:
                                 lines = file.readlines()
                                 servstring = f"{servname}<[=]>{newserv}\n"
@@ -2068,7 +2109,7 @@ def esp():
                 newserv = False
                 servname = False
             if newserv and servname and os.path.isfile(server_jar_path):
-                servname = colored(servname, "yellow")
+                servname = colored(servname, "yellow") # type: ignore
                 with open(SAVED_SERVERS, 'r') as file:
                     lines = file.readlines()
                     servstring = f"{servname}<[=]>{newserv}\n"
@@ -2108,17 +2149,17 @@ def esp():
                                 key, value = line.split('=')
                                 properties[key.strip()] = value.strip()
                     if properties["online-mode"] == "false":
-                        online = colored("ACTIVAR","green")
+                        online = colored("ACTIVAR","green") # type: ignore
                     elif properties["online-mode"] == "true":
-                        online = colored("DESACTIVAR","red")
+                        online = colored("DESACTIVAR","red") # type: ignore
                     if properties["hardcore"] == "false":
-                        hard = colored("ACTIVAR","green")
+                        hard = colored("ACTIVAR","green") # type: ignore
                     elif properties["hardcore"] == "true":
-                        hard = colored("DESACTIVAR","red")
+                        hard = colored("DESACTIVAR","red") # type: ignore
                     if properties["pvp"] == "false":
-                        pvp = colored("ACTIVAR","green")
+                        pvp = colored("ACTIVAR","green") # type: ignore
                     elif properties["pvp"] == "true":
-                        pvp = colored("DESACTIVAR","red")
+                        pvp = colored("DESACTIVAR","red") # type: ignore
                     cls()
                     window_title(f'{SSTITLE} - Gestión del servidor')
                     day = getdate()
@@ -2150,13 +2191,13 @@ def esp():
                                 with open('server.properties', 'w') as file:
                                     for key, value in properties.items():
                                         file.write(f'{key}={value}\n')
-                                online = colored("ACTIVADO","green")
+                                online = colored("ACTIVADO","green") # type: ignore
                             elif online == "DISABLE":
                                 properties["online-mode"] = "false"
                                 with open('server.properties', 'w') as file:
                                     for key, value in properties.items():
                                         file.write(f'{key}={value}\n')
-                                online = colored("DESACTIVADO","red")
+                                online = colored("DESACTIVADO","red") # type: ignore
                             cls()
                             window_title(f'{SSTITLE} - Modo online alternado')
                             day = getdate()
@@ -2169,13 +2210,13 @@ def esp():
                                 with open('server.properties', 'w') as file:
                                     for key, value in properties.items():
                                         file.write(f'{key}={value}\n')
-                                hard = colored("ACTIVADO","green")
+                                hard = colored("ACTIVADO","green") # type: ignore
                             elif hard == "DISABLE":
                                 properties["hardcore"] = "false"
                                 with open('server.properties', 'w') as file:
                                     for key, value in properties.items():
                                         file.write(f'{key}={value}\n')
-                                hard = colored("DESACTIVADO","red")
+                                hard = colored("DESACTIVADO","red") # type: ignore
                             cls()
                             window_title(f'{SSTITLE} - Modo extremo alternado')
                             day = getdate()
@@ -2188,13 +2229,13 @@ def esp():
                                 with open('server.properties', 'w') as file:
                                     for key, value in properties.items():
                                         file.write(f'{key}={value}\n')
-                                pvp = colored("ACTIVADO","green")
+                                pvp = colored("ACTIVADO","green") # type: ignore
                             elif pvp == "DISABLE":
                                 properties["pvp"] = "false"
                                 with open('server.properties', 'w') as file:
                                     for key, value in properties.items():
                                         file.write(f'{key}={value}\n')
-                                pvp = colored("DESACTIVADO","red")
+                                pvp = colored("DESACTIVADO","red") # type: ignore
                             cls()
                             window_title(f'{SSTITLE} - PvP alternado')
                             day = getdate()
@@ -2206,17 +2247,17 @@ def esp():
                                 global properties
                                 modo = properties["gamemode"]
                                 if modo == "survival" or modo == "0":
-                                    modo = colored("SUPERVIVENCIA","cyan")
+                                    modo = colored("SUPERVIVENCIA","cyan") # type: ignore
                                 elif modo == "creative" or modo == "1":
-                                    modo = colored("CREATIVO","cyan")
+                                    modo = colored("CREATIVO","cyan") # type: ignore
                                 elif modo == "adventure" or modo == "2":
-                                    modo = colored("AVENTURA","cyan")
+                                    modo = colored("AVENTURA","cyan") # type: ignore
                                 elif modo == "spectator" or modo == "3":
-                                    modo = colored("ESPECTADOR","cyan")
-                                superv = colored("SUPERVIVENCIA","yellow")
-                                creat = colored("CREATIVO","yellow")
-                                avent = colored("AVENTURA","yellow")
-                                espect = colored("ESPECTADOR","yellow")
+                                    modo = colored("ESPECTADOR","cyan") # type: ignore
+                                superv = colored("SUPERVIVENCIA","yellow") # type: ignore
+                                creat = colored("CREATIVO","yellow") # type: ignore
+                                avent = colored("AVENTURA","yellow") # type: ignore
+                                espect = colored("ESPECTADOR","yellow") # type: ignore
                                 cls()
                                 window_title(f'{SSTITLE} - Configuración de modo de juego')
                                 day = getdate()
@@ -2288,17 +2329,17 @@ def esp():
                                 global properties
                                 dificultad = properties["difficulty"]
                                 if dificultad == "peaceful" or dificultad == "0":
-                                    dificultad = colored("PACÍFICO","cyan")
+                                    dificultad = colored("PACÍFICO","cyan") # type: ignore
                                 elif dificultad == "easy" or dificultad == "1":
-                                    dificultad = colored("FÁCIL","cyan")
+                                    dificultad = colored("FÁCIL","cyan") # type: ignore
                                 elif dificultad == "normal" or dificultad == "2":
-                                    dificultad = colored("NORMAL","cyan")
+                                    dificultad = colored("NORMAL","cyan") # type: ignore
                                 elif dificultad == "hard" or dificultad == "3":
-                                    dificultad = colored("DIFÍCIL","cyan")
-                                pacif = colored("PACÍFICO","yellow")
-                                facil = colored("FÁCIL","yellow")
-                                normal = colored("NORMAL","yellow")
-                                dificil = colored("DIFÍCIL","yellow")
+                                    dificultad = colored("DIFÍCIL","cyan") # type: ignore
+                                pacif = colored("PACÍFICO","yellow") # type: ignore
+                                facil = colored("FÁCIL","yellow") # type: ignore
+                                normal = colored("NORMAL","yellow") # type: ignore
+                                dificil = colored("DIFÍCIL","yellow") # type: ignore
                                 cls()
                                 window_title(f'{SSTITLE} - Configuración de dificultad')
                                 day = getdate()
@@ -2368,7 +2409,7 @@ def esp():
                         elif confug == 6:
                             def playct():
                                 global properties
-                                players = colored(properties["max-players"],"cyan")
+                                players = colored(properties["max-players"],"cyan") # type: ignore
                                 cls()
                                 window_title(f'{SSTITLE} - Configuración de límite de jugadores')
                                 day = getdate()
@@ -2399,7 +2440,7 @@ def esp():
                                             with open('server.properties', 'w') as file:
                                                 for key, value in properties.items():
                                                     file.write(f'{key}={value}\n')
-                                            entero = colored(str(entero),"yellow")
+                                            entero = colored(str(entero),"yellow") # type: ignore
                                             cls()
                                             window_title(f'{SSTITLE} - Límite de jugadores cambiado')
                                             day = getdate()
@@ -2432,17 +2473,17 @@ def esp():
                 vjava = None
                 if valor == None:
                     valor = "GB"
-                    valor1 = colored("GIGABYTES","cyan")
+                    valor1 = colored("GIGABYTES","cyan") # type: ignore
                     vjava = "G"
-                    gbormb = colored("MEGABYTES","yellow")
+                    gbormb = colored("MEGABYTES","yellow") # type: ignore
                 if valor == "GB":
-                    valor1 = colored("GIGABYTES","cyan")
+                    valor1 = colored("GIGABYTES","cyan") # type: ignore
                     vjava = "G"
-                    gbormb = colored("MEGABYTES","yellow")
+                    gbormb = colored("MEGABYTES","yellow") # type: ignore
                 elif valor == "MB":
-                    valor1 = colored("MEGABYTES","cyan")
+                    valor1 = colored("MEGABYTES","cyan") # type: ignore
                     vjava = "M"
-                    gbormb = colored("GIGABYTES","yellow")
+                    gbormb = colored("GIGABYTES","yellow") # type: ignore
                 nameserver = servername
                 cls()
                 gbs = 0
@@ -2489,11 +2530,11 @@ def esp():
                             print(f"{SSTITLE} - {day}\n--------------------------\n\nIngresa una cantidad válida entre 1 y 75 Gigabytes.")
                             time.sleep(1.5)
                             run_server()
-                        elif valor == "MB" and (gbs <= 511 or gbs > 76800):
+                        elif valor == "MB" and (gbs <= 1023 or gbs > 76800):
                             cls()
                             window_title(f'{SSTITLE} - Cantidad de RAM inválida')
                             day = getdate()
-                            print(f"{SSTITLE} - {day}\n--------------------------\n\nIngresa una cantidad válida entre 512 y 76.800 Megabytes.")
+                            print(f"{SSTITLE} - {day}\n--------------------------\n\nIngresa una cantidad válida entre 1.024 y 76.800 Megabytes.")
                             time.sleep(1.5)
                             run_server()
                         else:
@@ -2548,7 +2589,7 @@ def esp():
                     global foldname
                     newserver = filedialog.askdirectory()
                     front()
-                    foldname = colored(os.path.basename(newserver), "yellow")
+                    foldname = colored(os.path.basename(newserver), "yellow") # type: ignore
                     if newserver == "" or foldname == "":
                         cls()
                         window_title(f'{SSTITLE} - Debes seleccionar una carpeta')
@@ -2591,7 +2632,7 @@ def esp():
                                     os.makedirs(newserver, exist_ok=True)
                                     os.chdir(newserver)
                                     try:
-                                        response = requests.get(url, stream=True)
+                                        response = requests.get(url, stream=True) # type: ignore
                                         total_size_in_bytes = int(response.headers.get('content-length', 0))
                                         block_size = 1024  # 1 Kibibyte
                                         total_data = 0
@@ -2617,8 +2658,8 @@ def esp():
                                     except Exception:
                                         def erragain():
                                             cls()
-                                            yup = colored("Sí","green")
-                                            nop = colored("No","red")
+                                            yup = colored("Sí","green") # type: ignore
+                                            nop = colored("No","red") # type: ignore
                                             window_title(f'{SSTITLE} - Ocurrió un error mientras se descargaba tu nuevo servidor :(')
                                             day = getdate()
                                             errtry = input(f"{SSTITLE} - {day}\n--------------------------\n\nOcurrió un error mientras se descargaba tu Nuevo Servidor.\nReintentar?\n\n(1) {yup}\n(2) {nop}\n\nElige una de las opciones= ")
@@ -2720,7 +2761,7 @@ def esp():
         cls()
         window_title(f'{SSTITLE} - Acerca de {SSTITLE}')
         day = getdate()
-        copyr = input(f"{SSTITLE} - {day}\n--------------------------\n\nMIT License - Copyright (c) {YEAR} ngdplnk\n\n{SSTITLE} {SSVERSION} - {CHANGELOG_SPA}\n\n{HELPERS}\n\n-------------------------------------\n\n(1) Ver repositorio en el navegador\n(2) Ver licencia en el navegador\n(3) Volver al menú principal\n\nElige una de las opciones= ")
+        copyr = input(f"{SSTITLE} - {day}\n--------------------------\n\nMIT License - Copyright (c) {YEAR} ngdplnk\n\n{SSTITLE} {SSVERSION}\n\n{CHANGELOG_SPA}\n\n{HELPERS}\n\n-------------------------------------\n\n(1) Ver repositorio en el navegador\n(2) Ver licencia en el navegador\n(3) Volver al menú principal\n\nElige una de las opciones= ")
         try:
             if any(char in "0123456789+-*/" for char in copyr):
                 if not copyr[0].isalpha():
@@ -2731,7 +2772,7 @@ def esp():
                 selec = copyr
             selec = int(selec)
             if selec == 1:
-                url = colored("https://github.com/ngdplnk/SSTools4MC","cyan")
+                url = colored("https://github.com/ngdplnk/SSTools4MC","cyan") # type: ignore
                 cls()
                 window_title(f'{SSTITLE} - Ver repositorio')
                 day = getdate()
@@ -2740,7 +2781,7 @@ def esp():
                 webbrowser.open(url)
                 about()
             elif selec == 2:
-                url = colored("https://github.com/ngdplnk/SSTools4MC/blob/main/LICENSE","cyan")
+                url = colored("https://github.com/ngdplnk/SSTools4MC/blob/main/LICENSE","cyan") # type: ignore
                 cls()
                 window_title(f'{SSTITLE} - Ver licencia')
                 day = getdate()
@@ -2808,16 +2849,12 @@ def startup():
         ctypes.windll.user32.SendMessageW(hwnd, 0x0080, 0, hIcon)
     except Exception:
         pass
-    # LANGUAGE
-    system_lang = locale.getlocale()[0]
-    system_lang = str(system_lang)
-    if system_lang.startswith("es") or system_lang.startswith("Spanish"):
+    if SYSTEM_LANG.startswith("es") or SYSTEM_LANG.startswith("Spanish"):
         esp()
     else:
         eng()
 
-# RUN TOOL
-window_title(f'{SSTITLE} is starting...')
+# RUN PROGRAM
 startup()
 
 #### END OF PROGRAM ####
