@@ -2,11 +2,11 @@
 ####  DEVELOPED BY: NGDPLNK  ####
 #################################
 ####      PROGRAM INFO       ####
-SSVERSION = 'v24.09.18-dev'
+SSVERSION = 'v24.09.28-dev'
 CHANNEL = 'dev'
 YEAR = '2024'
-CHANGELOG_ENG = '- Added 24w38a support'
-CHANGELOG_SPA = '- Soporte para 24w38a añadido'
+CHANGELOG_ENG = '- Added 24w39a support'
+CHANGELOG_SPA = '- Soporte para 24w39a añadido'
 HELPERS = 'Helpers:\n@LegalizeNuclearBombs\n@naicoooossj'
 NEEDED_MODULES = {
     # 'Module': 'Function (if needed)'
@@ -115,8 +115,8 @@ MC_STABLE = {
     "1.21.1": "https://piston-data.mojang.com/v1/objects/59353fb40c36d304f2035d51e7d6e6baa98dc05c/server.jar"
 }
 
-## 613 SNAPSHOT VERSIONS ADDED (1.3 - 24w38a)
-# LAST UPDATED: 18/09/2024
+## 614 SNAPSHOT VERSIONS ADDED (1.3 - 24w39a)
+# LAST UPDATED: 28/09/2024
 MC_SNAPSHOT = {
     # "Version name": "Download link"
     "1.3": "https://piston-data.mojang.com/v1/objects/cb21a9aaaf599c94dd7fa1b777b2f0cc37a776c7/server.jar",
@@ -732,7 +732,8 @@ MC_SNAPSHOT = {
     "24w35a": "https://piston-data.mojang.com/v1/objects/93d259fdba93aa7d3c1763cfb0136295087e0de3/server.jar",
     "24w36a": "https://piston-data.mojang.com/v1/objects/30663a50aaf407751ae9e704758364ed9433206d/server.jar",
     "24w37a": "https://piston-data.mojang.com/v1/objects/4ba5f8917ac400474751b6e0f20d311d3b726fe7/server.jar",
-    "24w38a": "https://piston-data.mojang.com/v1/objects/b87bfc3763d88a1364b8ac30fe6f2ac3550948f8/server.jar"
+    "24w38a": "https://piston-data.mojang.com/v1/objects/b87bfc3763d88a1364b8ac30fe6f2ac3550948f8/server.jar",
+    "24w39a": "https://piston-data.mojang.com/v1/objects/31bc8a4f3c73e3873f4a0d42e7c65a7ae43cc44a/server.jar"
 }
 
 ## 12 APRIL'S FOOLS VERSIONS ADDED (2.0-blue - 24w14potato-reupload)
