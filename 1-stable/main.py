@@ -884,7 +884,6 @@ try:
     # DEFAULTS
     # This variables are setted to None to handle errors
     valor = None
-    runn = True
 
     # PATHS
     CONFIG_PATH = os.path.join(SSTOOLS_FOLDER, "config")
