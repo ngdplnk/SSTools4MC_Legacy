@@ -2,11 +2,11 @@
 ####  DEVELOPED BY: NGDPLNK  ####
 #################################
 ####      PROGRAM INFO       ####
-SSVERSION = 'v24.10.19-dev'
+SSVERSION = 'v24.10.25-dev'
 CHANNEL = 'dev'
 YEAR = '2024'
-CHANGELOG_ENG = '- Added 1.21.2-pre3/pre4/pre5/rc1 support'
-CHANGELOG_SPA = '- Soporte para 1.21.2-pre3/pre4/pre5/rc1 añadido'
+CHANGELOG_ENG = '- Added 1.21.2-rc2/1.21.2/1.21.3 support'
+CHANGELOG_SPA = '- Soporte para 1.21.2-rc2/1.21.2/1.21.3 añadido'
 HELPERS = 'Helpers:\n@LegalizeNuclearBombs\n@naicoooossj'
 NEEDED_MODULES = {
     # 'Module': 'Function (if needed)'
@@ -28,8 +28,8 @@ NEEDED_MODULES = {
 
 ### MINECRAFT VERSIONS ###
 
-## 92 STABLE VERSIONS ADDED (1.0.0-tominecon - 1.21.1)
-# LAST UPDATED: 10/08/2024
+## 94 STABLE VERSIONS ADDED (1.0.0-tominecon - 1.21.3)
+# LAST UPDATED: 25/10/2024
 MC_STABLE = {
     # "Version name": "Download link"
     "1.0.0-tominecon": "https://vault.omniarchive.uk/archive/java/misc/1.0.0-tominecon-server.jar",
@@ -124,11 +124,13 @@ MC_STABLE = {
     "1.20.5": "https://piston-data.mojang.com/v1/objects/79493072f65e17243fd36a699c9a96b4381feb91/server.jar",
     "1.20.6": "https://piston-data.mojang.com/v1/objects/145ff0858209bcfc164859ba735d4199aafa1eea/server.jar",
     "1.21": "https://piston-data.mojang.com/v1/objects/450698d1863ab5180c25d7c804ef0fe6369dd1ba/server.jar",
-    "1.21.1": "https://piston-data.mojang.com/v1/objects/59353fb40c36d304f2035d51e7d6e6baa98dc05c/server.jar"
+    "1.21.1": "https://piston-data.mojang.com/v1/objects/59353fb40c36d304f2035d51e7d6e6baa98dc05c/server.jar",
+    "1.21.2": "https://piston-data.mojang.com/v1/objects/7bf95409b0d9b5388bfea3704ec92012d273c14c/server.jar",
+    "1.21.3": "https://piston-data.mojang.com/v1/objects/45810d238246d90e811d896f87b14695b7fb6839/server.jar"
 }
 
-## 621 SNAPSHOT VERSIONS ADDED (1.3 - 1.21.2-rc1)
-# LAST UPDATED: 19/10/2024
+## 622 SNAPSHOT VERSIONS ADDED (1.3 - 1.21.2-rc1)
+# LAST UPDATED: 25/10/2024
 MC_SNAPSHOT = {
     # "Version name": "Download link"
     "1.3": "https://piston-data.mojang.com/v1/objects/cb21a9aaaf599c94dd7fa1b777b2f0cc37a776c7/server.jar",
@@ -752,7 +754,8 @@ MC_SNAPSHOT = {
     "1.21.2-pre3": "https://piston-data.mojang.com/v1/objects/8d2de8704771e210d69e7b7ac70d858a677bcb70/server.jar",
     "1.21.2-pre4": "https://piston-data.mojang.com/v1/objects/aed86bb19e8fb39147c9a4534ab5e2b94fa569ea/server.jar",
     "1.21.2-pre5": "https://piston-data.mojang.com/v1/objects/c3294c5538c63aaa744313c8b98276bb26490a85/server.jar",
-    "1.21.2-rc1": "https://piston-data.mojang.com/v1/objects/8db23b5e87d998956ac5b9a5d94d1b4db4b9ea44/server.jar"
+    "1.21.2-rc1": "https://piston-data.mojang.com/v1/objects/8db23b5e87d998956ac5b9a5d94d1b4db4b9ea44/server.jar",
+    "1.21.2-rc2": "https://piston-data.mojang.com/v1/objects/d0601b3f493bb5b4e421ef35b676d4cb9c1f606f/server.jar"
 }
 
 ## 12 APRIL'S FOOLS VERSIONS ADDED (2.0-blue - 24w14potato-reupload)
