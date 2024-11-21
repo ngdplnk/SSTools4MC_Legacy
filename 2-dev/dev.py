@@ -2,11 +2,11 @@
 ####  DEVELOPED BY: NGDPLNK  ####
 #################################
 ####      PROGRAM INFO       ####
-SSVERSION = 'v24.10.25-dev'
+SSVERSION = 'v24.11.20-dev'
 CHANNEL = 'dev'
 YEAR = '2024'
-CHANGELOG_ENG = '- Added 1.21.2-rc2/1.21.2/1.21.3 support'
-CHANGELOG_SPA = '- Soporte para 1.21.2-rc2/1.21.2/1.21.3 añadido'
+CHANGELOG_ENG = '- Added support for new versions'
+CHANGELOG_SPA = '- Soporte añadido para nuevas versiones'
 HELPERS = 'Helpers:\n@LegalizeNuclearBombs\n@naicoooossj'
 NEEDED_MODULES = {
     # 'Module': 'Function (if needed)'
@@ -129,8 +129,8 @@ MC_STABLE = {
     "1.21.3": "https://piston-data.mojang.com/v1/objects/45810d238246d90e811d896f87b14695b7fb6839/server.jar"
 }
 
-## 622 SNAPSHOT VERSIONS ADDED (1.3 - 1.21.2-rc1)
-# LAST UPDATED: 25/10/2024
+## 626 SNAPSHOT VERSIONS ADDED (1.3 - 1.21.4-pre1)
+# LAST UPDATED: 20/11/2024
 MC_SNAPSHOT = {
     # "Version name": "Download link"
     "1.3": "https://piston-data.mojang.com/v1/objects/cb21a9aaaf599c94dd7fa1b777b2f0cc37a776c7/server.jar",
@@ -755,7 +755,11 @@ MC_SNAPSHOT = {
     "1.21.2-pre4": "https://piston-data.mojang.com/v1/objects/aed86bb19e8fb39147c9a4534ab5e2b94fa569ea/server.jar",
     "1.21.2-pre5": "https://piston-data.mojang.com/v1/objects/c3294c5538c63aaa744313c8b98276bb26490a85/server.jar",
     "1.21.2-rc1": "https://piston-data.mojang.com/v1/objects/8db23b5e87d998956ac5b9a5d94d1b4db4b9ea44/server.jar",
-    "1.21.2-rc2": "https://piston-data.mojang.com/v1/objects/d0601b3f493bb5b4e421ef35b676d4cb9c1f606f/server.jar"
+    "1.21.2-rc2": "https://piston-data.mojang.com/v1/objects/d0601b3f493bb5b4e421ef35b676d4cb9c1f606f/server.jar",
+    "24w44a": "https://piston-data.mojang.com/v1/objects/5d233307681e1b46dfd4fba4f022c1cac2b58e60/server.jar",
+    "24w45a": "https://piston-data.mojang.com/v1/objects/8bbe822806cfdbeb9f6fc55d18fa1e8080e60047/server.jar",
+    "24w46a": "https://piston-data.mojang.com/v1/objects/9b2e96ae27afaf9a6c682c5d92d37a99da4a8d1a/server.jar",
+    "1.21.4-pre1": "https://piston-data.mojang.com/v1/objects/4e5fdbf4ecd53962e72a75d4abfc2455e0ae0c1b/server.jar"
 }
 
 ## 12 APRIL'S FOOLS VERSIONS ADDED (2.0-blue - 24w14potato-reupload)
