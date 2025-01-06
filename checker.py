@@ -1,5 +1,6 @@
 import requests
 import json
+from datetime import datetime
 
 # Constants
 VERSION_MANIFEST_URL = "https://launchermeta.mojang.com/mc/game/version_manifest.json"
@@ -56,8 +57,29 @@ new_stable_releases = {k: v for k, v in stable_releases.items() if k not in MC_S
 MC_SNAPSHOT.update(new_snapshots)
 MC_STABLE.update(new_stable_releases)
 
+# Prepare header for the file
+header = (
+    "#### SSTOOLS4MC VERSIONS.FETCH\n"
+    "### This file contains all the versions available for use in SSTools4MC\n"
+)
+
+# Update LAST UPDATED timestamp only if there are new versions
+if new_snapshots or new_stable_releases:
+    last_updated = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
+    header += f"## LAST UPDATED: {last_updated}\n\n"
+else:
+    # Load the existing header for the last updated time
+    try:
+        with open(VERSIONS_FILE, "r") as f:
+            first_lines = [next(f) for _ in range(3)]
+            header += first_lines[2] + "\n\n"  # Add the existing LAST UPDATED line
+    except (FileNotFoundError, StopIteration):
+        last_updated = "Unknown"
+        header += "## LAST UPDATED: Unknown\n\n"
+
 # Write updated data back to the file
 with open(VERSIONS_FILE, "w") as f:
+    f.write(header)
     f.write("MC_SNAPSHOT = {\n")
     for version, url in MC_SNAPSHOT.items():
         f.write(f'    "{version}": "{url}",\n')
