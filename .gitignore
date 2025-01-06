@@ -1,60 +1,6 @@
-# Prerrequisitos
-*.d
-
-#Archivos de VSCode
-.vscode/
-
-# Archivos Objeto
-*.o
-*.ko
-*.obj
-*.elf
-
-# Conexión de Salidas
-*.ilk
-*.map
-*.exp
-
-# Cabezales Precompilados
-*.gch
-*.pch
-
-# Librerías
-*.lib
-*.a
-*.la
-*.lo
-
-# Objetos Compartidos (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Ejecutables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Archivos de Depuración
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Resultados de la Compilación del Módulo del Kernel
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
-
-# Misceláneos
-*.ai
-*.bak
-server.properties
+/lib64/
+/lib/
+/bin/
+/include/
+pyvenv.cfg
+lib64
