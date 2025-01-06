@@ -4,6 +4,10 @@ on:
   schedule:
     - cron: '0 0 * * *' # Runs daily at midnight UTC
   workflow_dispatch: # Allow manual trigger
+  push:
+    paths:
+      - .github/workflows/*.yml  # Triggers when workflow files are updated
+      - checker.py  # Triggers when checker.py is updated
 
 jobs:
   check-minecraft-version:
