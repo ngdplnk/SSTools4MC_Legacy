@@ -72,7 +72,7 @@ else:
     try:
         with open(VERSIONS_FILE, "r") as f:
             first_lines = [next(f) for _ in range(3)]
-            header += first_lines[2] + "\n\n"  # Add the existing LAST UPDATED line
+            header += first_lines[2] + "\n"  # Add the existing LAST UPDATED line
     except (FileNotFoundError, StopIteration):
         last_updated = "Unknown"
         header += "## LAST UPDATED: Unknown\n\n"
@@ -93,5 +93,7 @@ with open(VERSIONS_FILE, "w") as f:
 # Print updates
 if new_snapshots or new_stable_releases:
     print(f"Added {len(new_snapshots)} new snapshots and {len(new_stable_releases)} new stable releases.")
+    print("::set-output name=new_versions::true")
 else:
     print("No new versions found.")
+    print("::set-output name=new_versions::false")
