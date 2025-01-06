@@ -2,7 +2,7 @@ name: Check Minecraft Updates
 
 on:
   schedule:
-    - cron: '0 0 * * *' # Runs daily at midnight UTC
+    - cron: '15 10 * * *' # Runs at 10:15 AM (CLT/CLST) daily (to match Mojang's approximated release hour)
   workflow_dispatch: # Allow manual trigger
   push:
     paths:
