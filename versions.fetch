@@ -2,6 +2,7 @@
 ### This file contains all the versions available for use in SSTools4MC
 ## LAST UPDATED: 2025-01-06 04:53:48 UTC
 
+
 MC_SNAPSHOT = {
     "1.21.4-rc3": "https://piston-data.mojang.com/v1/objects/653cd548ed5bb2a2bff08945878347f3a3b8844b/server.jar",
     "1.21.4-rc2": "https://piston-data.mojang.com/v1/objects/894027b3be403fc387c289781f9fdaca0cdc1aef/server.jar",
