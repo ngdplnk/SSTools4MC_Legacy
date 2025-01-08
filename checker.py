@@ -93,12 +93,8 @@ if new_snapshots or new_stable_releases:
             f.write(f'    "{version}": "{url}",\n')
         f.write("}\n")
     
-    # Indicate new versions found
-    with open(output_file, "a") as f:
-        f.write("new_versions=true\n")
     print(f"Added {len(new_snapshots)} new snapshots and {len(new_stable_releases)} new stable releases!")
+    print("::set-output name=new_versions::true")
 else:
-    # Indicate no new versions found
-    with open(output_file, "a") as f:
-        f.write("new_versions=false\n")
     print("No new versions found")
+    print("::set-output name=new_versions::false")

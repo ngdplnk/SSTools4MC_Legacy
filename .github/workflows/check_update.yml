@@ -31,7 +31,7 @@ jobs:
       run: python checker.py
 
     - name: Commit and push changes
-      if: success() && needs.check-for-updates.outputs.new_versions == 'true'
+      if: success() && steps.check-for-updates.outputs.new_versions == 'true'
       run: |
         git config --local user.name "github-actions[bot]"
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
