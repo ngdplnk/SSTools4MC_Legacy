@@ -6,6 +6,7 @@ import os
 # Constants
 VERSION_MANIFEST_URL = "https://launchermeta.mojang.com/mc/game/version_manifest.json"
 VERSIONS_FILE = "versions.fetch"
+output_file = os.getenv("GITHUB_OUTPUT")
 
 # Fetch the Minecraft version manifest
 response = requests.get(VERSION_MANIFEST_URL)
@@ -91,11 +92,13 @@ if new_snapshots or new_stable_releases:
         for version, url in MC_STABLE.items():
             f.write(f'    "{version}": "{url}",\n')
         f.write("}\n")
-
-    print("New versions found and updated.")
-    with open(os.getenv('OUTPUT_FILE', 'env.txt'), 'a') as env_file:
-        env_file.write("new_versions=true\n")
+    
+    # Indicate new versions found
+    with open(output_file, "a") as f:
+        f.write("new_versions=true\n")
+    print(f"Added {len(new_snapshots)} new snapshots and {len(new_stable_releases)} new stable releases!")
 else:
-    print("No new versions found.")
-    with open(os.getenv('OUTPUT_FILE', 'env.txt'), 'a') as env_file:
-        env_file.write("new_versions=false\n")
+    # Indicate no new versions found
+    with open(output_file, "a") as f:
+        f.write("new_versions=false\n")
+    print("No new versions found")

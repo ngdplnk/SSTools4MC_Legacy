@@ -28,13 +28,10 @@ jobs:
 
     - name: Check for new Minecraft versions
       id: check-for-updates
-      run: |
-        python checker.py
-      env:
-        OUTPUT_FILE: $GITHUB_ENV
+      run: python checker.py
 
     - name: Commit and push changes
-      if: steps.check-for-updates.outputs.new_versions == 'true'
+      if: success() && needs.check-for-updates.outputs.new_versions == 'true'
       run: |
         git config --local user.name "github-actions[bot]"
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
