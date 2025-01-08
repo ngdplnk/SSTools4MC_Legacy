@@ -1,12 +1,10 @@
 import requests
 import json
 from datetime import datetime, timezone
-import os
 
 # Constants
 VERSION_MANIFEST_URL = "https://launchermeta.mojang.com/mc/game/version_manifest.json"
 VERSIONS_FILE = "versions.fetch"
-output_file = os.getenv("GITHUB_OUTPUT")
 
 # Fetch the Minecraft version manifest
 response = requests.get(VERSION_MANIFEST_URL)
@@ -71,7 +69,7 @@ else:
     try:
         with open(VERSIONS_FILE, "r") as f:
             first_lines = [next(f) for _ in range(3)]
-            header += first_lines[2] + "\n"  # Add the existing LAST UPDATED line
+            header += first_lines[2] + "\n\n"  # Add the existing LAST UPDATED line
     except (FileNotFoundError, StopIteration):
         last_updated = "Unknown"
         header += "## LAST UPDATED: Unknown\n"

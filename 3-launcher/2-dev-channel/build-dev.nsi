@@ -1,19 +1,21 @@
-### THIS BUILD SCRIPT IS FOR THE DEV CHANNEL OF SSTools4MC
+### THIS BUILD SCRIPT IS FOR THE DEV CHANNEL LAUNCHER OF SSTools4MC
 
 # FILL THIS WITH THE NEEDED PATHS
 !define ICON_PATH "<TYPE THE ICON-DEV.ICO PATH HERE>"
 !define LAUNCHER_PATH "<TYPE THE LAUNCHER-DEV.PYW PATH HERE>"
 !define BASE_PATH "<TYPE THE DEV.PY PATH HERE>"
+!define PROPS_PATH "<TYPE THE PROPS.JSON PATH HERE>"
+!define VERLIST_PATH "<TYPE THE VERSIONS.FETCH PATH HERE>"
 
 ############################################################
 
-Caption "SSTools4MC Launcher (Dev Channel) v1.4 Installer"
+Caption "SSTools4MC Launcher (Dev Channel) v1.5 Installer"
 UninstallCaption "SSTools4MC Uninstaller"
-!define APP_VERSION "1.4"
-!define PRODUCT_VERSION "1.4.0.0"
+!define APP_VERSION "1.5"
+!define PRODUCT_VERSION "1.5.0.0"
 !define APP_EDITOR "ngdplnk"
 
-Outfile "SSTools4MC_Launcher_Dev_Channel_v1.4_Setup.exe"
+Outfile "SSTools4MC_Launcher_Dev_Channel_v1.5_Setup.exe"
 SetCompressor /SOLID lzma
 Icon "${ICON_PATH}"
 
@@ -25,7 +27,7 @@ VIAddVersionKey "ProductName" "SSTools4MC Launcher (Dev Channel)"
 VIAddVersionKey "CompanyName" "ngdplnk"
 VIAddVersionKey "FileDescription" "SSTools4MC Launcher (Dev Channel)"
 VIAddVersionKey "FileVersion" "${APP_VERSION}"
-VIAddVersionKey "LegalCopyright" "Copyright (C) 2024 ngdplnk"
+VIAddVersionKey "LegalCopyright" "Copyright (C) 2025 ngdplnk"
 VIAddVersionKey "OriginalFilename" "SSTools4MC_Launcher_Dev_Channel.exe"
 VIAddVersionKey "Comments" "Created by ${APP_EDITOR}"
 
@@ -43,6 +45,8 @@ Section "MainSection" SEC01
   # Copy files
   File /oname=launcher-dev.pyw "${LAUNCHER_PATH}"
   File /oname=dev.py "${BASE_PATH}"
+  File /oname=props.json "${PROPS_PATH}"
+  File /oname=versions.fetch "${VERLIST_PATH}"
 
   # Define the directory for the icon
   SetOutPath $APPDATA\SSTools4MC\assets

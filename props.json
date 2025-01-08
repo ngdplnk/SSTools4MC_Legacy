@@ -1,0 +1,14 @@
+{
+    "PROGRAM_INFO": {
+        "SSVERSION": "v25.01.08",
+        "YEAR": "2025",
+        "CHANGELOG": {
+            "ENG": "- Added support for new versions",
+            "SPA": "- Soporte añadido para nuevas versiones"
+        },
+        "NEEDED_MODULES": {
+            "requests": "",
+            "termcolor": "colored"
+        }
+    }
+}
