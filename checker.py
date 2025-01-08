@@ -1,6 +1,6 @@
 import requests
 import json
-from datetime import datetime
+from datetime import datetime, timezone
 import os
 
 # Constants
@@ -66,7 +66,7 @@ header = (
 
 # Update LAST UPDATED timestamp only if there are new versions
 if new_snapshots or new_stable_releases:
-    last_updated = datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
+    last_updated = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
     header += f"## LAST UPDATED: {last_updated}\n"
 else:
     # Load the existing header for the last updated time
