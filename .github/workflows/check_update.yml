@@ -3,11 +3,11 @@ name: Check Minecraft Updates
 on:
   schedule:
     - cron: '15 10 * * *' # Runs at 10:15 AM (CLT/CLST) daily (to match Mojang's approximated release hour)
-  workflow_dispatch: # Allow manual trigger
+  workflow_dispatch:
   push:
     paths:
-      - .github/workflows/*.yml  # Triggers when workflow files are updated
-      - checker.py  # Triggers when checker.py is updated
+      - .github/workflows/*.yml
+      - checker.py
 
 jobs:
   check-minecraft-version:
@@ -25,14 +25,18 @@ jobs:
     - name: Install dependencies
       run: pip install requests
 
-    - name: Check for new Minecraft version
-      run: python checker.py
-
+    - name: Check for new Minecraft versions
+      id: check-for-updates
+      run: |
+        python checker.py
+      env:
+        OUTPUT_FILE: $GITHUB_ENV
+    
     - name: Commit and push changes
-      if: success() && steps.check-for-updates.outputs.new_versions == 'true'
+      if: steps.check-for-updates.outputs.new_versions == 'true'
       run: |
         git config --local user.name "github-actions[bot]"
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git add .
-        git commit -m "Update versions.fetch"
+        git commit -m "Update Minecraft server versions"
         git push

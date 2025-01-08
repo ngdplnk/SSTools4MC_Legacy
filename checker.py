@@ -1,6 +1,7 @@
 import requests
 import json
 from datetime import datetime
+import os
 
 # Constants
 VERSION_MANIFEST_URL = "https://launchermeta.mojang.com/mc/game/version_manifest.json"
@@ -65,8 +66,8 @@ header = (
 
 # Update LAST UPDATED timestamp only if there are new versions
 if new_snapshots or new_stable_releases:
-    last_updated = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
-    header += f"## LAST UPDATED: {last_updated}\n\n"
+    last_updated = datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
+    header += f"## LAST UPDATED: {last_updated}\n"
 else:
     # Load the existing header for the last updated time
     try:
@@ -75,25 +76,29 @@ else:
             header += first_lines[2] + "\n"  # Add the existing LAST UPDATED line
     except (FileNotFoundError, StopIteration):
         last_updated = "Unknown"
-        header += "## LAST UPDATED: Unknown\n\n"
+        header += "## LAST UPDATED: Unknown\n"
 
 # Write updated data back to the file
-with open(VERSIONS_FILE, "w") as f:
-    f.write(header)
-    f.write("MC_SNAPSHOT = {\n")
-    for version, url in MC_SNAPSHOT.items():
-        f.write(f'    "{version}": "{url}",\n')
-    f.write("}\n\n")
-
-    f.write("MC_STABLE = {\n")
-    for version, url in MC_STABLE.items():
-        f.write(f'    "{version}": "{url}",\n')
-    f.write("}\n")
-
-# Print updates
 if new_snapshots or new_stable_releases:
-    print(f"Added {len(new_snapshots)} new snapshots and {len(new_stable_releases)} new stable releases.")
-    print("::set-output name=new_versions::true")
+    MC_SNAPSHOT.update(new_snapshots)
+    MC_STABLE.update(new_stable_releases)
+
+    with open(VERSIONS_FILE, "w") as f:
+        f.write(header)
+        f.write("MC_SNAPSHOT = {\n")
+        for version, url in MC_SNAPSHOT.items():
+            f.write(f'    "{version}": "{url}",\n')
+        f.write("}\n\n")
+
+        f.write("MC_STABLE = {\n")
+        for version, url in MC_STABLE.items():
+            f.write(f'    "{version}": "{url}",\n')
+        f.write("}\n")
+
+    print("New versions found and updated.")
+    with open(os.getenv('OUTPUT_FILE', 'env.txt'), 'a') as env_file:
+        env_file.write("new_versions=true\n")
 else:
     print("No new versions found.")
-    print("::set-output name=new_versions::false")
+    with open(os.getenv('OUTPUT_FILE', 'env.txt'), 'a') as env_file:
+        env_file.write("new_versions=false\n")
