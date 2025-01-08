@@ -55,9 +55,6 @@ except FileNotFoundError:
 new_snapshots = {k: v for k, v in snapshots.items() if k not in MC_SNAPSHOT}
 new_stable_releases = {k: v for k, v in stable_releases.items() if k not in MC_STABLE}
 
-MC_SNAPSHOT.update(new_snapshots)
-MC_STABLE.update(new_stable_releases)
-
 # Prepare header for the file
 header = (
     "#### SSTOOLS4MC VERSIONS.FETCH\n"
@@ -78,7 +75,7 @@ else:
         last_updated = "Unknown"
         header += "## LAST UPDATED: Unknown\n"
 
-# Write updated data back to the file
+# Write updated data back to the file if new versions were found
 if new_snapshots or new_stable_releases:
     MC_SNAPSHOT.update(new_snapshots)
     MC_STABLE.update(new_stable_releases)

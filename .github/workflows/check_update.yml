@@ -2,7 +2,8 @@ name: Check Minecraft Updates
 
 on:
   schedule:
-    - cron: '15 10 * * *' # Runs at 10:15 AM (CLT/CLST) daily (to match Mojang's approximated release hour)
+    # Runs at 10:15 AM local time (CLT/CLST) daily
+    - cron: '15 10 * * *'
   workflow_dispatch:
   push:
     paths:
@@ -31,7 +32,7 @@ jobs:
         python checker.py
       env:
         OUTPUT_FILE: $GITHUB_ENV
-    
+
     - name: Commit and push changes
       if: steps.check-for-updates.outputs.new_versions == 'true'
       run: |
