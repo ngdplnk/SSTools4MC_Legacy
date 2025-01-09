@@ -35,25 +35,72 @@ LOGGER.info('LOGGING STARTED...')
 
 try:
     # IMPORT MINECRAFT VERSIONS AND PROPS
-    props_file = os.path.join(SSTOOLS_FOLDER, 'props.json') # app properties file
-    versions_file = os.path.join(SSTOOLS_FOLDER, 'versions.fetch') # versions file
+
+    import requests
     import json
-    with open(versions_file, 'r') as file:
-        data = json.load(file)
-        MC_STABLE = data.get('MC_STABLE', {})
-        MC_SNAPSHOT = data.get('MC_SNAPSHOT', {})
+
+    VERSION_MANIFEST_URL = "https://launchermeta.mojang.com/mc/game/version_manifest.json"
+
+    # Fetch the Minecraft version manifest
+    response = requests.get(VERSION_MANIFEST_URL)
+    response.raise_for_status()
+    version_manifest = response.json()
+
+    # Extract latest versions
+    latest_snapshot = version_manifest["latest"]["snapshot"]
+    latest_stable = version_manifest["latest"]["release"]
+
+    # Separate versions into categories
+    snapshots = {}
+    stable_releases = {}
+
+    for version in version_manifest["versions"]:
+        version_id = version["id"]
+        version_url = version["url"]
+
+    # Fetch the version-specific JSON file
+    version_response = requests.get(version_url)
+    version_response.raise_for_status()
+    version_data = version_response.json()
+
+    # Extract server.jar URL
+    try:
+        server_url = version_data["downloads"]["server"]["url"]
+    except KeyError:
+        # Skip versions without a server.jar
+        continue
+
+    # Classify as snapshot or stable release
+    if version["type"] == "snapshot":
+        snapshots[version_id] = server_url
+    elif version["type"] == "release":
+        stable_releases[version_id] = server_url
+
+
+    MC_SNAPSHOT = {}
+    MC_STABLE = {}
+
+    # Update snapshots and stable releases
+    new_snapshots = {k: v for k, v in snapshots.items() if k not in MC_SNAPSHOT}
+    new_stable_releases = {k: v for k, v in stable_releases.items() if k not in MC_STABLE}
+
+    MC_SNAPSHOT.update(new_snapshots)
+    MC_STABLE.update(new_stable_releases)
     version_count = len(MC_STABLE) + len(MC_SNAPSHOT)
     LOGGER.info(f"Loaded {version_count} versions")
-    with open(props_file, 'r') as file:
-        data = json.load(file)
-        program_info = data.get("PROGRAM_INFO", {})
-        SSVERSION = program_info.get("SSVERSION", "")
-        YEAR = program_info.get("YEAR", "")
-        changelog = program_info.get("CHANGELOG", {})
-        CHANGELOG_ENG = changelog.get("ENG", "")
-        CHANGELOG_SPA = changelog.get("SPA", "")
-        NEEDED_MODULES = program_info.get("NEEDED_MODULES", {})
-    LOGGER.info('Properties loaded')
+
+    props_file = os.path.join(SSTOOLS_FOLDER, 'props.json') # app properties file  
+        with open(props_file, 'r') as file:
+            data = json.load(file)
+            program_info = data.get("PROGRAM_INFO", {})
+            SSVERSION = program_info.get("SSVERSION", "")
+            YEAR = program_info.get("YEAR", "")
+            changelog = program_info.get("CHANGELOG", {})
+            CHANGELOG_ENG = changelog.get("ENG", "")
+            CHANGELOG_SPA = changelog.get("SPA", "")
+            NEEDED_MODULES = program_info.get("NEEDED_MODULES", {})
+        LOGGER.info('Properties loaded')
+except 
 
     # SYSTEM LANGUAGE
     import locale
