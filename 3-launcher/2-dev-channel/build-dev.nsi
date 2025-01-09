@@ -1,11 +1,9 @@
-### THIS BUILD SCRIPT IS FOR THE DEV CHANNEL LAUNCHER OF SSTools4MC
+### THIS BUILD SCRIPT IS FOR THE DEV CHANNEL OF SSTools4MC
 
 # FILL THIS WITH THE NEEDED PATHS
 !define ICON_PATH "<TYPE THE ICON-DEV.ICO PATH HERE>"
 !define LAUNCHER_PATH "<TYPE THE LAUNCHER-DEV.PYW PATH HERE>"
 !define BASE_PATH "<TYPE THE DEV.PY PATH HERE>"
-!define PROPS_PATH "<TYPE THE PROPS.JSON PATH HERE>"
-!define VERLIST_PATH "<TYPE THE VERSIONS.FETCH PATH HERE>"
 
 ############################################################
 
@@ -45,8 +43,6 @@ Section "MainSection" SEC01
   # Copy files
   File /oname=launcher-dev.pyw "${LAUNCHER_PATH}"
   File /oname=dev.py "${BASE_PATH}"
-  File /oname=props.json "${PROPS_PATH}"
-  File /oname=versions.fetch "${VERLIST_PATH}"
 
   # Define the directory for the icon
   SetOutPath $APPDATA\SSTools4MC\assets
