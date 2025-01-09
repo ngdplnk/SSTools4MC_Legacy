@@ -1,6 +1,6 @@
 #### SSTOOLS4MC VERSIONS.FETCH
 ### This file contains all the versions available for use in SSTools4MC
-## LAST UPDATED: 2025-01-08 03:11:24 UTC
+## LAST UPDATED: 2025-01-09 10:21:31 UTC
 MC_SNAPSHOT = {
     "1.21.4-rc3": "https://piston-data.mojang.com/v1/objects/653cd548ed5bb2a2bff08945878347f3a3b8844b/server.jar",
     "1.21.4-rc2": "https://piston-data.mojang.com/v1/objects/894027b3be403fc387c289781f9fdaca0cdc1aef/server.jar",
@@ -641,6 +641,7 @@ MC_SNAPSHOT = {
     "1.4.1": "https://launcher.mojang.com/v1/objects/baa4e4a7adc3dc9fbfc5ea36f0777b68c9eb7f4a/server.jar",
     "1.4": "https://launcher.mojang.com/v1/objects/9470a2bb0fcb8a426328441a01dba164fbbe52c9/server.jar",
     "1.3": "https://launcher.mojang.com/v1/objects/cb21a9aaaf599c94dd7fa1b777b2f0cc37a776c7/server.jar",
+    "25w02a": "https://piston-data.mojang.com/v1/objects/d9bf4ff75df54a19c19cb4fbc37f020a734904e5/server.jar",
 }
 
 MC_STABLE = {
