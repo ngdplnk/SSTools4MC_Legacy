@@ -83,27 +83,13 @@ try:
         with open(ICON_PATH, 'wb') as writeicon:
             writeicon.write(icon.content) # Write the downloaded icon
             logger.info("Icon downloaded successfully")
-    link = "https://raw.githubusercontent.com/ngdplnk/SSTools4MC/main/props.json"
-    logger.info(f'Getting updated properties from "{link}"...')
-    props = requests.get(link) # Properties permalink
-    with open(os.path.join(PROGRAM_PATH, 'props.json'), 'wb') as writeprops:
-        writeprops.write(props.content) # Write the downloaded properties
-        logger.info("Properties updated successfully")
-    link = "https://raw.githubusercontent.com/ngdplnk/SSTools4MC/main/versions.fetch"
-    logger.info(f'Getting updated version list from "{link}"...')
-    versions = requests.get(link) # Versions permalink
-    with open(os.path.join(PROGRAM_PATH, 'versions.fetch'), 'wb') as writeversions:
-        writeversions.write(versions.content)
-        logger.info("Version list updated successfully")
     os.system(f"start cmd /c python {CODE_PATH}") # Run the program
     logger.info("DONE! STARTING MAIN PROGRAM...")
 except Exception: # If the program can't get the code, the icon or can't run the program
     logger.error("Couldn't get the updated program or icon. Trying to run the current program")
     if os.path.isfile(CODE_PATH):
-        if os.path.exists(os.path.join(PROGRAM_PATH, 'props.json')):
-            if os.path.exists(os.path.join(PROGRAM_PATH, 'versions.fetch')):
-                os.system(f"start cmd /c python {CODE_PATH}") # Run the program
-                logger.info("DONE! STARTING MAIN PROGRAM...")
+        os.system(f"start cmd /c python {CODE_PATH}") # Run the program
+        logger.info("DONE! STARTING MAIN PROGRAM...")
     else:
         logger.critical("LAUNCHER IS UNABLE TO LOAD MAIN PROGRAM!!!")
         logger.critical("Couldn't get the updated program or icon. Please check your internet connection.")
