@@ -7,7 +7,6 @@
             "SPA": "- Soporte añadido para nuevas versiones"
         },
         "NEEDED_MODULES": {
-            "requests": "",
             "termcolor": "colored"
         }
     }
