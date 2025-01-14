@@ -30,9 +30,9 @@ We will publish security updates in a timely manner and announce them in this re
 We will provide active support for current releases and only one previous version. Obsolete versions will be clearly marked as unsupported and will not receive neither security updates nor active support.
 
 Which versions are actively supported?
-- PRE-v1.3 → :x:
-- v1.3 → ✔️
+- PRE-v1.4 → :x:
 - v1.4 → ✔️
+- v1.5 → ✔️
 
 ## License and Copyright
 All tools in this repository are distributed under the MIT License. Please refer to the LICENSE.md file for complete details on the terms of the license and copyright.
@@ -42,4 +42,4 @@ This security policy will be reviewed and updated periodically to ensure it alig
 
 Thank you for contributing to the security of our project. Your collaboration is essential to maintaining a safe and reliable environment for all users of our Minecraft server tools.
 
-Copyright © 2024 ngdplnk
+Copyright © 2025 ngdplnk

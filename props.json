@@ -1,12 +1,18 @@
 {
     "PROGRAM_INFO": {
-        "SSVERSION": "v25.01.08",
+        "SSVERSION": "v25.01.14",
+        "DEV_SSVERSION": "v25.01.14",
         "YEAR": "2025",
         "CHANGELOG": {
             "ENG": "- Added support for new versions",
-            "SPA": "- Soporte añadido para nuevas versiones"
+            "SPA": "- Soporte añadido para nuevas versiones",
+            "DEV_ENG": "- Added auto-update feature (need testing)",
+            "DEV_SPA": "- Se añade la función de auto-actualización (necesita ser probada)"
         },
         "NEEDED_MODULES": {
+            "termcolor": "colored"
+        },
+        "DEV_MODULES": {
             "termcolor": "colored"
         }
     }

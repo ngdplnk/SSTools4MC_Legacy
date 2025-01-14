@@ -124,10 +124,10 @@ All Oracle-related elements and names are used in compliance with the [Oracle Te
 
 ## Credits and Acknowledgements
 
-So many thanks to [@naicoooossj](https://github.com/naicoooossj) and [@LegalizeNuclearBombs](https://steamcommunity.com/id/LegalizeNucelarBombs/) :shipit: for testing and giving new ideas to this project.
+So many thanks to [@naicoooossj](https://github.com/naicoooossj) and [@LegalizeNuclearBombs](https://github.com/Bruno-Machuca) :shipit: for testing and giving new ideas to this project.
 
 Credits to Alfredo Creates on Flaticon for creating the icons used in SSTools4MC: [(1)](https://www.flaticon.es/icono-gratis/juegos_10125663?term=minecraft&page=1&position=77&origin=tag&related_id=10125663) and [(2)](https://www.flaticon.es/icono-gratis/juego_10125654?related_id=10125654&origin=pack)- Both licensed under [CC 3.0 BY](https://creativecommons.org/licenses/by/3.0/)
 
 Thank you for using SSTools4MC!
 
-Licensed under [MIT License](https://github.com/ngdplnk/SSTools4MC/blob/main/LICENSE) - Copyright © 2024 ngdplnk
+Licensed under [MIT License](https://github.com/ngdplnk/SSTools4MC/blob/main/LICENSE) - Copyright © 2025 ngdplnk

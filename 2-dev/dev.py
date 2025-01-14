@@ -2,11 +2,6 @@
 ####  DEVELOPED BY: NGDPLNK  ####
 #################################
 
-### TO-DO LIST  ###
-# - [WIP] Add support for detailed logs.
-# - [Pending] Add Forge and Fabric servers support.
-###################
-
 #### PROGRAM ####
 
 # SET-UP LOGGER
@@ -59,8 +54,7 @@ try:
     try:
         server_url = version_data["downloads"]["server"]["url"]
     except KeyError:
-        # Skip versions without a server.jar
-        continue
+        pass
     # Classify as snapshot or stable release
     if version["type"] == "snapshot":
         snapshots[version_id] = server_url
@@ -77,16 +71,23 @@ try:
     LOGGER.info(f"Loaded {version_count} versions")
     # Load properties from file
     props_file = os.path.join(SSTOOLS_FOLDER, 'props.json') # app properties file  
-        with open(props_file, 'r') as file:
-            data = json.load(file)
-            program_info = data.get("PROGRAM_INFO", {})
-            SSVERSION = program_info.get("SSVERSION", "")
-            YEAR = program_info.get("YEAR", "")
-            changelog = program_info.get("CHANGELOG", {})
-            CHANGELOG_ENG = changelog.get("ENG", "")
-            CHANGELOG_SPA = changelog.get("SPA", "")
-            NEEDED_MODULES = program_info.get("NEEDED_MODULES", {})
-        LOGGER.info('Properties loaded')
+    with open(props_file, 'r') as file:
+        data = json.load(file)
+        program_info = data.get("PROGRAM_INFO", {})
+        SSVERSION = program_info.get("DEV_SSVERSION", "")
+        YEAR = program_info.get("YEAR", "")
+        changelog = program_info.get("CHANGELOG", {})
+        CHANGELOG_ENG = changelog.get("DEV_ENG", "")
+        CHANGELOG_SPA = changelog.get("DEV_SPA", "")
+        NEEDED_MODULES = program_info.get("DEV_MODULES", {})
+    LOGGER.info('Properties loaded')
+    LOGGER.info(f'DEV_SSVERSION: {SSVERSION}')
+    LOGGER.info(f'YEAR: {YEAR}')
+    LOGGER.info(f'DEV_CHANGELOG_ENG: {CHANGELOG_ENG}')
+    LOGGER.info(f'DEV_CHANGELOG_SPA: {CHANGELOG_SPA}')
+    LOGGER.info(f'DEV_MODULES: {NEEDED_MODULES}')
+    
+    LOGGER.info('Getting system locale...')
 
     # SYSTEM LANGUAGE
     import locale
