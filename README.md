@@ -37,7 +37,7 @@ To get started with SSTools4MC, follow these steps:
 - Python: 3.9 or newer.
 
 ### Python Installation
-1. Download and install Python 3.11 or newer from the [official Python website](https://www.python.org/downloads/). When installing Python, be sure to select the "Add Python to PATH" option.
+1. Download and install Python 3.9 or newer from the [official Python website](https://www.python.org/downloads/). When installing Python, be sure to select the "Add Python to PATH" option.
 2. Done!
 
 Python is necessary to run the program.
