@@ -70,21 +70,37 @@ try:
     version_count = len(MC_STABLE) + len(MC_SNAPSHOT)
     LOGGER.info(f"Loaded {version_count} versions")
     # Load properties from file
-    props_file = os.path.join(SSTOOLS_FOLDER, 'props.json') # app properties file  
-    with open(props_file, 'r') as file:
-        data = json.load(file)
-        program_info = data.get("PROGRAM_INFO", {})
-        SSVERSION = program_info.get("DEV_SSVERSION", "")
-        YEAR = program_info.get("YEAR", "")
-        changelog = program_info.get("CHANGELOG", {})
-        CHANGELOG_ENG = changelog.get("DEV_ENG", "")
-        CHANGELOG_SPA = changelog.get("DEV_SPA", "")
-        NEEDED_MODULES = program_info.get("DEV_MODULES", {})
+    props_file = os.path.join(SSTOOLS_FOLDER, 'props.json') # app properties file
+    try:
+        # Fetch the latest file from GitHub
+        github_url = "https://raw.githubusercontent.com/ngdplnk/SSTools4MC/main/props.json"
+        response = requests.get(github_url)
+        response.raise_for_status()
+        with open(props_file, 'w') as file:
+            file.write(response.text)
+        data = response.json()
+    except Exception as e:
+        LOGGER.warning(f"Failed to fetch the latest file from GitHub: {e}")
+        try:
+            with open(props_file, 'r') as file:
+                data = json.load(file)
+        except Exception as e:
+            LOGGER.critical(f"Failed to load the local properties file: {e}")
+            sys.exit(1)
+    
+    program_info = data.get("PROGRAM_INFO", {})
+    SSVERSION = program_info.get("DEV_SSVERSION", "")
+    YEAR = program_info.get("YEAR", "")
+    changelog = program_info.get("CHANGELOG", {})
+    CHANGELOG_ENG = changelog.get("DEV_ENG", "")
+    CHANGELOG_SPA = changelog.get("DEV_SPA", "")
+    NEEDED_MODULES = program_info.get("DEV_MODULES", {})
+    
     LOGGER.info('Properties loaded')
     LOGGER.info(f'DEV_SSVERSION: {SSVERSION}')
     LOGGER.info(f'YEAR: {YEAR}')
-    LOGGER.info(f'DEV_CHANGELOG_ENG: {CHANGELOG_ENG}')
-    LOGGER.info(f'DEV_CHANGELOG_SPA: {CHANGELOG_SPA}')
+    LOGGER.info(f'CHANGELOG_DEV_ENG: {CHANGELOG_ENG}')
+    LOGGER.info(f'CHANGELOG_DEV_SPA: {CHANGELOG_SPA}')
     LOGGER.info(f'DEV_MODULES: {NEEDED_MODULES}')
     
     LOGGER.info('Getting system locale...')
