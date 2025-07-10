@@ -38,8 +38,8 @@ try:
     response.raise_for_status()
     version_manifest = response.json()
     # Extract latest versions
-    latest_snapshot = version_manifest["latest"]["snapshot"]
-    latest_stable = version_manifest["latest"]["release"]
+    latest_snapshot = version_manifest["versions"]["snapshot"]
+    latest_stable = version_manifest["versions"]["release"]
     # Separate versions into categories
     snapshots = {}
     stable_releases = {}
