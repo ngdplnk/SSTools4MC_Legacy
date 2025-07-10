@@ -38,35 +38,43 @@ try:
     response.raise_for_status()
     version_manifest = response.json()
     # Extract latest versions
-    latest_snapshot = version_manifest["versions"]["snapshot"]
-    latest_stable = version_manifest["versions"]["release"]
+    latest_snapshot = version_manifest["latest"]["snapshot"]
+    latest_stable = version_manifest["latest"]["release"]
     # Separate versions into categories
     snapshots = {}
     stable_releases = {}
+    MC_SNAPSHOT = {}
+    MC_STABLE = {}
+    
+    LOGGER.info("Processing Minecraft versions...")
     for version in version_manifest["versions"]:
         version_id = version["id"]
         version_url = version["url"]
-    # Fetch the version-specific JSON file
-    version_response = requests.get(version_url)
-    version_response.raise_for_status()
-    version_data = version_response.json()
-    # Extract server.jar URL
-    try:
-        server_url = version_data["downloads"]["server"]["url"]
-    except KeyError:
-        pass
-    # Classify as snapshot or stable release
-    if version["type"] == "snapshot":
-        snapshots[version_id] = server_url
-    elif version["type"] == "release":
-        stable_releases[version_id] = server_url
-    MC_SNAPSHOT = {}
-    MC_STABLE = {}
-    # Update snapshots and stable releases
-    new_snapshots = {k: v for k, v in snapshots.items() if k not in MC_SNAPSHOT}
-    new_stable_releases = {k: v for k, v in stable_releases.items() if k not in MC_STABLE}
-    MC_SNAPSHOT.update(new_snapshots)
-    MC_STABLE.update(new_stable_releases)
+        version_type = version["type"]
+        
+        try:
+            # Fetch the version-specific JSON file
+            version_response = requests.get(version_url)
+            version_response.raise_for_status()
+            version_data = version_response.json()
+            
+            # Extract server.jar URL
+            if "downloads" in version_data and "server" in version_data["downloads"]:
+                server_url = version_data["downloads"]["server"]["url"]
+                
+                # Classify as snapshot or stable release
+                if version_type == "snapshot":
+                    snapshots[version_id] = server_url
+                    MC_SNAPSHOT[version_id] = server_url
+                elif version_type == "release":
+                    stable_releases[version_id] = server_url
+                    MC_STABLE[version_id] = server_url
+            else:
+                LOGGER.debug(f"No server download available for version {version_id}")
+                
+        except Exception as e:
+            LOGGER.warning(f"Failed to fetch data for version {version_id}: {e}")
+            continue
     version_count = len(MC_STABLE) + len(MC_SNAPSHOT)
     LOGGER.info(f"Loaded {version_count} versions")
     # Load properties from file
