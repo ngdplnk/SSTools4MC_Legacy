@@ -1,6 +1,6 @@
-#### SSTools4MC Stable Channel Launcher  ####
-####        DEVELOPED BY NGDPLNK         ####
-#############################################
+#### SSTools4MC Legacy Launcher  ####
+####    DEVELOPED BY NGDPLNK     ####
+#####################################
 
 # Needed Libraries
 import os
@@ -13,14 +13,15 @@ from tkinter import messagebox
 
 # Paths
 APPDATA = os.environ.get("APPDATA")
-PROGRAM_PATH = os.path.join(APPDATA, "SSTools4MC") # type: ignore
+PROGRAM_PATH = os.path.join(APPDATA, "SSTools4MC_Legacy") # type: ignore
 LOG_PATH = os.path.join(PROGRAM_PATH, "logs")
 ASSETS_PATH = os.path.join(PROGRAM_PATH, "assets")
 CODE_PATH = os.path.join(PROGRAM_PATH, "main.py")
+LAUNCHER_PATH = os.path.join(PROGRAM_PATH, "launcher.pyw")
 ICON_PATH = os.path.join(ASSETS_PATH, "icon.ico")
 
 # SET-UP LOGGER
-logger = logging.getLogger('SSTools4MC Launcher') # logger name
+logger = logging.getLogger('SSTools4MC Legacy Launcher') # logger name
 logger.setLevel(logging.DEBUG) # log level
 current_date = datetime.now()
 formatted_date = current_date.strftime('%Y-%m-%d')
@@ -67,17 +68,23 @@ except ImportError: # If the 'requests' module is not installed
 
 # Try to get the updated code
 try:
-    link = "https://raw.githubusercontent.com/ngdplnk/SSTools4MC/main/1-stable/main.py"
+    link = "https://raw.githubusercontent.com/ngdplnk/SSTools4MC_Legacy/main/1-stable/main.py"
     logger.info(f'Getting updated program from "{link}"...')
     code = requests.get(link) # Program permalink
     with open(CODE_PATH, 'wb') as writecode:
         writecode.write(code.content) # Write the downloaded code
         logger.info("Program updated successfully")
+    link = "https://raw.githubusercontent.com/ngdplnk/SSTools4MC_Legacy/main/2-launcher/launcher.pyw"
+    logger.info(f'Getting updated launcher from "{link}"...')
+    code = requests.get(link) # Launcher permalink
+    with open(LAUNCHER_PATH, 'wb') as writecode:
+        writecode.write(code.content) # Write the downloaded code
+        logger.info("Launcher updated successfully")
     if os.path.exists(ICON_PATH):
         pass # If the icon exists, do nothing
         logger.info("Icon already exists. Skipping download...")
     else:
-        link = "https://raw.githubusercontent.com/ngdplnk/SSTools4MC/main/3-launcher/1-stable-channel/icon.ico"
+        link = "https://raw.githubusercontent.com/ngdplnk/SSTools4MC_Legacy/main/2-launcher/icon.ico"
         logger.info(f'Icon not found. Getting icon from "{link}"...')
         icon = requests.get(link) # Icon permalink
         with open(ICON_PATH, 'wb') as writeicon:
@@ -94,8 +101,8 @@ except Exception: # If the program can't get the code, the icon or can't run the
         logger.critical("LAUNCHER IS UNABLE TO LOAD MAIN PROGRAM!!!")
         logger.critical("Couldn't get the updated program or icon. Please check your internet connection.")
         if system_lang.startswith('es') or system_lang.startswith('Spanish'): # Error message if the system language is Spanish
-            messagebox.showerror("Error", "Conéctate a internet para obtener la última versión del Canal Estable de SSTools4MC.")
+            messagebox.showerror("Error", "Conéctate a internet para obtener la última versión de SSTools4MC Legacy.")
         else: # Error message if the system language is not Spanish
-            messagebox.showerror("Error", "Connect to the internet to get the latest version of SSTools4MC Stable Channel.")
+            messagebox.showerror("Error", "Connect to the internet to get the latest version of SSTools4MC Legacy.")
         logger.critical("QUITTING LAUNCHER...")
         sys.exit(1)

@@ -1,13 +1,13 @@
 {
     "PROGRAM_INFO": {
-        "SSVERSION": "v25.02.17",
-        "DEV_SSVERSION": "v25.02.17",
+        "SSVERSION": "v25.07.11.FINAL",
+        "DEV_SSVERSION": "v25.07.11.FINAL",
         "YEAR": "2025",
         "CHANGELOG": {
-            "ENG": "- Added new version fetching logic",
-            "SPA": "- Se añade nueva lógica de obtención de versiones",
-            "DEV_ENG": "- Edited props.json logic",
-            "DEV_SPA": "- Se edita la lógica de props.json"
+            "ENG": "- Final major release of SSTools4MC. \n- Updated props.json logic to handle version retrieval more effectively.",
+            "SPA": "- Versión final principal de SSTools4MC. \n- Se actualizó la lógica de props.json para manejar la recuperación de versiones de manera más efectiva.",
+            "DEV_ENG": "- Final major release of SSTools4MC.\n- Updated props.json logic to handle version retrieval more effectively.",
+            "DEV_SPA": "- Versión final principal de SSTools4MC.\n- Se actualizó la lógica de props.json para manejar la recuperación de versiones de manera más efectiva."
         },
         "NEEDED_MODULES": {
             "termcolor": "colored"

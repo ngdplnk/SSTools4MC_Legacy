@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ngdplnk/SSTools4MC/main/3-launcher/1-stable-channel/icon.png" alt="SSTools4MC Icon" width="200" />
+  <img src="https://raw.githubusercontent.com/ngdplnk/SSTools4MC_Legacy/main/2-launcher/icon.png" alt="SSTools4MC Icon" width="200" />
 </p>
 
-# SSTools4MC - Server Startup Tools for Minecraft
+# SSTools4MC Legacy - Server Startup Tools for Minecraft
 
-SSTools4MC is a set of tools designed to assist you hosting your own dedicated Minecraft server.
+SSTools4MC Legacy is a set of nogui tools designed to assist you hosting your own dedicated Minecraft server.
 
 ## Table of Contents
 - [Getting Started](#getting-started)
@@ -24,7 +24,7 @@ SSTools4MC is a set of tools designed to assist you hosting your own dedicated M
 ## Getting Started
 To get started with SSTools4MC, follow these steps:
 
-1. Download the latest version of SSTools4MC from the [GitHub Releases](https://github.com/ngdplnk/SSTools4MC/releases/latest) page.
+1. Download the latest version of SSTools4MC from the [GitHub Releases](https://github.com/ngdplnk/SSTools4MC_Legacy/releases/latest) page.
 2. Run the installer. A shortcut should be created on your desktop and in your Windows start menu.
 3. Enjoy!
 
@@ -57,14 +57,14 @@ Java is necessary to your machine to be able to run your Minecraft servers.
 ## Build SSTools4MC Installer by yourself
 
 You can follow this steps if you want to build the SSTools4MC Installer from the source code by yourself.
-Please note that this is not mandatory. You can always download the latest version of the installer from the [GitHub Releases](https://github.com/ngdplnk/SSTools4MC/releases/latest) page.
+Please note that this is not mandatory. You can always download the latest version of the installer from the [GitHub Releases](https://github.com/ngdplnk/SSTools4MC_Legacy/releases/latest) page.
 
 ### Clone this Repository
 
 First, clone/download this repository:
 
 ```bash
-git clone https://github.com/ngdplnk/SSTools4MC.git
+git clone https://github.com/ngdplnk/SSTools4MC_Legacy.git
 ```
 
 ### Install NSIS
@@ -73,32 +73,26 @@ You need to install the latest NSIS (Nullsoft Scriptable Install System) version
 
 ### Verify Files
 
-Navigate to the `3-launcher` folder in the cloned repository and there select a release channel that you want to build the launcher for (continue in subdirectory `1-stable-channel` for Stable channel or in subdirectory `2-dev-channel` for Dev Channel). Ensure that you have the following files (there may be more, but you need to have at least these):
+Navigate to the `2-launcher` folder in the cloned repository. Ensure that you have the following files (there may be more, but you need to have at least these):
 
-If you are building the launcher for the Stable channel:
 - `build.nsi`
 - `icon.ico`
 - `launcher.pyw`
 
-If you are building the launcher for the Dev channel:
-- `build-dev.nsi`
-- `icon-dev.ico`
-- `launcher-dev.pyw`
-
 If any of these files are missing, please download them directly from the repository.
 
-You will use the `main.py` from the `1-stable` folder if you are building the Stable Channel Launcher, or the `dev.py` file from the `2-dev` folder as your bundled version in the launcher you are building.
+You will use the `main.py` from the `1-stable` folder as your bundled version in the launcher you are building.
 
 ### Edit .nsi File
 
-Open the `build.nsi` or `build-dev.nsi` file in a text editor and replace the placeholders `<TYPE THE XXXX PATH HERE>` with the actual paths to your files, respectively. Save the changes.
+Open the `build.nsi` file in a text editor and replace the placeholders `<TYPE THE XXXX PATH HERE>` with the actual paths to your files, respectively. Save the changes.
 
 ### Compile the Installer
 
 1. Open NSIS.
 2. Select the option "Compile NSI Scripts".
 3. Drag and drop the file you just edited into the NSIS window.
-4. An installer for your desired SSTools4MC release channel will be created.
+4. An installer for SSTools4MC will be created.
 5. Enjoy!
 
 ## Copyright and Disclaimer
@@ -128,6 +122,6 @@ So many thanks to [@naicoooossj](https://github.com/naicoooossj) and [@LegalizeN
 
 Credits to Alfredo Creates on Flaticon for creating the icons used in SSTools4MC: [(1)](https://www.flaticon.es/icono-gratis/juegos_10125663?term=minecraft&page=1&position=77&origin=tag&related_id=10125663) and [(2)](https://www.flaticon.es/icono-gratis/juego_10125654?related_id=10125654&origin=pack)- Both licensed under [CC 3.0 BY](https://creativecommons.org/licenses/by/3.0/)
 
-Thank you for using SSTools4MC!
+Thank you for using SSTools4MC Legacy! This project is archived and no longer maintained. For the latest version, please visit the brand new [SSTools4MC](https://github.com/ngdplnk/SSTools4MC) repository!
 
-Licensed under [MIT License](https://github.com/ngdplnk/SSTools4MC/blob/main/LICENSE) - Copyright © 2025 ngdplnk
+Licensed under [MIT License](https://github.com/ngdplnk/SSTools4MC_Legacy/blob/main/LICENSE) - Copyright © 2021 - 2025 ngdplnk

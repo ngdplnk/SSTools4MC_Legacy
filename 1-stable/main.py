@@ -1,4 +1,4 @@
-#### SSTOOLS4MC MAIN PROGRAM ####
+#### SSTOOLS4MC LEGACY MAIN PROGRAM ####
 ####  DEVELOPED BY: NGDPLNK  ####
 #################################
 
@@ -9,9 +9,9 @@ import logging
 import os
 from datetime import datetime
 APPDATA = os.getenv('APPDATA')
-SSTOOLS_FOLDER = os.path.join(APPDATA, "SSTools4MC") # type: ignore
+SSTOOLS_FOLDER = os.path.join(APPDATA, "SSTools4MC_Legacy") # type: ignore
 LOG_PATH = os.path.join(SSTOOLS_FOLDER, "logs")
-LOGGER = logging.getLogger('SSTools4MC') # logger name
+LOGGER = logging.getLogger('SSTools4MC_Legacy') # logger name
 LOGGER.setLevel(logging.DEBUG) # log level
 current_date = datetime.now()
 formatted_date = current_date.strftime('%Y-%m-%d')
@@ -33,47 +33,55 @@ try:
     import requests
     import json
     VERSION_MANIFEST_URL = "https://launchermeta.mojang.com/mc/game/version_manifest.json"
+    VERSIONS_DIR = os.path.join(SSTOOLS_FOLDER, "version_jsons")
+    os.makedirs(VERSIONS_DIR, exist_ok=True)
+
     # Fetch the Minecraft version manifest
     response = requests.get(VERSION_MANIFEST_URL)
     response.raise_for_status()
     version_manifest = response.json()
+
     # Extract latest versions
     latest_snapshot = version_manifest["latest"]["snapshot"]
     latest_stable = version_manifest["latest"]["release"]
-    # Separate versions into categories
-    snapshots = {}
-    stable_releases = {}
+
+    # Separate versions into categories and cache version JSONs
+    MC_SNAPSHOT = {}
+    MC_STABLE = {}
     for version in version_manifest["versions"]:
         version_id = version["id"]
         version_url = version["url"]
-    # Fetch the version-specific JSON file
-    version_response = requests.get(version_url)
-    version_response.raise_for_status()
-    version_data = version_response.json()
-    # Extract server.jar URL
-    try:
-        server_url = version_data["downloads"]["server"]["url"]
-    except KeyError:
-        pass
-    # Classify as snapshot or stable release
-    if version["type"] == "snapshot":
-        snapshots[version_id] = server_url
-    elif version["type"] == "release":
-        stable_releases[version_id] = server_url
-    MC_SNAPSHOT = {}
-    MC_STABLE = {}
-    # Update snapshots and stable releases
-    new_snapshots = {k: v for k, v in snapshots.items() if k not in MC_SNAPSHOT}
-    new_stable_releases = {k: v for k, v in stable_releases.items() if k not in MC_STABLE}
-    MC_SNAPSHOT.update(new_snapshots)
-    MC_STABLE.update(new_stable_releases)
+        local_json_path = os.path.join(VERSIONS_DIR, f"{version_id}.json")
+        if os.path.exists(local_json_path):
+            with open(local_json_path, "r") as f:
+                version_data = json.load(f)
+        else:
+            v_resp = requests.get(version_url)
+            v_resp.raise_for_status()
+            version_data = v_resp.json()
+            with open(local_json_path, "w") as f:
+                json.dump(version_data, f)
+        # Extract server.jar URL
+        downloads = version_data.get("downloads", {})
+        server_info = downloads.get("server")
+        if not server_info or "url" not in server_info:
+            continue
+        server_url = server_info["url"]
+        # Classify as snapshot or stable release
+        if version["type"] == "snapshot":
+            MC_SNAPSHOT[version_id] = server_url
+        elif version["type"] == "release":
+            MC_STABLE[version_id] = server_url
+
     version_count = len(MC_STABLE) + len(MC_SNAPSHOT)
-    LOGGER.info(f"Loaded {version_count} versions")
+    LOGGER.info(f"Found {version_count} Minecraft versions.")
+    LOGGER.info(f"Total snapshots: {len(MC_SNAPSHOT)}")
+    LOGGER.info(f"Total stable releases: {len(MC_STABLE)}")
     # Load properties from file
     props_file = os.path.join(SSTOOLS_FOLDER, 'props.json') # app properties file
     try:
         # Fetch the latest file from GitHub
-        github_url = "https://raw.githubusercontent.com/ngdplnk/SSTools4MC/main/props.json"
+        github_url = "https://raw.githubusercontent.com/ngdplnk/SSTools4MC_Legacy/main/props.json"
         response = requests.get(github_url)
         response.raise_for_status()
         with open(props_file, 'w') as file:
@@ -135,7 +143,7 @@ try:
 
     # SET DEV CHANNEL PARAMETERS
     ICON_PATH = os.path.join(SSTOOLS_FOLDER, "assets", "icon.ico")
-    SSTITLE = "SSTools4MC"
+    SSTITLE = "SSTools4MC Legacy"
     LOGGER.info('Release type: STABLE')
 
     # CHANGE WINDOW TITLE
@@ -332,7 +340,7 @@ try:
                                     if clearconf == 1:
                                         os.makedirs(CONFIG_PATH, exist_ok=True)
                                         with open(SAVED_SERVERS, 'w') as file:
-                                            file.write("# SSTools4MC\n# Saved servers\n")
+                                            file.write("# SSTools4MC Legacy\n# Saved servers\n")
                                         cls()
                                         window_title(f'{SSTITLE} - List cleared')
                                         day = getdate()
@@ -366,7 +374,7 @@ try:
                 else:
                     os.makedirs(CONFIG_PATH, exist_ok=True)
                     with open(SAVED_SERVERS, 'w') as file:
-                        file.write("# SSTools4MC\n# Saved servers\n")
+                        file.write("# SSTools4MC Legacy\n# Saved servers\n")
                     cls()
                     adds = colored("Add a Server","cyan") # type: ignore
                     window_title(f'{SSTITLE} - There are no saved servers.')
@@ -426,7 +434,7 @@ try:
             else:
                 os.makedirs(CONFIG_PATH, exist_ok=True)
                 with open(SAVED_SERVERS, 'w') as file:
-                    file.write("# SSTools4MC\n# Saved servers\n")
+                    file.write("# SSTools4MC Legacy\n# Saved servers\n")
                 cls()
                 window_title(f'{SSTITLE} - There are no saved servers')
                 day = getdate()
@@ -1080,21 +1088,21 @@ try:
                     selec = copyr
                 selec = int(selec)
                 if selec == 1:
-                    url = colored("https://github.com/ngdplnk/SSTools4MC","cyan") # type: ignore
+                    url = colored("https://github.com/ngdplnk/SSTools4MC_Legacy","cyan") # type: ignore
                     cls()
                     window_title(f'{SSTITLE} - View repository')
                     day = getdate()
                     input(f"{SSTITLE} - {day}\n--------------------------\n\nThe repository will open in your browser.\n\n{url}\n\nPress ENTER to continue.")
-                    url = "https://github.com/ngdplnk/SSTools4MC"
+                    url = "https://github.com/ngdplnk/SSTools4MC_Legacy"
                     webbrowser.open(url)
                     about()
                 elif selec == 2:
-                    url = colored("https://github.com/ngdplnk/SSTools4MC/blob/main/LICENSE","cyan") # type: ignore
+                    url = colored("https://github.com/ngdplnk/SSTools4MC_Legacy/blob/main/LICENSE","cyan") # type: ignore
                     cls()
                     window_title(f'{SSTITLE} - View license')
                     day = getdate()
                     input(f"{SSTITLE} - {day}\n--------------------------\n\nThe license will open in your browser.\n\n{url}\n\nPress ENTER to continue.")
-                    url = "https://github.com/ngdplnk/SSTools4MC/blob/main/LICENSE"
+                    url = "https://github.com/ngdplnk/SSTools4MC_Legacy/blob/main/LICENSE"
                     webbrowser.open(url)
                     about()
                 elif selec == 3:
@@ -1271,7 +1279,7 @@ try:
                                     if clearconf == 1:
                                         os.makedirs(CONFIG_PATH, exist_ok=True)
                                         with open(SAVED_SERVERS, 'w') as file:
-                                            file.write("# SSTools4MC\n# Servidores guardados\n")
+                                            file.write("# SSTools4MC Legacy\n# Servidores guardados\n")
                                         cls()
                                         window_title(f'{SSTITLE} - Lista limpiada')
                                         print(f'{SSTITLE} - {day}\n--------------------------\n\nLa Lista "Tus Servidores" ha sido limpiada.')
@@ -1304,7 +1312,7 @@ try:
                 else:
                     os.makedirs(CONFIG_PATH, exist_ok=True)
                     with open(SAVED_SERVERS, 'w') as file:
-                        file.write("# SSTools4MC\n# Servidores Guardados\n")
+                        file.write("# SSTools4MC Legacy\n# Servidores Guardados\n")
                     cls()
                     adds = colored("Añadir un Servidor","cyan") # type: ignore
                     window_title(f'{SSTITLE} - No hay servidores guardados')
@@ -1358,7 +1366,7 @@ try:
             else:
                 os.makedirs(CONFIG_PATH, exist_ok=True)
                 with open(SAVED_SERVERS, 'w') as file:
-                    file.write("# SSTools4MC\n# Servidores Guardados\n")
+                    file.write("# SSTools4MC Legacy\n# Servidores Guardados\n")
                 cls()
                 window_title(f'{SSTITLE} - No hay servidores guardados')
                 day = getdate()
@@ -2006,21 +2014,21 @@ try:
                     selec = copyr
                 selec = int(selec)
                 if selec == 1:
-                    url = colored("https://github.com/ngdplnk/SSTools4MC","cyan") # type: ignore
+                    url = colored("https://github.com/ngdplnk/SSTools4MC_Legacy","cyan") # type: ignore
                     cls()
                     window_title(f'{SSTITLE} - Ver repositorio')
                     day = getdate()
                     input(f"{SSTITLE} - {day}\n--------------------------\n\nEl repositorio se abrirá en tu navegador.\n\n{url}\n\nPresiona ENTER para continuar.")
-                    url = "https://github.com/ngdplnk/SSTools4MC"
+                    url = "https://github.com/ngdplnk/SSTools4MC_Legacy"
                     webbrowser.open(url)
                     about()
                 elif selec == 2:
-                    url = colored("https://github.com/ngdplnk/SSTools4MC/blob/main/LICENSE","cyan") # type: ignore
+                    url = colored("https://github.com/ngdplnk/SSTools4MC_Legacy/blob/main/LICENSE","cyan") # type: ignore
                     cls()
                     window_title(f'{SSTITLE} - Ver licencia')
                     day = getdate()
                     input(f"{SSTITLE} - {day}\n--------------------------\n\nLa licencia se abrirá en tu navegador.\n\n{url}\n\nPresiona ENTER para continuar.")
-                    url = "https://github.com/ngdplnk/SSTools4MC/blob/main/LICENSE"
+                    url = "https://github.com/ngdplnk/SSTools4MC_Legacy/blob/main/LICENSE"
                     webbrowser.open(url)
                     about()
                 elif selec == 3:
