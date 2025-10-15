@@ -26,10 +26,10 @@ logger.setLevel(logging.DEBUG) # log level
 current_date = datetime.now()
 formatted_date = current_date.strftime('%Y-%m-%d')
 log_file = os.path.join(LOG_PATH, f'{formatted_date}.log') # log file
-if not os.path.exists(log_file):
+if not os.path.exists(LOG_PATH):
     os.makedirs(LOG_PATH) # create log folder if it doesn't exist
-    with open(log_file, 'w+'):
-        pass # create log file if it doesn't exist
+with open(log_file, 'w+'):
+    pass # create log file if it doesn't exist
 file_handler = logging.FileHandler(log_file)
 file_handler.setLevel(logging.DEBUG)
 formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s', datefmt='%H:%M:%S') # log format
